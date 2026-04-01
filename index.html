@@ -1292,30 +1292,44 @@ body::before {
   .main-header { padding: 12px 16px; position: sticky; top: 52px; z-index: 90; background: rgba(6,6,10,0.9); backdrop-filter: blur(16px); }
   .main-header h1 { font-size: 16px; }
   .pages { padding: 14px; overflow: visible; }
-  .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
-  .filters { gap: 4px; }
+  .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr !important; }
+  .filters { gap: 4px; flex-wrap: wrap; }
   .filter-btn { padding: 5px 10px; font-size: 10px; }
   .expandable-header { padding: 12px 14px; flex-wrap: wrap; gap: 8px; }
-  .expandable-content.show { padding: 14px; max-height: 1200px; }
+  .expandable-content.show { padding: 14px; max-height: 2000px; }
   .kpi { padding: 14px; }
   .kpi-value { font-size: 28px; }
   .account-card { padding: 14px; }
-  .tabs { gap: 0; }
+  .tabs { gap: 0; flex-wrap: wrap; }
   .tab { padding: 8px 12px; font-size: 11px; }
-  /* Fix overview 4-col grid on mobile */
-  .page [style*="grid-template-columns:repeat(4"] { grid-template-columns: repeat(2, 1fr) !important; }
-  .page [style*="grid-template-columns:1fr 1fr;"] { grid-template-columns: 1fr !important; }
+  /* FORCE summary stat grids to 2 cols on mobile */
+  .summary-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 8px !important; }
+  /* Account cards + other grids = 1 col */
+  #comptesGrid, .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr !important; }
+  /* Fix 4-col detail grids inside expandables = 2 cols */
+  .expandable-content [style*="grid-template-columns"] { grid-template-columns: 1fr 1fr !important; }
+  /* Overview stat cards */
+  .overview-stats { grid-template-columns: repeat(2, 1fr) !important; }
   /* Hide particles and orbs on mobile for perf */
   .particles, .orb, .aurora, .cursor-glow { display: none; }
   body::before { display: none; }
+  /* Fix overflow issues on mobile */
+  .page { overflow-x: hidden; }
+  * { max-width: 100%; box-sizing: border-box; }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 480px) {
   .sidebar { padding: 6px 8px; }
   .nav-item { padding: 6px 8px; font-size: 10px; }
   .pages { padding: 10px; }
   .expandable-header { padding: 10px 12px; }
   .filter-btn { padding: 4px 8px; font-size: 9px; }
+  .main-header { top: 46px; }
+  /* All summary grids = 2 cols on small phone */
+  [style*="grid-template-columns"] { grid-template-columns: repeat(2, 1fr) !important; }
+  /* Detail grids inside cards = 1 col */
+  .expandable-content [style*="grid-template-columns"] { grid-template-columns: 1fr !important; }
+  .account-followers { font-size: 20px; }
 }
 </style>
 </head>
