@@ -1758,21 +1758,71 @@ function renderComptes() {
 function renderContenu() { (APP_STATE.filters.contentTab==='scripts'?renderScripts:renderVideosContent)(); }
 
 function renderScripts() {
-  const s = Array.isArray(APP_STATE.data['scripts-video'])?APP_STATE.data['scripts-video']:(APP_STATE.data['scripts-video']?.scripts)||[];
+  const all = Array.isArray(APP_STATE.data['scripts-video'])?APP_STATE.data['scripts-video']:(APP_STATE.data['scripts-video']?.scripts)||[];
+  const filter = APP_STATE.filters.scriptPlatform||'all';
+  const s = filter==='all'?all:all.filter(x=>(x.plateforme||'').toLowerCase()===filter);
   const count = s.length;
-  document.getElementById('scriptsTab').innerHTML = `<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px"><div style="font-size:12px;color:var(--text-muted);font-weight:500">${count} script${count>1?'s':''} disponible${count>1?'s':''}</div><div style="font-size:10px;color:var(--accent-cyan);font-weight:600">Objectif : 10/jour</div></div>` + s.map((x,i)=>{
+  const total = all.length;
+  // Platform counts for filters
+  const platCounts = {};
+  all.forEach(x=>{const p=(x.plateforme||'autre').toLowerCase();platCounts[p]=(platCounts[p]||0)+1;});
+  const platColors = {tiktok:'#fe2c55',instagram:'#e4405f',youtube:'#ff0000',twitter:'#1da1f2',linkedin:'#0a66c2'};
+  const filterHtml = `<div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px">
+    <button class="filter-btn${filter==='all'?' active':''}" onclick="APP_STATE.filters.scriptPlatform='all';renderScripts()" style="font-size:10px;padding:4px 10px">Tous (${total})</button>
+    ${Object.entries(platCounts).map(([p,c])=>`<button class="filter-btn${filter===p?' active':''}" data-platform="${p}" onclick="APP_STATE.filters.scriptPlatform='${p}';renderScripts()" style="font-size:10px;padding:4px 10px">${p.charAt(0).toUpperCase()+p.slice(1)} (${c})</button>`).join('')}
+  </div>`;
+  document.getElementById('scriptsTab').innerHTML = filterHtml + `<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px"><div style="font-size:12px;color:var(--text-muted);font-weight:500">${count} script${count>1?'s':''}</div><div style="font-size:10px;color:var(--accent-cyan);font-weight:600">Objectif : 10/jour</div></div>` + s.map((x,i)=>{
     const sections = x.corps||[];
-    const sectionColors = {'HOOK':'#fe2c55','CONNEXION':'#f857a6','MÉTAPHORE':'#ffbd2e','TEASER':'#1da1f2','FRICTION':'#14f195','MICRO-ACTION':'#9945ff','CTA':'#ff4500'};
-    return `<div class="expandable" style="border-left:3px solid var(--accent-purple)"><div class="expandable-header" onclick="toggleExpandable(this)">
-      <div style="flex:1;min-width:0"><div style="display:flex;align-items:center;gap:8px;margin-bottom:5px"><span style="font-size:10px;padding:2px 8px;border-radius:10px;background:rgba(153,69,255,0.12);color:var(--accent-purple);font-weight:700">#${i+1}</span><span style="font-weight:600;font-size:13px;color:var(--text-primary)">${x.titre||'Sans titre'}</span></div>
-        <div style="font-size:12px;color:var(--text-secondary);line-height:1.5;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden">${x.hook||'—'}</div>
-        <div style="display:flex;gap:6px;margin-top:6px">${x.jtbd?`<span style="font-size:10px;padding:2px 8px;border-radius:10px;background:rgba(20,241,149,0.08);border:1px solid rgba(20,241,149,0.15);color:#14f195;font-weight:500">${x.jtbd}</span>`:''}<span style="font-size:10px;padding:2px 8px;border-radius:10px;background:rgba(255,189,46,0.08);border:1px solid rgba(255,189,46,0.15);color:#ffbd2e;font-weight:500">${x.duree_estimee||'45s'}</span></div>
+    const plat = (x.plateforme||'').toLowerCase();
+    const pc = platColors[plat]||'var(--accent-purple)';
+    const isThread = x.type==='thread';
+    const isPost = x.type==='post';
+    const isWritten = isThread||isPost;
+    // Badge plateforme
+    const platBadge = `<span style="font-size:9px;padding:2px 8px;border-radius:4px;font-weight:600;color:${pc};background:${pc}15;border:1px solid ${pc}30">${isThread?'Thread':isPost?'Post':(plat||'vidéo').toUpperCase()}</span>`;
+    // Ton badge
+    const tonColors = {TOFU:'#14f195',MOFU:'#ffbd2e',BOFU:'#f857a6'};
+    const tonBadge = x.ton?`<span style="font-size:9px;padding:2px 6px;border-radius:4px;font-weight:600;color:${tonColors[x.ton]||'#a78bfa'};background:${(tonColors[x.ton]||'#a78bfa')}12">${x.ton}</span>`:'';
+    // Expanded content: different for written vs video
+    let expandedContent;
+    if (isWritten) {
+      // Twitter thread / LinkedIn post — affichage naturel comme un blog
+      expandedContent = sections.map((c,j)=>{
+        const txt = (c.texte||'').replace(/\n/g,'<br>');
+        if (isThread) {
+          return `<div style="margin-bottom:14px;padding:14px 16px;border-radius:10px;background:rgba(0,0,0,0.25);border:1px solid ${pc}15;position:relative">
+            <div style="font-size:9px;color:${pc};font-weight:700;margin-bottom:8px;opacity:0.6">${c.timecode||''}</div>
+            <div style="font-size:13px;line-height:1.7;color:var(--text-primary)">${txt}</div>
+          </div>`;
+        } else {
+          return `<div style="margin-bottom:2px;padding:12px 16px;font-size:13px;line-height:1.8;color:var(--text-primary)">${txt}</div>`;
+        }
+      }).join(isPost?'<div style="border-top:1px solid var(--border-invisible)"></div>':'');
+      if (isPost) {
+        expandedContent = `<div style="background:rgba(0,0,0,0.2);border-radius:10px;border:1px solid ${pc}15;overflow:hidden;margin-bottom:16px">${expandedContent}</div>`;
+      }
+    } else {
+      // Video script — affichage timecode/action/texte
+      expandedContent = `<div style="margin-bottom:16px">${sections.map(c=>{
+        return `<div style="margin-bottom:6px;padding:8px 12px;border-radius:6px;background:rgba(0,0,0,0.25);border-left:2px solid ${pc}">
+          <div style="display:flex;justify-content:space-between;margin-bottom:3px">
+            <span style="font-size:10px;color:var(--text-ghost)">${c.action||''}</span>
+            <span style="font-size:10px;color:var(--text-ghost);font-family:'JetBrains Mono',monospace">${c.timecode||''}</span>
+          </div>
+          <div style="font-size:12px;line-height:1.5;color:var(--text-secondary)">${c.texte||''}</div>
+        </div>`;
+      }).join('')}</div>`;
+    }
+    const copyText = sections.map(c=>c.texte).join(isThread?'\\n\\n---\\n\\n':'\\n\\n');
+    return `<div class="expandable" style="border-left:4px solid ${pc};background:linear-gradient(90deg,${pc}06,transparent 40%)"><div class="expandable-header" onclick="toggleExpandable(this)">
+      <div style="flex:1;min-width:0"><div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;flex-wrap:wrap">${platBadge} ${tonBadge}<span style="font-weight:600;font-size:13px;color:var(--text-primary)">${x.titre||'Sans titre'}</span></div>
+        <div style="font-size:12px;color:var(--text-secondary);line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden">${(x.hook||'—').replace(/\n/g,' ')}</div>
+        <div style="display:flex;gap:6px;margin-top:6px;flex-wrap:wrap">${x.jtbd?`<span style="font-size:10px;padding:2px 8px;border-radius:10px;background:rgba(20,241,149,0.08);border:1px solid rgba(20,241,149,0.15);color:#14f195;font-weight:500">${x.jtbd}</span>`:''}<span style="font-size:10px;padding:2px 8px;border-radius:10px;background:rgba(255,189,46,0.08);border:1px solid rgba(255,189,46,0.15);color:#ffbd2e;font-weight:500">${x.duree_estimee||'—'}</span></div>
       </div>
       <span class="expandable-toggle" style="margin-left:12px">›</span>
     </div><div class="expandable-content">
-      <div style="margin-bottom:16px"><div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--accent-purple);margin-bottom:8px">Hook</div><div style="background:linear-gradient(135deg,rgba(153,69,255,0.06),rgba(20,241,149,0.03));padding:14px 16px;border-radius:8px;font-size:13px;line-height:1.6;border:1px solid rgba(153,69,255,0.12);color:var(--text-primary);font-weight:500">"${x.hook}"</div></div>
-      <div style="margin-bottom:16px"><div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);margin-bottom:10px">Script — 7 sections</div>${sections.map(c=>{const col=sectionColors[c.action?.split(' ')[0]?.toUpperCase()]||'#a78bfa';return `<div style="margin-bottom:8px;padding:10px 14px;border-radius:8px;background:rgba(0,0,0,0.3);border-left:2px solid ${col}"><div style="display:flex;justify-content:space-between;margin-bottom:4px"><span style="font-size:10px;font-weight:700;color:${col};text-transform:uppercase;letter-spacing:0.06em">${c.action||''}</span><span style="font-size:10px;color:var(--text-ghost);font-family:'JetBrains Mono',monospace">${c.timecode||''}</span></div><div style="font-size:12px;line-height:1.6;color:var(--text-secondary)">${c.texte||''}</div></div>`}).join('')}</div>
-      <div style="display:flex;gap:8px"><button class="copy-btn" onclick="copyToClipboard(\`${escapeHtml(sections.map(c=>c.texte).join(' '))}\`)">Copier le script</button><button class="copy-btn" onclick="toggleFilmed(this)">Non filmé</button></div>
+      ${expandedContent}
+      <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="copy-btn" onclick="copyToClipboard(\`${escapeHtml(copyText)}\`)">Copier ${isThread?'le thread':isPost?'le post':'le script'}</button>${!isWritten?'<button class="copy-btn" onclick="toggleFilmed(this)">Non filmé</button>':''}</div>
     </div></div>`}).join('') || '<div class="empty-state"><div class="empty-state-icon">●</div><div class="empty-state-title">Pas de scripts</div></div>';
 }
 
