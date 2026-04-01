@@ -1,0 +1,93 @@
+{
+  "version": "2.0",
+  "description": "Protocole de coordination Claude ↔ Minimax avec fallback automatique et crash recovery",
+
+  "agents": {
+    "claude": {
+      "tasks_primaires": ["copy", "audit", "watchdog"],
+      "tasks_fallback": ["scrape", "publish", "tracker"],
+      "identifiant_commit": "Claude-Opus",
+      "indicateur_actif": "Vérifie via git log si dernier commit Claude < 24h"
+    },
+    "minimax": {
+      "tasks_primaires": ["scrape", "publish", "tracker"],
+      "tasks_fallback": ["copy", "audit", "watchdog"],
+      "identifiant_commit": "Minimax-Agent",
+      "indicateur_actif": "Vérifie via git log si dernier commit Minimax < 24h"
+    }
+  },
+
+  "planning_journalier": [
+    { "heure": "07:10", "task": "scrape",   "primaire": "minimax", "fallback": "claude", "deadline": "08:15" },
+    { "heure": "08:30", "task": "copy",     "primaire": "claude",  "fallback": "minimax", "deadline": "09:00" },
+    { "heure": "09:09", "task": "publish",  "primaire": "minimax", "fallback": "claude", "deadline": "10:00" },
+    { "heure": "20:10", "task": "tracker",  "primaire": "minimax", "fallback": "claude", "deadline": "21:00", "jour": "dimanche" },
+    { "heure": "21:00", "task": "audit",    "primaire": "claude",  "fallback": "minimax", "deadline": "22:00", "jour": "mercredi" },
+    { "heure": "22:00", "task": "watchdog", "primaire": "claude",  "fallback": "minimax", "deadline": "23:00" }
+  ],
+
+  "regles_fallback": {
+    "description": "Si l'agent primaire n'a PAS complété sa tâche avant la deadline, l'agent fallback prend le relais automatiquement",
+    "detection": [
+      "1. L'agent fallback vérifie agent-status.json au moment de sa propre tâche",
+      "2. Si le champ heartbeats[task].status != 'done' ET la deadline est passée → FALLBACK",
+      "3. L'agent fallback exécute la tâche ET écrit dans agent-status.json avec agent='fallback:[nom]'",
+      "4. L'événement est logué dans fallback_log avec raison + timestamp"
+    ],
+    "anti_doublon": [
+      "1. TOUJOURS vérifier agent-status.json AVANT d'exécuter une tâche",
+      "2. Si status='done' ET date=aujourd'hui → NE PAS exécuter, passer à la suite",
+      "3. Écrire status='in_progress' AVANT de commencer (lock optimiste)",
+      "4. Si status='in_progress' ET completed_at < 30min → attendre, un autre agent est dessus"
+    ]
+  },
+
+  "crash_recovery": {
+    "description": "Si une IA plante en pleine tâche (status reste 'in_progress' > 45min), l'autre prend le relais",
+    "regles": [
+      "1. Si heartbeats[task].status == 'in_progress' depuis > 45 minutes → considérer comme crash",
+      "2. L'agent qui détecte le crash reset le status à 'crashed' et prend le relais",
+      "3. Log dans fallback_log: { reason: 'crash_recovery', crashed_agent: '...', recovered_by: '...' }",
+      "4. Si les DEUX agents sont down (aucun heartbeat depuis > 6h), le watchdog du soir génère une alerte"
+    ],
+    "alerte_totale": {
+      "condition": "Aucun commit git depuis > 12h un jour ouvré",
+      "action": "Le premier agent qui revient en ligne exécute TOUTES les tâches en retard dans l'ordre chronologique"
+    }
+  },
+
+  "sequence_de_verification": {
+    "chaque_tache": [
+      "STEP 1: git pull origin master (récupérer dernier état)",
+      "STEP 2: Lire data/agent-status.json",
+      "STEP 3: Vérifier si ma tâche est déjà 'done' aujourd'hui → SKIP si oui",
+      "STEP 4: Vérifier si tâche précédente est 'done' (dépendance)",
+      "STEP 5: Écrire status='in_progress' + commit + push",
+      "STEP 6: Exécuter la tâche",
+      "STEP 7: Écrire status='done' + completed_at + commit + push",
+      "STEP 8: Vérifier si une tâche en retard d'un autre agent nécessite fallback"
+    ]
+  },
+
+  "dependances": {
+    "copy": { "depend_de": "scrape", "si_absent": "Utiliser données du jour précédent" },
+    "publish": { "depend_de": "copy", "si_absent": "Republier scripts existants non publiés" },
+    "audit": { "depend_de": null },
+    "tracker": { "depend_de": null },
+    "watchdog": { "depend_de": null },
+    "scrape": { "depend_de": null }
+  },
+
+  "format_heartbeat": {
+    "exemple_write": {
+      "agent": "claude",
+      "completed_at": "2026-04-01T08:45:00Z",
+      "status": "done",
+      "date": "2026-04-01",
+      "output_files": ["scripts-video.json"],
+      "items_count": 10,
+      "fallback": false
+    },
+    "statuts_possibles": ["pending", "in_progress", "done", "crashed", "skipped"]
+  }
+}
