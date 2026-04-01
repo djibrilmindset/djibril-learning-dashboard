@@ -8,31 +8,21 @@
     "jtbd": "Sortir du salariat",
     "duree_estimee": "45s",
     "corps": [
-      {
-        "timecode": "0:00",
-        "action": "Face caméra, regard intense",
-        "texte": "Tu te lèves à 6h, tu rentres à 21h, et t'es toujours fauché..."
-      },
-      {
-        "timecode": "0:08",
-        "action": "Mouvement de recul",
-        "texte": "Le problème c'est pas que tu travailles pas assez. Tu bosses TROP."
-      },
-      {
-        "timecode": "0:20",
-        "action": "Se rapprocher caméra",
-        "texte": "Le piège c'est que tu es payé à l'heure. Pas à la valeur que tu crées."
-      },
-      {
-        "timecode": "0:32",
-        "action": "Geste d'explication",
-        "texte": "Plus tu travailles, plus tu es fatigué. Plus tu es fatigué, moins tu penses clair."
-      },
-      {
-        "timecode": "0:40",
-        "action": "Point vers caméra",
-        "texte": "C'est pas une coïncidence. C'est un piège."
-      }
+      {"timecode": "0:00", "action": "Face caméra, regard fixe", "texte": "Tu te lèves à 6h."},
+      {"timecode": "0:02", "action": "Montrer réveil", "texte": "T'as même pas ouvert les yeux que t'es déjà en retard."},
+      {"timecode": "0:05", "action": "Transition rapide — bureau/salon/chantier", "texte": "Tu bosses. 8h. 10h. 12h."},
+      {"timecode": "0:08", "action": "Montrer horloge qui tourne vite", "texte": "Et à 21h tu rentres."},
+      {"timecode": "0:10", "action": "S'asseoir, sortir téléphone", "texte": "Tu ouvres ton appli banque."},
+      {"timecode": "0:13", "action": "Gros plan écran — solde", "texte": "Et là... 247 euros."},
+      {"timecode": "0:16", "action": "Poser le téléphone, regard vide", "texte": "247 euros pour 12h de ta vie."},
+      {"timecode": "0:19", "action": "Se rapprocher caméra, voix basse", "texte": "Et tu te dis : comment c'est possible ?"},
+      {"timecode": "0:22", "action": "Pause. Regard direct.", "texte": "Je vais te dire comment."},
+      {"timecode": "0:25", "action": "Geste d'explication, ton professoral", "texte": "T'es payé à l'heure. Pas à la valeur que tu crées."},
+      {"timecode": "0:29", "action": "Montrer calcul sur papier", "texte": "Ton patron vend ton travail 3 fois ce qu'il te paie."},
+      {"timecode": "0:33", "action": "Frapper la table doucement", "texte": "Et toi tu prends les miettes."},
+      {"timecode": "0:36", "action": "Se pencher en avant", "texte": "Plus tu travailles, plus tu es fatigué."},
+      {"timecode": "0:39", "action": "Geste circulaire", "texte": "Plus tu es fatigué, moins tu peux réfléchir à comment sortir."},
+      {"timecode": "0:42", "action": "Regard intense final", "texte": "C'est pas un accident. C'est un piège. Et tu es dedans."}
     ]
   },
   {
@@ -44,31 +34,23 @@
     "jtbd": "Reconnaître son épuisement",
     "duree_estimee": "60s",
     "corps": [
-      {
-        "timecode": "0:00",
-        "action": "Gros plan fatigue",
-        "texte": "Regarde tes mains. Elles tremblent."
-      },
-      {
-        "timecode": "0:08",
-        "action": "Panorama du salon",
-        "texte": "C'est pas ta passion qui meurt. C'est ton corps qui crie."
-      },
-      {
-        "timecode": "0:20",
-        "action": "Close-up sur montre",
-        "texte": "8h du matin. Encore 10h de debout."
-      },
-      {
-        "timecode": "0:35",
-        "action": "Retour face caméra, sérieux",
-        "texte": "Et après 20 ans tu te dis : 'Pourquoi j'ai fait ça ?'"
-      },
-      {
-        "timecode": "0:50",
-        "action": "Transition lumière",
-        "texte": "Parce qu'on t'a jamais dit qu'il y avait une autre option."
-      }
+      {"timecode": "0:00", "action": "Gros plan mains — légèrement tremblantes", "texte": "Regarde tes mains."},
+      {"timecode": "0:03", "action": "Zoom lent sur les doigts", "texte": "Elles tremblent un peu, non ?"},
+      {"timecode": "0:06", "action": "Lever les mains, les observer", "texte": "C'est pas du stress. C'est 15 ans de ciseaux."},
+      {"timecode": "0:09", "action": "Panorama salon vide, 6h du matin", "texte": "6h du matin. Le salon est vide. Toi t'es déjà là."},
+      {"timecode": "0:13", "action": "Préparer les outils, geste mécanique", "texte": "Premier client dans 30 minutes. T'en as 15 aujourd'hui."},
+      {"timecode": "0:17", "action": "Montrer la chaise, s'asseoir dessus", "texte": "15 coupes. Debout. Sans pause."},
+      {"timecode": "0:20", "action": "Montrer chronomètre — 20 min", "texte": "20 minutes par client. Pas le temps de boire un verre d'eau."},
+      {"timecode": "0:24", "action": "Couper dans le vide, geste répétitif", "texte": "Le même geste. Encore. Encore. Encore."},
+      {"timecode": "0:28", "action": "S'arrêter, regarder ses mains", "texte": "Et le soir tes doigts sont raides."},
+      {"timecode": "0:31", "action": "Sortir calculatrice", "texte": "On fait les comptes. 15 coupes fois 15 euros."},
+      {"timecode": "0:34", "action": "Écrire : 225€", "texte": "225 euros. Brut."},
+      {"timecode": "0:37", "action": "Barrer, écrire les charges", "texte": "Loyer du local : 1200. Électricité : 150. Produits : 300."},
+      {"timecode": "0:41", "action": "Calculer, visage décomposé", "texte": "Il te faut 90 coupes par semaine juste pour survivre."},
+      {"timecode": "0:45", "action": "Poser la calculatrice, voix cassée", "texte": "90 coupes. 18 par jour. 6 jours sur 7."},
+      {"timecode": "0:49", "action": "Silence. Regard dans le vide.", "texte": "Et le dimanche tu dors. Parce que t'as plus de force."},
+      {"timecode": "0:53", "action": "Se lever lentement, tourner le dos", "texte": "Ça fait 7 ans que je fais ça. 7000 par mois."},
+      {"timecode": "0:57", "action": "Se retourner vers caméra", "texte": "Et un jour j'ai dit stop. Pas demain. Aujourd'hui."}
     ]
   },
   {
@@ -80,221 +62,169 @@
     "jtbd": "Redéfinir la richesse",
     "duree_estimee": "50s",
     "corps": [
-      {
-        "timecode": "0:00",
-        "action": "Tableau blanc - écrire",
-        "texte": "Richesse = argent ? Non."
-      },
-      {
-        "timecode": "0:08",
-        "action": "Effacer, nouvelle équation",
-        "texte": "Richesse = temps que tu contrôles"
-      },
-      {
-        "timecode": "0:18",
-        "action": "Montrer téléphone - calendar vide",
-        "texte": "Un barbier indépendant avec 5 clients par jour = 30h de liberté par semaine"
-      },
-      {
-        "timecode": "0:32",
-        "action": "Geste large",
-        "texte": "Pendant qu'un salarié travaille 40h, toi tu en contrôles 50"
-      },
-      {
-        "timecode": "0:45",
-        "action": "Regard caméra",
-        "texte": "C'est ça la vraie richesse."
-      }
+      {"timecode": "0:00", "action": "Face caméra, sourire", "texte": "Tu veux être riche ?"},
+      {"timecode": "0:02", "action": "Pause dramatique", "texte": "Ok. Mais c'est quoi être riche pour toi ?"},
+      {"timecode": "0:05", "action": "Montrer images de voitures/montres", "texte": "Lamborghini ? Rolex ? Appart à Dubaï ?"},
+      {"timecode": "0:09", "action": "Balayer de la main", "texte": "Oublie tout ça."},
+      {"timecode": "0:11", "action": "Montrer un calendrier vide", "texte": "Regarde ça. Un lundi matin. Rien de prévu."},
+      {"timecode": "0:15", "action": "Sourire large", "texte": "Ça. C'est la richesse."},
+      {"timecode": "0:17", "action": "Ton sérieux", "texte": "C'est l'heure que personne te prend."},
+      {"timecode": "0:20", "action": "Geste de compter sur les doigts", "texte": "Quand je coupais des cheveux, je bossais 60h par semaine."},
+      {"timecode": "0:24", "action": "Montrer calendrier plein", "texte": "Lundi 8h. Mardi 8h. Mercredi 8h. Samedi 8h."},
+      {"timecode": "0:28", "action": "Transition — calendrier qui se vide", "texte": "Aujourd'hui ? Je travaille 20h."},
+      {"timecode": "0:31", "action": "Montrer la différence", "texte": "Je gagne plus. En 3 fois moins de temps."},
+      {"timecode": "0:35", "action": "Se rapprocher caméra", "texte": "Parce que j'ai arrêté de vendre mes heures."},
+      {"timecode": "0:38", "action": "Geste d'explication", "texte": "J'ai commencé à vendre de la valeur."},
+      {"timecode": "0:41", "action": "Montrer contenu créé sur téléphone", "texte": "Un contenu que je fais une fois, qui travaille pour moi 24h/24."},
+      {"timecode": "0:45", "action": "Regard direct", "texte": "Ça c'est la liberté. Pas un million. Le temps."},
+      {"timecode": "0:48", "action": "Dernier plan — horloge", "texte": "Et toi, combien d'heures tu vends encore ?"}
     ]
   },
   {
     "id": "script_004",
     "titre": "Pourquoi tu peux pas sortir du salariat",
-    "hook": "Ce pas c'est pas la peur. C'est l'illusion de la sécurité.",
-    "plateforme": "threads",
+    "hook": "C'est pas la peur. C'est l'illusion de la sécurité.",
+    "plateforme": "youtube",
     "ton": "MOFU",
     "jtbd": "Vaincre la peur du changement",
     "duree_estimee": "55s",
     "corps": [
-      {
-        "timecode": "0:00",
-        "action": "Chuchotement",
-        "texte": "On t'a fait croire qu'un CDI c'était sûr."
-      },
-      {
-        "timecode": "0:08",
-        "action": "Voix normale",
-        "texte": "Mais regarde autour. Combien de 'CDI sûrs' ont disparu ces 10 ans ?"
-      },
-      {
-        "timecode": "0:20",
-        "action": "Animation - barre de sécurité qui explose",
-        "texte": "Le vrai piège c'est de dépendre d'UNE personne pour ta paie."
-      },
-      {
-        "timecode": "0:35",
-        "action": "Montrer plusieurs sources",
-        "texte": "Un indépendant avec 10 clients ? Il en perd 2, il en gagne 3. Pas de problème."
-      },
-      {
-        "timecode": "0:50",
-        "action": "Point direct",
-        "texte": "La vraie sécurité c'est la diversité."
-      }
+      {"timecode": "0:00", "action": "Chuchoter, se rapprocher", "texte": "Je vais te dire un truc."},
+      {"timecode": "0:03", "action": "Voix normale", "texte": "Ton CDI c'est pas de la sécurité."},
+      {"timecode": "0:06", "action": "Pause, laisser l'effet", "texte": "C'est une laisse."},
+      {"timecode": "0:08", "action": "Montrer contrat papier", "texte": "Regarde ce papier. C'est écrit quoi dessus ?"},
+      {"timecode": "0:12", "action": "Lire à haute voix", "texte": "'Tu travailles pour nous. On te paie. Si ça va pas, on te vire.'"},
+      {"timecode": "0:16", "action": "Poser le papier", "texte": "Traduction : tu dépends d'UNE personne."},
+      {"timecode": "0:19", "action": "Montrer un doigt levé", "texte": "UN patron. UN salaire. UNE source de revenu."},
+      {"timecode": "0:23", "action": "Geste de couper", "texte": "Si ce fil-là casse... tu tombes."},
+      {"timecode": "0:26", "action": "Montrer téléphone — articles de licenciements", "texte": "Combien de boîtes ont fermé ces 5 dernières années ?"},
+      {"timecode": "0:30", "action": "Compter sur les doigts", "texte": "Des milliers. Des gens comme toi. Avec un CDI."},
+      {"timecode": "0:34", "action": "Transition — montrer plusieurs fils", "texte": "Maintenant imagine. 5 clients. 3 projets. 2 sources en ligne."},
+      {"timecode": "0:38", "action": "Couper un fil", "texte": "T'en perds un ? Pas grave. T'en as 9 autres."},
+      {"timecode": "0:41", "action": "Se rapprocher, ton de conviction", "texte": "ÇA c'est la vraie sécurité."},
+      {"timecode": "0:44", "action": "Geste large", "texte": "Pas un papier signé par quelqu'un d'autre."},
+      {"timecode": "0:47", "action": "Point vers caméra", "texte": "La diversification. C'est la seule protection."},
+      {"timecode": "0:51", "action": "Regard final, voix calme", "texte": "Et toi tu le sais. Tu le sens. Maintenant agis."}
     ]
   },
   {
     "id": "script_005",
     "titre": "Pourquoi tu procrastines",
     "hook": "Tu dis 'demain je commence'. Demain devient jamais.",
-    "plateforme": "youtube",
+    "plateforme": "tiktok",
     "ton": "TOFU",
     "jtbd": "Vaincre la procrastination",
     "duree_estimee": "65s",
     "corps": [
-      {
-        "timecode": "0:00",
-        "action": "Assise relax sur canapé",
-        "texte": "Demain. C'est le mot le plus cher de ta vie. Vraiment."
-      },
-      {
-        "timecode": "0:12",
-        "action": "Se lever d'un coup",
-        "texte": "Parce que demain ne vient jamais."
-      },
-      {
-        "timecode": "0:20",
-        "action": "Timeline en arrière",
-        "texte": "Il y a 5 ans tu disais 'demain je lance mon truc'. Toujours pas fait."
-      },
-      {
-        "timecode": "0:35",
-        "action": "Regard sérieux",
-        "texte": "La procrastination c'est pas de la flemmardise. C'est de la peur."
-      },
-      {
-        "timecode": "0:48",
-        "action": "Montrer téléphone",
-        "texte": "Et la peur se nourrit de tes pensées. Pas d'action."
-      },
-      {
-        "timecode": "0:60",
-        "action": "Action immédiate - début de quelque chose",
-        "texte": "Donc aujourd'hui. Une seule action. Tout de suite."
-      }
+      {"timecode": "0:00", "action": "Assis, regard vide, voix plate", "texte": "Demain."},
+      {"timecode": "0:02", "action": "Répéter, ton insistant", "texte": "Demain je commence."},
+      {"timecode": "0:04", "action": "Secouer la tête", "texte": "Demain je lance mon business."},
+      {"timecode": "0:07", "action": "Se lever brusquement", "texte": "STOP."},
+      {"timecode": "0:09", "action": "Montrer calendrier — 2021 barré", "texte": "En 2021 tu disais demain."},
+      {"timecode": "0:12", "action": "Barrer 2022", "texte": "En 2022 aussi."},
+      {"timecode": "0:14", "action": "Barrer 2023, 2024, 2025", "texte": "2023. 2024. 2025. Toujours demain."},
+      {"timecode": "0:18", "action": "Jeter le calendrier", "texte": "Ça fait 5 ans que tu dis demain."},
+      {"timecode": "0:21", "action": "Face caméra, ton sérieux", "texte": "Et tu sais pourquoi ?"},
+      {"timecode": "0:23", "action": "Pause", "texte": "C'est pas parce que t'es fainéant."},
+      {"timecode": "0:26", "action": "Se rapprocher", "texte": "C'est parce que t'as peur."},
+      {"timecode": "0:28", "action": "Voix douce", "texte": "Peur de te planter."},
+      {"timecode": "0:31", "action": "Voix montante", "texte": "Peur que les gens se moquent."},
+      {"timecode": "0:34", "action": "Voix forte", "texte": "Peur de voir que t'es capable mais que t'as perdu 10 ans."},
+      {"timecode": "0:38", "action": "Montrer téléphone — scroll TikTok", "texte": "Alors tu scrolles. Netflix. TikTok. YouTube."},
+      {"timecode": "0:42", "action": "Poser le téléphone face vers le bas", "texte": "Tu te distrais pour pas affronter la vérité."},
+      {"timecode": "0:46", "action": "Regard fixe", "texte": "La vérité c'est que tu as le choix. Maintenant."},
+      {"timecode": "0:50", "action": "Montrer un post-it vierge", "texte": "Prends un papier. Écris UNE chose à faire."},
+      {"timecode": "0:54", "action": "Écrire dessus", "texte": "Une seule. La plus petite possible."},
+      {"timecode": "0:57", "action": "Coller le post-it", "texte": "Et fais-la. Là. Maintenant."},
+      {"timecode": "0:60", "action": "Regard caméra, sourire léger", "texte": "Pas demain. Pas lundi. Maintenant."},
+      {"timecode": "0:63", "action": "Noir. Texte à l'écran.", "texte": "C'est tout ce qu'il faut pour commencer."}
     ]
   },
   {
     "id": "script_006",
     "titre": "Le piège du CDI",
     "hook": "Ils t'ont vendu la sécurité. Ils t'ont vendu des chaînes.",
-    "plateforme": "tiktok",
-    "ton": "BOFU",
+    "plateforme": "instagram",
+    "ton": "TOFU",
     "jtbd": "Décider de s'indépendant",
     "duree_estimee": "48s",
     "corps": [
-      {
-        "timecode": "0:00",
-        "action": "Montrer contrat papier",
-        "texte": "Regarde ça. Ça s'appelle un CDI. Ça veut dire Contrat Dépendance Infini."
-      },
-      {
-        "timecode": "0:10",
-        "action": "Déchirer le papier - arrêt",
-        "texte": "Ok, pas infini. Mais DÉPENDANT, oui."
-      },
-      {
-        "timecode": "0:22",
-        "action": "Montrer téléphone - notifications boss",
-        "texte": "On regarde tes heures. On vérifie ton travail. On contrôle tes rêves."
-      },
-      {
-        "timecode": "0:36",
-        "action": "Geste de libération",
-        "texte": "Indépendant = tu es patron et client à la fois. TU décides."
-      },
-      {
-        "timecode": "0:45",
-        "action": "Caméra directe",
-        "texte": "Lequel choisirais-tu ?"
-      }
+      {"timecode": "0:00", "action": "Montrer contrat papier, vue de haut", "texte": "CDI."},
+      {"timecode": "0:02", "action": "Lire lentement", "texte": "Contrat à Durée Indéterminée."},
+      {"timecode": "0:05", "action": "Lever les yeux", "texte": "Traduction : tu travailles pour eux. Jusqu'à quand ? On sait pas."},
+      {"timecode": "0:09", "action": "Plier le contrat lentement", "texte": "Et on t'a dit que c'était bien."},
+      {"timecode": "0:12", "action": "Imiter les parents/profs", "texte": "'Trouve un CDI mon fils. C'est la sécurité.'"},
+      {"timecode": "0:16", "action": "Retour à soi, ton sec", "texte": "Sécurité ? Vraiment ?"},
+      {"timecode": "0:18", "action": "Montrer téléphone — message du boss à 22h", "texte": "22h. Ton boss t'écrit. 'Faut qu'on parle demain.'"},
+      {"timecode": "0:22", "action": "Imiter l'angoisse", "texte": "Et là tu dors pas de la nuit."},
+      {"timecode": "0:25", "action": "Montrer badge entreprise", "texte": "Il regarde tes heures. Il check si tu scrolles."},
+      {"timecode": "0:28", "action": "Poser le badge, geste de libération", "texte": "Il décide quand tu manges. Quand tu pars en vacances."},
+      {"timecode": "0:32", "action": "Contraste — montrer agenda vide", "texte": "Indépendant c'est ça. C'est toi qui décides."},
+      {"timecode": "0:35", "action": "Montrer choix sur téléphone", "texte": "Tu travailles quand tu veux. D'où tu veux."},
+      {"timecode": "0:38", "action": "Sourire sincère", "texte": "Tu prends tes vacances quand TOI tu en as besoin."},
+      {"timecode": "0:41", "action": "Regard direct caméra", "texte": "C'est pas plus facile. Mais c'est libre."},
+      {"timecode": "0:44", "action": "Dernier plan — déchirer le contrat", "texte": "Et entre facile et libre... moi j'ai choisi."}
     ]
   },
   {
     "id": "script_007",
     "titre": "Reconversion : t'es pas trop vieux",
     "hook": "À 35 ans tu crois que c'est fini. C'est juste le début.",
-    "plateforme": "linkedin",
+    "plateforme": "youtube",
     "ton": "MOFU",
     "jtbd": "Croire en sa reconversion",
     "duree_estimee": "70s",
     "corps": [
-      {
-        "timecode": "0:00",
-        "action": "Photo d'un barbier gris qui sourit",
-        "texte": "Cet homme a 38 ans. Il croyait que son temps était passé."
-      },
-      {
-        "timecode": "0:12",
-        "action": "Transition",
-        "texte": "Aujourd'hui il gère 3 barbiers et forme des jeunes."
-      },
-      {
-        "timecode": "0:25",
-        "action": "Retour face caméra",
-        "texte": "Comment ? Il a arrêté de crier 'c'est trop tard' et il a commencé."
-      },
-      {
-        "timecode": "0:40",
-        "action": "Animation - timeline",
-        "texte": "30s pour apprendre le digital. 30j pour faire 100€. 6m pour en faire 1000."
-      },
-      {
-        "timecode": "0:58",
-        "action": "Regard direct",
-        "texte": "Tu crois que t'es trop vieux. Mais tu es pile au bon moment."
-      },
-      {
-        "timecode": "0:68",
-        "action": "Fin douce",
-        "texte": "Les 5 prochaines années tu peux les vivre sur ton plan ou sur celui d'un autre."
-      }
+      {"timecode": "0:00", "action": "Face caméra, ton calme", "texte": "T'as 35 ans."},
+      {"timecode": "0:03", "action": "Pause", "texte": "Ou 40. Ou 45."},
+      {"timecode": "0:05", "action": "Imiter la pensée intérieure", "texte": "Et dans ta tête tu te dis : c'est trop tard."},
+      {"timecode": "0:09", "action": "Secouer la tête", "texte": "J'ai raté le coche. Les jeunes ils ont compris avant moi."},
+      {"timecode": "0:13", "action": "Se rapprocher caméra", "texte": "Je vais te dire un truc."},
+      {"timecode": "0:15", "action": "Ton direct", "texte": "Le Colonel Sanders a lancé KFC à 65 ans."},
+      {"timecode": "0:19", "action": "Compter sur les doigts", "texte": "Vera Wang a commencé la mode à 40."},
+      {"timecode": "0:22", "action": "Sourire", "texte": "Samuel L. Jackson a percé à 46 ans."},
+      {"timecode": "0:25", "action": "Ton sérieux", "texte": "Et toi tu me dis que t'es trop vieux à 35 ?"},
+      {"timecode": "0:29", "action": "Montrer photo — barbier fatigué", "texte": "Moi j'avais un salon. 7 ans. 7000 par mois."},
+      {"timecode": "0:33", "action": "Montrer les mains", "texte": "Mes mains étaient détruites."},
+      {"timecode": "0:36", "action": "Transition — ouvrir un ordinateur", "texte": "J'ai dit : j'apprends le digital."},
+      {"timecode": "0:39", "action": "Montrer écran — tutoriels", "texte": "2 mois. Juste les bases. Tous les soirs après le salon."},
+      {"timecode": "0:43", "action": "Transition — premiers revenus", "texte": "6 mois plus tard. 1000 euros en plus par mois."},
+      {"timecode": "0:47", "action": "Montrer la croissance", "texte": "Un an après ? J'ai quitté le salon."},
+      {"timecode": "0:50", "action": "Geste large", "texte": "Aujourd'hui je crée du contenu. Je forme des gens."},
+      {"timecode": "0:54", "action": "Ton professoral", "texte": "Les 5 prochaines années vont passer."},
+      {"timecode": "0:57", "action": "Montrer deux chemins avec les mains", "texte": "Avec ou sans toi dedans."},
+      {"timecode": "0:60", "action": "Regard direct, voix forte", "texte": "Tu préfères les regarder passer ? Ou les utiliser ?"},
+      {"timecode": "0:64", "action": "Sourire sincère", "texte": "T'es pas trop vieux. T'es pile à l'heure."},
+      {"timecode": "0:67", "action": "Fade to black — texte", "texte": "Commence aujourd'hui."}
     ]
   },
   {
     "id": "script_008",
     "titre": "Discipline = liberté",
     "hook": "La discipline c'est pas une punition. C'est ta meilleure arme.",
-    "plateforme": "twitter",
+    "plateforme": "tiktok",
     "ton": "BOFU",
     "jtbd": "Développer la discipline",
     "duree_estimee": "52s",
     "corps": [
-      {
-        "timecode": "0:00",
-        "action": "Montrer montre - 5h du matin",
-        "texte": "5h du matin. Personne voit ce que tu fais."
-      },
-      {
-        "timecode": "0:10",
-        "action": "Montrer routine - meditation, lecture, exercise",
-        "texte": "Mais TOI tu sais. Discipline."
-      },
-      {
-        "timecode": "0:22",
-        "action": "Fast-forward - même gars à 10h",
-        "texte": "8h du matin : pendant que 99% dormaient, toi tu as avancé."
-      },
-      {
-        "timecode": "0:36",
-        "action": "Animation jours qui passent",
-        "texte": "30 jours de ça, c'est 30 jours d'avance sur tout le monde."
-      },
-      {
-        "timecode": "0:48",
-        "action": "Caméra finale",
-        "texte": "C'est ça la discipline. C'est ça la liberté."
-      }
+      {"timecode": "0:00", "action": "Chambre noire. Réveil : 5h00.", "texte": "5h du matin."},
+      {"timecode": "0:03", "action": "Montrer la fenêtre — nuit dehors", "texte": "Tout le monde dort."},
+      {"timecode": "0:05", "action": "Se lever d'un coup", "texte": "Toi tu te lèves."},
+      {"timecode": "0:07", "action": "Poser les pieds par terre", "texte": "Pas parce que t'as envie."},
+      {"timecode": "0:10", "action": "Regard caméra", "texte": "Parce que t'as décidé."},
+      {"timecode": "0:13", "action": "Montage rapide — méditation", "texte": "Méditation. 10 minutes. Le cerveau se calme."},
+      {"timecode": "0:16", "action": "Montage — lire un livre", "texte": "Lecture. 15 minutes. Le cerveau s'aiguise."},
+      {"timecode": "0:19", "action": "Montage — pompes", "texte": "Sport. 20 minutes. Le corps se réveille."},
+      {"timecode": "0:22", "action": "Regarder l'heure — 5h45", "texte": "Il est 5h45. T'as déjà gagné ta journée."},
+      {"timecode": "0:26", "action": "Transition — 9h, bureau, énergie", "texte": "À 9h t'as le double d'énergie de tout le monde."},
+      {"timecode": "0:30", "action": "Montrer calendrier — cocher jour 1", "texte": "Jour 1. Tu sens rien."},
+      {"timecode": "0:33", "action": "Cocher jour 7", "texte": "Jour 7. Tu dors mieux."},
+      {"timecode": "0:35", "action": "Cocher jour 30", "texte": "Jour 30. Les gens te disent 'tu as changé'."},
+      {"timecode": "0:38", "action": "Cocher jour 90", "texte": "Jour 90. TOI tu sais que t'as changé."},
+      {"timecode": "0:41", "action": "Se rapprocher caméra, ton intime", "texte": "Les gens pensent que la discipline c'est une prison."},
+      {"timecode": "0:44", "action": "Secouer la tête", "texte": "Non. C'est la seule clé."},
+      {"timecode": "0:47", "action": "Montrer la porte ouverte — lumière", "texte": "La clé qui ouvre la porte de la liberté."},
+      {"timecode": "0:50", "action": "Regard final, voix posée", "texte": "Discipline égale liberté. Point."}
     ]
   }
 ]

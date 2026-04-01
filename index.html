@@ -1302,24 +1302,23 @@ body::before {
   .sidebar-brand-text .main { font-size: 13px; }
   .sidebar-brand-text .sub { font-size: 8px; }
   .sidebar-sep, .sidebar-label, .sidebar-footer { display: none; }
-  /* Nav tabs row — horizontal scroll */
+  /* Nav tabs — wrap on 2 rows, all visible */
   .sidebar-nav {
-    flex-direction: row; gap: 0; flex-wrap: nowrap;
-    overflow-x: auto; overflow-y: hidden;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none; /* Firefox */
-    padding: 0 6px;
+    flex-direction: row; gap: 2px; flex-wrap: wrap;
+    overflow: visible;
+    padding: 4px 8px 6px;
+    justify-content: center;
   }
-  .sidebar-nav::-webkit-scrollbar { display: none; } /* Safari/Chrome */
   .nav-item {
-    white-space: nowrap; padding: 10px 12px; font-size: 11px;
-    flex-shrink: 0; border-radius: 0;
-    border-bottom: 2px solid transparent;
+    white-space: nowrap; padding: 6px 10px; font-size: 11px;
+    flex-shrink: 0; border-radius: 6px;
+    border: 1px solid transparent;
     transition: all 0.15s ease;
   }
   .nav-item.active {
-    border-bottom-color: var(--accent-purple);
-    background: rgba(153,69,255,0.06);
+    background: rgba(153,69,255,0.12);
+    border-color: rgba(153,69,255,0.3);
+    color: var(--text-primary);
   }
   .nav-item.active::before { display: none; }
   .nav-dot { width: 5px; height: 5px; }
