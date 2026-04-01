@@ -1323,8 +1323,8 @@ body::before {
   .nav-item.active::before { display: none; }
   .nav-dot { width: 5px; height: 5px; }
   .main-content { overflow: visible; }
-  .main-header { padding: 12px 16px; position: sticky; top: 82px; z-index: 90; background: rgba(6,6,10,0.9); backdrop-filter: blur(16px); }
-  .main-header h1 { font-size: 16px; }
+  .main-header { padding: 10px 14px; position: relative; top: auto; z-index: 1; background: transparent; backdrop-filter: none; border-bottom: 1px solid var(--border-invisible); }
+  .main-header h1 { font-size: 18px; }
   .pages { padding: 14px; overflow: visible; }
   .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr !important; }
   .filters { gap: 4px; flex-wrap: wrap; }
@@ -1354,7 +1354,7 @@ body::before {
   .pages { padding: 10px; }
   .expandable-header { padding: 10px 12px; }
   .filter-btn { padding: 4px 8px; font-size: 9px; }
-  .main-header { top: 72px; }
+  .main-header { padding: 8px 10px; }
   [style*="grid-template-columns"] { grid-template-columns: repeat(2, 1fr) !important; }
   .expandable-content [style*="grid-template-columns"] { grid-template-columns: 1fr !important; }
   .account-followers { font-size: 20px; }
