@@ -1284,23 +1284,47 @@ body::before {
   body { overflow: auto; height: auto; }
   .app { flex-direction: column; height: auto; min-height: 100vh; }
   .sidebar {
-    width: 100%; height: auto; flex-direction: row;
-    padding: 8px 12px; border-right: none;
+    width: 100%; height: auto; flex-direction: column;
+    padding: 0; border-right: none;
     border-bottom: 1px solid var(--border-invisible);
-    overflow-x: auto; align-items: center;
+    overflow: visible; align-items: stretch;
     position: sticky; top: 0; z-index: 100;
-    background: rgba(6,6,10,0.95);
+    background: rgba(6,6,10,0.97);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
   }
-  .sidebar-brand { margin-bottom: 0; min-width: fit-content; }
-  .sidebar-mark { width: 28px; height: 28px; font-size: 14px; }
+  /* Brand row — compact on mobile */
+  .sidebar-brand {
+    margin-bottom: 0; padding: 8px 14px;
+    border-bottom: 1px solid var(--border-invisible);
+  }
+  .sidebar-mark { width: 26px; height: 26px; font-size: 12px; }
+  .sidebar-brand-text .main { font-size: 13px; }
+  .sidebar-brand-text .sub { font-size: 8px; }
   .sidebar-sep, .sidebar-label, .sidebar-footer { display: none; }
-  .sidebar-nav { flex-direction: row; gap: 2px; overflow-x: auto; flex-wrap: nowrap; }
-  .nav-item { white-space: nowrap; padding: 7px 10px; font-size: 11px; }
+  /* Nav tabs row — horizontal scroll */
+  .sidebar-nav {
+    flex-direction: row; gap: 0; flex-wrap: nowrap;
+    overflow-x: auto; overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+    padding: 0 6px;
+  }
+  .sidebar-nav::-webkit-scrollbar { display: none; } /* Safari/Chrome */
+  .nav-item {
+    white-space: nowrap; padding: 10px 12px; font-size: 11px;
+    flex-shrink: 0; border-radius: 0;
+    border-bottom: 2px solid transparent;
+    transition: all 0.15s ease;
+  }
+  .nav-item.active {
+    border-bottom-color: var(--accent-purple);
+    background: rgba(153,69,255,0.06);
+  }
   .nav-item.active::before { display: none; }
+  .nav-dot { width: 5px; height: 5px; }
   .main-content { overflow: visible; }
-  .main-header { padding: 12px 16px; position: sticky; top: 52px; z-index: 90; background: rgba(6,6,10,0.9); backdrop-filter: blur(16px); }
+  .main-header { padding: 12px 16px; position: sticky; top: 82px; z-index: 90; background: rgba(6,6,10,0.9); backdrop-filter: blur(16px); }
   .main-header h1 { font-size: 16px; }
   .pages { padding: 14px; overflow: visible; }
   .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr !important; }
@@ -1313,32 +1337,26 @@ body::before {
   .account-card { padding: 14px; }
   .tabs { gap: 0; flex-wrap: wrap; }
   .tab { padding: 8px 12px; font-size: 11px; }
-  /* FORCE summary stat grids to 2 cols on mobile */
   .summary-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 8px !important; }
-  /* Account cards + other grids = 1 col */
   #comptesGrid, .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr !important; }
-  /* Fix 4-col detail grids inside expandables = 2 cols */
   .expandable-content [style*="grid-template-columns"] { grid-template-columns: 1fr 1fr !important; }
-  /* Overview stat cards */
   .overview-stats { grid-template-columns: repeat(2, 1fr) !important; }
-  /* Hide particles and orbs on mobile for perf */
   .particles, .orb, .aurora, .cursor-glow { display: none; }
   body::before { display: none; }
-  /* Fix overflow issues on mobile */
   .page { overflow-x: hidden; }
   * { max-width: 100%; box-sizing: border-box; }
 }
 
 @media (max-width: 480px) {
-  .sidebar { padding: 6px 8px; }
-  .nav-item { padding: 6px 8px; font-size: 10px; }
+  .sidebar-brand { padding: 6px 10px; }
+  .sidebar-mark { width: 24px; height: 24px; font-size: 11px; }
+  .sidebar-brand-text .main { font-size: 12px; }
+  .nav-item { padding: 8px 10px; font-size: 10px; }
   .pages { padding: 10px; }
   .expandable-header { padding: 10px 12px; }
   .filter-btn { padding: 4px 8px; font-size: 9px; }
-  .main-header { top: 46px; }
-  /* All summary grids = 2 cols on small phone */
+  .main-header { top: 72px; }
   [style*="grid-template-columns"] { grid-template-columns: repeat(2, 1fr) !important; }
-  /* Detail grids inside cards = 1 col */
   .expandable-content [style*="grid-template-columns"] { grid-template-columns: 1fr !important; }
   .account-followers { font-size: 20px; }
 }
