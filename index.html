@@ -1749,12 +1749,17 @@ function renderScripts() {
 }
 
 function renderVideosContent() {
-  const raw = APP_STATE.data['videos-niche']||[];
-  const v = Array.isArray(raw)?raw:(raw.videos||[]);
-  document.getElementById('videosTab').innerHTML = v.map(x=>`
-    <div class="list-item"><div class="list-item-main"><div class="list-item-title">${x.title||x.titre_fr||x.titre||'Sans titre'}</div>
-    <div class="list-item-meta">${x.platform||x.plateforme||'—'} · ${x.vues?x.vues.toLocaleString('fr-FR')+' vues':'0 vues'}</div></div>
-    <div class="list-item-right"><span class="badge badge-best">Suivi</span></div></div>`).join('') || '<div class="empty-state"><div class="empty-state-icon">●</div><div class="empty-state-title">Pas de vidéos</div></div>';
+  // Affiche MES posts publiés (pas les vidéos de veille niche)
+  const queue = APP_STATE.data['post-queue']||[];
+  const posted = queue.filter(p=>p.status==='posted'||p.status==='queued');
+  const pc = {'twitter':'#a78bfa','linkedin':'#06b6d4','threads':'#14f195','tiktok':'#ec4899','instagram':'#e4405f','youtube':'#ff0000','facebook':'#1877f2'};
+  document.getElementById('videosTab').innerHTML = posted.length ? posted.map(p=>{
+    const col = pc[(p.platform||'').toLowerCase()]||'#a78bfa';
+    const statusBadge = p.status==='posted'?'<span class="badge badge-best">Publié</span>':'<span class="badge badge-warn">En attente</span>';
+    const dateStr = p.posted_at?new Date(p.posted_at).toLocaleDateString('fr-FR',{day:'numeric',month:'short'}):p.scheduled_at?new Date(p.scheduled_at).toLocaleDateString('fr-FR',{day:'numeric',month:'short'}):'—';
+    return `<div class="list-item"><div class="list-item-main"><div class="list-item-title">${(p.content||'').substring(0,90)}${p.content?.length>90?'…':''}</div>
+    <div class="list-item-meta"><span style="color:${col};font-weight:500">${(p.platform||'').toUpperCase()}</span> · ${dateStr}${p.engagement?' · '+p.engagement.views+' vues':''}</div></div>
+    <div class="list-item-right">${statusBadge}</div></div>`}).join('') : '<div class="empty-state"><div class="empty-state-icon">●</div><div class="empty-state-title">Pas de publications</div><div style="font-size:12px;color:var(--text-ghost);margin-top:8px">Les posts publiés via PostBridge apparaîtront ici</div></div>';
 }
 
 function switchContentTab(t) {
@@ -1900,11 +1905,11 @@ function renderEmotions() {
 function renderPublications() {
   const q = APP_STATE.data['post-queue']||[];
   let f = APP_STATE.filters.queueStatus?q.filter(x=>x.status===APP_STATE.filters.queueStatus):q;
-  const pc = {'twitter':'#a78bfa','linkedin':'#06b6d4','threads':'#14f195','tiktok':'#ec4899'};
   document.getElementById('postQueueList').innerHTML = f.map(p=>{
+    const col = getPlatformColor((p.platform||'').toLowerCase());
     const sb = {'posted':'<span class="badge badge-best">Publié</span>','queued':'<span class="badge badge-warn">En attente</span>','error':'<span class="badge badge-dead">Erreur</span>'}[p.status]||'<span class="badge">—</span>';
-    return `<div class="list-item"><div class="list-item-main"><div class="list-item-title">${p.content.substring(0,75)}…</div>
-    <div class="list-item-meta"><span style="color:${pc[p.platform]||'#a78bfa'};font-weight:500">${p.platform.toUpperCase()}</span> · ${new Date(p.scheduled_at).toLocaleDateString('fr-FR')}</div></div>
+    return `<div class="list-item" style="border-left:3px solid ${col}"><div class="list-item-main"><div class="list-item-title">${(p.content||'').substring(0,75)}…</div>
+    <div class="list-item-meta">${getPlatformBadge(p.platform)} · ${new Date(p.scheduled_at).toLocaleDateString('fr-FR',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'})}</div></div>
     <div class="list-item-right">${sb}</div></div>`;
   }).join('') || '<div class="empty-state"><div class="empty-state-icon">●</div><div class="empty-state-title">Pas de publications</div></div>';
 }
