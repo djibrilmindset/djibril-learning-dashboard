@@ -55,7 +55,7 @@ body { font-family:'Inter',-apple-system,sans-serif; background:var(--bg-void); 
 .nav-item.active { background:rgba(153,69,255,0.12); color:var(--text-primary); border-color:rgba(153,69,255,0.25); box-shadow:var(--glow-card); }
 .nav-item .icon { font-size:18px; width:22px; text-align:center; }
 .nav-spacer { flex:1; }
-.nav-badge { margin-left:auto; background:rgba(153,69,255,0.2); color:var(--accent-purple); font-size:10px; padding:2px 6px; border-radius:20px; font-weight:700; }
+.nav-badge { margin-left:auto; background:rgba(255,77,77,0.2); color:var(--accent-red); font-size:10px; padding:2px 6px; border-radius:20px; font-weight:700; }
 
 /* MAIN */
 .main { flex:1; height:100vh; overflow-y:auto; overflow-x:hidden; background:var(--bg-void); position:relative; }
@@ -74,7 +74,7 @@ body { font-family:'Inter',-apple-system,sans-serif; background:var(--bg-void); 
 .card:hover { background:var(--bg-card-hover); border-color:var(--border-hover); box-shadow:var(--glow-card); transform:translateY(-2px); }
 
 /* KPI */
-.kpi-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:16px; margin-bottom:28px; }
+.kpi-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:16px; margin-bottom:28px; }
 .kpi { background:var(--bg-card); border:1px solid var(--border-subtle); border-radius:var(--radius); padding:18px 20px; backdrop-filter:blur(20px); }
 .kpi-label { font-size:11px; text-transform:uppercase; letter-spacing:1.2px; color:var(--text-ghost); margin-bottom:6px; }
 .kpi-value { font-family:'Sora',sans-serif; font-size:28px; font-weight:800; background:var(--gradient-cosmos); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
@@ -83,7 +83,6 @@ body { font-family:'Inter',-apple-system,sans-serif; background:var(--bg-void); 
 /* GRIDS */
 .grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-bottom:28px; }
 .grid-3 { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-bottom:28px; }
-.grid-4 { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-bottom:28px; }
 
 /* TAGS */
 .tag { display:inline-block; padding:3px 10px; border-radius:20px; font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:0.5px; }
@@ -132,18 +131,60 @@ body { font-family:'Inter',-apple-system,sans-serif; background:var(--bg-void); 
 .ec-detail-label { font-size:10px; text-transform:uppercase; letter-spacing:1px; color:var(--text-ghost); margin-bottom:4px; }
 .ec-detail-value { font-size:13px; color:var(--text-secondary); line-height:1.5; }
 
+/* CATEGORY CARD — Problèmes & Croyances */
+.cat-card { background:var(--bg-card); border:1px solid var(--border-subtle); border-radius:var(--radius); margin-bottom:24px; overflow:hidden; }
+.cat-header { padding:20px 24px; cursor:pointer; display:flex; justify-content:space-between; align-items:center; transition:all 0.3s ease; }
+.cat-header:hover { background:rgba(153,69,255,0.06); }
+.cat-header-left { display:flex; align-items:center; gap:12px; }
+.cat-emoji { font-size:28px; }
+.cat-name { font-family:'Sora',sans-serif; font-weight:700; font-size:16px; }
+.cat-desc { font-size:12px; color:var(--text-muted); margin-top:2px; }
+.cat-stats { display:flex; gap:12px; align-items:center; }
+.cat-stat { font-family:'JetBrains Mono',monospace; font-size:11px; padding:4px 10px; border-radius:20px; }
+.cat-arrow { font-size:18px; color:var(--text-ghost); transition:transform 0.3s ease; margin-left:16px; }
+.cat-card.open .cat-arrow { transform:rotate(180deg); }
+.cat-body { display:none; padding:0 24px 24px; }
+.cat-card.open .cat-body { display:block; animation:fadeUp 0.3s ease; }
+.cat-desir { padding:12px 16px; border-radius:var(--radius-sm); background:rgba(20,241,149,0.06); border-left:3px solid var(--accent-cyan); margin-bottom:20px; font-size:13px; color:var(--accent-cyan); }
+
+/* PROBLEM ITEM */
+.prob-item { background:rgba(153,69,255,0.04); border:1px solid var(--border-invisible); border-radius:var(--radius-sm); padding:16px; margin-bottom:12px; cursor:pointer; transition:all 0.3s ease; }
+.prob-item:hover { border-color:rgba(153,69,255,0.25); background:rgba(153,69,255,0.07); }
+.prob-title { font-weight:700; font-size:13px; margin-bottom:8px; line-height:1.4; }
+.prob-verbatim { font-size:12px; color:var(--text-secondary); font-style:italic; padding:8px 12px; border-left:2px solid var(--accent-purple); background:rgba(153,69,255,0.04); border-radius:0 6px 6px 0; margin-bottom:8px; line-height:1.5; }
+.prob-mots { display:flex; flex-wrap:wrap; gap:4px; margin-bottom:8px; }
+.mot-fort { display:inline-block; padding:2px 8px; border-radius:12px; font-size:10px; font-weight:700; background:rgba(248,87,166,0.15); color:var(--accent-pink); }
+.prob-details { display:none; margin-top:12px; padding-top:12px; border-top:1px solid var(--border-invisible); }
+.prob-item.open .prob-details { display:block; animation:fadeUp 0.3s ease; }
+.prob-angle { padding:10px 14px; border-radius:var(--radius-sm); border-left:3px solid var(--accent-amber); background:rgba(255,189,46,0.06); font-size:12px; color:var(--accent-amber); line-height:1.5; margin-top:8px; }
+
+/* CROYANCE ITEM */
+.croy-item { background:rgba(255,189,46,0.04); border:1px solid var(--border-invisible); border-radius:var(--radius-sm); padding:14px; margin-bottom:10px; cursor:pointer; transition:all 0.3s ease; }
+.croy-item:hover { border-color:rgba(255,189,46,0.25); }
+.croy-label { font-size:10px; text-transform:uppercase; letter-spacing:1px; color:var(--accent-red); margin-bottom:4px; font-weight:700; }
+.croy-text { font-weight:700; font-size:13px; margin-bottom:6px; }
+.croy-mots { display:flex; flex-wrap:wrap; gap:4px; margin-bottom:6px; }
+.croy-realite { font-size:12px; color:var(--accent-cyan); line-height:1.5; display:none; padding-top:8px; margin-top:8px; border-top:1px solid var(--border-invisible); }
+.croy-item.open .croy-realite { display:block; animation:fadeUp 0.3s ease; }
+
+/* MOTS PUISSANTS SECTION */
+.mots-section { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+.mots-group { background:var(--bg-card); border:1px solid var(--border-subtle); border-radius:var(--radius); padding:16px; }
+.mots-group-title { font-family:'Sora',sans-serif; font-weight:700; font-size:13px; margin-bottom:10px; }
+.mots-group .mot-fort { margin-bottom:4px; }
+
 /* ACCOUNT ROW */
 .acc-row { display:grid; grid-template-columns:36px 1fr 80px 80px 70px 90px; align-items:center; gap:12px; padding:14px 16px; border-radius:var(--radius-sm); border:1px solid var(--border-invisible); margin-bottom:8px; transition:all 0.25s ease; }
 .acc-row:hover { background:rgba(153,69,255,0.04); border-color:var(--border-subtle); }
 
-/* WAR ROOM VIRAL CARD */
+/* WAR ROOM */
 .viral-card { background:var(--bg-card); border:1px solid var(--border-subtle); border-radius:var(--radius); padding:20px; margin-bottom:16px; cursor:pointer; transition:all 0.3s ease; }
 .viral-card:hover { border-color:rgba(255,189,46,0.4); box-shadow:0 0 40px rgba(255,189,46,0.08); }
 .viral-card.open .viral-details { display:block; animation:fadeUp 0.3s ease; }
 .viral-details { display:none; margin-top:16px; padding-top:16px; border-top:1px solid var(--border-invisible); }
 .viral-stat { display:inline-flex; align-items:center; gap:4px; font-family:'JetBrains Mono',monospace; font-size:12px; padding:4px 10px; border-radius:20px; background:rgba(255,189,46,0.1); color:var(--accent-amber); margin-right:6px; margin-bottom:4px; }
 
-/* PERF TABLE */
+/* PERF */
 .perf-card { background:var(--bg-card); border:1px solid var(--border-subtle); border-radius:var(--radius); padding:16px; margin-bottom:10px; transition:all 0.3s ease; }
 .perf-card:hover { border-color:rgba(20,241,149,0.3); }
 .perf-rank { font-family:'Sora',sans-serif; font-weight:800; font-size:20px; }
@@ -157,7 +198,7 @@ body { font-family:'Inter',-apple-system,sans-serif; background:var(--bg-void); 
 .desire-card.open .desire-depth { display:block; animation:fadeUp 0.3s ease; }
 .desire-depth { display:none; margin-top:12px; padding-top:12px; border-top:1px solid var(--border-invisible); text-align:left; font-size:12px; color:var(--text-secondary); line-height:1.5; }
 
-/* CORR CARD */
+/* CORR */
 .corr-card { background:var(--bg-card); border:1px solid var(--border-subtle); border-radius:var(--radius); padding:16px; transition:all 0.3s ease; }
 .corr-card:hover { border-color:rgba(153,69,255,0.3); }
 .corr-signal { font-size:13px; font-weight:600; color:var(--accent-amber); margin-bottom:6px; }
@@ -182,8 +223,8 @@ body { font-family:'Inter',-apple-system,sans-serif; background:var(--bg-void); 
   body { flex-direction:column; }
   .sidebar { display:none; }
   .mobile-nav { display:flex; position:fixed; bottom:0; left:0; right:0; background:var(--bg-deep); border-top:1px solid var(--border-subtle); z-index:100; padding:6px 4px; gap:2px; justify-content:space-around; backdrop-filter:blur(20px); }
-  .mobile-nav .mob-item { display:flex; flex-direction:column; align-items:center; gap:2px; padding:6px 8px; border-radius:var(--radius-sm); cursor:pointer; font-size:9px; font-weight:600; color:var(--text-ghost); transition:all 0.2s; flex:1; text-align:center; }
-  .mobile-nav .mob-item .mob-icon { font-size:20px; }
+  .mobile-nav .mob-item { display:flex; flex-direction:column; align-items:center; gap:2px; padding:6px 4px; border-radius:var(--radius-sm); cursor:pointer; font-size:8px; font-weight:600; color:var(--text-ghost); transition:all 0.2s; flex:1; text-align:center; }
+  .mobile-nav .mob-item .mob-icon { font-size:18px; }
   .mobile-nav .mob-item.active { color:var(--accent-purple); background:rgba(153,69,255,0.1); }
   .main { height:calc(100vh - 60px); padding-bottom:60px; }
   .page { padding:16px; }
@@ -192,15 +233,20 @@ body { font-family:'Inter',-apple-system,sans-serif; background:var(--bg-void); 
   .section-title { font-size:14px; }
   .kpi-grid { grid-template-columns:1fr 1fr; gap:10px; }
   .kpi-value { font-size:22px; }
-  .grid-2, .grid-3, .grid-4 { grid-template-columns:1fr; gap:12px; }
+  .grid-2, .grid-3 { grid-template-columns:1fr; gap:12px; }
   .ec-detail-grid { grid-template-columns:1fr; }
+  .mots-section { grid-template-columns:1fr; }
   .acc-row { grid-template-columns:30px 1fr 60px 60px; gap:8px; padding:10px 12px; font-size:12px; }
   .acc-row > :nth-child(5), .acc-row > :nth-child(6) { display:none; }
   .tabs { gap:4px; }
   .tab-btn { padding:6px 12px; font-size:11px; }
   .viral-stat { font-size:10px; padding:3px 8px; }
+  .cat-header { padding:14px 16px; }
+  .cat-emoji { font-size:22px; }
+  .cat-name { font-size:14px; }
+  .cat-body { padding:0 16px 16px; }
+  .cat-stats { display:none; }
 }
-
 @media (max-width: 400px) {
   .kpi-grid { grid-template-columns:1fr; }
   .page { padding:12px; }
@@ -214,11 +260,11 @@ body { font-family:'Inter',-apple-system,sans-serif; background:var(--bg-void); 
 <nav class="sidebar">
   <div class="sidebar-brand">DJIBRIL</div>
   <div class="sidebar-sub">QG Stratégique</div>
-  <div class="nav-item active" data-page="cockpit"><span class="icon">🎯</span><span>Cockpit</span></div>
+  <div class="nav-item active" data-page="problemes"><span class="icon">🔥</span><span>Problèmes</span><span class="nav-badge">CORE</span></div>
+  <div class="nav-item" data-page="cockpit"><span class="icon">🎯</span><span>Cockpit</span></div>
   <div class="nav-item" data-page="arsenal"><span class="icon">🧠</span><span>Arsenal Psycho</span></div>
   <div class="nav-item" data-page="scripts"><span class="icon">📜</span><span>Scripts</span></div>
-  <div class="nav-item" data-page="radar"><span class="icon">📡</span><span>Radar Niche</span></div>
-  <div class="nav-item" data-page="warroom"><span class="icon">⚔️</span><span>War Room</span><span class="nav-badge">NEW</span></div>
+  <div class="nav-item" data-page="warroom"><span class="icon">⚔️</span><span>War Room</span></div>
   <div class="nav-item" data-page="comptes"><span class="icon">📊</span><span>Comptes</span></div>
   <div class="nav-spacer"></div>
   <div style="font-size:11px; color:var(--text-ghost); padding:0 14px;"><span class="live-dot" style="color:var(--accent-cyan);">●</span> Crons actifs</div>
@@ -226,10 +272,10 @@ body { font-family:'Inter',-apple-system,sans-serif; background:var(--bg-void); 
 
 <!-- MOBILE NAV -->
 <div class="mobile-nav">
-  <div class="mob-item active" data-page="cockpit"><span class="mob-icon">🎯</span>Cockpit</div>
+  <div class="mob-item active" data-page="problemes"><span class="mob-icon">🔥</span>Problèmes</div>
+  <div class="mob-item" data-page="cockpit"><span class="mob-icon">🎯</span>Cockpit</div>
   <div class="mob-item" data-page="arsenal"><span class="mob-icon">🧠</span>Arsenal</div>
   <div class="mob-item" data-page="scripts"><span class="mob-icon">📜</span>Scripts</div>
-  <div class="mob-item" data-page="radar"><span class="mob-icon">📡</span>Radar</div>
   <div class="mob-item" data-page="warroom"><span class="mob-icon">⚔️</span>War Room</div>
   <div class="mob-item" data-page="comptes"><span class="mob-icon">📊</span>Comptes</div>
 </div>
@@ -237,8 +283,21 @@ body { font-family:'Inter',-apple-system,sans-serif; background:var(--bg-void); 
 <!-- MAIN -->
 <main class="main">
 
+  <!-- PAGE 0: PROBLÈMES & CROYANCES (PAGE CENTRALE) -->
+  <div class="page active" id="page-problemes">
+    <div class="page-title" style="background:var(--gradient-warm); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">Problèmes & Croyances</div>
+    <div class="page-subtitle">Le cerveau de ta cible — ses vrais problèmes, ses fausses croyances, ses mots exacts. Chaque problème = une vidéo.</div>
+    <div class="kpi-grid" id="prob-kpis"></div>
+
+    <div class="section-title">💣 Mots puissants de ta cible</div>
+    <div class="mots-section" id="prob-mots-puissants"></div>
+
+    <div class="section-title" style="margin-top:28px;">🔥 Catégories de problèmes</div>
+    <div id="prob-categories"></div>
+  </div>
+
   <!-- PAGE 1: COCKPIT -->
-  <div class="page active" id="page-cockpit">
+  <div class="page" id="page-cockpit">
     <div class="page-title">Cockpit</div>
     <div class="page-subtitle">Ta vision d'ensemble — quoi faire, quoi dire, où frapper</div>
     <div class="kpi-grid" id="cockpit-kpis"></div>
@@ -261,7 +320,7 @@ body { font-family:'Inter',-apple-system,sans-serif; background:var(--bg-void); 
   <!-- PAGE 2: ARSENAL PSYCHOLOGIQUE -->
   <div class="page" id="page-arsenal">
     <div class="page-title">Arsenal Psychologique</div>
-    <div class="page-subtitle">Les émotions, désirs, douleurs et mots exacts de ton audience — creusés jusqu'aux principes premiers</div>
+    <div class="page-subtitle">Les émotions, désirs, douleurs et mots exacts de ton audience</div>
     <div class="section-title">🎭 Carte des Émotions</div>
     <div class="grid-2" style="margin-bottom:32px;">
       <div class="card" id="arsenal-emotions"></div>
@@ -270,11 +329,11 @@ body { font-family:'Inter',-apple-system,sans-serif; background:var(--bg-void); 
         <div id="verbatims-list"></div>
       </div>
     </div>
-    <div class="section-title">🔬 Principes Premiers — Pourquoi ils souffrent VRAIMENT</div>
+    <div class="section-title">🔬 Principes Premiers</div>
     <div id="arsenal-principes"></div>
     <div class="section-title" style="margin-top:28px;">✨ Désirs profonds</div>
     <div class="grid-3" id="arsenal-desires"></div>
-    <div class="section-title" style="margin-top:28px;">🧪 Mécanismes psycho à utiliser</div>
+    <div class="section-title" style="margin-top:28px;">🧪 Mécanismes psycho</div>
     <div class="grid-3" id="arsenal-mecanismes"></div>
   </div>
 
@@ -284,43 +343,31 @@ body { font-family:'Inter',-apple-system,sans-serif; background:var(--bg-void); 
     <div class="page-subtitle">Tous tes scripts vidéo — clique pour voir le détail complet</div>
     <div class="tabs" id="script-tabs">
       <button class="tab-btn active" data-filter="all">Tous</button>
-      <button class="tab-btn" data-filter="TOFU">🔴 TOFU — Réveil</button>
-      <button class="tab-btn" data-filter="MOFU">🟣 MOFU — Déséducation</button>
-      <button class="tab-btn" data-filter="BOFU">🟢 BOFU — Conversion</button>
+      <button class="tab-btn" data-filter="TOFU">TOFU</button>
+      <button class="tab-btn" data-filter="MOFU">MOFU</button>
+      <button class="tab-btn" data-filter="BOFU">BOFU</button>
     </div>
     <div id="scripts-list"></div>
   </div>
 
-  <!-- PAGE 4: RADAR NICHE -->
-  <div class="page" id="page-radar">
-    <div class="page-title">Radar Niche</div>
-    <div class="page-subtitle">Ce que ta cible dit, pense et regarde — clique pour creuser chaque signal</div>
-    <div class="tabs" id="radar-tabs">
-      <button class="tab-btn active" data-filter="messages">💬 Messages niche</button>
-      <button class="tab-btn" data-filter="videos">🎬 Vidéos niche</button>
-    </div>
-    <div id="radar-messages"></div>
-    <div id="radar-videos" style="display:none;"></div>
-  </div>
-
-  <!-- PAGE 5: WAR ROOM -->
+  <!-- PAGE 4: WAR ROOM -->
   <div class="page" id="page-warroom">
     <div class="page-title">⚔️ War Room</div>
-    <div class="page-subtitle">Vidéos virales du marché — analyse WHY elles marchent, techniques à reproduire</div>
+    <div class="page-subtitle">Vidéos virales du marché — analyse WHY elles marchent</div>
     <div class="section-title">🔥 Vidéos virales du marché</div>
     <div id="warroom-videos"></div>
     <div class="section-title" style="margin-top:28px;">📐 Patterns qui marchent</div>
     <div class="grid-2" id="warroom-patterns"></div>
   </div>
 
-  <!-- PAGE 6: COMPTES -->
+  <!-- PAGE 5: COMPTES -->
   <div class="page" id="page-comptes">
     <div class="page-title">Mes Comptes</div>
     <div class="page-subtitle">Vue d'ensemble + performance vidéo + classement top/flop</div>
     <div id="comptes-list"></div>
-    <div class="section-title" style="margin-top:28px;">🏆 Top vidéos — Ce qui marche et pourquoi</div>
+    <div class="section-title" style="margin-top:28px;">🏆 Top vidéos</div>
     <div id="comptes-top"></div>
-    <div class="section-title" style="margin-top:28px;">❌ Flop vidéos — Ce qui marche PAS et pourquoi</div>
+    <div class="section-title" style="margin-top:28px;">❌ Flop vidéos</div>
     <div id="comptes-flop"></div>
     <div class="section-title" style="margin-top:28px;">💡 Insights Performance</div>
     <div id="comptes-insights"></div>
@@ -330,9 +377,9 @@ body { font-family:'Inter',-apple-system,sans-serif; background:var(--bg-void); 
 
 <script>
 const APP = {
-  currentPage: 'cockpit',
+  currentPage: 'problemes',
   data: {},
-  dataFiles: ['insights','emociones','messages-niche','videos-niche','scripts-video','social-tracking','war-room','video-performance']
+  dataFiles: ['problemes-croyances','insights','emociones','messages-niche','videos-niche','scripts-video','social-tracking','war-room','video-performance']
 };
 const GH_RAW = 'https://raw.githubusercontent.com/djibrilmindset/djibril-learning-dashboard/master/data/';
 
@@ -344,7 +391,7 @@ async function loadData() {
       APP.data[name] = await resp.json();
     } catch(e) {
       console.warn('Failed:', name, e);
-      APP.data[name] = name.includes('tracking') || name.includes('niche') || name.includes('video') ? [] : {};
+      APP.data[name] = {};
     }
   }
   renderAll();
@@ -365,12 +412,108 @@ document.querySelectorAll('.nav-item').forEach(item => item.addEventListener('cl
 document.querySelectorAll('.mob-item').forEach(item => item.addEventListener('click', () => navigateTo(item.dataset.page)));
 
 function renderAll() {
+  renderProblemes();
   renderCockpit();
   renderArsenal();
   renderScripts();
-  renderRadar();
   renderWarRoom();
   renderComptes();
+}
+
+/* ═══ PROBLÈMES & CROYANCES (PAGE CENTRALE) ═══ */
+function renderProblemes() {
+  const pc = APP.data['problemes-croyances'] || {};
+  const cats = pc.categories || [];
+  const stats = pc.stats || {};
+  const mots = pc.mots_puissants_cible || {};
+
+  // KPIs
+  document.getElementById('prob-kpis').innerHTML = `
+    <div class="kpi"><div class="kpi-label">Problèmes réels</div><div class="kpi-value">${stats.total_problemes||0}</div><div class="kpi-note">Scrappés de sources réelles</div></div>
+    <div class="kpi"><div class="kpi-label">Croyances limitantes</div><div class="kpi-value">${stats.total_croyances||0}</div><div class="kpi-note">À démolir en vidéo</div></div>
+    <div class="kpi"><div class="kpi-label">Catégories</div><div class="kpi-value">${stats.categories||0}</div><div class="kpi-note">Blocs de douleur</div></div>
+    <div class="kpi"><div class="kpi-label">Angles vidéo</div><div class="kpi-value">${stats.angles_video_generes||0}</div><div class="kpi-note">Prêts à scripter</div></div>
+    <div class="kpi"><div class="kpi-label">Sources</div><div class="kpi-value">${stats.sources_scrappees||0}</div><div class="kpi-note">Sites/études réels</div></div>
+  `;
+
+  // Mots puissants
+  const motColors = {
+    douleur: {bg:'rgba(255,68,68,0.12)', color:'#ff6b6b', label:'🩸 DOULEUR'},
+    desir: {bg:'rgba(20,241,149,0.12)', color:'#14f195', label:'✨ DÉSIR'},
+    identite: {bg:'rgba(153,69,255,0.12)', color:'#b87aff', label:'🪞 IDENTITÉ'},
+    objections: {bg:'rgba(255,189,46,0.12)', color:'#ffbd2e', label:'🛡️ OBJECTIONS'}
+  };
+  document.getElementById('prob-mots-puissants').innerHTML = Object.entries(mots).map(([key, words]) => {
+    const style = motColors[key] || {bg:'rgba(255,255,255,0.06)', color:'var(--text-secondary)', label:key};
+    return `
+      <div class="mots-group">
+        <div class="mots-group-title" style="color:${style.color};">${style.label}</div>
+        <div style="display:flex; flex-wrap:wrap; gap:6px;">
+          ${words.map(w => `<span style="display:inline-block; padding:4px 10px; border-radius:12px; font-size:11px; font-weight:600; background:${style.bg}; color:${style.color};">${w}</span>`).join('')}
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  // Categories with problems & croyances
+  document.getElementById('prob-categories').innerHTML = cats.map((cat, ci) => {
+    const probs = cat.problemes || [];
+    const croys = cat.croyances || [];
+    return `
+    <div class="cat-card" id="cat-${ci}">
+      <div class="cat-header" onclick="document.getElementById('cat-${ci}').classList.toggle('open')">
+        <div class="cat-header-left">
+          <span class="cat-emoji">${cat.emoji}</span>
+          <div>
+            <div class="cat-name">${cat.categorie}</div>
+            <div class="cat-desc">${cat.description}</div>
+          </div>
+        </div>
+        <div class="cat-stats">
+          <span class="cat-stat" style="background:rgba(255,68,68,0.1); color:#ff6b6b;">${probs.length} problèmes</span>
+          <span class="cat-stat" style="background:rgba(255,189,46,0.1); color:#ffbd2e;">${croys.length} croyances</span>
+          <span class="cat-arrow">▼</span>
+        </div>
+      </div>
+      <div class="cat-body">
+        <div class="cat-desir">🎯 <strong>Désir bloqué :</strong> ${cat.desir_bloque}</div>
+
+        <div style="font-family:'Sora',sans-serif; font-weight:700; font-size:14px; margin-bottom:14px; color:var(--accent-red);">💣 Problèmes réels</div>
+        ${probs.map((p, pi) => `
+          <div class="prob-item" onclick="event.stopPropagation(); this.classList.toggle('open')">
+            <div class="prob-title">${p.probleme}</div>
+            <div class="prob-verbatim">"${p.verbatim_fr}"</div>
+            <div class="prob-mots">${(p.mots_forts||[]).map(m => `<span class="mot-fort">${m}</span>`).join('')}</div>
+            <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
+              <span class="tag ${p.funnel==='TOFU'?'tag-tofu':'tag-mofu'}">${p.funnel}</span>
+              <span style="font-size:10px; color:var(--text-ghost);">📍 ${p.source}</span>
+            </div>
+            <div class="prob-details">
+              <div class="ec-detail-item" style="margin-bottom:10px; border-left:3px solid var(--accent-purple);">
+                <div class="ec-detail-label">🧪 Mécanisme psychologique</div>
+                <div class="ec-detail-value">${p.mecanisme}</div>
+              </div>
+              <div class="prob-angle">🎬 <strong>Angle vidéo :</strong> ${p.angle_video}</div>
+            </div>
+          </div>
+        `).join('')}
+
+        <div style="font-family:'Sora',sans-serif; font-weight:700; font-size:14px; margin:20px 0 14px; color:var(--accent-amber);">🧱 Croyances limitantes</div>
+        ${croys.map(c => `
+          <div class="croy-item" onclick="event.stopPropagation(); this.classList.toggle('open')">
+            <div class="croy-label">❌ Croyance</div>
+            <div class="croy-text">"${c.croyance}"</div>
+            <div class="croy-mots">${(c.mots_forts||[]).map(m => `<span class="mot-fort" style="background:rgba(255,189,46,0.15); color:var(--accent-amber);">${m}</span>`).join('')}</div>
+            <div class="croy-realite">
+              <div style="color:var(--accent-cyan); font-weight:700; font-size:10px; text-transform:uppercase; margin-bottom:4px;">✅ Réalité</div>
+              <div style="margin-bottom:8px;">${c.realite}</div>
+              <div class="prob-angle">🎬 ${c.angle_video}</div>
+            </div>
+          </div>
+        `).join('')}
+      </div>
+    </div>`;
+  }).join('');
 }
 
 /* ═══ COCKPIT ═══ */
@@ -380,7 +523,7 @@ function renderCockpit() {
   const scripts = (APP.data['scripts-video'] || {}).scripts_video || [];
   const totalAbo = Array.isArray(tracking) ? tracking.reduce((s,a) => s + (a.abonnes||0), 0) : 0;
   document.getElementById('cockpit-kpis').innerHTML = `
-    <div class="kpi"><div class="kpi-label">Comptes actifs</div><div class="kpi-value">9</div><div class="kpi-note">PostBridge — tous connectés</div></div>
+    <div class="kpi"><div class="kpi-label">Comptes actifs</div><div class="kpi-value">9</div><div class="kpi-note">PostBridge</div></div>
     <div class="kpi"><div class="kpi-label">Total abonnés</div><div class="kpi-value">${totalAbo.toLocaleString('fr')}</div><div class="kpi-note">Toutes plateformes</div></div>
     <div class="kpi"><div class="kpi-label">Scripts prêts</div><div class="kpi-value">${scripts.length}</div><div class="kpi-note">TOFU + MOFU + BOFU</div></div>
     <div class="kpi"><div class="kpi-label">Score alignement</div><div class="kpi-value">${ins.daily_score?.alignment_score || '—'}</div><div class="kpi-note">${ins.daily_score?.date || ''}</div></div>
@@ -422,7 +565,6 @@ function renderArsenal() {
   const desires = emo.desirs || [];
   const maxCount = Math.max(...emotions.map(e => e.count), 1);
   const colors = ['#ff6b6b','#f857a6','#14f195','#7a5af8','#ffbd2e','#ff4444','#14f195','#b0b0c0'];
-
   document.getElementById('arsenal-emotions').innerHTML = `
     <div style="font-weight:700; margin-bottom:16px; font-size:14px;">📊 Répartition émotionnelle</div>
     ${emotions.map((e,i) => `
@@ -436,8 +578,6 @@ function renderArsenal() {
   document.getElementById('verbatims-list').innerHTML = allV.slice(0,12).map(v => `
     <div class="verbatim">"${v.text}"<div style="font-size:10px; margin-top:4px; font-style:normal; color:var(--text-ghost);">${v.emoji} ${v.emotion} → ${v.desir}</div></div>
   `).join('');
-
-  // Principes premiers
   document.getElementById('arsenal-principes').innerHTML = emotions.map(e => `
     <div class="expand-card" onclick="this.classList.toggle('open')">
       <div class="ec-header">
@@ -446,70 +586,48 @@ function renderArsenal() {
       </div>
       <div class="ec-preview" style="font-size:12px; color:var(--accent-cyan);">🔬 ${(e.principe_premier||'').substring(0,120)}...</div>
       <div class="ec-details">
-        <div class="ec-detail-item" style="margin-bottom:12px;">
-          <div class="ec-detail-label">🔬 Principe premier</div>
-          <div class="ec-detail-value">${e.principe_premier||''}</div>
-        </div>
-        <div class="ec-detail-item" style="margin-bottom:12px;">
-          <div class="ec-detail-label">⚡ Déclencheurs</div>
-          <div class="ec-detail-value">${(e.declencheurs||[]).map(d => '• ' + d).join('<br>')}</div>
-        </div>
-        <div class="ec-detail-item" style="margin-bottom:12px;">
-          <div class="ec-detail-label">🧪 Mécanismes psycho</div>
-          <div class="ec-detail-value">${(e.mecanismes_psycho||[]).map(m => '• ' + m).join('<br>')}</div>
-        </div>
-        <div class="ec-detail-item">
-          <div class="ec-detail-label">💬 Verbatims</div>
-          <div class="ec-detail-value">${(e.verbatims||[]).map(v => '"' + v + '"').join('<br>')}</div>
-        </div>
+        <div class="ec-detail-item" style="margin-bottom:12px;"><div class="ec-detail-label">🔬 Principe premier</div><div class="ec-detail-value">${e.principe_premier||''}</div></div>
+        <div class="ec-detail-item" style="margin-bottom:12px;"><div class="ec-detail-label">⚡ Déclencheurs</div><div class="ec-detail-value">${(e.declencheurs||[]).map(d => '• ' + d).join('<br>')}</div></div>
+        <div class="ec-detail-item" style="margin-bottom:12px;"><div class="ec-detail-label">🧪 Mécanismes psycho</div><div class="ec-detail-value">${(e.mecanismes_psycho||[]).map(m => '• ' + m).join('<br>')}</div></div>
+        <div class="ec-detail-item"><div class="ec-detail-label">💬 Verbatims</div><div class="ec-detail-value">${(e.verbatims||[]).map(v => '"' + v + '"').join('<br>')}</div></div>
       </div>
     </div>
   `).join('');
-
-  // Desires with click-to-expand
   document.getElementById('arsenal-desires').innerHTML = desires.map(d => `
     <div class="desire-card" onclick="this.classList.toggle('open')">
       <div style="font-size:32px; margin-bottom:8px;">${d.emoji}</div>
       <div style="font-weight:700; font-size:14px; margin-bottom:6px;">${d.desir}</div>
       <div style="font-size:12px; color:var(--text-muted); line-height:1.4;">${d.description}</div>
       <div style="margin-top:8px; font-size:10px; color:var(--text-ghost);">Émotion liée : ${d.emotion_associee}</div>
-      <div class="desire-depth">
-        <div style="font-size:10px; text-transform:uppercase; letter-spacing:1px; color:var(--accent-cyan); margin-bottom:6px;">🔍 Profondeur</div>
-        ${d.profondeur || ''}
-      </div>
+      <div class="desire-depth"><div style="font-size:10px; text-transform:uppercase; letter-spacing:1px; color:var(--accent-cyan); margin-bottom:6px;">🔍 Profondeur</div>${d.profondeur || ''}</div>
     </div>
   `).join('');
-
-  // Mécanismes psycho
   const mecas = [
-    {icon:'🔄',name:'Effet Zeigarnik',desc:"Une tâche inachevée reste en mémoire. Ouvre une boucle dans tes hooks → ils DOIVENT voir la fin.",hook:"Y'a un truc que personne te dit sur..."},
-    {icon:'🪞',name:'Biais de confirmation',desc:"Ils cherchent des preuves de ce qu'ils croient déjà. Confirme leur douleur PUIS retourne-la.",hook:"T'as raison, c'est dur. Mais pas pour la raison que tu crois."},
-    {icon:'⚡',name:'Dissonance cognitive',desc:"Quand actions ≠ valeurs, le cerveau souffre. Montre-leur la dissonance → ils VEULENT résoudre.",hook:"Tu dis que tu veux changer. Mais t'as fait quoi aujourd'hui ?"},
-    {icon:'🎯',name:'Locus de contrôle',desc:"Externe = victime. Interne = acteur. Transfère le locus → ils reprennent le pouvoir.",hook:"C'est pas la faute du système. C'est toi qui choisis d'y rester."},
-    {icon:'🧲',name:'Effet Pratfall',desc:"Montrer ta vulnérabilité te rend PLUS crédible. Partage tes galères → connexion instantanée.",hook:"J'ai galéré. 14h par jour, seul, 21 ans. Voilà ce que j'ai compris."},
-    {icon:'🔒',name:'Impuissance apprise (Seligman)',desc:"Après trop d'échecs, on arrête d'essayer. Montre qu'UNE victoire peut briser la boucle.",hook:"T'as arrêté d'essayer parce que t'as échoué. Pas parce que c'est impossible."},
-    {icon:'🔋',name:'Ego Depletion (Baumeister)',desc:"La volonté est une batterie limitée. Chaque micro-décision la vide. La tâche importante DOIT venir en premier.",hook:"T'as 100% de volonté le matin. À midi t'en as plus que 30%."},
-    {icon:'🧠',name:'Plasticité corticale',desc:"Le cerveau change physiquement avec la répétition. Les chemins neuronaux les plus empruntés deviennent des autoroutes. Tu peux les recâbler.",hook:"Ton cerveau fonctionne comme une forêt. Le chemin le plus emprunté devient une autoroute."},
-    {icon:'📉',name:'Biais d\'omission',desc:"Le cerveau traite l'inaction comme neutre. Mais l'eau qui bouge pas stagne — et l'eau qui stagne pourrit.",hook:"Tu calcules toujours le risque d'agir. T'as jamais calculé le risque de RIEN faire."}
+    {icon:'🔄',name:'Effet Zeigarnik',desc:"Tâche inachevée = reste en mémoire. Ouvre une boucle → ils DOIVENT voir la fin.",hook:"Y'a un truc que personne te dit sur..."},
+    {icon:'🪞',name:'Biais de confirmation',desc:"Confirme leur douleur PUIS retourne-la.",hook:"T'as raison, c'est dur. Mais pas pour la raison que tu crois."},
+    {icon:'⚡',name:'Dissonance cognitive',desc:"Actions ≠ valeurs = souffrance. Montre la dissonance → ils veulent résoudre.",hook:"Tu dis que tu veux changer. Mais t'as fait quoi aujourd'hui ?"},
+    {icon:'🎯',name:'Locus de contrôle',desc:"Transfère le locus externe → interne. Ils reprennent le pouvoir.",hook:"C'est pas la faute du système. C'est toi qui choisis d'y rester."},
+    {icon:'🧲',name:'Effet Pratfall',desc:"Vulnérabilité = crédibilité. Partage tes galères → connexion.",hook:"J'ai galéré. 14h par jour, seul, 21 ans."},
+    {icon:'🔒',name:'Impuissance apprise',desc:"Après trop d'échecs, on arrête. UNE victoire brise la boucle.",hook:"T'as arrêté d'essayer parce que t'as échoué. Pas parce que c'est impossible."},
+    {icon:'🔋',name:'Ego Depletion',desc:"La volonté = batterie. Chaque micro-décision la vide.",hook:"T'as 100% de volonté le matin. À midi t'en as 30%."},
+    {icon:'🧠',name:'Plasticité corticale',desc:"Le cerveau change avec la répétition. Tu peux recâbler les chemins.",hook:"Ton cerveau = forêt. Le chemin le plus emprunté = autoroute."},
+    {icon:'📉',name:"Biais d'omission",desc:"Le cerveau traite l'inaction comme neutre. Mais l'eau qui stagne pourrit.",hook:"T'as jamais calculé le risque de RIEN faire."}
   ];
   document.getElementById('arsenal-mecanismes').innerHTML = mecas.map(m => `
     <div class="card">
       <div style="font-size:20px; margin-bottom:8px;">${m.icon}</div>
       <div style="font-weight:700; margin-bottom:4px;">${m.name}</div>
       <div style="font-size:12px; color:var(--text-muted);">${m.desc}</div>
-      <div style="margin-top:8px; font-size:11px; color:var(--accent-cyan);">→ Hook : "${m.hook}"</div>
+      <div style="margin-top:8px; font-size:11px; color:var(--accent-cyan);">→ "${m.hook}"</div>
     </div>
   `).join('');
 }
 
-/* ═══ SCRIPTS (CLICK TO EXPAND) ═══ */
+/* ═══ SCRIPTS ═══ */
 function renderScripts(filter='all') {
   const scripts = (APP.data['scripts-video'] || {}).scripts_video || [];
   const filtered = filter === 'all' ? scripts : scripts.filter(s => s.type === filter);
-  if (filtered.length === 0) {
-    document.getElementById('scripts-list').innerHTML = '<div style="color:var(--text-muted); font-size:13px;">Aucun script pour ce filtre.</div>';
-    return;
-  }
+  if (filtered.length === 0) { document.getElementById('scripts-list').innerHTML = '<div style="color:var(--text-muted); font-size:13px;">Aucun script.</div>'; return; }
   document.getElementById('scripts-list').innerHTML = filtered.map(s => {
     const struct = s.structure_7_temps || {};
     const corps = s.corps || [];
@@ -527,37 +645,18 @@ function renderScripts(filter='all') {
       <div class="ec-meta">
         <span>📱 ${s.account || s.plateforme || ''}</span>
         <span>⏱ ${s.duree || s.duree_estimee || ''}${typeof s.duree==='number'?'s':''}</span>
-        <span>⚡ Score: ${s.score_simulation}/100</span>
-        <span>📅 ${s.date}</span>
-        ${s.jtbd ? `<span>🎯 ${s.jtbd}</span>` : ''}
+        <span>⚡ ${s.score_simulation}/100</span>
       </div>
       ${hasDetails ? `
       <div class="ec-details">
         ${Object.keys(struct).length > 0 ? `
           <div style="font-weight:700; font-size:13px; margin-bottom:12px; color:var(--accent-amber);">📐 Structure 7 temps</div>
-          <div class="ec-detail-grid">
-            ${Object.entries(struct).map(([k,v]) => `
-              <div class="ec-detail-item">
-                <div class="ec-detail-label">${k.replace(/_/g,' ')}</div>
-                <div class="ec-detail-value">${v}</div>
-              </div>
-            `).join('')}
-          </div>
-        ` : ''}
+          <div class="ec-detail-grid">${Object.entries(struct).map(([k,v]) => `
+            <div class="ec-detail-item"><div class="ec-detail-label">${k.replace(/_/g,' ')}</div><div class="ec-detail-value">${v}</div></div>
+          `).join('')}</div>` : ''}
         ${corps.length > 0 ? `
           <div style="font-weight:700; font-size:13px; margin-bottom:12px; color:var(--accent-purple);">📝 Script complet</div>
-          ${corps.map(c => `
-            <div class="ec-detail-item" style="margin-bottom:8px;">
-              <div class="ec-detail-label">${c.action || ''} ${c.timecode || ''}</div>
-              <div class="ec-detail-value" style="white-space:pre-line;">${c.texte}</div>
-            </div>
-          `).join('')}
-        ` : ''}
-        <div style="margin-top:12px; display:flex; gap:8px; flex-wrap:wrap;">
-          <span style="padding:4px 10px; border-radius:20px; background:rgba(20,241,149,0.1); color:var(--accent-cyan); font-size:10px; font-weight:600;">Score: ${s.score_simulation}/100</span>
-          <span style="padding:4px 10px; border-radius:20px; background:rgba(153,69,255,0.1); color:var(--accent-purple); font-size:10px; font-weight:600;">Status: ${s.status}</span>
-          ${s.validation_12_avatars ? `<span style="padding:4px 10px; border-radius:20px; background:rgba(20,241,149,0.1); color:var(--accent-cyan); font-size:10px; font-weight:600;">✅ Validation avatars: ${s.validation_12_avatars}</span>` : ''}
-        </div>
+          ${corps.map(c => `<div class="ec-detail-item" style="margin-bottom:8px;"><div class="ec-detail-label">${c.action || ''} ${c.timecode || ''}</div><div class="ec-detail-value" style="white-space:pre-line;">${c.texte}</div></div>`).join('')}` : ''}
       </div>` : ''}
     </div>`;
   }).join('');
@@ -569,92 +668,11 @@ document.getElementById('script-tabs').addEventListener('click', (e) => {
   renderScripts(e.target.dataset.filter);
 });
 
-/* ═══ RADAR NICHE (CLICK TO EXPAND) ═══ */
-function renderRadar() {
-  const messages = APP.data['messages-niche'] || [];
-  const videos = APP.data['videos-niche'] || [];
-  document.getElementById('radar-messages').innerHTML = messages.map(m => `
-    <div class="expand-card" onclick="this.classList.toggle('open')">
-      <div class="ec-header">
-        <div class="ec-title" style="font-size:13px;">"${m.translation_fr || m.texte}"</div>
-        <span class="ec-arrow">▼</span>
-      </div>
-      <div style="font-size:12px; color:var(--accent-cyan); margin-bottom:6px;">💡 ${m.idee_cle}</div>
-      <div class="ec-meta">
-        <span class="tag tag-emotion">${m.emotion}</span>
-        <span>🎯 ${m.jtbd}</span>
-        <span>⭐ ${m.relevance}/10</span>
-        <span>📍 ${m.platform}</span>
-      </div>
-      <div class="ec-details">
-        <div class="ec-detail-grid">
-          <div class="ec-detail-item"><div class="ec-detail-label">🎬 Angle contenu</div><div class="ec-detail-value">${m.angle_contenu}</div></div>
-          <div class="ec-detail-item"><div class="ec-detail-label">⚙️ Mécanisme</div><div class="ec-detail-value">${m.mecanisme}</div></div>
-          <div class="ec-detail-item"><div class="ec-detail-label">💔 Problème</div><div class="ec-detail-value">${m.probleme}</div></div>
-          <div class="ec-detail-item"><div class="ec-detail-label">✅ Solution</div><div class="ec-detail-value">${m.solution}</div></div>
-          <div class="ec-detail-item"><div class="ec-detail-label">💫 Désir</div><div class="ec-detail-value">${m.desir}</div></div>
-          <div class="ec-detail-item"><div class="ec-detail-label">📍 Source</div><div class="ec-detail-value">${m.source || m.platform}</div></div>
-        </div>
-        ${m.principe_premier ? `
-          <div class="ec-detail-item" style="border-left:3px solid var(--accent-amber);">
-            <div class="ec-detail-label">🔬 Principe premier</div>
-            <div class="ec-detail-value">${m.principe_premier}</div>
-          </div>
-        ` : ''}
-      </div>
-    </div>
-  `).join('');
-
-  document.getElementById('radar-videos').innerHTML = videos.map(v => `
-    <div class="expand-card" onclick="this.classList.toggle('open')">
-      <div class="ec-header">
-        <div class="ec-title">🎬 ${v.titre_fr}</div>
-        <span class="ec-arrow">▼</span>
-      </div>
-      <div style="font-size:12px; color:var(--text-secondary); margin-bottom:6px;">Par ${v.creator} sur ${v.platform} — ${(v.vues||0).toLocaleString('fr')} vues</div>
-      <div class="ec-meta">
-        <span class="tag tag-emotion">${v.emotion}</span>
-        <span>🎯 ${v.jtbd}</span>
-        <span>🔧 ${v.technique}</span>
-      </div>
-      <div class="ec-details">
-        <div class="ec-detail-grid">
-          <div class="ec-detail-item"><div class="ec-detail-label">💡 Idée clé</div><div class="ec-detail-value">${v.idee_cle}</div></div>
-          <div class="ec-detail-item"><div class="ec-detail-label">🎬 Angle contenu</div><div class="ec-detail-value">${v.angle_contenu}</div></div>
-          <div class="ec-detail-item"><div class="ec-detail-label">💔 Problème</div><div class="ec-detail-value">${v.probleme}</div></div>
-          <div class="ec-detail-item"><div class="ec-detail-label">✅ Solution</div><div class="ec-detail-value">${v.solution}</div></div>
-        </div>
-        ${v.why_viral ? `
-          <div class="ec-detail-item" style="border-left:3px solid var(--accent-amber); margin-top:8px;">
-            <div class="ec-detail-label">🔥 Pourquoi ça marche</div>
-            <div class="ec-detail-value">${v.why_viral}</div>
-          </div>
-        ` : ''}
-        ${v.technique_filmage ? `
-          <div class="ec-detail-item" style="border-left:3px solid var(--accent-purple); margin-top:8px;">
-            <div class="ec-detail-label">🎥 Technique de filmage</div>
-            <div class="ec-detail-value">${v.technique_filmage}</div>
-          </div>
-        ` : ''}
-      </div>
-    </div>
-  `).join('');
-}
-document.getElementById('radar-tabs').addEventListener('click', (e) => {
-  if (!e.target.classList.contains('tab-btn')) return;
-  document.querySelectorAll('#radar-tabs .tab-btn').forEach(b => b.classList.remove('active'));
-  e.target.classList.add('active');
-  const f = e.target.dataset.filter;
-  document.getElementById('radar-messages').style.display = f === 'messages' ? 'block' : 'none';
-  document.getElementById('radar-videos').style.display = f === 'videos' ? 'block' : 'none';
-});
-
 /* ═══ WAR ROOM ═══ */
 function renderWarRoom() {
   const wr = APP.data['war-room'] || {};
   const vids = wr.viral_videos || [];
   const trends = wr.tendances_marche || {};
-
   document.getElementById('warroom-videos').innerHTML = vids.map(v => {
     const why = v.why_viral || {};
     return `
@@ -664,7 +682,7 @@ function renderWarRoom() {
           <div style="font-weight:700; font-size:15px; margin-bottom:6px;">${v.titre}</div>
           <div style="font-size:12px; color:var(--text-muted);">${v.creator} — ${v.platform}</div>
         </div>
-        <span style="font-size:14px; color:var(--text-ghost); transition:transform 0.3s;">▼</span>
+        <span style="font-size:14px; color:var(--text-ghost);">▼</span>
       </div>
       <div style="margin-top:10px; display:flex; flex-wrap:wrap; gap:4px;">
         <span class="viral-stat">👁 ${(v.vues||0).toLocaleString('fr')}</span>
@@ -674,40 +692,15 @@ function renderWarRoom() {
       </div>
       <div class="viral-details">
         <div class="ec-detail-grid">
-          <div class="ec-detail-item" style="border-left:3px solid var(--accent-amber);">
-            <div class="ec-detail-label">🎣 Hook technique</div>
-            <div class="ec-detail-value">${why.hook_technique||''}</div>
-          </div>
-          <div class="ec-detail-item" style="border-left:3px solid var(--accent-purple);">
-            <div class="ec-detail-label">🔄 Technique rétention</div>
-            <div class="ec-detail-value">${why.retention_technique||''}</div>
-          </div>
-          <div class="ec-detail-item" style="border-left:3px solid var(--accent-pink);">
-            <div class="ec-detail-label">💗 Émotion dominante</div>
-            <div class="ec-detail-value">${why.emotion_dominante||''}</div>
-          </div>
-          <div class="ec-detail-item" style="border-left:3px solid var(--accent-cyan);">
-            <div class="ec-detail-label">🎥 Style de filmage</div>
-            <div class="ec-detail-value">${why.filming_style||''}</div>
-          </div>
-          <div class="ec-detail-item">
-            <div class="ec-detail-label">🤲 Pattern gestuel</div>
-            <div class="ec-detail-value">${why.gesture_pattern||''}</div>
-          </div>
-          <div class="ec-detail-item">
-            <div class="ec-detail-label">⏱ Rétention attention</div>
-            <div class="ec-detail-value">${why.attention_retention||''}</div>
-          </div>
+          <div class="ec-detail-item" style="border-left:3px solid var(--accent-amber);"><div class="ec-detail-label">🎣 Hook technique</div><div class="ec-detail-value">${why.hook_technique||''}</div></div>
+          <div class="ec-detail-item" style="border-left:3px solid var(--accent-purple);"><div class="ec-detail-label">🔄 Rétention</div><div class="ec-detail-value">${why.retention_technique||''}</div></div>
+          <div class="ec-detail-item" style="border-left:3px solid var(--accent-pink);"><div class="ec-detail-label">💗 Émotion</div><div class="ec-detail-value">${why.emotion_dominante||''}</div></div>
+          <div class="ec-detail-item" style="border-left:3px solid var(--accent-cyan);"><div class="ec-detail-label">🎥 Filmage</div><div class="ec-detail-value">${why.filming_style||''}</div></div>
         </div>
-        <div class="ec-detail-item" style="margin-top:8px; border-left:3px solid var(--accent-cyan); background:rgba(20,241,149,0.05);">
-          <div class="ec-detail-label">🎯 Application Djibril</div>
-          <div class="ec-detail-value" style="color:var(--accent-cyan);">${v.applicable_djibril||''}</div>
-        </div>
+        <div class="ec-detail-item" style="margin-top:8px; border-left:3px solid var(--accent-cyan); background:rgba(20,241,149,0.05);"><div class="ec-detail-label">🎯 Application Djibril</div><div class="ec-detail-value" style="color:var(--accent-cyan);">${v.applicable_djibril||''}</div></div>
       </div>
     </div>`;
   }).join('');
-
-  // Patterns
   const formats = trends.formats_qui_marchent || [];
   const hooks = trends.hooks_patterns || [];
   const filming = trends.filming_insights || [];
@@ -732,7 +725,6 @@ function renderComptes() {
   const accounts = Array.isArray(tracking) ? tracking : [];
   const platformIcons = {'TikTok':'🎵','Instagram':'📸','YouTube':'▶️','LinkedIn':'💼','Twitter':'🐦','Facebook':'📘','Threads':'🧵'};
   const sorted = [...accounts].sort((a,b) => (b.abonnes||0) - (a.abonnes||0));
-
   document.getElementById('comptes-list').innerHTML = `
     <div style="display:grid; grid-template-columns:36px 1.5fr 100px 100px 80px 100px; gap:12px; padding:0 16px 10px; font-size:10px; text-transform:uppercase; letter-spacing:1px; color:var(--text-ghost);">
       <span></span><span>Compte</span><span>Abonnés</span><span>Engagement</span><span>Status</span><span>Vues</span>
@@ -750,8 +742,6 @@ function renderComptes() {
       </div>`;
     }).join('')}
   `;
-
-  // Top videos
   const tops = perf.top_videos || [];
   document.getElementById('comptes-top').innerHTML = tops.map((v,i) => `
     <div class="perf-card" style="display:flex; gap:16px; align-items:flex-start;">
@@ -762,32 +752,23 @@ function renderComptes() {
         <div style="display:flex; flex-wrap:wrap; gap:6px; margin-bottom:8px;">
           <span class="viral-stat">👁 ${(v.vues||0).toLocaleString('fr')}</span>
           <span class="viral-stat">❤️ ${v.likes}</span>
-          <span class="viral-stat">💬 ${v.comments}</span>
-          <span style="padding:4px 10px; border-radius:20px; background:rgba(20,241,149,0.1); color:var(--accent-cyan); font-family:'JetBrains Mono'; font-size:11px;">${v.engagement_rate} eng.</span>
+          <span style="padding:4px 10px; border-radius:20px; background:rgba(20,241,149,0.1); color:var(--accent-cyan); font-family:'JetBrains Mono'; font-size:11px;">${v.engagement_rate}</span>
         </div>
         <div style="font-size:12px; color:var(--accent-cyan); line-height:1.5;">🔍 ${v.why_works}</div>
-        <div style="font-size:11px; color:var(--accent-amber); margin-top:4px;">📐 Pattern : ${v.pattern}</div>
+        <div style="font-size:11px; color:var(--accent-amber); margin-top:4px;">📐 ${v.pattern}</div>
       </div>
       <span class="tag ${v.type==='TOFU'?'tag-tofu':v.type==='MOFU'?'tag-mofu':'tag-bofu'}">${v.type}</span>
     </div>
   `).join('');
-
-  // Flop videos
   const flops = perf.flop_videos || [];
   document.getElementById('comptes-flop').innerHTML = flops.map(v => `
     <div class="perf-card" style="border-left:3px solid var(--accent-red);">
       <div style="font-weight:700; font-size:13px; margin-bottom:4px;">${v.titre}</div>
-      <div style="font-size:11px; color:var(--text-muted); margin-bottom:8px;">${v.platform} — ${v.account} — ${v.date}</div>
-      <div style="display:flex; flex-wrap:wrap; gap:6px; margin-bottom:8px;">
-        <span style="font-size:11px; color:var(--accent-red);">👁 ${v.vues} vues</span>
-        <span style="font-size:11px; color:var(--accent-red);">❤️ ${v.likes} likes</span>
-      </div>
+      <div style="font-size:11px; color:var(--text-muted); margin-bottom:8px;">${v.platform} — ${v.date}</div>
       <div style="font-size:12px; color:var(--accent-red); line-height:1.5;">❌ ${v.why_failed}</div>
-      <div style="font-size:11px; color:var(--accent-amber); margin-top:4px;">📚 Leçon : ${v.lesson}</div>
+      <div style="font-size:11px; color:var(--accent-amber); margin-top:4px;">📚 ${v.lesson}</div>
     </div>
   `).join('');
-
-  // Insights
   const ins = perf.insights || {};
   document.getElementById('comptes-insights').innerHTML = `
     <div class="card">
@@ -796,13 +777,8 @@ function renderComptes() {
         <div class="ec-detail-item"><div class="ec-detail-label">📐 Meilleur pattern</div><div class="ec-detail-value">${ins.meilleur_pattern||''}</div></div>
         <div class="ec-detail-item"><div class="ec-detail-label">❌ Pire pattern</div><div class="ec-detail-value">${ins.pire_pattern||''}</div></div>
         <div class="ec-detail-item"><div class="ec-detail-label">📱 Meilleure plateforme</div><div class="ec-detail-value">${ins.meilleure_plateforme||''}</div></div>
-        <div class="ec-detail-item"><div class="ec-detail-label">📊 Engagement moyen</div><div class="ec-detail-value">${ins.engagement_moyen||''}</div></div>
-        <div class="ec-detail-item"><div class="ec-detail-label">⏰ Horaire optimal</div><div class="ec-detail-value">${ins.horaire_optimal||''}</div></div>
       </div>
-      <div class="ec-detail-item" style="margin-top:12px; border-left:3px solid var(--accent-cyan);">
-        <div class="ec-detail-label">🎯 Recommandation</div>
-        <div class="ec-detail-value" style="color:var(--accent-cyan);">${ins.recommandation||''}</div>
-      </div>
+      <div class="ec-detail-item" style="margin-top:12px; border-left:3px solid var(--accent-cyan);"><div class="ec-detail-label">🎯 Recommandation</div><div class="ec-detail-value" style="color:var(--accent-cyan);">${ins.recommandation||''}</div></div>
     </div>
   `;
 }
