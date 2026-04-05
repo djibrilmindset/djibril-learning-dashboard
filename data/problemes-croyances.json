@@ -1,0 +1,393 @@
+{
+  "last_updated": "2026-04-06",
+  "last_scrape": "2026-04-06",
+  "categories": [
+    {
+      "categorie": "PARALYSIE D'ACTION",
+      "emoji": "🧊",
+      "description": "Il sait quoi faire, mais il fait rien. Son cerveau tourne en boucle sans jamais enclencher.",
+      "desir_bloque": "Passer à l'action, avancer concrètement dans sa vie",
+      "problemes": [
+        {
+          "probleme": "Il analyse tout pendant des semaines avant d'agir — et finit par ne rien faire",
+          "verbatim": "I research and plan for months but never actually start. I have 47 business ideas in my Notes app and zero revenue",
+          "verbatim_fr": "Je recherche et planifie pendant des mois mais je commence jamais. J'ai 47 idées business dans mes Notes et zéro revenu",
+          "mots_forts": ["47 idées", "zéro revenu", "jamais", "planifie pendant des mois"],
+          "source": "Reddit r/Entrepreneur",
+          "mecanisme": "Analysis paralysis — le cortex préfrontal est piégé dans une boucle d'évaluation récursive. Il demande toujours plus de data, plus de certitude. Mais 100% de certitude n'existe pas.",
+          "angle_video": "TOFU : 'T'as 47 idées et zéro résultat. Le problème c'est pas tes idées — c'est que ton cerveau confond planifier et agir.'",
+          "funnel": "TOFU"
+        },
+        {
+          "probleme": "Il consomme du contenu à la place d'agir — et croit qu'il avance",
+          "verbatim": "The Learning Loop is procrastination masquerading as important work. Your brain releases dopamine when processing new ideas — except no problem was solved",
+          "verbatim_fr": "La boucle d'apprentissage c'est de la procrastination déguisée en travail. Ton cerveau libère de la dopamine quand tu consommes du contenu — sauf qu'aucun problème n'a été résolu",
+          "mots_forts": ["procrastination déguisée", "dopamine", "aucun problème résolu", "boucle"],
+          "source": "sammatla.com — The Learning Loop",
+          "mecanisme": "Le cerveau libère de la dopamine quand il traite une nouvelle idée — même sans agir. Il confond APPRENDRE et FAIRE. C'est la drogue la plus propre du cérébral : tu te sens productif, t'as rien produit.",
+          "angle_video": "TOFU : 'Tu regardes des vidéos sur la productivité au lieu de produire. Ton cerveau te récompense pour avoir APPRIS, pas pour avoir FAIT.'",
+          "funnel": "TOFU"
+        },
+        {
+          "probleme": "Il attend d'être prêt, d'avoir toutes les compétences, avant de commencer",
+          "verbatim": "Perfectionism is a sneaky limiting belief — anything less than perfect feels like failure, stemming from a core belief that your output is never good enough",
+          "verbatim_fr": "Le perfectionnisme c'est une croyance limitante sournoise — tout ce qui est pas parfait ressemble à un échec, parce que tu crois que ce que tu fais est jamais assez bien",
+          "mots_forts": ["jamais assez bien", "sournoise", "échec", "parfait"],
+          "source": "Commit Action — Limiting Beliefs",
+          "mecanisme": "Le perfectionnisme est un mécanisme de défense : si je commence jamais, je peux jamais échouer. Le cerveau préfère l'inaction (indolore) à l'action imparfaite (potentiellement douloureuse).",
+          "angle_video": "MOFU : 'T'attends d'être prêt. Mais la compétence vient en FAISANT, pas en attendant. Tu seras jamais prêt — personne l'est.'",
+          "funnel": "MOFU"
+        },
+        {
+          "probleme": "Il a peur que ce soit pas le bon moment / la bonne idée / le bon domaine",
+          "verbatim": "Fear of failure often originates from the fear of making the wrong choice, which is caused by overthinking",
+          "verbatim_fr": "La peur de l'échec vient souvent de la peur de faire le mauvais choix, qui elle-même vient de l'overthinking",
+          "mots_forts": ["mauvais choix", "peur", "overthinking"],
+          "source": "Entrepreneur.com",
+          "mecanisme": "Le cérébral croit qu'il existe UN bon choix. En réalité, l'action crée l'information — tu ne peux pas savoir si c'est le bon choix AVANT de le faire. Le paradoxe : il cherche la clarté avant l'action, mais la clarté ne vient QUE par l'action.",
+          "angle_video": "TOFU : 'Tu cherches le bon moment. Il existe pas. Le bon moment c'est le moment où tu décides que c'est maintenant.'",
+          "funnel": "TOFU"
+        }
+      ],
+      "croyances": [
+        {
+          "croyance": "Je dois tout maîtriser avant de commencer",
+          "realite": "La maîtrise vient en faisant. Les 6700€ d'Adam sont arrivés le mois où il a arrêté de planifier et commencé à exécuter — 14h/jour sans être prêt.",
+          "mots_forts": ["maîtriser", "avant"],
+          "angle_video": "MOFU : 'Tu crois qu'il faut maîtriser avant de commencer. C'est faux. La compétence est le RÉSULTAT de l'action, pas sa condition.'"
+        },
+        {
+          "croyance": "Si je fais le mauvais choix, j'aurai tout perdu",
+          "realite": "Le coût de l'inaction est invisible mais réel. L'eau qui stagne pourrit. Chaque semaine que tu 'réfléchis', quelqu'un qui sait MOINS que toi prend ta place.",
+          "mots_forts": ["mauvais choix", "tout perdu"],
+          "angle_video": "TOFU : 'T'as peur de te tromper. Mais t'as jamais calculé le prix de RIEN faire.'"
+        },
+        {
+          "croyance": "Les gens qui réussissent savaient ce qu'ils faisaient dès le départ",
+          "realite": "70% des entrepreneurs pivotent de leur idée initiale. La plupart des success stories commencent par un échec. Le mythe du génie visionnaire est un biais de survivant.",
+          "mots_forts": ["savaient", "dès le départ"],
+          "angle_video": "MOFU : 'Tu crois que les gens qui réussissent savaient dès le début. Non. Ils ont juste commencé plus tôt que toi.'"
+        },
+        {
+          "croyance": "C'est trop tard pour moi / j'ai raté le train",
+          "realite": "C'est le biais de rareté temporelle. Le marché n'est pas un train — il se renouvelle chaque jour. À 21 ans, Adam était seul, bloqué, sans réseau. Ce qui comptait : AGIR, pas le timing.",
+          "mots_forts": ["trop tard", "raté le train"],
+          "angle_video": "TOFU : 'Tu crois que t'as raté le bon moment. Le seul moment que tu rates c'est celui que tu passes à te poser la question.'"
+        }
+      ]
+    },
+    {
+      "categorie": "SYNDROME DE L'IMPOSTEUR",
+      "emoji": "🎭",
+      "description": "Il se sent pas légitime. Il pense que les autres vont découvrir qu'il est un fraude.",
+      "desir_bloque": "Avoir confiance en sa propre valeur, oser se montrer",
+      "problemes": [
+        {
+          "probleme": "Il se sent pas légitime pour se lancer — 'qui suis-je pour donner des conseils ?'",
+          "verbatim": "70% of people feel like imposters — the feeling that you're a fraud regardless of your actual skills and achievements",
+          "verbatim_fr": "70% des gens se sentent imposteurs — le sentiment d'être un fraude peu importe tes vraies compétences et réalisations",
+          "mots_forts": ["70%", "fraude", "peu importe tes compétences"],
+          "source": "SelfEmployed.com — Imposter Syndrome Research",
+          "mecanisme": "Le syndrome de l'imposteur frappe PLUS fort les gens compétents (effet Dunning-Kruger inversé). Plus tu en sais, plus tu vois ce que tu sais PAS. Les incompétents se sentent confiants — les compétents doutent.",
+          "angle_video": "TOFU : 'Tu te sens pas légitime ? 70% des gens ressentent ça. Sauf que les incompétents, eux, se sentent très confiants. Le doute est un signe d'intelligence, pas un défaut.'",
+          "funnel": "TOFU"
+        },
+        {
+          "probleme": "Il se compare aux autres sur les réseaux et se sent en retard",
+          "verbatim": "People see carefully curated snapshots of others' lives — failing to recognize that everyone faces struggles. Social comparison creates a non-stop cycle of compare-and-despair",
+          "verbatim_fr": "Les gens voient des photos soigneusement filtrées de la vie des autres — sans réaliser que tout le monde galère. La comparaison sociale crée un cycle infini de compare-et-désespère",
+          "mots_forts": ["filtrées", "tout le monde galère", "cycle infini", "désespère"],
+          "source": "Psychology Today — The Comparison Trap",
+          "mecanisme": "L'algo des réseaux SÉLECTIONNE les highlights. Tu compares tes coulisses à leur vitrine. C'est comme comparer ton brouillon à leur version finale. Le cerveau comptabilise LEUR succès comme preuve de TON échec.",
+          "angle_video": "TOFU : 'Tu te compares au highlight reel des autres. Mais personne poste ses nuits blanches, ses doutes, ses échecs. Tu compares ton brouillon à leur version finale.'",
+          "funnel": "TOFU"
+        },
+        {
+          "probleme": "Il a peur d'être exposé comme incompétent s'il se montre",
+          "verbatim": "If I put myself out there and fail, everyone will see I'm not as smart as they think I am",
+          "verbatim_fr": "Si je me mets en avant et je fail, tout le monde va voir que je suis pas aussi smart qu'ils croient",
+          "mots_forts": ["fail", "tout le monde va voir", "pas aussi smart"],
+          "source": "Quora — Imposter Syndrome",
+          "mecanisme": "La peur de l'exposition est un mécanisme de survie sociale : le cerveau traite le rejet social comme une menace PHYSIQUE (même zones cérébrales que la douleur). Se montrer = risque de rejet = douleur anticipée.",
+          "angle_video": "MOFU : 'Tu crois que les gens vont te juger. Spoiler : ils sont trop occupés à avoir peur qu'on les juge eux aussi.'",
+          "funnel": "MOFU"
+        }
+      ],
+      "croyances": [
+        {
+          "croyance": "Il faut être expert pour aider les autres",
+          "realite": "T'as juste besoin d'être UN PAS devant la personne que tu aides. Un étudiant de 2ème année peut aider un 1ère année. L'expertise totale n'existe pas.",
+          "mots_forts": ["expert", "aider"],
+          "angle_video": "MOFU : 'Tu crois qu'il faut tout savoir pour aider quelqu'un. Faux. T'as juste besoin d'être un pas devant.'"
+        },
+        {
+          "croyance": "Si j'avais vraiment du talent, je n'aurais pas autant de doutes",
+          "realite": "C'est l'effet Dunning-Kruger inversé. Les gens les PLUS compétents sont ceux qui doutent le plus. Ton doute est la preuve que tu comprends la complexité du sujet.",
+          "mots_forts": ["talent", "doutes"],
+          "angle_video": "TOFU : 'Tu crois que si t'étais bon, tu douterais pas. C'est l'inverse. Les incompétents doutent jamais.'"
+        },
+        {
+          "croyance": "Tout le monde est en avance sur moi",
+          "realite": "Tu compares ton chapitre 1 à leur chapitre 20. Tu vois pas les 19 chapitres d'échecs qu'ils ont traversés avant. Biais de survivant pur.",
+          "mots_forts": ["en avance", "sur moi"],
+          "angle_video": "TOFU : 'Tu te dis que tout le monde est en avance. T'es en train de comparer ton chapitre 1 à leur chapitre 20.'"
+        }
+      ]
+    },
+    {
+      "categorie": "PIÈGE DU TEMPS-CONTRE-ARGENT",
+      "emoji": "⏰",
+      "description": "Il travaille comme un forcené mais son business ne scale pas. Plus il bosse, plus il s'enfonce.",
+      "desir_bloque": "Liberté financière et temporelle, sortir de l'échange heures=euros",
+      "problemes": [
+        {
+          "probleme": "Son business dépend 100% de sa présence — s'il s'arrête, tout s'arrête",
+          "verbatim": "If your business collapses when you disappear for five days, that's not resilience — that's fragility disguised as dedication",
+          "verbatim_fr": "Si ton business s'effondre quand tu disparais 5 jours, c'est pas de la résilience — c'est de la fragilité déguisée en dédication",
+          "mots_forts": ["s'effondre", "5 jours", "fragilité déguisée"],
+          "source": "SelfEmployed.com — Burnout Signs 2025",
+          "mecanisme": "L'auto-emploi sans système = salariat déguisé. Tu as remplacé un patron par 100 clients. La liberté promise est devenue une prison avec des horaires pires. Le paradoxe de l'indépendant : plus tu es bon, plus tu es indispensable, plus tu es piégé.",
+          "angle_video": "TOFU : 'Tu te crois libre parce que t'es ton propre patron. Mais si tu peux pas partir 5 jours sans que tout s'effondre, t'es pas libre — t'es l'otage de ton propre business.'",
+          "funnel": "TOFU"
+        },
+        {
+          "probleme": "Il gagne bien mais travaille 12-14h/jour — il a remplacé une prison par une autre",
+          "verbatim": "The self-employed reported higher levels of emotional strain and poorer mental health compared to salaried employees — unconventional hours and higher uncertainty",
+          "verbatim_fr": "Les indépendants ont un stress émotionnel plus élevé et une santé mentale plus faible que les salariés — horaires non conventionnels et incertitude plus élevée",
+          "mots_forts": ["stress plus élevé", "santé mentale plus faible", "que les salariés"],
+          "source": "PMC — recherche psycho entrepreneuriat 2022",
+          "mecanisme": "Le cerveau normalise la souffrance quand elle est associée à l'identité ('je suis entrepreneur, c'est normal de souffrir'). L'ego s'identifie au sacrifice. Abandonner le burnout = abandonner l'identité de guerrier.",
+          "angle_video": "MOFU : 'Les études montrent que les indépendants ont une santé mentale PIRE que les salariés. La liberté sans système, c'est juste du chaos organisé.'",
+          "funnel": "MOFU"
+        },
+        {
+          "probleme": "Plus il est compétent dans son métier, plus il est piégé dedans",
+          "verbatim": "You are trapped in your own talent — the better you get, the more indispensable you become, the more the system locks you in",
+          "verbatim_fr": "T'es prisonnier de ton propre talent — plus t'es bon, plus tu deviens indispensable, plus le système te verrouille",
+          "mots_forts": ["prisonnier", "talent", "verrouille"],
+          "source": "TikTok niche — Marco_biz",
+          "mecanisme": "L'excellence crée la dépendance systémique. Plus tu deviens irremplaçable, plus le système te piège. Ton talent est devenu ta cage dorée. La sortie : monétiser le SAVOIR, pas le GESTE.",
+          "angle_video": "TOFU identité : 'Plus t'es bon dans ton métier, plus t'es prisonnier. Ton talent est devenu ta cage.'",
+          "funnel": "TOFU"
+        },
+        {
+          "probleme": "Il sait pas comment passer de 'je fais tout moi-même' à 'j'ai un système'",
+          "verbatim": "Many solo businesses are built on a model that doesn't scale — they rely fully on trading time for money, offering highly customized services, or constantly creating from scratch",
+          "verbatim_fr": "Beaucoup de business solo sont construits sur un modèle qui scale pas — ils échangent du temps contre de l'argent, offrent des services ultra-personnalisés, ou recréent tout à chaque fois",
+          "mots_forts": ["scale pas", "temps contre argent", "recréent tout"],
+          "source": "Workahomie — Why Solopreneurs Fail at Scaling",
+          "mecanisme": "Le solopreneur est piégé dans le paradoxe du contrôle : il VEUT déléguer mais ne peut pas lâcher prise. Derrière : peur que personne ne fasse aussi bien que lui + peur de perdre la qualité qui l'a fait réussir.",
+          "angle_video": "MOFU : 'Tu fais tout toi-même parce que personne fait aussi bien que toi. C'est exactement ça qui te piège.'",
+          "funnel": "MOFU"
+        }
+      ],
+      "croyances": [
+        {
+          "croyance": "Pour gagner plus, je dois travailler plus",
+          "realite": "Faux. Gagner plus = créer un SYSTÈME qui génère de la valeur sans ta présence. Les heures ont un plafond (24h/jour). Le système n'en a pas.",
+          "mots_forts": ["travailler plus"],
+          "angle_video": "TOFU : 'Tu crois que pour gagner plus, faut bosser plus. C'est la croyance qui te piège dans le temps-contre-argent.'"
+        },
+        {
+          "croyance": "Si je délègue, la qualité va baisser",
+          "realite": "La qualité baisse au début — et c'est NORMAL. Mais un système bien formé dépasse ta capacité individuelle. Tu sacrifies 10% de qualité pour 1000% de volume.",
+          "mots_forts": ["délègue", "qualité"],
+          "angle_video": "MOFU : 'Tu délègues pas parce que tu veux garder la qualité. Résultat : t'as la qualité, mais t'as plus de vie.'"
+        },
+        {
+          "croyance": "Mon business c'est moi — sans moi il existe pas",
+          "realite": "Si ton business c'est toi, t'as pas un business — t'as un job sans patron. La différence entre un freelance et un entrepreneur c'est le SYSTÈME.",
+          "mots_forts": ["c'est moi", "sans moi"],
+          "angle_video": "TOFU : 'Si ton business tourne pas sans toi, t'as pas un business. T'as un job avec des horaires pires.'"
+        }
+      ]
+    },
+    {
+      "categorie": "ISOLEMENT & ENVIRONNEMENT TOXIQUE",
+      "emoji": "🌑",
+      "description": "Personne comprend son combat. Son entourage le freine, le décourage, ou l'ignore.",
+      "desir_bloque": "Être compris, entouré de gens qui poussent vers le haut",
+      "problemes": [
+        {
+          "probleme": "Son entourage ne comprend pas et le décourage activement",
+          "verbatim": "Your family and friends do not support and question your pitch. You have to isolate yourself — every single day there's pressure to prove your idea",
+          "verbatim_fr": "Ta famille et tes potes soutiennent pas et questionnent tes projets. Tu dois t'isoler — chaque jour y'a la pression de prouver que t'as raison",
+          "mots_forts": ["soutiennent pas", "questionnent", "t'isoler", "pression"],
+          "source": "SkillsYouNeed — Young Entrepreneur Challenges",
+          "mecanisme": "L'entourage projette SES peurs sur toi. Ils ont peur pour toi parce qu'ils auraient peur pour EUX. Leur conseil n'est pas basé sur la réalité — il est basé sur leur zone de confort.",
+          "angle_video": "TOFU : 'Ton entourage te dit de rester sage. C'est pas parce qu'il veut ton bien — c'est parce qu'il a peur pour LUI.'",
+          "funnel": "TOFU"
+        },
+        {
+          "probleme": "46% des entrepreneurs se sentent seuls — aucun réseau, aucun mentor",
+          "verbatim": "46% of entrepreneurs grapple with loneliness and isolation. You don't have co-workers to chat with, and your friends may not understand the unconventional route you've taken",
+          "verbatim_fr": "46% des entrepreneurs luttent contre la solitude. T'as pas de collègues, et tes potes comprennent pas la voie non-conventionnelle que t'as prise",
+          "mots_forts": ["46%", "solitude", "pas de collègues", "non-conventionnelle"],
+          "source": "CFL Lambton — Loneliness and Entrepreneurs 2025",
+          "mecanisme": "Le cerveau social (Dunbar) utilise le groupe comme 'cerveau externe'. Sans réseau aligné, tu perds un outil de traitement critique. Tu PENSES moins bien quand tu es seul. L'isolement ne fait pas que blesser — il dégrade la qualité de tes décisions.",
+          "angle_video": "MOFU : '46% des entrepreneurs se sentent seuls. C'est pas qu'un problème émotionnel — les études montrent que tu PENSES moins bien quand t'as personne autour qui comprend.'",
+          "funnel": "MOFU"
+        },
+        {
+          "probleme": "Les gens autour de lui normalisent la médiocrité — 'c'est comme ça la vie'",
+          "verbatim": "75% of people leave their jobs because they feel under-appreciated or the environment is toxic — it's the water, not the fish",
+          "verbatim_fr": "75% des gens quittent leur job parce qu'ils se sentent sous-estimés ou que l'environnement est toxique — c'est l'eau qui est sale, pas le poisson",
+          "mots_forts": ["75%", "sous-estimés", "toxique", "l'eau pas le poisson"],
+          "source": "CU Boulder Research 2025",
+          "mecanisme": "L'environnement façonne l'identité (Bandura, Social Learning Theory). Si tout le monde autour de toi se contente du minimum, ton cerveau normalise le minimum. Un poisson dans un aquarium sale croit qu'il est malade — non, c'est l'eau.",
+          "angle_video": "TOFU : 'Ton entourage te dit que c'est normal de galérer. C'est pas toi le problème — c'est l'environnement qui a normalisé la médiocrité.'",
+          "funnel": "TOFU"
+        }
+      ],
+      "croyances": [
+        {
+          "croyance": "Si même ma famille me soutient pas, c'est que mon projet est mauvais",
+          "realite": "Ta famille te juge avec SES filtres, pas les tiens. Ils n'ont jamais fait ce que tu veux faire — leur avis est un reflet de LEUR peur, pas de TA réalité.",
+          "mots_forts": ["famille", "soutient pas", "mauvais"],
+          "angle_video": "TOFU : 'Ta famille te soutient pas. Demande-toi : ont-ils FAIT ce que toi tu veux faire ? Non. Alors leur avis c'est de la projection.'"
+        },
+        {
+          "croyance": "Il faut un réseau pour réussir — et j'en ai pas",
+          "realite": "Le réseau SE CRÉE en faisant. Adam avait zéro réseau à 21 ans, seul et bloqué. Le réseau vient APRÈS l'action, pas avant. Si tu attends d'avoir un réseau pour commencer, tu commenceras jamais.",
+          "mots_forts": ["réseau", "j'en ai pas"],
+          "angle_video": "MOFU : 'Tu crois qu'il faut un réseau avant de te lancer. C'est l'inverse : le réseau vient quand tu commences à créer.'"
+        },
+        {
+          "croyance": "Je suis seul dans cette galère — personne comprend",
+          "realite": "46% des entrepreneurs ressentent ça. T'es pas seul — t'es juste entouré des mauvaises personnes pour cette étape de ta vie.",
+          "mots_forts": ["seul", "personne comprend"],
+          "angle_video": "MOFU : 'Tu te sens seul. 46% des entrepreneurs ressentent exactement ça. T'es pas bizarre — t'es juste en avance sur ton entourage.'"
+        }
+      ]
+    },
+    {
+      "categorie": "PEUR DE L'ÉCHEC & AVERSION AU RISQUE",
+      "emoji": "😰",
+      "description": "Il préfère rester dans la douleur connue plutôt que risquer l'inconnu.",
+      "desir_bloque": "Oser se lancer, prendre des risques calculés, avancer malgré l'incertitude",
+      "problemes": [
+        {
+          "probleme": "Il a quitté un salaire stable et regrette — ou n'ose pas quitter",
+          "verbatim": "I left a six-figure sales job because I was stressed and unhappy. Zero passion, available 24/7. The weight was lifted but I became desperate at times",
+          "verbatim_fr": "J'ai quitté un poste à 6 chiffres parce que j'étais stressé et malheureux. Zéro passion, disponible 24/7. Le poids est parti mais parfois je suis devenu désespéré",
+          "mots_forts": ["6 chiffres", "stressé", "malheureux", "désespéré"],
+          "source": "Wondermind — Should I Quit My Job 2025",
+          "mecanisme": "Le salaire élevé active le sunk cost fallacy. Plus tu gagnes, plus ton cerveau comptabilise le 'coût' de partir comme une perte massive. L'argent devient des menottes dorées. L'aversion à la perte (Kahneman) : on souffre 2x plus d'une perte que d'un gain équivalent.",
+          "angle_video": "TOFU : 'T'es bien payé et t'es malheureux. C'est pas un paradoxe — c'est un piège. Le salaire t'anesthésie.'",
+          "funnel": "TOFU"
+        },
+        {
+          "probleme": "La peur de 'tout perdre' le paralyse complètement",
+          "verbatim": "The fear of going for it — fear of failure, fear of looking like a fool, fear of the unknown, and of leaving behind a life you've invested so much in",
+          "verbatim_fr": "La peur de se lancer — peur de l'échec, peur de passer pour un fou, peur de l'inconnu, et de laisser derrière une vie dans laquelle t'as tant investi",
+          "mots_forts": ["peur de l'échec", "passer pour un fou", "l'inconnu", "tant investi"],
+          "source": "Careershifters.org",
+          "mecanisme": "Le cerveau traite l'inconnu comme un danger PHYSIQUE. L'amygdale ne fait pas la différence entre un lion et un changement de carrière. Le corps entre en mode survie — même assis sur son canapé.",
+          "angle_video": "TOFU : 'Ton corps réagit à l'idée de changer comme si y'avait un lion. C'est ton cerveau qui confond risque social et risque vital.'",
+          "funnel": "TOFU"
+        },
+        {
+          "probleme": "Après des échecs passés, il a arrêté d'essayer (impuissance apprise)",
+          "verbatim": "After too many failures you stop trying — not because it's impossible but because your brain learned that trying equals pain",
+          "verbatim_fr": "Après trop d'échecs tu arrêtes d'essayer — pas parce que c'est impossible mais parce que ton cerveau a appris que essayer = douleur",
+          "mots_forts": ["arrêtes d'essayer", "impossible", "essayer = douleur"],
+          "source": "CoachHub — Learned Helplessness Research",
+          "mecanisme": "Impuissance apprise (Seligman 1967). Après des échecs répétés, le cerveau DÉSACTIVE les circuits d'action. C'est un mécanisme de protection : ton cerveau croit qu'il te protège en t'empêchant d'agir. UNE micro-victoire peut réactiver tout le système.",
+          "angle_video": "MOFU : 'T'as pas abandonné. Ton cerveau a été PROGRAMMÉ pour arrêter d'essayer. La bonne nouvelle : un SEUL petit succès peut tout redémarrer.'",
+          "funnel": "MOFU"
+        }
+      ],
+      "croyances": [
+        {
+          "croyance": "L'échec est définitif — si je rate, c'est fini",
+          "realite": "L'échec est un feedback, pas un verdict. 90% des startups échouent. Mais les fondateurs qui réessaient ont 2x plus de chances de réussir au deuxième essai (Harvard Business School).",
+          "mots_forts": ["définitif", "fini"],
+          "angle_video": "MOFU : 'Tu crois que l'échec est la fin. En réalité, c'est le feedback le plus cher et le plus utile que tu recevras jamais.'"
+        },
+        {
+          "croyance": "Les gens vont me juger si j'échoue",
+          "realite": "Spotlight effect (Gilovich) : tu crois que tout le monde regarde. En réalité, les gens pensent à LEUR vie 95% du temps. Personne se souvient de ton échec — ils sont trop occupés avec les leurs.",
+          "mots_forts": ["juger", "échoue"],
+          "angle_video": "TOFU : 'Tu crois que tout le monde va te juger. Vrai ou faux : peux-tu citer l'échec d'un de tes potes cette année ? Non. Personne regarde.'"
+        },
+        {
+          "croyance": "Le risque c'est d'agir — la sécurité c'est de rester",
+          "realite": "Le vrai risque c'est l'INACTION. Biais d'omission : le cerveau traite l'inaction comme neutre. Mais chaque jour sans action est un jour de recul — le marché avance, toi tu stagnes.",
+          "mots_forts": ["risque", "sécurité", "rester"],
+          "angle_video": "TOFU : 'Tu crois que rester c'est safe. C'est le choix le plus risqué que tu fais — parce que le monde avance pendant que toi tu attends.'"
+        }
+      ]
+    },
+    {
+      "categorie": "BOUCLE DE CONSOMMATION",
+      "emoji": "📱",
+      "description": "Il est accro au contenu, aux réseaux, au scroll infini. Son cerveau est pollué par le bruit.",
+      "desir_bloque": "Clarté mentale, focus, capacité à se concentrer sur ce qui compte",
+      "problemes": [
+        {
+          "probleme": "Il scroll 3-4h par jour sans s'en rendre compte — le cerveau est en pilote automatique",
+          "verbatim": "80 notifications per day, 47-second average attention span — your brain processes everything at surface level",
+          "verbatim_fr": "80 notifications par jour, 47 secondes d'attention en moyenne — ton cerveau traite tout en surface",
+          "mots_forts": ["80 notifications", "47 secondes", "en surface"],
+          "source": "Gloria Mark — Attention Span Research",
+          "mecanisme": "Le scroll est un circuit de dopamine aléatoire (comme une machine à sous). Le cerveau ne peut pas arrêter parce qu'il cherche la PROCHAINE récompense. L'attention médiane est tombée à 40 secondes (Gloria Mark, UC Irvine).",
+          "angle_video": "TOFU : 'Ton cerveau fonctionne comme une machine à sous quand tu scrolles. Il peut pas s'arrêter parce qu'il cherche la prochaine dose.'",
+          "funnel": "TOFU"
+        },
+        {
+          "probleme": "Il regarde des vidéos motivation et se sent BIEN — mais ne fait RIEN ensuite",
+          "verbatim": "Stop watching motivation videos and do THIS instead — watching motivation content is procrastination disguised as productivity",
+          "verbatim_fr": "Arrête de regarder des vidéos motivation et fais ÇA — regarder du contenu motivation c'est de la procrastination déguisée en productivité",
+          "mots_forts": ["procrastination déguisée", "productivité"],
+          "source": "Hamza Ahmed — 3.8M vues YouTube",
+          "mecanisme": "La motivation est une drogue : pic de dopamine sans action. Le cerveau enregistre la SENSATION de progrès sans progrès réel. Résultat : addiction au contenu motivation + zéro résultat.",
+          "angle_video": "TOFU méta : 'T'es en train de regarder une vidéo au lieu d'agir. Ironique non ? La motivation c'est une drogue — ça te fait sentir bien sans rien changer.'",
+          "funnel": "TOFU"
+        },
+        {
+          "probleme": "Son cerveau est tellement stimulé qu'il arrive plus à penser clairement",
+          "verbatim": "Your brain is like a glass of water — every scroll, notification, random story is a drop of dirty ink. By the end of the day, the water is so cloudy you can't see clearly",
+          "verbatim_fr": "Ton cerveau c'est comme un verre d'eau — chaque scroll, notification, story random c'est une goutte d'encre sale. À la fin de la journée, l'eau est tellement trouble que tu vois plus clair",
+          "mots_forts": ["verre d'eau", "encre sale", "trouble", "plus clair"],
+          "source": "Métaphore récipient cérébral — framework Djibril",
+          "mecanisme": "Le cerveau a une capacité de traitement LIMITÉE (Miller's Law — 7±2 chunks). Chaque info inutile prend de la place. À la fin de la journée, il n'y a plus de bande passante pour les décisions importantes.",
+          "angle_video": "MOFU récipient : 'Ton cerveau c'est un verre d'eau. Chaque scroll c'est une goutte d'encre sale. À la fin de la journée, tu vois plus clair. C'est pas toi qui es bête — c'est ton verre qui est plein de bruit.'",
+          "funnel": "MOFU"
+        }
+      ],
+      "croyances": [
+        {
+          "croyance": "Consommer du contenu c'est apprendre / se former",
+          "realite": "Consommer sans appliquer c'est du divertissement déguisé en éducation. 80% du temps à FAIRE, 20% à apprendre — pas l'inverse.",
+          "mots_forts": ["apprendre", "former"],
+          "angle_video": "MOFU : 'Tu crois que tu te formes. En vrai tu te divertis avec du contenu intellectuel. La vraie formation c'est l'action.'"
+        },
+        {
+          "croyance": "J'ai besoin de plus d'informations avant de me lancer",
+          "realite": "T'as déjà assez d'informations. Le gap c'est entre SAVOIR et FAIRE — pas entre ignorer et savoir. Une étude UCLA montre que 80% de l'apprentissage vient de la PRATIQUE, pas de la théorie.",
+          "mots_forts": ["plus d'informations"],
+          "angle_video": "MOFU : 'Tu crois qu'il te manque de l'info. T'en as trop. Le vrai gap c'est entre savoir et faire.'"
+        },
+        {
+          "croyance": "Les réseaux sociaux c'est utile pour se former et networker",
+          "realite": "Les algos sont designés pour te garder, pas pour te former. 95% de ce que tu consommes ne sera JAMAIS utilisé. C'est de l'encre passive qui pollue ton verre.",
+          "mots_forts": ["utile", "former", "networker"],
+          "angle_video": "TOFU : 'Tu crois que les réseaux te forment. Les algos sont designés pour te garder — pas pour t'aider.'"
+        }
+      ]
+    }
+  ],
+  "mots_puissants_cible": {
+    "douleur": ["coincé", "bloqué", "piégé", "j'en peux plus", "j'ai tout essayé", "rien marche", "personne comprend", "je suis seul", "je sais pas par où commencer", "j'ai peur", "c'est trop tard", "j'ai raté", "je galère", "je survis"],
+    "desir": ["liberté", "enfin", "reprendre le contrôle", "être libre", "vivre de", "quitter", "me lancer", "oser", "prouver", "réussir", "indépendant", "ma vie", "mon business", "mes termes"],
+    "identite": ["cérébral", "trop intelligent", "je sais tout mais", "j'analyse trop", "je réfléchis trop", "dans ma tête", "perfectionniste", "imposteur"],
+    "objections": ["dans mon domaine c'est différent", "oui mais moi", "j'ai pas le temps", "j'ai pas les moyens", "j'ai personne", "c'est risqué", "et si ça marche pas"]
+  },
+  "stats": {
+    "total_problemes": 20,
+    "total_croyances": 18,
+    "categories": 5,
+    "sources_scrappees": 24,
+    "angles_video_generes": 38
+  }
+}
