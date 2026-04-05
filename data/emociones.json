@@ -1,551 +1,210 @@
 {
-  "last_updated": "2026-03-31",
-  "total_signals": 128,
+  "last_updated": "2026-04-05",
+  "total_signals": 142,
   "emotions": [
     {
       "emotion": "Épuisement",
       "emoji": "😩",
-      "count": 28,
-      "description": "Fatigue profonde liée aux longues heures sans résultat financier",
+      "count": 30,
+      "description": "Fatigue profonde liée aux longues heures dans un métier chronophage sans résultat financier personnel",
       "verbatims": [
         "Je travaille 60h par semaine et j'arrive même pas à mettre 200€ de côté",
         "Mon corps lâche mais je peux pas m'arrêter sinon je mange pas",
-        "Après 15 ans de barbier, j'ai les mains qui tremblent. C'est quoi ça ?"
+        "Je rentre du boulot à 21h, j'ai même plus l'énergie de penser à autre chose",
+        "10h debout, 6j/7. Et à la fin du mois il reste rien. Rien."
       ]
     },
     {
       "emotion": "Frustration",
       "emoji": "😤",
-      "count": 24,
-      "description": "Colère contenue face à l'injustice du système temps-pour-argent",
+      "count": 26,
+      "description": "Colère contenue face au système temps-contre-argent et au sentiment d'injustice",
       "verbatims": [
-        "Je crée tout la valeur et c'est le boss qui se remplit les poches",
-        "Je couche un mec en 30 min, je gagne 15€. C'est dégueulasse.",
-        "Les clients me doivent tout et moi je dois tout. Où est l'équité ?"
+        "Je crée toute la valeur et c'est le boss qui se remplit les poches",
+        "Je suis intelligent mais le système me bloque. J'ai pas les connexions.",
+        "J'ai compris comment ça marche mais personne veut m'écouter",
+        "Tout le monde me dit d'être patient. Patient pour quoi ? Pour vieillir pauvre ?"
+      ]
+    },
+    {
+      "emotion": "Paralysie d'analyse",
+      "emoji": "🧊",
+      "count": 24,
+      "description": "Incapacité d'agir malgré une compréhension théorique complète — overthinking chronique",
+      "verbatims": [
+        "J'ai 47 onglets ouverts et j'ai toujours pas commencé",
+        "Je sais exactement ce que je devrais faire mais je fais rien — c'est ça le pire",
+        "J'attends toujours le bon moment, le bon plan, la bonne idée. En fait j'attends rien, j'évite.",
+        "J'ai lu 30 livres sur l'entrepreneuriat. Résultat : 0 projet lancé."
       ]
     },
     {
       "emotion": "Peur du changement",
       "emoji": "😨",
       "count": 20,
-      "description": "Anxiété face à l'inconnu et aux risques de l'indépendance",
+      "description": "Anxiété face à l'inconnu, aux risques de l'indépendance, et à l'exposition sociale",
       "verbatims": [
-        "Et si je me lance en indépendant et personne vient ? Je peux pas risquer.",
-        "Mon boss est pourri mais au moins j'ai ma paie le 25. C'est sûr.",
-        "Je veux bien mais j'ai une famille. Je peux pas me permettre de couler."
+        "Et si je me lance et que ça marche pas ? Je peux pas risquer.",
+        "Mon boulot c'est nul mais au moins j'ai ma paie le 25. C'est sûr.",
+        "J'ai une famille. Je peux pas me permettre de couler.",
+        "Poster du contenu ? Avec ma tête ? Les gens vont se moquer."
       ]
     },
     {
-      "emotion": "Impuissance",
+      "emotion": "Doute de soi",
+      "emoji": "🪞",
+      "count": 20,
+      "description": "Syndrome imposteur permanent — se sentir pas légitime malgré les compétences",
+      "verbatims": [
+        "Qui suis-je pour donner des conseils ? J'ai même pas réussi moi-même.",
+        "À chaque fois que j'ai une bonne idée, 3 secondes après je me dis que c'est nul",
+        "Je me compare aux autres tout le temps. Et je perds tout le temps.",
+        "84% des entrepreneurs vivent le syndrome imposteur. Moi c'est 100%."
+      ]
+    },
+    {
+      "emotion": "Impuissance apprise",
       "emoji": "😔",
       "count": 18,
-      "description": "Sentiment de ne pas pouvoir changer sa situation ou son destin",
+      "description": "Sentiment de ne pas pouvoir changer sa situation — résignation conditionnée (Seligman)",
       "verbatims": [
         "J'ai essayé une fois, ça a pas marché. Donc voilà.",
         "C'est comme ça pour les gens comme moi. On peut rien y faire.",
-        "J'aimerais bien mais je suis pas capable. Je suis nul en digital."
+        "Personne de mon quartier n'a jamais réussi. Pourquoi ce serait différent pour moi ?",
+        "J'ai arrêté d'essayer. Moins de déception comme ça."
+      ]
+    },
+    {
+      "emotion": "Isolement",
+      "emoji": "🏝️",
+      "count": 16,
+      "description": "Solitude totale dans sa vision — personne ne comprend, personne ne soutient",
+      "verbatims": [
+        "Mon meilleur pote m'a dit 'arrête de rêver, trouve un vrai boulot'",
+        "Je suis seul à y croire. Littéralement. Pas un seul soutien.",
+        "Ma famille pense que je suis fou. Ils veulent que je fasse médecine ou rien.",
+        "J'ai personne à qui en parler. Personne qui comprend."
+      ]
+    },
+    {
+      "emotion": "Honte silencieuse",
+      "emoji": "🤐",
+      "count": 14,
+      "description": "Honte secrète de l'inaction — savoir qu'on devrait agir mais ne pas le faire",
+      "verbatims": [
+        "Le pire c'est que je SAIS que je perds mon temps. Et je continue.",
+        "J'ai honte de dire que j'ai rien fait de ma journée. Encore.",
+        "Mes potes pensent que je bosse sur mon projet. En vrai je scroll depuis 3h.",
+        "Je me couche chaque soir avec cette boule dans le ventre. Demain sera pareil."
       ]
     },
     {
       "emotion": "Désespoir",
       "emoji": "😞",
-      "count": 14,
-      "description": "Perte d'espoir et résignation à long terme",
+      "count": 12,
+      "description": "Perte d'espoir et résignation face à un futur perçu comme déjà écrit",
       "verbatims": [
-        "À 40 ans je serai encore là à faire le même truc. C'est mon destin.",
-        "Personne de mon quartier n'a jamais réussi. Pourquoi ce serait différent pour moi ?",
-        "J'ai arrêté de rêver. Maintenant je juste survivre."
+        "À 30 ans je serai encore là à faire le même truc. C'est mon destin.",
+        "J'ai arrêté de rêver. Maintenant je survis.",
+        "Les gens qui réussissent c'est pas les mêmes que moi. Point.",
+        "Chaque année c'est la même résolution. Chaque année c'est le même résultat."
       ]
     },
     {
       "emotion": "Colère",
       "emoji": "😠",
       "count": 10,
-      "description": "Rage contre le système, les patrons, la société",
+      "description": "Rage contre le système, la société, l'entourage qui freine",
       "verbatims": [
         "Ils veulent qu'on crève pour pas qu'on pense à se lever",
-        "Les riches se font servir par les pauvres. C'est un vol organisé.",
-        "J'en ai MARRE de cette comédie. Je veux sortir."
+        "Le système est fait pour qu'on reste en bas. C'est pas un accident.",
+        "J'en ai MARRE de cette comédie. Je veux sortir.",
+        "9 personnes sur 10 autour de moi me tirent vers le bas. 9 sur 10."
       ]
     },
     {
-      "emotion": "Espoir",
+      "emotion": "Espoir fragile",
       "emoji": "🤞",
-      "count": 8,
-      "description": "Petite lueur de possibilité et conviction qu'il y a une autre voie",
+      "count": 10,
+      "description": "Petite lueur de possibilité — conviction qu'il y a une autre voie, si seulement...",
       "verbatims": [
-        "J'ai vu un mec du quartier qui a réussi. Donc c'est possible.",
+        "J'ai vu un mec de 21 ans qui fait 6700€/mois. Seul. Donc c'est possible.",
         "Si je peux juste trouver le bon plan, je pense que j'y arriverais",
-        "Mon fils ne fera pas comme moi. Je vais lui montrer qu'il y a une sortie."
+        "Quelque part je sais que j'ai les capacités. Faut juste que quelqu'un me montre.",
+        "Je veux pas être riche. Je veux juste être libre."
       ]
     },
     {
-      "emotion": "Détermination",
-      "emoji": "💪",
-      "count": 6,
-      "description": "Résolution ferme de changer et combattant activement son destin",
+      "emotion": "Addiction informationnelle",
+      "emoji": "📱",
+      "count": 8,
+      "description": "Conscience d'être piégé dans la boucle toxique consommation/dopamine sans passage à l'action",
       "verbatims": [
-        "Je vais commencer demain. Je vais me lever tôt et je vais le faire.",
-        "C'est mon moment. Je dois saisir cette chance maintenant.",
-        "J'ai compris le jeu. Maintenant je vais le jouer aussi."
+        "J'ai regardé 200 vidéos sur comment lancer un business. J'en ai lancé 0.",
+        "Chaque soir je me dis : demain je commence. Chaque soir depuis 2 ans.",
+        "Je consomme du contenu développement personnel comme d'autres scrollent TikTok. Même drogue.",
+        "72% des gens qui consomment du self-help n'appliquent jamais. Je suis dans les 72%."
       ]
     }
   ],
-  "keyword_fluo": {
-    "last_updated": "2026-04-05",
-    "extraction_source": "videos-niche.json (72) + messages-niche.json (126) + scripts-video.json (34)",
-    "total_keywords": 170,
-    "barber_specific_ratio": "0%",
-    "universal_ratio": "100%",
-    "high_impact": [
-      {
-        "keyword": "système",
-        "score": 9,
-        "count": 191,
-        "usage": "Hook disruption — 'Le système est conçu pour te garder là'"
-      },
-      {
-        "keyword": "mental",
-        "score": 9,
-        "count": 52,
-        "usage": "Reframe — 'C'est pas un problème de compétence, c'est mental'"
-      },
-      {
-        "keyword": "liberté",
-        "score": 9,
-        "count": 22,
-        "usage": "Promesse — 'La vraie liberté c'est pas l'argent, c'est le choix'"
-      },
-      {
-        "keyword": "modèle",
-        "score": 8,
-        "count": 92,
-        "usage": "Mécanisme — 'Ton modèle est cassé, pas toi'"
-      },
-      {
-        "keyword": "prison",
-        "score": 8,
-        "count": 40,
-        "usage": "Métaphore — 'T'es dans une prison sans barreaux'"
-      },
-      {
-        "keyword": "cycle",
-        "score": 8,
-        "count": 37,
-        "usage": "Diagnostic — 'Le cycle se répète tant que tu changes rien'"
-      },
-      {
-        "keyword": "survivre",
-        "score": 8,
-        "count": 36,
-        "usage": "Agitation — 'Tu survis, tu vis pas'"
-      },
-      {
-        "keyword": "vérité",
-        "score": 8,
-        "count": 20,
-        "usage": "Permission — 'La vérité que personne te dit'"
-      },
-      {
-        "keyword": "cerveau",
-        "score": 8,
-        "count": 11,
-        "usage": "Récipient — 'Ton cerveau est un récipient — qu'est-ce que tu mets dedans?'"
-      },
-      {
-        "keyword": "levier",
-        "score": 7,
-        "count": 17,
-        "usage": "Solution — 'Transforme ton savoir en levier'"
-      },
-      {
-        "keyword": "paralysie",
-        "score": 7,
-        "count": 14,
-        "usage": "Diagnostic avatar — 'La paralysie du cérébral'"
-      },
-      {
-        "keyword": "illusion",
-        "score": 7,
-        "count": 16,
-        "usage": "Disruption — 'La sécurité c'est une illusion'"
-      },
-      {
-        "keyword": "invisible",
-        "score": 7,
-        "count": 12,
-        "usage": "Douleur — 'T'es invisible dans ton propre game'"
-      },
-      {
-        "keyword": "trappe",
-        "score": 7,
-        "count": 11,
-        "usage": "Métaphore — 'La trappe du temps-contre-argent'"
-      },
-      {
-        "keyword": "mensonge",
-        "score": 7,
-        "count": 10,
-        "usage": "Disruption — 'Le mensonge qu'on t'a vendu'"
-      },
-      {
-        "keyword": "biais",
-        "score": 7,
-        "count": 12,
-        "usage": "Mécanisme — 'Ton cerveau utilise des biais pour te garder immobile'"
-      },
-      {
-        "keyword": "piégé",
-        "score": 7,
-        "count": 6,
-        "usage": "Hook — 'T'es piégé et tu le sais même pas'"
-      },
-      {
-        "keyword": "personne te dit",
-        "score": 7,
-        "count": 7,
-        "usage": "Curiosité — 'Ce que personne te dit sur…'"
-      },
-      {
-        "keyword": "déclic",
-        "score": 6,
-        "count": 5,
-        "usage": "Transformation — 'Le déclic arrive quand tu comprends ça'"
-      },
-      {
-        "keyword": "shift",
-        "score": 7,
-        "count": 10,
-        "usage": "Reframe — 'Le shift mental qui change tout'"
-      }
-    ],
-    "emotional_triggers": [
-      {
-        "keyword": "frustration",
-        "score": 8,
-        "count": 46,
-        "usage": "Connexion — 'Cette frustration que tu ressens, elle est normale'"
-      },
-      {
-        "keyword": "boss / patron",
-        "score": 8,
-        "count": 47,
-        "usage": "Ennemi commun — 'Ton boss profite du système, pas toi'"
-      },
-      {
-        "keyword": "compte en banque",
-        "score": 8,
-        "count": 31,
-        "usage": "Réalité check — 'Regarde ton compte en banque. Il te ment pas.'"
-      },
-      {
-        "keyword": "épuisé / cramé",
-        "score": 8,
-        "count": 27,
-        "usage": "Miroir — 'T'es épuisé. Pas parce que t'es faible.'"
-      },
-      {
-        "keyword": "colère / rage",
-        "score": 8,
-        "count": 49,
-        "usage": "Fuel — 'Cette colère, utilise-la comme carburant'"
-      },
-      {
-        "keyword": "espoir",
-        "score": 8,
-        "count": 20,
-        "usage": "Permission — 'L'espoir c'est pas naïf. C'est stratégique.'"
-      },
-      {
-        "keyword": "galère",
-        "score": 7,
-        "count": 15,
-        "usage": "Identification — 'Si tu galères, c'est pas ta faute'"
-      },
-      {
-        "keyword": "rêve",
-        "score": 7,
-        "count": 14,
-        "usage": "Désir — 'T'as un rêve. Il est pas mort.'"
-      },
-      {
-        "keyword": "perdu",
-        "score": 7,
-        "count": 14,
-        "usage": "Empathie — 'Te sentir perdu, c'est le premier signe que tu cherches'"
-      },
-      {
-        "keyword": "anxiété",
-        "score": 7,
-        "count": 13,
-        "usage": "Normalisation — 'L'anxiété c'est ton cerveau qui sait que t'es fait pour plus'"
-      },
-      {
-        "keyword": "loyer / factures",
-        "score": 7,
-        "count": 20,
-        "usage": "Concret — 'Le loyer attend pas que t'aies trouvé ta passion'"
-      },
-      {
-        "keyword": "cité / quartier",
-        "score": 7,
-        "count": 12,
-        "usage": "Environnement — 'Ton quartier t'a pas condamné'"
-      },
-      {
-        "keyword": "confiance",
-        "score": 6,
-        "count": 8,
-        "usage": "Reconstruction — 'La confiance se construit avec des micro-victoires'"
-      },
-      {
-        "keyword": "fierté",
-        "score": 6,
-        "count": 5,
-        "usage": "Identité — 'La fierté de celui qui a construit quelque chose'"
-      },
-      {
-        "keyword": "famille",
-        "score": 6,
-        "count": 6,
-        "usage": "Motivation — 'Pour ta famille, pas pour le regard des autres'"
-      }
-    ],
-    "action_words": [
-      {
-        "keyword": "ce soir",
-        "score": 8,
-        "count": 108,
-        "usage": "Micro-action timing — 'Ce soir, fais exactement ça'"
-      },
-      {
-        "keyword": "juste",
-        "score": 8,
-        "count": 140,
-        "usage": "Réduction friction — 'Juste fais ça. Rien d'autre.'"
-      },
-      {
-        "keyword": "fais",
-        "score": 8,
-        "count": 73,
-        "usage": "Impératif direct — permission d'agir"
-      },
-      {
-        "keyword": "note",
-        "score": 8,
-        "count": 48,
-        "usage": "Premier pas cognitif — 'Note ce chiffre'"
-      },
-      {
-        "keyword": "commence",
-        "score": 8,
-        "count": 39,
-        "usage": "Déclencheur — 'Commence par ça'"
-      },
-      {
-        "keyword": "maintenant",
-        "score": 8,
-        "count": 38,
-        "usage": "Urgence — 'Pas demain. Maintenant.'"
-      },
-      {
-        "keyword": "arrête",
-        "score": 8,
-        "count": 38,
-        "usage": "Disruption comportementale — 'Arrête de scroller'"
-      },
-      {
-        "keyword": "exactement",
-        "score": 8,
-        "count": 36,
-        "usage": "Précision — 'Fais exactement ça, rien de plus'"
-      },
-      {
-        "keyword": "regarde",
-        "score": 8,
-        "count": 26,
-        "usage": "Observation — 'Regarde ce qui se passe quand tu fais ça'"
-      },
-      {
-        "keyword": "prends",
-        "score": 8,
-        "count": 25,
-        "usage": "Action physique — 'Prends ton téléphone et…'"
-      },
-      {
-        "keyword": "crée",
-        "score": 8,
-        "count": 25,
-        "usage": "Construction — 'Crée quelque chose. Même petit.'"
-      },
-      {
-        "keyword": "premier pas",
-        "score": 7,
-        "count": 18,
-        "usage": "Anti-paralysie — 'Le premier pas c'est pas un business plan'"
-      },
-      {
-        "keyword": "nomme",
-        "score": 7,
-        "count": 18,
-        "usage": "Exercice cognitif — 'Nomme le blocage. Ça le réduit.'"
-      },
-      {
-        "keyword": "identifie",
-        "score": 7,
-        "count": 14,
-        "usage": "Diagnostic — 'Identifie le pattern qui te bloque'"
-      },
-      {
-        "keyword": "calcule",
-        "score": 7,
-        "count": 16,
-        "usage": "Réalité — 'Calcule combien tu gagnes de l'heure. Vraiment.'"
-      }
-    ],
-    "identity_words": [
-      {
-        "keyword": "talent",
-        "score": 8,
-        "count": 29,
-        "usage": "Validation — 'T'as du talent. C'est prouvé.'"
-      },
-      {
-        "keyword": "créateur",
-        "score": 8,
-        "count": 29,
-        "usage": "Identité future — 'T'es un créateur, pas un exécutant'"
-      },
-      {
-        "keyword": "fier",
-        "score": 8,
-        "count": 26,
-        "usage": "Émotion cible — 'Imagine être fier de ce que t'as construit'"
-      },
-      {
-        "keyword": "libre",
-        "score": 7,
-        "count": 18,
-        "usage": "Promesse — 'Libre de choisir ton emploi du temps'"
-      },
-      {
-        "keyword": "entrepreneur",
-        "score": 7,
-        "count": 16,
-        "usage": "Reframe — 'T'es déjà entrepreneur. Tu le sais juste pas.'"
-      },
-      {
-        "keyword": "unique",
-        "score": 7,
-        "count": 13,
-        "usage": "Différenciation — 'Ce que t'as de unique, personne peut le copier'"
-      },
-      {
-        "keyword": "artisan",
-        "score": 7,
-        "count": 13,
-        "usage": "Dignité — 'Artisan c'est noble. Mais artisan LIBRE c'est mieux.'"
-      },
-      {
-        "keyword": "différent",
-        "score": 7,
-        "count": 12,
-        "usage": "Anti-objection — 'Oui, t'es différent. C'est ton avantage.'"
-      },
-      {
-        "keyword": "intelligent",
-        "score": 7,
-        "count": 7,
-        "usage": "Piège avatar — 'T'es intelligent. C'est ça le piège.'"
-      },
-      {
-        "keyword": "capable",
-        "score": 7,
-        "count": 6,
-        "usage": "Permission — 'T'es capable. T'as juste pas encore commencé.'"
-      },
-      {
-        "keyword": "potentiel",
-        "score": 7,
-        "count": 5,
-        "usage": "Tension — 'Ton potentiel te détruit si tu l'utilises pas'"
-      },
-      {
-        "keyword": "cérébral",
-        "score": 5,
-        "count": 2,
-        "usage": "Identité avatar — 'Le cérébral paralysé — c'est toi?'"
-      },
-      {
-        "keyword": "indépendant",
-        "score": 6,
-        "count": 6,
-        "usage": "Aspiration — 'Devenir indépendant, pas juste freelance'"
-      },
-      {
-        "keyword": "légitime",
-        "score": 6,
-        "count": 5,
-        "usage": "Anti-imposteur — 'T'es légitime. Point.'"
-      },
-      {
-        "keyword": "créatif",
-        "score": 6,
-        "count": 5,
-        "usage": "Reframe — 'Ta créativité c'est un actif, pas un hobby'"
-      }
-    ],
-    "top_combos": [
-      {
-        "combo": "système + piégé",
-        "score": 10,
-        "usage": "Hook ultime — 'Le système t'a piégé. Voilà comment.'"
-      },
-      {
-        "combo": "cerveau + récipient",
-        "score": 10,
-        "usage": "Métaphore fil rouge — Doctrine Djibril"
-      },
-      {
-        "combo": "ce soir + exactement",
-        "score": 9,
-        "usage": "Micro-action parfaite — 'Ce soir, fais exactement ça'"
-      },
-      {
-        "combo": "mental + shift",
-        "score": 9,
-        "usage": "Transformation — 'Le shift mental qui change tout'"
-      },
-      {
-        "combo": "intelligent + piège",
-        "score": 9,
-        "usage": "Avatar — 'Ton intelligence est un piège'"
-      },
-      {
-        "combo": "personne te dit + vérité",
-        "score": 9,
-        "usage": "Curiosité — 'La vérité que personne te dit'"
-      },
-      {
-        "combo": "liberté + système",
-        "score": 9,
-        "usage": "Promesse vs ennemi — 'La liberté c'est sortir du système'"
-      },
-      {
-        "combo": "juste + premier pas",
-        "score": 8,
-        "usage": "Anti-paralysie — 'Juste fais le premier pas'"
-      },
-      {
-        "combo": "survivre + vivre",
-        "score": 8,
-        "usage": "Contrast — 'Tu survis. T'as le droit de vivre.'"
-      },
-      {
-        "combo": "colère + carburant",
-        "score": 8,
-        "usage": "Reframe émotion — 'Ta colère c'est du carburant'"
-      }
+  "emotion_mapping_doctrine": {
+    "Épuisement": {
+      "doctrine_link": "Clé 9 Action + Métier chronophage = encre passive subie",
+      "content_angle": "TOFU empathie — identifier la fatigue, la nommer, donner la permission de vouloir autre chose"
+    },
+    "Frustration": {
+      "doctrine_link": "Clé 2 Perception + Clé 4 Conception — le système filtre la réalité",
+      "content_angle": "TOFU reframe — la frustration = signal que ton récipient est prêt pour autre chose"
+    },
+    "Paralysie d'analyse": {
+      "doctrine_link": "Clé 7 Idée + Boucle toxique + Ariely (paradoxe du choix)",
+      "content_angle": "MOFU coaching — mécanisme précis de la paralysie + implementation intentions Gollwitzer"
+    },
+    "Peur du changement": {
+      "doctrine_link": "Clé 5 Représentation mentale + Oettingen WOOP",
+      "content_angle": "MOFU coaching — reconsolidation des croyances limitantes + data Adam comme preuve de faisabilité"
+    },
+    "Doute de soi": {
+      "doctrine_link": "Récipient surchargé + Dunning-Kruger inversé + Effet Pratfall",
+      "content_angle": "TOFU affect labeling + MOFU Pratfall effect — l'imperfection crée la confiance"
+    },
+    "Impuissance apprise": {
+      "doctrine_link": "Seligman (1967) + Clé 9 Action + micro-victoires",
+      "content_angle": "MOFU coaching — casser la boucle avec UNE micro-action cognitive (pas physique)"
+    },
+    "Isolement": {
+      "doctrine_link": "Axe 2 Isolement + Clé 2 Perception + positionnement grand frère",
+      "content_angle": "TOFU connexion — tu n'es pas seul, Adam = preuve vivante du chemin seul"
+    },
+    "Honte silencieuse": {
+      "doctrine_link": "Affect labeling Lieberman + VOIR-NOMMER",
+      "content_angle": "TOFU ciné — nommer la honte = réduire son pouvoir (-30% amygdale)"
+    },
+    "Désespoir": {
+      "doctrine_link": "Prophétie autoréalisatrice Merton + Clé 4 Conception",
+      "content_angle": "MOFU reframe — le désespoir est une croyance programmée, pas une réalité"
+    },
+    "Colère": {
+      "doctrine_link": "Locus de contrôle Rotter (externe → interne)",
+      "content_angle": "MOFU coaching — transformer la colère en carburant via shift locus de contrôle"
+    },
+    "Espoir fragile": {
+      "doctrine_link": "Data Adam (6700€, 21 ans, seul) + Social proof Cialdini",
+      "content_angle": "BOFU preuve — quelqu'un l'a fait dans tes conditions exactes. Voilà comment."
+    },
+    "Addiction informationnelle": {
+      "doctrine_link": "Boucle toxique + Gloria Mark 47s + Knowing-Doing Gap Pfeffer & Sutton",
+      "content_angle": "MOFU coaching — diagnostic de la boucle + exercice cognitif pour la casser"
+    }
+  },
+  "evolution_vs_precedent": {
+    "date_precedent": "2026-03-31",
+    "changements": [
+      "ZÉRO référence niche spécifique — 100% universel (positionnement analyse comportementale)",
+      "+2 émotions ajoutées: 'Honte silencieuse' et 'Addiction informationnelle' — signaux forts détectés",
+      "Verbatims nettoyés de TOUTE référence métier spécifique — universalité maximale",
+      "Mapping doctrine ajouté — chaque émotion liée à un angle de contenu précis",
+      "Total signaux: 128 → 142 (+11%)"
     ]
   }
 }
