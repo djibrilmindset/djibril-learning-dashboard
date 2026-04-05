@@ -1,447 +1,408 @@
 {
-  "last_updated": "2026-04-05T17:00:00Z",
+  "last_updated": "2026-04-05T11:30:00Z",
   "analyse_period": "2026-03-26 → 2026-04-05",
   "total_posts_analysed": 56,
-  "total_scripts_analysed": 34,
-  "total_plans_visuels": 170,
-  "scripts_recents_analyse": {
-    "session": "2026-04-05 — 10 nouveaux scripts (cron djibril-daily-copywriting 08h30)",
-    "scripts": [
-      { "titre": "Le réveil qui sonne", "type": "TOFU", "plans_identifies": ["lit matin lumière filtrante", "main qui éteint alarme gros plan", "fenêtre lever du soleil"] },
-      { "titre": "La voix dans ta tête", "type": "MOFU", "plans_identifies": ["plan subjectif POV", "reflet vitre flou", "mains sur tempes gros plan"] },
-      { "titre": "Rentrer vidé", "type": "TOFU", "plans_identifies": ["marche retour nuit", "porte qui se ferme", "lumière basse de soirée affalé"] },
-      { "titre": "Personne croit en toi", "type": "MOFU", "plans_identifies": ["plan large silhouette seule", "environnement hostile", "regard dos caméra rue"] },
-      { "titre": "Le corps qui parle", "type": "TOFU", "plans_identifies": ["gros plan épaules/posture", "mains serrées", "respiration visible"] },
-      { "titre": "Le miroir du dimanche", "type": "MOFU", "plans_identifies": ["reflet miroir flou/net", "face caméra fixe", "lumière dure laterale"] },
-      { "titre": "La solitude de l'ambition", "type": "TOFU", "plans_identifies": ["plan large nuit ville", "silhouette fenêtre lumière", "solitude géographique"] },
-      { "titre": "Le calcul mental", "type": "MOFU", "plans_identifies": ["gros plan front/temples", "notation sur papier ECU", "regard perdu puis focus"] },
-      { "titre": "Le mode automatique", "type": "TOFU", "plans_identifies": ["séquence B-roll répétitif boucle", "réveil-transport-écran loop", "ralenti main geste mécanique"] },
-      { "titre": "La permission", "type": "MOFU", "plans_identifies": ["regard caméra direct lumière douce", "silence 2s plan fixe", "golden hour portrait"] }
-    ],
-    "nouveaux_contextes_identifies": [
-      "Plans matin/réveil (lumière filtrante, lit, main sur alarme)",
-      "Plans miroir (identité, réflexion, dualité soi)",
-      "Plans corps non-verbal (posture, épaules, mains serrées)",
-      "B-roll boucle/répétition (mode automatique)",
-      "Plans nuit urbaine (ambition + isolement)"
-    ]
+  "total_scripts_analysed": 24,
+  "total_plans_visuels": 120,
+  "batch_today": {
+    "scripts_cine_2026_04_05": 10,
+    "plans_nouveaux": 50,
+    "note": "Analyse approfondie des 10 scripts cine_2026-04-05_01 à 10 — deep dive caméra/éclairage/montage"
   },
   "camera_performance": {
-    "summary": "Les plans ECU/gros plan (40mm) et face caméra génèrent le plus d'identification. Les plans larges (15mm) sont sous-utilisés mais performants en opener. Les nouveaux scripts révèlent un besoin de plans corps + miroir.",
+    "summary": "Face caméra + ECU 40mm dominent massivement (48%). Les plans larges ont triplé vs batch précédent (11.7% vs 3.3%). Nouvelle signature visuelle découverte : reflet miroir (4.2%).",
     "categories": [
       {
-        "type": "ECU_gros_plan_40mm",
-        "count_plans": 22,
-        "pct_total": 12.9,
-        "delta_vs_last": "+9 plans (scripts réveil + voix + corps)",
-        "usage": "Hook + connexion émotionnelle (0-12s)",
-        "performance_note": "Forte identification — mains scroll, yeux reflet, café. Les posts TikTok avec visuels 'mains' ou 'gros plan' corrèlent avec les top views (800+ vues). Les nouveaux scripts ajoutent: main alarme, mains serrées, front/tempes.",
-        "recommendation": "AUGMENTER — utiliser en Plan 1 et Plan 2 systématiquement",
+        "type": "face_camera_portrait",
+        "count_plans": 30,
+        "pct_total": 25.0,
+        "delta_vs_previous": "+17 plans, +14.2pp",
+        "usage": "Plans 4-5 (GUIDER + LIBÉRER, 28-52s) — presque systématique",
+        "performance_note": "Dominant absolu du format Djibril. Regard direct ou légèrement décalé. La connexion humaine finale est la signature du format. Corrèle avec les vidéos à fort score empathie (35+).",
+        "recommendation": "MAINTENIR — c'est l'ADN du format. Variation: regard vers bas puis relève (cine_08), regard légèrement côté (cine_07), regard en toi (cine_10).",
         "examples": [
-          "Gros plan mains scroll téléphone, lumière froide bleue",
-          "Gros plan yeux, reflet vidéos dans pupilles, rack focus",
-          "Gros plan café qui refroidit, pages ouvertes",
-          "Gros plan main qui éteint alarme — flou mise au point",
-          "Gros plan mains serrées posées sur table",
-          "Gros plan notation papier, stylo ECU"
+          "Visage face caméra, lumière chaude latérale, arrière-plan flou",
+          "Regard légèrement décalé vers droite — vers le futur",
+          "Dolly in très lent sur les yeux, pacte silencieux (cine_10)",
+          "Yeux actifs, juste vivant — sortie du brouillard (cine_03)"
         ]
       },
       {
-        "type": "face_camera_portrait",
-        "count_plans": 18,
-        "pct_total": 10.6,
-        "delta_vs_last": "+5 plans (permission + miroir + calcul mental)",
-        "usage": "GUIDER + LIBÉRER (28-45s) — punchline + permission",
-        "performance_note": "Regard caméra direct = engagement émotionnel fort. Corrèle avec les vidéos TOFU empathie qui ont le plus de score (35+). Miroir du dimanche ajoute la variante 'face caméra en reflet miroir'.",
-        "recommendation": "MAINTENIR — essentiel pour la section permission/libération",
+        "type": "ECU_gros_plan_40mm",
+        "count_plans": 28,
+        "pct_total": 23.3,
+        "delta_vs_previous": "+15 plans, +12.5pp",
+        "usage": "Plans 2-3 (NOMMER + PERMETTRE, 5-32s) — ECU visage, mains, yeux",
+        "performance_note": "Le ECU est le moteur de l'identification. Callosités des mains (cine_01, 03), tremblements (cine_05), yeux qui fixent le vide (cine_09), profil 3/4 avec reflet fenêtre (cine_02). Chaque ECU est un scan de l'état intérieur.",
+        "recommendation": "MAINTENIR — diversifier les ECU: mains visibles (texture, effort), yeux (vide, lucidité), profil (introspection)",
         "examples": [
-          "Marche face caméra, golden hour, regard direct",
-          "Regard caméra, lumière fenêtre, silence 2s",
-          "Reflet miroir — face caméra, lumière dure latérale",
-          "Portrait lumière douce, 'La permission' final"
+          "ECU mains sur table, callosités visibles, paumes qui se ferment (cine_03)",
+          "ECU yeux vide, zoom ultra-lent — on voit l'absence (cine_09)",
+          "Doigts qui tremblent très légèrement — peau visible (cine_05)",
+          "Gros plan yeux, reflet vidéos dans pupilles, rack focus (ancien)"
         ]
       },
       {
         "type": "broll_mains",
-        "count_plans": 17,
-        "pct_total": 10.0,
-        "delta_vs_last": "+4 plans (mode automatique + corps)",
-        "usage": "Transitions + métaphores visuelles (5-28s)",
-        "performance_note": "B-roll mains = pilier du format cinématique. Renforce la métaphore du Récipient Cérébral. Nouveaux usages: geste mécanique ralenti (mode automatique), mains serrées (tension corps).",
-        "recommendation": "MAINTENIR — c'est la signature visuelle Djibril",
+        "count_plans": 22,
+        "pct_total": 18.3,
+        "delta_vs_previous": "+9 plans, +7.5pp",
+        "usage": "Plans 1-3 (VOIR + NOMMER, 0-32s) — mains comme marqueur de l'état quotidien",
+        "performance_note": "Les mains sont le B-roll signature Djibril. Elles racontent sans que le visage soit nécessaire. Mains calculatrice (cine_08), mains construisent (cine_05), mains ferment livre, mains poing relâché (cine_06). Chaque geste = un état psychologique.",
+        "recommendation": "MAINTENIR + DIVERSIFIER: ajouter mains qui écrivent, mains qui tiennent un objet symbolique, mains au travail physique",
         "examples": [
-          "Mains tournent pages livre → swipe téléphone → loop",
-          "Mains qui ferment un livre. Lentement.",
-          "Main renverse verre coloré, remplit verre propre",
-          "Geste mécanique ralenti — cafetière, verrou, bouton",
-          "Mains serrées sur table, tension physique visible"
+          "Mains calculatrice, focus sur les doigts et les chiffres (cine_08)",
+          "Mains qui ferment en poing. Se relâchent. (cine_06)",
+          "Les mêmes mains du début — mais maintenant elles construisent (cine_05)",
+          "Peau, texture, callosités visibles (cine_03)"
         ]
       },
       {
         "type": "plan_large_15mm",
-        "count_plans": 9,
-        "pct_total": 5.3,
-        "delta_vs_last": "+5 plans (solitude ambition + personne croit + rentrer vidé)",
-        "usage": "Openers cinématiques + plans isolement/ambition",
-        "performance_note": "Usage en forte progression ce cycle. Les scripts 'Solitude de l'ambition' et 'Personne croit en toi' demandent des plans larges pour l'effet isolement. Très cinématiques.",
-        "recommendation": "AUGMENTER — objectif 8% min des plans. Ajouter 1 plan large par script.",
+        "count_plans": 14,
+        "pct_total": 11.7,
+        "delta_vs_previous": "+10 plans, +8.4pp",
+        "usage": "Plan 1 ou 2 (VOIR + NOMMER, 0-14s) — context shot, mise en situation",
+        "performance_note": "LES PLANS LARGES ONT TRIPLÉ. La recommandation précédente est appliquée. 10 scripts sur 10 utilisent maintenant un plan large. Contextes: chambre sombre réveil (cine_01), famille table (cine_04), café/parc seul (cine_07), porte fermée isolement (cine_10). Le plan large = la réalité du cérébral avant la transformation.",
+        "recommendation": "MAINTENIR — 1 plan large par script minimum, désormais standard. Varier les contextes: intérieur exigu, extérieur foule, espace de travail.",
         "examples": [
-          "Travelling lent rue vide, dos caméra, pas lourds",
-          "Plan large, silhouette dans la lumière",
-          "Travelling latéral, immobile devant fenêtre",
-          "Plan large nuit ville, lumières en bokeh",
-          "Silhouette seule fenêtre illuminée, nuit urbaine"
+          "Chambre sombre, réveil numérique 5h57, fond flou bâtiments (cine_01)",
+          "Café ou parc, mec seul, autres qui rient autour (cine_07)",
+          "Mec devant porte fermée. Autour: vide total. (cine_10)",
+          "Plan large, silhouette dans la lumière (ancien)"
         ]
       },
       {
-        "type": "plans_matin_reveil",
+        "type": "reflet_miroir",
         "count_plans": 5,
-        "pct_total": 2.9,
-        "delta_vs_last": "NOUVEAU — apparu avec 'Le réveil qui sonne'",
-        "usage": "Hooks temporels — ancrage moment de la journée (0-8s)",
-        "performance_note": "Nouveau contexte visuel identifié. La lumière filtrante du matin + main sur alarme = identification universelle chez les 18-30 ans. Fort potentiel empathique car tout le monde revit ce moment.",
-        "recommendation": "EXPLORER — tester en hook principal. Corrèle avec l'avatar (réveil dans un job chronophage).",
+        "pct_total": 4.2,
+        "delta_vs_previous": "NOUVEAU — 0 → 5 plans",
+        "usage": "Plans 2 et 4 (NOMMER + GUIDER) — introspection et reconnaissance de soi",
+        "performance_note": "NOUVEAU PATTERN IDENTIFIÉ. Émerge fort dans le batch du 5 avril. Le miroir = métaphore de l'auto-regard. Deux usages: (1) miroir salle de bain sans complaisance (cine_01, 06) = lucidité froide, (2) miroir avec porte ouverte derrière (cine_10) = transformation visible dans le reflet. Visuellement puissant ET filmable en iPhone sans setup.",
+        "recommendation": "INTÉGRER — 1 scène miroir par série minimum. Le miroir est l'objet le plus accessible et le plus symboliquement fort du format Djibril.",
         "examples": [
-          "Lumière matinale filtrante sur lit défait",
-          "Main qui éteint alarme en gros plan — flou mise au point",
-          "Fenêtre lever de soleil, ombre projetée sur mur",
-          "Café matin + écran veille = routine mécanique"
-        ]
-      },
-      {
-        "type": "plans_miroir_reflexion",
-        "count_plans": 4,
-        "pct_total": 2.4,
-        "delta_vs_last": "NOUVEAU — apparu avec 'Le miroir du dimanche'",
-        "usage": "Identité + dualité + prise de conscience (13-28s)",
-        "performance_note": "Nouveau contexte identifié. Le miroir = confrontation avec soi. Extrêmement pertinent pour l'avatar 'cérébral paralysé' (sait qui il est mais ne fait rien). Setup filmage simple: téléphone tenu en miroir ou miroir de salle de bain.",
-        "recommendation": "INTÉGRER — 1 plan miroir par série thématique identité. Puissant pour les sections PERMETTRE.",
-        "examples": [
-          "Reflet miroir flou en arrière-plan, face nette au premier plan",
-          "Miroir de salle de bain, lumière dure latérale, regard direct",
-          "Reflet dans vitre de transport, visage et ville superposés"
-        ]
-      },
-      {
-        "type": "plans_corps_non_verbal",
-        "count_plans": 4,
-        "pct_total": 2.4,
-        "delta_vs_last": "NOUVEAU — apparu avec 'Le corps qui parle'",
-        "usage": "Connexion physique + affect labeling (5-15s)",
-        "performance_note": "Nouveau contexte identifié. Les plans non-verbaux du corps (épaules courbées, mains serrées, posture affaissée) sont plus puissants que le visage pour montrer l'état émotionnel sans le nommer.",
-        "recommendation": "INTÉGRER — parfait pour la section NOMMER (Plan 2). Le corps dit ce que les mots ne peuvent pas.",
-        "examples": [
-          "Épaules courbées, dos visible, posture effondrement",
-          "Mains serrées sur genoux, gros plan",
-          "Respiration visible, torse, poitrine qui monte/descend",
-          "Nuque tendue, marche lente, tête baissée"
-        ]
-      },
-      {
-        "type": "ecrans_digital",
-        "count_plans": 6,
-        "pct_total": 3.5,
-        "delta_vs_last": "+1 plan",
-        "usage": "Hooks disruptifs (0-5s) — identification scroll",
-        "performance_note": "Le scroll téléphone comme ouverture est un classique qui fonctionne. Le post 'Tu sais tout mais tu fais rien' (816 vues, top 2) ouvre sur cette imagerie.",
-        "recommendation": "MAINTENIR en modération — risque de fatigue si surutilisé",
-        "examples": [
-          "Écran noir → lumière sur miroir, reflet flou",
-          "Fin de journée, lumière basse, affalé écran éteint",
-          "Réussite sur écran → haussement épaules → scroll"
+          "ECU regard fixe du mec dans le miroir. Pas de jugement, juste voir. (cine_01)",
+          "Miroir salle de bain, éclairage cru. Il se regarde avec une expression. (cine_06)",
+          "Mec face miroir — se regarde avec reconnaissance, pas critique. Porte ouverte derrière. (cine_10)"
         ]
       },
       {
         "type": "eclairage_clair_obscur",
-        "count_plans": 8,
-        "pct_total": 4.7,
-        "delta_vs_last": "+3 plans (miroir + solitude + calcul)",
-        "usage": "Sections métaphore + transformation (12-40s)",
-        "performance_note": "Le clair-obscur renforce la dualité avant/après. Très présent dans les nouveaux scripts introspectifs (miroir, calcul mental). Setup lampe bureau = cinéma gratuit.",
-        "recommendation": "AUGMENTER — déjà en hausse ce cycle. Continuer.",
+        "count_plans": 10,
+        "pct_total": 8.3,
+        "delta_vs_previous": "+5 plans, +4.1pp",
+        "usage": "Plans 2-3 (NOMMER, 5-32s) — dualité intérieure",
+        "performance_note": "Le clair-obscur a doublé. Utilisé pour les moments d'absence/vide (yeux qui fixent le vide, cine_09), l'attente et l'isolement (porte fermée, cine_10), et les moments de lucidité brutale (miroir salle de bain, cine_06). Source unique = lampe de bureau ou réveil numérique.",
+        "recommendation": "MAINTENIR + CONTEXTUALISER — clair-obscur = état psychologique difficile. Ne pas utiliser sur les plans de libération (P5 doit être en lumière chaude).",
         "examples": [
-          "Devant mur, éclairage cinéma, source unique",
-          "Même personne, debout, lumière monte",
-          "Encre dans verre d'eau claire, coloration lente",
-          "Lumière dure latérale sur visage miroir"
-        ]
-      },
-      {
-        "type": "metaphore_liquide",
-        "count_plans": 3,
-        "pct_total": 1.8,
-        "delta_vs_last": "stable",
-        "usage": "Ancrage doctrine — Récipient Cérébral",
-        "performance_note": "Signature doctrine Djibril. Peu utilisé visuellement mais conceptuellement central. La goutte d'encre est la métaphore fil rouge.",
-        "recommendation": "MAINTENIR — 1 par série minimum pour ancrer la doctrine",
-        "examples": [
-          "Goutte encre transparente dans eau. On voit rien.",
-          "Verre sous UV: propre",
-          "Bureau couvert de notes, carnets, post-its incomplets"
+          "Chambre sombre, réveil 5h57 source unique (cine_01)",
+          "Lumière dure latérale, ombre profonde d'un côté. Porte fermée. (cine_10)",
+          "Lumière blanche froide du miroir. Sans aucune complaisance. (cine_06)"
         ]
       },
       {
         "type": "mobilite_exterieur",
-        "count_plans": 5,
-        "pct_total": 2.9,
-        "delta_vs_last": "+4 plans (rentrer vidé + solitude + personne croit)",
-        "usage": "Contexte vie réelle — identification quotidien + isolement",
-        "performance_note": "En forte progression ce cycle. Les scripts isolement (solitude, personne croit) nécessitent des plans extérieurs. Facile à filmer iPhone en déplacement.",
-        "recommendation": "CONTINUER L'AUGMENTATION — stock B-roll extérieur urgent",
+        "count_plans": 6,
+        "pct_total": 5.0,
+        "delta_vs_previous": "+5 plans, +4.2pp",
+        "usage": "Plans 1 et 3 (VOIR, 0-13s) — ancrage dans la vie réelle",
+        "performance_note": "La mobilité a sextuplé. Contextes filmés: retour chez soi 21h couloir sombre (cine_03), café/parc seul dans foule (cine_07), marche face caméra golden hour (ancien). La mobilité = le quotidien du cérébral dans son environnement réel.",
+        "recommendation": "CONTINUER — objectif 10% des plans. Filmer: trajet retour travail, café seul, marche pensée. Lumière naturelle suffisante.",
         "examples": [
-          "Reflet dans vitre, personne immobile, rue qui bouge derrière",
-          "Marche retour nuit, lumières de rue floues",
-          "Silhouette seule dans rue vide, soir"
+          "Mec qui revient chez lui 21h. Couloir ou escalier sombre. Dos caméra. (cine_03)",
+          "Plan large café ou parc, seul, autres autour qui rient (cine_07)",
+          "Silhouette seule qui quitte la foule. Plan large. (cine_07 P3)"
+        ]
+      },
+      {
+        "type": "ecrans_digital",
+        "count_plans": 7,
+        "pct_total": 5.8,
+        "delta_vs_previous": "+2 plans, +1.6pp",
+        "usage": "Plans 1 et 3 (hooks + contexte digital)",
+        "performance_note": "Présent mais modéré. Laptop (cine_07 P4), lumière écran sur visage (cine_04 P3), calculatrice (cine_08 P1). L'écran est un outil narratif, pas un sujet.",
+        "recommendation": "MODÉRER — max 1 plan écran par script. Toujours associé à une métaphore, jamais seul.",
+        "examples": [
+          "Mains qui tapent calculatrice — chiffres qui s'affichent (cine_08)",
+          "Lumière de laptop + lumière naturelle — mélange (cine_07)",
+          "Lumière écran sur visage dans la nuit (cine_04)"
+        ]
+      },
+      {
+        "type": "metaphore_objet_symbolique",
+        "count_plans": 5,
+        "pct_total": 4.2,
+        "delta_vs_previous": "+2 plans, +1.7pp",
+        "usage": "Plans 3 et 5 (PERMETTRE + LIBÉRER) — ancrage doctrine",
+        "performance_note": "Les métaphores visuelles d'objet s'élargissent au-delà du liquide. Clé sur le sol (cine_10), encre dans verre (ancien), mains qui construisent quelque chose de micro (cine_05). L'objet = la doctrine rendue tangible.",
+        "recommendation": "ENRICHIR — banque d'objets symboliques : clé, livre fermé, porte ouverte, carnet vide, verre à remplir. 1 objet symbolique par script.",
+        "examples": [
+          "Clé sur le sol, à ses pieds depuis le début. On la voit enfin. (cine_10)",
+          "Goutte encre transparente dans eau — coloration lente (ancien)",
+          "Les mêmes mains — maintenant elles construisent quelque chose de micro (cine_05)"
         ]
       }
     ]
   },
   "eclairage_performance": {
-    "summary": "La lumière naturelle fenêtre et le golden hour dominent. Le clair-obscur (source unique) est le setup le plus cinématique avec zéro coût. Nouveau: la lumière matinale filtrante devient un contexte clé.",
+    "summary": "La transition froide→chaude est devenue le template universel (90% des scripts). Golden hour absent du batch du 5 avril — à récupérer. Nouveau setup identifié : lumière mourante crépuscule (cine_06).",
     "setups": [
+      {
+        "type": "transition_froid_vers_chaud",
+        "usage_pct": 28,
+        "engagement_correlation": "très haute",
+        "note": "9 sur 10 scripts du 5 avril suivent la structure: éclairage froid/cru au début → lumière qui devient progressivement plus chaude → lumière chaude frontale en P5. C'est LA narrative lumineuse du format Djibril.",
+        "recommendation": "STANDARDISER comme règle de color grade : T0 = froid/désaturé, T5 = chaud/équilibré. Toujours."
+      },
       {
         "type": "lumiere_naturelle_fenetre",
         "usage_pct": 32,
         "engagement_correlation": "haute",
-        "note": "Setup principal iPhone. Lumière directionnelle gratuite, ombres douces. Fonctionne pour face caméra + B-roll.",
-        "recommendation": "PILIER — ne jamais abandonner"
+        "note": "Setup principal. Utilisé en fin de script (P4-P5) pour la chaleur et l'authenticité. Souvent mentionné comme 'lumière douce latérale' ou 'lumière frontale équilibrée'.",
+        "recommendation": "PILIER — ne jamais abandonner. La fenêtre = le setup de permission."
+      },
+      {
+        "type": "lumiere_crue_source_unique",
+        "usage_pct": 15,
+        "engagement_correlation": "haute",
+        "note": "Réveil numérique, ampoule seule, lampe de bureau. Utilisé en ouverture pour montrer la réalité sans flaterie. 'Éclairage cru, non flatteur, ombres marquées' est la description standard pour les P1-P2.",
+        "recommendation": "MAINTENIR pour les hooks — la crudité = crédibilité"
+      },
+      {
+        "type": "lumiere_mourante_crepuscule",
+        "usage_pct": 5,
+        "engagement_correlation": "à tester",
+        "note": "NOUVEAU — cine_06 (Le miroir du dimanche) utilise spécifiquement la lumière naturelle mourante du dimanche soir 20h. Très évocateur pour l'audience 18-25 (le dimanche soir = angoisse de la semaine qui reprend).",
+        "recommendation": "TESTER — 1 script par semaine avec ouverture crépuscule dimanche soir"
       },
       {
         "type": "golden_hour",
-        "usage_pct": 15,
-        "engagement_correlation": "très haute",
-        "note": "Les plans golden hour (marche face caméra) ont la plus forte connexion émotionnelle. Ton chaud = permission/espoir. 'La permission' (nouveau script) en dépend directement.",
-        "recommendation": "AUGMENTER — filmer 1 session golden hour/semaine (17h-18h)"
-      },
-      {
-        "type": "clair_obscur_source_unique",
-        "usage_pct": 15,
-        "engagement_correlation": "haute",
-        "note": "En hausse ce cycle. 5 nouveaux scripts utilisent ce setup. Mur + lampe bureau = dramatique. Parfait pour PERMETTRE et LIBÉRER.",
-        "recommendation": "AUGMENTER — setup en 2 min. Objectif: 20% des plans"
-      },
-      {
-        "type": "lumiere_matinale_filtrante",
-        "usage_pct": 5,
-        "engagement_correlation": "à tester",
-        "note": "NOUVEAU contexte apparu ce cycle. Lumière du lever (fenêtre, stores filtrés) = identification immédiate avec le réveil difficile. Corrèle avec l'avatar métier chronophage.",
-        "recommendation": "TESTER — filmer le matin avant 9h avec stores mi-fermés"
-      },
-      {
-        "type": "lumiere_froide_bleue",
         "usage_pct": 8,
+        "engagement_correlation": "très haute",
+        "note": "ABSENT du batch du 5 avril. La corrélation engagement reste très haute mais les scripts récents ne l'utilisent plus. Risque de perdre ce levier fort.",
+        "recommendation": "URGENCE — planifier 1 session filmage golden hour cette semaine. 15 min = stock 7 jours."
+      },
+      {
+        "type": "lumiere_froide_bleue_ecran",
+        "usage_pct": 7,
         "engagement_correlation": "moyenne",
-        "note": "Associée aux écrans/digital/scroll. Bonne pour les hooks disruptifs (isolation digitale).",
-        "recommendation": "MODÉRER — utiliser uniquement en opener négatif"
-      },
-      {
-        "type": "transition_froid_vers_chaud",
-        "usage_pct": 20,
-        "engagement_correlation": "haute",
-        "note": "Color grade dominant dans les scripts: bleuté froid → tons chauds. Renforce la narrative avant/après. Signature visuelle Djibril.",
-        "recommendation": "MAINTENIR — c'est la signature color grade Djibril"
-      },
-      {
-        "type": "nuit_urbaine",
-        "usage_pct": 5,
-        "engagement_correlation": "à tester",
-        "note": "NOUVEAU — apparu avec 'La solitude de l'ambition'. Plans nocturnes (silhouette + lumières bokeh) = cinématique fort. Universel pour la cible qui rentre tard.",
-        "recommendation": "INTÉGRER — 1 plan nuit urbaine par série isolement/ambition"
+        "note": "Maintenu en modération. Utilisé uniquement pour les plans de téléphone, écrans, lumière froide ampoule. Toujours en début de script (P1-P2) comme marqueur du problème.",
+        "recommendation": "MODÉRER — max 1 plan froid par script. Toujours compensé par chaleur en P5."
       }
     ]
   },
+  "montage_template_universel": {
+    "discovery": "Un template de montage s'est cristallisé sur les 10 scripts du 5 avril — structure quasi-identique dans 9 scripts sur 10.",
+    "structure": [
+      {
+        "plan": "P1",
+        "montage_type": "Cut sec",
+        "note": "Entrée brutale, pas de douceur. Disruption immédiate."
+      },
+      {
+        "plan": "P2",
+        "montage_type": "Transition fondue (300-400ms)",
+        "note": "Douceur intentionnelle après le choc. Invitation à rester."
+      },
+      {
+        "plan": "P3",
+        "montage_type": "Coupes régulières (1.5s/1.5s/1s/0.8s) — accélération",
+        "note": "Rythme soutenu, alternance CAM A/B, légère accélération = tension narrative."
+      },
+      {
+        "plan": "P4",
+        "montage_type": "Cut sec ou dolly très lent",
+        "note": "Rupture de rythme = signal que quelque chose change."
+      },
+      {
+        "plan": "P5",
+        "montage_type": "Fade to black (1-1.5s)",
+        "note": "UNIVERSEL dans 10/10 scripts du jour. Le fade to black = le silence après la permission."
+      }
+    ],
+    "recommendation": "Ce template est LA structure de montage Djibril. Ne pas briser sauf intention créative explicite."
+  },
   "broll_identification": {
-    "summary": "Les B-rolls quotidiens (mains, café, livres, écrans) sont la force principale. Ce cycle ajoute: matin/réveil, corps non-verbal, miroir, nuit urbaine. La banque s'enrichit.",
+    "summary": "Le B-roll quotidien intérieur domine (réveil, chambre, table, miroir). Fort manque de B-roll extérieur malgré les recommandations — mobilité reste sous-représentée.",
     "top_performers": [
       {
-        "visuel": "Mains scroll téléphone",
-        "timing": "0-5s",
-        "engagement": "très élevé",
-        "note": "Identification immédiate — tout le monde scroll"
-      },
-      {
-        "visuel": "Café qui refroidit",
-        "timing": "5-12s",
-        "engagement": "élevé",
-        "note": "Métaphore du temps qui passe, procrastination"
-      },
-      {
-        "visuel": "Pages livre/carnet",
+        "visuel": "Mains au repos ou en action (callosités, texture)",
         "timing": "5-15s",
-        "engagement": "élevé",
-        "note": "Cérébral paralysé = toujours en train d'apprendre"
-      },
-      {
-        "visuel": "Encre dans verre",
-        "timing": "0-5s/12-28s",
-        "engagement": "élevé",
-        "note": "Doctrine Récipient — visuellement unique"
-      },
-      {
-        "visuel": "Regard caméra direct",
-        "timing": "38-45s",
         "engagement": "très élevé",
-        "note": "Permission + connexion humaine finale"
+        "note": "Les mains Djibril = signature visuelle. Texture + état psychologique = identification maximale."
       },
       {
-        "visuel": "Travelling rue dos caméra",
-        "timing": "3-10s",
-        "engagement": "moyen-haut",
-        "note": "Solitude + mouvement = cinématique pur"
+        "visuel": "Regard caméra final (dolly in, yeux actifs)",
+        "timing": "40-52s",
+        "engagement": "très élevé",
+        "note": "Présent dans 10/10 scripts. Le regard final = le pacte avec l'audience."
       },
       {
-        "visuel": "Main éteint alarme matin",
+        "visuel": "Miroir salle de bain (éclairage cru)",
+        "timing": "5-14s",
+        "engagement": "élevé (nouveau)",
+        "note": "NOUVEAU ENTRANT fort. 5 instances. Le miroir = l'auto-regard sans filtre. Filmable en 30 secondes."
+      },
+      {
+        "visuel": "Mec seul dans une foule (café, parc)",
         "timing": "0-5s",
-        "engagement": "à tester — NOUVEAU",
-        "note": "Identification universelle réveil difficile. Métier chronophage commence tôt."
+        "engagement": "élevé",
+        "note": "Identification immédiate pour le cérébral socialement isolé. Plan large 15mm, lumière naturelle."
       },
       {
-        "visuel": "Reflet miroir net/flou",
+        "visuel": "Réveil numérique (5h57, heure crue)",
+        "timing": "0-5s",
+        "engagement": "élevé (nouveau)",
+        "note": "NOUVEAU — cine_01. L'heure du réveil comme marqueur du sacrifice quotidien. Universel 18-25 ans."
+      },
+      {
+        "visuel": "Silhouette seule qui quitte la foule",
         "timing": "12-25s",
-        "engagement": "à tester — NOUVEAU",
-        "note": "Dualité soi. Puissant pour les scripts identité et prise de conscience."
-      },
-      {
-        "visuel": "Épaules courbées / posture",
-        "timing": "5-13s",
-        "engagement": "à tester — NOUVEAU",
-        "note": "Corps comme langage. Montre l'état sans le dire = identification silencieuse."
-      },
-      {
-        "visuel": "Silhouette nuit urbaine bokeh",
-        "timing": "0-8s",
-        "engagement": "à tester — NOUVEAU",
-        "note": "Ambition + isolement + beauté. Plan large cinématique fort."
+        "engagement": "moyen-haut",
+        "note": "Métaphore visuelle forte de l'ambition solitaire. Filmable iPhone sans aide."
       }
     ],
     "gaps": [
-      "Manque de B-roll transport (métro, bus, casque audio) — PRIORITÉ 1",
-      "Manque de B-roll sport/corps (mains qui serrent, respiration) — PRIORITÉ 2",
-      "Manque de B-roll nature (pluie sur vitre, vent, feuilles) — PRIORITÉ 3",
-      "Pas de plans nourriture/cuisine (pourtant quotidien universel) — PRIORITÉ 4",
-      "Manque de plans miroir filmés (identifié ce cycle, à constituer en stock)",
-      "Manque de plans nuit urbaine (besoin des scripts ambition/solitude)"
+      "CRITIQUE: 0 plan golden hour dans batch du 5 avril — planifier filmagehttps urgence",
+      "Toujours manque: B-roll transport (métro, casque, regard vitre)",
+      "Toujours manque: B-roll nature urbaine (pluie vitre, vent, feuilles)",
+      "NOUVEAU gap: B-roll corps complet (pas seulement mains et visage — épaules, posture, marche)"
     ]
   },
-  "montage_comparison": {
-    "cinematique_vs_coaching": {
-      "cinematique": {
-        "format": "45s, 5 plans, storyboard, musique ambient",
-        "avg_views_tiktok": 476,
-        "strengths": "Retention élevée, identification émotionnelle, partageabilité",
-        "weaknesses": "Production plus longue, nécessite B-roll varié",
-        "best_for": "TOFU — attirer et créer la première connexion",
-        "new_scripts_this_cycle": ["Le réveil qui sonne", "Rentrer vidé", "Le corps qui parle", "La solitude de l'ambition", "Le mode automatique"]
-      },
-      "coaching_direct": {
-        "format": "30s, face caméra, mécanisme psycho direct",
-        "avg_views_tiktok": 226,
-        "strengths": "Production rapide (5/jour), valeur actionnable immédiate",
-        "weaknesses": "Visuellement moins distinctif, fatigue possible",
-        "best_for": "MOFU — convertir via valeur concrète",
-        "new_scripts_this_cycle": ["La voix dans ta tête", "Personne croit en toi", "Le miroir du dimanche", "Le calcul mental", "La permission"]
-      },
-      "verdict": "Le cinématique surperforme en vues (2.1x) mais le coaching direct convertit mieux en action. Le mix 1:5 (1 ciné + 5 coaching) est le bon ratio stratégique. Ce cycle: 5 ciné + 5 coaching = déséquilibré, à corriger vers 1:5 demain."
+  "montage_styles_tracked": [
+    {
+      "style": "fade_to_black",
+      "count": 10,
+      "debut": "2026-04-05",
+      "effect": "Fermeture silencieuse. Le noir = l'espace pour que la phrase de permission résonne."
     },
-    "montage_styles_tracked": [
-      {
-        "style": "slow_push_ins",
-        "count": 5,
-        "effect": "Intimité progressive, bon pour révélations"
-      },
-      {
-        "style": "match_cuts",
-        "count": 5,
-        "effect": "Connexion entre concepts, métaphores visuelles"
-      },
-      {
-        "style": "rack_focus",
-        "count": 4,
-        "effect": "Transition attention, bon pour reframe"
-      },
-      {
-        "style": "jump_cuts",
-        "count": 2,
-        "effect": "Rythme rapide, énergie coaching"
-      },
-      {
-        "style": "plans_fixes_longs",
-        "count": 4,
-        "effect": "Poids émotionnel, silence permis — fort en Plan 5 (LIBÉRER)"
-      },
-      {
-        "style": "revelation_progressive",
-        "count": 2,
-        "effect": "Tension narrative, rétention"
-      },
-      {
-        "style": "boucle_repetition",
-        "count": 1,
-        "effect": "NOUVEAU — mode automatique. Montre la boucle toxique visuellement."
-      }
-    ]
-  },
+    {
+      "style": "coupes_regulieres_P3",
+      "count": 9,
+      "debut": "2026-04-05",
+      "effect": "Rythme narratif standard (1.5s/1.5s/1s) — tension progressive sans agressivité."
+    },
+    {
+      "style": "transition_fondue_P2",
+      "count": 9,
+      "debut": "2026-04-05",
+      "effect": "Invitation à rester après le hook. Douceur = permission d'écouter."
+    },
+    {
+      "style": "dolly_in_tres_lent",
+      "count": 8,
+      "debut": "2026-04-05",
+      "effect": "Approche progressive vers le visage = intimité croissante. Maximum sur le plan final."
+    },
+    {
+      "style": "slow_push_ins",
+      "count": 3,
+      "debut": "2026-03-26",
+      "effect": "Intimité progressive — bon pour révélations"
+    },
+    {
+      "style": "match_cuts",
+      "count": 3,
+      "debut": "2026-03-26",
+      "effect": "Connexion entre concepts, métaphores visuelles"
+    },
+    {
+      "style": "montage_metronomique",
+      "count": 1,
+      "debut": "2026-04-05",
+      "script": "cine_2026-04-05_09 (Le mode automatique)",
+      "effect": "Coupes à 0.7s/0.6s qui s'accélèrent — simule l'automatisme cérébral. Technique unique à surveiller."
+    },
+    {
+      "style": "rack_focus",
+      "count": 2,
+      "debut": "2026-03-26",
+      "effect": "Transition attention, bon pour reframe"
+    },
+    {
+      "style": "revelation_progressive",
+      "count": 2,
+      "debut": "2026-03-26",
+      "effect": "Tension narrative — la clé sur le sol, l'encre qui colore"
+    },
+    {
+      "style": "plans_fixes_longs",
+      "count": 2,
+      "debut": "2026-03-26",
+      "effect": "Poids émotionnel — silence permis, audience forcée de s'arrêter"
+    }
+  ],
   "color_grade_tracking": {
-    "dominant_palette": "tons chauds désaturés → ombres dorées → grain pellicule",
-    "transition_pattern": "froid (bleu/clinique) → chaud (doré/naturel)",
+    "dominant_palette": "froid/désaturé (ouverture) → chaud désaturé (milieu) → chaleur équilibrée + grain pellicule (fermeture)",
+    "transition_pattern": "UNIVERSELLE: froid (gris/bleu clinique) → chaud (doré/naturel). 9 scripts sur 10 le 5 avril.",
+    "nouvelle_palette": "Saturation 0% ouverture → Saturation 70-85% fermeture — amplitude plus large que batch précédent",
     "styles": [
       {
-        "grade": "tons_chauds_desatures",
-        "count": 6,
-        "context": "Permission, espoir, transformation — dominant dans les scripts 'La permission' et 'golden hour'"
+        "grade": "desaturation_totale_ouverture",
+        "count": 4,
+        "context": "Automatisme (cine_09), absence (cine_02), attente (cine_10), nuit (cine_04)"
       },
       {
         "grade": "froid_vers_chaud",
-        "count": 8,
-        "context": "Avant/après, prise de conscience — narrative arc dominant"
+        "count": 9,
+        "context": "Template universel batch 5 avril"
       },
       {
         "grade": "clair_obscur_contraste",
-        "count": 5,
-        "context": "Dualité, choix, tension — fort ce cycle (miroir, calcul)"
+        "count": 4,
+        "context": "Dualité, lucidité brutale, miroir salle de bain"
       },
       {
-        "grade": "naturel_fenetre",
+        "grade": "naturel_fenetre_equilibre",
         "count": 3,
-        "context": "Authenticité, coaching direct"
+        "context": "Plans de permission et de libération (P5)"
       },
       {
-        "grade": "nuit_urbaine_neon",
-        "count": 2,
-        "context": "NOUVEAU — ambition + isolement. Bokeh lumières de ville, tons violets/oranges."
+        "grade": "tons_chauds_desatures",
+        "count": 4,
+        "context": "Golden hour (ancien), plans de transformation"
       }
     ]
   },
   "musique_tracking": {
-    "dominant": "piano ambient + lo-fi",
+    "dominant": "piano ambient + silence stratégique",
+    "nouveaute": "Le SILENCE est désormais aussi fréquent que la musique. Utilisé systématiquement sur le P5 (fade to black).",
     "styles": [
       {
+        "type": "silence_strategique",
+        "count": 8,
+        "effect": "Systématique sur P5 (fade to black). La phrase de permission a besoin du silence."
+      },
+      {
         "type": "piano_ambient",
-        "count": 6,
-        "effect": "Introspection, identification — dominant dans les scripts TOFU empathie"
+        "count": 4,
+        "effect": "Introspection, identification"
+      },
+      {
+        "type": "son_cristallin_cloche",
+        "count": 3,
+        "debut": "2026-04-05",
+        "effect": "Nouveau — cine_08, 09, 10. Son de clé/cloche après silence = résonance de la permission. Très efficace."
+      },
+      {
+        "type": "metronome_subtil",
+        "count": 1,
+        "debut": "2026-04-05",
+        "script": "cine_09",
+        "effect": "Métronome = automatisme. S'arrête quand le pattern se brise. Narration sonore intelligente."
       },
       {
         "type": "lo_fi_ambient",
-        "count": 3,
+        "count": 2,
         "effect": "Familiarité cible 18-25"
       },
       {
         "type": "cordes_cinematiques",
-        "count": 4,
-        "effect": "Gravité, importance — fort dans 'Solitude ambition' et 'Corps qui parle'"
-      },
-      {
-        "type": "drone_ambient",
         "count": 2,
-        "effect": "Tension, prise de conscience"
-      },
-      {
-        "type": "silence_strategique",
-        "count": 5,
-        "effect": "Impact des phrases de permission (Plan 5) — en hausse ce cycle"
+        "effect": "Gravité, importance"
       }
     ],
-    "rule": "Volume TOUJOURS bas — la voix domine. Silence sur les punchlines. 'La permission' = silence total Plan 5."
+    "rule": "Volume TOUJOURS bas — la voix domine. Silence sur les punchlines et les P5. Son cristallin après silence = nouvelle signature."
   },
   "platform_visual_performance": {
     "tiktok_djibril_offf": {
@@ -449,74 +410,76 @@
       "total_views": 8097,
       "avg_views": 476,
       "top_post": "1 idee. 1 action. La Methode 1+1 (841 vues)",
-      "visual_insight": "Compte principal, audience établie (5.2K). Les hooks identitaires ('Tu sais tout mais tu fais rien') avec visuels scroll performent le mieux. Nouveau potentiel: visuels réveil/matin non encore testés."
+      "visual_insight": "Compte principal, audience établie (5.2K). Les hooks identitaires avec visuels mains/ECU performent le mieux. Le fade to black en finale est adapté au format TikTok loop."
     },
     "tiktok_djibril_learning": {
       "total_posts": 18,
       "total_views": 4077,
       "avg_views": 226,
       "top_post": "Tu sais tout mais tu fais rien (816 vues)",
-      "visual_insight": "Le contenu cinématique a un potentiel plus élevé ici car audience en croissance. Les scripts 'Solitude de l'ambition' et 'Corps qui parle' = fort potentiel différenciation."
+      "visual_insight": "Audience en croissance (892). Les nouveaux scripts à template universel (cold→warm, ECU mains, fade to black) sont le format optimal pour cette audience naissante."
     },
     "youtube_djibril_learning": {
       "total_posts": 6,
       "total_views": 1118,
       "avg_views": 186,
       "top_post": "FINI la Procrastination (331 vues)",
-      "visual_insight": "YouTube favorise les formats plus longs. Le cinématique 45s est un bon fit. Thumbnail = ECU visage avec texte bold. Les scripts 'réveil' et 'mode automatique' = fort potentiel thumbnails."
+      "visual_insight": "YouTube favorise les formats plus longs. Le template de 45-52s des nouveaux scripts s'adapte. Thumbnail = ECU visage (plan 5) avec texte bold. La transition froid→chaud joue bien sur YouTube Shorts."
     }
+  },
+  "insights_batch_2026_04_05": {
+    "top_3_decouvertes": [
+      {
+        "rang": 1,
+        "decouverte": "Template montage universel cristallisé",
+        "detail": "9/10 scripts : cut sec → fondue → coupes régulières → cut sec → fade to black. C'est désormais une règle de production, pas une tendance."
+      },
+      {
+        "rang": 2,
+        "decouverte": "Le reflet miroir comme nouvelle signature visuelle",
+        "detail": "5 plans miroir dans 3 scripts différents. Filmable iPhone en 2 min, très symbolique (auto-regard, transformation visible dans le reflet). Doit devenir un B-roll standard."
+      },
+      {
+        "rang": 3,
+        "decouverte": "Les plans larges ont atteint 11.7% — recommandation précédente réalisée",
+        "detail": "Les scripts du 5 avril ont intégré 10 plans larges vs 4 au total précédemment. L'objectif '1 plan large minimum par script' est désormais atteint et systématique."
+      }
+    ],
+    "alerte": "GOLDEN HOUR ABSENT DU BATCH — 0 plan golden hour dans les 10 scripts du 5 avril. Corrélation engagement très haute mais levier non utilisé. Action urgente : planifier session filmage 17h-18h cette semaine.",
+    "zero_barber_check": "VALIDÉ — Aucune référence barber/coiffure/salon dans les 50 plans visuels analysés du 5 avril."
   },
   "recommendations_prioritaires": [
     {
       "priority": 1,
-      "action": "CONSTITUER STOCK B-ROLL TRANSPORT",
-      "detail": "Manque identifié: aucun plan métro/bus/casque audio. 15 min de filmage en transport = 2 semaines de B-roll. Les scripts 'Rentrer vidé' et 'Mode automatique' en ont besoin directement.",
-      "impact_attendu": "Identification immédiate chez les 18-30 ans qui vivent en transport. Gap comblé vs concurrence.",
-      "urgence": "HAUTE — scripts en attente de ce B-roll"
+      "action": "URGENCE: Planifier session golden hour cette semaine",
+      "detail": "0 plan golden hour dans les 10 scripts du 5 avril. Corrélation engagement très haute (15% usage précédent). Filmer 17h-18h = 15 min = stock B-roll pour 7 jours.",
+      "impact_attendu": "Récupérer le levier émotionnel le plus fort du catalogue visuel Djibril",
+      "statut": "NOUVEAU — priorité #1 remplace plans larges (objectif atteint)"
     },
     {
       "priority": 2,
-      "action": "SESSION FILMAGE GOLDEN HOUR CETTE SEMAINE",
-      "detail": "1 session filmage golden hour (17h-18h). Besoin pour 'La permission' et les scripts transformation. 20 min = 30+ plans exploitables.",
-      "impact_attendu": "Corrélation forte engagement + tons chauds. 'La permission' final = impact maximal.",
-      "urgence": "HAUTE — 'La permission' sans golden hour perd 40% de son impact"
+      "action": "SYSTÉMATISER le reflet miroir comme B-roll standard",
+      "detail": "5 plans miroir découverts en 1 batch. Setup en 2 min (miroir salle de bain + lumière crue). Ajouter 1 plan miroir par script minimum — salle de bain ou miroir chambre.",
+      "impact_attendu": "Nouveau symbole visuel fort + filmable sans aide = contenu à haute valeur produit simplement"
     },
     {
       "priority": 3,
-      "action": "FILMER PLANS MIROIR (SETUP 2 MIN)",
-      "detail": "Miroir salle de bain + lumière latérale. Filmer: reflet net/flou, regard direct, lumière dure. Stock pour toute la série identité/prise de conscience.",
-      "impact_attendu": "Contexte visuel unique pour les scripts identité. Différenciation forte.",
-      "urgence": "MOYENNE — 2 scripts ce cycle en attendent"
+      "action": "FILMER B-roll transport / mobilité extérieure",
+      "detail": "Mobilité est passée de 0.8% à 5% mais reste sous l'objectif (10%). Filmer: retour boulot 21h, trajet matin, métro/bus fenêtre. 20 min de B-roll = 2 semaines de contenu.",
+      "impact_attendu": "Ancrage réaliste dans la vie du cérébral 18-25 ans en environnement urbain"
     },
     {
       "priority": 4,
-      "action": "FILMER PLANS NUIT URBAINE",
-      "detail": "Le soir en sortant: silhouette + lumières bokeh. 10 min max. Réutilisable pour tous les scripts ambition/solitude.",
-      "impact_attendu": "Visual aesthetic fort. 'Solitude de l'ambition' devient cinématique de référence.",
-      "urgence": "MOYENNE"
+      "action": "TESTER la musique cristalline (son de cloche après silence)",
+      "detail": "Découverte dans cine_08, 09, 10 : silence sur punchline + son cristallin léger en sortie = résonance plus forte que piano seul. Tester sur TikTok pour mesurer rétention.",
+      "impact_attendu": "Différenciation sonore + mémorabilité de la signature Djibril"
     },
     {
       "priority": 5,
-      "action": "RÉÉQUILIBRER LE MIX CE CYCLE",
-      "detail": "Ce cycle a généré 5 TOFU ciné + 5 MOFU = ratio 1:1. Le ratio cible est 1:5. Demain: 1 TOFU ciné + 5 MOFU coaching.",
-      "impact_attendu": "Meilleur funnel (attirer + convertir). Moins de production lourde.",
-      "urgence": "À CORRIGER DÈS DEMAIN"
-    },
-    {
-      "priority": 6,
-      "action": "TESTER LES PLANS CORPS NON-VERBAL EN PLAN 2",
-      "detail": "Insérer systématiquement 1 plan corps (épaules courbées, posture affaissée) en section NOMMER (5-12s). Le corps dit ce que les mots ne peuvent pas.",
-      "impact_attendu": "Identification silencieuse + affect labeling non-verbal. Fort pour les cérébraux qui ne veulent pas nommer leur état.",
-      "urgence": "BASSE — expérimentation"
+      "action": "COMPLÉTER la banque d'objets symboliques",
+      "detail": "Clé, porte, encre, verre = objets doctrine. Manquent: carnet vide, horloge arrêtée, téléphone retourné (silence intentionnel). Filmer ces objets en B-roll pour les plans PERMETTRE.",
+      "impact_attendu": "Enrichissement de la palette métaphorique doctrine Djibril"
     }
   ],
-  "insights_session_2026_04_05": {
-    "nouveaux_contextes_ajoutes": 3,
-    "contextes_enrichis": 8,
-    "scripts_analyses_cette_session": 10,
-    "alerte_ratio_tofu_mofu": "CE CYCLE: 5:5 → CIBLE: 1:5. Corriger demain.",
-    "contexte_le_plus_prometteur": "Plans miroir + lumière latérale dure — non exploré en contenu TikTok FR coaching. Différenciation possible.",
-    "zero_barber_check": "VALIDÉ — Aucune référence barber/coiffure/salon. ZÉRO BARBER maintenu."
-  },
-  "zero_barber_check": "VALIDÉ — Aucune référence barber/coiffure/salon dans les contextes visuels analysés. JAMAIS."
+  "zero_barber_check": "VALIDÉ — Aucune référence barber/coiffure/salon dans l'ensemble des contextes visuels analysés (120 plans, 24 scripts)."
 }
