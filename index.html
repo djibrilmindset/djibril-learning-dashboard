@@ -1,1589 +1,1408 @@
 <!DOCTYPE html>
-<!-- Created with Perplexity Computer — https://www.perplexity.ai/computer -->
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Djibril Learning Dashboard</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <style>
-    /* ── RESET & BASE ── */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      /* ── Cosmos/Solana Design System ── */
-      --bg: #06060a;
-      --bg-void: #06060a;
-      --bg-deep: #0a0a10;
-      --bg2: #0e0e16;
-      --bg-surface: #0e0e16;
-      --bg-elevated: #14141e;
-      --card: rgba(16, 16, 26, 0.75);
-      --bg-card: rgba(16, 16, 26, 0.75);
-      --card2: rgba(22, 22, 36, 0.88);
-      --bg-card-hover: rgba(22, 22, 36, 0.88);
-      --border: rgba(255,255,255,0.06);
-      --border-invisible: rgba(255,255,255,0.06);
-      --border-subtle: rgba(255,255,255,0.10);
-      --border-hover: rgba(255,255,255,0.18);
-      --border-glow: rgba(153, 69, 255, 0.5);
-      --text: #f5f5f7;
-      --text-primary: #f5f5f7;
-      --text-secondary: #b0b0c0;
-      --muted: #7a7a95;
-      --text-ghost: #505068;
-      --cyan: #14f195;
-      --accent-cyan: #14f195;
-      --accent-emerald: #14f195;
-      --pink: #f857a6;
-      --accent-pink: #f857a6;
-      --yellow: #ffbd2e;
-      --accent-amber: #ffbd2e;
-      --purple: #9945ff;
-      --accent-purple: #9945ff;
-      --green: #14f195;
-      --accent-red: #bc361b;
-      --accent-danger: #ff4444;
-      --gradient-cosmos: linear-gradient(135deg, #9945ff 0%, #14f195 100%);
-      --gradient-warm: linear-gradient(135deg, #bc361b 0%, #9945ff 50%, #14f195 100%);
-      --gradient-subtle: linear-gradient(135deg, rgba(153,69,255,0.18), rgba(20,241,149,0.10));
-      --gradient-card-border: linear-gradient(135deg, rgba(153,69,255,0.35), rgba(20,241,149,0.20));
-      --glow-purple: 0 0 80px rgba(153,69,255,0.18);
-      --glow-card: 0 0 40px rgba(153,69,255,0.10);
-      --glow-cyan: 0 0 60px rgba(20,241,149,0.12);
-      --platform-reddit: #ff4500;
-      --platform-youtube: #ff0000;
-      --platform-twitter: #1da1f2;
-      --platform-tiktok: #fe2c55;
-      --platform-instagram: #e4405f;
-      --platform-linkedin: #0a66c2;
-      --platform-threads: #ffffff;
-      --platform-facebook: #1877f2;
-      --sidebar-w: 240px;
-      --sidebar-collapsed-w: 68px;
-      --transition: 0.28s cubic-bezier(.4,0,.2,1);
-    }
-    html { scroll-behavior: smooth; }
-    body {
-      background: var(--bg);
-      background-image: radial-gradient(ellipse at 20% 0%, rgba(153,69,255,0.06) 0%, transparent 60%), radial-gradient(ellipse at 80% 100%, rgba(20,241,149,0.04) 0%, transparent 60%);
-      color: var(--text);
-      font-family: 'DM Sans', sans-serif;
-      font-size: 14px;
-      line-height: 1.6;
-      min-height: 100vh;
-      overflow-x: hidden;
-    }
-    /* ── SCROLLBAR ── */
-    ::-webkit-scrollbar { width: 6px; height: 6px; }
-    ::-webkit-scrollbar-track { background: var(--bg); }
-    ::-webkit-scrollbar-thumb { background: var(--card2); border-radius: 4px; }
-    ::-webkit-scrollbar-thumb:hover { background: var(--muted); }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Djibril Learning - Command Center</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Sora:wght@600;700&display=swap" rel="stylesheet">
 
-    /* ── LAYOUT ── */
-    #app { display: flex; min-height: 100vh; }
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    /* ── SIDEBAR ── */
-    #sidebar {
-      width: var(--sidebar-w);
-      min-height: 100vh;
-      background: var(--bg2);
-      border-right: 1px solid rgba(153,69,255,0.15);
-      display: flex;
-      flex-direction: column;
-      position: fixed;
-      left: 0; top: 0; bottom: 0;
-      z-index: 100;
-      transition: width var(--transition);
-      overflow: hidden;
-      box-shadow: 4px 0 30px rgba(153,69,255,0.05);
-    }
-    #sidebar.collapsed { width: var(--sidebar-collapsed-w); }
-    .sidebar-header {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 20px 16px;
-      border-bottom: 1px solid var(--border);
-      min-height: 70px;
-    }
-    .logo-mark {
-      width: 36px; height: 36px; flex-shrink: 0;
-      background: var(--gradient-cosmos);
-      border-radius: 10px;
-      display: flex; align-items: center; justify-content: center;
-      font-family: 'Sora', sans-serif;
-      font-weight: 800; font-size: 13px;
-      color: #fff;
-      letter-spacing: 0.5px;
-      text-shadow: 0 1px 3px rgba(0,0,0,0.4);
-    }
-    .logo-text {
-      font-family: 'Sora', sans-serif;
-      font-weight: 700; font-size: 15px;
-      background: var(--gradient-cosmos);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      white-space: nowrap;
-      opacity: 1;
-      transition: opacity var(--transition);
-    }
-    #sidebar.collapsed .logo-text { opacity: 0; pointer-events: none; }
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow-x: hidden;
+        }
 
-    .nav-list { list-style: none; padding: 12px 0; flex: 1; }
-    .nav-item {
-      display: flex; align-items: center; gap: 12px;
-      padding: 11px 16px;
-      cursor: pointer;
-      border-radius: 10px;
-      margin: 2px 8px;
-      transition: background var(--transition), color var(--transition);
-      white-space: nowrap;
-      position: relative;
-    }
-    .nav-item:hover { background: rgba(255,255,255,0.05); }
-    .nav-item.active { background: rgba(20,241,149,0.08); color: var(--cyan); border-left: 2px solid var(--cyan); }
-    .nav-item svg { width: 20px; height: 20px; flex-shrink: 0; }
-    .nav-label {
-      font-size: 13.5px; font-weight: 500;
-      opacity: 1; transition: opacity var(--transition);
-    }
-    #sidebar.collapsed .nav-label { opacity: 0; pointer-events: none; }
-    .nav-item.active .nav-label { color: var(--cyan); }
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: #06060a;
+            color: #e0e0e0;
+            line-height: 1.6;
+            background-image:
+                radial-gradient(ellipse at 20% 0%, rgba(153, 69, 255, 0.06) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 100%, rgba(20, 241, 149, 0.04) 0%, transparent 60%);
+        }
 
-    .collapse-btn {
-      padding: 16px;
-      border-top: 1px solid var(--border);
-      cursor: pointer;
-      display: flex; align-items: center; gap: 8px;
-      color: var(--muted);
-      transition: color var(--transition);
-      font-size: 13px;
-    }
-    .collapse-btn:hover { color: var(--text); }
-    .collapse-btn svg { width: 18px; height: 18px; flex-shrink: 0; transition: transform var(--transition); }
-    #sidebar.collapsed .collapse-btn svg { transform: rotate(180deg); }
-    .collapse-label { opacity: 1; transition: opacity var(--transition); }
-    #sidebar.collapsed .collapse-label { opacity: 0; }
+        /* SCROLLBAR */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
 
-    /* ── MAIN CONTENT ── */
-    #main {
-      margin-left: var(--sidebar-w);
-      flex: 1;
-      transition: margin-left var(--transition);
-      min-width: 0;
-    }
-    #main.sidebar-collapsed { margin-left: var(--sidebar-collapsed-w); }
+        ::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.02);
+        }
 
-    /* ── TOP BAR ── */
-    #topbar {
-      height: 70px;
-      background: var(--bg2);
-      border-bottom: 1px solid var(--border);
-      display: flex; align-items: center;
-      padding: 0 28px;
-      gap: 16px;
-      position: sticky; top: 0; z-index: 50;
-    }
-    .hamburger {
-      display: none;
-      cursor: pointer;
-      background: none; border: none;
-      color: var(--text);
-      padding: 6px;
-    }
-    .hamburger svg { width: 22px; height: 22px; }
-    .topbar-title {
-      font-family: 'Sora', sans-serif;
-      font-size: 18px; font-weight: 700;
-      flex: 1;
-    }
-    .topbar-meta { font-size: 12px; color: var(--muted); font-family: 'JetBrains Mono', monospace; }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(153, 69, 255, 0.3);
+            border-radius: 4px;
+        }
 
-    /* ── TAB CONTENT ── */
-    .tab-pane {
-      display: none;
-      padding: 28px;
-      animation: fadeIn 0.3s ease forwards;
-    }
-    .tab-pane.active { display: block; }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(8px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(153, 69, 255, 0.5);
+        }
 
-    /* ── SECTION TITLES ── */
-    h2.section-title {
-      font-family: 'Sora', sans-serif;
-      font-size: 22px; font-weight: 700;
-      margin-bottom: 20px;
-    }
-    h3.sub-title {
-      font-family: 'Sora', sans-serif;
-      font-size: 16px; font-weight: 600;
-      margin-bottom: 12px; color: var(--muted);
-    }
+        /* HEADER */
+        .header {
+            background: rgba(16, 16, 26, 0.5);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(20px);
+            padding: 1.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            margin-bottom: 2rem;
+        }
 
-    /* ── KPI CARDS ── */
-    .kpi-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 16px;
-      margin-bottom: 28px;
-    }
-    .kpi-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 20px 22px;
-      position: relative;
-      overflow: hidden;
-      backdrop-filter: blur(12px);
-      transition: border-color var(--transition), transform var(--transition);
-    }
-    .kpi-card:hover { border-color: var(--border-glow); transform: translateY(-2px); box-shadow: var(--glow-card); }
-    .kpi-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 2px;
-      background: var(--accent);
-    }
-    .kpi-label { font-size: 12px; color: var(--muted); font-weight: 500; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 8px; }
-    .kpi-value { font-family: 'Sora', sans-serif; font-size: 32px; font-weight: 800; color: var(--accent); }
-    .kpi-sub { font-size: 12px; color: var(--muted); margin-top: 4px; }
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
 
-    /* ── GLASS CARD ── */
-    .glass-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 20px;
-      backdrop-filter: blur(12px);
-      transition: border-color var(--transition);
-    }
-    .glass-card:hover { border-color: var(--border-glow); box-shadow: var(--glow-card); }
+        .logo-circle {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #9945ff 0%, #14f195 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Sora', sans-serif;
+            font-weight: 700;
+            font-size: 24px;
+            color: #06060a;
+            flex-shrink: 0;
+            box-shadow: 0 8px 32px rgba(153, 69, 255, 0.3);
+        }
 
-    /* ── FILTER BAR ── */
-    .filter-bar {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 20px;
-      align-items: center;
-    }
-    .filter-bar input[type="text"], .filter-bar select {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      color: var(--text);
-      padding: 9px 14px;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 13.5px;
-      outline: none;
-      transition: border-color var(--transition);
-    }
-    .filter-bar input[type="text"]:focus, .filter-bar select:focus {
-      border-color: var(--cyan);
-    }
-    .filter-bar input[type="text"] { flex: 1; min-width: 200px; }
-    .filter-bar select { min-width: 140px; cursor: pointer; }
-    option { background: var(--bg2); }
-    .counter-badge {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 12px;
-      color: var(--muted);
-      padding: 4px 10px;
-      background: var(--card2);
-      border-radius: 20px;
-      white-space: nowrap;
-    }
+        .header-text h1 {
+            font-family: 'Sora', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #14f195 0%, #9945ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 0;
+        }
 
-    /* ── PLATFORM BADGE ── */
-    .platform-badge {
-      display: inline-block;
-      padding: 3px 10px;
-      border-radius: 20px;
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      color: #fff;
-    }
+        .header-text p {
+            font-size: 13px;
+            color: #9945ff;
+            margin: 4px 0 0 0;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
 
-    /* ── MESSAGE CARD ── */
-    .message-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 18px 20px;
-      margin-bottom: 14px;
-      transition: border-color var(--transition), transform var(--transition);
-    }
-    .message-card:hover { border-color: var(--border-glow); transform: translateY(-1px); box-shadow: var(--glow-card); }
-    .message-header {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      margin-bottom: 12px;
-      flex-wrap: wrap;
-    }
-    .message-meta { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; flex: 1; }
-    .message-author { font-size: 13px; font-weight: 600; color: var(--text); }
-    .message-date { font-size: 11px; color: var(--muted); font-family: 'JetBrains Mono', monospace; }
-    .message-translation { font-size: 13.5px; color: var(--text); line-height: 1.7; margin-bottom: 10px; }
-    .tag-row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-top: 8px; }
-    .emotion-tag {
-      font-size: 11px; padding: 3px 9px;
-      border-radius: 20px;
-      background: rgba(153,69,255,0.15);
-      color: var(--purple);
-      border: 1px solid rgba(153,69,255,0.3);
-    }
-    .jtbd-tag {
-      font-size: 11px; padding: 3px 9px;
-      border-radius: 20px;
-      background: rgba(20,241,149,0.08);
-      color: var(--cyan);
-      border: 1px solid rgba(20,241,149,0.2);
-    }
-    .stars { color: var(--yellow); font-size: 12px; }
+        /* NAVIGATION TABS */
+        .nav-tabs {
+            max-width: 1200px;
+            margin: 0 auto 2rem;
+            padding: 0 1.5rem;
+            display: flex;
+            gap: 0.5rem;
+            overflow-x: auto;
+            overflow-y: hidden;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+        }
 
-    /* ── VIDEO CARD (GRID) ── */
-    .video-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 16px;
-    }
-    .video-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      overflow: hidden;
-      cursor: pointer;
-      transition: border-color var(--transition), transform var(--transition);
-    }
-    .video-card:hover { border-color: var(--border-glow); transform: translateY(-2px); box-shadow: var(--glow-card); }
-    .video-card-header { padding: 16px 16px 12px; }
-    .video-title { font-size: 13.5px; font-weight: 600; margin-top: 10px; margin-bottom: 6px; line-height: 1.5; }
-    .video-creator { font-size: 12px; color: var(--muted); margin-bottom: 4px; }
-    .video-meta-row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
-    .video-date { font-size: 11px; color: var(--muted); font-family: 'JetBrains Mono', monospace; }
-    .video-duration { font-size: 11px; color: var(--muted); }
-    .video-expand {
-      display: none;
-      padding: 0 16px 16px;
-      border-top: 1px solid var(--border);
-      margin-top: 4px;
-    }
-    .video-expand.open { display: block; }
-    .video-expand h4 { font-size: 12px; font-weight: 600; color: var(--cyan); margin: 12px 0 6px; text-transform: uppercase; letter-spacing: 0.5px; }
-    .video-summary { font-size: 13px; line-height: 1.7; color: var(--text); }
-    .quote-item { font-size: 12.5px; padding: 8px 12px; background: rgba(255,255,255,0.04); border-left: 3px solid var(--yellow); border-radius: 0 8px 8px 0; margin-bottom: 6px; font-style: italic; }
-    .comment-item { font-size: 12.5px; padding: 8px 12px; background: rgba(255,255,255,0.03); border-radius: 8px; margin-bottom: 6px; }
-    .comment-author { font-size: 11px; color: var(--muted); }
-    .video-link { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: var(--cyan); text-decoration: none; margin-top: 10px; padding: 6px 12px; border: 1px solid rgba(20,241,149,0.3); border-radius: 8px; transition: background var(--transition); }
-    .video-link:hover { background: rgba(20,241,149,0.08); }
+        .nav-tabs::-webkit-scrollbar {
+            height: 4px;
+        }
 
-    /* ── SOCIAL TRACKING ── */
-    .date-tabs { display: flex; gap: 8px; margin-bottom: 22px; }
-    .date-tab {
-      padding: 8px 20px;
-      border-radius: 10px;
-      cursor: pointer;
-      font-size: 13px; font-weight: 600;
-      border: 1px solid var(--border);
-      background: transparent;
-      color: var(--muted);
-      transition: all var(--transition);
-    }
-    .date-tab:hover { color: var(--text); border-color: rgba(255,255,255,0.15); }
-    .date-tab.active { background: var(--gradient-cosmos); color: var(--bg); border-color: var(--purple); font-weight: 700; }
+        .tab-btn {
+            background: none;
+            border: none;
+            color: #9ba4b4;
+            font-size: 14px;
+            font-weight: 500;
+            padding: 0.75rem 1.25rem;
+            cursor: pointer;
+            white-space: nowrap;
+            position: relative;
+            transition: color 0.3s ease;
+            font-family: 'DM Sans', sans-serif;
+        }
 
-    .rapport-block {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 24px;
-      margin-bottom: 22px;
-    }
-    .rapport-block h1 { font-family: 'Sora', sans-serif; font-size: 20px; font-weight: 700; margin-bottom: 16px; }
-    .rapport-block h2 { font-family: 'Sora', sans-serif; font-size: 15px; font-weight: 600; color: var(--cyan); margin: 16px 0 8px; }
-    .rapport-block h3 { font-family: 'Sora', sans-serif; font-size: 13.5px; font-weight: 600; color: var(--yellow); margin: 12px 0 6px; }
-    .rapport-block p { font-size: 13.5px; line-height: 1.7; margin-bottom: 8px; }
-    .rapport-block ul { padding-left: 20px; margin-bottom: 8px; }
-    .rapport-block li { font-size: 13.5px; line-height: 1.7; margin-bottom: 4px; }
-    .rapport-block strong { color: var(--text); font-weight: 600; }
+        .tab-btn:hover {
+            color: #e0e0e0;
+        }
 
-    .platform-cards-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 14px;
-      margin-top: 16px;
-    }
-    .platform-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 16px 18px;
-      transition: border-color var(--transition);
-    }
-    .platform-card:hover { border-color: var(--border-glow); box-shadow: var(--glow-card); }
-    .platform-card-name { font-size: 13px; font-weight: 700; margin-bottom: 8px; font-family: 'Sora', sans-serif; }
-    .platform-stat-row { display: flex; justify-content: space-between; font-size: 12px; padding: 4px 0; border-bottom: 1px solid var(--border); }
-    .platform-stat-row:last-child { border-bottom: none; }
-    .platform-stat-label { color: var(--muted); }
-    .platform-stat-value { font-family: 'JetBrains Mono', monospace; font-weight: 500; }
+        .tab-btn.active {
+            color: #14f195;
+        }
 
-    /* ── INSIGHTS ── */
-    .score-ring-wrap { display: flex; flex-direction: column; align-items: center; margin-bottom: 28px; }
-    .score-ring-svg { width: 160px; height: 160px; }
-    .score-number {
-      font-family: 'Sora', sans-serif;
-      font-size: 42px; font-weight: 800;
-      background: var(--gradient-cosmos);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .score-label { font-size: 13px; color: var(--muted); margin-top: 4px; }
-    .score-desc { font-size: 13.5px; line-height: 1.7; color: var(--text); text-align: center; max-width: 600px; margin-top: 12px; }
+        .tab-btn.active::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #9945ff 0%, #14f195 100%);
+            border-radius: 2px;
+        }
 
-    .insights-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 16px;
-      margin-bottom: 22px;
-    }
+        .tab-indicator {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #9945ff;
+            margin-left: 0.5rem;
+            display: inline-block;
+            vertical-align: middle;
+        }
 
-    .correlation-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 18px;
-      transition: border-color var(--transition);
-    }
-    .correlation-card.alignment { border-left: 3px solid var(--green); }
-    .correlation-card.gap { border-left: 3px solid var(--pink); }
-    .correlation-card.opportunity { border-left: 3px solid var(--yellow); }
-    .corr-type { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
-    .type-alignment { color: var(--green); }
-    .type-gap { color: var(--pink); }
-    .type-opportunity { color: var(--yellow); }
-    .corr-signal { font-size: 13px; line-height: 1.6; color: var(--text); margin-bottom: 10px; }
-    .corr-action { font-size: 12.5px; line-height: 1.6; color: var(--muted); padding: 10px 12px; background: rgba(255,255,255,0.03); border-radius: 8px; }
-    .priority-badge { font-size: 10px; padding: 2px 7px; border-radius: 10px; font-weight: 600; margin-left: 6px; }
-    .priority-high { background: rgba(255,111,97,0.2); color: var(--pink); }
-    .priority-medium { background: rgba(255,224,102,0.15); color: var(--yellow); }
+        .tab-btn.active .tab-indicator {
+            background: #14f195;
+        }
 
-    .reco-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-    .reco-item {
-      display: flex; gap: 12px; align-items: flex-start;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 14px 16px;
-    }
-    .reco-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
-    .reco-text { font-size: 13.5px; line-height: 1.6; }
+        /* CONTAINER */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem 3rem;
+        }
 
-    .emotion-bar-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
-    .emotion-bar-label { min-width: 180px; font-size: 12.5px; color: var(--text); }
-    .emotion-bar-track { flex: 1; height: 8px; background: rgba(255,255,255,0.07); border-radius: 4px; overflow: hidden; }
-    .emotion-bar-fill { height: 100%; border-radius: 4px; transition: width 1.2s cubic-bezier(.4,0,.2,1); }
-    .emotion-count { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--muted); min-width: 32px; text-align: right; }
-    .trend-up { color: var(--green); font-size: 12px; }
-    .trend-stable { color: var(--muted); font-size: 12px; }
+        /* TAB CONTENT */
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
 
-    .jtbd-bar-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
-    .jtbd-bar-label { min-width: 150px; font-size: 12.5px; color: var(--text); }
-    .jtbd-bar-track { flex: 1; height: 8px; background: rgba(255,255,255,0.07); border-radius: 4px; overflow: hidden; }
-    .jtbd-bar-fill { height: 100%; border-radius: 4px; transition: width 1.2s cubic-bezier(.4,0,.2,1); }
-    .jtbd-pct { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--muted); min-width: 35px; text-align: right; }
+        .tab-content.active {
+            display: block;
+        }
 
-    .keyword-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
-    .keyword-chip {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 11.5px;
-      padding: 4px 12px;
-      border-radius: 20px;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid var(--border);
-      color: var(--text);
-    }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
-    /* ── VEILLE SUMMARY (dashboard tab) ── */
-    .veille-summary-list { display: flex; flex-direction: column; gap: 10px; }
-    .veille-summary-item {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 12px 16px;
-      display: flex; gap: 10px; align-items: flex-start;
-      transition: border-color var(--transition);
-    }
-    .veille-summary-item:hover { border-color: rgba(255,255,255,0.13); }
-    .veille-summary-text { font-size: 13px; line-height: 1.6; flex: 1; }
+        /* CARDS */
+        .card {
+            background: rgba(16, 16, 26, 0.75);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            padding: 1.5rem;
+            backdrop-filter: blur(20px);
+            transition: all 0.3s ease;
+            cursor: default;
+        }
 
-    /* ── FOOTER ── */
-    .page-footer {
-      padding: 24px 28px;
-      border-top: 1px solid var(--border);
-      text-align: center;
-    }
-    .page-footer a { color: var(--muted); font-size: 12px; text-decoration: none; transition: color var(--transition); }
-    .page-footer a:hover { color: var(--text); }
+        .card:hover {
+            border-color: rgba(255, 255, 255, 0.12);
+            background: rgba(16, 16, 26, 0.85);
+            box-shadow: 0 8px 32px rgba(153, 69, 255, 0.15);
+        }
 
-    /* ── MOBILE ── */
-    @media (max-width: 768px) {
-      #sidebar {
-        transform: translateX(-100%);
-        transition: transform var(--transition), width var(--transition);
-        width: var(--sidebar-w) !important;
-      }
-      #sidebar.mobile-open { transform: translateX(0); }
-      #main { margin-left: 0 !important; }
-      .hamburger { display: flex; }
-      .tab-pane { padding: 18px; }
-      .kpi-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
-      .kpi-value { font-size: 26px; }
-      .video-grid { grid-template-columns: 1fr; }
-      #topbar { padding: 0 16px; }
-      .insights-grid { grid-template-columns: 1fr; }
-      .filter-bar input[type="text"] { min-width: 100%; }
-      .overlay { display: block !important; }
-    }
-    .overlay {
-      display: none;
-      position: fixed; inset: 0; z-index: 99;
-      background: rgba(0,0,0,0.5);
-    }
-    #sidebar.mobile-open + .overlay { display: block; }
+        .card-left-border {
+            border-left: 4px solid;
+            border-image: linear-gradient(180deg, #f857a6 0%, #9945ff 100%) 1;
+        }
 
-    /* Loading spinner */
-    .loading {
-      display: flex; align-items: center; justify-content: center;
-      padding: 60px; color: var(--muted); font-size: 14px; gap: 10px;
-    }
-    .spinner {
-      width: 20px; height: 20px;
-      border: 2px solid rgba(255,255,255,0.1);
-      border-top-color: var(--cyan);
-      border-radius: 50%;
-      animation: spin 0.8s linear infinite;
-    }
-    @keyframes spin { to { transform: rotate(360deg); } }
+        /* KPI CARDS */
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
 
-    .gradient-text {
-      background: var(--gradient-cosmos);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
+        .kpi-card {
+            background: rgba(16, 16, 26, 0.75);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            padding: 1.5rem;
+            backdrop-filter: blur(20px);
+        }
 
-    /* SVG ring animation */
-    .ring-bg { fill: none; stroke: rgba(255,255,255,0.07); stroke-width: 10; }
-    .ring-fill {
-      fill: none;
-      stroke-width: 10;
-      stroke-linecap: round;
-      stroke: url(#ringGrad);
-      transform-origin: center;
-      transform: rotate(-90deg);
-      transition: stroke-dashoffset 1.5s cubic-bezier(.4,0,.2,1);
-    }
+        .kpi-label {
+            font-size: 12px;
+            color: #9ba4b4;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.75rem;
+        }
 
-    /* Markdown render helpers */
-    .rapport-block code { font-family: 'JetBrains Mono', monospace; font-size: 12px; background: rgba(255,255,255,0.05); padding: 2px 6px; border-radius: 4px; }
-    .rapport-block hr { border: none; border-top: 1px solid var(--border); margin: 16px 0; }
-  </style>
+        .kpi-value {
+            font-family: 'Sora', sans-serif;
+            font-size: 36px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #14f195 0%, #9945ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* BADGES */
+        .badge {
+            display: inline-block;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .badge-platform {
+            font-weight: 600;
+        }
+
+        .badge-reddit { background: #FF4500; color: white; }
+        .badge-youtube { background: #FF0000; color: white; }
+        .badge-twitter { background: #1DA1F2; color: white; }
+        .badge-tiktok { background: #fe2c55; color: white; }
+        .badge-instagram { background: #e4405f; color: white; }
+        .badge-linkedin { background: #0a66c2; color: white; }
+        .badge-threads { background: #1a1a1a; color: white; border: 1px solid #666; }
+        .badge-facebook { background: #1877f2; color: white; }
+
+        .badge-type {
+            background: rgba(153, 69, 255, 0.2);
+            color: #14f195;
+            border: 1px solid rgba(20, 241, 149, 0.3);
+        }
+
+        .badge-type.mofu {
+            background: rgba(20, 241, 149, 0.1);
+            color: #14f195;
+            border: 1px solid rgba(20, 241, 149, 0.3);
+        }
+
+        .badge-type.tofu {
+            background: rgba(248, 87, 166, 0.1);
+            color: #f857a6;
+            border: 1px solid rgba(248, 87, 166, 0.3);
+        }
+
+        .score-10 { background: rgba(20, 241, 149, 0.2); color: #14f195; }
+        .score-7-9 { background: rgba(255, 193, 7, 0.2); color: #ffc107; }
+        .score-low { background: rgba(255, 87, 87, 0.2); color: #ff5757; }
+
+        .emotion-chip {
+            display: inline-block;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 600;
+            margin-right: 0.4rem;
+            margin-bottom: 0.4rem;
+            background: rgba(153, 69, 255, 0.2);
+            color: #14f195;
+        }
+
+        /* CHARTS */
+        .chart-container {
+            background: rgba(16, 16, 26, 0.75);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            padding: 1.5rem;
+            backdrop-filter: blur(20px);
+            margin-bottom: 2rem;
+        }
+
+        .chart-title {
+            font-family: 'Sora', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .chart-bar {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .chart-bar-label {
+            width: 120px;
+            font-size: 12px;
+            color: #9ba4b4;
+        }
+
+        .chart-bar-bg {
+            flex: 1;
+            height: 8px;
+            background: rgba(153, 69, 255, 0.1);
+            border-radius: 4px;
+            margin: 0 1rem;
+            overflow: hidden;
+        }
+
+        .chart-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #9945ff 0%, #14f195 100%);
+        }
+
+        .chart-bar-value {
+            width: 50px;
+            text-align: right;
+            font-size: 12px;
+            font-weight: 600;
+            color: #14f195;
+        }
+
+        /* SECTION TITLES */
+        .section-title {
+            font-family: 'Sora', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            margin: 2.5rem 0 1.5rem 0;
+            color: #e0e0e0;
+        }
+
+        /* GRID LAYOUTS */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .cards-grid.compact {
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        }
+
+        /* MESSAGE CARDS */
+        .message-card {
+            background: rgba(16, 16, 26, 0.75);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-left: 4px solid transparent;
+            border-image: linear-gradient(180deg, #f857a6 0%, #9945ff 100%) 1;
+            border-radius: 16px;
+            padding: 1.5rem;
+            backdrop-filter: blur(20px);
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .message-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .message-author {
+            font-weight: 600;
+            font-size: 13px;
+        }
+
+        .message-platform {
+            font-size: 11px;
+        }
+
+        .message-score {
+            font-weight: 700;
+            font-size: 12px;
+        }
+
+        .message-text {
+            font-size: 13px;
+            line-height: 1.5;
+            color: #c0c0c0;
+        }
+
+        .message-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            font-size: 11px;
+        }
+
+        /* ACCOUNT CARDS */
+        .account-card {
+            background: rgba(16, 16, 26, 0.75);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            padding: 1.5rem;
+            backdrop-filter: blur(20px);
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .account-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .account-handle {
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .account-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .stat-label {
+            font-size: 11px;
+            color: #9ba4b4;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .stat-value {
+            font-family: 'Sora', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: #14f195;
+        }
+
+        /* SCRIPT CARDS */
+        .script-card {
+            background: rgba(16, 16, 26, 0.75);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            padding: 1.5rem;
+            backdrop-filter: blur(20px);
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .script-title {
+            font-family: 'Sora', sans-serif;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .script-hook {
+            font-size: 12px;
+            color: #c0c0c0;
+            font-style: italic;
+            border-left: 2px solid #9945ff;
+            padding-left: 0.75rem;
+        }
+
+        .script-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            font-size: 11px;
+        }
+
+        .script-plans {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .script-card.expanded .script-plans {
+            max-height: 300px;
+        }
+
+        .plan-item {
+            font-size: 11px;
+            color: #c0c0c0;
+            padding: 0.5rem;
+            background: rgba(153, 69, 255, 0.1);
+            border-radius: 6px;
+            border-left: 2px solid #14f195;
+            padding-left: 0.75rem;
+        }
+
+        /* FILTER CHIPS */
+        .filter-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+        }
+
+        .filter-chip {
+            background: rgba(153, 69, 255, 0.1);
+            border: 1px solid rgba(153, 69, 255, 0.3);
+            color: #9ba4b4;
+            padding: 0.6rem 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 13px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .filter-chip:hover {
+            border-color: rgba(153, 69, 255, 0.6);
+            color: #e0e0e0;
+        }
+
+        .filter-chip.active {
+            background: linear-gradient(135deg, #9945ff 0%, #14f195 100%);
+            border-color: transparent;
+            color: #06060a;
+            font-weight: 600;
+        }
+
+        /* KEYWORD CHIPS */
+        .keywords-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin: 1rem 0;
+        }
+
+        .keyword-chip {
+            background: rgba(20, 241, 149, 0.1);
+            border: 1px solid rgba(20, 241, 149, 0.3);
+            color: #14f195;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        /* BLOC CARDS (NICHE RESEARCH) */
+        .bloc-card {
+            background: rgba(16, 16, 26, 0.75);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            padding: 1.5rem;
+            backdrop-filter: blur(20px);
+        }
+
+        .bloc-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .bloc-emoji {
+            font-size: 28px;
+        }
+
+        .bloc-title {
+            font-family: 'Sora', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .bloc-section {
+            margin-bottom: 1.5rem;
+        }
+
+        .bloc-label {
+            font-size: 11px;
+            color: #9ba4b4;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.75rem;
+        }
+
+        .bloc-keywords {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .bloc-keyword {
+            background: rgba(153, 69, 255, 0.15);
+            color: #14f195;
+            padding: 0.35rem 0.7rem;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 500;
+        }
+
+        .bloc-verbatim {
+            background: rgba(16, 16, 26, 0.5);
+            border-left: 3px solid #9945ff;
+            padding: 0.75rem;
+            padding-left: 0.75rem;
+            border-radius: 6px;
+            font-size: 12px;
+            color: #c0c0c0;
+            margin: 0.5rem 0;
+            font-style: italic;
+        }
+
+        .bloc-doctrine {
+            background: rgba(20, 241, 149, 0.08);
+            border: 1px solid rgba(20, 241, 149, 0.2);
+            padding: 0.75rem;
+            border-radius: 6px;
+            font-size: 11px;
+            color: #14f195;
+        }
+
+        .bloc-data-points {
+            font-size: 11px;
+            color: #c0c0c0;
+            line-height: 1.6;
+        }
+
+        /* AVATAR BANNER */
+        .avatar-banner {
+            background: linear-gradient(135deg, rgba(153, 69, 255, 0.15) 0%, rgba(20, 241, 149, 0.1) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            padding: 2rem;
+            backdrop-filter: blur(20px);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .avatar-title {
+            font-family: 'Sora', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .avatar-description {
+            font-size: 13px;
+            color: #c0c0c0;
+        }
+
+        /* RECOMMENDATION CARDS */
+        .rec-card {
+            background: rgba(16, 16, 26, 0.75);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            padding: 1.5rem;
+            backdrop-filter: blur(20px);
+            margin-bottom: 1rem;
+        }
+
+        .rec-title {
+            font-weight: 700;
+            font-size: 14px;
+            margin-bottom: 0.5rem;
+        }
+
+        .rec-content {
+            font-size: 13px;
+            color: #c0c0c0;
+            line-height: 1.6;
+        }
+
+        /* LOADING STATE */
+        .loading {
+            text-align: center;
+            padding: 3rem 1.5rem;
+            color: #9ba4b4;
+            font-size: 14px;
+        }
+
+        .spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(153, 69, 255, 0.2);
+            border-top-color: #9945ff;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin-right: 0.5rem;
+            vertical-align: middle;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+
+            .header-text h1 {
+                font-size: 24px;
+            }
+
+            .nav-tabs {
+                margin: 1rem auto 1.5rem;
+                padding: 0 1rem;
+            }
+
+            .kpi-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .tab-btn {
+                font-size: 12px;
+                padding: 0.6rem 0.9rem;
+            }
+
+            .container {
+                padding: 0 1rem 2rem;
+            }
+
+            .message-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        /* UTILITY */
+        .text-muted {
+            color: #9ba4b4;
+        }
+
+        .text-success {
+            color: #14f195;
+        }
+
+        .text-danger {
+            color: #ff5757;
+        }
+
+        .text-warning {
+            color: #ffc107;
+        }
+
+        .gap-1 { gap: 0.5rem; }
+        .gap-2 { gap: 1rem; }
+        .gap-3 { gap: 1.5rem; }
+
+        .mb-1 { margin-bottom: 0.5rem; }
+        .mb-2 { margin-bottom: 1rem; }
+        .mb-3 { margin-bottom: 1.5rem; }
+
+        .mt-1 { margin-top: 0.5rem; }
+        .mt-2 { margin-top: 1rem; }
+        .mt-3 { margin-top: 1.5rem; }
+    </style>
 </head>
 <body>
-<div id="app">
-  <!-- SIDEBAR -->
-  <nav id="sidebar">
-    <div class="sidebar-header">
-      <div class="logo-mark">DL</div>
-      <span class="logo-text">Djibril Learning</span>
-    </div>
-    <ul class="nav-list">
-      <li class="nav-item active" data-tab="dashboard">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
-        <span class="nav-label">Dashboard</span>
-      </li>
-      <li class="nav-item" data-tab="veille">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-        <span class="nav-label">Veille Marché</span>
-      </li>
-      <li class="nav-item" data-tab="videos">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
-        <span class="nav-label">Vidéos Veille</span>
-      </li>
-      <li class="nav-item" data-tab="social">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-        <span class="nav-label">Réseaux Sociaux</span>
-      </li>
-      <li class="nav-item" data-tab="insights">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-        <span class="nav-label">Insights</span>
-      </li>
-      <li class="nav-item" data-tab="cinematique">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="2.18"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="2" y1="7" x2="7" y2="7"/><line x1="2" y1="17" x2="7" y2="17"/><line x1="17" y1="7" x2="22" y2="7"/><line x1="17" y1="17" x2="22" y2="17"/></svg>
-        <span class="nav-label" style="background:linear-gradient(90deg,#14F195,#9945FF);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:600">Scripts Ciné</span>
-      </li>
-      <li class="nav-item" data-tab="niche">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
-        <span class="nav-label" style="background:linear-gradient(90deg,#f857a6,#9945FF);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:600">Niche Research</span>
-      </li>
-      <li class="nav-item" onclick="window.location.href='simulator.html'" style="cursor:pointer">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-        <span class="nav-label" style="background:linear-gradient(90deg,#14F195,#9945FF);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:600">Simulateur</span>
-      </li>
-    </ul>
-    <div class="collapse-btn" id="collapseBtn">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
-      <span class="collapse-label">Réduire</span>
-    </div>
-  </nav>
-
-  <!-- OVERLAY (mobile) -->
-  <div class="overlay" id="overlay"></div>
-
-  <!-- MAIN -->
-  <div id="main">
-    <div id="topbar">
-      <button class="hamburger" id="hamburger" aria-label="Menu">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-      </button>
-      <div class="topbar-title gradient-text" id="topbarTitle">Dashboard</div>
-      <div class="topbar-meta" id="topbarMeta">Mise à jour : chargement…</div>
-    </div>
-
-    <!-- TAB: DASHBOARD -->
-    <div class="tab-pane active" id="tab-dashboard">
-      <div class="kpi-grid">
-        <div class="kpi-card" style="--accent: var(--cyan)">
-          <div class="kpi-label">Total Messages</div>
-          <div class="kpi-value">73</div>
-          <div class="kpi-sub">Signaux marché collectés</div>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo-circle">DL</div>
+            <div class="header-text">
+                <h1>Djibril Learning</h1>
+                <p>Command Center</p>
+            </div>
         </div>
-        <div class="kpi-card" style="--accent: var(--pink)">
-          <div class="kpi-label">Total Vidéos</div>
-          <div class="kpi-value">53</div>
-          <div class="kpi-sub">Vidéos veille analysées</div>
+    </header>
+
+    <!-- NAVIGATION TABS -->
+    <nav class="nav-tabs" id="navTabs">
+        <button class="tab-btn active" data-tab="vue-ensemble">
+            Vue d'ensemble
+            <span class="tab-indicator"></span>
+        </button>
+        <button class="tab-btn" data-tab="mes-comptes">
+            Mes Comptes
+            <span class="tab-indicator"></span>
+        </button>
+        <button class="tab-btn" data-tab="contenu">
+            Contenu
+            <span class="tab-indicator"></span>
+        </button>
+        <button class="tab-btn" data-tab="veille-marche">
+            Veille Marché
+            <span class="tab-indicator"></span>
+        </button>
+        <button class="tab-btn" data-tab="emotions">
+            Émotions
+            <span class="tab-indicator"></span>
+        </button>
+        <button class="tab-btn" data-tab="scripts-cine">
+            Scripts Ciné
+            <span class="tab-indicator"></span>
+        </button>
+        <button class="tab-btn" data-tab="niche-research">
+            Niche Research
+            <span class="tab-indicator"></span>
+        </button>
+    </nav>
+
+    <!-- CONTAINER -->
+    <div class="container">
+
+        <!-- TAB: VUE D'ENSEMBLE -->
+        <div id="vue-ensemble" class="tab-content active">
+            <div class="kpi-grid" id="kpiGrid">
+                <div class="kpi-card">
+                    <div class="kpi-label">Messages Veille</div>
+                    <div class="kpi-value" id="kpiMessages">0</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">Vidéos Veille</div>
+                    <div class="kpi-value" id="kpiVideos">0</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">Followers Total</div>
+                    <div class="kpi-value" id="kpiFollowers">0</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">Scripts Créés</div>
+                    <div class="kpi-value" id="kpiScripts">0</div>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <div class="chart-title">Distribution des Émotions</div>
+                <div id="emotionChart"></div>
+            </div>
+
+            <h2 class="section-title">Top JTBD Catégories</h2>
+            <div class="keywords-container" id="topJtbd"></div>
+
+            <h2 class="section-title">Top Mots-Clés</h2>
+            <div class="keywords-container" id="topKeywords"></div>
+
+            <h2 class="section-title">Derniers Messages Veille</h2>
+            <div id="latestMessages"></div>
+
+            <h2 class="section-title">Recommandations</h2>
+            <div id="recommendations"></div>
         </div>
-        <div class="kpi-card" style="--accent: var(--yellow)">
-          <div class="kpi-label">Alignment Score</div>
-          <div class="kpi-value">62<span style="font-size:18px;color:var(--muted)">/100</span></div>
-          <div class="kpi-sub">Positionnement contenu/marché</div>
+
+        <!-- TAB: MES COMPTES -->
+        <div id="mes-comptes" class="tab-content">
+            <h2 class="section-title">Suivi des Comptes Sociaux</h2>
+            <div class="filter-container" id="dateFilter"></div>
+            <div class="cards-grid" id="accountsGrid"></div>
         </div>
-        <div class="kpi-card" style="--accent: var(--purple)">
-          <div class="kpi-label">Plateformes Trackées</div>
-          <div class="kpi-value">7</div>
-          <div class="kpi-sub">TikTok, IG, YT, Twitter…</div>
+
+        <!-- TAB: CONTENU -->
+        <div id="contenu" class="tab-content">
+            <h2 class="section-title">Scripts Cinématiques</h2>
+            <div class="filter-container">
+                <button class="filter-chip active" data-filter="all">Tous</button>
+                <button class="filter-chip" data-filter="tofu">TOFU</button>
+                <button class="filter-chip" data-filter="mofu">MOFU</button>
+            </div>
+            <div class="cards-grid" id="contenuGrid"></div>
         </div>
-      </div>
 
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-bottom:24px" id="dashSummaryGrid">
-        <div class="glass-card">
-          <h3 class="sub-title">Top Émotions Marché</h3>
-          <div id="dashEmotions"><div class="loading"><div class="spinner"></div> Chargement…</div></div>
+        <!-- TAB: VEILLE MARCHE -->
+        <div id="veille-marche" class="tab-content">
+            <h2 class="section-title">Messages Veille Marché</h2>
+            <div class="filter-container" id="platformFilters"></div>
+            <input type="text" id="veilleSearch" placeholder="Chercher un message..." style="width: 100%; max-width: 300px; padding: 0.75rem; background: rgba(16,16,26,0.75); border: 1px solid rgba(255,255,255,0.06); border-radius: 8px; color: #e0e0e0; margin-bottom: 1.5rem; font-family: 'DM Sans', sans-serif;">
+            <div id="veilleMessages"></div>
         </div>
-        <div class="glass-card">
-          <h3 class="sub-title">Top JTBD</h3>
-          <div id="dashJtbd"><div class="loading"><div class="spinner"></div> Chargement…</div></div>
+
+        <!-- TAB: EMOTIONS -->
+        <div id="emotions" class="tab-content">
+            <div class="chart-container">
+                <div class="chart-title">Distribution des Émotions</div>
+                <div id="fullEmotionChart"></div>
+            </div>
+
+            <h2 class="section-title">Mots-Clés Fluo - High Impact</h2>
+            <div class="keywords-container" id="highImpactKeywords"></div>
+
+            <h2 class="section-title">Déclencheurs Émotionnels</h2>
+            <div class="keywords-container" id="emotionalTriggers"></div>
+
+            <h2 class="section-title">Top Combos</h2>
+            <div class="keywords-container" id="topCombos"></div>
+
+            <div class="chart-container" style="margin-top: 2rem;">
+                <div class="chart-title">Sentiment Marché</div>
+                <div id="marketSentiment" style="font-size: 14px; line-height: 1.8; color: #c0c0c0;"></div>
+            </div>
         </div>
-      </div>
 
-      <div class="glass-card" style="margin-bottom:24px">
-        <h3 class="sub-title">Dernières Veilles — Messages récents</h3>
-        <div id="dashVeille"><div class="loading"><div class="spinner"></div> Chargement…</div></div>
-      </div>
+        <!-- TAB: SCRIPTS CINE -->
+        <div id="scripts-cine" class="tab-content">
+            <h2 class="section-title">Scripts Cinématiques</h2>
+            <div class="filter-container">
+                <button class="filter-chip active" data-filter="all">Tous</button>
+                <button class="filter-chip" data-filter="tofu">TOFU</button>
+                <button class="filter-chip" data-filter="mofu">MOFU</button>
+            </div>
+            <div class="cards-grid" id="scriptsCineGrid"></div>
+        </div>
 
-      <div class="glass-card">
-        <h3 class="sub-title">Recommandations actives</h3>
-        <ul class="reco-list" id="dashRecos"><div class="loading"><div class="spinner"></div> Chargement…</div></ul>
-      </div>
-    </div>
+        <!-- TAB: NICHE RESEARCH -->
+        <div id="niche-research" class="tab-content">
+            <div class="avatar-banner" id="avatarBanner"></div>
+            <div class="cards-grid" id="nicheBlocsGrid"></div>
+        </div>
 
-    <!-- TAB: VEILLE MARCHÉ -->
-    <div class="tab-pane" id="tab-veille">
-      <h2 class="section-title">Veille Marché — <span class="gradient-text">Messages</span></h2>
-      <div class="filter-bar">
-        <input type="text" id="msgSearch" placeholder="Rechercher…" />
-        <select id="msgPlatform">
-          <option value="">Toutes plateformes</option>
-          <option value="Reddit">Reddit</option>
-          <option value="Twitter">Twitter</option>
-          <option value="Instagram">Instagram</option>
-          <option value="Facebook">Facebook</option>
-          <option value="YouTube">YouTube</option>
-          <option value="TikTok">TikTok</option>
-        </select>
-        <select id="msgJtbd">
-          <option value="">Tous JTBD</option>
-        </select>
-        <select id="msgEmotion">
-          <option value="">Toutes émotions</option>
-        </select>
-        <span class="counter-badge" id="msgCounter">— / 73</span>
-      </div>
-      <div id="msgList"><div class="loading"><div class="spinner"></div> Chargement des messages…</div></div>
-    </div>
-
-    <!-- TAB: VIDÉOS VEILLE -->
-    <div class="tab-pane" id="tab-videos">
-      <h2 class="section-title">Vidéos Veille — <span class="gradient-text">53 vidéos</span></h2>
-      <div class="filter-bar">
-        <input type="text" id="vidSearch" placeholder="Rechercher…" />
-        <select id="vidPlatform">
-          <option value="">Toutes plateformes</option>
-          <option value="Instagram">Instagram</option>
-          <option value="TikTok">TikTok</option>
-          <option value="YouTube">YouTube</option>
-          <option value="Reddit">Reddit</option>
-          <option value="Twitter">Twitter</option>
-        </select>
-        <select id="vidJtbd">
-          <option value="">Tous JTBD</option>
-        </select>
-        <span class="counter-badge" id="vidCounter">— / 53</span>
-      </div>
-      <div class="video-grid" id="vidGrid"><div class="loading"><div class="spinner"></div> Chargement des vidéos…</div></div>
-    </div>
-
-    <!-- TAB: RÉSEAUX SOCIAUX -->
-    <div class="tab-pane" id="tab-social">
-      <h2 class="section-title">Réseaux Sociaux — <span class="gradient-text">Tracking</span></h2>
-      <div class="date-tabs" id="dateTabs"></div>
-      <div id="socialContent"><div class="loading"><div class="spinner"></div> Chargement…</div></div>
     </div>
 
-    <!-- TAB: INSIGHTS -->
-    <div class="tab-pane" id="tab-insights">
-      <h2 class="section-title">Insights — <span class="gradient-text">Analyse</span></h2>
-      <div id="insightsContent"><div class="loading"><div class="spinner"></div> Chargement…</div></div>
-    </div>
-
-    <!-- TAB: SCRIPTS CINÉMATIQUES -->
-    <div class="tab-pane" id="tab-cinematique">
-      <h2 class="section-title">Scripts Cinématiques — <span class="gradient-text">45s Storytelling</span></h2>
-      <div style="display:flex;gap:12px;margin-bottom:20px;flex-wrap:wrap;align-items:center">
-        <select id="cineType" style="background:var(--card);border:1px solid var(--border);color:var(--text);padding:8px 14px;border-radius:8px;font-size:13px">
-          <option value="">Tous types</option>
-          <option value="TOFU">TOFU</option>
-          <option value="MOFU">MOFU</option>
-        </select>
-        <select id="cineDate" style="background:var(--card);border:1px solid var(--border);color:var(--text);padding:8px 14px;border-radius:8px;font-size:13px">
-          <option value="">Toutes dates</option>
-        </select>
-        <span class="counter-badge" id="cineCounter">— / —</span>
-      </div>
-      <div id="cineGrid" style="display:grid;grid-template-columns:1fr;gap:16px"><div class="loading"><div class="spinner"></div> Chargement des scripts…</div></div>
-    </div>
-
-    <!-- NICHE RESEARCH TAB -->
-    <div class="tab-pane" id="tab-niche">
-      <h2 class="section-title">Niche Research — <span class="gradient-text">Mots-Clés Déclencheurs</span></h2>
-      <p style="color:var(--text-secondary);margin-bottom:20px;font-size:13px">Ce que ta niche <strong style="color:var(--cyan)">pense, ressent et veut</strong> — connecté à ta doctrine. Chaque mot-clé = un déclencheur.</p>
-      <div id="nicheGrid" style="display:grid;grid-template-columns:1fr;gap:20px"><div class="loading"><div class="spinner"></div> Chargement…</div></div>
-    </div>
-
-    <footer class="page-footer">
-      <a href="https://www.perplexity.ai/computer" target="_blank" rel="noopener noreferrer">Created with Perplexity Computer</a>
-    </footer>
-  </div>
-</div>
-
-<script>
-// ── PLATFORM COLORS ──
-const PLATFORM_COLORS = {
-  Reddit: '#FF4500',
-  Twitter: '#1DA1F2',
-  Instagram: '#E1306C',
-  Facebook: '#4267B2',
-  YouTube: '#FF0000',
-  TikTok: '#ff6f61',
-  LinkedIn: '#0077B5',
-  Threads: '#888'
-};
-
-// ── HELPERS ──
-function platformBadge(platform) {
-  const color = PLATFORM_COLORS[platform] || '#888';
-  return `<span class="platform-badge" style="background:${color}">${platform}</span>`;
-}
-
-function stars(n) {
-  const filled = Math.round(n);
-  let s = '';
-  for (let i = 1; i <= 5; i++) s += i <= filled ? '★' : '☆';
-  return `<span class="stars" title="${n}/5">${s}</span>`;
-}
-
-function fmtDate(d) {
-  if (!d) return '';
-  const dt = new Date(d);
-  if (isNaN(dt)) return d;
-  return dt.toLocaleDateString('fr-FR', { day: '2-digit', month: 'short', year: 'numeric' });
-}
-
-function escHtml(s) {
-  if (!s) return '';
-  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-}
-
-// Simple markdown → HTML converter
-function mdToHtml(md) {
-  if (!md) return '';
-  let html = escHtml(md);
-  // Headers
-  html = html.replace(/^### (.+)$/gm, '<h3>$1</h3>');
-  html = html.replace(/^## (.+)$/gm, '<h2>$1</h2>');
-  html = html.replace(/^# (.+)$/gm, '<h1>$1</h1>');
-  // Bold
-  html = html.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
-  // Lists
-  html = html.replace(/^- (.+)$/gm, '<li>$1</li>');
-  html = html.replace(/(<li>[\s\S]*?<\/li>)/g, (m) => '<ul>' + m + '</ul>');
-  // Paragraphs (double newline)
-  html = html.replace(/\n\n+/g, '</p><p>');
-  html = '<p>' + html + '</p>';
-  // Fix h/ul/li not wrapped in p
-  html = html.replace(/<p>(<h[123]>)/g, '$1');
-  html = html.replace(/(<\/h[123]>)<\/p>/g, '$1');
-  html = html.replace(/<p>(<ul>)/g, '$1');
-  html = html.replace(/(<\/ul>)<\/p>/g, '$1');
-  // HR
-  html = html.replace(/---/g, '<hr>');
-  // Clean empty p
-  html = html.replace(/<p><\/p>/g, '');
-  html = html.replace(/<p>\s*<\/p>/g, '');
-  return html;
-}
-
-// ── DATA CACHE ──
-let allMessages = [];
-let allVideos = [];
-let allCineScripts = [];
-let socialData = {};
-let insightsData = {};
-
-// ── SIDEBAR ──
-const sidebar = document.getElementById('sidebar');
-const main = document.getElementById('main');
-const collapseBtn = document.getElementById('collapseBtn');
-const hamburger = document.getElementById('hamburger');
-const overlay = document.getElementById('overlay');
-
-collapseBtn.addEventListener('click', () => {
-  sidebar.classList.toggle('collapsed');
-  main.classList.toggle('sidebar-collapsed');
-});
-
-hamburger.addEventListener('click', () => {
-  sidebar.classList.toggle('mobile-open');
-});
-overlay.addEventListener('click', () => {
-  sidebar.classList.remove('mobile-open');
-});
-
-// ── TAB SWITCHING ──
-const tabNames = { dashboard: 'Dashboard', veille: 'Veille Marché', videos: 'Vidéos Veille', social: 'Réseaux Sociaux', insights: 'Insights', cinematique: 'Scripts Cinématiques', niche: 'Niche Research' };
-let activeTab = 'dashboard';
-
-document.querySelectorAll('.nav-item').forEach(item => {
-  item.addEventListener('click', () => {
-    const tab = item.dataset.tab;
-    switchTab(tab);
-    // close mobile menu
-    sidebar.classList.remove('mobile-open');
-  });
-});
-
-function switchTab(tab) {
-  document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
-  document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
-  document.querySelector(`.nav-item[data-tab="${tab}"]`).classList.add('active');
-  document.getElementById(`tab-${tab}`).classList.add('active');
-  document.getElementById('topbarTitle').textContent = tabNames[tab] || tab;
-  activeTab = tab;
-}
-
-// ── LOAD DATA ──
-let emocionesData = {};
-let nicheData = { blocs: [] };
-async function loadAll() {
-  try {
-    const [msgs, vids, social, insights, cineScripts, emociones, nicheKw] = await Promise.all([
-      fetch('data/veille-messages.json').then(r => r.json()),
-      fetch('data/veille-videos.json').then(r => r.json()),
-      fetch('data/social-tracking.json').then(r => r.json()),
-      fetch('data/insights.json').then(r => r.json()),
-      fetch('data/scripts-cinematiques.json').then(r => r.json()).catch(() => []),
-      fetch('data/emociones.json').then(r => r.json()).catch(() => ({})),
-      fetch('data/niche-keywords.json').then(r => r.json()).catch(() => ({blocs:[]}))
-    ]);
-    allMessages = msgs;
-    allVideos = vids;
-    socialData = social;
-    insightsData = insights;
-    allCineScripts = cineScripts;
-    emocionesData = emociones;
-    nicheData = nicheKw;
-
-    // Update meta
-    const lu = insights.last_updated ? new Date(insights.last_updated).toLocaleString('fr-FR') : 'N/A';
-    document.getElementById('topbarMeta').textContent = `Mise à jour : ${lu}`;
-
-    renderDashboard();
-    renderVeille();
-    renderVideos();
-    renderSocial();
-    renderInsights();
-    renderCinematique();
-    renderNiche();
-  } catch(e) {
-    console.error('Data load error:', e);
-  }
-}
-
-// ── DASHBOARD ──
-function renderDashboard() {
-  // Top emotions — compatible with BOTH formats:
-  // Format A: insightsData.market_pulse.top_emotions_today (array of {emotion, count, trend, delta})
-  // Format B: insightsData.emotion_distribution (object {emotion: count})
-  // Format C: emocionesData.emotions (array)
-  let emotions = insightsData.market_pulse?.top_emotions_today || [];
-  if (!emotions.length && insightsData.emotion_distribution) {
-    const dist = insightsData.emotion_distribution;
-    emotions = Object.entries(dist)
-      .filter(([k, v]) => v > 0)
-      .sort((a, b) => b[1] - a[1])
-      .map(([k, v]) => ({ emotion: k, count: v, trend: 'stable', delta: 0 }));
-  }
-  if (!emotions.length && emocionesData.emotions) {
-    emotions = emocionesData.emotions.map(e => ({
-      emotion: e.name || e.emotion || e.label || 'N/A',
-      count: e.count || e.signals || e.total || 0,
-      trend: e.trend || 'stable',
-      delta: e.delta || 0
-    }));
-  }
-  const maxCount = Math.max(...emotions.map(e => e.count), 1);
-  const colors = ['#ff6f61','#9945ff','#14f195','#ffe066','#66ffb2','#1DA1F2','#14F195','#9945FF'];
-  let eHtml = '';
-  emotions.slice(0, 8).forEach((e, i) => {
-    const pct = Math.round((e.count / maxCount) * 100);
-    const trend = e.trend === 'up' ? `<span class="trend-up">↑${e.delta || ''}</span>` : `<span class="trend-stable">→</span>`;
-    eHtml += `<div class="emotion-bar-row">
-      <div class="emotion-bar-label">${escHtml(e.emotion)} ${trend}</div>
-      <div class="emotion-bar-track"><div class="emotion-bar-fill" style="width:${pct}%;background:${colors[i%colors.length]}"></div></div>
-      <div class="emotion-count">${e.count}</div>
-    </div>`;
-  });
-  document.getElementById('dashEmotions').innerHTML = eHtml || '<p style="color:var(--muted)">—</p>';
-
-  // Top JTBD — extract from messages if market_pulse not available
-  let jtbds = insightsData.market_pulse?.top_jtbd_today || [];
-  if (!jtbds.length && allMessages.length) {
-    const jtbdMap = {};
-    allMessages.forEach(m => {
-      const cat = m.jtbd_category || m.category || m.theme;
-      if (cat) jtbdMap[cat] = (jtbdMap[cat] || 0) + 1;
-    });
-    const total = Object.values(jtbdMap).reduce((a, b) => a + b, 0);
-    jtbds = Object.entries(jtbdMap)
-      .sort((a, b) => b[1] - a[1])
-      .slice(0, 6)
-      .map(([k, v]) => ({ jtbd: k, pct: Math.round((v / total) * 100), trend: 'stable' }));
-  }
-  const jtbdColors = ['#14f195','#ff6f61','#9945ff','#ffe066','#66ffb2','#FF4500','#1DA1F2'];
-  let jHtml = '';
-  jtbds.forEach((j, i) => {
-    const trend = j.trend === 'up' ? `<span class="trend-up">↑</span>` : `<span class="trend-stable">→</span>`;
-    jHtml += `<div class="jtbd-bar-row">
-      <div class="jtbd-bar-label">${escHtml(j.jtbd)} ${trend}</div>
-      <div class="jtbd-bar-track"><div class="jtbd-bar-fill" style="width:${j.pct}%;background:${jtbdColors[i%jtbdColors.length]}"></div></div>
-      <div class="jtbd-pct">${j.pct}%</div>
-    </div>`;
-  });
-  document.getElementById('dashJtbd').innerHTML = jHtml || '<p style="color:var(--muted)">—</p>';
-
-  // Top keywords from emociones.json keyword_fluo
-  const kwFluo = emocionesData.keyword_fluo;
-  if (kwFluo && kwFluo.top_combos) {
-    let kwHtml = '<div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:8px">';
-    const allKw = [...(kwFluo.high_impact || []).slice(0, 8), ...(kwFluo.emotional_triggers || []).slice(0, 4)];
-    allKw.forEach(kw => {
-      const scoreColor = kw.score >= 9 ? '#14F195' : kw.score >= 8 ? '#14f195' : kw.score >= 7 ? '#9945ff' : '#ffe066';
-      kwHtml += `<span style="background:${scoreColor}22;color:${scoreColor};border:1px solid ${scoreColor}44;padding:3px 8px;border-radius:6px;font-size:11px;font-weight:600">${escHtml(kw.keyword)} <span style="opacity:.6">×${kw.count}</span></span>`;
-    });
-    kwHtml += '</div>';
-    const kwContainer = document.getElementById('dashKeywords');
-    if (kwContainer) kwContainer.innerHTML = kwHtml;
-  }
-
-  // Latest veille (top 5)
-  const latest = [...allMessages].sort((a,b) => new Date(b.date)-new Date(a.date)).slice(0,5);
-  let vHtml = '<div class="veille-summary-list">';
-  latest.forEach(m => {
-    vHtml += `<div class="veille-summary-item">
-      ${platformBadge(m.platform)}
-      <div class="veille-summary-text">
-        <strong>${escHtml(m.author)}</strong> · <span style="color:var(--muted);font-size:11px">${fmtDate(m.date)}</span><br>
-        ${escHtml((m.translation_fr || m.original_text || '').substring(0,200))}…
-      </div>
-    </div>`;
-  });
-  vHtml += '</div>';
-  document.getElementById('dashVeille').innerHTML = vHtml;
-
-  // Recommendations — from insights or key_trends
-  let recos = insightsData.recommendations || [];
-  if (!recos.length && insightsData.key_trends_2026) {
-    recos = insightsData.key_trends_2026.map(t => typeof t === 'string' ? t : (t.trend || t.description || JSON.stringify(t)));
-  }
-  const icons = ['🎯','🔥','⚡','💡','📊','🧠'];
-  let rHtml = '';
-  recos.forEach((r, i) => {
-    rHtml += `<li class="reco-item"><span class="reco-icon">${icons[i%icons.length]}</span><span class="reco-text">${escHtml(typeof r === 'string' ? r : JSON.stringify(r))}</span></li>`;
-  });
-  document.getElementById('dashRecos').innerHTML = rHtml || '<li style="color:var(--muted);padding:10px">—</li>';
-}
-
-// ── VEILLE MESSAGES ──
-let filteredMessages = [];
-
-function renderVeille() {
-  // Populate JTBD filter
-  const jtbdVals = [...new Set(allMessages.map(m => m.jtbd_category).filter(Boolean))].sort();
-  const jtbdSel = document.getElementById('msgJtbd');
-  jtbdVals.forEach(v => {
-    const o = document.createElement('option');
-    o.value = v; o.textContent = v;
-    jtbdSel.appendChild(o);
-  });
-
-  // Populate emotion filter
-  const emotionVals = [...new Set(allMessages.flatMap(m => (m.emotion||'').split(',').map(e=>e.trim())).filter(Boolean))].sort();
-  const emotionSel = document.getElementById('msgEmotion');
-  emotionVals.forEach(v => {
-    const o = document.createElement('option');
-    o.value = v; o.textContent = v;
-    emotionSel.appendChild(o);
-  });
-
-  filterMessages();
-
-  document.getElementById('msgSearch').addEventListener('input', filterMessages);
-  document.getElementById('msgPlatform').addEventListener('change', filterMessages);
-  document.getElementById('msgJtbd').addEventListener('change', filterMessages);
-  document.getElementById('msgEmotion').addEventListener('change', filterMessages);
-}
-
-function filterMessages() {
-  const q = document.getElementById('msgSearch').value.toLowerCase();
-  const platform = document.getElementById('msgPlatform').value;
-  const jtbd = document.getElementById('msgJtbd').value;
-  const emotion = document.getElementById('msgEmotion').value;
-
-  filteredMessages = allMessages.filter(m => {
-    if (platform && m.platform !== platform) return false;
-    if (jtbd && m.jtbd_category !== jtbd) return false;
-    if (emotion && !(m.emotion||'').toLowerCase().includes(emotion.toLowerCase())) return false;
-    if (q) {
-      const haystack = [m.translation_fr, m.original_text, m.author, m.notes, m.jtbd_category, m.emotion].join(' ').toLowerCase();
-      if (!haystack.includes(q)) return false;
-    }
-    return true;
-  }).sort((a,b) => new Date(b.date)-new Date(a.date));
-
-  document.getElementById('msgCounter').textContent = `${filteredMessages.length} / ${allMessages.length}`;
-  renderMessageList();
-}
-
-function renderMessageList() {
-  const container = document.getElementById('msgList');
-  if (!filteredMessages.length) {
-    container.innerHTML = '<div style="text-align:center;padding:40px;color:var(--muted)">Aucun résultat</div>';
-    return;
-  }
-  let html = '';
-  filteredMessages.forEach(m => {
-    html += `<div class="message-card">
-      <div class="message-header">
-        <div class="message-meta">
-          ${platformBadge(m.platform)}
-          <span class="message-author">${escHtml(m.author || 'Anonyme')}</span>
-          <span class="message-date">${fmtDate(m.date)}</span>
-          ${m.country ? `<span style="font-size:11px;color:var(--muted)">${escHtml(m.country)}</span>` : ''}
-          ${m.age_range ? `<span style="font-size:11px;color:var(--muted)">${escHtml(m.age_range)} ans</span>` : ''}
-        </div>
-        ${stars(m.relevance||0)}
-      </div>
-      <div class="message-translation">${escHtml(m.translation_fr || m.original_text || '')}</div>
-      <div class="tag-row">
-        ${m.emotion ? `<span class="emotion-tag">${escHtml(m.emotion)}</span>` : ''}
-        ${m.jtbd_category ? `<span class="jtbd-tag">${escHtml(m.jtbd_category)}</span>` : ''}
-        ${m.url ? `<a href="${escHtml(m.url)}" target="_blank" rel="noopener noreferrer" style="font-size:11px;color:var(--muted);text-decoration:none;margin-left:auto" title="Voir source">↗ Source</a>` : ''}
-      </div>
-      ${m.notes ? `<div style="font-size:12px;color:var(--muted);margin-top:8px;padding-top:8px;border-top:1px solid var(--border)">📝 ${escHtml(m.notes)}</div>` : ''}
-    </div>`;
-  });
-  container.innerHTML = html;
-}
-
-// ── VIDEOS ──
-let filteredVideos = [];
-
-function renderVideos() {
-  // Populate JTBD filter
-  const jtbdVals = [...new Set(allVideos.map(v => v.jtbd_category).filter(Boolean))].sort();
-  const jtbdSel = document.getElementById('vidJtbd');
-  jtbdVals.forEach(val => {
-    const o = document.createElement('option');
-    o.value = val; o.textContent = val;
-    jtbdSel.appendChild(o);
-  });
-
-  filterVideos();
-
-  document.getElementById('vidSearch').addEventListener('input', filterVideos);
-  document.getElementById('vidPlatform').addEventListener('change', filterVideos);
-  document.getElementById('vidJtbd').addEventListener('change', filterVideos);
-}
-
-function filterVideos() {
-  const q = document.getElementById('vidSearch').value.toLowerCase();
-  const platform = document.getElementById('vidPlatform').value;
-  const jtbd = document.getElementById('vidJtbd').value;
-
-  filteredVideos = allVideos.filter(v => {
-    if (platform && v.platform !== platform) return false;
-    if (jtbd && v.jtbd_category !== jtbd) return false;
-    if (q) {
-      const haystack = [v.titre_descriptif, v.original_title, v.creator, v.summary_fr, v.jtbd_category, v.emotion, v.notes].join(' ').toLowerCase();
-      if (!haystack.includes(q)) return false;
-    }
-    return true;
-  }).sort((a,b) => new Date(b.date)-new Date(a.date));
-
-  document.getElementById('vidCounter').textContent = `${filteredVideos.length} / ${allVideos.length}`;
-  renderVideoGrid();
-}
-
-function renderVideoGrid() {
-  const container = document.getElementById('vidGrid');
-  if (!filteredVideos.length) {
-    container.innerHTML = '<div style="text-align:center;padding:40px;color:var(--muted);grid-column:1/-1">Aucun résultat</div>';
-    return;
-  }
-  let html = '';
-  filteredVideos.forEach((v, idx) => {
-    const quotesHtml = (v.key_quotes||[]).map(q => `<div class="quote-item">${escHtml(q)}</div>`).join('');
-    const commentsHtml = (v.top_comments||[]).map(c => `<div class="comment-item">${escHtml(c.translation_fr || c.text || '')}<div class="comment-author">— ${escHtml(c.author||'')}</div></div>`).join('');
-    html += `<div class="video-card" id="vc-${idx}">
-      <div class="video-card-header" onclick="toggleVideo(${idx})">
-        ${platformBadge(v.platform)}
-        <div class="video-title">${escHtml(v.titre_descriptif || v.original_title || '')}</div>
-        <div class="video-creator">${escHtml(v.creator || '')}</div>
-        <div class="video-meta-row">
-          <span class="video-date">${fmtDate(v.date)}</span>
-          ${v.duration ? `<span class="video-duration">⏱ ${escHtml(v.duration)}</span>` : ''}
-          ${stars(v.relevance||0)}
-          ${v.emotion ? `<span class="emotion-tag" style="font-size:10px">${escHtml(v.emotion)}</span>` : ''}
-        </div>
-      </div>
-      <div class="video-expand" id="ve-${idx}">
-        ${v.jtbd_category ? `<span class="jtbd-tag" style="display:inline-block;margin-top:12px">${escHtml(v.jtbd_category)}</span>` : ''}
-        <h4>Résumé</h4>
-        <div class="video-summary">${escHtml(v.summary_fr || '')}</div>
-        ${quotesHtml ? `<h4>Citations clés</h4>${quotesHtml}` : ''}
-        ${commentsHtml ? `<h4>Commentaires</h4>${commentsHtml}` : ''}
-        ${v.notes ? `<h4>Notes</h4><div style="font-size:12.5px;color:var(--muted)">${escHtml(v.notes)}</div>` : ''}
-        ${v.url ? `<a href="${escHtml(v.url)}" target="_blank" rel="noopener noreferrer" class="video-link">↗ Voir la vidéo originale</a>` : ''}
-      </div>
-    </div>`;
-  });
-  container.innerHTML = html;
-}
-
-function toggleVideo(idx) {
-  const el = document.getElementById(`ve-${idx}`);
-  el.classList.toggle('open');
-}
-
-// ── SOCIAL TRACKING ──
-let socialDates = [];
-let activeSocialDate = '';
-
-function renderSocial() {
-  socialDates = Object.keys(socialData).sort().reverse();
-  activeSocialDate = socialDates[0] || '';
-
-  // Date tabs
-  const tabsEl = document.getElementById('dateTabs');
-  tabsEl.innerHTML = '';
-  socialDates.forEach(d => {
-    const dt = new Date(d);
-    const label = dt.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long' });
-    const btn = document.createElement('button');
-    btn.className = 'date-tab' + (d === activeSocialDate ? ' active' : '');
-    btn.textContent = label;
-    btn.addEventListener('click', () => {
-      activeSocialDate = d;
-      document.querySelectorAll('.date-tab').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      renderSocialContent();
-    });
-    tabsEl.appendChild(btn);
-  });
-
-  renderSocialContent();
-}
-
-function renderSocialContent() {
-  const data = socialData[activeSocialDate];
-  if (!data) {
-    document.getElementById('socialContent').innerHTML = '<p style="color:var(--muted)">Aucune donnée</p>';
-    return;
-  }
-
-  // Parse platforms for KPI
-  const platforms = data.platforms || {};
-  const platformEntries = Object.entries(platforms);
-
-  // Platform colors for social
-  const socialPlatformColors = {
-    tiktok_1: '#ff6f61', tiktok_2: '#ff6f61', tiktok_3: '#ff6f61',
-    instagram: '#E1306C', twitter: '#1DA1F2', youtube: '#FF0000',
-    threads: '#888', linkedin: '#0077B5'
-  };
-  const platformDisplayNames = {
-    tiktok_1: 'TikTok @djibril.learning_',
-    tiktok_2: 'TikTok @djibril.offf',
-    tiktok_3: 'TikTok @djibril.short6',
-    instagram: 'Instagram',
-    twitter: 'Twitter/X',
-    youtube: 'YouTube',
-    threads: 'Threads',
-    linkedin: 'LinkedIn'
-  };
-
-  // Build platform cards from top entries
-  let platformCardsHtml = '';
-  platformEntries.forEach(([key, posts]) => {
-    if (!Array.isArray(posts) || !posts.length) return;
-    const color = socialPlatformColors[key] || '#888';
-    const name = platformDisplayNames[key] || key;
-    const totalViews = posts.reduce((s, p) => s + (p.views||0), 0);
-    const totalLikes = posts.reduce((s, p) => s + (p.likes||0), 0);
-    const topPost = posts.reduce((best, p) => (!best || p.views > best.views) ? p : best, null);
-    platformCardsHtml += `<div class="platform-card" style="border-left:3px solid ${color}">
-      <div class="platform-card-name" style="color:${color}">${escHtml(name)}</div>
-      <div class="platform-stat-row"><span class="platform-stat-label">Posts analysés</span><span class="platform-stat-value">${posts.length}</span></div>
-      <div class="platform-stat-row"><span class="platform-stat-label">Total vues</span><span class="platform-stat-value">${totalViews.toLocaleString('fr-FR')}</span></div>
-      <div class="platform-stat-row"><span class="platform-stat-label">Total likes</span><span class="platform-stat-value">${totalLikes.toLocaleString('fr-FR')}</span></div>
-      ${topPost ? `<div class="platform-stat-row"><span class="platform-stat-label">Meilleur post</span><span class="platform-stat-value" style="font-size:11px;max-width:120px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${escHtml(topPost.post)}">${topPost.views} vues</span></div>` : ''}
-    </div>`;
-  });
-
-  // Render rapport as HTML
-  const rapportHtml = data.rapport_md ? mdToHtml(data.rapport_md) : '';
-
-  // Insights block
-  let insightsBlock = '';
-  if (data.insights && Array.isArray(data.insights) && data.insights.length) {
-    insightsBlock = `<div class="glass-card" style="margin-top:20px">
-      <h3 class="sub-title">Insights du jour</h3>
-      <ul style="padding-left:18px">
-        ${data.insights.map(i => `<li style="font-size:13.5px;line-height:1.7;margin-bottom:6px;color:var(--text)">${escHtml(i)}</li>`).join('')}
-      </ul>
-    </div>`;
-  }
-
-  document.getElementById('socialContent').innerHTML = `
-    <div class="rapport-block">${rapportHtml}</div>
-    ${platformCardsHtml ? `<h3 class="sub-title">Stats par plateforme</h3><div class="platform-cards-grid">${platformCardsHtml}</div>` : ''}
-    ${insightsBlock}
-  `;
-}
-
-// ── INSIGHTS ──
-// ── SCRIPTS CINÉMATIQUES ──
-function renderCinematique() {
-  if (!allCineScripts.length) {
-    document.getElementById('cineGrid').innerHTML = '<div style="text-align:center;padding:40px;color:var(--muted)">Aucun script cinématique disponible</div>';
-    return;
-  }
-
-  // Populate date filter
-  const dates = [...new Set(allCineScripts.map(s => s.date))].sort().reverse();
-  const dateSel = document.getElementById('cineDate');
-  dates.forEach(d => { const o = document.createElement('option'); o.value = d; o.textContent = d; dateSel.appendChild(o); });
-
-  filterCine();
-  document.getElementById('cineType').addEventListener('change', filterCine);
-  document.getElementById('cineDate').addEventListener('change', filterCine);
-}
-
-function filterCine() {
-  const type = document.getElementById('cineType').value;
-  const date = document.getElementById('cineDate').value;
-  const filtered = allCineScripts.filter(s => {
-    if (type && s.type !== type) return false;
-    if (date && s.date !== date) return false;
-    return true;
-  });
-  document.getElementById('cineCounter').textContent = `${filtered.length} / ${allCineScripts.length}`;
-  renderCineGrid(filtered);
-}
-
-function renderCineGrid(scripts) {
-  const container = document.getElementById('cineGrid');
-  if (!scripts.length) {
-    container.innerHTML = '<div style="text-align:center;padding:40px;color:var(--muted)">Aucun résultat</div>';
-    return;
-  }
-  const typeColors = { TOFU: '#14F195', MOFU: '#9945FF' };
-  let html = '';
-  scripts.forEach((s, idx) => {
-    const typeColor = typeColors[s.type] || '#888';
-    const plansHtml = (s.plans || []).map(p => `
-      <div style="display:flex;gap:12px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.05)">
-        <div style="min-width:60px;font-size:11px;color:${typeColor};font-weight:600;font-family:'JetBrains Mono',monospace">${escHtml(p.timing)}</div>
-        <div style="flex:1">
-          <div style="font-size:11px;color:var(--muted);margin-bottom:4px">📍 ${escHtml(p.visuel)}</div>
-          <div style="font-size:13px;color:var(--text);line-height:1.5">🎙️ <em>"${escHtml(p.voiceover)}"</em></div>
-        </div>
-      </div>
-    `).join('');
-
-    html += `<div class="glass-card" style="padding:20px;cursor:pointer" onclick="document.getElementById('cine-expand-${idx}').classList.toggle('open')">
-      <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px">
-        <span style="background:${typeColor};color:#000;padding:3px 10px;border-radius:6px;font-size:11px;font-weight:700">${escHtml(s.type)}</span>
-        <span style="font-size:11px;color:var(--muted)">${escHtml(s.duree)}</span>
-        <span style="font-size:11px;color:var(--muted)">${escHtml(s.date)}</span>
-        <span style="font-size:11px;color:var(--muted);margin-left:auto">${escHtml(s.compte || '')}</span>
-      </div>
-      <div style="font-size:16px;font-weight:600;color:var(--text);margin-bottom:6px">${escHtml(s.titre)}</div>
-      <div style="font-size:12px;color:var(--accent)">${escHtml(s.angle)}</div>
-      <div style="font-size:11px;color:var(--muted);margin-top:4px">📚 ${escHtml(s.sources || '')}</div>
-      <div class="video-expand" id="cine-expand-${idx}">
-        <div style="margin-top:16px">
-          <div style="display:flex;gap:16px;margin-bottom:12px;flex-wrap:wrap">
-            <span style="font-size:11px;color:var(--muted)">🎵 ${escHtml(s.musique || '')}</span>
-            <span style="font-size:11px;color:var(--muted)">🎨 ${escHtml(s.color_grade || '')}</span>
-            <span style="font-size:11px;color:var(--muted)">✂️ ${escHtml(s.montage || '')}</span>
-          </div>
-          <h4 style="font-size:13px;color:${typeColor};margin-bottom:8px">Storyboard — Plans de tournage</h4>
-          ${plansHtml}
-        </div>
-      </div>
-    </div>`;
-  });
-  container.innerHTML = html;
-}
-
-function renderInsights() {
-  const ins = insightsData;
-  const score = ins.daily_score?.alignment_score || 0;
-  const circumference = 2 * Math.PI * 54; // r=54
-  const offset = circumference - (score / 100) * circumference;
-
-  const correlations = ins.correlations || [];
-  const recos = ins.recommendations || [];
-  const pulse = ins.market_pulse || {};
-  const mycontent = ins.my_content || {};
-
-  // Emotions
-  const emotions = pulse.top_emotions_today || [];
-  const maxCount = Math.max(...emotions.map(e => e.count), 1);
-  const colors = ['#ff6f61','#9945ff','#14f195','#ffe066','#66ffb2','#1DA1F2'];
-  let emotionsHtml = '';
-  emotions.forEach((e, i) => {
-    const pct = Math.round((e.count / maxCount) * 100);
-    const trend = e.trend === 'up' ? `<span class="trend-up">↑${e.delta}</span>` : `<span class="trend-stable">→</span>`;
-    emotionsHtml += `<div class="emotion-bar-row">
-      <div class="emotion-bar-label">${escHtml(e.emotion)} ${trend}</div>
-      <div class="emotion-bar-track"><div class="emotion-bar-fill" style="width:${pct}%;background:${colors[i%colors.length]}"></div></div>
-      <div class="emotion-count">${e.count}</div>
-    </div>`;
-  });
-
-  // JTBD
-  const jtbds = pulse.top_jtbd_today || [];
-  const jtbdColors = ['#14f195','#ff6f61','#9945ff','#ffe066','#66ffb2','#FF4500','#1DA1F2'];
-  let jtbdHtml = '';
-  jtbds.forEach((j, i) => {
-    const trend = j.trend === 'up' ? `<span class="trend-up">↑</span>` : `<span class="trend-stable">→</span>`;
-    jtbdHtml += `<div class="jtbd-bar-row">
-      <div class="jtbd-bar-label">${escHtml(j.jtbd)} ${trend}</div>
-      <div class="jtbd-bar-track"><div class="jtbd-bar-fill" style="width:${j.pct}%;background:${jtbdColors[i%jtbdColors.length]}"></div></div>
-      <div class="jtbd-pct">${j.pct}%</div>
-    </div>`;
-  });
-
-  // Keywords
-  const kwChips = (pulse.hot_keywords||[]).map(k => `<span class="keyword-chip">${escHtml(k)}</span>`).join('');
-
-  // My content
-  const themes = (mycontent.top_themes_posted||[]).map(t => `<div class="platform-stat-row"><span class="platform-stat-label">${escHtml(t.theme)}</span><span class="platform-stat-value">${t.count}</span></div>`).join('');
-
-  // Correlations
-  let corrHtml = '';
-  correlations.forEach(c => {
-    const typeClass = c.type === 'alignment' ? 'alignment' : c.type === 'gap' ? 'gap' : 'opportunity';
-    const typeLabel = c.type === 'alignment' ? '✅ Alignement' : c.type === 'gap' ? '⚠️ Gap' : '🎯 Opportunité';
-    const priorityClass = c.priority === 'high' ? 'priority-high' : 'priority-medium';
-    corrHtml += `<div class="correlation-card ${typeClass}">
-      <div class="corr-type type-${typeClass}">${typeLabel}<span class="priority-badge ${priorityClass}">${c.priority||''}</span></div>
-      <div class="corr-signal">${escHtml(c.signal)}</div>
-      <div class="corr-action">💡 ${escHtml(c.action)}</div>
-      ${c.jtbd_link ? `<div style="margin-top:8px"><span class="jtbd-tag" style="font-size:10px">${escHtml(c.jtbd_link)}</span></div>` : ''}
-    </div>`;
-  });
-
-  // Recommendations
-  const icons = ['🚫','💰','🎯','📱','🔥','⚡'];
-  let recoHtml = '';
-  recos.forEach((r, i) => {
-    recoHtml += `<li class="reco-item"><span class="reco-icon">${icons[i%icons.length]}</span><span class="reco-text">${escHtml(r)}</span></li>`;
-  });
-
-  document.getElementById('insightsContent').innerHTML = `
-    <!-- Score ring -->
-    <div class="score-ring-wrap">
-      <svg class="score-ring-svg" viewBox="0 0 120 120">
-        <defs>
-          <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#14f195"/>
-            <stop offset="100%" stop-color="#9945ff"/>
-          </linearGradient>
-        </defs>
-        <circle class="ring-bg" cx="60" cy="60" r="54"/>
-        <circle class="ring-fill" cx="60" cy="60" r="54"
-          stroke-dasharray="${circumference}"
-          stroke-dashoffset="${circumference}"
-          id="ringCircle"/>
-      </svg>
-      <div class="score-number" style="margin-top:-100px">${score}</div>
-      <div class="score-label">/100 — Alignment Score</div>
-      <div class="score-desc">${escHtml(ins.daily_score?.description||'')}</div>
-    </div>
-
-    <!-- Market Pulse + My Content -->
-    <div class="insights-grid">
-      <div class="glass-card">
-        <h3 class="sub-title">Market Pulse — Émotions</h3>
-        ${emotionsHtml}
-        <div style="margin-top:16px">
-          <div style="font-size:12px;color:var(--muted);margin-bottom:8px">Sentiment marché</div>
-          <div style="font-size:13px;font-style:italic;color:var(--text)">${escHtml(pulse.market_sentiment||'')}</div>
-        </div>
-        <div style="margin-top:14px">
-          <div style="font-size:12px;color:var(--muted);margin-bottom:6px">Mots-clés chauds</div>
-          <div class="keyword-chips">${kwChips}</div>
-        </div>
-        <div style="margin-top:14px;display:flex;gap:20px">
-          <div><div style="font-size:12px;color:var(--muted)">Total signaux</div><div style="font-family:'Sora',sans-serif;font-size:22px;font-weight:800;color:var(--cyan)">${pulse.total_signals||0}</div></div>
-          <div><div style="font-size:12px;color:var(--muted)">24h</div><div style="font-family:'Sora',sans-serif;font-size:22px;font-weight:800;color:var(--green)">+${pulse.signals_24h||0}</div></div>
-        </div>
-      </div>
-      <div class="glass-card">
-        <h3 class="sub-title">Market Pulse — JTBD</h3>
-        ${jtbdHtml}
-        <div style="margin-top:20px;border-top:1px solid var(--border);padding-top:16px">
-          <h3 class="sub-title">Mon Contenu</h3>
-          <div class="platform-stat-row"><span class="platform-stat-label">Posts publiés (total)</span><span class="platform-stat-value">${mycontent.posts_total||0}</span></div>
-          <div class="platform-stat-row"><span class="platform-stat-label">Posts aujourd'hui</span><span class="platform-stat-value">${mycontent.posts_today||0}</span></div>
-          <div class="platform-stat-row"><span class="platform-stat-label">Vidéos postées</span><span class="platform-stat-value">${mycontent.videos_posted||0}</span></div>
-          <div class="platform-stat-row"><span class="platform-stat-label">Vidéos en queue</span><span class="platform-stat-value">${mycontent.videos_queued||0}</span></div>
-          <div style="margin-top:12px">${themes}</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Correlations -->
-    <h3 class="sub-title" style="margin-bottom:14px">Corrélations & Gaps</h3>
-    <div class="insights-grid">${corrHtml}</div>
-
-    <!-- Recommendations -->
-    <h3 class="sub-title" style="margin-top:4px;margin-bottom:14px">Recommandations actives</h3>
-    <ul class="reco-list">${recoHtml}</ul>
-  `;
-
-  // Animate ring with slight delay
-  setTimeout(() => {
-    const ringEl = document.getElementById('ringCircle');
-    if (ringEl) {
-      ringEl.style.strokeDashoffset = offset;
-    }
-  }, 400);
-}
-
-// ── NICHE RESEARCH ──
-function renderNiche() {
-  const blocs = nicheData.blocs || [];
-  if (!blocs.length) {
-    document.getElementById('nicheGrid').innerHTML = '<p style="color:var(--muted)">Aucune donnée niche disponible.</p>';
-    return;
-  }
-  let html = '';
-  // Avatar banner
-  html += `<div class="glass-card" style="border:1px solid rgba(153,69,255,0.3);background:linear-gradient(135deg,rgba(153,69,255,0.08),rgba(20,241,149,0.04))">
-    <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px">
-      <span style="font-size:28px">🧠</span>
-      <div>
-        <div style="font-family:'Sora',sans-serif;font-size:16px;font-weight:700;background:var(--gradient-cosmos);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Le Cérébral Paralysé</div>
-        <div style="font-size:12px;color:var(--text-secondary)">${escHtml(nicheData.avatar || '')}</div>
-      </div>
-    </div>
-    <div style="font-size:11px;color:var(--muted)">Sources: ${escHtml(nicheData.source || '')} · Dernière MàJ: ${nicheData.last_updated ? new Date(nicheData.last_updated).toLocaleDateString('fr-FR') : 'N/A'}</div>
-  </div>`;
-  // Each bloc
-  blocs.forEach(bloc => {
-    const kwChips = (bloc.keywords || []).map(kw =>
-      `<span style="background:${bloc.color}18;color:${bloc.color};border:1px solid ${bloc.color}33;padding:4px 10px;border-radius:8px;font-size:12px;font-weight:600;display:inline-block">${escHtml(kw)}</span>`
-    ).join('');
-    const verbatimCards = (bloc.verbatims || []).map(v =>
-      `<div style="background:var(--bg2);border-left:3px solid ${bloc.color};padding:8px 12px;border-radius:0 8px 8px 0;font-size:12px;color:var(--text-secondary);font-style:italic">"${escHtml(v)}"</div>`
-    ).join('');
-    const dataChips = (bloc.data_points || []).map(d =>
-      `<div style="font-size:11px;color:var(--cyan);padding:4px 0">📊 ${escHtml(d)}</div>`
-    ).join('');
-    html += `<div class="glass-card" style="border:1px solid ${bloc.color}22;transition:all 0.3s" onmouseover="this.style.borderColor='${bloc.color}55';this.style.boxShadow='0 0 30px ${bloc.color}15'" onmouseout="this.style.borderColor='${bloc.color}22';this.style.boxShadow='none'">
-      <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
-        <span style="font-size:24px">${bloc.emoji || '🔑'}</span>
-        <h3 style="font-family:'Sora',sans-serif;font-size:15px;font-weight:700;color:${bloc.color}">${escHtml(bloc.title)}</h3>
-      </div>
-      <!-- Keywords -->
-      <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px">${kwChips}</div>
-      <!-- Ce qu'ils vivent -->
-      <div style="margin-bottom:14px">
-        <div style="font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px">Ce qu'ils vivent</div>
-        <p style="font-size:13px;color:var(--text);line-height:1.6">${escHtml(bloc.audience_lives || '')}</p>
-      </div>
-      <!-- Verbatims -->
-      <div style="margin-bottom:14px">
-        <div style="font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px">Verbatims réels</div>
-        <div style="display:flex;flex-direction:column;gap:6px">${verbatimCards}</div>
-      </div>
-      <!-- Doctrine -->
-      <div style="background:rgba(153,69,255,0.06);border:1px solid rgba(153,69,255,0.15);border-radius:10px;padding:10px 14px;margin-bottom:10px">
-        <div style="font-size:11px;font-weight:600;color:var(--purple);margin-bottom:4px">🔗 Connexion Doctrine</div>
-        <div style="font-size:12px;color:var(--text)">${escHtml(bloc.doctrine_connection || '')}</div>
-      </div>
-      <!-- Data Points -->
-      ${dataChips ? `<div style="margin-top:8px">${dataChips}</div>` : ''}
-    </div>`;
-  });
-  document.getElementById('nicheGrid').innerHTML = html;
-}
-
-// ── INIT ──
-loadAll();
-</script>
+    <script>
+        // UTILITIES
+        function escHtml(text) {
+            const map = {
+                '&': '&amp;',
+                '<': '&lt;',
+                '>': '&gt;',
+                '"': '&quot;',
+                "'": '&#039;'
+            };
+            return String(text).replace(/[&<>"']/g, m => map[m]);
+        }
+
+        function getPlatformBadge(platform) {
+            const badges = {
+                'reddit': 'badge-reddit',
+                'youtube': 'badge-youtube',
+                'twitter': 'badge-twitter',
+                'tiktok': 'badge-tiktok',
+                'instagram': 'badge-instagram',
+                'linkedin': 'badge-linkedin',
+                'threads': 'badge-threads',
+                'facebook': 'badge-facebook'
+            };
+            return badges[platform?.toLowerCase()] || 'badge-platform';
+        }
+
+        function getScoreBadgeClass(score) {
+            if (score >= 10) return 'score-10';
+            if (score >= 7) return 'score-7-9';
+            return 'score-low';
+        }
+
+        // DATA LOADING
+        let veilleMessages = [];
+        let veilleVideos = [];
+        let socialTracking = [];
+        let insights = {};
+        let scriptsCinematiques = [];
+        let emotions = {};
+        let nicheKeywords = {};
+
+        async function loadData() {
+            try {
+                veilleMessages = await fetch('data/veille-messages.json')
+                    .then(r => r.json())
+                    .catch(() => []);
+
+                veilleVideos = await fetch('data/veille-videos.json')
+                    .then(r => r.json())
+                    .catch(() => []);
+
+                socialTracking = await fetch('data/social-tracking.json')
+                    .then(r => r.json())
+                    .catch(() => []);
+
+                insights = await fetch('data/insights.json')
+                    .then(r => r.json())
+                    .catch(() => ({}));
+
+                scriptsCinematiques = await fetch('data/scripts-cinematiques.json')
+                    .then(r => r.json())
+                    .catch(() => []);
+
+                emotions = await fetch('data/emociones.json')
+                    .then(r => r.json())
+                    .catch(() => ({ emotions: {}, keyword_fluo: {} }));
+
+                nicheKeywords = await fetch('data/niche-keywords.json')
+                    .then(r => r.json())
+                    .catch(() => ({ avatar: '', blocs: [] }));
+
+                renderAllTabs();
+            } catch (e) {
+                console.error('Data loading error:', e);
+            }
+        }
+
+        // RENDER FUNCTIONS
+        function renderVueEnsemble() {
+            // KPI
+            document.getElementById('kpiMessages').textContent = veilleMessages.length || 0;
+            document.getElementById('kpiVideos').textContent = veilleVideos.length || 0;
+
+            let totalFollowers = 0;
+            if (Array.isArray(socialTracking) && socialTracking.length > 0) {
+                const latest = socialTracking[socialTracking.length - 1];
+                if (latest.accounts) {
+                    totalFollowers = latest.accounts.reduce((sum, acc) => sum + (acc.followers || 0), 0);
+                }
+            }
+            document.getElementById('kpiFollowers').textContent = totalFollowers.toLocaleString();
+            document.getElementById('kpiScripts').textContent = scriptsCinematiques.length || 0;
+
+            // Emotion Chart
+            const emotionDistribution = insights.market_pulse?.top_emotions_today || {};
+            let emotionHtml = '';
+            for (const [emotion, count] of Object.entries(emotionDistribution).slice(0, 8)) {
+                const maxCount = Math.max(...Object.values(emotionDistribution));
+                const percentage = (count / maxCount) * 100;
+                emotionHtml += `
+                    <div class="chart-bar">
+                        <div class="chart-bar-label">${escHtml(emotion)}</div>
+                        <div class="chart-bar-bg">
+                            <div class="chart-bar-fill" style="width: ${percentage}%"></div>
+                        </div>
+                        <div class="chart-bar-value">${count}</div>
+                    </div>
+                `;
+            }
+            document.getElementById('emotionChart').innerHTML = emotionHtml || '<div class="text-muted">Aucune donnée</div>';
+
+            // Top JTBD
+            const topJtbd = insights.market_pulse?.top_jtbd_today || [];
+            document.getElementById('topJtbd').innerHTML = topJtbd.slice(0, 10).map(j =>
+                `<span class="keyword-chip">${escHtml(j)}</span>`
+            ).join('') || '<div class="text-muted">Aucune donnée</div>';
+
+            // Top Keywords
+            const topKeywords = insights.market_pulse?.hot_keywords || [];
+            document.getElementById('topKeywords').innerHTML = topKeywords.slice(0, 15).map(k =>
+                `<span class="keyword-chip">${escHtml(k)}</span>`
+            ).join('') || '<div class="text-muted">Aucune donnée</div>';
+
+            // Latest Messages
+            const latest5 = veilleMessages.slice(-5).reverse();
+            document.getElementById('latestMessages').innerHTML = latest5.map(msg => `
+                <div class="message-card">
+                    <div class="message-header">
+                        <span class="badge badge-platform ${getPlatformBadge(msg.platform)}">${escHtml(msg.platform || '')}</span>
+                        <span class="message-score badge ${getScoreBadgeClass(msg.relevance_score || 0)}">${msg.relevance_score || 0}/10</span>
+                    </div>
+                    <div class="message-author">${escHtml(msg.author || 'Anonyme')}</div>
+                    <div class="message-text">${escHtml(msg.translation_fr || msg.original_text || '')}</div>
+                    <div class="message-meta">
+                        ${msg.emotion ? `<span class="emotion-chip">${escHtml(msg.emotion)}</span>` : ''}
+                        ${msg.jtbd_category ? `<span class="emotion-chip">${escHtml(msg.jtbd_category)}</span>` : ''}
+                    </div>
+                </div>
+            `).join('') || '<div class="text-muted">Aucun message</div>';
+
+            // Recommendations
+            const recs = insights.recommendations || [];
+            document.getElementById('recommendations').innerHTML = recs.slice(0, 5).map(rec => `
+                <div class="rec-card">
+                    <div class="rec-title">${escHtml(rec.title || 'Recommandation')}</div>
+                    <div class="rec-content">${escHtml(rec.content || '')}</div>
+                </div>
+            `).join('') || '<div class="text-muted">Aucune recommandation</div>';
+        }
+
+        function renderMesComptes() {
+            if (!Array.isArray(socialTracking) || socialTracking.length === 0) {
+                document.getElementById('accountsGrid').innerHTML = '<div class="text-muted">Aucune donnée de suivi</div>';
+                return;
+            }
+
+            const latestTracking = socialTracking[socialTracking.length - 1];
+            const accounts = latestTracking.accounts || [];
+
+            document.getElementById('accountsGrid').innerHTML = accounts.map(acc => `
+                <div class="account-card">
+                    <div class="account-header">
+                        <span class="badge badge-platform ${getPlatformBadge(acc.platform)}">${escHtml(acc.platform || '')}</span>
+                    </div>
+                    <div class="account-handle">${escHtml(acc.handle || '')}</div>
+                    <div class="account-stats">
+                        <div class="stat-item">
+                            <div class="stat-label">Followers</div>
+                            <div class="stat-value">${(acc.followers || 0).toLocaleString()}</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Following</div>
+                            <div class="stat-value">${(acc.following || 0).toLocaleString()}</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Posts</div>
+                            <div class="stat-value">${acc.posts || 0}</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Engagement</div>
+                            <div class="stat-value">${(acc.engagement_rate || 0).toFixed(1)}%</div>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function renderContenu() {
+            const container = document.getElementById('contenuGrid');
+            const filterButtons = document.querySelectorAll('#contenu .filter-chip');
+
+            filterButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterButtons.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    renderContenuScripts(btn.dataset.filter);
+                });
+            });
+
+            renderContenuScripts('all');
+        }
+
+        function renderContenuScripts(typeFilter) {
+            let scripts = scriptsCinematiques || [];
+            if (typeFilter !== 'all') {
+                scripts = scripts.filter(s => s.type?.toLowerCase() === typeFilter.toLowerCase());
+            }
+
+            document.getElementById('contenuGrid').innerHTML = scripts.map(script => `
+                <div class="script-card" data-id="${escHtml(script.id || '')}">
+                    <div class="script-title">${escHtml(script.title || 'Sans titre')}</div>
+                    <span class="badge badge-type ${(script.type || '').toLowerCase()}">${escHtml(script.type || '')}</span>
+                    <div class="script-hook">"${escHtml(script.hook || '')}"</div>
+                    <div class="script-meta">
+                        ${script.reference_psycho ? `<span class="text-muted">📚 ${escHtml(script.reference_psycho)}</span>` : ''}
+                    </div>
+                    <div class="script-meta" style="margin-top: 0.75rem;">
+                        ${script.micro_action ? `<span class="emotion-chip">⚡ ${escHtml(script.micro_action)}</span>` : ''}
+                    </div>
+                </div>
+            `).join('') || '<div class="text-muted">Aucun script</div>';
+        }
+
+        function renderVeilleMarche() {
+            // Platform filters
+            const platforms = ['TOUS', 'REDDIT', 'YOUTUBE', 'TWITTER', 'TIKTOK', 'INSTAGRAM', 'LINKEDIN', 'FACEBOOK', 'THREADS'];
+            const filterHtml = platforms.map(p =>
+                `<button class="filter-chip ${p === 'TOUS' ? 'active' : ''}" data-platform="${p}">${p}</button>`
+            ).join('');
+            document.getElementById('platformFilters').innerHTML = filterHtml;
+
+            const filterButtons = document.querySelectorAll('#veille-marche .filter-chip');
+            const searchInput = document.getElementById('veilleSearch');
+
+            function renderMessages(platformFilter = 'TOUS', searchTerm = '') {
+                let filtered = veilleMessages;
+
+                if (platformFilter !== 'TOUS') {
+                    filtered = filtered.filter(m => m.platform?.toUpperCase() === platformFilter);
+                }
+
+                if (searchTerm) {
+                    filtered = filtered.filter(m =>
+                        (m.original_text + m.translation_fr + m.author + m.emotion + m.jtbd_category)
+                            .toLowerCase().includes(searchTerm.toLowerCase())
+                    );
+                }
+
+                document.getElementById('veilleMessages').innerHTML = filtered.map(msg => `
+                    <div class="message-card">
+                        <div class="message-header">
+                            <span class="badge badge-platform ${getPlatformBadge(msg.platform)}">${escHtml(msg.platform || '')}</span>
+                            <span class="message-score badge ${getScoreBadgeClass(msg.relevance_score || 0)}">${msg.relevance_score || 0}/10</span>
+                        </div>
+                        <div class="message-author">${escHtml(msg.author || 'Anonyme')}</div>
+                        <div class="message-text">${escHtml(msg.translation_fr || msg.original_text || '')}</div>
+                        <div class="message-meta">
+                            ${msg.emotion ? `<span class="emotion-chip">${escHtml(msg.emotion)}</span>` : ''}
+                            ${msg.jtbd_category ? `<span class="emotion-chip">${escHtml(msg.jtbd_category)}</span>` : ''}
+                            ${msg.insight ? `<span class="text-muted">💡 ${escHtml(msg.insight.substring(0, 30))}</span>` : ''}
+                        </div>
+                    </div>
+                `).join('') || '<div class="text-muted">Aucun message trouvé</div>';
+            }
+
+            filterButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterButtons.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    renderMessages(btn.dataset.platform, searchInput.value);
+                });
+            });
+
+            searchInput.addEventListener('input', (e) => {
+                const activeBtn = document.querySelector('#veille-marche .filter-chip.active');
+                renderMessages(activeBtn?.dataset.platform || 'TOUS', e.target.value);
+            });
+
+            renderMessages();
+        }
+
+        function renderEmotions() {
+            // Full emotion chart
+            const emotionDist = insights.market_pulse?.top_emotions_today || {};
+            let chartHtml = '';
+            for (const [emotion, count] of Object.entries(emotionDist)) {
+                const maxCount = Math.max(...Object.values(emotionDist));
+                const percentage = (count / maxCount) * 100;
+                chartHtml += `
+                    <div class="chart-bar">
+                        <div class="chart-bar-label">${escHtml(emotion)}</div>
+                        <div class="chart-bar-bg">
+                            <div class="chart-bar-fill" style="width: ${percentage}%"></div>
+                        </div>
+                        <div class="chart-bar-value">${count}</div>
+                    </div>
+                `;
+            }
+            document.getElementById('fullEmotionChart').innerHTML = chartHtml || '<div class="text-muted">Aucune donnée</div>';
+
+            // High Impact
+            const highImpact = emotions.keyword_fluo?.high_impact || [];
+            document.getElementById('highImpactKeywords').innerHTML = highImpact.map(k =>
+                `<span class="keyword-chip">${escHtml(k)}</span>`
+            ).join('') || '<div class="text-muted">Aucune donnée</div>';
+
+            // Emotional Triggers
+            const triggers = emotions.keyword_fluo?.emotional_triggers || [];
+            document.getElementById('emotionalTriggers').innerHTML = triggers.map(t =>
+                `<span class="keyword-chip">${escHtml(t)}</span>`
+            ).join('') || '<div class="text-muted">Aucune donnée</div>';
+
+            // Top Combos
+            const combos = emotions.keyword_fluo?.top_combos || [];
+            document.getElementById('topCombos').innerHTML = combos.map(c =>
+                `<span class="keyword-chip">${escHtml(c)}</span>`
+            ).join('') || '<div class="text-muted">Aucune donnée</div>';
+
+            // Market Sentiment
+            document.getElementById('marketSentiment').textContent = insights.market_pulse?.market_sentiment || 'Données non disponibles';
+        }
+
+        function renderScriptsCine() {
+            const container = document.getElementById('scriptsCineGrid');
+            const filterButtons = document.querySelectorAll('#scripts-cine .filter-chip');
+
+            filterButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterButtons.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    renderScriptsCineScripts(btn.dataset.filter);
+                });
+            });
+
+            renderScriptsCineScripts('all');
+        }
+
+        function renderScriptsCineScripts(typeFilter) {
+            let scripts = scriptsCinematiques || [];
+            if (typeFilter !== 'all') {
+                scripts = scripts.filter(s => s.type?.toLowerCase() === typeFilter.toLowerCase());
+            }
+
+            document.getElementById('scriptsCineGrid').innerHTML = scripts.map(script => `
+                <div class="script-card" onclick="this.classList.toggle('expanded')">
+                    <div class="script-title">${escHtml(script.title || 'Sans titre')}</div>
+                    <span class="badge badge-type ${(script.type || '').toLowerCase()}">${escHtml(script.type || '')}</span>
+                    <div class="script-hook">"${escHtml(script.hook || '')}"</div>
+                    <div class="script-meta">
+                        ${script.reference_psycho ? `<span class="text-muted">📚 ${escHtml(script.reference_psycho)}</span>` : ''}
+                        ${script.date ? `<span class="text-muted">📅 ${escHtml(script.date)}</span>` : ''}
+                    </div>
+                    <div class="script-plans">
+                        ${script.plan_1 ? `<div class="plan-item"><strong>Plan 1:</strong> ${escHtml(script.plan_1)}</div>` : ''}
+                        ${script.plan_2 ? `<div class="plan-item"><strong>Plan 2:</strong> ${escHtml(script.plan_2)}</div>` : ''}
+                        ${script.plan_3 ? `<div class="plan-item"><strong>Plan 3:</strong> ${escHtml(script.plan_3)}</div>` : ''}
+                        ${script.plan_4 ? `<div class="plan-item"><strong>Plan 4:</strong> ${escHtml(script.plan_4)}</div>` : ''}
+                        ${script.plan_5 ? `<div class="plan-item"><strong>Plan 5:</strong> ${escHtml(script.plan_5)}</div>` : ''}
+                    </div>
+                    <div class="script-meta" style="margin-top: 0.75rem;">
+                        ${script.micro_action ? `<span class="emotion-chip">⚡ ${escHtml(script.micro_action)}</span>` : ''}
+                        ${script.metaphore ? `<span class="text-muted">🎭 ${escHtml(script.metaphore)}</span>` : ''}
+                    </div>
+                </div>
+            `).join('') || '<div class="text-muted">Aucun script</div>';
+        }
+
+        function renderNicheResearch() {
+            // Avatar Banner
+            if (nicheKeywords.avatar) {
+                document.getElementById('avatarBanner').innerHTML = `
+                    <div class="avatar-title">Avatar: ${escHtml(nicheKeywords.avatar)}</div>
+                    <div class="avatar-description">Cible principale de la recherche niche</div>
+                `;
+            }
+
+            // Blocs
+            const blocs = nicheKeywords.blocs || [];
+            document.getElementById('nicheBlocsGrid').innerHTML = blocs.map(bloc => `
+                <div class="bloc-card">
+                    <div class="bloc-header">
+                        <div class="bloc-emoji">${escHtml(bloc.emoji || '📍')}</div>
+                        <div class="bloc-title">${escHtml(bloc.title || '')}</div>
+                    </div>
+
+                    <div class="bloc-section">
+                        <div class="bloc-label">Mots-Clés</div>
+                        <div class="bloc-keywords">
+                            ${(bloc.keywords || []).map(kw => `<span class="bloc-keyword">${escHtml(kw)}</span>`).join('')}
+                        </div>
+                    </div>
+
+                    <div class="bloc-section">
+                        <div class="bloc-label">Ce qu'ils vivent</div>
+                        <div style="font-size: 13px; color: #c0c0c0; line-height: 1.6;">
+                            ${(bloc.audience_lives || []).map(line => `<div>• ${escHtml(line)}</div>`).join('')}
+                        </div>
+                    </div>
+
+                    ${bloc.verbatims ? `
+                        <div class="bloc-section">
+                            <div class="bloc-label">Verbatims</div>
+                            ${(bloc.verbatims || []).map(v => `<div class="bloc-verbatim">"${escHtml(v)}"</div>`).join('')}
+                        </div>
+                    ` : ''}
+
+                    ${bloc.doctrine_connection ? `
+                        <div class="bloc-section">
+                            <div class="bloc-label">Connexion Doctrine</div>
+                            <div class="bloc-doctrine">${escHtml(bloc.doctrine_connection)}</div>
+                        </div>
+                    ` : ''}
+
+                    ${bloc.data_points ? `
+                        <div class="bloc-section">
+                            <div class="bloc-label">Data Points</div>
+                            <div class="bloc-data-points">${escHtml(bloc.data_points)}</div>
+                        </div>
+                    ` : ''}
+                </div>
+            `).join('') || '<div class="text-muted">Aucun bloc de recherche</div>';
+        }
+
+        function renderAllTabs() {
+            renderVueEnsemble();
+            renderMesComptes();
+            renderContenu();
+            renderVeilleMarche();
+            renderEmotions();
+            renderScriptsCine();
+            renderNicheResearch();
+        }
+
+        // TAB NAVIGATION
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const tabName = btn.dataset.tab;
+
+                // Update buttons
+                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                // Update content
+                document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+                document.getElementById(tabName).classList.add('active');
+            });
+        });
+
+        // INIT
+        loadData();
+    </script>
 </body>
 </html>
