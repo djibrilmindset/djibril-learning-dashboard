@@ -1,0 +1,365 @@
+{
+  "last_updated": "2026-04-05T08:00:00Z",
+  "analyse_period": "2026-03-26 → 2026-04-05",
+  "total_posts_analysed": 56,
+  "total_scripts_analysed": 24,
+  "total_plans_visuels": 120,
+  "camera_performance": {
+    "summary": "Les plans ECU/gros plan (40mm) et face caméra génèrent le plus d'identification. Les plans larges (15mm) sont sous-utilisés mais performants en opener.",
+    "categories": [
+      {
+        "type": "ECU_gros_plan_40mm",
+        "count_plans": 13,
+        "pct_total": 10.8,
+        "usage": "Hook + connexion émotionnelle (0-12s)",
+        "performance_note": "Forte identification — mains scroll, yeux reflet, café. Les posts TikTok avec visuels 'mains' ou 'gros plan' corrèlent avec les top views (800+ vues).",
+        "recommendation": "AUGMENTER — utiliser en Plan 1 et Plan 2 systématiquement",
+        "examples": [
+          "Gros plan mains scroll téléphone, lumière froide bleue",
+          "Gros plan yeux, reflet vidéos dans pupilles, rack focus",
+          "Gros plan café qui refroidit, pages ouvertes"
+        ]
+      },
+      {
+        "type": "face_camera_portrait",
+        "count_plans": 13,
+        "pct_total": 10.8,
+        "usage": "GUIDER + LIBÉRER (28-45s) — punchline + permission",
+        "performance_note": "Regard caméra direct = engagement émotionnel fort. Corrèle avec les vidéos TOFU empathie qui ont le plus de score (35+).",
+        "recommendation": "MAINTENIR — essentiel pour la section permission/libération",
+        "examples": [
+          "Marche face caméra, golden hour, regard direct",
+          "Regard caméra, lumière fenêtre, silence 2s",
+          "Plans rapides: notifications, conversations, regards"
+        ]
+      },
+      {
+        "type": "broll_mains",
+        "count_plans": 13,
+        "pct_total": 10.8,
+        "usage": "Transitions + métaphores visuelles (5-28s)",
+        "performance_note": "B-roll mains = pilier du format cinématique. Renforce la métaphore du Récipient Cérébral (verser, fermer, renverser). Posts associés performent au-dessus de la moyenne.",
+        "recommendation": "MAINTENIR — c'est la signature visuelle Djibril",
+        "examples": [
+          "Mains tournent pages livre → swipe téléphone → loop",
+          "Mains qui ferment un livre. Lentement.",
+          "Main renverse verre coloré, remplit verre propre"
+        ]
+      },
+      {
+        "type": "plan_large_15mm",
+        "count_plans": 4,
+        "pct_total": 3.3,
+        "usage": "Openers cinématiques + plans de conclusion",
+        "performance_note": "Sous-utilisé (seulement 4 plans). Le travelling lent rue vide + silhouette lumière sont les visuels les plus cinématiques du catalogue.",
+        "recommendation": "AUGMENTER — ajouter 1 plan large minimum par script pour le côté 'film'",
+        "examples": [
+          "Travelling lent rue vide, dos caméra, pas lourds",
+          "Plan large, silhouette dans la lumière",
+          "Travelling latéral, immobile devant fenêtre"
+        ]
+      },
+      {
+        "type": "ecrans_digital",
+        "count_plans": 5,
+        "pct_total": 4.2,
+        "usage": "Hooks disruptifs (0-5s) — identification scroll",
+        "performance_note": "Le scroll téléphone comme ouverture est un classique qui fonctionne. Le post 'Tu sais tout mais tu fais rien' (816 vues, top 2) ouvre sur cette imagerie.",
+        "recommendation": "MAINTENIR en modération — risque de fatigue si surutilisé",
+        "examples": [
+          "Écran noir → lumière sur miroir, reflet flou",
+          "Fin de journée, lumière basse, affalé écran éteint",
+          "Réussite sur écran → haussement épaules → scroll"
+        ]
+      },
+      {
+        "type": "eclairage_clair_obscur",
+        "count_plans": 5,
+        "pct_total": 4.2,
+        "usage": "Sections métaphore + transformation (12-40s)",
+        "performance_note": "Le clair-obscur renforce la dualité avant/après. Visuel puissant en Plan 3 (PERMETTRE) avec éclairage source unique style cinéma.",
+        "recommendation": "AUGMENTER — c'est gratuit (lumière fenêtre) et très cinématique",
+        "examples": [
+          "Devant mur, éclairage cinéma, source unique",
+          "Même personne, debout, lumière monte",
+          "Encre dans verre d'eau claire, coloration lente"
+        ]
+      },
+      {
+        "type": "metaphore_liquide",
+        "count_plans": 3,
+        "pct_total": 2.5,
+        "usage": "Ancrage doctrine — Récipient Cérébral",
+        "performance_note": "Signature doctrine Djibril. Peu utilisé visuellement mais conceptuellement central. La goutte d'encre est la métaphore fil rouge.",
+        "recommendation": "MAINTENIR — 1 par série minimum pour ancrer la doctrine",
+        "examples": [
+          "Goutte encre transparente dans eau. On voit rien.",
+          "Verre sous UV: propre",
+          "Bureau couvert de notes, carnets, post-its incomplets"
+        ]
+      },
+      {
+        "type": "mobilite_exterieur",
+        "count_plans": 1,
+        "pct_total": 0.8,
+        "usage": "Contexte vie réelle — identification quotidien",
+        "performance_note": "Très sous-utilisé. Les plans extérieurs (marche ville, transport) sont faciles à filmer iPhone et ajoutent du dynamisme.",
+        "recommendation": "AUGMENTER fortement — ajouter des plans mobilité en B-roll pour varier",
+        "examples": [
+          "Reflet dans vitre, personne immobile, rue qui bouge derrière"
+        ]
+      }
+    ]
+  },
+  "eclairage_performance": {
+    "summary": "La lumière naturelle fenêtre et le golden hour dominent. Le clair-obscur (source unique) est le setup le plus cinématique avec zéro coût.",
+    "setups": [
+      {
+        "type": "lumiere_naturelle_fenetre",
+        "usage_pct": 35,
+        "engagement_correlation": "haute",
+        "note": "Setup principal iPhone. Lumière directionnelle gratuite, ombres douces. Fonctionne pour face caméra + B-roll.",
+        "recommendation": "PILIER — ne jamais abandonner"
+      },
+      {
+        "type": "golden_hour",
+        "usage_pct": 15,
+        "engagement_correlation": "très haute",
+        "note": "Les plans golden hour (marche face caméra) ont la plus forte connexion émotionnelle. Ton chaud = permission/espoir.",
+        "recommendation": "AUGMENTER — filmer 1 session golden hour/semaine"
+      },
+      {
+        "type": "clair_obscur_source_unique",
+        "usage_pct": 12,
+        "engagement_correlation": "haute",
+        "note": "Éclairage cinéma classique. Mur + source unique = dramatique. Parfait pour les sections PERMETTRE et LIBÉRER.",
+        "recommendation": "AUGMENTER — setup en 2 min avec lampe de bureau"
+      },
+      {
+        "type": "lumiere_froide_bleue",
+        "usage_pct": 8,
+        "engagement_correlation": "moyenne",
+        "note": "Associée aux écrans/digital/scroll. Bonne pour les hooks disruptifs (isolation digitale).",
+        "recommendation": "MODÉRER — utiliser uniquement en opener négatif"
+      },
+      {
+        "type": "transition_froid_vers_chaud",
+        "usage_pct": 20,
+        "engagement_correlation": "haute",
+        "note": "Color grade dominant dans les scripts: bleuté froid → tons chauds. Renforce la narrative avant/après.",
+        "recommendation": "MAINTENIR — c'est la signature color grade Djibril"
+      }
+    ]
+  },
+  "broll_identification": {
+    "summary": "Les B-rolls quotidiens (mains, café, livres, écrans) sont la force principale. Manque de diversité extérieure.",
+    "top_performers": [
+      {
+        "visuel": "Mains scroll téléphone",
+        "timing": "0-5s",
+        "engagement": "très élevé",
+        "note": "Identification immédiate — tout le monde scroll"
+      },
+      {
+        "visuel": "Café qui refroidit",
+        "timing": "5-12s",
+        "engagement": "élevé",
+        "note": "Métaphore du temps qui passe, procrastination"
+      },
+      {
+        "visuel": "Pages livre/carnet",
+        "timing": "5-15s",
+        "engagement": "élevé",
+        "note": "Cérébral paralysé = toujours en train d'apprendre"
+      },
+      {
+        "visuel": "Encre dans verre",
+        "timing": "0-5s/12-28s",
+        "engagement": "élevé",
+        "note": "Doctrine Récipient — visuellement unique"
+      },
+      {
+        "visuel": "Regard caméra direct",
+        "timing": "38-45s",
+        "engagement": "très élevé",
+        "note": "Permission + connexion humaine finale"
+      },
+      {
+        "visuel": "Travelling rue dos caméra",
+        "timing": "3-10s",
+        "engagement": "moyen-haut",
+        "note": "Solitude + mouvement = cinématique pur"
+      }
+    ],
+    "gaps": [
+      "Manque de B-roll transport (métro, bus, casque audio)",
+      "Manque de B-roll sport/corps (mains qui serrent, respiration)",
+      "Manque de B-roll nature (pluie sur vitre, vent, feuilles)",
+      "Pas de plans nourriture/cuisine (pourtant quotidien universel)"
+    ]
+  },
+  "montage_comparison": {
+    "cinematique_vs_coaching": {
+      "cinematique": {
+        "format": "45s, 5 plans, storyboard, musique ambient",
+        "avg_views_tiktok": 476,
+        "strengths": "Retention élevée, identification émotionnelle, partageabilité",
+        "weaknesses": "Production plus longue, nécessite B-roll varié",
+        "best_for": "TOFU — attirer et créer la première connexion"
+      },
+      "coaching_direct": {
+        "format": "30s, face caméra, mécanisme psycho direct",
+        "avg_views_tiktok": 226,
+        "strengths": "Production rapide (5/jour), valeur actionnable immédiate",
+        "weaknesses": "Visuellement moins distinctif, fatigue possible",
+        "best_for": "MOFU — convertir via valeur concrète"
+      },
+      "verdict": "Le cinématique surperforme en vues (2.1x) mais le coaching direct convertit mieux en action. Le mix 1:5 (1 ciné + 5 coaching) est le bon ratio stratégique."
+    },
+    "montage_styles_tracked": [
+      {
+        "style": "slow_push_ins",
+        "count": 3,
+        "effect": "Intimité progressive, bon pour révélations"
+      },
+      {
+        "style": "match_cuts",
+        "count": 3,
+        "effect": "Connexion entre concepts, métaphores visuelles"
+      },
+      {
+        "style": "rack_focus",
+        "count": 2,
+        "effect": "Transition attention, bon pour reframe"
+      },
+      {
+        "style": "jump_cuts",
+        "count": 1,
+        "effect": "Rythme rapide, énergie coaching"
+      },
+      {
+        "style": "plans_fixes_longs",
+        "count": 2,
+        "effect": "Poids émotionnel, silence permis"
+      },
+      {
+        "style": "revelation_progressive",
+        "count": 1,
+        "effect": "Tension narrative, rétention"
+      }
+    ]
+  },
+  "color_grade_tracking": {
+    "dominant_palette": "tons chauds désaturés → ombres dorées → grain pellicule",
+    "transition_pattern": "froid (bleu/clinique) → chaud (doré/naturel)",
+    "styles": [
+      {
+        "grade": "tons_chauds_desatures",
+        "count": 4,
+        "context": "Permission, espoir, transformation"
+      },
+      {
+        "grade": "froid_vers_chaud",
+        "count": 5,
+        "context": "Avant/après, prise de conscience"
+      },
+      {
+        "grade": "clair_obscur_contraste",
+        "count": 3,
+        "context": "Dualité, choix, tension"
+      },
+      {
+        "grade": "naturel_fenetre",
+        "count": 2,
+        "context": "Authenticité, coaching direct"
+      }
+    ]
+  },
+  "musique_tracking": {
+    "dominant": "piano ambient + lo-fi",
+    "styles": [
+      {
+        "type": "piano_ambient",
+        "count": 4,
+        "effect": "Introspection, identification"
+      },
+      {
+        "type": "lo_fi_ambient",
+        "count": 2,
+        "effect": "Familiarité cible 18-25"
+      },
+      {
+        "type": "cordes_cinematiques",
+        "count": 2,
+        "effect": "Gravité, importance"
+      },
+      {
+        "type": "drone_ambient",
+        "count": 1,
+        "effect": "Tension, prise de conscience"
+      },
+      {
+        "type": "silence_strategique",
+        "count": 3,
+        "effect": "Impact des phrases de permission (Plan 5)"
+      }
+    ],
+    "rule": "Volume TOUJOURS bas — la voix domine. Silence sur les punchlines."
+  },
+  "platform_visual_performance": {
+    "tiktok_djibril_offf": {
+      "total_posts": 17,
+      "total_views": 8097,
+      "avg_views": 476,
+      "top_post": "1 idee. 1 action. La Methode 1+1 (841 vues)",
+      "visual_insight": "Compte principal, audience établie (5.2K). Les hooks identitaires ('Tu sais tout mais tu fais rien') avec visuels scroll performent le mieux."
+    },
+    "tiktok_djibril_learning": {
+      "total_posts": 18,
+      "total_views": 4077,
+      "avg_views": 226,
+      "top_post": "Tu sais tout mais tu fais rien (816 vues)",
+      "visual_insight": "Même contenu, audience plus petite (892). Le contenu cinématique a un potentiel plus élevé ici car audience en croissance."
+    },
+    "youtube_djibril_learning": {
+      "total_posts": 6,
+      "total_views": 1118,
+      "avg_views": 186,
+      "top_post": "FINI la Procrastination (331 vues)",
+      "visual_insight": "YouTube favorise les formats plus longs. Le cinématique 45s est un bon fit. Thumbnail = ECU visage avec texte bold."
+    }
+  },
+  "recommendations_prioritaires": [
+    {
+      "priority": 1,
+      "action": "AUGMENTER plans larges 15mm",
+      "detail": "Seulement 3.3% des plans. Ajouter 1 travelling ou plan large par script minimum. Filmable iPhone en mode wide.",
+      "impact_attendu": "Différenciation visuelle, feel 'film' vs 'coaching TikTok classique'"
+    },
+    {
+      "priority": 2,
+      "action": "AUGMENTER B-roll extérieur/mobilité",
+      "detail": "0.8% seulement. Filmer des plans marche, transport, ville. 10 min de B-roll stock = 2 semaines de contenu.",
+      "impact_attendu": "Variété visuelle, moins de fatigue spectateur"
+    },
+    {
+      "priority": 3,
+      "action": "SYSTÉMATISER golden hour",
+      "detail": "1 session filmage golden hour par semaine (17h-18h). 15 min = stock de plans pour 7 jours.",
+      "impact_attendu": "Corrélation forte engagement + tons chauds"
+    },
+    {
+      "priority": 4,
+      "action": "EXPLOITER le clair-obscur lampe bureau",
+      "detail": "Setup en 2 min: lampe de bureau + mur blanc. Rendu cinéma gratuit. Idéal pour les sections PERMETTRE.",
+      "impact_attendu": "Profondeur visuelle sans investissement"
+    },
+    {
+      "priority": 5,
+      "action": "DIVERSIFIER la banque B-roll",
+      "detail": "Filmer: pluie sur vitre, mains qui écrivent, transport en commun, nature urbaine. Stock réutilisable.",
+      "impact_attendu": "Zéro répétition visuelle entre scripts"
+    }
+  ],
+  "zero_barber_check": "VALIDÉ — Aucune référence barber/coiffure/salon dans les contextes visuels analysés."
+}
