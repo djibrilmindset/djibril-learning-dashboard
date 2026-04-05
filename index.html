@@ -589,6 +589,10 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
         <span class="nav-label">Insights</span>
       </li>
+      <li class="nav-item" data-tab="cinematique">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="2.18"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="2" y1="7" x2="7" y2="7"/><line x1="2" y1="17" x2="7" y2="17"/><line x1="17" y1="7" x2="22" y2="7"/><line x1="17" y1="17" x2="22" y2="17"/></svg>
+        <span class="nav-label" style="background:linear-gradient(90deg,#14F195,#9945FF);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:600">Scripts Ciné</span>
+      </li>
       <li class="nav-item" onclick="window.location.href='simulator.html'" style="cursor:pointer">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="5 3 19 12 5 21 5 3"/></svg>
         <span class="nav-label" style="background:linear-gradient(90deg,#14F195,#9945FF);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:600">Simulateur</span>
@@ -719,6 +723,23 @@
       <div id="insightsContent"><div class="loading"><div class="spinner"></div> Chargement…</div></div>
     </div>
 
+    <!-- TAB: SCRIPTS CINÉMATIQUES -->
+    <div class="tab-pane" id="tab-cinematique">
+      <h2 class="section-title">Scripts Cinématiques — <span class="gradient-text">45s Storytelling</span></h2>
+      <div style="display:flex;gap:12px;margin-bottom:20px;flex-wrap:wrap;align-items:center">
+        <select id="cineType" style="background:var(--card);border:1px solid var(--border);color:var(--text);padding:8px 14px;border-radius:8px;font-size:13px">
+          <option value="">Tous types</option>
+          <option value="TOFU">TOFU</option>
+          <option value="MOFU">MOFU</option>
+        </select>
+        <select id="cineDate" style="background:var(--card);border:1px solid var(--border);color:var(--text);padding:8px 14px;border-radius:8px;font-size:13px">
+          <option value="">Toutes dates</option>
+        </select>
+        <span class="counter-badge" id="cineCounter">— / —</span>
+      </div>
+      <div id="cineGrid" style="display:grid;grid-template-columns:1fr;gap:16px"><div class="loading"><div class="spinner"></div> Chargement des scripts…</div></div>
+    </div>
+
     <footer class="page-footer">
       <a href="https://www.perplexity.ai/computer" target="_blank" rel="noopener noreferrer">Created with Perplexity Computer</a>
     </footer>
@@ -795,6 +816,7 @@ function mdToHtml(md) {
 // ── DATA CACHE ──
 let allMessages = [];
 let allVideos = [];
+let allCineScripts = [];
 let socialData = {};
 let insightsData = {};
 
@@ -818,7 +840,7 @@ overlay.addEventListener('click', () => {
 });
 
 // ── TAB SWITCHING ──
-const tabNames = { dashboard: 'Dashboard', veille: 'Veille Marché', videos: 'Vidéos Veille', social: 'Réseaux Sociaux', insights: 'Insights' };
+const tabNames = { dashboard: 'Dashboard', veille: 'Veille Marché', videos: 'Vidéos Veille', social: 'Réseaux Sociaux', insights: 'Insights', cinematique: 'Scripts Cinématiques' };
 let activeTab = 'dashboard';
 
 document.querySelectorAll('.nav-item').forEach(item => {
@@ -842,16 +864,18 @@ function switchTab(tab) {
 // ── LOAD DATA ──
 async function loadAll() {
   try {
-    const [msgs, vids, social, insights] = await Promise.all([
+    const [msgs, vids, social, insights, cineScripts] = await Promise.all([
       fetch('data/veille-messages.json').then(r => r.json()),
       fetch('data/veille-videos.json').then(r => r.json()),
       fetch('data/social-tracking.json').then(r => r.json()),
-      fetch('data/insights.json').then(r => r.json())
+      fetch('data/insights.json').then(r => r.json()),
+      fetch('data/scripts-cinematiques.json').then(r => r.json()).catch(() => [])
     ]);
     allMessages = msgs;
     allVideos = vids;
     socialData = social;
     insightsData = insights;
+    allCineScripts = cineScripts;
 
     // Update meta
     const lu = insights.last_updated ? new Date(insights.last_updated).toLocaleString('fr-FR') : 'N/A';
@@ -862,6 +886,7 @@ async function loadAll() {
     renderVideos();
     renderSocial();
     renderInsights();
+    renderCinematique();
   } catch(e) {
     console.error('Data load error:', e);
   }
@@ -1183,6 +1208,81 @@ function renderSocialContent() {
 }
 
 // ── INSIGHTS ──
+// ── SCRIPTS CINÉMATIQUES ──
+function renderCinematique() {
+  if (!allCineScripts.length) {
+    document.getElementById('cineGrid').innerHTML = '<div style="text-align:center;padding:40px;color:var(--muted)">Aucun script cinématique disponible</div>';
+    return;
+  }
+
+  // Populate date filter
+  const dates = [...new Set(allCineScripts.map(s => s.date))].sort().reverse();
+  const dateSel = document.getElementById('cineDate');
+  dates.forEach(d => { const o = document.createElement('option'); o.value = d; o.textContent = d; dateSel.appendChild(o); });
+
+  filterCine();
+  document.getElementById('cineType').addEventListener('change', filterCine);
+  document.getElementById('cineDate').addEventListener('change', filterCine);
+}
+
+function filterCine() {
+  const type = document.getElementById('cineType').value;
+  const date = document.getElementById('cineDate').value;
+  const filtered = allCineScripts.filter(s => {
+    if (type && s.type !== type) return false;
+    if (date && s.date !== date) return false;
+    return true;
+  });
+  document.getElementById('cineCounter').textContent = `${filtered.length} / ${allCineScripts.length}`;
+  renderCineGrid(filtered);
+}
+
+function renderCineGrid(scripts) {
+  const container = document.getElementById('cineGrid');
+  if (!scripts.length) {
+    container.innerHTML = '<div style="text-align:center;padding:40px;color:var(--muted)">Aucun résultat</div>';
+    return;
+  }
+  const typeColors = { TOFU: '#14F195', MOFU: '#9945FF' };
+  let html = '';
+  scripts.forEach((s, idx) => {
+    const typeColor = typeColors[s.type] || '#888';
+    const plansHtml = (s.plans || []).map(p => `
+      <div style="display:flex;gap:12px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.05)">
+        <div style="min-width:60px;font-size:11px;color:${typeColor};font-weight:600;font-family:'JetBrains Mono',monospace">${escHtml(p.timing)}</div>
+        <div style="flex:1">
+          <div style="font-size:11px;color:var(--muted);margin-bottom:4px">📍 ${escHtml(p.visuel)}</div>
+          <div style="font-size:13px;color:var(--text);line-height:1.5">🎙️ <em>"${escHtml(p.voiceover)}"</em></div>
+        </div>
+      </div>
+    `).join('');
+
+    html += `<div class="glass-card" style="padding:20px;cursor:pointer" onclick="document.getElementById('cine-expand-${idx}').classList.toggle('open')">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px">
+        <span style="background:${typeColor};color:#000;padding:3px 10px;border-radius:6px;font-size:11px;font-weight:700">${escHtml(s.type)}</span>
+        <span style="font-size:11px;color:var(--muted)">${escHtml(s.duree)}</span>
+        <span style="font-size:11px;color:var(--muted)">${escHtml(s.date)}</span>
+        <span style="font-size:11px;color:var(--muted);margin-left:auto">${escHtml(s.compte || '')}</span>
+      </div>
+      <div style="font-size:16px;font-weight:600;color:var(--text);margin-bottom:6px">${escHtml(s.titre)}</div>
+      <div style="font-size:12px;color:var(--accent)">${escHtml(s.angle)}</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:4px">📚 ${escHtml(s.sources || '')}</div>
+      <div class="video-expand" id="cine-expand-${idx}">
+        <div style="margin-top:16px">
+          <div style="display:flex;gap:16px;margin-bottom:12px;flex-wrap:wrap">
+            <span style="font-size:11px;color:var(--muted)">🎵 ${escHtml(s.musique || '')}</span>
+            <span style="font-size:11px;color:var(--muted)">🎨 ${escHtml(s.color_grade || '')}</span>
+            <span style="font-size:11px;color:var(--muted)">✂️ ${escHtml(s.montage || '')}</span>
+          </div>
+          <h4 style="font-size:13px;color:${typeColor};margin-bottom:8px">Storyboard — Plans de tournage</h4>
+          ${plansHtml}
+        </div>
+      </div>
+    </div>`;
+  });
+  container.innerHTML = html;
+}
+
 function renderInsights() {
   const ins = insightsData;
   const score = ins.daily_score?.alignment_score || 0;
