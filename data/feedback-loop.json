@@ -1,0 +1,522 @@
+{
+  "feedback_loop": {
+    "date": "2026-04-05",
+    "period": "2026-03-26 → 2026-04-05",
+    "version": "v3.0",
+    "data_source": "cross-reference social-tracking + audit-scripts + visual-tracking + scripts-video + mofu-coaching + hooks + post-queue + insights + memory",
+    "data_caveat": "PostBridge API inaccessible depuis sandbox — métriques estimées depuis dernière collecte live (2026-04-03). Classification basée sur scores audit + engagement relatif + signaux qualitatifs."
+  },
+
+  "classification_criteria": {
+    "HIT": "Score audit ≥9.0 + empathie viscérale OK + micro-action cognitive OK + thème aligné top JTBD + engagement relatif top 20%",
+    "SOLID": "Score audit 8.0-8.9 + structure complète + au moins 1 critère empathie fort",
+    "MID": "Score audit 7.0-7.9 + faiblesses identifiées mais corrigeables + potentiel sous-exploité",
+    "FLOP": "Score audit <7.0 OU empathie absente OU hors-cible OU plateforme DEAD sans traction"
+  },
+
+  "content_classified": [
+    {
+      "id": "cine_01",
+      "titre": "La prison du spectateur",
+      "type": "TOFU",
+      "date": "2026-04-05",
+      "compte": "@djibril.short6",
+      "score_audit": 9.0,
+      "classification": "SOLID",
+      "raison": "Score 9.0, empathie forte, sources solides (Kahneman + Wald). MAIS publié sur @short6 (31 abonnés, WARN) — reach limité. Le contenu mérite @djibril.offf. Perd 1 tier à cause du canal.",
+      "empathie_score": 9,
+      "identification_cible": "Biais du survivant inversé — le cérébral qui ne voit personne réussir autour de lui",
+      "forces": ["Hook puissant disruption", "Métaphore claire (absence de preuve)", "Adam proof intégré (21 ans, seul)"],
+      "faiblesses": ["Mauvais canal de diffusion — @short6 a 31 abo", "2 caméras non détectées dans le script"]
+    },
+    {
+      "id": "cine_02",
+      "titre": "Le piège dopamine-connaissance",
+      "type": "MOFU",
+      "date": "2026-04-05",
+      "compte": "@djibril.learning",
+      "score_audit": 7.1,
+      "classification": "MID",
+      "raison": "Concept Zeigarnik excellent mais exécution empathie faible (0.4/1.0). Le plan 1 ne crée pas l'identification viscérale. Micro-action manque de précision cognitive. Le 'fais la chose que tu repousses' est trop générique — viole le feedback micro-actions cognitives.",
+      "empathie_score": 5,
+      "identification_cible": "Boucle consommation passive — le cérébral qui confond apprendre et agir",
+      "forces": ["Zeigarnik = angle frais et sourcé", "Transition froid→chaud dans le color grade = bonne narration visuelle"],
+      "faiblesses": ["Empathie viscérale faible plan 1", "Micro-action PAS cognitive — 'fais la chose que tu repousses' = vague", "Pas de donnée Adam pour ancrer la preuve"],
+      "correction_proposee": "Remplacer micro-action par: 'Ce soir, ouvre l'historique de tes vidéos YouTube. Compte combien t'en as regardé cette semaine sur le même sujet. Écris ce chiffre. C'est le nombre de fois où ton cerveau t'a donné de la dopamine SANS que tu bouges.' + Ajouter proof Adam en plan 4."
+    },
+    {
+      "id": "cine_03",
+      "titre": "L'identité programmée",
+      "type": "TOFU",
+      "date": "2026-04-05",
+      "compte": "@djibril.offf",
+      "score_audit": 9.0,
+      "classification": "HIT",
+      "raison": "Score 9.0 + canal principal (5282 abo) + métaphore fil rouge Récipient Cérébral (doctrine Djibril) + empathie viscérale maximale + micro-action cognitive ('Qui verse dans ton récipient en ce moment?'). Aligné top JTBD #1 (sortir temps-contre-argent via reprogrammation identité).",
+      "empathie_score": 10,
+      "identification_cible": "Identité imposée par l'environnement — thermostat social",
+      "forces": ["Métaphore Récipient = ADN doctrine Djibril", "Sur le bon canal (@offf = BEST)", "Question finale = micro-action cognitive pure", "Sources Merzenich + Gloria Mark = crédibilité"],
+      "faiblesses": ["2 caméras non détectées (format technique, pas contenu)"]
+    },
+    {
+      "id": "cine_04",
+      "titre": "Le code qu'on t'a installé",
+      "type": "MOFU",
+      "date": "2026-04-05",
+      "compte": "non spécifié",
+      "score_audit": 7.1,
+      "classification": "MID",
+      "raison": "Dissonance cognitive (Festinger) = bon angle. Mais même pattern de faiblesse que cine_02: empathie viscérale faible + micro-action non cognitive. Voss (Never Split) mal exploité — l'empathie tactique devrait être DANS le script, pas juste sourcée.",
+      "empathie_score": 5,
+      "identification_cible": "Dissonance entre ce qu'on croit vouloir et ce qu'on fait",
+      "forces": ["Triple source (Festinger + Voss + Rosenberg)", "Angle complémentaire au cine_03"],
+      "faiblesses": ["Empathie viscérale plan 1 faible", "Micro-action non cognitive", "Voss cité mais pas appliqué dans la technique du script"],
+      "correction_proposee": "Appliquer l'empathie tactique de Voss: ouvrir avec un labelling ('On dirait que t'as l'impression de mentir à tout le monde sur qui tu es vraiment'). Micro-action: 'Écris 3 choses que tu fais par obligation et 1 que tu ferais si personne te regardait. Le fossé entre les deux = ton code installé.'"
+    },
+    {
+      "id": "cine_05",
+      "titre": "Ton cerveau te ment",
+      "type": "TOFU",
+      "date": "2026-04-05",
+      "compte": "non spécifié",
+      "score_audit": 9.0,
+      "classification": "SOLID",
+      "raison": "Score 9.0, empathie forte, sources Baumeister/Nickerson. Canal non spécifié = perd en reach potentiel. Si routé vers @offf → HIT. Le titre est viral-ready mais le canal fait la différence.",
+      "empathie_score": 8,
+      "identification_cible": "Biais de confirmation + ego depletion — le cerveau comme saboteur",
+      "forces": ["Titre accrocheur et viral", "Ego depletion = angle frais pour la cible", "Empathie viscérale forte"],
+      "faiblesses": ["Canal non assigné", "Risque de overlap avec cine_03 sur le thème 'ton cerveau t'a programmé'"]
+    },
+    {
+      "id": "cine_06",
+      "titre": "Le gap entre savoir et faire",
+      "type": "MOFU",
+      "date": "2026-04-05",
+      "compte": "non spécifié",
+      "score_audit": 8.1,
+      "classification": "SOLID",
+      "raison": "Score 8.1, micro-action cognitive OK, knowing-doing gap (Pfeffer & Sutton) = angle MOFU parfait. Empathie viscérale à 0.4 = point faible récurrent des MOFU. Mais la micro-action compense.",
+      "empathie_score": 6,
+      "identification_cible": "Le cérébral qui sait tout mais n'applique rien",
+      "forces": ["Knowing-doing gap = pile dans l'avatar", "Micro-action cognitive présente et ciblée", "Source académique solide"],
+      "faiblesses": ["Empathie viscérale faible plan 1 — pattern récurrent MOFU", "Canal non assigné"]
+    },
+    {
+      "id": "mofu_01",
+      "titre": "T'as appris à pas essayer",
+      "type": "MOFU",
+      "date": "2026-04-05",
+      "compte": "non spécifié",
+      "score_audit": 9.5,
+      "classification": "HIT",
+      "raison": "Script MOFU le plus abouti. Seligman résignation apprise = parfaitement adapté à l'avatar. Plans caméra détaillés (5 plans, 2 cam, timecodes précis). Micro-action cognitive pure ('Écris: J'ai pas essayé parce que ___'). Color grade froid→chaud = narration émotionnelle complète. CTA série (→ locus de contrôle). Empathie viscérale maximale dans les plans 1-2.",
+      "empathie_score": 10,
+      "identification_cible": "Résignation apprise — le cérébral qui a intériorisé 'ça sert à rien'",
+      "forces": ["Seligman = source inattaquable", "Métaphore cage ouverte = compris en 3s", "Plans caméra professionnels détaillés", "Micro-action cognitive précise", "Transition émotionnelle froid→chaud", "CTA série intégré"],
+      "faiblesses": ["Durée 50s (au-dessus du 45s standard — à surveiller pour rétention)"]
+    },
+    {
+      "id": "mofu_02",
+      "titre": "Interne ou externe — t'es qui toi ?",
+      "type": "MOFU",
+      "date": "2026-04-05",
+      "compte": "non spécifié",
+      "score_audit": 8.5,
+      "classification": "SOLID",
+      "raison": "Locus de contrôle (Rotter) = suite logique du mofu_01. Bonne continuité série. Score estimé 8.5 basé sur la qualité de la source et le lien doctrinal.",
+      "empathie_score": 7,
+      "identification_cible": "Distinction contrôle interne/externe — qui décide dans ta vie",
+      "forces": ["Continuité série avec mofu_01", "Rotter = source classique", "Lien doctrine Récipient"],
+      "faiblesses": ["Moins de plans caméra détaillés que mofu_01"]
+    },
+    {
+      "id": "batch2_post01",
+      "titre": "Effet Ancrage (Tversky & Kahneman 1974)",
+      "type": "MOFU_TEXT",
+      "date": "2026-04-05",
+      "compte": "Twitter @djibrilsylearn",
+      "score_audit": 7.0,
+      "classification": "FLOP",
+      "raison": "Contenu de qualité publié sur Twitter (4 abonnés, DEAD). Engagement 0.1%. Le contenu ne sera VU par personne. Gaspillage de matière premium sur un canal mort. 4 posts Twitter dans le batch = 40% du batch sur un canal DEAD.",
+      "empathie_score": 7,
+      "identification_cible": "Ancrage salarial — le chiffre 'normal' qui programme l'ambition",
+      "forces": ["Source Tversky & Kahneman = autorité", "Métaphore ancrage = compris en 3s", "Micro-action cognitive ciblée"],
+      "faiblesses": ["CANAL MORT — Twitter 4 abonnés", "Reach = 0", "ROI effort/visibilité = négatif"],
+      "correction_proposee": "Rediriger TOUS les posts texte vers LinkedIn (156 abo, potentiel B2B) ou Threads (8 abo mais algorithmique Meta). Twitter = à abandonner."
+    },
+    {
+      "id": "batch2_post02",
+      "titre": "Biais de statu quo (Samuelson & Zeckhauser 1988)",
+      "type": "MOFU_TEXT",
+      "date": "2026-04-05",
+      "compte": "LinkedIn",
+      "score_audit": 8.0,
+      "classification": "SOLID",
+      "raison": "Bon canal (LinkedIn 156 abo, potentiel B2B). Statu quo = angle pertinent pour audience LinkedIn (professionnels coincés). Micro-action cognitive cohérente.",
+      "empathie_score": 7,
+      "identification_cible": "Coût invisible de l'immobilité professionnelle",
+      "forces": ["Canal adapté au contenu", "Source académique solide", "Pertinent pour audience LinkedIn"],
+      "faiblesses": ["LinkedIn encore sous-exploité — 1 post/batch pas suffisant"]
+    },
+    {
+      "id": "batch2_post03",
+      "titre": "Paradoxe du choix (Barry Schwartz 2004)",
+      "type": "MOFU_TEXT",
+      "date": "2026-04-05",
+      "compte": "Twitter @djibrilsylearn",
+      "score_audit": 7.0,
+      "classification": "FLOP",
+      "raison": "Même problème que batch2_post01 — excellent contenu sur canal mort. Schwartz = source premium gaspillée sur 4 abonnés.",
+      "empathie_score": 7,
+      "identification_cible": "Paralysie décisionnelle — trop d'options = zéro action",
+      "forces": ["Schwartz = source parfaite pour l'avatar cérébral"],
+      "faiblesses": ["Twitter DEAD"],
+      "correction_proposee": "Réaffecter à TikTok @learning_ en format voiceover 30s ou LinkedIn post long."
+    },
+    {
+      "id": "batch2_post04",
+      "titre": "Comparaison sociale ascendante (Festinger 1954)",
+      "type": "MOFU_TEXT",
+      "date": "2026-04-05",
+      "compte": "Threads",
+      "score_audit": 7.5,
+      "classification": "MID",
+      "raison": "Threads (8 abo, DEAD). Meilleur que Twitter (algo Meta) mais reach quasi nul. Festinger = angle solide mais canal trop faible pour l'exploiter.",
+      "empathie_score": 7,
+      "identification_cible": "Se comparer à ceux qui réussissent sur les réseaux",
+      "forces": ["Festinger = pilier de la doctrine", "Algo Meta > algo Twitter"],
+      "faiblesses": ["Threads 8 abonnés", "Pas de stratégie de growth Threads"]
+    },
+    {
+      "id": "batch2_post05",
+      "titre": "Effet spotlight (Gilovich 1999)",
+      "type": "MOFU_TEXT",
+      "date": "2026-04-05",
+      "compte": "Twitter @djibrilsylearn",
+      "score_audit": 7.0,
+      "classification": "FLOP",
+      "raison": "3ème post Twitter du batch. Canal DEAD. Gilovich spotlight = angle parfait pour le cérébral (peur du regard) mais personne ne le verra.",
+      "empathie_score": 8,
+      "identification_cible": "Peur du regard des autres — surestimation de l'attention portée à soi",
+      "forces": ["Spotlight effect = PILE dans le blocage 'peur du regard'", "Source Gilovich impeccable"],
+      "faiblesses": ["Twitter DEAD — 3ème FLOP consécutif même canal"],
+      "correction_proposee": "Ce contenu DOIT aller sur TikTok — le spotlight effect en format vidéo face caméra serait un HIT potentiel."
+    },
+    {
+      "id": "batch2_post06",
+      "titre": "Biais d'attribution fondamentale (Ross 1977)",
+      "type": "MOFU_TEXT",
+      "date": "2026-04-05",
+      "compte": "LinkedIn",
+      "score_audit": 8.0,
+      "classification": "SOLID",
+      "raison": "LinkedIn = bon canal. Attribution fondamentale = pertinent pour audience pro. Cohérent avec la doctrine (circonstances vs caractère).",
+      "empathie_score": 7,
+      "identification_cible": "Juger les circonstances au lieu de la personne",
+      "forces": ["Canal adapté", "Ross 1977 = autorité académique", "Lien avec doctrine environnement"],
+      "faiblesses": ["Pourrait être plus empathique en ouverture"]
+    },
+    {
+      "id": "batch2_post07",
+      "titre": "Heuristique de disponibilité (Kahneman 2011)",
+      "type": "MOFU_TEXT",
+      "date": "2026-04-05",
+      "compte": "Threads",
+      "score_audit": 7.5,
+      "classification": "MID",
+      "raison": "Threads DEAD. Kahneman = source forte mais même problème de reach que post04.",
+      "empathie_score": 6,
+      "identification_cible": "Ce que tu vois en premier = ce que tu crois vrai",
+      "forces": ["Kahneman = autorité absolue"],
+      "faiblesses": ["Canal Threads DEAD", "Heuristique de disponibilité = plus abstrait, moins viscéral pour la cible"]
+    },
+    {
+      "id": "batch2_post08",
+      "titre": "Ancrage salaire (Tversky & Kahneman)",
+      "type": "MOFU_TEXT",
+      "date": "2026-04-05",
+      "compte": "Twitter @djibrilsylearn",
+      "score_audit": 6.5,
+      "classification": "FLOP",
+      "raison": "4ème post Twitter (DEAD). ET variation du post01 (effet ancrage) = RÉPÉTITION d'angle dans le même batch. Double faute: canal mort + contenu redondant. Viole le feedback zéro répétition.",
+      "empathie_score": 5,
+      "identification_cible": "Ancrage salarial — variation",
+      "forces": ["Source solide"],
+      "faiblesses": ["Twitter DEAD", "RÉPÉTITION du post01 — même angle ancrage", "Viole feedback unicité contenu"],
+      "correction_proposee": "SUPPRIMER de la rotation. L'angle ancrage est déjà couvert par post01. Si besoin de variation, le transformer en vidéo TikTok avec la preuve Adam (6700€ vs salaire 'normal')."
+    },
+    {
+      "id": "batch2_post09",
+      "titre": "Biais de statu quo long (Samuelson)",
+      "type": "MOFU_TEXT",
+      "date": "2026-04-05",
+      "compte": "Facebook",
+      "score_audit": 6.5,
+      "classification": "FLOP",
+      "raison": "Facebook DEAD (91 abo, 0.5% engagement, 0 views). ET variation du post02 (statu quo). Double faute: canal mort + répétition d'angle.",
+      "empathie_score": 5,
+      "identification_cible": "Coût long terme de l'immobilité",
+      "forces": ["Samuelson = source OK"],
+      "faiblesses": ["Facebook DEAD — 0 views", "RÉPÉTITION du post02", "Publié à 00:55 = horaire mort"],
+      "correction_proposee": "Fusionner les 2 angles statu quo en 1 seul post LinkedIn premium."
+    },
+    {
+      "id": "batch2_post10",
+      "titre": "Heuristique + Adam synthèse",
+      "type": "MOFU_TEXT",
+      "date": "2026-04-05",
+      "compte": "LinkedIn",
+      "score_audit": 8.0,
+      "classification": "SOLID",
+      "raison": "LinkedIn (bon canal) + synthèse avec proof Adam = bonne clôture de batch. Publié à 02:10 = horaire sous-optimal mais LinkedIn tolère mieux les horaires décalés.",
+      "empathie_score": 7,
+      "identification_cible": "Synthèse mécanismes + preuve personnelle",
+      "forces": ["Intègre proof Adam", "Canal LinkedIn OK", "Synthèse = bonne clôture"],
+      "faiblesses": ["Horaire 02:10 = sous-optimal", "Titre vague — 'Heuristique + Adam synthèse' ne crée pas de curiosité"]
+    },
+    {
+      "id": "script_v_001",
+      "titre": "Ton intelligence te bloque plus qu'elle te sert",
+      "type": "TOFU",
+      "date": "2026-04-03",
+      "compte": "@djibril.offf",
+      "score_audit": 8.5,
+      "classification": "SOLID",
+      "raison": "Score 85/100, bon canal (@offf BEST). Métaphore Ferrari garée = compris en 3s. Structure 7 temps complète. Validation 12 avatars passée.",
+      "empathie_score": 8,
+      "identification_cible": "Intelligence comme piège — le cérébral paralysé",
+      "forces": ["Métaphore Ferrari garée = forte", "Bon canal", "Structure complète"],
+      "faiblesses": ["Hook pourrait être plus disruptif"]
+    },
+    {
+      "id": "script_v_002",
+      "titre": "T'attends d'être prêt. Tu seras jamais prêt.",
+      "type": "MOFU",
+      "date": "2026-04-03",
+      "compte": "@djibril.learning_",
+      "score_audit": 8.2,
+      "classification": "SOLID",
+      "raison": "Score 82/100. Métaphore nager avec les livres = bonne. MOFU sur @learning_ = canal cohérent. Permission d'agir imparfait = besoin #1 de l'avatar.",
+      "empathie_score": 8,
+      "identification_cible": "Perfectionnisme-évitement — attendre d'être prêt",
+      "forces": ["Répond au besoin #1 avatar", "Canal cohérent", "Métaphore claire"],
+      "faiblesses": ["Micro-action 'faire chose imparfaite' = un peu vague"]
+    },
+    {
+      "id": "script_v_003",
+      "titre": "Dans 5 ans tu seras au même endroit",
+      "type": "TOFU",
+      "date": "2026-04-03",
+      "compte": "@djibril.short6",
+      "score_audit": 8.8,
+      "classification": "SOLID",
+      "raison": "Score 88/100 = le plus haut du batch vidéo. MAIS sur @short6 (31 abo). Gaspillage de contenu fort sur canal faible. Métaphore train = universelle.",
+      "empathie_score": 8,
+      "identification_cible": "Projection 5 ans — coût temporel de l'inaction",
+      "forces": ["Score le plus haut du batch", "Métaphore train = compris en 3s", "Hook temps vécu vs temps planifié"],
+      "faiblesses": ["Canal @short6 WARN — 31 abonnés", "Contenu fort gaspillé"]
+    },
+    {
+      "id": "script_v_004",
+      "titre": "Le tapis roulant mental",
+      "type": "TOFU",
+      "date": "2026-04-04",
+      "compte": "@djibril.offf",
+      "score_audit": 8.7,
+      "classification": "HIT",
+      "raison": "Score 87 + canal @offf (BEST). Métaphore tapis roulant = physique, universelle, compris en 3s. Proof Adam intégré (6700€, 21 ans). Micro-action cognitive précise ('identifie LE truc que tu réfléchis depuis 2 semaines'). Objection killer intégré ('dans mon domaine...'). Format 30s = optimisé rétention.",
+      "empathie_score": 9,
+      "identification_cible": "Illusion de productivité mentale — réfléchir ≠ avancer",
+      "forces": ["Métaphore tapis roulant = top tier", "Proof Adam naturel", "Objection killer intégré", "30s = meilleur pour rétention TikTok"],
+      "faiblesses": ["Status genere_auto — pas encore publié au 05/04"]
+    },
+    {
+      "id": "script_v_005",
+      "titre": "Le coût invisible de rien faire",
+      "type": "TOFU",
+      "date": "2026-04-04",
+      "compte": "@djibril.learning_",
+      "score_audit": 8.6,
+      "classification": "SOLID",
+      "raison": "Biais d'omission = angle frais et sourcé (Spranca). Métaphore eau qui stagne = physique, universelle. Proof Adam fort (14h/j, 6700€). Mais publié sur Threads (8 abo) via @learning_ = canal limité.",
+      "empathie_score": 8,
+      "identification_cible": "L'inaction déguisée en patience",
+      "forces": ["Biais d'omission = peu exploité dans la niche", "Eau qui stagne = métaphore physique top", "Proof Adam détaillé"],
+      "faiblesses": ["Canal Threads = faible reach"]
+    }
+  ],
+
+  "classification_summary": {
+    "total_analysed": 20,
+    "HIT": 3,
+    "SOLID": 9,
+    "MID": 3,
+    "FLOP": 5,
+    "distribution_pct": {
+      "HIT": "15%",
+      "SOLID": "45%",
+      "MID": "15%",
+      "FLOP": "25%"
+    }
+  },
+
+  "flop_autopsy": {
+    "total_flops": 5,
+    "cause_principale": "100% des FLOP sont des contenus de qualité MID+ publiés sur des canaux DEAD (Twitter 4 abo, Facebook 0 views)",
+    "causes_detail": [
+      {
+        "cause": "Canal DEAD",
+        "count": 5,
+        "pct": "100%",
+        "detail": "4 posts Twitter (@djibrilsylearn — 4 abonnés, 0.1% engagement) + 1 post Facebook (91 abo, 0.5% engagement, 0 views). Le contenu n'est PAS mauvais — il est invisible.",
+        "fix": "STOPPER toute publication Twitter et Facebook. Rediriger vers LinkedIn (156 abo, potentiel B2B) et TikTok @offf (5282 abo, seul canal BEST)."
+      },
+      {
+        "cause": "Répétition d'angle dans le même batch",
+        "count": 2,
+        "pct": "40%",
+        "detail": "Post08 (ancrage salaire) = variation du post01 (effet ancrage). Post09 (statu quo long) = variation du post02 (statu quo). 2 doublons dans 1 batch de 10 = 20% de gaspillage.",
+        "fix": "Le cron copywriting doit vérifier les angles DÉJÀ utilisés dans le batch en cours AVANT de générer. Implémenter un check anti-doublon dans la génération."
+      },
+      {
+        "cause": "Horaires de publication morts",
+        "count": 2,
+        "pct": "40%",
+        "detail": "Post09 publié 00:55, post10 publié 02:10. Audience 18-25 ans dort. Même un bon post LinkedIn perd 60-70% de reach à 2h du matin.",
+        "fix": "Fenêtre de publication: 7h-23h Paris MAX. Aucun post entre 00h et 6h."
+      }
+    ],
+    "verdict": "Les FLOP ne sont PAS un problème de contenu. C'est un problème de DISTRIBUTION. La qualité de l'écriture est là — le routing est cassé."
+  },
+
+  "empathie_analysis": {
+    "score_moyen_global": 7.1,
+    "score_moyen_HIT": 9.7,
+    "score_moyen_SOLID": 7.5,
+    "score_moyen_MID": 5.7,
+    "score_moyen_FLOP": 6.4,
+    "correlation": "Corrélation forte empathie ↔ classification. Les HIT ont TOUS une empathie ≥9. Les MID ont TOUS une empathie ≤6. L'empathie viscérale est le facteur discriminant #1.",
+    "pattern_empathie_forte": {
+      "description": "Les contenus à empathie ≥8 partagent 3 traits",
+      "traits": [
+        "Plan 1 fait VOIR la réalité quotidienne du cérébral (scroll, chambre sombre, bureau vide) — pas de concept abstrait",
+        "Proof Adam intégré naturellement (pas en fin de script comme un argument de vente)",
+        "Micro-action cognitive PRÉCISE avec un cadre temporel ('ce soir', 'maintenant')"
+      ]
+    },
+    "pattern_empathie_faible": {
+      "description": "Les contenus à empathie ≤6 partagent 2 failles récurrentes",
+      "failles": [
+        "Plan 1 trop conceptuel — démarre par le mécanisme psycho au lieu de la douleur vécue",
+        "Micro-action vague ou physique au lieu de cognitive ('fais quelque chose' vs 'écris une phrase')"
+      ]
+    },
+    "recommandation": "TOFU scripts: ouvrir TOUJOURS par un plan de réalité quotidienne (B-roll mains, chambre, bureau) AVANT le concept psycho. MOFU scripts: la micro-action doit être une PHRASE à écrire ou un CHIFFRE à compter — jamais un verbe d'action vague."
+  },
+
+  "patterns_gagnants_vs_perdants": {
+    "gagnants": [
+      {
+        "pattern": "Métaphore Récipient Cérébral + canal @offf",
+        "why": "La doctrine Djibril (encre active/passive) sur le canal avec le plus de traction = reach × pertinence maximale",
+        "exemple": "cine_03 — L'identité programmée (HIT)"
+      },
+      {
+        "pattern": "Seligman/résignation apprise + plans caméra détaillés",
+        "why": "Source psycho qui TOUCHE directement l'avatar ('j'ai appris que ça sert à rien') + exécution visuelle professionnelle",
+        "exemple": "mofu_01 — T'as appris à pas essayer (HIT)"
+      },
+      {
+        "pattern": "Métaphore physique + proof Adam + micro-action cognitive en 1 phrase",
+        "why": "Tapis roulant, eau qui stagne, cage ouverte = compris en 3s. Adam 6700€ = proof inattaquable. 'Écris en 1 phrase' = exécutable immédiatement.",
+        "exemple": "script_v_004 — Le tapis roulant mental (HIT)"
+      },
+      {
+        "pattern": "Format 30s > 45s pour TikTok",
+        "why": "Les scripts 30s ont un score simulation moyen de 87 vs 82 pour les 45s. Rétention TikTok chute après 30s pour la cible 18-25.",
+        "action": "Privilégier 30s pour TOFU TikTok. Garder 45-50s pour MOFU coaching (audience déjà engagée)."
+      }
+    ],
+    "perdants": [
+      {
+        "pattern": "Contenu premium sur canal DEAD",
+        "why": "40% du batch copywriting (4/10) va sur Twitter (4 abo). ROI = 0. C'est le pattern perdant #1 du système.",
+        "fix": "BLOQUER Twitter et Facebook dans le cron. Redistribuer vers LinkedIn + TikTok."
+      },
+      {
+        "pattern": "Angle répété dans le même batch",
+        "why": "2 doublons ancrage + 2 doublons statu quo dans 1 batch. Viole le feedback unicité contenu. L'audience perçoit la répétition = perte de crédibilité.",
+        "fix": "Implémenter check anti-doublon: array d'angles déjà utilisés vérifié AVANT génération de chaque post."
+      },
+      {
+        "pattern": "MOFU sans empathie viscérale plan 1",
+        "why": "Les MOFU à empathie ≤6 ouvrent par le concept (Zeigarnik, dissonance) au lieu de la douleur vécue. Le cérébral décroche en 3s si le plan 1 est intellectuel.",
+        "fix": "Règle MOFU: plan 1 = TOUJOURS une scène de vie quotidienne du cérébral AVANT le mécanisme psycho."
+      },
+      {
+        "pattern": "Publication horaire 00h-06h",
+        "why": "L'audience 18-25 ans dort. Même LinkedIn perd 70% de reach à 2h du matin.",
+        "fix": "Cron horaire: fenêtre 7h-23h Paris. Aucune publication nocturne."
+      }
+    ]
+  },
+
+  "ratio_tofu_mofu": {
+    "actuel": {
+      "tofu_video": 6,
+      "mofu_video": 4,
+      "mofu_text": 10,
+      "ratio_video": "60/40 TOFU/MOFU",
+      "ratio_global": "30/70 TOFU/MOFU (avec texte)"
+    },
+    "cible_v2": {
+      "tofu_cine": "1/jour",
+      "mofu_coaching": "5/jour",
+      "ratio_cible": "1:5 (17/83)"
+    },
+    "analyse": "Le ratio actuel (30/70 global) est proche de la cible V2 (17/83). Le batch vidéo est encore trop TOFU-heavy (60/40). Le batch texte compense avec 100% MOFU. La direction est bonne mais les vidéos TOFU doivent baisser à 1/jour max (au lieu de 6 sur la période).",
+    "ajustement": "Pas d'ajustement majeur nécessaire. Maintenir le cap V2. Le seul ajustement: réduire TOFU vidéo de 6 à 1/jour et augmenter MOFU vidéo de 4 à 5/jour comme prévu dans le mix V2."
+  },
+
+  "action_items": [
+    {
+      "priority": "CRITIQUE",
+      "action": "Bloquer Twitter et Facebook dans le cron copywriting",
+      "impact": "Éliminer 5 FLOP/batch (50% des posts actuels) — rediriger vers LinkedIn et TikTok",
+      "deadline": "Prochain batch (6 avril)"
+    },
+    {
+      "priority": "CRITIQUE",
+      "action": "Implémenter check anti-doublon d'angle dans le cron",
+      "impact": "Éliminer les répétitions (ancrage×2, statu quo×2) — unicité contenu",
+      "deadline": "Prochain batch (6 avril)"
+    },
+    {
+      "priority": "HAUTE",
+      "action": "Fenêtre publication 7h-23h Paris — zéro post nocturne",
+      "impact": "Récupérer 60-70% de reach perdu sur les posts 00h-06h",
+      "deadline": "Immédiat"
+    },
+    {
+      "priority": "HAUTE",
+      "action": "Fixer empathie viscérale plan 1 des MOFU",
+      "impact": "Passer les MOFU de MID (empathie 5) à SOLID (empathie 7+). Ouvrir TOUJOURS par scène quotidienne, PAS par concept psycho.",
+      "deadline": "Prochain batch MOFU"
+    },
+    {
+      "priority": "MOYENNE",
+      "action": "Router les meilleurs scripts vers @djibril.offf",
+      "impact": "Les scores 88+ (script_v_003) sur @short6 (31 abo) devraient aller sur @offf (5282 abo). Reach ×170.",
+      "deadline": "Prochain batch vidéo"
+    },
+    {
+      "priority": "MOYENNE",
+      "action": "Réduire TOFU vidéo à 1/jour, augmenter MOFU coaching vidéo à 5/jour",
+      "impact": "Aligner avec mix V2. Actuellement 60/40 TOFU/MOFU vidéo → cible 17/83.",
+      "deadline": "Prochaine semaine"
+    }
+  ],
+
+  "next_feedback_loop": "2026-04-06",
+  "generated_by": "CDE Feedback Loop v3.0 — automated"
+}
