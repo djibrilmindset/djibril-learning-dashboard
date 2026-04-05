@@ -206,6 +206,26 @@ body { font-family:'Inter',-apple-system,sans-serif; background:var(--bg-void); 
 .priority-high { color:var(--accent-red); font-weight:700; font-size:10px; text-transform:uppercase; }
 .priority-medium { color:var(--accent-amber); font-weight:700; font-size:10px; text-transform:uppercase; }
 
+/* CRON CARDS */
+.cron-card { background:var(--bg-card); border:1px solid var(--border-subtle); border-radius:var(--radius); padding:18px 20px; margin-bottom:10px; display:grid; grid-template-columns:40px 1fr 120px 140px 80px; align-items:center; gap:14px; transition:all 0.3s ease; }
+.cron-card:hover { border-color:rgba(20,241,149,0.25); background:var(--bg-card-hover); }
+.cron-icon { font-size:24px; text-align:center; }
+.cron-name { font-weight:700; font-size:13px; margin-bottom:2px; }
+.cron-desc { font-size:11px; color:var(--text-muted); line-height:1.4; }
+.cron-schedule { font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--text-secondary); text-align:center; }
+.cron-lastrun { font-size:11px; color:var(--text-ghost); text-align:center; }
+.cron-status { text-align:center; }
+.cron-badge { display:inline-block; padding:4px 12px; border-radius:20px; font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:0.5px; }
+.cron-badge.active { background:rgba(20,241,149,0.15); color:var(--accent-cyan); }
+.cron-badge.paused { background:rgba(255,189,46,0.15); color:var(--accent-amber); }
+.cron-badge.dead { background:rgba(255,68,68,0.12); color:var(--accent-red); }
+.cron-category { display:inline-block; padding:2px 8px; border-radius:12px; font-size:9px; font-weight:700; text-transform:uppercase; letter-spacing:0.5px; margin-top:4px; }
+@media (max-width: 768px) {
+  .cron-card { grid-template-columns:30px 1fr 70px; gap:8px; padding:12px 14px; }
+  .cron-card > :nth-child(4), .cron-card > :nth-child(5) { display:none; }
+  .cron-schedule { font-size:10px; }
+}
+
 /* SCROLLBAR */
 .main::-webkit-scrollbar { width:6px; }
 .main::-webkit-scrollbar-track { background:transparent; }
@@ -266,6 +286,7 @@ body { font-family:'Inter',-apple-system,sans-serif; background:var(--bg-void); 
   <div class="nav-item" data-page="scripts"><span class="icon">📜</span><span>Scripts</span></div>
   <div class="nav-item" data-page="warroom"><span class="icon">⚔️</span><span>War Room</span></div>
   <div class="nav-item" data-page="comptes"><span class="icon">📊</span><span>Comptes</span></div>
+  <div class="nav-item" data-page="systeme"><span class="icon">⚙️</span><span>Système</span><span class="nav-badge" style="background:rgba(20,241,149,0.2); color:var(--accent-cyan);">LIVE</span></div>
   <div class="nav-spacer"></div>
   <div style="font-size:11px; color:var(--text-ghost); padding:0 14px;"><span class="live-dot" style="color:var(--accent-cyan);">●</span> Crons actifs</div>
 </nav>
@@ -278,6 +299,7 @@ body { font-family:'Inter',-apple-system,sans-serif; background:var(--bg-void); 
   <div class="mob-item" data-page="scripts"><span class="mob-icon">📜</span>Scripts</div>
   <div class="mob-item" data-page="warroom"><span class="mob-icon">⚔️</span>War Room</div>
   <div class="mob-item" data-page="comptes"><span class="mob-icon">📊</span>Comptes</div>
+  <div class="mob-item" data-page="systeme"><span class="mob-icon">⚙️</span>Système</div>
 </div>
 
 <!-- MAIN -->
@@ -373,6 +395,19 @@ body { font-family:'Inter',-apple-system,sans-serif; background:var(--bg-void); 
     <div id="comptes-insights"></div>
   </div>
 
+  <!-- PAGE 6: SYSTÈME (CENTRE DE CONTRÔLE CRONS) -->
+  <div class="page" id="page-systeme">
+    <div class="page-title" style="background:linear-gradient(135deg, #14f195, #9945ff); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">Centre de Contrôle</div>
+    <div class="page-subtitle">Tous tes crons autonomes — statuts live, derniers runs, santé du système</div>
+    <div class="kpi-grid" id="sys-kpis"></div>
+    <div class="section-title">🟢 Crons actifs</div>
+    <div id="sys-active-crons"></div>
+    <div class="section-title" style="margin-top:28px;">⏸️ Crons en pause</div>
+    <div id="sys-paused-crons"></div>
+    <div class="section-title" style="margin-top:28px;">📋 Historique récent</div>
+    <div id="sys-history"></div>
+  </div>
+
 </main>
 
 <script>
@@ -418,6 +453,7 @@ function renderAll() {
   renderScripts();
   renderWarRoom();
   renderComptes();
+  renderSysteme();
 }
 
 /* ═══ PROBLÈMES & CROYANCES (PAGE CENTRALE) ═══ */
@@ -779,6 +815,91 @@ function renderComptes() {
         <div class="ec-detail-item"><div class="ec-detail-label">📱 Meilleure plateforme</div><div class="ec-detail-value">${ins.meilleure_plateforme||''}</div></div>
       </div>
       <div class="ec-detail-item" style="margin-top:12px; border-left:3px solid var(--accent-cyan);"><div class="ec-detail-label">🎯 Recommandation</div><div class="ec-detail-value" style="color:var(--accent-cyan);">${ins.recommandation||''}</div></div>
+    </div>
+  `;
+}
+
+/* ═══ SYSTÈME (CENTRE DE CONTRÔLE CRONS) ═══ */
+function renderSysteme() {
+  const crons = [
+    {id:'daily-video-publish', name:'Publication Vidéos', desc:'Post auto 9 comptes PostBridge, 2h décalage', schedule:'5h', cron:'0 5 * * *', enabled:true, lastRun:'2026-04-05', icon:'🚀', cat:'PUBLISH', catColor:'rgba(20,241,149,0.12)', catText:'#14f195'},
+    {id:'cinema-daily-guide', name:'Guide Tournage', desc:'1 TOFU ciné + 5 MOFU coaching, plans 2 caméras', schedule:'5h', cron:'0 5 * * *', enabled:true, lastRun:'2026-04-06', icon:'🎬', cat:'CRÉATION', catColor:'rgba(153,69,255,0.12)', catText:'#b87aff'},
+    {id:'daily-stories-canva', name:'Stories Canva', desc:'8 slides empathie, design dark premium', schedule:'5h', cron:'0 5 * * *', enabled:true, lastRun:'2026-04-05', icon:'📱', cat:'CRÉATION', catColor:'rgba(153,69,255,0.12)', catText:'#b87aff'},
+    {id:'weekly-top-videos', name:'Top Vidéos Scanner', desc:'Top 10 par compte + Top 20 global + patterns gagnants', schedule:'6h', cron:'0 6 * * *', enabled:true, lastRun:'2026-04-03', icon:'🏆', cat:'ANALYSE', catColor:'rgba(255,189,46,0.12)', catText:'#ffbd2e'},
+    {id:'daily-scrape-enrich', name:'Scraper Unifié', desc:'Tous réseaux, niche cérébral + empathie métiers', schedule:'7h', cron:'0 7 * * *', enabled:true, lastRun:'2026-04-05', icon:'🔍', cat:'SCRAPING', catColor:'rgba(248,87,166,0.12)', catText:'#f857a6'},
+    {id:'daily-copywriting', name:'Copywriting Quotidien', desc:'1 TOFU ciné + 5 MOFU coaching mécanismes psycho', schedule:'8h30', cron:'30 8 * * *', enabled:true, lastRun:'2026-04-05', icon:'✍️', cat:'CRÉATION', catColor:'rgba(153,69,255,0.12)', catText:'#b87aff'},
+    {id:'text-platforms', name:'Posts Texte', desc:'10 posts/jour X+LinkedIn+Threads+Facebook', schedule:'10h', cron:'0 10 * * *', enabled:true, lastRun:'2026-04-05', icon:'📝', cat:'PUBLISH', catColor:'rgba(20,241,149,0.12)', catText:'#14f195'},
+    {id:'problemes-scraper', name:'Scraper Problèmes', desc:'Problèmes & croyances → dashboard GitHub Pages', schedule:'12h', cron:'0 12 * * *', enabled:true, lastRun:'2026-04-06', icon:'💣', cat:'SCRAPING', catColor:'rgba(248,87,166,0.12)', catText:'#f857a6'},
+    {id:'cde-daily-analysis', name:'Analyse CDE', desc:'Analyse verbale/visuelle/émotionnelle/stratégique', schedule:'14h', cron:'0 14 * * *', enabled:true, lastRun:'2026-04-05', icon:'🔬', cat:'ANALYSE', catColor:'rgba(255,189,46,0.12)', catText:'#ffbd2e'},
+    {id:'weekly-tracker-evolver', name:'Tracking Stats', desc:'Stats 9 comptes + top vidéos + MAJ dashboard', schedule:'20h', cron:'0 20 * * *', enabled:true, lastRun:'2026-04-05', icon:'📊', cat:'TRACKING', catColor:'rgba(20,241,149,0.12)', catText:'#14f195'},
+    {id:'weekly-audit-quality', name:'Audit Qualité', desc:'Véracité, métaphores, cohérence série, framework empathique', schedule:'21h', cron:'0 21 * * *', enabled:true, lastRun:'2026-04-02', icon:'✅', cat:'QUALITÉ', catColor:'rgba(20,241,149,0.12)', catText:'#14f195'},
+    {id:'cde-feedback', name:'Feedback Loop', desc:'Classifie HIT/SOLID/MID/FLOP + autopsie flops', schedule:'22h', cron:'0 22 * * *', enabled:true, lastRun:'2026-04-05', icon:'🔄', cat:'ANALYSE', catColor:'rgba(255,189,46,0.12)', catText:'#ffbd2e'},
+    {id:'coordination-watchdog', name:'Watchdog Coordination', desc:'Vérifie doublons, tâches manquées, cohérence système', schedule:'23h', cron:'0 23 * * *', enabled:true, lastRun:'2026-04-02', icon:'🛡️', cat:'QUALITÉ', catColor:'rgba(20,241,149,0.12)', catText:'#14f195'},
+    {id:'market-study-updater', name:'Étude de Marché', desc:'Tendances hebdo, gaps, recommandations TOFU/MOFU', schedule:'Dim 19h', cron:'0 19 * * 0', enabled:true, lastRun:'2026-04-05', icon:'📈', cat:'ANALYSE', catColor:'rgba(255,189,46,0.12)', catText:'#ffbd2e'},
+    {id:'script-sharpener', name:'Script Sharpener', desc:'Audit scripts cinématiques, scoring /10', schedule:'16h', cron:'0 16 * * *', enabled:false, lastRun:'2026-04-05', icon:'🔪', cat:'QUALITÉ', catColor:'rgba(20,241,149,0.12)', catText:'#14f195'},
+    {id:'short6-autopublish', name:'Short6 Auto-Publish', desc:'4 posts/jour @djibril.short6', schedule:'16h', cron:'0 16 * * *', enabled:false, lastRun:'2026-04-03', icon:'📤', cat:'PUBLISH', catColor:'rgba(20,241,149,0.12)', catText:'#14f195'},
+    {id:'cde-daily-scrape', name:'CDE Scraper', desc:'Scraper CDE tous réseaux, hooks réels', schedule:'11h', cron:'0 11 * * *', enabled:false, lastRun:'2026-04-03', icon:'🕷️', cat:'SCRAPING', catColor:'rgba(248,87,166,0.12)', catText:'#f857a6'},
+    {id:'cde-weekly-deep', name:'CDE Deep Analysis', desc:'Patterns cross-marchés, profiling influenceurs', schedule:'18h', cron:'0 18 * * *', enabled:false, lastRun:'2026-04-03', icon:'🧬', cat:'ANALYSE', catColor:'rgba(255,189,46,0.12)', catText:'#ffbd2e'},
+    {id:'hook-intelligence', name:'Hook Intelligence', desc:'Hooks viraux empathie + identification métiers', schedule:'15h', cron:'0 15 * * *', enabled:false, lastRun:'2026-04-05', icon:'🎣', cat:'SCRAPING', catColor:'rgba(248,87,166,0.12)', catText:'#f857a6'},
+    {id:'keyword-intelligence', name:'Keyword Intelligence', desc:'Mots-clés empathie, classement impact', schedule:'6h30', cron:'30 6 * * *', enabled:false, lastRun:'2026-04-05', icon:'🔑', cat:'SCRAPING', catColor:'rgba(248,87,166,0.12)', catText:'#f857a6'},
+    {id:'market-hooks-copier', name:'Market Hooks Copier', desc:'Copy-paste hooks viraux bruts', schedule:'15h', cron:'0 15 * * *', enabled:false, lastRun:'2026-04-05', icon:'📋', cat:'SCRAPING', catColor:'rgba(248,87,166,0.12)', catText:'#f857a6'},
+    {id:'visual-context-tracker', name:'Visual Context Tracker', desc:'Angles caméra, montage, éclairage qui performent', schedule:'14h30', cron:'30 14 * * *', enabled:false, lastRun:'2026-04-05', icon:'📷', cat:'TRACKING', catColor:'rgba(20,241,149,0.12)', catText:'#14f195'},
+    {id:'dashboard-integrity', name:'Dashboard Integrity', desc:'Vérifie intégrité dashboard toutes les 6h', schedule:'*/6h', cron:'0 */6 * * *', enabled:false, lastRun:'2026-04-05', icon:'🔒', cat:'QUALITÉ', catColor:'rgba(20,241,149,0.12)', catText:'#14f195'}
+  ];
+
+  const active = crons.filter(c => c.enabled);
+  const paused = crons.filter(c => !c.enabled);
+  const cats = {};
+  active.forEach(c => { cats[c.cat] = (cats[c.cat]||0) + 1; });
+
+  // KPIs
+  document.getElementById('sys-kpis').innerHTML = `
+    <div class="kpi"><div class="kpi-label">Crons actifs</div><div class="kpi-value">${active.length}</div><div class="kpi-note">Tournent chaque jour</div></div>
+    <div class="kpi"><div class="kpi-label">En pause</div><div class="kpi-value" style="background:linear-gradient(135deg, var(--accent-amber), var(--accent-red)); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">${paused.length}</div><div class="kpi-note">Désactivés / doublons</div></div>
+    <div class="kpi"><div class="kpi-label">Total système</div><div class="kpi-value">${crons.length}</div><div class="kpi-note">Tâches configurées</div></div>
+    <div class="kpi"><div class="kpi-label">Catégories</div><div class="kpi-value">${Object.keys(cats).length}</div><div class="kpi-note">${Object.entries(cats).map(([k,v]) => k+'('+v+')').join(' ')}</div></div>
+  `;
+
+  function cronCard(c) {
+    const badge = c.enabled ? '<span class="cron-badge active">● ACTIF</span>' : '<span class="cron-badge paused">⏸ PAUSE</span>';
+    const today = '2026-04-06';
+    const isRecent = c.lastRun >= '2026-04-05';
+    const runColor = isRecent ? 'var(--accent-cyan)' : 'var(--accent-amber)';
+    return `
+      <div class="cron-card" style="${!c.enabled ? 'opacity:0.6;' : ''}">
+        <div class="cron-icon">${c.icon}</div>
+        <div>
+          <div class="cron-name">${c.name}</div>
+          <div class="cron-desc">${c.desc}</div>
+          <span class="cron-category" style="background:${c.catColor}; color:${c.catText};">${c.cat}</span>
+        </div>
+        <div class="cron-schedule">${c.schedule}</div>
+        <div class="cron-lastrun" style="color:${runColor};">📅 ${c.lastRun}</div>
+        <div class="cron-status">${badge}</div>
+      </div>
+    `;
+  }
+
+  document.getElementById('sys-active-crons').innerHTML = active.map(cronCard).join('');
+  document.getElementById('sys-paused-crons').innerHTML = paused.length > 0
+    ? paused.map(cronCard).join('')
+    : '<div style="color:var(--text-ghost); font-size:13px; padding:12px;">Aucun cron en pause.</div>';
+
+  // Timeline des derniers runs
+  const sorted = [...crons].filter(c => c.enabled).sort((a,b) => b.lastRun.localeCompare(a.lastRun));
+  document.getElementById('sys-history').innerHTML = `
+    <div class="card" style="padding:20px;">
+      ${sorted.slice(0,10).map(c => `
+        <div style="display:flex; align-items:center; gap:14px; padding:8px 0; border-bottom:1px solid var(--border-invisible);">
+          <span style="font-size:18px;">${c.icon}</span>
+          <div style="flex:1;">
+            <span style="font-weight:600; font-size:13px;">${c.name}</span>
+            <span style="font-size:11px; color:var(--text-ghost); margin-left:8px;">${c.schedule}</span>
+          </div>
+          <span style="font-family:'JetBrains Mono'; font-size:11px; color:var(--accent-cyan);">${c.lastRun}</span>
+          <span style="font-size:10px; color:var(--accent-cyan);">✓</span>
+        </div>
+      `).join('')}
     </div>
   `;
 }
