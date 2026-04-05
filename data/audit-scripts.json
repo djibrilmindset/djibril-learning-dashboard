@@ -1,0 +1,758 @@
+{
+  "audit_date": "2026-04-05",
+  "audit_type": "daily_script_sharpener",
+  "total_scripts": 25,
+  "summary": {
+    "score_moyen": 8.8,
+    "total_issues": 31,
+    "barber_violations": 0,
+    "scripts_sans_2_cameras": 14,
+    "empathie_faible": 10,
+    "scripts_parfaits_10": 9,
+    "scripts_a_corriger_sub7": 0
+  },
+  "scripts": [
+    {
+      "id": 1,
+      "titre": "La prison du spectateur",
+      "type": "TOFU",
+      "duree": "45s",
+      "score": 9.0,
+      "scores_detail": {
+        "barber_clean": 1.0,
+        "sources_psycho": 1.0,
+        "structure_vnpgl": 1.0,
+        "two_cameras": 0.3,
+        "empathie_visceral": 1.0,
+        "micro_action_cognitive": 1.0,
+        "duration": 1.0
+      },
+      "issues": [
+        "2 caméras non détectées (CAM A 15mm + CAM B 40mm)"
+      ],
+      "strengths": [
+        "Zéro barber",
+        "Sources: Kahneman (Thinking Fast & Slow), Biais du survivant (Wald 19",
+        "Identification viscérale forte"
+      ],
+      "barber_clean": true,
+      "sources_ok": true,
+      "structure_ok": true,
+      "two_cameras": false,
+      "empathie_ok": true,
+      "micro_action_ok": true
+    },
+    {
+      "id": 2,
+      "titre": "Le piège dopamine-connaissance",
+      "type": "MOFU",
+      "duree": "45s",
+      "score": 7.1,
+      "scores_detail": {
+        "barber_clean": 1.0,
+        "sources_psycho": 1.0,
+        "structure_vnpgl": 1.0,
+        "two_cameras": 0.3,
+        "empathie_visceral": 0.4,
+        "micro_action_cognitive": 0.3,
+        "duration": 1.0
+      },
+      "issues": [
+        "2 caméras non détectées (CAM A 15mm + CAM B 40mm)",
+        "Empathie viscérale faible en plan 1",
+        "Micro-action non cognitive ou absente"
+      ],
+      "strengths": [
+        "Zéro barber",
+        "Sources: Zeigarnik (1927), Kahneman Système 1/2, Gloria Mark (attenti"
+      ],
+      "barber_clean": true,
+      "sources_ok": true,
+      "structure_ok": true,
+      "two_cameras": false,
+      "empathie_ok": false,
+      "micro_action_ok": false
+    },
+    {
+      "id": 3,
+      "titre": "L'identité programmée",
+      "type": "TOFU",
+      "duree": "45s",
+      "score": 9.0,
+      "scores_detail": {
+        "barber_clean": 1.0,
+        "sources_psycho": 1.0,
+        "structure_vnpgl": 1.0,
+        "two_cameras": 0.3,
+        "empathie_visceral": 1.0,
+        "micro_action_cognitive": 1.0,
+        "duration": 1.0
+      },
+      "issues": [
+        "2 caméras non détectées (CAM A 15mm + CAM B 40mm)"
+      ],
+      "strengths": [
+        "Zéro barber",
+        "Sources: Plasticité corticale (Merzenich), Gloria Mark (80 notifs/jou",
+        "Identification viscérale forte"
+      ],
+      "barber_clean": true,
+      "sources_ok": true,
+      "structure_ok": true,
+      "two_cameras": false,
+      "empathie_ok": true,
+      "micro_action_ok": true
+    },
+    {
+      "id": 4,
+      "titre": "Le code qu'on t'a installé",
+      "type": "MOFU",
+      "duree": "45s",
+      "score": 7.1,
+      "scores_detail": {
+        "barber_clean": 1.0,
+        "sources_psycho": 1.0,
+        "structure_vnpgl": 1.0,
+        "two_cameras": 0.3,
+        "empathie_visceral": 0.4,
+        "micro_action_cognitive": 0.3,
+        "duration": 1.0
+      },
+      "issues": [
+        "2 caméras non détectées (CAM A 15mm + CAM B 40mm)",
+        "Empathie viscérale faible en plan 1",
+        "Micro-action non cognitive ou absente"
+      ],
+      "strengths": [
+        "Zéro barber",
+        "Sources: Festinger (dissonance cognitive 1957), Voss (Never Split The"
+      ],
+      "barber_clean": true,
+      "sources_ok": true,
+      "structure_ok": true,
+      "two_cameras": false,
+      "empathie_ok": false,
+      "micro_action_ok": false
+    },
+    {
+      "id": 5,
+      "titre": "Ton cerveau te ment",
+      "type": "TOFU",
+      "duree": "45s",
+      "score": 9.0,
+      "scores_detail": {
+        "barber_clean": 1.0,
+        "sources_psycho": 1.0,
+        "structure_vnpgl": 1.0,
+        "two_cameras": 0.3,
+        "empathie_visceral": 1.0,
+        "micro_action_cognitive": 1.0,
+        "duration": 1.0
+      },
+      "issues": [
+        "2 caméras non détectées (CAM A 15mm + CAM B 40mm)"
+      ],
+      "strengths": [
+        "Zéro barber",
+        "Sources: Baumeister (ego depletion), Nickerson (biais de confirmation",
+        "Identification viscérale forte"
+      ],
+      "barber_clean": true,
+      "sources_ok": true,
+      "structure_ok": true,
+      "two_cameras": false,
+      "empathie_ok": true,
+      "micro_action_ok": true
+    },
+    {
+      "id": 6,
+      "titre": "Le gap entre savoir et faire",
+      "type": "MOFU",
+      "duree": "45s",
+      "score": 8.1,
+      "scores_detail": {
+        "barber_clean": 1.0,
+        "sources_psycho": 1.0,
+        "structure_vnpgl": 1.0,
+        "two_cameras": 0.3,
+        "empathie_visceral": 0.4,
+        "micro_action_cognitive": 1.0,
+        "duration": 1.0
+      },
+      "issues": [
+        "2 caméras non détectées (CAM A 15mm + CAM B 40mm)",
+        "Empathie viscérale faible en plan 1"
+      ],
+      "strengths": [
+        "Zéro barber",
+        "Sources: Pfeffer & Sutton (Knowing-Doing Gap), Dunning-Kruger (1999),",
+        "Micro-action cognitive validée"
+      ],
+      "barber_clean": true,
+      "sources_ok": true,
+      "structure_ok": true,
+      "two_cameras": false,
+      "empathie_ok": false,
+      "micro_action_ok": true
+    },
+    {
+      "id": 7,
+      "titre": "Les 3 biais qui te contrôlent",
+      "type": "TOFU",
+      "duree": "45s",
+      "score": 9.0,
+      "scores_detail": {
+        "barber_clean": 1.0,
+        "sources_psycho": 1.0,
+        "structure_vnpgl": 1.0,
+        "two_cameras": 0.3,
+        "empathie_visceral": 1.0,
+        "micro_action_cognitive": 1.0,
+        "duration": 1.0
+      },
+      "issues": [
+        "2 caméras non détectées (CAM A 15mm + CAM B 40mm)"
+      ],
+      "strengths": [
+        "Zéro barber",
+        "Sources: Zeigarnik (1927), Festinger (1957), Nickerson (1998)",
+        "Identification viscérale forte"
+      ],
+      "barber_clean": true,
+      "sources_ok": true,
+      "structure_ok": true,
+      "two_cameras": false,
+      "empathie_ok": true,
+      "micro_action_ok": true
+    },
+    {
+      "id": 8,
+      "titre": "T'es pas paresseux — t'es drainé",
+      "type": "MOFU",
+      "duree": "45s",
+      "score": 8.0,
+      "scores_detail": {
+        "barber_clean": 1.0,
+        "sources_psycho": 1.0,
+        "structure_vnpgl": 1.0,
+        "two_cameras": 0.3,
+        "empathie_visceral": 1.0,
+        "micro_action_cognitive": 0.3,
+        "duration": 1.0
+      },
+      "issues": [
+        "2 caméras non détectées (CAM A 15mm + CAM B 40mm)",
+        "Micro-action non cognitive ou absente"
+      ],
+      "strengths": [
+        "Zéro barber",
+        "Sources: Baumeister (Willpower 2011), Gloria Mark (Attention Span 202",
+        "Identification viscérale forte"
+      ],
+      "barber_clean": true,
+      "sources_ok": true,
+      "structure_ok": true,
+      "two_cameras": false,
+      "empathie_ok": true,
+      "micro_action_ok": false
+    },
+    {
+      "id": 9,
+      "titre": "La boucle toxique",
+      "type": "TOFU",
+      "duree": "45s",
+      "score": 8.1,
+      "scores_detail": {
+        "barber_clean": 1.0,
+        "sources_psycho": 1.0,
+        "structure_vnpgl": 1.0,
+        "two_cameras": 0.3,
+        "empathie_visceral": 0.4,
+        "micro_action_cognitive": 1.0,
+        "duration": 1.0
+      },
+      "issues": [
+        "2 caméras non détectées (CAM A 15mm + CAM B 40mm)",
+        "Empathie viscérale faible en plan 1"
+      ],
+      "strengths": [
+        "Zéro barber",
+        "Sources: Craik & Lockhart (1972), Huberman (dopamine anticipation), G",
+        "Micro-action cognitive validée"
+      ],
+      "barber_clean": true,
+      "sources_ok": true,
+      "structure_ok": true,
+      "two_cameras": false,
+      "empathie_ok": false,
+      "micro_action_ok": true
+    },
+    {
+      "id": 10,
+      "titre": "L'encre invisible",
+      "type": "MOFU",
+      "duree": "45s",
+      "score": 8.1,
+      "scores_detail": {
+        "barber_clean": 1.0,
+        "sources_psycho": 1.0,
+        "structure_vnpgl": 1.0,
+        "two_cameras": 0.3,
+        "empathie_visceral": 0.4,
+        "micro_action_cognitive": 1.0,
+        "duration": 1.0
+      },
+      "issues": [
+        "2 caméras non détectées (CAM A 15mm + CAM B 40mm)",
+        "Empathie viscérale faible en plan 1"
+      ],
+      "strengths": [
+        "Zéro barber",
+        "Sources: Rosenberg (CNV 1960), Bandura (social learning), Récipient C",
+        "Micro-action cognitive validée"
+      ],
+      "barber_clean": true,
+      "sources_ok": true,
+      "structure_ok": true,
+      "two_cameras": false,
+      "empathie_ok": false,
+      "micro_action_ok": true
+    },
+    {
+      "id": 11,
+      "titre": "Trop de choix tue le choix",
+      "type": "TOFU",
+      "duree": "45s",
+      "score": 7.1,
+      "scores_detail": {
+        "barber_clean": 1.0,
+        "sources_psycho": 1.0,
+        "structure_vnpgl": 1.0,
+        "two_cameras": 0.3,
+        "empathie_visceral": 0.4,
+        "micro_action_cognitive": 0.3,
+        "duration": 1.0
+      },
+      "issues": [
+        "2 caméras non détectées (CAM A 15mm + CAM B 40mm)",
+        "Empathie viscérale faible en plan 1",
+        "Micro-action non cognitive ou absente"
+      ],
+      "strengths": [
+        "Zéro barber",
+        "Sources: Ariely (Predictably Irrational 2008), Schwartz (Paradox of C"
+      ],
+      "barber_clean": true,
+      "sources_ok": true,
+      "structure_ok": true,
+      "two_cameras": false,
+      "empathie_ok": false,
+      "micro_action_ok": false
+    },
+    {
+      "id": 12,
+      "titre": "Ton identité est un mur",
+      "type": "MOFU",
+      "duree": "45s",
+      "score": 7.1,
+      "scores_detail": {
+        "barber_clean": 1.0,
+        "sources_psycho": 1.0,
+        "structure_vnpgl": 1.0,
+        "two_cameras": 0.3,
+        "empathie_visceral": 0.4,
+        "micro_action_cognitive": 0.3,
+        "duration": 1.0
+      },
+      "issues": [
+        "2 caméras non détectées (CAM A 15mm + CAM B 40mm)",
+        "Empathie viscérale faible en plan 1",
+        "Micro-action non cognitive ou absente"
+      ],
+      "strengths": [
+        "Zéro barber",
+        "Sources: Dweck (Mindset 2006), Merzenich (neuroplasticité), Festinger"
+      ],
+      "barber_clean": true,
+      "sources_ok": true,
+      "structure_ok": true,
+      "two_cameras": false,
+      "empathie_ok": false,
+      "micro_action_ok": false
+    },
+    {
+      "id": 13,
+      "titre": "La honte qui te cache",
+      "type": "TOFU",
+      "duree": "45s",
+      "score": 8.0,
+      "scores_detail": {
+        "barber_clean": 1.0,
+        "sources_psycho": 1.0,
+        "structure_vnpgl": 1.0,
+        "two_cameras": 0.3,
+        "empathie_visceral": 1.0,
+        "micro_action_cognitive": 0.3,
+        "duration": 1.0
+      },
+      "issues": [
+        "2 caméras non détectées (CAM A 15mm + CAM B 40mm)",
+        "Micro-action non cognitive ou absente"
+      ],
+      "strengths": [
+        "Zéro barber",
+        "Sources: Brown (Daring Greatly 2012), Bandura (auto-efficacité 1977),",
+        "Identification viscérale forte"
+      ],
+      "barber_clean": true,
+      "sources_ok": true,
+      "structure_ok": true,
+      "two_cameras": false,
+      "empathie_ok": true,
+      "micro_action_ok": false
+    },
+    {
+      "id": 14,
+      "titre": "T'as pas de modèle et c'est normal",
+      "type": "MOFU",
+      "duree": "45s",
+      "score": 7.1,
+      "scores_detail": {
+        "barber_clean": 1.0,
+        "sources_psycho": 1.0,
+        "structure_vnpgl": 1.0,
+        "two_cameras": 0.3,
+        "empathie_visceral": 0.4,
+        "micro_action_cognitive": 0.3,
+        "duration": 1.0
+      },
+      "issues": [
+        "2 caméras non détectées (CAM A 15mm + CAM B 40mm)",
+        "Empathie viscérale faible en plan 1",
+        "Micro-action non cognitive ou absente"
+      ],
+      "strengths": [
+        "Zéro barber",
+        "Sources: Bandura (Social Learning Theory 1977), Rotter (locus de cont"
+      ],
+      "barber_clean": true,
+      "sources_ok": true,
+      "structure_ok": true,
+      "two_cameras": false,
+      "empathie_ok": false,
+      "micro_action_ok": false
+    },
+    {
+      "id": "cine_2026-04-05_01",
+      "titre": "Le réveil qui sonne",
+      "type": "TOFU",
+      "duree": "48s",
+      "score": 10.0,
+      "scores_detail": {
+        "barber_clean": 1.0,
+        "sources_psycho": 1.0,
+        "structure_vnpgl": 1.0,
+        "two_cameras": 1.0,
+        "empathie_visceral": 1.0,
+        "micro_action_cognitive": 1.0,
+        "duration": 1.0
+      },
+      "issues": [],
+      "strengths": [
+        "Zéro barber",
+        "Sources: Zeigarnik — Tâches inachevées (1927)",
+        "Double caméra CAM A/B"
+      ],
+      "barber_clean": true,
+      "sources_ok": true,
+      "structure_ok": true,
+      "two_cameras": true,
+      "empathie_ok": true,
+      "micro_action_ok": true
+    },
+    {
+      "id": "cine_2026-04-05_02",
+      "titre": "La voix dans ta tête",
+      "type": "MOFU",
+      "duree": "50s",
+      "score": 10.0,
+      "scores_detail": {
+        "barber_clean": 1.0,
+        "sources_psycho": 1.0,
+        "structure_vnpgl": 1.0,
+        "two_cameras": 1.0,
+        "empathie_visceral": 1.0,
+        "micro_action_cognitive": 1.0,
+        "duration": 1.0
+      },
+      "issues": [],
+      "strengths": [
+        "Zéro barber",
+        "Sources: Festinger — Dissonance cognitive (1957)",
+        "Double caméra CAM A/B"
+      ],
+      "barber_clean": true,
+      "sources_ok": true,
+      "structure_ok": true,
+      "two_cameras": true,
+      "empathie_ok": true,
+      "micro_action_ok": true
+    },
+    {
+      "id": "cine_2026-04-05_03",
+      "titre": "Rentrer vidé",
+      "type": "TOFU",
+      "duree": "52s",
+      "score": 10.0,
+      "scores_detail": {
+        "barber_clean": 1.0,
+        "sources_psycho": 1.0,
+        "structure_vnpgl": 1.0,
+        "two_cameras": 1.0,
+        "empathie_visceral": 1.0,
+        "micro_action_cognitive": 1.0,
+        "duration": 1.0
+      },
+      "issues": [],
+      "strengths": [
+        "Zéro barber",
+        "Sources: Baumeister — Ego Depletion (2003); Huberman — Dopamine et ef",
+        "Double caméra CAM A/B"
+      ],
+      "barber_clean": true,
+      "sources_ok": true,
+      "structure_ok": true,
+      "two_cameras": true,
+      "empathie_ok": true,
+      "micro_action_ok": true
+    },
+    {
+      "id": "cine_2026-04-05_04",
+      "titre": "Personne croit en toi",
+      "type": "MOFU",
+      "duree": "51s",
+      "score": 10.0,
+      "scores_detail": {
+        "barber_clean": 1.0,
+        "sources_psycho": 1.0,
+        "structure_vnpgl": 1.0,
+        "two_cameras": 1.0,
+        "empathie_visceral": 1.0,
+        "micro_action_cognitive": 1.0,
+        "duration": 1.0
+      },
+      "issues": [],
+      "strengths": [
+        "Zéro barber",
+        "Sources: Bandura — Self-efficacy (1977); Vygotsky — Zone de développe",
+        "Double caméra CAM A/B"
+      ],
+      "barber_clean": true,
+      "sources_ok": true,
+      "structure_ok": true,
+      "two_cameras": true,
+      "empathie_ok": true,
+      "micro_action_ok": true
+    },
+    {
+      "id": "cine_2026-04-05_05",
+      "titre": "Le corps qui parle",
+      "type": "TOFU",
+      "duree": "49s",
+      "score": 10.0,
+      "scores_detail": {
+        "barber_clean": 1.0,
+        "sources_psycho": 1.0,
+        "structure_vnpgl": 1.0,
+        "two_cameras": 1.0,
+        "empathie_visceral": 1.0,
+        "micro_action_cognitive": 1.0,
+        "duration": 1.0
+      },
+      "issues": [],
+      "strengths": [
+        "Zéro barber",
+        "Sources: Huberman — Cortisol chronique (2021); Porges — Vagal Tone (2",
+        "Double caméra CAM A/B"
+      ],
+      "barber_clean": true,
+      "sources_ok": true,
+      "structure_ok": true,
+      "two_cameras": true,
+      "empathie_ok": true,
+      "micro_action_ok": true
+    },
+    {
+      "id": "cine_2026-04-05_06",
+      "titre": "Le miroir du dimanche",
+      "type": "MOFU",
+      "duree": "50s",
+      "score": 9.1,
+      "scores_detail": {
+        "barber_clean": 1.0,
+        "sources_psycho": 1.0,
+        "structure_vnpgl": 1.0,
+        "two_cameras": 1.0,
+        "empathie_visceral": 0.4,
+        "micro_action_cognitive": 1.0,
+        "duration": 1.0
+      },
+      "issues": [
+        "Empathie viscérale faible en plan 1"
+      ],
+      "strengths": [
+        "Zéro barber",
+        "Sources: Kahneman — Soi expérientiel vs Soi mémoriel (2010)",
+        "Double caméra CAM A/B"
+      ],
+      "barber_clean": true,
+      "sources_ok": true,
+      "structure_ok": true,
+      "two_cameras": true,
+      "empathie_ok": false,
+      "micro_action_ok": true
+    },
+    {
+      "id": "cine_2026-04-05_07",
+      "titre": "La solitude de l'ambition",
+      "type": "TOFU",
+      "duree": "48s",
+      "score": 10.0,
+      "scores_detail": {
+        "barber_clean": 1.0,
+        "sources_psycho": 1.0,
+        "structure_vnpgl": 1.0,
+        "two_cameras": 1.0,
+        "empathie_visceral": 1.0,
+        "micro_action_cognitive": 1.0,
+        "duration": 1.0
+      },
+      "issues": [],
+      "strengths": [
+        "Zéro barber",
+        "Sources: Maslow — Hiérarchie des besoins (1943); Rogers — Congruence ",
+        "Double caméra CAM A/B"
+      ],
+      "barber_clean": true,
+      "sources_ok": true,
+      "structure_ok": true,
+      "two_cameras": true,
+      "empathie_ok": true,
+      "micro_action_ok": true
+    },
+    {
+      "id": "cine_2026-04-05_08",
+      "titre": "Le calcul mental",
+      "type": "MOFU",
+      "duree": "51s",
+      "score": 10.0,
+      "scores_detail": {
+        "barber_clean": 1.0,
+        "sources_psycho": 1.0,
+        "structure_vnpgl": 1.0,
+        "two_cameras": 1.0,
+        "empathie_visceral": 1.0,
+        "micro_action_cognitive": 1.0,
+        "duration": 1.0
+      },
+      "issues": [],
+      "strengths": [
+        "Zéro barber",
+        "Sources: Ariely — Illusions de la valeur (2008); Kahneman — Système 1",
+        "Double caméra CAM A/B"
+      ],
+      "barber_clean": true,
+      "sources_ok": true,
+      "structure_ok": true,
+      "two_cameras": true,
+      "empathie_ok": true,
+      "micro_action_ok": true
+    },
+    {
+      "id": "cine_2026-04-05_09",
+      "titre": "Le mode automatique",
+      "type": "TOFU",
+      "duree": "49s",
+      "score": 9.1,
+      "scores_detail": {
+        "barber_clean": 1.0,
+        "sources_psycho": 1.0,
+        "structure_vnpgl": 1.0,
+        "two_cameras": 1.0,
+        "empathie_visceral": 0.4,
+        "micro_action_cognitive": 1.0,
+        "duration": 1.0
+      },
+      "issues": [
+        "Empathie viscérale faible en plan 1"
+      ],
+      "strengths": [
+        "Zéro barber",
+        "Sources: Gloria Mark — Automatisme cognitif (2018); Jullien — Traité ",
+        "Double caméra CAM A/B"
+      ],
+      "barber_clean": true,
+      "sources_ok": true,
+      "structure_ok": true,
+      "two_cameras": true,
+      "empathie_ok": false,
+      "micro_action_ok": true
+    },
+    {
+      "id": "cine_2026-04-05_10",
+      "titre": "La permission",
+      "type": "MOFU",
+      "duree": "52s",
+      "score": 10.0,
+      "scores_detail": {
+        "barber_clean": 1.0,
+        "sources_psycho": 1.0,
+        "structure_vnpgl": 1.0,
+        "two_cameras": 1.0,
+        "empathie_visceral": 1.0,
+        "micro_action_cognitive": 1.0,
+        "duration": 1.0
+      },
+      "issues": [],
+      "strengths": [
+        "Zéro barber",
+        "Sources: Dweck — Growth mindset (2006); Bandura — Self-agency (1995)",
+        "Double caméra CAM A/B"
+      ],
+      "barber_clean": true,
+      "sources_ok": true,
+      "structure_ok": true,
+      "two_cameras": true,
+      "empathie_ok": true,
+      "micro_action_ok": true
+    },
+    {
+      "id": "cine_2026-04-05_11",
+      "titre": "La chaîne qui s'arrête jamais",
+      "type": "TOFU",
+      "duree": "48s",
+      "score": 10.0,
+      "scores_detail": {
+        "barber_clean": 1.0,
+        "sources_psycho": 1.0,
+        "structure_vnpgl": 1.0,
+        "two_cameras": 1.0,
+        "empathie_visceral": 1.0,
+        "micro_action_cognitive": 1.0,
+        "duration": 1.0
+      },
+      "issues": [],
+      "strengths": [
+        "Zéro barber",
+        "Sources: Seligman — Résignation apprise (1972); Huberman — Cortisol c",
+        "Double caméra CAM A/B"
+      ],
+      "barber_clean": true,
+      "sources_ok": true,
+      "structure_ok": true,
+      "two_cameras": true,
+      "empathie_ok": true,
+      "micro_action_ok": true
+    }
+  ]
+}
