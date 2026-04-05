@@ -955,32 +955,22 @@
     <script>
         // UTILITIES
         function escHtml(text) {
-            const map = {
-                '&': '&amp;',
-                '<': '&lt;',
-                '>': '&gt;',
-                '"': '&quot;',
-                "'": '&#039;'
-            };
+            if (text == null) return '';
+            const map = {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'};
             return String(text).replace(/[&<>"']/g, m => map[m]);
         }
 
         function getPlatformBadge(platform) {
             const badges = {
-                'reddit': 'badge-reddit',
-                'youtube': 'badge-youtube',
-                'twitter': 'badge-twitter',
-                'tiktok': 'badge-tiktok',
-                'instagram': 'badge-instagram',
-                'linkedin': 'badge-linkedin',
-                'threads': 'badge-threads',
-                'facebook': 'badge-facebook'
+                'reddit':'badge-reddit','youtube':'badge-youtube','twitter':'badge-twitter',
+                'tiktok':'badge-tiktok','instagram':'badge-instagram','linkedin':'badge-linkedin',
+                'threads':'badge-threads','facebook':'badge-facebook','x':'badge-twitter'
             };
             return badges[platform?.toLowerCase()] || 'badge-platform';
         }
 
         function getScoreBadgeClass(score) {
-            if (score >= 10) return 'score-10';
+            if (score >= 9) return 'score-10';
             if (score >= 7) return 'score-7-9';
             return 'score-low';
         }
@@ -988,41 +978,37 @@
         // DATA LOADING
         let veilleMessages = [];
         let veilleVideos = [];
-        let socialTracking = [];
+        let socialTracking = {};
         let insights = {};
         let scriptsCinematiques = [];
-        let emotions = {};
+        let emotionsData = {};
         let nicheKeywords = {};
+        let messagesNiche = [];
+        let videosNiche = [];
 
         async function loadData() {
             try {
-                veilleMessages = await fetch('data/veille-messages.json')
-                    .then(r => r.json())
-                    .catch(() => []);
+                const fetches = await Promise.allSettled([
+                    fetch('data/veille-messages.json').then(r => r.json()),
+                    fetch('data/veille-videos.json').then(r => r.json()),
+                    fetch('data/social-tracking.json').then(r => r.json()),
+                    fetch('data/insights.json').then(r => r.json()),
+                    fetch('data/scripts-cinematiques.json').then(r => r.json()),
+                    fetch('data/emociones.json').then(r => r.json()),
+                    fetch('data/niche-keywords.json').then(r => r.json()),
+                    fetch('data/messages-niche.json').then(r => r.json()),
+                    fetch('data/videos-niche.json').then(r => r.json())
+                ]);
 
-                veilleVideos = await fetch('data/veille-videos.json')
-                    .then(r => r.json())
-                    .catch(() => []);
-
-                socialTracking = await fetch('data/social-tracking.json')
-                    .then(r => r.json())
-                    .catch(() => []);
-
-                insights = await fetch('data/insights.json')
-                    .then(r => r.json())
-                    .catch(() => ({}));
-
-                scriptsCinematiques = await fetch('data/scripts-cinematiques.json')
-                    .then(r => r.json())
-                    .catch(() => []);
-
-                emotions = await fetch('data/emociones.json')
-                    .then(r => r.json())
-                    .catch(() => ({ emotions: {}, keyword_fluo: {} }));
-
-                nicheKeywords = await fetch('data/niche-keywords.json')
-                    .then(r => r.json())
-                    .catch(() => ({ avatar: '', blocs: [] }));
+                veilleMessages = fetches[0].status === 'fulfilled' ? fetches[0].value : [];
+                veilleVideos = fetches[1].status === 'fulfilled' ? fetches[1].value : [];
+                socialTracking = fetches[2].status === 'fulfilled' ? fetches[2].value : {};
+                insights = fetches[3].status === 'fulfilled' ? fetches[3].value : {};
+                scriptsCinematiques = fetches[4].status === 'fulfilled' ? fetches[4].value : [];
+                emotionsData = fetches[5].status === 'fulfilled' ? fetches[5].value : {};
+                nicheKeywords = fetches[6].status === 'fulfilled' ? fetches[6].value : {};
+                messagesNiche = fetches[7].status === 'fulfilled' ? fetches[7].value : [];
+                videosNiche = fetches[8].status === 'fulfilled' ? fetches[8].value : [];
 
                 renderAllTabs();
             } catch (e) {
@@ -1030,120 +1016,186 @@
             }
         }
 
-        // RENDER FUNCTIONS
-        function renderVueEnsemble() {
-            // KPI
-            document.getElementById('kpiMessages').textContent = veilleMessages.length || 0;
-            document.getElementById('kpiVideos').textContent = veilleVideos.length || 0;
+        // ─── HELPERS FOR SOCIAL TRACKING ───
+        function getProfiles() {
+            return socialTracking.profiles || {};
+        }
 
+        function getLatestDateEntry() {
+            const dates = Object.keys(socialTracking).filter(k => /^\d{4}-\d{2}-\d{2}$/.test(k)).sort();
+            if (dates.length === 0) return null;
+            return { date: dates[dates.length - 1], data: socialTracking[dates[dates.length - 1]] };
+        }
+
+        function extractFollowers(profile) {
+            if (!profile) return 0;
+            if (profile.followers) return profile.followers;
+            if (profile.subscribers) return profile.subscribers;
+            const snap = profile.public_snapshot;
+            if (snap) return snap.followers || snap.subscribers || 0;
+            return 0;
+        }
+
+        // ─── RENDER: VUE D'ENSEMBLE ───
+        function renderVueEnsemble() {
+            // KPI Messages & Videos
+            document.getElementById('kpiMessages').textContent = veilleMessages.length + messagesNiche.length;
+            document.getElementById('kpiVideos').textContent = veilleVideos.length + videosNiche.length;
+
+            // KPI Followers — sum from profiles
+            const profiles = getProfiles();
             let totalFollowers = 0;
-            if (Array.isArray(socialTracking) && socialTracking.length > 0) {
-                const latest = socialTracking[socialTracking.length - 1];
-                if (latest.accounts) {
-                    totalFollowers = latest.accounts.reduce((sum, acc) => sum + (acc.followers || 0), 0);
-                }
+            for (const [key, prof] of Object.entries(profiles)) {
+                totalFollowers += extractFollowers(prof);
             }
             document.getElementById('kpiFollowers').textContent = totalFollowers.toLocaleString();
+
+            // KPI Scripts
             document.getElementById('kpiScripts').textContent = scriptsCinematiques.length || 0;
 
-            // Emotion Chart
-            const emotionDistribution = insights.market_pulse?.top_emotions_today || {};
+            // Emotion Chart — from insights.emotion_distribution OR emotionsData.emotions
+            let emotionDist = {};
+            if (insights.emotion_distribution && Object.keys(insights.emotion_distribution).length > 0) {
+                emotionDist = insights.emotion_distribution;
+            } else if (Array.isArray(emotionsData.emotions)) {
+                emotionsData.emotions.forEach(e => { emotionDist[e.emotion] = e.count; });
+            }
             let emotionHtml = '';
-            for (const [emotion, count] of Object.entries(emotionDistribution).slice(0, 8)) {
-                const maxCount = Math.max(...Object.values(emotionDistribution));
-                const percentage = (count / maxCount) * 100;
-                emotionHtml += `
-                    <div class="chart-bar">
-                        <div class="chart-bar-label">${escHtml(emotion)}</div>
-                        <div class="chart-bar-bg">
-                            <div class="chart-bar-fill" style="width: ${percentage}%"></div>
-                        </div>
-                        <div class="chart-bar-value">${count}</div>
-                    </div>
-                `;
+            const emotionEntries = Object.entries(emotionDist).sort((a,b) => b[1] - a[1]).slice(0, 8);
+            if (emotionEntries.length > 0) {
+                const maxCount = Math.max(...emotionEntries.map(e => e[1]));
+                for (const [emotion, count] of emotionEntries) {
+                    const pct = maxCount > 0 ? (count / maxCount) * 100 : 0;
+                    emotionHtml += `
+                        <div class="chart-bar">
+                            <div class="chart-bar-label">${escHtml(emotion)}</div>
+                            <div class="chart-bar-bg"><div class="chart-bar-fill" style="width:${pct}%"></div></div>
+                            <div class="chart-bar-value">${count}</div>
+                        </div>`;
+                }
             }
             document.getElementById('emotionChart').innerHTML = emotionHtml || '<div class="text-muted">Aucune donnée</div>';
 
-            // Top JTBD
-            const topJtbd = insights.market_pulse?.top_jtbd_today || [];
-            document.getElementById('topJtbd').innerHTML = topJtbd.slice(0, 10).map(j =>
-                `<span class="keyword-chip">${escHtml(j)}</span>`
+            // Top JTBD — from veille-messages categories
+            const catCounts = {};
+            veilleMessages.forEach(m => { if(m.category) catCounts[m.category] = (catCounts[m.category]||0) + 1; });
+            const topCats = Object.entries(catCounts).sort((a,b) => b[1]-a[1]).slice(0,10);
+            document.getElementById('topJtbd').innerHTML = topCats.map(([cat]) =>
+                `<span class="keyword-chip">${escHtml(cat)}</span>`
             ).join('') || '<div class="text-muted">Aucune donnée</div>';
 
-            // Top Keywords
-            const topKeywords = insights.market_pulse?.hot_keywords || [];
-            document.getElementById('topKeywords').innerHTML = topKeywords.slice(0, 15).map(k =>
+            // Top Keywords — from insights.hooks_viraux_extraits categories + key_trends
+            const kwSet = new Set();
+            (insights.key_trends_2026 || []).forEach(t => kwSet.add(t.trend));
+            (insights.hooks_viraux_extraits || []).forEach(h => kwSet.add(h.categorie));
+            document.getElementById('topKeywords').innerHTML = [...kwSet].slice(0,15).map(k =>
                 `<span class="keyword-chip">${escHtml(k)}</span>`
             ).join('') || '<div class="text-muted">Aucune donnée</div>';
 
-            // Latest Messages
+            // Latest Messages — use real fields: title, summary, platform, category
             const latest5 = veilleMessages.slice(-5).reverse();
             document.getElementById('latestMessages').innerHTML = latest5.map(msg => `
                 <div class="message-card">
                     <div class="message-header">
                         <span class="badge badge-platform ${getPlatformBadge(msg.platform)}">${escHtml(msg.platform || '')}</span>
-                        <span class="message-score badge ${getScoreBadgeClass(msg.relevance_score || 0)}">${msg.relevance_score || 0}/10</span>
+                        <span class="badge badge-type">${escHtml(msg.category || '')}</span>
                     </div>
-                    <div class="message-author">${escHtml(msg.author || 'Anonyme')}</div>
-                    <div class="message-text">${escHtml(msg.translation_fr || msg.original_text || '')}</div>
+                    <div class="message-author">${escHtml(msg.title || '')}</div>
+                    <div class="message-text">${escHtml(msg.summary || '')}</div>
                     <div class="message-meta">
-                        ${msg.emotion ? `<span class="emotion-chip">${escHtml(msg.emotion)}</span>` : ''}
-                        ${msg.jtbd_category ? `<span class="emotion-chip">${escHtml(msg.jtbd_category)}</span>` : ''}
+                        ${msg.cta ? `<span class="emotion-chip">💡 ${escHtml(msg.cta.substring(0, 60))}</span>` : ''}
+                        ${msg.date ? `<span class="text-muted">📅 ${escHtml(msg.date)}</span>` : ''}
                     </div>
                 </div>
             `).join('') || '<div class="text-muted">Aucun message</div>';
 
-            // Recommendations
-            const recs = insights.recommendations || [];
-            document.getElementById('recommendations').innerHTML = recs.slice(0, 5).map(rec => `
+            // Recommendations — from insights.recommandations_jour
+            const recs = insights.recommandations_jour || [];
+            document.getElementById('recommendations').innerHTML = recs.map(rec => `
                 <div class="rec-card">
-                    <div class="rec-title">${escHtml(rec.title || 'Recommandation')}</div>
-                    <div class="rec-content">${escHtml(rec.content || '')}</div>
+                    <div class="rec-title">P${rec.priorite || '?'} — ${escHtml(rec.action || '')}</div>
+                    <div class="rec-content">${escHtml(rec.raison || '')}</div>
+                    ${rec.exemple ? `<div class="rec-content mt-1" style="color:#14f195;font-style:italic;">"${escHtml(rec.exemple.substring(0,120))}"</div>` : ''}
                 </div>
             `).join('') || '<div class="text-muted">Aucune recommandation</div>';
         }
 
+        // ─── RENDER: MES COMPTES ───
         function renderMesComptes() {
-            if (!Array.isArray(socialTracking) || socialTracking.length === 0) {
+            const profiles = getProfiles();
+            const profileEntries = Object.entries(profiles);
+
+            if (profileEntries.length === 0) {
                 document.getElementById('accountsGrid').innerHTML = '<div class="text-muted">Aucune donnée de suivi</div>';
                 return;
             }
 
-            const latestTracking = socialTracking[socialTracking.length - 1];
-            const accounts = latestTracking.accounts || [];
+            // Date filter from available date keys
+            const dates = Object.keys(socialTracking).filter(k => /^\d{4}-\d{2}-\d{2}$/.test(k)).sort().reverse();
+            document.getElementById('dateFilter').innerHTML = dates.slice(0,7).map((d, i) =>
+                `<button class="filter-chip ${i===0?'active':''}" data-date="${d}">${d}</button>`
+            ).join('');
 
-            document.getElementById('accountsGrid').innerHTML = accounts.map(acc => `
-                <div class="account-card">
-                    <div class="account-header">
-                        <span class="badge badge-platform ${getPlatformBadge(acc.platform)}">${escHtml(acc.platform || '')}</span>
-                    </div>
-                    <div class="account-handle">${escHtml(acc.handle || '')}</div>
-                    <div class="account-stats">
-                        <div class="stat-item">
-                            <div class="stat-label">Followers</div>
-                            <div class="stat-value">${(acc.followers || 0).toLocaleString()}</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-label">Following</div>
-                            <div class="stat-value">${(acc.following || 0).toLocaleString()}</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-label">Posts</div>
-                            <div class="stat-value">${acc.posts || 0}</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-label">Engagement</div>
-                            <div class="stat-value">${(acc.engagement_rate || 0).toFixed(1)}%</div>
-                        </div>
-                    </div>
-                </div>
-            `).join('');
+            document.querySelectorAll('#dateFilter .filter-chip').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('#dateFilter .filter-chip').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    renderAccountCards(btn.dataset.date);
+                });
+            });
+
+            renderAccountCards(dates[0] || null);
         }
 
-        function renderContenu() {
-            const container = document.getElementById('contenuGrid');
-            const filterButtons = document.querySelectorAll('#contenu .filter-chip');
+        function renderAccountCards(selectedDate) {
+            const profiles = getProfiles();
+            const dateEntry = selectedDate ? socialTracking[selectedDate] : null;
 
+            let html = '';
+            for (const [key, prof] of Object.entries(profiles)) {
+                const platform = prof.platform || key.split('_')[0];
+                const handle = prof.handle || key;
+                const followers = extractFollowers(prof);
+                const snap = prof.public_snapshot || {};
+                const likes = snap.likes || 0;
+                const status = prof.status || prof.status_note || 'actif';
+
+                // Try to get day-specific data
+                let dayData = null;
+                if (dateEntry && dateEntry.platforms) {
+                    dayData = dateEntry.platforms[key] || dateEntry.platforms[platform.toLowerCase()];
+                }
+
+                html += `
+                    <div class="account-card">
+                        <div class="account-header">
+                            <span class="badge badge-platform ${getPlatformBadge(platform)}">${escHtml(platform)}</span>
+                            <span class="text-muted" style="font-size:11px;">${escHtml(status)}</span>
+                        </div>
+                        <div class="account-handle">${escHtml(handle)}</div>
+                        <div class="account-stats">
+                            <div class="stat-item">
+                                <div class="stat-label">Followers</div>
+                                <div class="stat-value">${followers.toLocaleString()}</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Likes</div>
+                                <div class="stat-value">${likes.toLocaleString()}</div>
+                            </div>
+                            ${prof.subscribers ? `<div class="stat-item"><div class="stat-label">Abonnés YT</div><div class="stat-value">${prof.subscribers}</div></div>` : ''}
+                            ${prof.videos_total ? `<div class="stat-item"><div class="stat-label">Vidéos</div><div class="stat-value">${prof.videos_total}</div></div>` : ''}
+                            ${prof.posts ? `<div class="stat-item"><div class="stat-label">Posts</div><div class="stat-value">${prof.posts}</div></div>` : ''}
+                            ${prof.following ? `<div class="stat-item"><div class="stat-label">Following</div><div class="stat-value">${prof.following}</div></div>` : ''}
+                        </div>
+                        ${dayData ? `<div class="text-muted mt-1" style="font-size:11px;">Données jour: ${escHtml(JSON.stringify(dayData).substring(0,80))}…</div>` : ''}
+                    </div>`;
+            }
+            document.getElementById('accountsGrid').innerHTML = html || '<div class="text-muted">Aucun compte</div>';
+        }
+
+        // ─── RENDER: CONTENU ───
+        function renderContenu() {
+            const filterButtons = document.querySelectorAll('#contenu .filter-chip');
             filterButtons.forEach(btn => {
                 btn.addEventListener('click', () => {
                     filterButtons.forEach(b => b.classList.remove('active'));
@@ -1151,7 +1203,6 @@
                     renderContenuScripts(btn.dataset.filter);
                 });
             });
-
             renderContenuScripts('all');
         }
 
@@ -1160,44 +1211,54 @@
             if (typeFilter !== 'all') {
                 scripts = scripts.filter(s => s.type?.toLowerCase() === typeFilter.toLowerCase());
             }
-
-            document.getElementById('contenuGrid').innerHTML = scripts.map(script => `
-                <div class="script-card" data-id="${escHtml(script.id || '')}">
-                    <div class="script-title">${escHtml(script.title || 'Sans titre')}</div>
-                    <span class="badge badge-type ${(script.type || '').toLowerCase()}">${escHtml(script.type || '')}</span>
-                    <div class="script-hook">"${escHtml(script.hook || '')}"</div>
-                    <div class="script-meta">
-                        ${script.reference_psycho ? `<span class="text-muted">📚 ${escHtml(script.reference_psycho)}</span>` : ''}
-                    </div>
-                    <div class="script-meta" style="margin-top: 0.75rem;">
-                        ${script.micro_action ? `<span class="emotion-chip">⚡ ${escHtml(script.micro_action)}</span>` : ''}
-                    </div>
-                </div>
-            `).join('') || '<div class="text-muted">Aucun script</div>';
+            document.getElementById('contenuGrid').innerHTML = scripts.map(script => {
+                const title = script.titre || script.title || 'Sans titre';
+                const hook = Array.isArray(script.plans) && script.plans[0] ? script.plans[0].voiceover || '' : '';
+                return `
+                    <div class="script-card" data-id="${escHtml(script.id || '')}">
+                        <div class="script-title">${escHtml(title)}</div>
+                        <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
+                            <span class="badge badge-type ${(script.type || '').toLowerCase()}">${escHtml(script.type || '')}</span>
+                            ${script.duree ? `<span class="badge" style="background:rgba(153,69,255,0.2);color:#9945ff;">⏱ ${escHtml(script.duree)}</span>` : ''}
+                            ${script.compte ? `<span class="badge" style="background:rgba(20,241,149,0.1);color:#14f195;">📱 ${escHtml(script.compte)}</span>` : ''}
+                        </div>
+                        ${hook ? `<div class="script-hook">"${escHtml(hook)}"</div>` : ''}
+                        <div class="script-meta">
+                            ${script.sources ? `<span class="text-muted">📚 ${escHtml(script.sources)}</span>` : ''}
+                        </div>
+                        ${script.angle ? `<div class="script-meta"><span class="text-muted">🎯 ${escHtml(script.angle)}</span></div>` : ''}
+                    </div>`;
+            }).join('') || '<div class="text-muted">Aucun script</div>';
         }
 
+        // ─── RENDER: VEILLE MARCHE ───
         function renderVeilleMarche() {
+            // Combine veille-messages + veille-videos
+            const allItems = [
+                ...veilleMessages.map(m => ({...m, _type: 'message'})),
+                ...veilleVideos.map(v => ({...v, _type: 'video'}))
+            ];
+
             // Platform filters
-            const platforms = ['TOUS', 'REDDIT', 'YOUTUBE', 'TWITTER', 'TIKTOK', 'INSTAGRAM', 'LINKEDIN', 'FACEBOOK', 'THREADS'];
-            const filterHtml = platforms.map(p =>
+            const platformSet = new Set(['TOUS']);
+            allItems.forEach(m => { if(m.platform) platformSet.add(m.platform.toUpperCase()); });
+            document.getElementById('platformFilters').innerHTML = [...platformSet].map(p =>
                 `<button class="filter-chip ${p === 'TOUS' ? 'active' : ''}" data-platform="${p}">${p}</button>`
             ).join('');
-            document.getElementById('platformFilters').innerHTML = filterHtml;
 
             const filterButtons = document.querySelectorAll('#veille-marche .filter-chip');
             const searchInput = document.getElementById('veilleSearch');
 
             function renderMessages(platformFilter = 'TOUS', searchTerm = '') {
-                let filtered = veilleMessages;
-
+                let filtered = allItems;
                 if (platformFilter !== 'TOUS') {
                     filtered = filtered.filter(m => m.platform?.toUpperCase() === platformFilter);
                 }
-
                 if (searchTerm) {
+                    const q = searchTerm.toLowerCase();
                     filtered = filtered.filter(m =>
-                        (m.original_text + m.translation_fr + m.author + m.emotion + m.jtbd_category)
-                            .toLowerCase().includes(searchTerm.toLowerCase())
+                        (m.title + m.summary + m.category + m.platform + (m.creator||''))
+                            .toLowerCase().includes(q)
                     );
                 }
 
@@ -1205,14 +1266,15 @@
                     <div class="message-card">
                         <div class="message-header">
                             <span class="badge badge-platform ${getPlatformBadge(msg.platform)}">${escHtml(msg.platform || '')}</span>
-                            <span class="message-score badge ${getScoreBadgeClass(msg.relevance_score || 0)}">${msg.relevance_score || 0}/10</span>
+                            <span class="badge badge-type">${escHtml(msg.category || '')}</span>
+                            ${msg._type === 'video' ? '<span class="badge" style="background:rgba(255,0,0,0.2);color:#ff5757;">🎬 Vidéo</span>' : ''}
                         </div>
-                        <div class="message-author">${escHtml(msg.author || 'Anonyme')}</div>
-                        <div class="message-text">${escHtml(msg.translation_fr || msg.original_text || '')}</div>
+                        <div class="message-author">${escHtml(msg.title || msg.creator || '')}</div>
+                        <div class="message-text">${escHtml(msg.summary || '')}</div>
                         <div class="message-meta">
-                            ${msg.emotion ? `<span class="emotion-chip">${escHtml(msg.emotion)}</span>` : ''}
-                            ${msg.jtbd_category ? `<span class="emotion-chip">${escHtml(msg.jtbd_category)}</span>` : ''}
-                            ${msg.insight ? `<span class="text-muted">💡 ${escHtml(msg.insight.substring(0, 30))}</span>` : ''}
+                            ${msg.cta ? `<span class="emotion-chip">💡 ${escHtml(msg.cta.substring(0, 60))}</span>` : ''}
+                            ${msg.creator ? `<span class="text-muted">👤 ${escHtml(msg.creator)}</span>` : ''}
+                            ${msg.url ? `<a href="${escHtml(msg.url)}" target="_blank" style="color:#9945ff;font-size:11px;">🔗 Source</a>` : ''}
                         </div>
                     </div>
                 `).join('') || '<div class="text-muted">Aucun message trouvé</div>';
@@ -1225,157 +1287,261 @@
                     renderMessages(btn.dataset.platform, searchInput.value);
                 });
             });
-
             searchInput.addEventListener('input', (e) => {
                 const activeBtn = document.querySelector('#veille-marche .filter-chip.active');
                 renderMessages(activeBtn?.dataset.platform || 'TOUS', e.target.value);
             });
-
             renderMessages();
         }
 
+        // ─── RENDER: EMOTIONS ───
         function renderEmotions() {
-            // Full emotion chart
-            const emotionDist = insights.market_pulse?.top_emotions_today || {};
+            // Full emotion chart — from emociones.json (array of {emotion, emoji, count, description, verbatims})
+            const emoArray = emotionsData.emotions || [];
             let chartHtml = '';
-            for (const [emotion, count] of Object.entries(emotionDist)) {
-                const maxCount = Math.max(...Object.values(emotionDist));
-                const percentage = (count / maxCount) * 100;
-                chartHtml += `
-                    <div class="chart-bar">
-                        <div class="chart-bar-label">${escHtml(emotion)}</div>
-                        <div class="chart-bar-bg">
-                            <div class="chart-bar-fill" style="width: ${percentage}%"></div>
-                        </div>
-                        <div class="chart-bar-value">${count}</div>
-                    </div>
-                `;
+            if (emoArray.length > 0) {
+                const maxCount = Math.max(...emoArray.map(e => e.count || 0));
+                emoArray.sort((a,b) => (b.count||0) - (a.count||0));
+                for (const emo of emoArray) {
+                    const pct = maxCount > 0 ? ((emo.count||0) / maxCount) * 100 : 0;
+                    chartHtml += `
+                        <div class="chart-bar">
+                            <div class="chart-bar-label">${escHtml(emo.emoji||'')} ${escHtml(emo.emotion||'')}</div>
+                            <div class="chart-bar-bg"><div class="chart-bar-fill" style="width:${pct}%"></div></div>
+                            <div class="chart-bar-value">${emo.count||0}</div>
+                        </div>`;
+                }
+            } else {
+                // Fallback to insights.emotion_distribution
+                const dist = insights.emotion_distribution || {};
+                const entries = Object.entries(dist).sort((a,b) => b[1]-a[1]);
+                if (entries.length > 0) {
+                    const maxC = Math.max(...entries.map(e => e[1]));
+                    for (const [em, ct] of entries) {
+                        const pct = maxC > 0 ? (ct/maxC)*100 : 0;
+                        chartHtml += `
+                            <div class="chart-bar">
+                                <div class="chart-bar-label">${escHtml(em)}</div>
+                                <div class="chart-bar-bg"><div class="chart-bar-fill" style="width:${pct}%"></div></div>
+                                <div class="chart-bar-value">${ct}</div>
+                            </div>`;
+                    }
+                }
             }
             document.getElementById('fullEmotionChart').innerHTML = chartHtml || '<div class="text-muted">Aucune donnée</div>';
 
-            // High Impact
-            const highImpact = emotions.keyword_fluo?.high_impact || [];
-            document.getElementById('highImpactKeywords').innerHTML = highImpact.map(k =>
-                `<span class="keyword-chip">${escHtml(k)}</span>`
+            // High Impact Keywords — extract from emotionsData.emotions verbatims (first words)
+            const allVerbatims = [];
+            emoArray.forEach(e => { (e.verbatims||[]).forEach(v => allVerbatims.push(v)); });
+            document.getElementById('highImpactKeywords').innerHTML = allVerbatims.slice(0,12).map(v =>
+                `<span class="keyword-chip">${escHtml(v.substring(0,50))}</span>`
             ).join('') || '<div class="text-muted">Aucune donnée</div>';
 
-            // Emotional Triggers
-            const triggers = emotions.keyword_fluo?.emotional_triggers || [];
-            document.getElementById('emotionalTriggers').innerHTML = triggers.map(t =>
-                `<span class="keyword-chip">${escHtml(t)}</span>`
+            // Emotional Triggers — from emotion_mapping_doctrine keys
+            const mapping = emotionsData.emotion_mapping_doctrine || {};
+            document.getElementById('emotionalTriggers').innerHTML = Object.entries(mapping).slice(0,10).map(([emo, info]) =>
+                `<span class="keyword-chip" title="${escHtml(JSON.stringify(info))}">${escHtml(emo)}</span>`
             ).join('') || '<div class="text-muted">Aucune donnée</div>';
 
-            // Top Combos
-            const combos = emotions.keyword_fluo?.top_combos || [];
-            document.getElementById('topCombos').innerHTML = combos.map(c =>
-                `<span class="keyword-chip">${escHtml(c)}</span>`
+            // Top Combos — from insights.hooks_viraux_extraits
+            const hooks = insights.hooks_viraux_extraits || [];
+            document.getElementById('topCombos').innerHTML = hooks.slice(0,8).map(h =>
+                `<div class="rec-card mb-1">
+                    <div class="rec-title">${escHtml(h.categorie || '')} — ${escHtml(h.levier || '')}</div>
+                    <div class="rec-content" style="font-style:italic;">"${escHtml(h.hook_original || '')}"</div>
+                    <div class="rec-content mt-1 text-success">${escHtml(h.adaptation_djibril || '')}</div>
+                    <div class="text-muted mt-1" style="font-size:11px;">Source: ${escHtml(h.source||'')} — Score: ${h.pertinence_score||'?'}/10</div>
+                </div>`
             ).join('') || '<div class="text-muted">Aucune donnée</div>';
 
-            // Market Sentiment
-            document.getElementById('marketSentiment').textContent = insights.market_pulse?.market_sentiment || 'Données non disponibles';
+            // Market Sentiment — compute from emotion distribution
+            const totalSignals = emotionsData.total_signals || 0;
+            const sentimentText = totalSignals > 0
+                ? `${totalSignals} signaux analysés. Top émotion : ${emoArray[0]?.emotion || '?'} (${emoArray[0]?.count || 0}). Evolution : ${JSON.stringify(emotionsData.evolution_vs_precedent?.changements || 'N/A').substring(0,200)}`
+                : insights.emotion_distribution ? `Distribution basée sur ${Object.values(insights.emotion_distribution).reduce((a,b)=>a+b,0)} entrées analysées.` : 'Données non disponibles';
+            document.getElementById('marketSentiment').textContent = sentimentText;
         }
 
+        // ─── RENDER: SCRIPTS CINE ───
         function renderScriptsCine() {
-            const container = document.getElementById('scriptsCineGrid');
             const filterButtons = document.querySelectorAll('#scripts-cine .filter-chip');
-
             filterButtons.forEach(btn => {
                 btn.addEventListener('click', () => {
                     filterButtons.forEach(b => b.classList.remove('active'));
                     btn.classList.add('active');
-                    renderScriptsCineScripts(btn.dataset.filter);
+                    renderScriptsCineCards(btn.dataset.filter);
                 });
             });
-
-            renderScriptsCineScripts('all');
+            renderScriptsCineCards('all');
         }
 
-        function renderScriptsCineScripts(typeFilter) {
+        function renderScriptsCineCards(typeFilter) {
             let scripts = scriptsCinematiques || [];
             if (typeFilter !== 'all') {
                 scripts = scripts.filter(s => s.type?.toLowerCase() === typeFilter.toLowerCase());
             }
 
-            document.getElementById('scriptsCineGrid').innerHTML = scripts.map(script => `
-                <div class="script-card" onclick="this.classList.toggle('expanded')">
-                    <div class="script-title">${escHtml(script.title || 'Sans titre')}</div>
-                    <span class="badge badge-type ${(script.type || '').toLowerCase()}">${escHtml(script.type || '')}</span>
-                    <div class="script-hook">"${escHtml(script.hook || '')}"</div>
-                    <div class="script-meta">
-                        ${script.reference_psycho ? `<span class="text-muted">📚 ${escHtml(script.reference_psycho)}</span>` : ''}
-                        ${script.date ? `<span class="text-muted">📅 ${escHtml(script.date)}</span>` : ''}
-                    </div>
-                    <div class="script-plans">
-                        ${script.plan_1 ? `<div class="plan-item"><strong>Plan 1:</strong> ${escHtml(script.plan_1)}</div>` : ''}
-                        ${script.plan_2 ? `<div class="plan-item"><strong>Plan 2:</strong> ${escHtml(script.plan_2)}</div>` : ''}
-                        ${script.plan_3 ? `<div class="plan-item"><strong>Plan 3:</strong> ${escHtml(script.plan_3)}</div>` : ''}
-                        ${script.plan_4 ? `<div class="plan-item"><strong>Plan 4:</strong> ${escHtml(script.plan_4)}</div>` : ''}
-                        ${script.plan_5 ? `<div class="plan-item"><strong>Plan 5:</strong> ${escHtml(script.plan_5)}</div>` : ''}
-                    </div>
-                    <div class="script-meta" style="margin-top: 0.75rem;">
-                        ${script.micro_action ? `<span class="emotion-chip">⚡ ${escHtml(script.micro_action)}</span>` : ''}
-                        ${script.metaphore ? `<span class="text-muted">🎭 ${escHtml(script.metaphore)}</span>` : ''}
-                    </div>
-                </div>
-            `).join('') || '<div class="text-muted">Aucun script</div>';
+            document.getElementById('scriptsCineGrid').innerHTML = scripts.map(script => {
+                const title = script.titre || script.title || 'Sans titre';
+                const plans = Array.isArray(script.plans) ? script.plans : [];
+                const hook = plans[0] ? plans[0].voiceover || '' : '';
+
+                return `
+                    <div class="script-card" onclick="this.classList.toggle('expanded')">
+                        <div class="script-title">${escHtml(title)}</div>
+                        <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
+                            <span class="badge badge-type ${(script.type || '').toLowerCase()}">${escHtml(script.type || '')}</span>
+                            ${script.duree ? `<span class="badge" style="background:rgba(153,69,255,0.2);color:#9945ff;">⏱ ${escHtml(script.duree)}</span>` : ''}
+                            ${script.date ? `<span class="text-muted" style="font-size:11px;">📅 ${escHtml(script.date)}</span>` : ''}
+                        </div>
+                        ${hook ? `<div class="script-hook">"${escHtml(hook)}"</div>` : ''}
+                        <div class="script-meta">
+                            ${script.sources ? `<span class="text-muted">📚 ${escHtml(script.sources)}</span>` : ''}
+                            ${script.angle ? `<span class="text-muted">🎯 ${escHtml(script.angle)}</span>` : ''}
+                        </div>
+                        <div class="script-plans">
+                            ${plans.map((p, i) => `
+                                <div class="plan-item">
+                                    <strong>Plan ${i+1} [${escHtml(p.timing||'')}]:</strong>
+                                    <div style="color:#9945ff;font-size:10px;margin:2px 0;">${escHtml(p.visuel||'')}</div>
+                                    <div>${escHtml(p.voiceover||'')}</div>
+                                </div>
+                            `).join('')}
+                        </div>
+                        <div class="script-meta" style="margin-top:0.75rem;">
+                            ${script.musique ? `<span class="text-muted">🎵 ${escHtml(script.musique)}</span>` : ''}
+                            ${script.compte ? `<span class="emotion-chip">📱 ${escHtml(script.compte)}</span>` : ''}
+                        </div>
+                    </div>`;
+            }).join('') || '<div class="text-muted">Aucun script</div>';
         }
 
+        // ─── RENDER: NICHE RESEARCH ───
         function renderNicheResearch() {
             // Avatar Banner
             if (nicheKeywords.avatar) {
                 document.getElementById('avatarBanner').innerHTML = `
-                    <div class="avatar-title">Avatar: ${escHtml(nicheKeywords.avatar)}</div>
-                    <div class="avatar-description">Cible principale de la recherche niche</div>
+                    <div class="avatar-title">🎯 ${escHtml(nicheKeywords.avatar)}</div>
+                    <div class="avatar-description">Source: ${escHtml(nicheKeywords.source || '')} — Mis à jour: ${escHtml(nicheKeywords.last_updated || '')}</div>
                 `;
+            }
+
+            // Niche Messages + Videos counts
+            let nicheStatsHtml = '';
+            if (messagesNiche.length > 0 || videosNiche.length > 0) {
+                nicheStatsHtml = `
+                    <div class="kpi-grid" style="margin-bottom:2rem;">
+                        <div class="kpi-card"><div class="kpi-label">Messages Niche</div><div class="kpi-value">${messagesNiche.length}</div></div>
+                        <div class="kpi-card"><div class="kpi-label">Vidéos Niche</div><div class="kpi-value">${videosNiche.length}</div></div>
+                    </div>`;
             }
 
             // Blocs
             const blocs = nicheKeywords.blocs || [];
-            document.getElementById('nicheBlocsGrid').innerHTML = blocs.map(bloc => `
-                <div class="bloc-card">
-                    <div class="bloc-header">
-                        <div class="bloc-emoji">${escHtml(bloc.emoji || '📍')}</div>
-                        <div class="bloc-title">${escHtml(bloc.title || '')}</div>
-                    </div>
+            const blocsHtml = blocs.map(bloc => {
+                // audience_lives can be string or array
+                const audienceLives = Array.isArray(bloc.audience_lives)
+                    ? bloc.audience_lives.map(line => `<div>• ${escHtml(line)}</div>`).join('')
+                    : `<div style="font-size:13px;color:#c0c0c0;line-height:1.6;">${escHtml(bloc.audience_lives || '')}</div>`;
 
-                    <div class="bloc-section">
-                        <div class="bloc-label">Mots-Clés</div>
-                        <div class="bloc-keywords">
-                            ${(bloc.keywords || []).map(kw => `<span class="bloc-keyword">${escHtml(kw)}</span>`).join('')}
+                // data_points can be string or array
+                const dataPoints = Array.isArray(bloc.data_points)
+                    ? bloc.data_points.map(dp => `<div>📊 ${escHtml(dp)}</div>`).join('')
+                    : `<div>${escHtml(bloc.data_points || '')}</div>`;
+
+                return `
+                    <div class="bloc-card" style="border-left:4px solid ${bloc.color || '#9945ff'};">
+                        <div class="bloc-header">
+                            <div class="bloc-emoji">${bloc.emoji || '📍'}</div>
+                            <div class="bloc-title" style="color:${bloc.color || '#14f195'}">${escHtml(bloc.title || '')}</div>
                         </div>
-                    </div>
 
-                    <div class="bloc-section">
-                        <div class="bloc-label">Ce qu'ils vivent</div>
-                        <div style="font-size: 13px; color: #c0c0c0; line-height: 1.6;">
-                            ${(bloc.audience_lives || []).map(line => `<div>• ${escHtml(line)}</div>`).join('')}
-                        </div>
-                    </div>
-
-                    ${bloc.verbatims ? `
                         <div class="bloc-section">
-                            <div class="bloc-label">Verbatims</div>
-                            ${(bloc.verbatims || []).map(v => `<div class="bloc-verbatim">"${escHtml(v)}"</div>`).join('')}
+                            <div class="bloc-label">Mots-Clés Déclencheurs</div>
+                            <div class="bloc-keywords">
+                                ${(bloc.keywords || []).map(kw => `<span class="bloc-keyword">${escHtml(kw)}</span>`).join('')}
+                            </div>
                         </div>
-                    ` : ''}
 
-                    ${bloc.doctrine_connection ? `
                         <div class="bloc-section">
-                            <div class="bloc-label">Connexion Doctrine</div>
-                            <div class="bloc-doctrine">${escHtml(bloc.doctrine_connection)}</div>
+                            <div class="bloc-label">Ce qu'ils vivent</div>
+                            <div style="font-size:13px;color:#c0c0c0;line-height:1.6;">
+                                ${audienceLives}
+                            </div>
                         </div>
-                    ` : ''}
 
-                    ${bloc.data_points ? `
-                        <div class="bloc-section">
-                            <div class="bloc-label">Data Points</div>
-                            <div class="bloc-data-points">${escHtml(bloc.data_points)}</div>
-                        </div>
-                    ` : ''}
-                </div>
-            `).join('') || '<div class="text-muted">Aucun bloc de recherche</div>';
+                        ${(bloc.verbatims && bloc.verbatims.length > 0) ? `
+                            <div class="bloc-section">
+                                <div class="bloc-label">Verbatims Réels</div>
+                                ${bloc.verbatims.map(v => `<div class="bloc-verbatim">"${escHtml(v)}"</div>`).join('')}
+                            </div>
+                        ` : ''}
+
+                        ${bloc.doctrine_connection ? `
+                            <div class="bloc-section">
+                                <div class="bloc-label">Connexion Doctrine</div>
+                                <div class="bloc-doctrine">${escHtml(bloc.doctrine_connection)}</div>
+                            </div>
+                        ` : ''}
+
+                        ${bloc.data_points ? `
+                            <div class="bloc-section">
+                                <div class="bloc-label">Data Points</div>
+                                <div class="bloc-data-points">${dataPoints}</div>
+                            </div>
+                        ` : ''}
+                    </div>`;
+            }).join('');
+
+            // Niche videos section
+            let nicheVideosHtml = '';
+            if (videosNiche.length > 0) {
+                nicheVideosHtml = `
+                    <h2 class="section-title">Vidéos Niche Analysées</h2>
+                    <div class="cards-grid">
+                        ${videosNiche.map(v => `
+                            <div class="script-card">
+                                <div class="script-title">${escHtml(v.title || '')}</div>
+                                <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
+                                    <span class="badge badge-platform ${getPlatformBadge(v.platform)}">${escHtml(v.platform||'')}</span>
+                                    <span class="badge badge-type">${escHtml(v.category||'')}</span>
+                                    ${v.relevance ? `<span class="badge ${getScoreBadgeClass(v.relevance)}">${v.relevance}/10</span>` : ''}
+                                </div>
+                                ${v.hook ? `<div class="script-hook">"${escHtml(v.hook)}"</div>` : ''}
+                                <div class="text-muted" style="font-size:12px;">👤 ${escHtml(v.creator||'')} — ${escHtml(v.emotion||'')}</div>
+                            </div>
+                        `).join('')}
+                    </div>`;
+            }
+
+            // Niche messages section
+            let nicheMessagesHtml = '';
+            if (messagesNiche.length > 0) {
+                nicheMessagesHtml = `
+                    <h2 class="section-title">Messages Niche</h2>
+                    <div class="cards-grid">
+                        ${messagesNiche.map(m => `
+                            <div class="message-card">
+                                <div class="message-header">
+                                    <span class="badge badge-platform ${getPlatformBadge(m.platform)}">${escHtml(m.platform||'')}</span>
+                                    <span class="badge badge-type">${escHtml(m.category||'')}</span>
+                                    ${m.hook_potential ? `<span class="badge ${getScoreBadgeClass(m.hook_potential)}">Hook: ${m.hook_potential}/10</span>` : ''}
+                                </div>
+                                <div class="message-text">${escHtml(m.message||'')}</div>
+                                <div class="message-meta">
+                                    <span class="text-muted">${escHtml(m.source||'')}</span>
+                                    ${m.emotion ? `<span class="emotion-chip">${escHtml(m.emotion)}</span>` : ''}
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>`;
+            }
+
+            document.getElementById('nicheBlocsGrid').innerHTML = nicheStatsHtml + blocsHtml + nicheVideosHtml + nicheMessagesHtml
+                || '<div class="text-muted">Aucun bloc de recherche</div>';
         }
 
+        // ─── RENDER ALL ───
         function renderAllTabs() {
             renderVueEnsemble();
             renderMesComptes();
@@ -1390,12 +1556,8 @@
         document.querySelectorAll('.tab-btn').forEach(btn => {
             btn.addEventListener('click', () => {
                 const tabName = btn.dataset.tab;
-
-                // Update buttons
                 document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
-
-                // Update content
                 document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
                 document.getElementById(tabName).classList.add('active');
             });
