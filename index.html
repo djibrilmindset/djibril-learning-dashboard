@@ -862,20 +862,23 @@ function switchTab(tab) {
 }
 
 // ── LOAD DATA ──
+let emocionesData = {};
 async function loadAll() {
   try {
-    const [msgs, vids, social, insights, cineScripts] = await Promise.all([
+    const [msgs, vids, social, insights, cineScripts, emociones] = await Promise.all([
       fetch('data/veille-messages.json').then(r => r.json()),
       fetch('data/veille-videos.json').then(r => r.json()),
       fetch('data/social-tracking.json').then(r => r.json()),
       fetch('data/insights.json').then(r => r.json()),
-      fetch('data/scripts-cinematiques.json').then(r => r.json()).catch(() => [])
+      fetch('data/scripts-cinematiques.json').then(r => r.json()).catch(() => []),
+      fetch('data/emociones.json').then(r => r.json()).catch(() => ({}))
     ]);
     allMessages = msgs;
     allVideos = vids;
     socialData = social;
     insightsData = insights;
     allCineScripts = cineScripts;
+    emocionesData = emociones;
 
     // Update meta
     const lu = insights.last_updated ? new Date(insights.last_updated).toLocaleString('fr-FR') : 'N/A';
@@ -894,14 +897,32 @@ async function loadAll() {
 
 // ── DASHBOARD ──
 function renderDashboard() {
-  // Top emotions
-  const emotions = insightsData.market_pulse?.top_emotions_today || [];
+  // Top emotions — compatible with BOTH formats:
+  // Format A: insightsData.market_pulse.top_emotions_today (array of {emotion, count, trend, delta})
+  // Format B: insightsData.emotion_distribution (object {emotion: count})
+  // Format C: emocionesData.emotions (array)
+  let emotions = insightsData.market_pulse?.top_emotions_today || [];
+  if (!emotions.length && insightsData.emotion_distribution) {
+    const dist = insightsData.emotion_distribution;
+    emotions = Object.entries(dist)
+      .filter(([k, v]) => v > 0)
+      .sort((a, b) => b[1] - a[1])
+      .map(([k, v]) => ({ emotion: k, count: v, trend: 'stable', delta: 0 }));
+  }
+  if (!emotions.length && emocionesData.emotions) {
+    emotions = emocionesData.emotions.map(e => ({
+      emotion: e.name || e.emotion || e.label || 'N/A',
+      count: e.count || e.signals || e.total || 0,
+      trend: e.trend || 'stable',
+      delta: e.delta || 0
+    }));
+  }
   const maxCount = Math.max(...emotions.map(e => e.count), 1);
-  const colors = ['#ff6f61','#b066ff','#00fff7','#ffe066','#66ffb2','#1DA1F2'];
+  const colors = ['#ff6f61','#b066ff','#00fff7','#ffe066','#66ffb2','#1DA1F2','#14F195','#9945FF'];
   let eHtml = '';
-  emotions.forEach((e, i) => {
+  emotions.slice(0, 8).forEach((e, i) => {
     const pct = Math.round((e.count / maxCount) * 100);
-    const trend = e.trend === 'up' ? `<span class="trend-up">↑${e.delta}</span>` : `<span class="trend-stable">→</span>`;
+    const trend = e.trend === 'up' ? `<span class="trend-up">↑${e.delta || ''}</span>` : `<span class="trend-stable">→</span>`;
     eHtml += `<div class="emotion-bar-row">
       <div class="emotion-bar-label">${escHtml(e.emotion)} ${trend}</div>
       <div class="emotion-bar-track"><div class="emotion-bar-fill" style="width:${pct}%;background:${colors[i%colors.length]}"></div></div>
@@ -910,8 +931,20 @@ function renderDashboard() {
   });
   document.getElementById('dashEmotions').innerHTML = eHtml || '<p style="color:var(--muted)">—</p>';
 
-  // Top JTBD
-  const jtbds = insightsData.market_pulse?.top_jtbd_today || [];
+  // Top JTBD — extract from messages if market_pulse not available
+  let jtbds = insightsData.market_pulse?.top_jtbd_today || [];
+  if (!jtbds.length && allMessages.length) {
+    const jtbdMap = {};
+    allMessages.forEach(m => {
+      const cat = m.jtbd_category || m.category || m.theme;
+      if (cat) jtbdMap[cat] = (jtbdMap[cat] || 0) + 1;
+    });
+    const total = Object.values(jtbdMap).reduce((a, b) => a + b, 0);
+    jtbds = Object.entries(jtbdMap)
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 6)
+      .map(([k, v]) => ({ jtbd: k, pct: Math.round((v / total) * 100), trend: 'stable' }));
+  }
   const jtbdColors = ['#00fff7','#ff6f61','#b066ff','#ffe066','#66ffb2','#FF4500','#1DA1F2'];
   let jHtml = '';
   jtbds.forEach((j, i) => {
@@ -923,6 +956,20 @@ function renderDashboard() {
     </div>`;
   });
   document.getElementById('dashJtbd').innerHTML = jHtml || '<p style="color:var(--muted)">—</p>';
+
+  // Top keywords from emociones.json keyword_fluo
+  const kwFluo = emocionesData.keyword_fluo;
+  if (kwFluo && kwFluo.top_combos) {
+    let kwHtml = '<div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:8px">';
+    const allKw = [...(kwFluo.high_impact || []).slice(0, 8), ...(kwFluo.emotional_triggers || []).slice(0, 4)];
+    allKw.forEach(kw => {
+      const scoreColor = kw.score >= 9 ? '#14F195' : kw.score >= 8 ? '#00fff7' : kw.score >= 7 ? '#b066ff' : '#ffe066';
+      kwHtml += `<span style="background:${scoreColor}22;color:${scoreColor};border:1px solid ${scoreColor}44;padding:3px 8px;border-radius:6px;font-size:11px;font-weight:600">${escHtml(kw.keyword)} <span style="opacity:.6">×${kw.count}</span></span>`;
+    });
+    kwHtml += '</div>';
+    const kwContainer = document.getElementById('dashKeywords');
+    if (kwContainer) kwContainer.innerHTML = kwHtml;
+  }
 
   // Latest veille (top 5)
   const latest = [...allMessages].sort((a,b) => new Date(b.date)-new Date(a.date)).slice(0,5);
@@ -939,12 +986,15 @@ function renderDashboard() {
   vHtml += '</div>';
   document.getElementById('dashVeille').innerHTML = vHtml;
 
-  // Recommendations
-  const recos = insightsData.recommendations || [];
-  const icons = ['🚫','💰','🎯','📱','🔥','⚡'];
+  // Recommendations — from insights or key_trends
+  let recos = insightsData.recommendations || [];
+  if (!recos.length && insightsData.key_trends_2026) {
+    recos = insightsData.key_trends_2026.map(t => typeof t === 'string' ? t : (t.trend || t.description || JSON.stringify(t)));
+  }
+  const icons = ['🎯','🔥','⚡','💡','📊','🧠'];
   let rHtml = '';
   recos.forEach((r, i) => {
-    rHtml += `<li class="reco-item"><span class="reco-icon">${icons[i%icons.length]}</span><span class="reco-text">${escHtml(r)}</span></li>`;
+    rHtml += `<li class="reco-item"><span class="reco-icon">${icons[i%icons.length]}</span><span class="reco-text">${escHtml(typeof r === 'string' ? r : JSON.stringify(r))}</span></li>`;
   });
   document.getElementById('dashRecos').innerHTML = rHtml || '<li style="color:var(--muted);padding:10px">—</li>';
 }
