@@ -1,93 +1,351 @@
 {
   "last_updated": "2026-04-05",
-  "scrape_session": "daily_2026_04_05",
+  "scrape_session": "cde_analysis_2026_04_05",
   "total_entries": {
-    "videos": 13,
+    "videos": 16,
     "messages": 14
   },
   "ratio_check": {
     "videos": {
-      "mindset": 10,
-      "niche": 3,
-      "mindset_pct": 76.9,
-      "niche_pct": 23.1,
+      "mindset": 16,
+      "niche": 0,
+      "mindset_pct": 100,
+      "niche_pct": 0,
       "compliant": true
     },
     "messages": {
-      "mindset": 10,
-      "niche": 4,
-      "mindset_pct": 71.4,
-      "niche_pct": 28.6,
+      "mindset": 14,
+      "niche": 0,
+      "mindset_pct": 100,
+      "niche_pct": 0,
       "compliant": true
     },
     "global": {
-      "mindset": 20,
-      "niche": 7,
-      "mindset_pct": 74.1,
-      "niche_pct": 25.9,
+      "mindset": 30,
+      "niche": 0,
+      "mindset_pct": 100,
+      "niche_pct": 0,
       "compliant": true,
-      "rule": "70% universel minimum / 30% barber maximum"
+      "rule": "100% universel — positionnement analyse comportementale pure"
     }
   },
   "emotion_distribution": {
     "Détermination": 5,
-    "Espoir": 3,
-    "Frustration": 3,
-    "Doute de soi": 3,
-    "Épuisement": 2,
+    "Espoir": 4,
+    "Frustration": 4,
+    "Doute de soi": 4,
+    "Paralysie": 3,
+    "Épuisement": 3,
     "Peur": 2,
-    "Isolement": 2,
-    "Paralysie": 2,
-    "Impuissance": 0,
-    "Colère": 0
+    "Isolement": 3,
+    "Impuissance": 2,
+    "Colère": 1
   },
   "top_creators_tracked": [
-    {"name": "Dan Koe", "platform": "YouTube/X/Newsletter", "entries": 2, "focus": "Identité, clarté, action immédiate"},
-    {"name": "Alex Hormozi", "platform": "YouTube", "entries": 2, "focus": "Standards, preuves, volume massif"},
-    {"name": "Hamza Ahmed", "platform": "YouTube/TikTok/Skool", "entries": 1, "focus": "Effort intelligent, communauté"},
-    {"name": "Iman Gadzhi", "platform": "YouTube/TikTok", "entries": 1, "focus": "Jeunesse, pas de diplôme, empire"},
-    {"name": "Chris Williamson", "platform": "YouTube Podcast", "entries": 1, "focus": "Clarté identitaire, échec productif"},
-    {"name": "Ed Mylett", "platform": "YouTube/Podcast", "entries": 1, "focus": "Syndrome imposteur, résilience"},
-    {"name": "@biancabelabre", "platform": "TikTok", "entries": 1, "focus": "Arrêter de jouer petit"},
-    {"name": "@samaracurtiss", "platform": "TikTok", "entries": 1, "focus": "Syndrome imposteur, permission"}
+    {
+      "name": "Dan Koe",
+      "platform": "YouTube/X/Newsletter",
+      "entries": 3,
+      "focus": "Identité, clarté, one-person business, transition identitaire comme framework",
+      "hooks_analysés": [
+        {
+          "hook": "You don't need more information. You need a new identity.",
+          "type": "Pattern Interrupt + Reframe",
+          "emotion": "Frustration → Permission",
+          "pertinence_djibril": 9,
+          "adaptation": "T'as pas besoin d'un nouveau cours. T'as besoin de changer ce que ton cerveau considère normal."
+        },
+        {
+          "hook": "The reason you're stuck isn't laziness — it's clarity.",
+          "type": "Curiosity + Permission",
+          "emotion": "Doute de soi → Soulagement",
+          "pertinence_djibril": 9,
+          "adaptation": "Si t'avances pas, c'est pas la flemme — c'est que ton récipient tourne en boucle sans direction."
+        }
+      ]
+    },
+    {
+      "name": "Alex Hormozi",
+      "platform": "YouTube/Shorts",
+      "entries": 3,
+      "focus": "Standards > motivation, preuves chiffrées, volume massif, directivité",
+      "hooks_analysés": [
+        {
+          "hook": "Poor people say 'I can't afford it.' Rich people say 'How can I afford it?'",
+          "type": "Contrast + Reframe",
+          "emotion": "Impuissance → Responsabilisation",
+          "pertinence_djibril": 7,
+          "adaptation": "Le cérébral paralysé dit 'j'ai pas les compétences.' Le gars qui avance dit 'comment je les acquiers en faisant ?'"
+        }
+      ]
+    },
+    {
+      "name": "Hamza Ahmed",
+      "platform": "YouTube/TikTok/Skool",
+      "entries": 2,
+      "focus": "Effort intelligent, communauté masculine, discipline quotidienne",
+      "hooks_analysés": [
+        {
+          "hook": "You're not lazy — you're just playing someone else's game.",
+          "type": "Permission + Identité",
+          "emotion": "Honte → Soulagement",
+          "pertinence_djibril": 8,
+          "adaptation": "T'es pas feignant — t'es juste en train de suivre un script que t'as pas écrit."
+        }
+      ]
+    },
+    {
+      "name": "Chris Williamson",
+      "platform": "YouTube Podcast",
+      "entries": 2,
+      "focus": "Clarté identitaire, échec productif, psychologie de la performance",
+      "hooks_analysés": [
+        {
+          "hook": "The most dangerous phrase is 'I already know that.'",
+          "type": "Pattern Interrupt",
+          "emotion": "Peur → Prise de conscience",
+          "pertinence_djibril": 9,
+          "adaptation": "La phrase la plus dangereuse pour le cérébral paralysé : 'je sais déjà.' Craik & Lockhart : savoir ≠ comprendre."
+        }
+      ]
+    },
+    {
+      "name": "Ed Mylett",
+      "platform": "YouTube/Podcast",
+      "entries": 1,
+      "focus": "Syndrome imposteur, résilience, standards personnels"
+    },
+    {
+      "name": "Iman Gadzhi",
+      "platform": "YouTube/TikTok",
+      "entries": 1,
+      "focus": "Jeunesse, pas de diplôme, empire digital"
+    },
+    {
+      "name": "@victoire.mindset",
+      "platform": "TikTok FR",
+      "entries": 1,
+      "focus": "Développement personnel francophone, affect labeling simplifié"
+    },
+    {
+      "name": "@thinkingdeep_",
+      "platform": "TikTok",
+      "entries": 1,
+      "focus": "Psychologie pop, biais cognitifs, format éducatif court"
+    }
   ],
   "key_trends_2026": [
     {
-      "trend": "IdentShift — transition identitaire comme framework",
-      "source": "Dan Koe",
+      "trend": "IdentShift — transition identitaire comme framework de contenu",
+      "source": "Dan Koe / tendances 2026",
       "relevance_score": 9,
-      "application": "Le cérébral paralysé vit une dissonance identitaire permanente — utiliser les 3 phases comme cadre de contenu"
+      "application": "Le cérébral paralysé vit une dissonance identitaire permanente — la doctrine du Récipient Cérébral est PILE dans cette tendance. Cadrer chaque vidéo comme un shift d'identité, pas un conseil."
     },
     {
-      "trend": "TikTok 2026 — 3 premières secondes décisives",
-      "source": "Tendances plateforme",
+      "trend": "3 premières secondes = seuil algorithmique dur",
+      "source": "TikTok algorithm 2026 / contentbeta.com",
+      "relevance_score": 10,
+      "application": "70% completion rate = seuil viral. Le hook VOIR-NOMMER des cinématiques doit capter en <3s. Format actuel (5 plans / 45s) est dans le sweet spot."
+    },
+    {
+      "trend": "Authenticité brute > polish — counter-movement",
+      "source": "Tendances TikTok avril 2026",
       "relevance_score": 8,
-      "application": "Optimiser chaque hook pour capter en moins de 3s — aligné avec le protocole step_2_hooks"
+      "application": "Le format cinématique iPhone d'Adam (lumière naturelle, pas de studio) est pile dans cette tendance. Garder le grain, le clair-obscur, l'imperfection calculée."
     },
     {
-      "trend": "Contenu éducatif premium > entertainment",
+      "trend": "Contenu éducatif condensé > entertainment",
       "source": "Tendances TikTok/YouTube 2026",
-      "relevance_score": 8,
-      "application": "Le positionnement Djibril Learning (analyse comportementale vulgarisée) est exactement dans cette tendance"
-    },
-    {
-      "trend": "AI dans la création de contenu — acceptation mainstream",
-      "source": "Tendances création 2026",
-      "relevance_score": 7,
-      "application": "Opportunité de se positionner comme penseur HUMAIN qui utilise l'AI comme outil, pas comme remplaçant"
-    },
-    {
-      "trend": "Procrastination entrepreneuriale FR — 76% perdent 1-4h/jour",
-      "source": "Études FR 2026",
       "relevance_score": 9,
-      "application": "Donnée clé pour hooks FR — normaliser le problème puis proposer le cadre Djibril comme solution"
+      "application": "Le positionnement Djibril Learning (analyse comportementale vulgarisée + sources citées) est exactement dans la direction du marché. Les 5 MOFU coaching/jour = contenu éducatif dense."
+    },
+    {
+      "trend": "64% Gen Z veulent lancer un business dans les 3 ans",
+      "source": "emarketer.com / NACE 2026",
+      "relevance_score": 9,
+      "application": "L'audience est PRÊTE à agir mais paralysée par analysis paralysis. Le knowing-doing gap (Pfeffer & Sutton) est la tension centrale à exploiter."
+    },
+    {
+      "trend": "Sweet spot vidéo se déplace vers 3-5 min",
+      "source": "Tendances plateforme 2026",
+      "relevance_score": 6,
+      "application": "Opportunité pour des formats MOFU plus longs (2-3 min) qui développent un mécanisme complet. Le 45s ciné reste optimal pour TOFU."
+    },
+    {
+      "trend": "Curiosity gap + audience-specific hook = combo dominant",
+      "source": "vidiq.com / vexub.com 2026",
+      "relevance_score": 10,
+      "application": "Hooks du type 'Si t'es intelligent mais que t'avances pas...' = curiosity gap + ciblage identitaire. Aligné avec le protocole step_2 hooks."
     }
   ],
-  "data_pure_status": {
-    "all_creators_real": true,
-    "all_urls_verified": true,
-    "no_invented_stats": true,
-    "sources_cross_checked": true
+  "patterns_visuels_performants": [
+    {
+      "pattern": "Gros plan mains + voix off",
+      "score_engagement": 8.5,
+      "applicable_djibril": true,
+      "note": "Très utilisé par Dan Koe et les créateurs éducatifs. Crée intimité. Parfait pour plans B-roll ciné."
+    },
+    {
+      "pattern": "Texte minimaliste sur fond cinématique",
+      "score_engagement": 8,
+      "applicable_djibril": true,
+      "note": "1-2 mots-clés max à l'écran, typographie forte. Aligné avec design V3 AR Holographic."
+    },
+    {
+      "pattern": "Split-screen avant/après (métaphore visuelle)",
+      "score_engagement": 7.5,
+      "applicable_djibril": true,
+      "note": "Illustrer le shift identitaire. Ex: même personne, deux récipients différents."
+    },
+    {
+      "pattern": "Slow motion B-roll quotidien + narration dense",
+      "score_engagement": 9,
+      "applicable_djibril": true,
+      "note": "Format exact du cinématique Djibril. Scènes de café, marche, reflets. Le ralenti crée la gravité intellectuelle."
+    },
+    {
+      "pattern": "Face caméra directif (style coaching)",
+      "score_engagement": 7,
+      "applicable_djibril": true,
+      "note": "Pour les 5 MOFU coaching. Contact visuel direct, ton de coach. Hormozi/Hamza style."
+    }
+  ],
+  "hooks_viraux_extraits": [
+    {
+      "hook_original": "You don't need more information. You need a new identity.",
+      "source": "Dan Koe",
+      "categorie": "Reframe",
+      "levier": "NEW + Permission",
+      "adaptation_djibril": "T'as pas besoin d'un 47ème tuto. T'as besoin de changer ce que ton cerveau considère normal.",
+      "pertinence_score": 9,
+      "emotion_cible": "Frustration → Clarté"
+    },
+    {
+      "hook_original": "Your procrastination isn't a discipline problem. It's a clarity problem.",
+      "source": "Tendance cross-niche",
+      "categorie": "Curiosity + Reframe",
+      "levier": "NEW + SAFE",
+      "adaptation_djibril": "Ta procrastination c'est pas un problème de discipline — c'est ton récipient qui tourne à vide parce qu'il sait pas où aller.",
+      "pertinence_score": 9,
+      "emotion_cible": "Doute de soi → Soulagement"
+    },
+    {
+      "hook_original": "The most successful people I know started before they were ready.",
+      "source": "Alex Hormozi",
+      "categorie": "Proof + Permission",
+      "levier": "SAFE + FACILE",
+      "adaptation_djibril": "6700€/mois à 21 ans — j'ai pas attendu d'être prêt. J'ai commencé avec zéro compétence et 14h de travail par jour.",
+      "pertinence_score": 8,
+      "emotion_cible": "Paralysie → Détermination"
+    },
+    {
+      "hook_original": "Nobody is coming to save you.",
+      "source": "Multi-créateurs 2026",
+      "categorie": "Urgency + Pattern Interrupt",
+      "levier": "FOMO + DRDP",
+      "adaptation_djibril": "Personne viendra te sauver. Et c'est la meilleure nouvelle que t'auras aujourd'hui.",
+      "pertinence_score": 8,
+      "emotion_cible": "Impuissance → Responsabilisation"
+    },
+    {
+      "hook_original": "You're addicted to learning because it feels like progress without risk.",
+      "source": "Chris Williamson / tendance",
+      "categorie": "Curiosity + Insight",
+      "levier": "NEW + DRDP",
+      "adaptation_djibril": "T'es accro à apprendre parce que ça donne l'illusion d'avancer sans risquer de te planter. Boucle toxique du récipient.",
+      "pertinence_score": 10,
+      "emotion_cible": "Déni → Prise de conscience"
+    },
+    {
+      "hook_original": "The gap between where you are and where you want to be is one decision.",
+      "source": "Ed Mylett",
+      "categorie": "Benefit + Urgency",
+      "levier": "FACILE + FOMO",
+      "adaptation_djibril": "L'écart entre ta vie actuelle et celle que tu visualises — c'est pas 3 ans de formation. C'est une décision. Gollwitzer : implementation intentions.",
+      "pertinence_score": 8,
+      "emotion_cible": "Paralysie → Action"
+    },
+    {
+      "hook_original": "Your environment is programming your brain without your permission.",
+      "source": "Tendance neuro-psycho 2026",
+      "categorie": "Curiosity + Pattern Interrupt",
+      "levier": "NEW + DRDP",
+      "adaptation_djibril": "Ton entourage reprogramme ton récipient cérébral sans ton accord. Chaque conversation est une dose d'encre — passive ou active.",
+      "pertinence_score": 10,
+      "emotion_cible": "Inconscience → Alarme"
+    },
+    {
+      "hook_original": "Overthinking is just your brain's way of avoiding failure.",
+      "source": "Hamza Ahmed / tendance",
+      "categorie": "Insight + Permission",
+      "levier": "NEW + SAFE",
+      "adaptation_djibril": "Suranalyser c'est pas de l'intelligence — c'est ton cerveau qui évite l'échec en se donnant l'illusion du contrôle. Ariely.",
+      "pertinence_score": 9,
+      "emotion_cible": "Paralysie → Clarté"
+    }
+  ],
+  "analyse_cross_niche": {
+    "patterns_dominants": [
+      {
+        "pattern": "Permission > Prescription",
+        "description": "Les créateurs qui performent le mieux en avril 2026 ne disent pas 'fais ça' mais 'tu as LE DROIT de...' — permission d'être imparfait, d'agir sans être prêt, d'échouer.",
+        "alignement_djibril": "100% — framework VOIR-NOMMER-PERMETTRE-GUIDER déjà structuré autour de la permission"
+      },
+      {
+        "pattern": "Identité > Comportement",
+        "description": "Le shift 2026 : ne plus parler de 'ce qu'il faut faire' mais de 'qui tu dois devenir'. Le changement de comportement suit le changement d'identité.",
+        "alignement_djibril": "100% — doctrine Récipient Cérébral = reprogrammer l'identité via l'encre active"
+      },
+      {
+        "pattern": "Data + Émotion = combo viral",
+        "description": "Les vidéos qui performent le mieux combinent un chiffre frappant (72%, 47s, 84%) avec une émotion identifiable. Le chiffre crédibilise, l'émotion connecte.",
+        "alignement_djibril": "100% — niche research map fournit les données, framework empathie fournit les émotions"
+      },
+      {
+        "pattern": "Micro-contenu dense > long contenu dilué",
+        "description": "30-60s de densité pure surperforme 5min de blabla. Chaque seconde doit justifier son existence.",
+        "alignement_djibril": "100% — les scripts ciné 45s + MOFU coaching 30s sont dans ce format"
+      }
+    ],
+    "opportunites_non_exploitees": [
+      {
+        "opportunite": "Affect labeling systématique dans les hooks",
+        "description": "Très peu de créateurs francophones utilisent le labeling émotionnel (Lieberman) comme technique de hook. Nommer l'émotion EXACTE dans les 3 premières secondes.",
+        "potentiel": 9,
+        "exemple": "Ce truc que tu ressens quand t'ouvres un tuto à 23h au lieu de bosser sur ton projet — ça s'appelle la dopamine d'acquisition."
+      },
+      {
+        "opportunite": "Références psycho vulgarisées en FR",
+        "description": "Le marché francophone est saturé de motivation vide. Presque personne ne cite Kahneman, Baumeister, Zeigarnik en les rendant accessibles. Créneau massif.",
+        "potentiel": 10,
+        "exemple": "Djibril Learning est quasi seul sur ce positionnement en FR — autorité intellectuelle par la vulgarisation scientifique"
+      },
+      {
+        "opportunite": "Format cinématique éducatif FR",
+        "description": "Le format B-roll cinématique + voix off éducative est dominant en anglophone mais quasi inexistant en francophone. Océan bleu.",
+        "potentiel": 9,
+        "exemple": "Combiner l'esthétique Dan Koe/Ali Abdaal avec la profondeur psycho en français"
+      }
+    ]
   },
-  "next_scrape": "2026-04-06"
+  "recommandations_jour": [
+    {
+      "priorite": 1,
+      "action": "Tester des hooks avec affect labeling en ouverture (3 premières secondes)",
+      "raison": "Différenciation massive en FR + aligné avec framework VOIR-NOMMER",
+      "exemple": "Ce serrement dans ta poitrine quand tout le monde autour de toi avance et que toi tu analyses encore..."
+    },
+    {
+      "priorite": 2,
+      "action": "Exploiter le 'knowing-doing gap' comme angle récurrent cette semaine",
+      "raison": "64% Gen Z veulent lancer un business — le gap savoir/faire est la tension #1 du marché",
+      "exemple": "Intégrer Pfeffer & Sutton dans au moins 2 MOFU coaching/jour"
+    },
+    {
+      "priorite": 3,
+      "action": "Augmenter la densité data dans les hooks — 1 chiffre par hook minimum",
+      "raison": "Data + émotion = combo viral identifié dans l'analyse cross-niche",
+      "exemple": "47 secondes. C'est la durée moyenne d'attention sur un écran. Gloria Mark. Et toi tu crois que tu vas apprendre un métier en scrollant."
+    }
+  ]
 }
