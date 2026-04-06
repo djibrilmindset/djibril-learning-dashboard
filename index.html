@@ -289,6 +289,7 @@ body { font-family:'Inter',-apple-system,sans-serif; background:var(--bg-void); 
   <div class="nav-item" data-page="theses"><span class="icon">📖</span><span>Atlas Thèses</span><span class="nav-badge" style="background:rgba(248,87,166,0.2); color:var(--accent-pink);">NEW</span></div>
   <div class="nav-item" data-page="plans"><span class="icon">🎬</span><span>Plans Scène</span><span class="nav-badge" style="background:rgba(255,189,46,0.2); color:var(--accent-amber);">253</span></div>
   <div class="nav-item" data-page="frameworks"><span class="icon">🧬</span><span>Frameworks</span></div>
+  <div class="nav-item" data-page="tofufactory"><span class="icon">🏭</span><span>TOFU Factory</span><span class="nav-badge" style="background:rgba(255,77,77,0.2); color:#ff4757;">20</span></div>
   <div class="nav-item" data-page="systeme"><span class="icon">⚙️</span><span>Système</span><span class="nav-badge" style="background:rgba(20,241,149,0.2); color:var(--accent-cyan);">LIVE</span></div>
   <div class="nav-spacer"></div>
   <div style="font-size:11px; color:var(--text-ghost); padding:0 14px;"><span class="live-dot" style="color:var(--accent-cyan);">●</span> Crons actifs</div>
@@ -305,6 +306,7 @@ body { font-family:'Inter',-apple-system,sans-serif; background:var(--bg-void); 
   <div class="mob-item" data-page="theses"><span class="mob-icon">📖</span>Thèses</div>
   <div class="mob-item" data-page="plans"><span class="mob-icon">🎬</span>Plans</div>
   <div class="mob-item" data-page="frameworks"><span class="mob-icon">🧬</span>FW</div>
+  <div class="mob-item" data-page="tofufactory"><span class="mob-icon">🏭</span>TOFU</div>
   <div class="mob-item" data-page="systeme"><span class="mob-icon">⚙️</span>Système</div>
 </div>
 
@@ -434,6 +436,26 @@ body { font-family:'Inter',-apple-system,sans-serif; background:var(--bg-void); 
     <div class="grid-3" id="fw-colors"></div>
   </div>
 
+  <!-- PAGE: TOFU FACTORY -->
+  <div class="page" id="page-tofufactory">
+    <div class="page-title" style="background:linear-gradient(135deg, #ff4757, #ff6b81, #f857a6); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">TOFU Factory</div>
+    <div class="page-subtitle">Posts format liste — "X signes que...", "X erreurs qui..." — enrichis quotidiennement via scraping + data dashboard</div>
+    <div class="kpi-grid" id="tofu-kpis"></div>
+    <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:20px;" id="tofu-cat-filters"></div>
+    <div style="display:flex; gap:12px; align-items:center; margin-bottom:24px;">
+      <input id="tofu-search" type="text" placeholder="Rechercher un post..." style="flex:1; background:var(--bg-elevated); border:1px solid var(--border-subtle); border-radius:var(--radius-sm); padding:10px 16px; color:var(--text-primary); font-size:13px; outline:none;">
+      <select id="tofu-platform-filter" style="background:var(--bg-elevated); border:1px solid var(--border-subtle); border-radius:var(--radius-sm); padding:10px 12px; color:var(--text-primary); font-size:12px; outline:none;">
+        <option value="all">Toutes plateformes</option>
+        <option value="instagram">Instagram</option>
+        <option value="tiktok">TikTok</option>
+        <option value="twitter">Twitter</option>
+        <option value="linkedin">LinkedIn</option>
+        <option value="threads">Threads</option>
+      </select>
+    </div>
+    <div id="tofu-posts-list"></div>
+  </div>
+
   <!-- PAGE 6: SYSTÈME (CENTRE DE CONTRÔLE CRONS) -->
   <div class="page" id="page-systeme">
     <div class="page-title" style="background:linear-gradient(135deg, #14f195, #9945ff); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">Centre de Contrôle</div>
@@ -453,7 +475,7 @@ body { font-family:'Inter',-apple-system,sans-serif; background:var(--bg-void); 
 const APP = {
   currentPage: 'problemes',
   data: {},
-  dataFiles: ['problemes-croyances','insights','emociones','messages-niche','videos-niche','scripts-video','social-tracking','war-room','video-performance','theses-atlas','plans-scene','frameworks-references']
+  dataFiles: ['problemes-croyances','insights','emociones','messages-niche','videos-niche','scripts-video','social-tracking','war-room','video-performance','theses-atlas','plans-scene','frameworks-references','tofu-lists']
 };
 const GH_RAW = 'https://raw.githubusercontent.com/djibrilmindset/djibril-learning-dashboard/master/data/';
 
@@ -495,6 +517,7 @@ function renderAll() {
   renderTheses();
   renderPlans();
   renderFrameworks();
+  renderTofuFactory();
   renderSysteme();
 }
 
@@ -861,6 +884,81 @@ function renderComptes() {
   `;
 }
 
+/* ═══ TOFU FACTORY ═══ */
+function renderTofuFactory(filterCat='all', search='', platform='all') {
+  const tl = APP.data['tofu-lists'] || {};
+  const posts = tl.posts || [];
+  const cats = tl.categories || [];
+  const stats = tl.stats || {};
+
+  // KPIs
+  document.getElementById('tofu-kpis').innerHTML = `
+    <div class="kpi"><div class="kpi-label">Posts totaux</div><div class="kpi-value">${stats.totalPosts || posts.length}</div></div>
+    <div class="kpi"><div class="kpi-label">Items totaux</div><div class="kpi-value">${stats.totalItems || 0}</div></div>
+    <div class="kpi"><div class="kpi-label">Moy. items/post</div><div class="kpi-value">${stats.avgItemsPerPost || 0}</div></div>
+    <div class="kpi"><div class="kpi-label">Catégories</div><div class="kpi-value">${cats.length}</div></div>
+    <div class="kpi"><div class="kpi-label">Ready</div><div class="kpi-value" style="-webkit-text-fill-color:var(--accent-cyan);">${posts.filter(p=>p.status==='ready').length}</div></div>
+    <div class="kpi"><div class="kpi-label">Publiés</div><div class="kpi-value" style="-webkit-text-fill-color:var(--accent-amber);">${posts.filter(p=>p.publishedAt).length}</div></div>
+  `;
+
+  // Category filters
+  document.getElementById('tofu-cat-filters').innerHTML = `
+    <button data-tfcat="all" style="padding:6px 14px; border-radius:20px; border:1px solid ${filterCat==='all'?'var(--accent-purple)':'var(--border-subtle)'}; background:${filterCat==='all'?'rgba(153,69,255,0.15)':'var(--bg-elevated)'}; color:${filterCat==='all'?'var(--accent-purple)':'var(--text-muted)'}; cursor:pointer; font-size:12px; font-weight:600;">Tous (${posts.length})</button>
+    ${cats.map(c => {
+      const cnt = posts.filter(p=>p.category===c.id).length;
+      const isA = filterCat===c.id;
+      return `<button data-tfcat="${c.id}" style="padding:6px 14px; border-radius:20px; border:1px solid ${isA?c.color:'var(--border-subtle)'}; background:${isA?c.color+'22':'var(--bg-elevated)'}; color:${isA?c.color:'var(--text-muted)'}; cursor:pointer; font-size:12px; font-weight:600;">${c.icon} ${c.name} (${cnt})</button>`;
+    }).join('')}
+  `;
+
+  // Filter posts
+  let filtered = posts;
+  if (filterCat !== 'all') filtered = filtered.filter(p => p.category === filterCat);
+  if (search) filtered = filtered.filter(p => p.title.toLowerCase().includes(search.toLowerCase()) || p.items.some(i => i.headline.toLowerCase().includes(search.toLowerCase())));
+
+  // Render posts
+  document.getElementById('tofu-posts-list').innerHTML = filtered.map(post => {
+    const cat = cats.find(c=>c.id===post.category) || {};
+    const platInfo = platform !== 'all' && post.platforms[platform] ? post.platforms[platform] : null;
+    return `
+    <div class="card" style="margin-bottom:16px; border-left:3px solid ${cat.color||'var(--accent-purple)'};">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:12px;">
+        <div>
+          <div style="font-family:'Sora',sans-serif; font-weight:700; font-size:16px; margin-bottom:4px;">${cat.icon||''} ${post.title}</div>
+          <div style="font-size:12px; color:var(--accent-amber); font-style:italic;">"${post.teaser}"</div>
+        </div>
+        <div style="display:flex; gap:6px; align-items:center;">
+          <span style="font-size:10px; padding:3px 8px; border-radius:12px; background:${post.status==='ready'?'rgba(20,241,149,0.15)':'rgba(255,189,46,0.15)'}; color:${post.status==='ready'?'var(--accent-cyan)':'var(--accent-amber)'}; font-weight:700; text-transform:uppercase;">${post.status}</span>
+          <span style="font-size:10px; padding:3px 8px; border-radius:12px; background:rgba(153,69,255,0.15); color:var(--accent-purple); font-weight:700;">${post.items.length} items</span>
+        </div>
+      </div>
+      ${platInfo ? `<div style="font-size:11px; color:var(--text-muted); margin-bottom:10px; padding:6px 10px; background:var(--bg-elevated); border-radius:var(--radius-sm);">📱 ${platform}: ${platInfo.format}${platInfo.duration ? ' — '+platInfo.duration : ''}${platInfo.music ? ' — 🎵 '+platInfo.music : ''}</div>` : ''}
+      <div style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom:12px;">
+        ${Object.keys(post.platforms).map(pl => `<span style="font-size:10px; padding:2px 8px; border-radius:10px; background:var(--bg-elevated); color:var(--text-muted);">${pl}</span>`).join('')}
+      </div>
+      <details style="cursor:pointer;">
+        <summary style="font-size:12px; color:var(--accent-cyan); font-weight:600; margin-bottom:8px;">Voir les ${post.items.length} points ▸</summary>
+        <div style="margin-top:8px;">
+          ${post.items.map(item => `
+            <div style="padding:10px 12px; margin-bottom:6px; background:var(--bg-elevated); border-radius:var(--radius-sm); border-left:2px solid ${cat.color||'var(--accent-purple)'};">
+              <div style="font-weight:700; font-size:13px; color:var(--text-primary); margin-bottom:4px;">${item.n}. ${item.headline}</div>
+              <div style="font-size:12px; color:var(--text-secondary); line-height:1.5;">${item.detail}</div>
+            </div>
+          `).join('')}
+        </div>
+      </details>
+      <div style="margin-top:10px; display:flex; gap:6px; flex-wrap:wrap;">
+        ${(post.psychReferences||[]).map(r => `<span style="font-size:10px; padding:2px 8px; border-radius:10px; background:rgba(248,87,166,0.12); color:var(--accent-pink);">📚 ${r}</span>`).join('')}
+      </div>
+    </div>`;
+  }).join('');
+
+  // Event listeners
+  document.querySelectorAll('[data-tfcat]').forEach(btn => btn.addEventListener('click', () => {
+    renderTofuFactory(btn.dataset.tfcat, document.getElementById('tofu-search').value, document.getElementById('tofu-platform-filter').value);
+  }));
+}
+
 /* ═══ SYSTÈME (CENTRE DE CONTRÔLE CRONS) ═══ */
 /* ═══ ATLAS DES THÈSES ═══ */
 function renderTheses(filterCat='all', search='') {
@@ -1150,6 +1248,18 @@ loadData();
 document.addEventListener('DOMContentLoaded', () => {
   const si = document.getElementById('theses-search-input');
   if (si) si.addEventListener('input', () => renderTheses('all', si.value));
+  const ts = document.getElementById('tofu-search');
+  if (ts) ts.addEventListener('input', () => renderTofuFactory(
+    document.querySelector('[data-tfcat].active')?.dataset?.tfcat || 'all',
+    ts.value,
+    document.getElementById('tofu-platform-filter').value
+  ));
+  const tp = document.getElementById('tofu-platform-filter');
+  if (tp) tp.addEventListener('change', () => renderTofuFactory(
+    'all',
+    document.getElementById('tofu-search').value,
+    tp.value
+  ));
 });
 </script>
 </body>
