@@ -1183,25 +1183,25 @@ function renderSysteme() {
     {id:'daily-video-publish', name:'Publication Vidéos', desc:'Post auto 9 comptes PostBridge, 2h décalage', schedule:'5h', cron:'0 5 * * *', enabled:true, lastRun:'2026-04-05', icon:'🚀', cat:'PUBLISH', catColor:'rgba(20,241,149,0.12)', catText:'#14f195'},
     {id:'cinema-daily-guide', name:'Guide Tournage', desc:'1 TOFU ciné + 5 MOFU coaching, plans 2 caméras', schedule:'5h', cron:'0 5 * * *', enabled:true, lastRun:'2026-04-06', icon:'🎬', cat:'CRÉATION', catColor:'rgba(153,69,255,0.12)', catText:'#b87aff'},
     {id:'daily-stories-canva', name:'Stories Canva', desc:'8 slides empathie, design dark premium', schedule:'5h', cron:'0 5 * * *', enabled:true, lastRun:'2026-04-05', icon:'📱', cat:'CRÉATION', catColor:'rgba(153,69,255,0.12)', catText:'#b87aff'},
-    {id:'weekly-top-videos', name:'Top Vidéos Scanner', desc:'Top 10 par compte + Top 20 global + patterns gagnants', schedule:'6h', cron:'0 6 * * *', enabled:true, lastRun:'2026-04-03', icon:'🏆', cat:'ANALYSE', catColor:'rgba(255,189,46,0.12)', catText:'#ffbd2e'},
-    {id:'daily-scrape-enrich', name:'Scraper Unifié', desc:'Tous réseaux, niche cérébral + empathie métiers', schedule:'7h', cron:'0 7 * * *', enabled:true, lastRun:'2026-04-05', icon:'🔍', cat:'SCRAPING', catColor:'rgba(248,87,166,0.12)', catText:'#f857a6'},
+    {id:'weekly-top-videos', name:'Top Vidéos Scanner', desc:'Top 10 par compte + Top 20 global + patterns gagnants', schedule:'6h', cron:'0 6 * * *', enabled:true, lastRun:'2026-04-03', icon:'🏆', cat:'ANALYSE', catColor:'rgba(255,189,46,0.12)', catText:'#ffbd2e', chrome:true},
+    {id:'daily-scrape-enrich', name:'Scraper Unifié', desc:'Tous réseaux, niche cérébral + empathie métiers', schedule:'7h', cron:'0 7 * * *', enabled:true, lastRun:'2026-04-05', icon:'🔍', cat:'SCRAPING', catColor:'rgba(248,87,166,0.12)', catText:'#f857a6', chrome:true},
     {id:'daily-copywriting', name:'Copywriting Quotidien', desc:'1 TOFU ciné + 5 MOFU coaching mécanismes psycho', schedule:'8h30', cron:'30 8 * * *', enabled:true, lastRun:'2026-04-05', icon:'✍️', cat:'CRÉATION', catColor:'rgba(153,69,255,0.12)', catText:'#b87aff'},
     {id:'text-platforms', name:'Posts Texte', desc:'10 posts/jour X+LinkedIn+Threads+Facebook', schedule:'10h', cron:'0 10 * * *', enabled:true, lastRun:'2026-04-05', icon:'📝', cat:'PUBLISH', catColor:'rgba(20,241,149,0.12)', catText:'#14f195'},
-    {id:'problemes-scraper', name:'Scraper Problèmes', desc:'Problèmes & croyances → dashboard GitHub Pages', schedule:'12h', cron:'0 12 * * *', enabled:true, lastRun:'2026-04-06', icon:'💣', cat:'SCRAPING', catColor:'rgba(248,87,166,0.12)', catText:'#f857a6'},
+    {id:'problemes-scraper', name:'Scraper Problèmes', desc:'Problèmes & croyances → dashboard GitHub Pages', schedule:'12h', cron:'0 12 * * *', enabled:true, lastRun:'2026-04-06', icon:'💣', cat:'SCRAPING', catColor:'rgba(248,87,166,0.12)', catText:'#f857a6', chrome:true},
     {id:'cde-daily-analysis', name:'Analyse CDE', desc:'Analyse verbale/visuelle/émotionnelle/stratégique', schedule:'14h', cron:'0 14 * * *', enabled:true, lastRun:'2026-04-05', icon:'🔬', cat:'ANALYSE', catColor:'rgba(255,189,46,0.12)', catText:'#ffbd2e'},
-    {id:'weekly-tracker-evolver', name:'Tracking Stats', desc:'Stats 9 comptes + top vidéos + MAJ dashboard', schedule:'20h', cron:'0 20 * * *', enabled:true, lastRun:'2026-04-05', icon:'📊', cat:'TRACKING', catColor:'rgba(20,241,149,0.12)', catText:'#14f195'},
+    {id:'weekly-tracker-evolver', name:'Tracking Stats', desc:'Stats 9 comptes via Chrome — scraping live + MAJ dashboard', schedule:'20h', cron:'0 20 * * *', enabled:true, lastRun:'2026-04-05', icon:'📊', cat:'TRACKING', catColor:'rgba(20,241,149,0.12)', catText:'#14f195', chrome:true},
     {id:'weekly-audit-quality', name:'Audit Qualité', desc:'Véracité, métaphores, cohérence série, framework empathique', schedule:'21h', cron:'0 21 * * *', enabled:true, lastRun:'2026-04-02', icon:'✅', cat:'QUALITÉ', catColor:'rgba(20,241,149,0.12)', catText:'#14f195'},
     {id:'cde-feedback', name:'Feedback Loop', desc:'Classifie HIT/SOLID/MID/FLOP + autopsie flops', schedule:'22h', cron:'0 22 * * *', enabled:true, lastRun:'2026-04-05', icon:'🔄', cat:'ANALYSE', catColor:'rgba(255,189,46,0.12)', catText:'#ffbd2e'},
     {id:'coordination-watchdog', name:'Watchdog Coordination', desc:'Vérifie doublons, tâches manquées, cohérence système', schedule:'23h', cron:'0 23 * * *', enabled:true, lastRun:'2026-04-02', icon:'🛡️', cat:'QUALITÉ', catColor:'rgba(20,241,149,0.12)', catText:'#14f195'},
     {id:'market-study-updater', name:'Étude de Marché', desc:'Tendances hebdo, gaps, recommandations TOFU/MOFU', schedule:'Dim 19h', cron:'0 19 * * 0', enabled:true, lastRun:'2026-04-05', icon:'📈', cat:'ANALYSE', catColor:'rgba(255,189,46,0.12)', catText:'#ffbd2e'},
     {id:'script-sharpener', name:'Script Sharpener', desc:'Audit scripts cinématiques, scoring /10', schedule:'16h', cron:'0 16 * * *', enabled:false, lastRun:'2026-04-05', icon:'🔪', cat:'QUALITÉ', catColor:'rgba(20,241,149,0.12)', catText:'#14f195'},
     {id:'short6-autopublish', name:'Short6 Auto-Publish', desc:'4 posts/jour @djibril.short6', schedule:'16h', cron:'0 16 * * *', enabled:false, lastRun:'2026-04-03', icon:'📤', cat:'PUBLISH', catColor:'rgba(20,241,149,0.12)', catText:'#14f195'},
-    {id:'cde-daily-scrape', name:'CDE Scraper', desc:'Scraper CDE tous réseaux, hooks réels', schedule:'11h', cron:'0 11 * * *', enabled:false, lastRun:'2026-04-03', icon:'🕷️', cat:'SCRAPING', catColor:'rgba(248,87,166,0.12)', catText:'#f857a6'},
+    {id:'cde-daily-scrape', name:'CDE Scraper', desc:'Scraper CDE tous réseaux, hooks réels', schedule:'11h', cron:'0 11 * * *', enabled:false, lastRun:'2026-04-03', icon:'🕷️', cat:'SCRAPING', catColor:'rgba(248,87,166,0.12)', catText:'#f857a6', chrome:true},
     {id:'cde-weekly-deep', name:'CDE Deep Analysis', desc:'Patterns cross-marchés, profiling influenceurs', schedule:'18h', cron:'0 18 * * *', enabled:false, lastRun:'2026-04-03', icon:'🧬', cat:'ANALYSE', catColor:'rgba(255,189,46,0.12)', catText:'#ffbd2e'},
-    {id:'hook-intelligence', name:'Hook Intelligence', desc:'Hooks viraux empathie + identification métiers', schedule:'15h', cron:'0 15 * * *', enabled:false, lastRun:'2026-04-05', icon:'🎣', cat:'SCRAPING', catColor:'rgba(248,87,166,0.12)', catText:'#f857a6'},
-    {id:'keyword-intelligence', name:'Keyword Intelligence', desc:'Mots-clés empathie, classement impact', schedule:'6h30', cron:'30 6 * * *', enabled:false, lastRun:'2026-04-05', icon:'🔑', cat:'SCRAPING', catColor:'rgba(248,87,166,0.12)', catText:'#f857a6'},
-    {id:'market-hooks-copier', name:'Market Hooks Copier', desc:'Copy-paste hooks viraux bruts', schedule:'15h', cron:'0 15 * * *', enabled:false, lastRun:'2026-04-05', icon:'📋', cat:'SCRAPING', catColor:'rgba(248,87,166,0.12)', catText:'#f857a6'},
-    {id:'visual-context-tracker', name:'Visual Context Tracker', desc:'Angles caméra, montage, éclairage qui performent', schedule:'14h30', cron:'30 14 * * *', enabled:false, lastRun:'2026-04-05', icon:'📷', cat:'TRACKING', catColor:'rgba(20,241,149,0.12)', catText:'#14f195'},
+    {id:'hook-intelligence', name:'Hook Intelligence', desc:'Hooks viraux empathie + identification métiers', schedule:'15h', cron:'0 15 * * *', enabled:false, lastRun:'2026-04-05', icon:'🎣', cat:'SCRAPING', catColor:'rgba(248,87,166,0.12)', catText:'#f857a6', chrome:true},
+    {id:'keyword-intelligence', name:'Keyword Intelligence', desc:'Mots-clés empathie, classement impact', schedule:'6h30', cron:'30 6 * * *', enabled:false, lastRun:'2026-04-05', icon:'🔑', cat:'SCRAPING', catColor:'rgba(248,87,166,0.12)', catText:'#f857a6', chrome:true},
+    {id:'market-hooks-copier', name:'Market Hooks Copier', desc:'Copy-paste hooks viraux bruts', schedule:'15h', cron:'0 15 * * *', enabled:false, lastRun:'2026-04-05', icon:'📋', cat:'SCRAPING', catColor:'rgba(248,87,166,0.12)', catText:'#f857a6', chrome:true},
+    {id:'visual-context-tracker', name:'Visual Context Tracker', desc:'Angles caméra, montage, éclairage qui performent', schedule:'14h30', cron:'30 14 * * *', enabled:false, lastRun:'2026-04-05', icon:'📷', cat:'TRACKING', catColor:'rgba(20,241,149,0.12)', catText:'#14f195', chrome:true},
     {id:'dashboard-integrity', name:'Dashboard Integrity', desc:'Vérifie intégrité dashboard toutes les 6h', schedule:'*/6h', cron:'0 */6 * * *', enabled:false, lastRun:'2026-04-05', icon:'🔒', cat:'QUALITÉ', catColor:'rgba(20,241,149,0.12)', catText:'#14f195'}
   ];
 
@@ -1210,10 +1210,40 @@ function renderSysteme() {
   const cats = {};
   active.forEach(c => { cats[c.cat] = (cats[c.cat]||0) + 1; });
 
+  const chromeCrons = crons.filter(c => c.chrome);
+  const chromeActive = chromeCrons.filter(c => c.enabled);
+
+  // Chrome MCP Banner
+  document.getElementById('sys-kpis').insertAdjacentHTML('beforebegin', (() => {
+    const el = document.getElementById('chrome-mcp-banner');
+    if (el) el.remove();
+    return `
+    <div id="chrome-mcp-banner" style="margin-bottom:20px;padding:16px 20px;background:linear-gradient(135deg, rgba(66,133,244,0.12), rgba(153,69,255,0.08));border:1px solid rgba(66,133,244,0.3);border-radius:12px;display:flex;align-items:center;gap:14px;">
+      <div style="font-size:28px;">🌐</div>
+      <div style="flex:1;">
+        <div style="font-weight:700;font-size:14px;color:#4285F4;margin-bottom:4px;">Chrome Extension MCP — Requis</div>
+        <div style="font-size:12px;color:var(--text-secondary);line-height:1.5;">
+          <strong>${chromeActive.length} crons actifs</strong> utilisent l'extension <span style="color:#4285F4;font-weight:600;">Claude in Chrome</span> pour naviguer, traquer et scraper les réseaux sociaux en direct.
+          <span style="color:var(--accent-amber);">Sans Chrome ouvert + extension activée, le scraping et le tracking échouent.</span>
+        </div>
+        <div style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap;">
+          <span style="font-size:10px;padding:3px 8px;background:rgba(66,133,244,0.15);color:#4285F4;border-radius:20px;font-weight:600;">Navigation live</span>
+          <span style="font-size:10px;padding:3px 8px;background:rgba(248,87,166,0.15);color:#f857a6;border-radius:20px;font-weight:600;">Scraping DOM</span>
+          <span style="font-size:10px;padding:3px 8px;background:rgba(20,241,149,0.15);color:#14f195;border-radius:20px;font-weight:600;">Tracking stats</span>
+          <span style="font-size:10px;padding:3px 8px;background:rgba(255,189,46,0.15);color:#ffbd2e;border-radius:20px;font-weight:600;">Extraction hooks</span>
+        </div>
+      </div>
+      <div style="text-align:center;min-width:60px;">
+        <div style="font-size:24px;font-weight:800;color:#4285F4;">${chromeCrons.length}</div>
+        <div style="font-size:10px;color:var(--text-ghost);">crons Chrome</div>
+      </div>
+    </div>`;
+  })());
+
   // KPIs
   document.getElementById('sys-kpis').innerHTML = `
     <div class="kpi"><div class="kpi-label">Crons actifs</div><div class="kpi-value">${active.length}</div><div class="kpi-note">Tournent chaque jour</div></div>
-    <div class="kpi"><div class="kpi-label">En pause</div><div class="kpi-value" style="background:linear-gradient(135deg, var(--accent-amber), var(--accent-red)); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">${paused.length}</div><div class="kpi-note">Désactivés / doublons</div></div>
+    <div class="kpi"><div class="kpi-label">Chrome MCP</div><div class="kpi-value" style="background:linear-gradient(135deg, #4285F4, #9945ff); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">${chromeActive.length}</div><div class="kpi-note">Utilisent Chrome extension</div></div>
     <div class="kpi"><div class="kpi-label">Total système</div><div class="kpi-value">${crons.length}</div><div class="kpi-note">Tâches configurées</div></div>
     <div class="kpi"><div class="kpi-label">Catégories</div><div class="kpi-value">${Object.keys(cats).length}</div><div class="kpi-note">${Object.entries(cats).map(([k,v]) => k+'('+v+')').join(' ')}</div></div>
   `;
@@ -1223,11 +1253,12 @@ function renderSysteme() {
     const today = '2026-04-06';
     const isRecent = c.lastRun >= '2026-04-05';
     const runColor = isRecent ? 'var(--accent-cyan)' : 'var(--accent-amber)';
+    const chromeBadge = c.chrome ? '<span style="font-size:9px;padding:2px 6px;background:rgba(66,133,244,0.15);color:#4285F4;border-radius:10px;font-weight:700;margin-left:6px;">🌐 CHROME</span>' : '';
     return `
-      <div class="cron-card" style="${!c.enabled ? 'opacity:0.6;' : ''}">
+      <div class="cron-card" style="${!c.enabled ? 'opacity:0.6;' : ''}${c.chrome ? 'border-left:3px solid #4285F4;' : ''}">
         <div class="cron-icon">${c.icon}</div>
         <div>
-          <div class="cron-name">${c.name}</div>
+          <div class="cron-name">${c.name}${chromeBadge}</div>
           <div class="cron-desc">${c.desc}</div>
           <span class="cron-category" style="background:${c.catColor}; color:${c.catText};">${c.cat}</span>
         </div>
