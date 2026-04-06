@@ -1,0 +1,615 @@
+{
+  "meta": {
+    "generated": "2026-04-06",
+    "version": "v3.1",
+    "niche": "cérébral paralysé + métiers chronophages",
+    "scoring": "impact identification /10",
+    "color_code": {
+      "vert": ">8 — identification viscérale",
+      "cyan": "7-8 — identification forte",
+      "violet": "6-7 — identification modérée",
+      "jaune": "<6 — identification contextuelle"
+    },
+    "zero_barber": true
+  },
+  "categories": [
+    {
+      "id": "paralysie_action",
+      "label": "Paralysie d'action",
+      "description": "Savoir sans agir — le piège du cérébral",
+      "keywords": [
+        {
+          "keyword": "je sais quoi faire mais je fais rien",
+          "score": 9.5,
+          "color": "vert",
+          "emotion": "honte + frustration",
+          "levier": "DRDP — douleur silencieuse",
+          "usage": "hook / connexion émotionnelle"
+        },
+        {
+          "keyword": "j'attends d'être prêt",
+          "score": 9.3,
+          "color": "vert",
+          "emotion": "peur masquée en logique",
+          "levier": "DRDP — peur du jugement",
+          "usage": "hook / reframe"
+        },
+        {
+          "keyword": "je me prépare encore",
+          "score": 9.0,
+          "color": "vert",
+          "emotion": "évitement déguisé en productivité",
+          "levier": "NEW — paradoxe cognitif",
+          "usage": "hook / métaphore"
+        },
+        {
+          "keyword": "analysis paralysis",
+          "score": 8.8,
+          "color": "vert",
+          "emotion": "surcharge mentale → immobilité",
+          "levier": "DRDP — douleur cognitive",
+          "usage": "connexion émotionnelle / teaser"
+        },
+        {
+          "keyword": "trop d'options tue l'action",
+          "score": 8.5,
+          "color": "vert",
+          "emotion": "confusion → abandon",
+          "levier": "NEW — Ariely paradoxe du choix",
+          "usage": "métaphore / réduction friction"
+        },
+        {
+          "keyword": "perfectionnisme = évitement",
+          "score": 8.3,
+          "color": "vert",
+          "emotion": "révélation douloureuse",
+          "levier": "NEW — reframe identité",
+          "usage": "hook disruptif"
+        },
+        {
+          "keyword": "procrastiner sur des trucs importants",
+          "score": 8.2,
+          "color": "vert",
+          "emotion": "culpabilité chronique",
+          "levier": "DRDP — douleur quotidienne",
+          "usage": "connexion émotionnelle"
+        },
+        {
+          "keyword": "je planifie au lieu de faire",
+          "score": 8.1,
+          "color": "vert",
+          "emotion": "illusion de progression",
+          "levier": "NEW — biais cognitif",
+          "usage": "hook / reframe"
+        }
+      ]
+    },
+    {
+      "id": "identite_piege",
+      "label": "L'identité piège",
+      "description": "Quand être intelligent devient une prison",
+      "keywords": [
+        {
+          "keyword": "trop intelligent pour commencer",
+          "score": 9.4,
+          "color": "vert",
+          "emotion": "fierté toxique + paralysie",
+          "levier": "NEW — paradoxe identitaire",
+          "usage": "hook principal"
+        },
+        {
+          "keyword": "gifted kid burnout",
+          "score": 9.2,
+          "color": "vert",
+          "emotion": "deuil du potentiel",
+          "levier": "DRDP — douleur identitaire",
+          "usage": "hook / connexion émotionnelle"
+        },
+        {
+          "keyword": "potentiel gâché",
+          "score": 9.1,
+          "color": "vert",
+          "emotion": "regret anticipé + honte",
+          "levier": "FOMO — perte irréversible",
+          "usage": "hook / teaser"
+        },
+        {
+          "keyword": "je comprends tout mais j'applique rien",
+          "score": 9.0,
+          "color": "vert",
+          "emotion": "dissonance cognitive pure",
+          "levier": "DRDP — douleur cérébrale",
+          "usage": "connexion émotionnelle"
+        },
+        {
+          "keyword": "syndrome de l'imposteur",
+          "score": 8.7,
+          "color": "vert",
+          "emotion": "doute permanent sur soi",
+          "levier": "DRDP — peur profonde",
+          "usage": "connexion / réduction friction"
+        },
+        {
+          "keyword": "savoir ≠ faire",
+          "score": 8.5,
+          "color": "vert",
+          "emotion": "vérité brutale",
+          "levier": "NEW — disruption",
+          "usage": "hook / reframe"
+        },
+        {
+          "keyword": "Dunning-Kruger inversé",
+          "score": 7.8,
+          "color": "cyan",
+          "emotion": "compétent mais paralysé",
+          "levier": "NEW — insight scientifique",
+          "usage": "métaphore / teaser"
+        },
+        {
+          "keyword": "midwit trap",
+          "score": 7.2,
+          "color": "cyan",
+          "emotion": "coincé entre savoir et agir",
+          "levier": "NEW — concept US adaptable",
+          "usage": "hook niche"
+        }
+      ]
+    },
+    {
+      "id": "isolement_environnement",
+      "label": "Isolement + environnement hostile",
+      "description": "Seul à y croire, entouré de gens qui freinent",
+      "keywords": [
+        {
+          "keyword": "personne croit en moi",
+          "score": 9.6,
+          "color": "vert",
+          "emotion": "solitude existentielle",
+          "levier": "DRDP — douleur relationnelle",
+          "usage": "connexion émotionnelle profonde"
+        },
+        {
+          "keyword": "seul à y croire",
+          "score": 9.4,
+          "color": "vert",
+          "emotion": "isolement + détermination fragile",
+          "levier": "DRDP — douleur sociale",
+          "usage": "hook / connexion"
+        },
+        {
+          "keyword": "sois réaliste",
+          "score": 9.3,
+          "color": "vert",
+          "emotion": "rage + impuissance",
+          "levier": "DRDP — trigger environnemental",
+          "usage": "hook disruptif / verbatim"
+        },
+        {
+          "keyword": "mon entourage comprend pas",
+          "score": 9.1,
+          "color": "vert",
+          "emotion": "frustration chronique",
+          "levier": "DRDP — isolement quotidien",
+          "usage": "connexion émotionnelle"
+        },
+        {
+          "keyword": "9 personnes sur 10 te freinent",
+          "score": 8.9,
+          "color": "vert",
+          "emotion": "validation + colère",
+          "levier": "SAFE — chiffre social proof",
+          "usage": "hook / preuve"
+        },
+        {
+          "keyword": "entourage toxique",
+          "score": 8.6,
+          "color": "vert",
+          "emotion": "besoin de se protéger",
+          "levier": "DRDP — douleur environnement",
+          "usage": "connexion / réduction friction"
+        },
+        {
+          "keyword": "gratter les infos seul",
+          "score": 8.4,
+          "color": "vert",
+          "emotion": "débrouillardise épuisante",
+          "levier": "DRDP — fatigue mentale",
+          "usage": "connexion"
+        },
+        {
+          "keyword": "personne pour me guider",
+          "score": 8.2,
+          "color": "vert",
+          "emotion": "besoin d'autorité bienveillante",
+          "levier": "DRDP — désir de mentor",
+          "usage": "CTA / positionnement"
+        }
+      ]
+    },
+    {
+      "id": "boucle_consommation",
+      "label": "Boucle toxique de consommation",
+      "description": "Scroll, contenus, dopamine — le récipient surchargé",
+      "keywords": [
+        {
+          "keyword": "je consomme du contenu au lieu d'agir",
+          "score": 9.2,
+          "color": "vert",
+          "emotion": "culpabilité + addiction",
+          "levier": "DRDP — douleur quotidienne",
+          "usage": "hook / connexion"
+        },
+        {
+          "keyword": "self-improvement addiction",
+          "score": 9.0,
+          "color": "vert",
+          "emotion": "piège invisible",
+          "levier": "NEW — paradoxe",
+          "usage": "hook disruptif"
+        },
+        {
+          "keyword": "dopamine de l'apprentissage sans action",
+          "score": 8.8,
+          "color": "vert",
+          "emotion": "illusion de progression",
+          "levier": "NEW — mécanisme scientifique",
+          "usage": "métaphore / teaser"
+        },
+        {
+          "keyword": "72% appliquent jamais",
+          "score": 8.6,
+          "color": "vert",
+          "emotion": "choc statistique",
+          "levier": "SAFE — preuve chiffre",
+          "usage": "hook / preuve"
+        },
+        {
+          "keyword": "scroller à 2h du mat",
+          "score": 8.5,
+          "color": "vert",
+          "emotion": "honte nocturne",
+          "levier": "DRDP — douleur intime",
+          "usage": "connexion émotionnelle"
+        },
+        {
+          "keyword": "cerveau surchargé",
+          "score": 8.3,
+          "color": "vert",
+          "emotion": "fatigue cognitive permanente",
+          "levier": "DRDP — douleur physique",
+          "usage": "métaphore récipient"
+        },
+        {
+          "keyword": "attention 47 secondes",
+          "score": 7.8,
+          "color": "cyan",
+          "emotion": "prise de conscience",
+          "levier": "NEW — Gloria Mark data",
+          "usage": "hook / preuve"
+        },
+        {
+          "keyword": "ego depletion",
+          "score": 7.5,
+          "color": "cyan",
+          "emotion": "épuisement invisible",
+          "levier": "NEW — Baumeister",
+          "usage": "métaphore / teaser"
+        }
+      ]
+    },
+    {
+      "id": "metiers_chronophages",
+      "label": "Métiers chronophages — la prison du temps",
+      "description": "Bloqués dans un boulot qui les vide, sans énergie pour construire",
+      "keywords": [
+        {
+          "keyword": "rentrer vidé sans énergie pour construire",
+          "score": 9.5,
+          "color": "vert",
+          "emotion": "épuisement + impuissance",
+          "levier": "DRDP — douleur physique quotidienne",
+          "usage": "connexion émotionnelle profonde"
+        },
+        {
+          "keyword": "ma vie passe en pilote automatique",
+          "score": 9.3,
+          "color": "vert",
+          "emotion": "panique existentielle sourde",
+          "levier": "FOMO — temps qui file",
+          "usage": "hook / connexion"
+        },
+        {
+          "keyword": "10h par jour pour un truc que je déteste",
+          "score": 9.1,
+          "color": "vert",
+          "emotion": "colère + résignation",
+          "levier": "DRDP — douleur temporelle",
+          "usage": "hook disruptif"
+        },
+        {
+          "keyword": "mon corps lâche avant ma motivation",
+          "score": 8.9,
+          "color": "vert",
+          "emotion": "détresse physique",
+          "levier": "DRDP — douleur corporelle",
+          "usage": "connexion"
+        },
+        {
+          "keyword": "j'ai pas le temps de bosser sur mon projet",
+          "score": 8.7,
+          "color": "vert",
+          "emotion": "frustration temporelle",
+          "levier": "DRDP — contrainte perçue",
+          "usage": "hook / réduction friction"
+        },
+        {
+          "keyword": "week-end = récupérer pas construire",
+          "score": 8.5,
+          "color": "vert",
+          "emotion": "cercle vicieux repos/survie",
+          "levier": "DRDP — boucle enfermante",
+          "usage": "connexion / métaphore"
+        },
+        {
+          "keyword": "restauration, entrepôt, livraison, usine",
+          "score": 8.2,
+          "color": "vert",
+          "emotion": "identification métier directe",
+          "levier": "SAFE — reconnaissance sociale",
+          "usage": "connexion / verbatim"
+        },
+        {
+          "keyword": "bloqué dans un CDI qui me tue",
+          "score": 8.0,
+          "color": "cyan",
+          "emotion": "prison dorée inversée",
+          "levier": "DRDP — douleur structurelle",
+          "usage": "hook / connexion"
+        }
+      ]
+    },
+    {
+      "id": "peur_jugement",
+      "label": "Peur du jugement + honte",
+      "description": "Le regard des autres comme mur invisible",
+      "keywords": [
+        {
+          "keyword": "j'ose pas en parler autour de moi",
+          "score": 9.2,
+          "color": "vert",
+          "emotion": "honte cachée",
+          "levier": "DRDP — peur sociale",
+          "usage": "connexion émotionnelle"
+        },
+        {
+          "keyword": "peur qu'on se moque de moi",
+          "score": 9.0,
+          "color": "vert",
+          "emotion": "vulnérabilité pure",
+          "levier": "DRDP — peur du regard",
+          "usage": "connexion / hook"
+        },
+        {
+          "keyword": "et si je rate devant tout le monde",
+          "score": 8.8,
+          "color": "vert",
+          "emotion": "catastrophisation sociale",
+          "levier": "DRDP — peur anticipée",
+          "usage": "hook / connexion"
+        },
+        {
+          "keyword": "quarter-life crisis",
+          "score": 8.5,
+          "color": "vert",
+          "emotion": "panique identitaire 20-25 ans",
+          "levier": "DRDP — douleur générationnelle",
+          "usage": "hook / connexion"
+        },
+        {
+          "keyword": "honte silencieuse de pas avancer",
+          "score": 8.4,
+          "color": "vert",
+          "emotion": "souffrance invisible",
+          "levier": "DRDP — douleur interne",
+          "usage": "connexion profonde"
+        },
+        {
+          "keyword": "FOMO inversé — peur de rater sa vie",
+          "score": 8.1,
+          "color": "vert",
+          "emotion": "angoisse existentielle",
+          "levier": "FOMO — temporalité",
+          "usage": "hook / teaser"
+        },
+        {
+          "keyword": "affect labeling — nommer pour désamorcer",
+          "score": 7.6,
+          "color": "cyan",
+          "emotion": "soulagement cognitif",
+          "levier": "NEW — Lieberman -30% amygdale",
+          "usage": "micro-action cognitive"
+        },
+        {
+          "keyword": "Pratfall effect",
+          "score": 7.0,
+          "color": "cyan",
+          "emotion": "permission d'être imparfait",
+          "levier": "NEW — psychologie sociale",
+          "usage": "réduction friction"
+        }
+      ]
+    },
+    {
+      "id": "recipent_cerebral",
+      "label": "Le Récipient — encre passive vs active",
+      "description": "Métaphore fil rouge : ce que tu mets dans ton cerveau détermine tout",
+      "keywords": [
+        {
+          "keyword": "ton cerveau est un récipient",
+          "score": 8.8,
+          "color": "vert",
+          "emotion": "clarté immédiate",
+          "levier": "NEW — métaphore fondatrice",
+          "usage": "hook / métaphore centrale"
+        },
+        {
+          "keyword": "encre passive vs encre active",
+          "score": 8.5,
+          "color": "vert",
+          "emotion": "prise de conscience",
+          "levier": "NEW — framework original",
+          "usage": "métaphore / teaser"
+        },
+        {
+          "keyword": "80 notifications par jour",
+          "score": 8.3,
+          "color": "vert",
+          "emotion": "choc quantitatif",
+          "levier": "NEW — data concrète",
+          "usage": "hook / preuve"
+        },
+        {
+          "keyword": "tu crois savoir mais tu répètes ce qu'on t'a mis",
+          "score": 8.1,
+          "color": "vert",
+          "emotion": "disruption identitaire",
+          "levier": "NEW — reframe profond",
+          "usage": "hook disruptif"
+        },
+        {
+          "keyword": "plasticité corticale",
+          "score": 7.4,
+          "color": "cyan",
+          "emotion": "espoir scientifique",
+          "levier": "SAFE — preuve neuro",
+          "usage": "réduction friction / preuve"
+        },
+        {
+          "keyword": "reconsolidation mémoire Nader",
+          "score": 6.8,
+          "color": "violet",
+          "emotion": "espoir de changement",
+          "levier": "NEW — mécanisme neuro",
+          "usage": "teaser / preuve avancée"
+        }
+      ]
+    },
+    {
+      "id": "desir_plan",
+      "label": "Le désir d'un plan — clarté → action",
+      "description": "Besoin d'un chemin clair, pas de motivation vide",
+      "keywords": [
+        {
+          "keyword": "dis-moi exactement quoi faire",
+          "score": 9.1,
+          "color": "vert",
+          "emotion": "besoin de direction",
+          "levier": "FACILE — suppression de friction",
+          "usage": "CTA / micro-action"
+        },
+        {
+          "keyword": "j'ai besoin d'un plan pas de motivation",
+          "score": 9.0,
+          "color": "vert",
+          "emotion": "rejet du bullshit motivationnel",
+          "levier": "NEW — anti-coaching classique",
+          "usage": "hook / positionnement"
+        },
+        {
+          "keyword": "clarity follows action",
+          "score": 8.4,
+          "color": "vert",
+          "emotion": "permission d'agir imparfait",
+          "levier": "NEW — reframe séquence",
+          "usage": "réduction friction"
+        },
+        {
+          "keyword": "implementation intentions SI→ALORS",
+          "score": 7.8,
+          "color": "cyan",
+          "emotion": "structure rassurante",
+          "levier": "FACILE — Gollwitzer",
+          "usage": "micro-action cognitive"
+        },
+        {
+          "keyword": "micro-action cognitive",
+          "score": 7.5,
+          "color": "cyan",
+          "emotion": "accessibilité immédiate",
+          "levier": "FACILE — zéro friction",
+          "usage": "micro-action / CTA"
+        },
+        {
+          "keyword": "Kaizen — 1% par jour",
+          "score": 7.2,
+          "color": "cyan",
+          "emotion": "espoir progressif",
+          "levier": "FACILE + SAFE",
+          "usage": "réduction friction"
+        },
+        {
+          "keyword": "B-minus shipped today",
+          "score": 6.9,
+          "color": "violet",
+          "emotion": "permission d'imperfection",
+          "levier": "NEW — reframe qualité",
+          "usage": "réduction friction"
+        }
+      ]
+    },
+    {
+      "id": "preuve_adam",
+      "label": "Preuve Adam — données pures",
+      "description": "Chiffres réels qui prouvent la faisabilité",
+      "keywords": [
+        {
+          "keyword": "6700€ par mois à 21 ans",
+          "score": 9.0,
+          "color": "vert",
+          "emotion": "choc + espoir",
+          "levier": "SAFE — preuve chiffrée",
+          "usage": "preuve / CTA"
+        },
+        {
+          "keyword": "14h par jour seul",
+          "score": 8.8,
+          "color": "vert",
+          "emotion": "identification au sacrifice",
+          "levier": "SAFE — crédibilité",
+          "usage": "connexion / preuve"
+        },
+        {
+          "keyword": "sans personne pour le guider",
+          "score": 8.6,
+          "color": "vert",
+          "emotion": "résonance isolement",
+          "levier": "DRDP — miroir de leur situation",
+          "usage": "connexion / positionnement"
+        },
+        {
+          "keyword": "parti de zéro avec un métier chronophage",
+          "score": 8.4,
+          "color": "vert",
+          "emotion": "faisabilité prouvée",
+          "levier": "SAFE — social proof personnel",
+          "usage": "réduction friction / preuve"
+        }
+      ]
+    }
+  ],
+  "stats": {
+    "total_keywords": 70,
+    "vert_count": 55,
+    "cyan_count": 12,
+    "violet_count": 2,
+    "jaune_count": 1,
+    "score_moyen": 8.56,
+    "top_5_keywords": [
+      "personne croit en moi (9.6)",
+      "rentrer vidé sans énergie pour construire (9.5)",
+      "je sais quoi faire mais je fais rien (9.5)",
+      "trop intelligent pour commencer (9.4)",
+      "seul à y croire (9.4)"
+    ]
+  }
+}
