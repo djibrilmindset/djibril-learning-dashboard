@@ -286,6 +286,9 @@ body { font-family:'Inter',-apple-system,sans-serif; background:var(--bg-void); 
   <div class="nav-item" data-page="scripts"><span class="icon">📜</span><span>Scripts</span></div>
   <div class="nav-item" data-page="warroom"><span class="icon">⚔️</span><span>War Room</span></div>
   <div class="nav-item" data-page="comptes"><span class="icon">📊</span><span>Comptes</span></div>
+  <div class="nav-item" data-page="theses"><span class="icon">📖</span><span>Atlas Thèses</span><span class="nav-badge" style="background:rgba(248,87,166,0.2); color:var(--accent-pink);">NEW</span></div>
+  <div class="nav-item" data-page="plans"><span class="icon">🎬</span><span>Plans Scène</span><span class="nav-badge" style="background:rgba(255,189,46,0.2); color:var(--accent-amber);">253</span></div>
+  <div class="nav-item" data-page="frameworks"><span class="icon">🧬</span><span>Frameworks</span></div>
   <div class="nav-item" data-page="systeme"><span class="icon">⚙️</span><span>Système</span><span class="nav-badge" style="background:rgba(20,241,149,0.2); color:var(--accent-cyan);">LIVE</span></div>
   <div class="nav-spacer"></div>
   <div style="font-size:11px; color:var(--text-ghost); padding:0 14px;"><span class="live-dot" style="color:var(--accent-cyan);">●</span> Crons actifs</div>
@@ -299,6 +302,9 @@ body { font-family:'Inter',-apple-system,sans-serif; background:var(--bg-void); 
   <div class="mob-item" data-page="scripts"><span class="mob-icon">📜</span>Scripts</div>
   <div class="mob-item" data-page="warroom"><span class="mob-icon">⚔️</span>War Room</div>
   <div class="mob-item" data-page="comptes"><span class="mob-icon">📊</span>Comptes</div>
+  <div class="mob-item" data-page="theses"><span class="mob-icon">📖</span>Thèses</div>
+  <div class="mob-item" data-page="plans"><span class="mob-icon">🎬</span>Plans</div>
+  <div class="mob-item" data-page="frameworks"><span class="mob-icon">🧬</span>FW</div>
   <div class="mob-item" data-page="systeme"><span class="mob-icon">⚙️</span>Système</div>
 </div>
 
@@ -395,6 +401,39 @@ body { font-family:'Inter',-apple-system,sans-serif; background:var(--bg-void); 
     <div id="comptes-insights"></div>
   </div>
 
+  <!-- PAGE 7: ATLAS DES THÈSES -->
+  <div class="page" id="page-theses">
+    <div class="page-title" style="background:linear-gradient(135deg, #f857a6, #9945ff); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">Atlas des Thèses</div>
+    <div class="page-subtitle">Toutes tes thèses intellectuelles — triées, hiérarchisées, prêtes à filmer</div>
+    <div class="kpi-grid" id="theses-kpis"></div>
+    <div class="tabs" id="theses-tabs"></div>
+    <div id="theses-search" style="margin-bottom:20px;"><input type="text" id="theses-search-input" placeholder="🔍 Chercher une thèse..." style="width:100%; padding:12px 18px; background:var(--bg-card); border:1px solid var(--border-subtle); border-radius:var(--radius); color:var(--text-primary); font-size:13px; outline:none; font-family:inherit;" /></div>
+    <div id="theses-list"></div>
+  </div>
+
+  <!-- PAGE 8: PLANS DE SCÈNE -->
+  <div class="page" id="page-plans">
+    <div class="page-title" style="background:linear-gradient(135deg, #ffbd2e, #f857a6); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">Plans de Scène</div>
+    <div class="page-subtitle">253 idées de plans cinématiques — ta bibliothèque visuelle complète</div>
+    <div class="kpi-grid" id="plans-kpis"></div>
+    <div class="tabs" id="plans-tabs"></div>
+    <div id="plans-list"></div>
+  </div>
+
+  <!-- PAGE 9: FRAMEWORKS & RÉFÉRENCES -->
+  <div class="page" id="page-frameworks">
+    <div class="page-title" style="background:linear-gradient(135deg, #14f195, #9945ff); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">Frameworks & Références</div>
+    <div class="page-subtitle">Tes frameworks intellectuels + tes sources académiques</div>
+    <div class="section-title">🧬 Frameworks</div>
+    <div id="fw-list"></div>
+    <div class="section-title" style="margin-top:28px;">📚 Chercheurs & Auteurs</div>
+    <div class="grid-2" id="fw-refs"></div>
+    <div class="section-title" style="margin-top:28px;">🛠️ Outils</div>
+    <div class="grid-3" id="fw-outils"></div>
+    <div class="section-title" style="margin-top:28px;">🎨 Palettes Couleurs</div>
+    <div class="grid-3" id="fw-colors"></div>
+  </div>
+
   <!-- PAGE 6: SYSTÈME (CENTRE DE CONTRÔLE CRONS) -->
   <div class="page" id="page-systeme">
     <div class="page-title" style="background:linear-gradient(135deg, #14f195, #9945ff); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">Centre de Contrôle</div>
@@ -414,7 +453,7 @@ body { font-family:'Inter',-apple-system,sans-serif; background:var(--bg-void); 
 const APP = {
   currentPage: 'problemes',
   data: {},
-  dataFiles: ['problemes-croyances','insights','emociones','messages-niche','videos-niche','scripts-video','social-tracking','war-room','video-performance']
+  dataFiles: ['problemes-croyances','insights','emociones','messages-niche','videos-niche','scripts-video','social-tracking','war-room','video-performance','theses-atlas','plans-scene','frameworks-references']
 };
 const GH_RAW = 'https://raw.githubusercontent.com/djibrilmindset/djibril-learning-dashboard/master/data/';
 
@@ -453,6 +492,9 @@ function renderAll() {
   renderScripts();
   renderWarRoom();
   renderComptes();
+  renderTheses();
+  renderPlans();
+  renderFrameworks();
   renderSysteme();
 }
 
@@ -820,6 +862,205 @@ function renderComptes() {
 }
 
 /* ═══ SYSTÈME (CENTRE DE CONTRÔLE CRONS) ═══ */
+/* ═══ ATLAS DES THÈSES ═══ */
+function renderTheses(filterCat='all', search='') {
+  const data = APP.data['theses-atlas'] || {};
+  const cats = data.categories || [];
+  const allTheses = cats.flatMap(c => (c.theses||[]).map(t => ({...t, catName: c.name, catIcon: c.icon, catColor: c.color||'#9945ff'})));
+  const meta = data.meta || {};
+
+  // KPIs
+  const total = allTheses.length;
+  const ready = allTheses.filter(t => t.status==='ready').length;
+  const draft = allTheses.filter(t => t.status==='draft').length;
+  document.getElementById('theses-kpis').innerHTML = `
+    <div class="kpi"><div class="kpi-label">Total thèses</div><div class="kpi-value">${total}</div></div>
+    <div class="kpi"><div class="kpi-label">Prêtes à filmer</div><div class="kpi-value" style="background:linear-gradient(135deg,#14f195,#9945ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">${ready}</div></div>
+    <div class="kpi"><div class="kpi-label">Brouillons</div><div class="kpi-value">${draft}</div></div>
+    <div class="kpi"><div class="kpi-label">Catégories</div><div class="kpi-value">${cats.length}</div></div>
+  `;
+
+  // Tabs
+  document.getElementById('theses-tabs').innerHTML = `
+    <button class="tab-btn ${filterCat==='all'?'active':''}" data-thcat="all">Toutes</button>
+    ${cats.map(c => `<button class="tab-btn ${filterCat===c.id?'active':''}" data-thcat="${c.id}">${c.icon} ${c.name}</button>`).join('')}
+  `;
+  document.querySelectorAll('[data-thcat]').forEach(btn => btn.addEventListener('click', () => renderTheses(btn.dataset.thcat, document.getElementById('theses-search-input').value)));
+
+  // Filter
+  let filtered = filterCat==='all' ? allTheses : allTheses.filter(t => {
+    const cat = cats.find(c => c.theses && c.theses.some(th => th.id === t.id));
+    return cat && cat.id === filterCat;
+  });
+  if (search) {
+    const s = search.toLowerCase();
+    filtered = filtered.filter(t => (t.title||'').toLowerCase().includes(s) || (t.refinedThesis||'').toLowerCase().includes(s) || (t.keyInsight||'').toLowerCase().includes(s));
+  }
+
+  // Render
+  const funnelColors = {TOFU:'tag-tofu', MOFU:'tag-mofu', BOFU:'tag-bofu'};
+  const statusIcons = {draft:'📝', ready:'✅', filmed:'🎬', published:'🚀'};
+  document.getElementById('theses-list').innerHTML = filtered.map(t => `
+    <div class="expand-card" onclick="this.classList.toggle('open')">
+      <div class="ec-header">
+        <div style="display:flex;align-items:center;gap:10px;">
+          <span style="font-size:11px;color:var(--text-ghost);font-family:'JetBrains Mono',monospace;">${t.id}</span>
+          <span class="ec-title">${t.title||''}</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="tag ${funnelColors[t.funnel]||''}">${t.funnel||''}</span>
+          <span style="font-size:14px;">${statusIcons[t.status]||'📝'}</span>
+          <span class="ec-arrow">▼</span>
+        </div>
+      </div>
+      <div class="ec-preview">${t.refinedThesis||t.rawIdea||''}</div>
+      <div class="ec-meta">
+        <span style="background:${t.catColor}22;color:${t.catColor};padding:2px 8px;border-radius:12px;font-size:10px;font-weight:700;">${t.catIcon||''} ${t.catName||''}</span>
+        ${t.psychReference ? `<span style="color:var(--accent-cyan);">📚 ${t.psychReference}</span>` : ''}
+        <span style="color:var(--accent-amber);">⭐ P${t.priority||3}</span>
+      </div>
+      <div class="ec-details">
+        <div class="ec-detail-grid">
+          <div class="ec-detail-item"><div class="ec-detail-label">💡 Insight clé</div><div class="ec-detail-value">${t.keyInsight||'—'}</div></div>
+          <div class="ec-detail-item"><div class="ec-detail-label">📝 Idée brute</div><div class="ec-detail-value" style="font-style:italic;">${t.rawIdea||'—'}</div></div>
+        </div>
+        ${t.linkedConcepts && t.linkedConcepts.length ? `<div style="margin-top:8px;font-size:11px;color:var(--text-muted);">🔗 Liens: ${t.linkedConcepts.join(', ')}</div>` : ''}
+      </div>
+    </div>
+  `).join('');
+}
+
+/* ═══ PLANS DE SCÈNE ═══ */
+function renderPlans(filterCat='all') {
+  const data = APP.data['plans-scene'] || {};
+  const cats = data.categories || [];
+  const meta = data.meta || {};
+  const total = cats.reduce((s,c) => s + (c.plans||[]).length, 0);
+
+  // KPIs
+  const moods = {};
+  cats.forEach(c => (c.plans||[]).forEach(p => { moods[p.mood] = (moods[p.mood]||0)+1; }));
+  const topMood = Object.entries(moods).sort((a,b) => b[1]-a[1])[0];
+  document.getElementById('plans-kpis').innerHTML = `
+    <div class="kpi"><div class="kpi-label">Total plans</div><div class="kpi-value">${total}</div></div>
+    <div class="kpi"><div class="kpi-label">Catégories</div><div class="kpi-value">${cats.length}</div></div>
+    <div class="kpi"><div class="kpi-label">Top mood</div><div class="kpi-value" style="font-size:18px;">${topMood ? topMood[0] : '—'}</div><div class="kpi-note">${topMood ? topMood[1]+' plans' : ''}</div></div>
+    <div class="kpi"><div class="kpi-label">Solo-friendly</div><div class="kpi-value">${cats.reduce((s,c) => s + (c.plans||[]).filter(p => p.soloFriendly).length, 0)}</div></div>
+  `;
+
+  // Tabs
+  document.getElementById('plans-tabs').innerHTML = `
+    <button class="tab-btn ${filterCat==='all'?'active':''}" data-plcat="all">Tous (${total})</button>
+    ${cats.map(c => `<button class="tab-btn ${filterCat===c.id?'active':''}" data-plcat="${c.id}">${c.icon} ${c.name} (${(c.plans||[]).length})</button>`).join('')}
+  `;
+  document.querySelectorAll('[data-plcat]').forEach(btn => btn.addEventListener('click', () => renderPlans(btn.dataset.plcat)));
+
+  const filtered = filterCat==='all' ? cats : cats.filter(c => c.id===filterCat);
+  const diffColors = {easy:'var(--accent-cyan)', medium:'var(--accent-amber)', hard:'var(--accent-red)'};
+  const moodEmoji = {dramatic:'🎭', intimate:'🤫', dynamic:'⚡', experimental:'🧪', cinematic:'🎬'};
+
+  document.getElementById('plans-list').innerHTML = filtered.map(cat => `
+    <div class="cat-card open" style="cursor:default;">
+      <div class="cat-header" onclick="this.parentElement.classList.toggle('open')" style="cursor:pointer;">
+        <div class="cat-header-left">
+          <span class="cat-emoji">${cat.icon||'🎬'}</span>
+          <div><div class="cat-name">${cat.name||''}</div><div class="cat-desc">${cat.description||''}</div></div>
+        </div>
+        <div class="cat-stats">
+          <span class="cat-stat" style="background:rgba(153,69,255,0.1); color:var(--accent-purple);">${(cat.plans||[]).length} plans</span>
+          <span class="cat-arrow">▼</span>
+        </div>
+      </div>
+      <div class="cat-body">
+        ${(cat.plans||[]).map(p => `
+          <div class="prob-item" onclick="this.classList.toggle('open')" style="cursor:pointer;">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+              <div class="prob-title" style="flex:1;">${p.id} — ${p.description||''}</div>
+              <div style="display:flex;gap:6px;flex-shrink:0;">
+                <span style="font-size:10px;padding:2px 8px;border-radius:12px;background:${diffColors[p.difficulty]||'var(--accent-amber)'}22;color:${diffColors[p.difficulty]||'var(--accent-amber)'};font-weight:700;">${p.difficulty||''}</span>
+                <span style="font-size:12px;">${moodEmoji[p.mood]||'🎬'}</span>
+                ${p.soloFriendly ? '<span style="font-size:10px;padding:2px 8px;border-radius:12px;background:rgba(20,241,149,0.15);color:var(--accent-cyan);font-weight:700;">SOLO ✓</span>' : ''}
+              </div>
+            </div>
+            <div class="prob-details">
+              <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px;">
+                ${(p.equipment||[]).map(e => `<span style="font-size:10px;padding:2px 8px;border-radius:12px;background:rgba(153,69,255,0.1);color:var(--accent-purple);">${e}</span>`).join('')}
+                ${(p.bestFor||[]).map(b => `<span style="font-size:10px;padding:2px 8px;border-radius:12px;background:rgba(255,189,46,0.1);color:var(--accent-amber);">${b}</span>`).join('')}
+              </div>
+            </div>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  `).join('');
+}
+
+/* ═══ FRAMEWORKS & RÉFÉRENCES ═══ */
+function renderFrameworks() {
+  const data = APP.data['frameworks-references'] || {};
+  const fws = data.frameworks || [];
+  const refs = data.references || [];
+  const outils = data.outils || [];
+  const colors = data.colorPalettes || [];
+
+  const statusColors = {core:'var(--accent-purple)', secondary:'var(--accent-cyan)', emerging:'var(--accent-amber)'};
+  const statusLabels = {core:'CORE', secondary:'SECONDAIRE', emerging:'ÉMERGENT'};
+
+  // Frameworks
+  document.getElementById('fw-list').innerHTML = fws.map(fw => `
+    <div class="expand-card" onclick="this.classList.toggle('open')">
+      <div class="ec-header">
+        <div style="display:flex;align-items:center;gap:10px;">
+          <span style="font-size:10px;padding:3px 10px;border-radius:20px;background:${statusColors[fw.status]||'var(--accent-purple)'}22;color:${statusColors[fw.status]||'var(--accent-purple)'};font-weight:700;text-transform:uppercase;">${statusLabels[fw.status]||fw.status}</span>
+          <span class="ec-title">${fw.name||''}</span>
+        </div>
+        <span class="ec-arrow">▼</span>
+      </div>
+      <div class="ec-preview" style="color:var(--accent-cyan);font-style:italic;">"${fw.tagline||''}"</div>
+      <div class="ec-details">
+        <div style="font-size:13px;color:var(--text-secondary);line-height:1.6;margin-bottom:16px;">${fw.description||''}</div>
+        ${fw.keyComponents ? `<div style="display:flex;flex-wrap:wrap;gap:6px;">
+          ${fw.keyComponents.map(k => `<span style="font-size:11px;padding:4px 12px;border-radius:20px;background:rgba(153,69,255,0.1);color:var(--accent-purple);font-weight:600;">${k}</span>`).join('')}
+        </div>` : ''}
+        ${fw.psychReferences ? `<div style="margin-top:12px;font-size:11px;color:var(--text-muted);">📚 ${fw.psychReferences.join(', ')}</div>` : ''}
+      </div>
+    </div>
+  `).join('');
+
+  // Références
+  document.getElementById('fw-refs').innerHTML = refs.map(r => `
+    <div class="card">
+      <div style="font-weight:700;font-size:14px;margin-bottom:4px;">${r.name||''}</div>
+      <div style="font-size:11px;color:var(--accent-cyan);margin-bottom:8px;">${r.domain||''}</div>
+      <div style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:8px;">
+        ${(r.concepts||[]).map(c => `<span style="font-size:10px;padding:2px 8px;border-radius:12px;background:rgba(153,69,255,0.1);color:var(--accent-purple);font-weight:600;">${c}</span>`).join('')}
+      </div>
+      ${r.works && r.works.length ? `<div style="font-size:11px;color:var(--text-muted);font-style:italic;">📖 ${r.works.join(', ')}</div>` : ''}
+    </div>
+  `).join('');
+
+  // Outils
+  document.getElementById('fw-outils').innerHTML = outils.map(o => `
+    <div class="card" style="text-align:center;">
+      <div style="font-size:28px;margin-bottom:8px;">${o.icon||'🛠️'}</div>
+      <div style="font-weight:700;font-size:13px;margin-bottom:4px;">${o.name||''}</div>
+      <div style="font-size:11px;color:var(--text-muted);">${o.application||o.description||''}</div>
+    </div>
+  `).join('');
+
+  // Couleurs
+  document.getElementById('fw-colors').innerHTML = colors.map(c => `
+    <div class="card" style="text-align:center;">
+      <div style="display:flex;justify-content:center;gap:8px;margin-bottom:10px;">
+        ${(c.colors||[]).map(col => `<div style="width:32px;height:32px;border-radius:50%;background:${col.hex||'#999'};border:2px solid var(--border-subtle);"></div>`).join('')}
+      </div>
+      <div style="font-weight:700;font-size:12px;">${c.name||''}</div>
+      <div style="font-size:10px;color:var(--text-muted);margin-top:4px;">${c.dominant||''} dominant</div>
+      ${c.psychology ? `<div style="font-size:10px;color:var(--accent-cyan);margin-top:4px;">${c.psychology}</div>` : ''}
+    </div>
+  `).join('');
+}
+
 function renderSysteme() {
   const crons = [
     {id:'daily-video-publish', name:'Publication Vidéos', desc:'Post auto 9 comptes PostBridge, 2h décalage', schedule:'5h', cron:'0 5 * * *', enabled:true, lastRun:'2026-04-05', icon:'🚀', cat:'PUBLISH', catColor:'rgba(20,241,149,0.12)', catText:'#14f195'},
@@ -906,6 +1147,10 @@ function renderSysteme() {
 
 /* INIT */
 loadData();
+document.addEventListener('DOMContentLoaded', () => {
+  const si = document.getElementById('theses-search-input');
+  if (si) si.addEventListener('input', () => renderTheses('all', si.value));
+});
 </script>
 </body>
 </html>

@@ -1,0 +1,606 @@
+{
+  "meta": {
+    "version": "1.0",
+    "updated": "2026-04-06",
+    "creator": "Djibril Learning (Adam)",
+    "audience": "18-25 ans | le cérébral paralysé",
+    "positioning": "Stratège en Performance Mentale / Coach analytique comportementale"
+  },
+  "frameworks": [
+    {
+      "id": "FW-001",
+      "name": "Le Récipient Cérébral",
+      "tagline": "Ton cerveau est un récipient. L'encre qui entre détermine qui tu deviens.",
+      "description": "Métaphore fondatrice : le cerveau fonctionne comme un récipient qui accumule l'information (l'encre). La qualité et la fréquence de cette information détermine la formation de ta personnalité et tes capacités. L'encre passive (TikTok, scroll, notifications) versus l'encre active (livres, création, réflexion) crée deux trajectoires différentes. L'encre la plus fréquente finit par dominer via la plasticité corticale. Remplir intentionnellement son cerveau = normaliser l'information utile.",
+      "keyComponents": [
+        "Cerveau = récipient, information = encre",
+        "Encre passive vs encre active",
+        "Plasticité corticale et répétition",
+        "Chaque info = pièce LEGO (construction)",
+        "Balance cerveau + environnement",
+        "Remplissage intentionnel"
+      ],
+      "linkedTheses": ["TH-ENV", "TH-HABIT"],
+      "status": "core",
+      "psychologyReferences": ["Neuroplasticité", "Théorie de l'apprentissage", "Environnement comme déterminant"]
+    },
+    {
+      "id": "FW-002",
+      "name": "La Méthode 1+1",
+      "tagline": "Arrête de multiplier tes rêves par zéro. Commence à additionner tes actions.",
+      "description": "Transformation cognitive majeure : passer de la paralysie mentale (je sais tout mais je fais rien) à la construction progressive (je construis brique par brique). L'addition progressive des petites actions crée l'effet composé. Multiplication par zéro = connaissance sans application = paralysie. Addition = progression mesurable.",
+      "keyComponents": [
+        "Multiplication par zéro vs addition progressive",
+        "De la connaissance à l'action",
+        "Construction brique par brique",
+        "Effet composé",
+        "Déblocage de la paralysie"
+      ],
+      "linkedTheses": ["TH-PARALYSIE", "TH-ACTION"],
+      "status": "core",
+      "psychologyReferences": ["Théorie de l'auto-efficacité", "Motivation intrinsèque", "Micro-actions"]
+    },
+    {
+      "id": "FW-003",
+      "name": "Théorème de Conviction",
+      "tagline": "Conviction → Objectifs → Motivations → Causes → Discipline + Résilience",
+      "description": "Chaîne causale fondamentale : la conviction doit précéder tout le reste. Tu dois te persuader, pousser ton cerveau à croire. C'est la conviction qui génère les objectifs réalistes, qui génèrent les bonnes motivations, qui révèlent les causes profondes, qui finalement exigent discipline et résilience. Sans conviction au départ, toute la chaîne s'effondre.",
+      "keyComponents": [
+        "Conviction comme point de départ",
+        "Se persuader soi-même",
+        "Rappels constants de la conviction",
+        "Génération d'objectifs authentiques",
+        "Motivations alignées",
+        "Discipline et résilience en résultat"
+      ],
+      "linkedTheses": ["TH-CONVICTION", "TH-DISCIPLINE"],
+      "status": "core",
+      "psychologyReferences": ["Théorie de l'auto-persuasion", "Dissonance cognitive", "Habitude vs conviction"]
+    },
+    {
+      "id": "FW-004",
+      "name": "VOIR-NOMMER-PERMETTRE-GUIDER",
+      "tagline": "Framework empathique pour l'écriture de scripts et la copywriting.",
+      "description": "Structure en 4 étapes pour créer du contenu empathique et transformateur : (1) VOIR : reconnaître et valider la réalité de l'avatar, (2) NOMMER : donner un nom au problème, le rendre visible, (3) PERMETTRE : donner la permission d'agir imparfait, de commencer maintenant, (4) GUIDER : donner une micro-action concrète, faisable immédiatement.",
+      "keyComponents": [
+        "Voir la réalité de l'audience",
+        "Nommer le problème sans jugement",
+        "Donner permission d'être imparfait",
+        "Guider vers micro-action",
+        "Empathie comme fondation"
+      ],
+      "linkedTheses": ["TH-EMPATHIE", "TH-MICROACTION"],
+      "status": "secondary",
+      "psychologyReferences": ["Validation émotionnelle", "Théorie du changement de comportement", "Acceptation"]
+    },
+    {
+      "id": "FW-005",
+      "name": "LECTURE → RÉFLEXION → ANALYSE → APPLICATION",
+      "tagline": "Structure fondamentale de chaque vidéo et contenu éducatif.",
+      "description": "Arc pédagogique complet : (1) LECTURE : présenter une source, un auteur, un concept, (2) RÉFLEXION : creuser ce que ça signifie vraiment, (3) ANALYSE : décortiquer les mécanismes, montrer les biais, (4) APPLICATION : terminer par une application concrète pour l'avatar. Chaque contenu doit être ancré dans des sources, citer les auteurs, et terminer par du concret.",
+      "keyComponents": [
+        "Ancrage dans des sources scientifiques",
+        "Citation des auteurs et références",
+        "Réflexion approfondie",
+        "Analyse des mécanismes",
+        "Application concrète à la vie réelle"
+      ],
+      "linkedTheses": ["TH-EDUCATION", "TH-EVIDENCE"],
+      "status": "secondary",
+      "psychologyReferences": ["Apprentissage significatif", "Transférence des apprentissages", "Bloom's taxonomy"]
+    },
+    {
+      "id": "FW-006",
+      "name": "Les 3 Piliers Liés",
+      "tagline": "Environnement + Confiance en soi + Prise de décision. Interdépendants.",
+      "description": "Trois éléments qui ne peuvent pas fonctionner isolément. Si un manque, les autres souffrent aussi. L'environnement influence la confiance en soi. La confiance affecte la qualité des décisions. Les bonnes décisions changent l'environnement. Ils sont tous interconnectés. Point d'entrée stratégique : orienter vers un bon environnement crée une boucle positive.",
+      "keyComponents": [
+        "Environnement (contexte, influences, social)",
+        "Confiance en soi (auto-efficacité, croyances)",
+        "Prise de décision (discernement, action)",
+        "Interdépendance totale",
+        "Boucles de rétroaction positive"
+      ],
+      "linkedTheses": ["TH-ENV", "TH-CONFIANCE", "TH-DECISION"],
+      "status": "secondary",
+      "psychologyReferences": ["Théorie de l'auto-efficacité", "Environnement social", "Théorie de la décision"]
+    },
+    {
+      "id": "FW-007",
+      "name": "L'Amour comme Moteur",
+      "tagline": "Aimer les processus car ils mènent aux objectifs. Extraire le nectar de chaque action.",
+      "description": "Transformation profonde de la relation au processus. Plutôt que de subir les étapes vers l'objectif, apprendre à les aimer. Le processus devient la récompense. Distinction : Désir vs Besoin. Le désir est orienté vers ce qui nourrit. Le besoin est compulsif. Orienter l'avatar vers le désir de s'améliorer plutôt que le besoin de prouver.",
+      "keyComponents": [
+        "Processus comme source de satisfaction",
+        "Nectar dans chaque action",
+        "Désir vs Besoin",
+        "Intrinsic motivation",
+        "Plaisir dans le progressif"
+      ],
+      "linkedTheses": ["TH-MOTIVATION", "TH-PROCESS"],
+      "status": "emerging",
+      "psychologyReferences": ["Motivation intrinsèque", "Flow state (Csikszentmihalyi)", "Théorie du bien-être"]
+    },
+    {
+      "id": "FW-008",
+      "name": "L'XP du Jeu Vidéo",
+      "tagline": "Quand le niveau est trop dur, aller chercher de l'XP. Ne pas recommencer dans le vide.",
+      "description": "Métaphore gaming : on ne peut pas bosser sur un niveau trop difficile sans XP. Il faut aller explorer, pratiquer, commettre des erreurs dans des environnements plus faciles. Data + pratique + erreurs = progression. L'application : quand tu es bloqué, c'est pas que tu es débile, c'est que tu manques d'XP. Va chercher les micro-apprentissages qui te manquent.",
+      "keyComponents": [
+        "Progression par niveaux",
+        "Accumulation d'expérience (XP)",
+        "Ne pas sauter les étapes",
+        "Apprentissage par erreur",
+        "Pratique itérative"
+      ],
+      "linkedTheses": ["TH-LEARNING", "TH-PROGRESSION"],
+      "status": "emerging",
+      "psychologyReferences": ["Théorie de Vygotski (zone proximale)", "Apprentissage par essai-erreur", "Gamification"]
+    }
+  ],
+  "references": [
+    {
+      "id": "REF-001",
+      "name": "Daniel Kahneman",
+      "domain": "Psychologie cognitive",
+      "concepts": [
+        "Système 1 / Système 2",
+        "Biais cognitifs",
+        "Heuristiques",
+        "Prise de décision rationnelle vs irrationnelle"
+      ],
+      "works": ["Thinking, Fast and Slow"],
+      "linkedTheses": ["TH-COGNITION", "TH-DECISION"],
+      "usageInContent": "Montrer comment le Système 1 (automatique) domine chez le cérébral paralysé. L'encre passive alimente le Système 1. Les heuristiques créent des biais qui paralysent les décisions."
+    },
+    {
+      "id": "REF-002",
+      "name": "Roy Baumeister",
+      "domain": "Psychologie sociale",
+      "concepts": [
+        "Ego depletion",
+        "Volonté comme muscle",
+        "Fatigue décisionnelle",
+        "Ressources mentales limitées"
+      ],
+      "works": ["Willpower: Rediscovering the Greatest Human Strength"],
+      "linkedTheses": ["TH-DISCIPLINE", "TH-VOLONTE"],
+      "usageInContent": "Expliquer pourquoi on n'agit pas en fin de journée. Pourquoi l'environnement toxique épuise la volonté. Micro-actions = gestion intelligente du depletion."
+    },
+    {
+      "id": "REF-003",
+      "name": "David Dunning & Justin Kruger",
+      "domain": "Psychologie cognitive",
+      "concepts": [
+        "Effet Dunning-Kruger",
+        "Montagne de la Stupidité",
+        "Vallée de l'Humilité",
+        "Incompétence non reconnue"
+      ],
+      "works": ["Unskilled and Unaware of It"],
+      "linkedTheses": ["TH-METACONNAISSANCE"],
+      "usageInContent": "Le cérébral paralysé croit souvent qu'il sait mais il ne sait pas qu'il ne sait pas (mont de la stupidité). Montrer la vallée de l'humilité comme point de transformation."
+    },
+    {
+      "id": "REF-004",
+      "name": "Léon Festinger",
+      "domain": "Psychologie sociale",
+      "concepts": [
+        "Dissonance cognitive",
+        "Biais de confirmation",
+        "Rationalisation des croyances"
+      ],
+      "works": ["A Theory of Cognitive Dissonance"],
+      "linkedTheses": ["TH-CONVICTION", "TH-CROYANCE"],
+      "usageInContent": "Pourquoi on reste paralysé : la dissonance entre 'je sais' et 'je fais rien'. Comment la répétition de l'information 'active' change les croyances et réduit la dissonance."
+    },
+    {
+      "id": "REF-005",
+      "name": "Viktor Frankl",
+      "domain": "Psychiatrie / Existentialisme",
+      "concepts": [
+        "Sens de la vie",
+        "Logothérapie",
+        "Liberté de choix même en contexte limité",
+        "Sens comme motivation"
+      ],
+      "works": ["Man's Search for Meaning"],
+      "linkedTheses": ["TH-SENS", "TH-MOTIVATION"],
+      "usageInContent": "Le sens donne la résilience. L'environnement peut être toxique mais si tu as du sens, tu peux progresser. Application : trouver le sens personnel derrière chaque action."
+    },
+    {
+      "id": "REF-006",
+      "name": "Albert Bandura",
+      "domain": "Psychologie",
+      "concepts": [
+        "Auto-efficacité",
+        "Apprentissage social",
+        "Modélisation",
+        "Expectations and self-belief"
+      ],
+      "works": ["Social Foundation of Thought and Action"],
+      "linkedTheses": ["TH-CONFIANCE", "TH-LEARNING"],
+      "usageInContent": "La confiance en soi se construit par les petites victoires. Montrer comment les micro-actions créent l'auto-efficacité. Importance des modèles et de l'observation."
+    },
+    {
+      "id": "REF-007",
+      "name": "Martin Seligman",
+      "domain": "Psychologie positive",
+      "concepts": [
+        "Impuissance apprise",
+        "Optimisme vs pessimisme",
+        "Bien-être authentique",
+        "Résilience"
+      ],
+      "works": ["Learned Optimism"],
+      "linkedTheses": ["TH-MOTIVATION", "TH-RESILIENCE"],
+      "usageInContent": "Le cérébral paralysé souffre souvent d'impuissance apprise. Montrer comment les micro-actions combattent cette impuissance et créent l'optimisme."
+    },
+    {
+      "id": "REF-008",
+      "name": "Edgar Morin",
+      "domain": "Sociologie / Philosophie",
+      "concepts": [
+        "Pensée complexe",
+        "Interconnexion des systèmes",
+        "Holisme vs réductionnisme"
+      ],
+      "works": ["La Méthode"],
+      "linkedTheses": ["TH-SYSTEME", "TH-COMPLEXITE"],
+      "usageInContent": "Les problèmes du cérébral paralysé ne sont pas simples. Ils sont complexes et interconnectés (cerveau + environnement + confiance). Montrer l'interdépendance."
+    },
+    {
+      "id": "REF-009",
+      "name": "Carol Dweck",
+      "domain": "Psychologie",
+      "concepts": [
+        "Growth mindset vs fixed mindset",
+        "Croyances sur l'intelligence",
+        "Résilience face à l'échec"
+      ],
+      "works": ["Mindset: The New Psychology of Success"],
+      "linkedTheses": ["TH-CROYANCE", "TH-LEARNING"],
+      "usageInContent": "Fixed mindset = 'je suis débile' = paralysie. Growth mindset = 'je peux apprendre' = action. L'encre active remplit un growth mindset."
+    },
+    {
+      "id": "REF-010",
+      "name": "Amos Tversky",
+      "domain": "Psychologie cognitive",
+      "concepts": [
+        "Heuristiques et biais",
+        "Prospect theory",
+        "Jugement sous incertitude"
+      ],
+      "works": ["Judgment under Uncertainty"],
+      "linkedTheses": ["TH-COGNITION", "TH-DECISION"],
+      "usageInContent": "Comment nos biais cognitifs nous paralysent. L'encre passive renforce les biais. L'analyse et la réflexion réduisent les biais."
+    },
+    {
+      "id": "REF-011",
+      "name": "Gilles Lipovetsky",
+      "domain": "Philosophie / Sociologie",
+      "concepts": [
+        "L'ère du vide",
+        "Hypermodernité",
+        "Individualisme post-moderne",
+        "Injonction au bonheur"
+      ],
+      "works": ["L'ère du vide", "La société de déception"],
+      "linkedTheses": ["TH-CONTEXTE", "TH-CULTURE"],
+      "usageInContent": "Contexte générationnel : l'absence de repères crée l'isolement et la paralysie. L'ère du vide demande une auto-construction intentionnelle du sens."
+    },
+    {
+      "id": "REF-012",
+      "name": "Hartmut Rosa",
+      "domain": "Sociologie",
+      "concepts": [
+        "Accélération sociale",
+        "Aliénation moderne",
+        "Perte de contrôle temporal"
+      ],
+      "works": ["Accélération"],
+      "linkedTheses": ["TH-ENVIRONNEMENT", "TH-TEMPS"],
+      "usageInContent": "La paralysie vient aussi du rythme. L'accélération créée par la technologie et la société moderne paralyse les jeunes. La Méthode 1+1 crée du contrôle temporal."
+    },
+    {
+      "id": "REF-013",
+      "name": "Carl Jung",
+      "domain": "Psychologie analytique",
+      "concepts": [
+        "Inconscient collectif",
+        "Archétypes",
+        "Individuation",
+        "Ombre"
+      ],
+      "works": ["Modern Man in Search of a Soul"],
+      "linkedTheses": ["TH-INCONSCIENT", "TH-TRANSFORMATION"],
+      "usageInContent": "Le voyage du cérébral paralysé est une individuation : intégrer son ombre (les parts qu'on rejette), rencontrer les archétypes qui nous inspirent."
+    },
+    {
+      "id": "REF-014",
+      "name": "Hans Eysenck",
+      "domain": "Psychologie de la personnalité",
+      "concepts": [
+        "Extraversion vs Introversion",
+        "Neuroticisme",
+        "Traits de personnalité stables"
+      ],
+      "works": ["Personality and Individual Differences"],
+      "linkedTheses": ["TH-PERSONNALITE"],
+      "usageInContent": "Comprendre les types de cérébral paralysé selon les traits. L'introversion ≠ paralysie. Le neuroticisme peut être travaillé par l'action."
+    },
+    {
+      "id": "REF-015",
+      "name": "Aristote",
+      "domain": "Philosophie",
+      "concepts": [
+        "Éthique (Nicomachean Ethics)",
+        "Vertu comme habitus",
+        "Eudaimonia (bien-être authentique)",
+        "Phronesis (prudence)"
+      ],
+      "works": ["Nicomachean Ethics"],
+      "linkedTheses": ["TH-VERTU", "TH-HABITUS"],
+      "usageInContent": "La vertu se construit par la répétition (habitus). L'encre active = pratique des vertus. La vertu crée l'eudaimonia. Application : construire ses vertus par micro-actions."
+    },
+    {
+      "id": "REF-016",
+      "name": "Sénèque",
+      "domain": "Philosophie stoïcienne",
+      "concepts": [
+        "Gestion du temps",
+        "Adversité comme opportunité",
+        "Contrôle de ce qui dépend de nous",
+        "Sagesse quotidienne"
+      ],
+      "works": ["Lettres à Lucilius"],
+      "linkedTheses": ["TH-STOICISME", "TH-TEMPS"],
+      "usageInContent": "Comment gérer le temps : ce qu'on contrôle vs ce qu'on contrôle pas. L'adversité de l'environnement peut être transformée. Le Théorème de Conviction s'inspire du stoïcisme."
+    },
+    {
+      "id": "REF-017",
+      "name": "Marc-Aurèle",
+      "domain": "Philosophie stoïcienne",
+      "concepts": [
+        "Méditations quotidiennes",
+        "Contrôle de soi",
+        "Préférence de la raison",
+        "Acceptation et action"
+      ],
+      "works": ["Méditations"],
+      "linkedTheses": ["TH-STOICISME", "TH-DISCIPLINE"],
+      "usageInContent": "Méditation comme micro-action. Auto-discipline comme résultat de la conviction. Comment transformer les pensées automatiques (Système 1) en pensées réfléchies."
+    },
+    {
+      "id": "REF-018",
+      "name": "Immanuel Kant",
+      "domain": "Philosophie",
+      "concepts": [
+        "Impératif catégorique",
+        "Devoir vs intérêt",
+        "Autonomie et raison",
+        "Dignité"
+      ],
+      "works": ["Critique de la Raison Pure", "Fondation pour la Métaphysique des Moeurs"],
+      "linkedTheses": ["TH-AUTONOMIE", "TH-RAISON"],
+      "usageInContent": "La paralysie vient souvent d'hétéronomie (être gouverné par d'autres). L'autonomie kantiénne = capacité à se gouverner par la raison, pas par les impulsions."
+    },
+    {
+      "id": "REF-019",
+      "name": "Dan Ariely",
+      "domain": "Économie comportementale",
+      "concepts": [
+        "Choix irrationnels prévisibles",
+        "Biais de sélection",
+        "Anchoring effect",
+        "Loss aversion"
+      ],
+      "works": ["Predictably Irrational"],
+      "linkedTheses": ["TH-DECISION", "TH-BIAIS"],
+      "usageInContent": "Pourquoi on choisit mal : le biais d'ancrage, l'aversion aux pertes, l'illusion du contrôle. Comment les micro-décisions bien prises s'accumulent."
+    },
+    {
+      "id": "REF-020",
+      "name": "Robert Cialdini",
+      "domain": "Psychologie de l'influence",
+      "concepts": [
+        "6 principes d'influence (autorité, rareté, réciprocité, etc.)",
+        "Commitment and consistency",
+        "Social proof"
+      ],
+      "works": ["Influence: The Psychology of Persuasion"],
+      "linkedTheses": ["TH-INFLUENCE", "TH-ENVIRONNEMENT"],
+      "usageInContent": "Comment l'environnement nous influence automatiquement. La Méthode 1+1 crée de la 'commitment' personnelle. Choisir son environnement = choisir qui influence ton encre."
+    },
+    {
+      "id": "REF-021",
+      "name": "Frank Capra",
+      "domain": "Cinéma / Réalisation",
+      "concepts": [
+        "Humanisme dans le cinéma",
+        "Héros ordinaires",
+        "Transformation par l'action",
+        "Individualisme comme force morale"
+      ],
+      "works": ["It's a Wonderful Life", "Mr. Deeds Goes to Town"],
+      "linkedTheses": ["TH-CINEMA", "TH-NARRATIVE"],
+      "usageInContent": "Modèle cinématique : le héros ordinaire qui découvre son pouvoir par l'action. Structure narrative du cérébral paralysé qui devient entrepreneur mental. Référence visuelle et narrative."
+    }
+  ],
+  "outils": [
+    {
+      "id": "TOOL-001",
+      "name": "Myskl",
+      "category": "Psychologie appliquée",
+      "purpose": "Levier psychologique pour modules et systèmes de récompense",
+      "application": "Construire des micro-actions avec récompenses intégrées. Utiliser la psychologie de la motivation pour créer des habitus positifs.",
+      "linkedFrameworks": ["FW-002", "FW-007"]
+    },
+    {
+      "id": "TOOL-002",
+      "name": "iClose",
+      "category": "Conversion",
+      "purpose": "Techniques de closing et persuasion en vente",
+      "application": "Convertir les prospects en clients. Comprendre la psychologie du 'non' et le transformer en 'oui'. Applicable à la persuasion personnelle et interpersonnelle.",
+      "linkedFrameworks": ["FW-004"]
+    },
+    {
+      "id": "TOOL-003",
+      "name": "ManyChat",
+      "category": "Automatisation",
+      "purpose": "Automatisation des messages et des séquences de communication",
+      "application": "Créer des systèmes de rappels pour l'encre active. Automatiser la diffusion du contenu. Maintenir la présence sans effort supplémentaire.",
+      "linkedFrameworks": ["FW-001"]
+    },
+    {
+      "id": "TOOL-004",
+      "name": "Submagic",
+      "category": "Production vidéo",
+      "purpose": "Sous-titres automatiques et édition rapide",
+      "application": "Accélérer la production de vidéos. Les sous-titres augmentent l'engagement et l'accessibilité. Essentiel pour TikTok et court-forme.",
+      "linkedFrameworks": ["FW-005"]
+    },
+    {
+      "id": "TOOL-005",
+      "name": "Systeme.io",
+      "category": "Funnel & Analytics",
+      "purpose": "Tracking, funnel de vente, automatisation marketing",
+      "application": "Mesurer le parcours du client. Optimiser les funnels. Créer des automations. Data = connaissance = pouvoir d'optimisation.",
+      "linkedFrameworks": ["FW-002"]
+    },
+    {
+      "id": "TOOL-006",
+      "name": "Gumloop",
+      "category": "Automatisation",
+      "purpose": "Automatisation rapide des rapports et analytics TikTok",
+      "application": "Récupérer les données TikTok et générer des rapports automatiques. Décision basée sur data en temps réel.",
+      "linkedFrameworks": ["FW-008"]
+    },
+    {
+      "id": "TOOL-007",
+      "name": "Firefly",
+      "category": "Production audio",
+      "purpose": "Effets sonores et design sonore",
+      "application": "Ajouter des effets sonores aux vidéos. Le son est une partie de l'encre. Augmente l'engagement de 30%+.",
+      "linkedFrameworks": ["FW-001"]
+    },
+    {
+      "id": "TOOL-008",
+      "name": "Prosodie",
+      "category": "Technique vocale",
+      "purpose": "Technique vocale et maîtrise du ton",
+      "application": "Améliorer la qualité vocale et l'impact des vidéos. La voix = partie essentielle de la présence. À apprendre et maîtriser.",
+      "linkedFrameworks": ["FW-005"]
+    }
+  ],
+  "colorPalettes": [
+    {
+      "id": "PALETTE-001",
+      "name": "Vert + Bleu",
+      "dominantColor": "Bleu",
+      "hexCodes": {
+        "primary": "#1e3a8a",
+        "secondary": "#10b981",
+        "accent": "#6366f1"
+      },
+      "psychology": "Calme, confiance, croissance. Bleu = tranquillité, vert = développement.",
+      "usageContext": "Contenu sérieux, éducatif, construction progressive."
+    },
+    {
+      "id": "PALETTE-002",
+      "name": "Bleu + Rouge",
+      "dominantColor": "Bleu",
+      "hexCodes": {
+        "primary": "#1e40af",
+        "secondary": "#dc2626",
+        "accent": "#f59e0b"
+      },
+      "psychology": "Énergie avec stabilité. Bleu = fondation, rouge = action et passion.",
+      "usageContext": "Contenu motivant, d'action, de transformation."
+    },
+    {
+      "id": "PALETTE-003",
+      "name": "Bleu + Violet",
+      "dominantColor": "Bleu",
+      "hexCodes": {
+        "primary": "#0f172a",
+        "secondary": "#7c3aed",
+        "accent": "#06b6d4"
+      },
+      "psychology": "Mystère, profondeur, transformation. Bleu = stabilité, violet = évolution spirituelle/mentale.",
+      "usageContext": "Contenu de profondeur psychologique, introspection."
+    },
+    {
+      "id": "PALETTE-004",
+      "name": "Jaune + Violet",
+      "dominantColor": "Équilibré",
+      "hexCodes": {
+        "primary": "#fbbf24",
+        "secondary": "#8b5cf6",
+        "accent": "#ec4899"
+      },
+      "psychology": "Contraste fort, créativité, énergie mentale.",
+      "usageContext": "Contenus créatifs, innovants, provocateurs."
+    },
+    {
+      "id": "PALETTE-005",
+      "name": "Violet + Orange",
+      "dominantColor": "Violet",
+      "hexCodes": {
+        "primary": "#6d28d9",
+        "secondary": "#f97316",
+        "accent": "#a855f7"
+      },
+      "psychology": "Ambitieux, créatif, énergique. Violet = pouvoir mental, orange = courage.",
+      "usageContext": "Contenu d'ambition, de courage, de dépassement."
+    }
+  ],
+  "contentStrategy": {
+    "positioning": "Stratège en Performance Mentale / Coach analytique comportementale",
+    "tagline": "Je transforme ta paralysie intellectuelle en action mécanique",
+    "role": "L'Ingénieur du Mental",
+    "noteOnRole": "Pas le coach émotionnel. Pas le motivateur. L'ingénieur qui décortique les mécanismes mentaux et crée les systèmes d'action.",
+    "pipeline": [
+      "Vidéos problématiques et éducatives (TOFU/MOFU)",
+      "Fichiers à vendre (templates, frameworks, guides)",
+      "Accompagnements individuels et consulting"
+    ],
+    "authorizedHooks": [
+      "Ma théorie sur pourquoi notre génération...",
+      "Après 50 livres de psycho...",
+      "Voici ce que les chercheurs disent vraiment sur...",
+      "La plupart des gens se trompent sur...",
+      "La vraie raison pour laquelle tu es bloqué..."
+    ],
+    "forbiddenTopics": [
+      "Coiffure / Barbier / Salons",
+      "Conseils génériques sans ancrage scientifique",
+      "Motivation vide sans mécanismes",
+      "Contenu répétitif"
+    ],
+    "targetAudience": {
+      "age": "18-25 ans",
+      "archetype": "le cérébral paralysé",
+      "painPoints": [
+        "Isolement social et professionnel",
+        "Paralysie intellectuelle (je sais mais je fais rien)",
+        "Perte de sens et direction",
+        "Environnement toxique ou non-supportant",
+        "Manque de confiance malgré le savoir"
+      ],
+      "desires": [
+        "Comprendre pourquoi il est bloqué",
+        "Trouver un sens profond",
+        "Construire progressivement (pas tout d'un coup)",
+        "Avoir un modèle / une référence",
+        "Transformer le savoir en action"
+      ]
+    },
+    "contentRatio": {
+      "TOFU_Cinema": "1 vidéo par jour (45 secondes, iPhone, 5 plans, références psycho)",
+      "MOFU_Coaching": "5 vidéos par semaine (coaching mécanismes psycho, frameworks, analyse)",
+      "ratio": "1:5 cinéma-coaching"
+    },
+    "ultimateObjective": "Devenir la référence intellectuelle de sa génération en Performance Mentale"
+  }
+}

@@ -1,0 +1,3934 @@
+{
+  "meta": {
+    "version": "1.0",
+    "updated": "2026-04-06",
+    "totalPlans": 253,
+    "categories": 15
+  },
+  "categories": [
+    {
+      "id": "CAT-01",
+      "name": "Interaction Caméra",
+      "icon": "🎬",
+      "description": "Plans impliquant une interaction directe avec la caméra",
+      "plans": [
+        {
+          "id": "PS-001",
+          "description": "Plans où je toque sur la caméra avec la tête baissée, et je ramasse la caméra par terre",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A",
+            "cam_B"
+          ],
+          "mood": "dynamic",
+          "bestFor": [
+            "hook",
+            "transition"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-002",
+          "description": "Varier les scènes en mettant la caméra hors de mon champ de vision et ne pas la regarder",
+          "difficulty": "easy",
+          "equipment": [
+            "cam_A",
+            "cam_B"
+          ],
+          "mood": "intimate",
+          "bestFor": [
+            "broll",
+            "closeup"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-003",
+          "description": "Plan où la caméra reste fixée sur moi en avançant petit à petit (fixée sur voiture)",
+          "difficulty": "hard",
+          "equipment": [
+            "cam_A",
+            "car"
+          ],
+          "mood": "cinematic",
+          "bestFor": [
+            "transition",
+            "movement"
+          ],
+          "soloFriendly": false
+        },
+        {
+          "id": "PS-004",
+          "description": "Plan parfocal: je tiens la caméra, gros plan tête et dézoom",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A"
+          ],
+          "mood": "dramatic",
+          "bestFor": [
+            "hook",
+            "reveal"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-005",
+          "description": "Scène où je prends la caméra à la main et la tourne vers moi",
+          "difficulty": "easy",
+          "equipment": [
+            "cam_A"
+          ],
+          "mood": "dynamic",
+          "bestFor": [
+            "transition",
+            "interaction"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-006",
+          "description": "Plan crash-cadre: caméra semble glisser du plafond, finir au sol",
+          "difficulty": "hard",
+          "equipment": [
+            "cam_A",
+            "tripod"
+          ],
+          "mood": "dramatic",
+          "bestFor": [
+            "hook",
+            "transition"
+          ],
+          "soloFriendly": false
+        },
+        {
+          "id": "PS-007",
+          "description": "Jouer avec le zoom par focale",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A",
+            "cam_B"
+          ],
+          "mood": "cinematic",
+          "bestFor": [
+            "closeup",
+            "reveal"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-008",
+          "description": "Caméra A sur surface instable (pile de livres) faire glisser pour crash-cadre",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A",
+            "books"
+          ],
+          "mood": "experimental",
+          "bestFor": [
+            "transition",
+            "hook"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-009",
+          "description": "Smartphone déclencheur à distance, capter fumée de respiration nuit urbaine",
+          "difficulty": "medium",
+          "equipment": [
+            "smartphone",
+            "tripod"
+          ],
+          "mood": "cinematic",
+          "bestFor": [
+            "broll",
+            "atmosphere"
+          ],
+          "soloFriendly": true
+        }
+      ]
+    },
+    {
+      "id": "CAT-02",
+      "name": "Gros Plans - Yeux, Visage, Bouche",
+      "icon": "👁️",
+      "description": "Gros plans détaillés du visage, des yeux et de la bouche",
+      "plans": [
+        {
+          "id": "PS-010",
+          "description": "Plan sur mes yeux (zoomer/pupilles)",
+          "difficulty": "easy",
+          "equipment": [
+            "cam_A",
+            "ring_light"
+          ],
+          "mood": "intimate",
+          "bestFor": [
+            "closeup",
+            "hook"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-011",
+          "description": "Gros plan bouche qui parle (micro proche, chuchotement)",
+          "difficulty": "easy",
+          "equipment": [
+            "cam_A",
+            "microphone"
+          ],
+          "mood": "intimate",
+          "bestFor": [
+            "closeup",
+            "voiceover"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-012",
+          "description": "Sourire en bougeant la tête face cam gros plan",
+          "difficulty": "easy",
+          "equipment": [
+            "cam_A"
+          ],
+          "mood": "intimate",
+          "bestFor": [
+            "closeup",
+            "reaction"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-013",
+          "description": "Filmer en gros plan avec casque et lumières",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A",
+            "headphones",
+            "ring_light"
+          ],
+          "mood": "cinematic",
+          "bestFor": [
+            "closeup",
+            "broll"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-014",
+          "description": "Plan rapproché sur cils au clignotement, lumière ponctuelle",
+          "difficulty": "hard",
+          "equipment": [
+            "cam_A",
+            "ring_light",
+            "macro_lens"
+          ],
+          "mood": "intimate",
+          "bestFor": [
+            "closeup",
+            "dramatic"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-015",
+          "description": "Cut rapide lèvres qui chuchotent hook, puis caméra face yeux",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A"
+          ],
+          "mood": "dramatic",
+          "bestFor": [
+            "hook",
+            "transition"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-016",
+          "description": "Plan macro iris, lent zoom-out pour révéler visage",
+          "difficulty": "hard",
+          "equipment": [
+            "cam_A",
+            "macro_lens"
+          ],
+          "mood": "cinematic",
+          "bestFor": [
+            "reveal",
+            "hook"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-017",
+          "description": "Plan semi-plongée visage à travers tissu transparent coloré",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A",
+            "transparent_fabric"
+          ],
+          "mood": "experimental",
+          "bestFor": [
+            "closeup",
+            "artistic"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-018",
+          "description": "Ralenti sur cils où larme/goutte d'eau se forme et tombe",
+          "difficulty": "hard",
+          "equipment": [
+            "cam_A",
+            "slow_motion",
+            "macro_lens"
+          ],
+          "mood": "dramatic",
+          "bestFor": [
+            "closeup",
+            "emotion"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-019",
+          "description": "Gros plan latéral mèche cheveux devant œil, contre-jour",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A",
+            "backlight"
+          ],
+          "mood": "cinematic",
+          "bestFor": [
+            "closeup",
+            "artistic"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-020",
+          "description": "Caméra B plan serré yeux avec ring light, ouverture/fermeture paupières macro",
+          "difficulty": "hard",
+          "equipment": [
+            "cam_B",
+            "ring_light",
+            "macro_lens"
+          ],
+          "mood": "intimate",
+          "bestFor": [
+            "closeup",
+            "dramatic"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-021",
+          "description": "Ralenti lèvres murmurant mot-clé avant cut sur yeux",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A",
+            "slow_motion"
+          ],
+          "mood": "dramatic",
+          "bestFor": [
+            "hook",
+            "closeup"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-022",
+          "description": "Macro iris puis recul brusque en plan large",
+          "difficulty": "hard",
+          "equipment": [
+            "cam_A",
+            "macro_lens",
+            "zoom"
+          ],
+          "mood": "dramatic",
+          "bestFor": [
+            "reveal",
+            "transition"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-023",
+          "description": "Caméra B cut mèche cheveux repoussée, plan très serré",
+          "difficulty": "easy",
+          "equipment": [
+            "cam_B"
+          ],
+          "mood": "intimate",
+          "bestFor": [
+            "closeup",
+            "transition"
+          ],
+          "soloFriendly": true
+        }
+      ]
+    },
+    {
+      "id": "CAT-03",
+      "name": "Mouvements Mains et Objets",
+      "icon": "🤲",
+      "description": "Plans mettant en avant les mains et interactions avec des objets",
+      "plans": [
+        {
+          "id": "PS-024",
+          "description": "Mains parallèles au centre cam, jouer zones d'ombre, doigts qui se referment sur cam avec lumière jaune",
+          "difficulty": "hard",
+          "equipment": [
+            "cam_A",
+            "yellow_light"
+          ],
+          "mood": "experimental",
+          "bestFor": [
+            "artistic",
+            "transition"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-025",
+          "description": "Attirer attention avec mains en faisant des mouvements",
+          "difficulty": "easy",
+          "equipment": [
+            "cam_A"
+          ],
+          "mood": "dynamic",
+          "bestFor": [
+            "hook",
+            "broll"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-026",
+          "description": "Macro doigts effleurant tissu texturé (velours, jean, cuir)",
+          "difficulty": "hard",
+          "equipment": [
+            "cam_A",
+            "macro_lens",
+            "textured_fabric"
+          ],
+          "mood": "intimate",
+          "bestFor": [
+            "closeup",
+            "artistic"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-027",
+          "description": "Fish-eye mains tapant rythme sur table",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A",
+            "fish_eye_lens"
+          ],
+          "mood": "dynamic",
+          "bestFor": [
+            "broll",
+            "rhythm"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-028",
+          "description": "Plan à la main serrant objet doux puis relâchant",
+          "difficulty": "easy",
+          "equipment": [
+            "cam_A",
+            "soft_object"
+          ],
+          "mood": "intimate",
+          "bestFor": [
+            "closeup",
+            "emotion"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-029",
+          "description": "Faire tourner toupie/stylo/objet",
+          "difficulty": "easy",
+          "equipment": [
+            "cam_A",
+            "spinning_object"
+          ],
+          "mood": "dynamic",
+          "bestFor": [
+            "broll",
+            "transition"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-030",
+          "description": "Pièces en l'air retombant pile ou face, deux angles",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A",
+            "cam_B",
+            "coins"
+          ],
+          "mood": "dynamic",
+          "bestFor": [
+            "broll",
+            "transition"
+          ],
+          "soloFriendly": false
+        },
+        {
+          "id": "PS-031",
+          "description": "Filmer de côté mes deux mains position pompe, lever main côté cam pour focus autre main",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A"
+          ],
+          "mood": "dynamic",
+          "bestFor": [
+            "broll",
+            "motion"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-032",
+          "description": "Caméra B macro doigts effleurant peau du bras, lumière latérale",
+          "difficulty": "hard",
+          "equipment": [
+            "cam_B",
+            "macro_lens",
+            "side_light"
+          ],
+          "mood": "intimate",
+          "bestFor": [
+            "closeup",
+            "artistic"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-033",
+          "description": "Caméra B hauteur mains, ouvrir/refermer doigts, lumière jaune lampadaire",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_B",
+            "yellow_light"
+          ],
+          "mood": "intimate",
+          "bestFor": [
+            "closeup",
+            "broll"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-034",
+          "description": "Jongler petits objets (balles, clés), caméra B fixe visage",
+          "difficulty": "hard",
+          "equipment": [
+            "cam_A",
+            "cam_B",
+            "juggling_objects"
+          ],
+          "mood": "dynamic",
+          "bestFor": [
+            "broll",
+            "motion"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-035",
+          "description": "Plan overhead bureau, mains bougent sur différents objets",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A",
+            "desk",
+            "objects"
+          ],
+          "mood": "dynamic",
+          "bestFor": [
+            "broll",
+            "overhead"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-036",
+          "description": "Ombre portée main trace cercle sur mur",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A",
+            "light_source"
+          ],
+          "mood": "artistic",
+          "bestFor": [
+            "artistic",
+            "transition"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-037",
+          "description": "Slow motion ombre projetée mur, mains dessinent formes",
+          "difficulty": "hard",
+          "equipment": [
+            "cam_A",
+            "slow_motion",
+            "light_source"
+          ],
+          "mood": "artistic",
+          "bestFor": [
+            "artistic",
+            "broll"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-038",
+          "description": "Face cam soufflant dans mains, buée dans lumière froide",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A",
+            "cool_light"
+          ],
+          "mood": "intimate",
+          "bestFor": [
+            "closeup",
+            "broll"
+          ],
+          "soloFriendly": true
+        }
+      ]
+    },
+    {
+      "id": "CAT-04",
+      "name": "Éclairage et Lumière",
+      "icon": "💡",
+      "description": "Plans exploitant les jeux de lumière et les éclairages créatifs",
+      "plans": [
+        {
+          "id": "PS-039",
+          "description": "Lumière dehors reflétant sur moi, fond noir, cam 10-25mm + 45mm",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A",
+            "cam_B",
+            "outdoor"
+          ],
+          "mood": "cinematic",
+          "bestFor": [
+            "broll",
+            "cinematic"
+          ],
+          "soloFriendly": false
+        },
+        {
+          "id": "PS-040",
+          "description": "Pièce noire grosse lumière dos (dégradé couleur) + petite lumière visage",
+          "difficulty": "hard",
+          "equipment": [
+            "cam_A",
+            "backlight",
+            "light_source"
+          ],
+          "mood": "dramatic",
+          "bestFor": [
+            "cinematic",
+            "mood"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-041",
+          "description": "Filmer tout en le rendant beau grâce à la lumière",
+          "difficulty": "hard",
+          "equipment": [
+            "cam_A",
+            "lighting_kit"
+          ],
+          "mood": "cinematic",
+          "bestFor": [
+            "cinematic",
+            "mood"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-042",
+          "description": "Lumière dans le dos pour décoller du corps + lumière côté opposé sur habits",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A",
+            "backlight",
+            "side_light"
+          ],
+          "mood": "cinematic",
+          "bestFor": [
+            "cinematic",
+            "broll"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-043",
+          "description": "Lumière trace sur mur (objets devant pour formes)",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A",
+            "light_source",
+            "objects"
+          ],
+          "mood": "artistic",
+          "bestFor": [
+            "artistic",
+            "broll"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-044",
+          "description": "Noir total, lumière que derrière le dos",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A",
+            "backlight"
+          ],
+          "mood": "dramatic",
+          "bestFor": [
+            "dramatic",
+            "silhouette"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-045",
+          "description": "Objets devant lumières pour effets d'ombres",
+          "difficulty": "easy",
+          "equipment": [
+            "cam_A",
+            "light_source",
+            "objects"
+          ],
+          "mood": "artistic",
+          "bestFor": [
+            "artistic",
+            "broll"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-046",
+          "description": "Pas de lumière en face, backlight contours + lumière orientée main",
+          "difficulty": "hard",
+          "equipment": [
+            "cam_A",
+            "backlight",
+            "side_light"
+          ],
+          "mood": "dramatic",
+          "bestFor": [
+            "dramatic",
+            "cinematic"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-047",
+          "description": "Lumière normale fond marron contours rouge léger",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A",
+            "light_source"
+          ],
+          "mood": "cinematic",
+          "bestFor": [
+            "cinematic",
+            "mood"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-048",
+          "description": "Lumière chaude + froide, ampoules chaudes en déco fond",
+          "difficulty": "hard",
+          "equipment": [
+            "cam_A",
+            "warm_light",
+            "cool_light"
+          ],
+          "mood": "cinematic",
+          "bestFor": [
+            "cinematic",
+            "contrast"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-049",
+          "description": "Fond sombre sujet éclairé, entrer dans lumière comme sortant du néant",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A",
+            "light_source"
+          ],
+          "mood": "dramatic",
+          "bestFor": [
+            "dramatic",
+            "reveal"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-050",
+          "description": "Fonds très sombres, lumière orientée parties du sujet",
+          "difficulty": "hard",
+          "equipment": [
+            "cam_A",
+            "directional_light"
+          ],
+          "mood": "dramatic",
+          "bestFor": [
+            "dramatic",
+            "mood"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-051",
+          "description": "Fond sombre + lumière chambre allumée comme seul élément derrière",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A",
+            "light_source"
+          ],
+          "mood": "cinematic",
+          "bestFor": [
+            "cinematic",
+            "broll"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-052",
+          "description": "Lueurs avec lumière brute sans diffuseur, faible intensité",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A",
+            "raw_light"
+          ],
+          "mood": "experimental",
+          "bestFor": [
+            "artistic",
+            "mood"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-053",
+          "description": "Backlight multiple couleurs comme arc-en-ciel",
+          "difficulty": "hard",
+          "equipment": [
+            "cam_A",
+            "colored_lights"
+          ],
+          "mood": "experimental",
+          "bestFor": [
+            "artistic",
+            "mood"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-054",
+          "description": "Scène éclairée pour mettre en avant lumière téléphone sur visage",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A",
+            "smartphone"
+          ],
+          "mood": "cinematic",
+          "bestFor": [
+            "cinematic",
+            "broll"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-055",
+          "description": "Lumière brute reflétant derrière fenêtre/porte vitrée",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A",
+            "raw_light",
+            "window"
+          ],
+          "mood": "cinematic",
+          "bestFor": [
+            "cinematic",
+            "broll"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-056",
+          "description": "Contre-jour projecteur LED halo contour cheveux",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A",
+            "LED_light"
+          ],
+          "mood": "cinematic",
+          "bestFor": [
+            "cinematic",
+            "mood"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-057",
+          "description": "Contre-jour fenêtre ombre chinoise clignotement œil slow",
+          "difficulty": "hard",
+          "equipment": [
+            "cam_A",
+            "window",
+            "slow_motion"
+          ],
+          "mood": "dramatic",
+          "bestFor": [
+            "dramatic",
+            "artistic"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-058",
+          "description": "Travelling latéral pièce sombre trois ampoules successives",
+          "difficulty": "hard",
+          "equipment": [
+            "cam_A",
+            "traveling",
+            "lights"
+          ],
+          "mood": "dramatic",
+          "bestFor": [
+            "cinematic",
+            "movement"
+          ],
+          "soloFriendly": false
+        },
+        {
+          "id": "PS-059",
+          "description": "Tunnel deux lampes LED derrière à faible intensité, dégradé chaud-froid",
+          "difficulty": "hard",
+          "equipment": [
+            "cam_A",
+            "LED_lights",
+            "tunnel"
+          ],
+          "mood": "cinematic",
+          "bestFor": [
+            "cinematic",
+            "dramatic"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-060",
+          "description": "Projecteur miniature hauteur faible nuque et dos, plongée silhouette",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A",
+            "mini_projector",
+            "overhead"
+          ],
+          "mood": "dramatic",
+          "bestFor": [
+            "dramatic",
+            "silhouette"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-061",
+          "description": "Ombres mouvantes objet ciselé devant LED projeter motifs",
+          "difficulty": "hard",
+          "equipment": [
+            "cam_A",
+            "LED_light",
+            "carved_object"
+          ],
+          "mood": "artistic",
+          "bestFor": [
+            "artistic",
+            "broll"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-062",
+          "description": "Halo coloré derrière épaule",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A",
+            "colored_light"
+          ],
+          "mood": "cinematic",
+          "bestFor": [
+            "cinematic",
+            "broll"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-063",
+          "description": "Plan fixe sabre lumière tube LED, main pour ombres mouvantes",
+          "difficulty": "easy",
+          "equipment": [
+            "cam_A",
+            "LED_tube"
+          ],
+          "mood": "experimental",
+          "bestFor": [
+            "artistic",
+            "broll"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-064",
+          "description": "Travelling avant couloir lumière LED, silhouette isolée à la fin",
+          "difficulty": "hard",
+          "equipment": [
+            "cam_A",
+            "traveling",
+            "LED_lights"
+          ],
+          "mood": "dramatic",
+          "bestFor": [
+            "cinematic",
+            "movement"
+          ],
+          "soloFriendly": false
+        },
+        {
+          "id": "PS-065",
+          "description": "Solo sous lustre bas motif au sol",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A",
+            "chandelier"
+          ],
+          "mood": "cinematic",
+          "bestFor": [
+            "cinematic",
+            "mood"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-066",
+          "description": "1/3 lumière diffuse + 2/3 LED couleur + centre non éclairé/sous-exposé",
+          "difficulty": "hard",
+          "equipment": [
+            "cam_A",
+            "diffuse_light",
+            "colored_LED"
+          ],
+          "mood": "experimental",
+          "bestFor": [
+            "artistic",
+            "mood"
+          ],
+          "soloFriendly": true
+        }
+      ]
+    },
+    {
+      "id": "CAT-05",
+      "name": "Effets Spéciaux - Fumée, Eau, Matières",
+      "icon": "💨",
+      "description": "Plans avec effets visuels comme fumée, eau et matières",
+      "plans": [
+        {
+          "id": "PS-067",
+          "description": "Machine à fumer",
+          "difficulty": "easy",
+          "equipment": [
+            "cam_A",
+            "fog_machine"
+          ],
+          "mood": "atmospheric",
+          "bestFor": [
+            "broll",
+            "mood"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-068",
+          "description": "Vaporiser eau par-dessus pour effet sur caméra",
+          "difficulty": "easy",
+          "equipment": [
+            "cam_A",
+            "water_spray"
+          ],
+          "mood": "dynamic",
+          "bestFor": [
+            "broll",
+            "effect"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-069",
+          "description": "Main apparaît dans fumée reflétée couleur rouge",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A",
+            "fog_machine",
+            "red_light"
+          ],
+          "mood": "dramatic",
+          "bestFor": [
+            "dramatic",
+            "artistic"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-070",
+          "description": "Cannette qui se fait écraser",
+          "difficulty": "easy",
+          "equipment": [
+            "cam_A",
+            "can"
+          ],
+          "mood": "dynamic",
+          "bestFor": [
+            "broll",
+            "sound_effect"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-071",
+          "description": "Profil stable souffler fumée, macro",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A",
+            "macro_lens",
+            "smoke"
+          ],
+          "mood": "intimate",
+          "bestFor": [
+            "closeup",
+            "broll"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-072",
+          "description": "Cannette écrasée macro cam B + recul cam A contraste taille",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A",
+            "cam_B",
+            "macro_lens",
+            "can"
+          ],
+          "mood": "dynamic",
+          "bestFor": [
+            "broll",
+            "contrast"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-073",
+          "description": "Pulvériser eau sur soi, cam B gouttelettes peau",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A",
+            "cam_B",
+            "water_spray",
+            "macro_lens"
+          ],
+          "mood": "dynamic",
+          "bestFor": [
+            "broll",
+            "closeup"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-074",
+          "description": "Éclabousser tasse de lait dans bol, macro vague",
+          "difficulty": "hard",
+          "equipment": [
+            "cam_A",
+            "macro_lens",
+            "water",
+            "bowl"
+          ],
+          "mood": "experimental",
+          "bestFor": [
+            "artistic",
+            "broll"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-075",
+          "description": "Macro cristaux sel/sucre sur peau doigts",
+          "difficulty": "hard",
+          "equipment": [
+            "cam_A",
+            "macro_lens",
+            "salt_or_sugar"
+          ],
+          "mood": "intimate",
+          "bestFor": [
+            "closeup",
+            "artistic"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-076",
+          "description": "Caméra sous cascade eau (robinet) visage émergeant",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A",
+            "water",
+            "sink"
+          ],
+          "mood": "dynamic",
+          "bestFor": [
+            "broll",
+            "dramatic"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-077",
+          "description": "Macro bulles savon sur main, lumière les traverse",
+          "difficulty": "hard",
+          "equipment": [
+            "cam_A",
+            "macro_lens",
+            "soap_bubbles",
+            "light"
+          ],
+          "mood": "artistic",
+          "bestFor": [
+            "artistic",
+            "broll"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-078",
+          "description": "Gouttes pluie depuis parapluie, silhouette sous averse nocturne",
+          "difficulty": "hard",
+          "equipment": [
+            "cam_A",
+            "umbrella",
+            "water",
+            "night"
+          ],
+          "mood": "cinematic",
+          "bestFor": [
+            "cinematic",
+            "mood"
+          ],
+          "soloFriendly": false
+        }
+      ]
+    },
+    {
+      "id": "CAT-06",
+      "name": "Slow Motion et Vitesse",
+      "icon": "⏱️",
+      "description": "Plans jouant avec la vitesse et le ralenti",
+      "plans": [
+        {
+          "id": "PS-079",
+          "description": "Genoux pliés lacets chaussure 120/160 fps",
+          "difficulty": "easy",
+          "equipment": [
+            "cam_A",
+            "slow_motion"
+          ],
+          "mood": "dynamic",
+          "bestFor": [
+            "broll",
+            "motion"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-080",
+          "description": "Ralenti gouttes eau verre table sombre",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A",
+            "slow_motion",
+            "water",
+            "glass"
+          ],
+          "mood": "cinematic",
+          "bestFor": [
+            "broll",
+            "artistic"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-081",
+          "description": "Slow-motion pieds dans feuilles mortes/flaque",
+          "difficulty": "easy",
+          "equipment": [
+            "cam_A",
+            "slow_motion",
+            "outdoor"
+          ],
+          "mood": "cinematic",
+          "bestFor": [
+            "broll",
+            "mood"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-082",
+          "description": "Ralenti extrême plume/grain poussière dans rayon lumière",
+          "difficulty": "hard",
+          "equipment": [
+            "cam_A",
+            "slow_motion",
+            "feather_or_dust",
+            "light"
+          ],
+          "mood": "artistic",
+          "bestFor": [
+            "artistic",
+            "broll"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-083",
+          "description": "Gros plan goutte parfum sur peau 120 fps",
+          "difficulty": "hard",
+          "equipment": [
+            "cam_A",
+            "slow_motion",
+            "macro_lens",
+            "perfume"
+          ],
+          "mood": "intimate",
+          "bestFor": [
+            "closeup",
+            "artistic"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-084",
+          "description": "Stop motion vêtements changent couleur",
+          "difficulty": "hard",
+          "equipment": [
+            "cam_A",
+            "clothes"
+          ],
+          "mood": "experimental",
+          "bestFor": [
+            "artistic",
+            "transition"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-085",
+          "description": "Timelapse silhouette lumière changeante",
+          "difficulty": "hard",
+          "equipment": [
+            "cam_A",
+            "timelapse",
+            "variable_light"
+          ],
+          "mood": "cinematic",
+          "bestFor": [
+            "cinematic",
+            "mood"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-086",
+          "description": "Cam A sol, marcher flaque splash slow mo 120-240 fps",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A",
+            "slow_motion",
+            "water",
+            "puddle"
+          ],
+          "mood": "dynamic",
+          "bestFor": [
+            "broll",
+            "motion"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-087",
+          "description": "Ralenti éclater ballon eau devant cam B",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_B",
+            "slow_motion",
+            "water_balloon"
+          ],
+          "mood": "dynamic",
+          "bestFor": [
+            "broll",
+            "effect"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-088",
+          "description": "Stylo tombant slow mo + cut prise notes rapide",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A",
+            "slow_motion",
+            "pen"
+          ],
+          "mood": "dynamic",
+          "bestFor": [
+            "transition",
+            "broll"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-089",
+          "description": "Ballon rebondissant slow mo caméra basse",
+          "difficulty": "easy",
+          "equipment": [
+            "cam_A",
+            "slow_motion",
+            "ball"
+          ],
+          "mood": "dynamic",
+          "bestFor": [
+            "broll",
+            "motion"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-090",
+          "description": "Timelapse nuages derrière, immobile en silhouette",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A",
+            "timelapse",
+            "outdoor"
+          ],
+          "mood": "cinematic",
+          "bestFor": [
+            "cinematic",
+            "mood"
+          ],
+          "soloFriendly": true
+        }
+      ]
+    },
+    {
+      "id": "CAT-07",
+      "name": "Mouvements de Caméra",
+      "icon": "🎥",
+      "description": "Plans mettant en avant différents types de mouvements de caméra",
+      "plans": [
+        {
+          "id": "PS-091",
+          "description": "Mouvements intro scène (bas vers haut dynamisme)",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A",
+            "gimbal"
+          ],
+          "mood": "dynamic",
+          "bestFor": [
+            "hook",
+            "transition"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-092",
+          "description": "Panoramique lent autour moi assis tête baissée puis regard brusque",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A",
+            "panoramic"
+          ],
+          "mood": "dramatic",
+          "bestFor": [
+            "transition",
+            "reveal"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-093",
+          "description": "Whip-pan sur rythme musique, main claque livre → carnet s'ouvre",
+          "difficulty": "hard",
+          "equipment": [
+            "cam_A",
+            "book",
+            "notebook"
+          ],
+          "mood": "dynamic",
+          "bestFor": [
+            "transition",
+            "rhythm"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-094",
+          "description": "Drone/steadicam haut, marche couloir sombre",
+          "difficulty": "hard",
+          "equipment": [
+            "cam_A",
+            "drone_or_steadicam"
+          ],
+          "mood": "cinematic",
+          "bestFor": [
+            "cinematic",
+            "movement"
+          ],
+          "soloFriendly": false
+        },
+        {
+          "id": "PS-095",
+          "description": "Tilt-up objet posé → visage éclairé",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A"
+          ],
+          "mood": "dramatic",
+          "bestFor": [
+            "transition",
+            "reveal"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-096",
+          "description": "360° à la perche, orbite",
+          "difficulty": "hard",
+          "equipment": [
+            "cam_A",
+            "gimbal"
+          ],
+          "mood": "dynamic",
+          "bestFor": [
+            "cinematic",
+            "movement"
+          ],
+          "soloFriendly": false
+        },
+        {
+          "id": "PS-097",
+          "description": "Caméra portée émotionnelle tremblements doute",
+          "difficulty": "easy",
+          "equipment": [
+            "cam_A"
+          ],
+          "mood": "dramatic",
+          "bestFor": [
+            "dramatic",
+            "mood"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-098",
+          "description": "Corner shot caméra coin pièce, entre dans cadre",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A",
+            "corner"
+          ],
+          "mood": "cinematic",
+          "bestFor": [
+            "cinematic",
+            "transition"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-099",
+          "description": "Caméra portée bout de bras oscillant",
+          "difficulty": "easy",
+          "equipment": [
+            "cam_A"
+          ],
+          "mood": "dynamic",
+          "bestFor": [
+            "motion",
+            "broll"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-100",
+          "description": "GoPro fixé épaule mouvement organique marche rapide",
+          "difficulty": "medium",
+          "equipment": [
+            "GoPro"
+          ],
+          "mood": "dynamic",
+          "bestFor": [
+            "motion",
+            "pov"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-101",
+          "description": "Traveling virtuel avance vers trépied + timelapse",
+          "difficulty": "hard",
+          "equipment": [
+            "cam_A",
+            "tripod",
+            "timelapse"
+          ],
+          "mood": "cinematic",
+          "bestFor": [
+            "cinematic",
+            "transition"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-102",
+          "description": "Caméra A sur fil oscillant plan tremblé visage pensif",
+          "difficulty": "hard",
+          "equipment": [
+            "cam_A",
+            "wire"
+          ],
+          "mood": "dramatic",
+          "bestFor": [
+            "dramatic",
+            "mood"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-103",
+          "description": "Travelling vertical plafond vers sol",
+          "difficulty": "hard",
+          "equipment": [
+            "cam_A",
+            "traveling"
+          ],
+          "mood": "dramatic",
+          "bestFor": [
+            "cinematic",
+            "transition"
+          ],
+          "soloFriendly": false
+        },
+        {
+          "id": "PS-104",
+          "description": "Camera-on-a-stick autour objet central puis transition",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A",
+            "stick"
+          ],
+          "mood": "dynamic",
+          "bestFor": [
+            "cinematic",
+            "transition"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-105",
+          "description": "Slider manuel table clés vers regard",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A",
+            "slider"
+          ],
+          "mood": "dynamic",
+          "bestFor": [
+            "transition",
+            "broll"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-106",
+          "description": "Slider sol sous pieds effet hallway miniature",
+          "difficulty": "hard",
+          "equipment": [
+            "cam_A",
+            "slider"
+          ],
+          "mood": "cinematic",
+          "bestFor": [
+            "cinematic",
+            "artistic"
+          ],
+          "soloFriendly": false
+        },
+        {
+          "id": "PS-107",
+          "description": "Mur texturé main glissant caméra A matière",
+          "difficulty": "easy",
+          "equipment": [
+            "cam_A",
+            "textured_wall"
+          ],
+          "mood": "intimate",
+          "bestFor": [
+            "broll",
+            "motion"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-108",
+          "description": "Zoom continu d'en bas visage et corps d'en haut",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A",
+            "zoom"
+          ],
+          "mood": "dynamic",
+          "bestFor": [
+            "transition",
+            "dramatic"
+          ],
+          "soloFriendly": true
+        }
+      ]
+    },
+    {
+      "id": "CAT-08",
+      "name": "Positions et Postures",
+      "icon": "🧘",
+      "description": "Plans exploitant différentes positions et postures",
+      "plans": [
+        {
+          "id": "PS-109",
+          "description": "Face cam assis par terre genou plié mains autour zoom",
+          "difficulty": "easy",
+          "equipment": [
+            "cam_A"
+          ],
+          "mood": "intimate",
+          "bestFor": [
+            "closeup",
+            "mood"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-110",
+          "description": "Commencer chaque scène mouvement début dynamise",
+          "difficulty": "easy",
+          "equipment": [
+            "cam_A"
+          ],
+          "mood": "dynamic",
+          "bestFor": [
+            "hook",
+            "motion"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-111",
+          "description": "Sujet éclairé bas du corps fond fortement éclairé effet sombre",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A",
+            "light_source"
+          ],
+          "mood": "dramatic",
+          "bestFor": [
+            "cinematic",
+            "mood"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-112",
+          "description": "Dos à caméra face à feu forêt",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A",
+            "outdoor"
+          ],
+          "mood": "cinematic",
+          "bestFor": [
+            "cinematic",
+            "mood"
+          ],
+          "soloFriendly": false
+        },
+        {
+          "id": "PS-113",
+          "description": "Sous-exposé beau fond allumer briquet",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A",
+            "lighter"
+          ],
+          "mood": "dramatic",
+          "bestFor": [
+            "dramatic",
+            "mood"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-114",
+          "description": "Filmé de dos se retourner",
+          "difficulty": "easy",
+          "equipment": [
+            "cam_A"
+          ],
+          "mood": "dynamic",
+          "bestFor": [
+            "transition",
+            "reveal"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-115",
+          "description": "Plan furtif sous table pieds qui tapotent",
+          "difficulty": "easy",
+          "equipment": [
+            "cam_A"
+          ],
+          "mood": "intimate",
+          "bestFor": [
+            "broll",
+            "mood"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-116",
+          "description": "Contre-plongée lisant livre lumière chevet",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A",
+            "book",
+            "light"
+          ],
+          "mood": "intimate",
+          "bestFor": [
+            "mood",
+            "broll"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-117",
+          "description": "Cadré bas gros plan lacets puis visage",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A"
+          ],
+          "mood": "dynamic",
+          "bestFor": [
+            "transition",
+            "broll"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-118",
+          "description": "Cam B genoux marcher décor urbain lumière rasante",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_B",
+            "outdoor"
+          ],
+          "mood": "cinematic",
+          "bestFor": [
+            "cinematic",
+            "motion"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-119",
+          "description": "Trépied léger cam A POV nouer lacets",
+          "difficulty": "easy",
+          "equipment": [
+            "cam_A",
+            "tripod"
+          ],
+          "mood": "intimate",
+          "bestFor": [
+            "pov",
+            "broll"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-120",
+          "description": "Contre-plongée châssis fenêtre tête vers ciel",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A",
+            "window"
+          ],
+          "mood": "cinematic",
+          "bestFor": [
+            "mood",
+            "artistic"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-121",
+          "description": "POV renversé caméra pieds filmant sol puis montée",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A"
+          ],
+          "mood": "experimental",
+          "bestFor": [
+            "pov",
+            "transition"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-122",
+          "description": "Plan simple zoom micro mouvement sans regarder cam",
+          "difficulty": "easy",
+          "equipment": [
+            "cam_A"
+          ],
+          "mood": "intimate",
+          "bestFor": [
+            "broll",
+            "mood"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-123",
+          "description": "Focus pas fait puis focus se fait après mouvement",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A"
+          ],
+          "mood": "cinematic",
+          "bestFor": [
+            "cinematic",
+            "transition"
+          ],
+          "soloFriendly": true
+        }
+      ]
+    },
+    {
+      "id": "CAT-09",
+      "name": "Plans Extérieurs et Urbains",
+      "icon": "🌃",
+      "description": "Plans tournés en extérieur et en environnement urbain",
+      "plans": [
+        {
+          "id": "PS-124",
+          "description": "Dehors ville poteau fumée bouche manteau + seconde cam",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A",
+            "cam_B",
+            "outdoor"
+          ],
+          "mood": "cinematic",
+          "bestFor": [
+            "cinematic",
+            "broll"
+          ],
+          "soloFriendly": false
+        },
+        {
+          "id": "PS-125",
+          "description": "Marcher soir peu lumière ombre/lueur",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A",
+            "outdoor"
+          ],
+          "mood": "cinematic",
+          "bestFor": [
+            "cinematic",
+            "motion"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-126",
+          "description": "Sortir voiture",
+          "difficulty": "easy",
+          "equipment": [
+            "cam_A",
+            "car"
+          ],
+          "mood": "dynamic",
+          "bestFor": [
+            "broll",
+            "motion"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-127",
+          "description": "Ouvrir porte garage rapproché + grand angle",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A",
+            "car"
+          ],
+          "mood": "dynamic",
+          "bestFor": [
+            "broll",
+            "motion"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-128",
+          "description": "Filmer voiture tous angles",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A",
+            "car"
+          ],
+          "mood": "cinematic",
+          "bestFor": [
+            "broll",
+            "cinematic"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-129",
+          "description": "Filmer volant",
+          "difficulty": "easy",
+          "equipment": [
+            "cam_A",
+            "car"
+          ],
+          "mood": "intimate",
+          "bestFor": [
+            "closeup",
+            "broll"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-130",
+          "description": "Voiture qui accélère",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A",
+            "car"
+          ],
+          "mood": "dynamic",
+          "bestFor": [
+            "broll",
+            "motion"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-131",
+          "description": "Portière ferme et ouvre",
+          "difficulty": "easy",
+          "equipment": [
+            "cam_A",
+            "car"
+          ],
+          "mood": "dynamic",
+          "bestFor": [
+            "broll",
+            "motion"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-132",
+          "description": "Boutons voiture",
+          "difficulty": "easy",
+          "equipment": [
+            "cam_A",
+            "car"
+          ],
+          "mood": "intimate",
+          "bestFor": [
+            "closeup",
+            "broll"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-133",
+          "description": "Serré clignotement néon reflet lunettes soleil",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A",
+            "outdoor"
+          ],
+          "mood": "cinematic",
+          "bestFor": [
+            "cinematic",
+            "mood"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-134",
+          "description": "Silhouette crépuscule découpe nette ciel coloré profil sombre",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A",
+            "outdoor"
+          ],
+          "mood": "cinematic",
+          "bestFor": [
+            "cinematic",
+            "silhouette"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-135",
+          "description": "Cam B trépied articulé passer tête derrière poteau",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_B",
+            "tripod",
+            "outdoor"
+          ],
+          "mood": "dynamic",
+          "bestFor": [
+            "broll",
+            "motion"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-136",
+          "description": "Lumière briquet dos à caméra profil baigné lueur",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A",
+            "lighter",
+            "outdoor"
+          ],
+          "mood": "dramatic",
+          "bestFor": [
+            "dramatic",
+            "mood"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-137",
+          "description": "Tourner autour sujet au marché gauche-droite puis zoom",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A",
+            "outdoor"
+          ],
+          "mood": "cinematic",
+          "bestFor": [
+            "cinematic",
+            "motion"
+          ],
+          "soloFriendly": false
+        }
+      ]
+    },
+    {
+      "id": "CAT-10",
+      "name": "Reflets et Miroirs",
+      "icon": "🪞",
+      "description": "Plans exploitant les reflets, miroirs et surfaces réfléchissantes",
+      "plans": [
+        {
+          "id": "PS-138",
+          "description": "Scène dans miroir face au miroir",
+          "difficulty": "easy",
+          "equipment": [
+            "cam_A",
+            "mirror"
+          ],
+          "mood": "cinematic",
+          "bestFor": [
+            "broll",
+            "artistic"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-139",
+          "description": "Éléments flou autour sujet",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A"
+          ],
+          "mood": "cinematic",
+          "bestFor": [
+            "cinematic",
+            "artistic"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-140",
+          "description": "Caméra face miroir s'approcher glisser doigt surface",
+          "difficulty": "easy",
+          "equipment": [
+            "cam_A",
+            "mirror"
+          ],
+          "mood": "intimate",
+          "bestFor": [
+            "broll",
+            "motion"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-141",
+          "description": "Plan inception caméra sort écran TV séquence de toi",
+          "difficulty": "hard",
+          "equipment": [
+            "cam_A",
+            "tv",
+            "screen"
+          ],
+          "mood": "experimental",
+          "bestFor": [
+            "artistic",
+            "transition"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-142",
+          "description": "Jump cut reflet dans flaque silhouette",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A",
+            "water",
+            "puddle"
+          ],
+          "mood": "cinematic",
+          "bestFor": [
+            "transition",
+            "artistic"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-143",
+          "description": "Miroir portatif devant cam A regard se reflétant",
+          "difficulty": "easy",
+          "equipment": [
+            "cam_A",
+            "portable_mirror"
+          ],
+          "mood": "intimate",
+          "bestFor": [
+            "broll",
+            "artistic"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-144",
+          "description": "Miroir ou plaque verre split-screen naturel",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A",
+            "glass"
+          ],
+          "mood": "cinematic",
+          "bestFor": [
+            "artistic",
+            "split_screen"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-145",
+          "description": "Miroir poche split-screen bricolé œil et sourire",
+          "difficulty": "hard",
+          "equipment": [
+            "cam_A",
+            "portable_mirror"
+          ],
+          "mood": "experimental",
+          "bestFor": [
+            "artistic",
+            "closeup"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-146",
+          "description": "Miroir brisé morceaux autour objectif regard multiple",
+          "difficulty": "hard",
+          "equipment": [
+            "cam_A",
+            "broken_mirror"
+          ],
+          "mood": "experimental",
+          "bestFor": [
+            "artistic",
+            "dramatic"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-147",
+          "description": "Loupe devant objectif déformant visage/objet",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A",
+            "magnifying_glass"
+          ],
+          "mood": "experimental",
+          "bestFor": [
+            "artistic",
+            "closeup"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-148",
+          "description": "Split diopter verre eau premier plan visage arrière",
+          "difficulty": "hard",
+          "equipment": [
+            "cam_A",
+            "diopter",
+            "water",
+            "glass"
+          ],
+          "mood": "cinematic",
+          "bestFor": [
+            "artistic",
+            "cinematic"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-149",
+          "description": "Flaque pluie au sol reflet brise et reforme",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A",
+            "water",
+            "puddle"
+          ],
+          "mood": "cinematic",
+          "bestFor": [
+            "broll",
+            "artistic"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-150",
+          "description": "Vinyle tournant caméra centre reflet dans disque",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A",
+            "vinyl_record"
+          ],
+          "mood": "artistic",
+          "bestFor": [
+            "broll",
+            "artistic"
+          ],
+          "soloFriendly": true
+        }
+      ]
+    },
+    {
+      "id": "CAT-11",
+      "name": "Montage et Transitions",
+      "icon": "✂️",
+      "description": "Plans pour montage rapide, transitions et effets de coupe",
+      "plans": [
+        {
+          "id": "PS-151",
+          "description": "Plans pas trop longs ou dynamiques",
+          "difficulty": "easy",
+          "equipment": [
+            "cam_A"
+          ],
+          "mood": "dynamic",
+          "bestFor": [
+            "transition",
+            "montage"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-152",
+          "description": "Plusieurs plans même image",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A",
+            "cam_B"
+          ],
+          "mood": "dynamic",
+          "bestFor": [
+            "montage",
+            "transition"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-153",
+          "description": "Même action différents angles",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A",
+            "cam_B"
+          ],
+          "mood": "cinematic",
+          "bestFor": [
+            "montage",
+            "action"
+          ],
+          "soloFriendly": false
+        },
+        {
+          "id": "PS-154",
+          "description": "Sous-titres",
+          "difficulty": "easy",
+          "equipment": [
+            "cam_A"
+          ],
+          "mood": "neutral",
+          "bestFor": [
+            "text",
+            "information"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-155",
+          "description": "Place portrait lumière bas→haut / haut→bas",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A",
+            "light_source"
+          ],
+          "mood": "dramatic",
+          "bestFor": [
+            "transition",
+            "dramatic"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-156",
+          "description": "Continuité plan même position différents endroits zoom qui recule",
+          "difficulty": "hard",
+          "equipment": [
+            "cam_A"
+          ],
+          "mood": "cinematic",
+          "bestFor": [
+            "montage",
+            "transition"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-157",
+          "description": "Deux cams rapproché+reculé tourne tête transition",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A",
+            "cam_B"
+          ],
+          "mood": "dynamic",
+          "bestFor": [
+            "transition",
+            "montage"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-158",
+          "description": "Mêmes scènes changer couleurs",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A",
+            "lights"
+          ],
+          "mood": "experimental",
+          "bestFor": [
+            "transition",
+            "artistic"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-159",
+          "description": "Plan séquence inversée objet remis en place",
+          "difficulty": "hard",
+          "equipment": [
+            "cam_A"
+          ],
+          "mood": "experimental",
+          "bestFor": [
+            "artistic",
+            "transition"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-160",
+          "description": "Montage rapide éclairs couleurs au rythme beat",
+          "difficulty": "hard",
+          "equipment": [
+            "cam_A",
+            "colored_lights"
+          ],
+          "mood": "dynamic",
+          "bestFor": [
+            "montage",
+            "rhythm"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-161",
+          "description": "Split diopter moitié visage moitié objet",
+          "difficulty": "hard",
+          "equipment": [
+            "cam_A",
+            "diopter"
+          ],
+          "mood": "cinematic",
+          "bestFor": [
+            "artistic",
+            "transition"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-162",
+          "description": "Plan fixe 4/3 letterboxing cinéma",
+          "difficulty": "easy",
+          "equipment": [
+            "cam_A"
+          ],
+          "mood": "cinematic",
+          "bestFor": [
+            "cinematic",
+            "mood"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-163",
+          "description": "Rack focus rapide visage ↔ montre temps qui passe",
+          "difficulty": "hard",
+          "equipment": [
+            "cam_A",
+            "watch"
+          ],
+          "mood": "dramatic",
+          "bestFor": [
+            "transition",
+            "dramatic"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-164",
+          "description": "Montage micro-moments routine (tiroir, tasse, écran)",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A"
+          ],
+          "mood": "dynamic",
+          "bestFor": [
+            "montage",
+            "broll"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-165",
+          "description": "Jump cut câble/télécommande face → profil",
+          "difficulty": "easy",
+          "equipment": [
+            "cam_A"
+          ],
+          "mood": "dynamic",
+          "bestFor": [
+            "montage",
+            "transition"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-166",
+          "description": "Plongée fixe carnet geste brusque hors champ jump cut",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A",
+            "notebook"
+          ],
+          "mood": "dynamic",
+          "bestFor": [
+            "montage",
+            "transition"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-167",
+          "description": "Jump cut mains tasse + cheveux + lunettes rythme effréné",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A"
+          ],
+          "mood": "dynamic",
+          "bestFor": [
+            "montage",
+            "rhythm"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-168",
+          "description": "Split-screen horizontal deux focales",
+          "difficulty": "hard",
+          "equipment": [
+            "cam_A"
+          ],
+          "mood": "cinematic",
+          "bestFor": [
+            "split_screen",
+            "artistic"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-169",
+          "description": "Contrechamp regard derrière cam B expression",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A",
+            "cam_B"
+          ],
+          "mood": "dramatic",
+          "bestFor": [
+            "montage",
+            "reaction"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-170",
+          "description": "Plan fixe 2.35:1 ultra cinématique visage éclairé",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A",
+            "light"
+          ],
+          "mood": "cinematic",
+          "bestFor": [
+            "cinematic",
+            "mood"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-171",
+          "description": "Me filmer à 90mm avec autre cam en main filmant quelque chose",
+          "difficulty": "hard",
+          "equipment": [
+            "cam_A",
+            "cam_B"
+          ],
+          "mood": "dynamic",
+          "bestFor": [
+            "cinematic",
+            "meta"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-172",
+          "description": "Plan où je me filme filmant la caméra qui me filme",
+          "difficulty": "hard",
+          "equipment": [
+            "cam_A",
+            "cam_B"
+          ],
+          "mood": "experimental",
+          "bestFor": [
+            "artistic",
+            "meta"
+          ],
+          "soloFriendly": true
+        }
+      ]
+    },
+    {
+      "id": "CAT-12",
+      "name": "Actions du Quotidien",
+      "icon": "☕",
+      "description": "Plans de gestes et actions quotidiennes détaillées",
+      "plans": [
+        {
+          "id": "PS-173",
+          "description": "Faire à manger, découper fruits légumes viande",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A",
+            "kitchen"
+          ],
+          "mood": "dynamic",
+          "bestFor": [
+            "broll",
+            "routine"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-174",
+          "description": "Me servir un verre",
+          "difficulty": "easy",
+          "equipment": [
+            "cam_A"
+          ],
+          "mood": "intimate",
+          "bestFor": [
+            "broll",
+            "routine"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-175",
+          "description": "Boire",
+          "difficulty": "easy",
+          "equipment": [
+            "cam_A"
+          ],
+          "mood": "intimate",
+          "bestFor": [
+            "broll",
+            "routine"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-176",
+          "description": "Manger",
+          "difficulty": "easy",
+          "equipment": [
+            "cam_A"
+          ],
+          "mood": "intimate",
+          "bestFor": [
+            "broll",
+            "routine"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-177",
+          "description": "Attraper nourriture avec couverts",
+          "difficulty": "easy",
+          "equipment": [
+            "cam_A"
+          ],
+          "mood": "intimate",
+          "bestFor": [
+            "closeup",
+            "routine"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-178",
+          "description": "Faire mon lit",
+          "difficulty": "easy",
+          "equipment": [
+            "cam_A"
+          ],
+          "mood": "dynamic",
+          "bestFor": [
+            "broll",
+            "routine"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-179",
+          "description": "Studio vue fenêtre me voir marcher extérieur",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A"
+          ],
+          "mood": "cinematic",
+          "bestFor": [
+            "broll",
+            "mood"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-180",
+          "description": "Plans gros plan tête bras habits jambes changeant habits",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A"
+          ],
+          "mood": "dynamic",
+          "bestFor": [
+            "montage",
+            "routine"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-181",
+          "description": "Deux caméras frigo (extérieur + intérieur)",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A",
+            "cam_B"
+          ],
+          "mood": "dynamic",
+          "bestFor": [
+            "broll",
+            "routine"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-182",
+          "description": "Café qui coule",
+          "difficulty": "easy",
+          "equipment": [
+            "cam_A"
+          ],
+          "mood": "intimate",
+          "bestFor": [
+            "broll",
+            "closeup"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-183",
+          "description": "Récupérer verre café",
+          "difficulty": "easy",
+          "equipment": [
+            "cam_A"
+          ],
+          "mood": "intimate",
+          "bestFor": [
+            "broll",
+            "routine"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-184",
+          "description": "Petites gouttes après café",
+          "difficulty": "easy",
+          "equipment": [
+            "cam_A"
+          ],
+          "mood": "intimate",
+          "bestFor": [
+            "closeup",
+            "broll"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-185",
+          "description": "Billet tombe de main",
+          "difficulty": "easy",
+          "equipment": [
+            "cam_A"
+          ],
+          "mood": "dynamic",
+          "bestFor": [
+            "broll",
+            "transition"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-186",
+          "description": "Défiler livre/cahier table ou balancer vide",
+          "difficulty": "easy",
+          "equipment": [
+            "cam_A",
+            "book"
+          ],
+          "mood": "dynamic",
+          "bestFor": [
+            "broll",
+            "motion"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-187",
+          "description": "Plisser fond",
+          "difficulty": "easy",
+          "equipment": [
+            "cam_A",
+            "fabric"
+          ],
+          "mood": "intimate",
+          "bestFor": [
+            "broll",
+            "texture"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-188",
+          "description": "Lever sourcil",
+          "difficulty": "easy",
+          "equipment": [
+            "cam_A"
+          ],
+          "mood": "intimate",
+          "bestFor": [
+            "closeup",
+            "reaction"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-189",
+          "description": "Jeter dans poubelle",
+          "difficulty": "easy",
+          "equipment": [
+            "cam_A"
+          ],
+          "mood": "dynamic",
+          "bestFor": [
+            "broll",
+            "motion"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-190",
+          "description": "Tourner tête",
+          "difficulty": "easy",
+          "equipment": [
+            "cam_A"
+          ],
+          "mood": "intimate",
+          "bestFor": [
+            "broll",
+            "motion"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-191",
+          "description": "Mettre crème",
+          "difficulty": "easy",
+          "equipment": [
+            "cam_A"
+          ],
+          "mood": "intimate",
+          "bestFor": [
+            "closeup",
+            "routine"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-192",
+          "description": "Ouvrir yeux",
+          "difficulty": "easy",
+          "equipment": [
+            "cam_A"
+          ],
+          "mood": "intimate",
+          "bestFor": [
+            "closeup",
+            "reaction"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-193",
+          "description": "Poser sac table",
+          "difficulty": "easy",
+          "equipment": [
+            "cam_A"
+          ],
+          "mood": "dynamic",
+          "bestFor": [
+            "broll",
+            "motion"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-194",
+          "description": "Sortir truc d'un sac",
+          "difficulty": "easy",
+          "equipment": [
+            "cam_A"
+          ],
+          "mood": "dynamic",
+          "bestFor": [
+            "broll",
+            "motion"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-195",
+          "description": "Chambre porte ouverte plusieurs positions",
+          "difficulty": "easy",
+          "equipment": [
+            "cam_A"
+          ],
+          "mood": "intimate",
+          "bestFor": [
+            "broll",
+            "routine"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-196",
+          "description": "Faire sac sport",
+          "difficulty": "easy",
+          "equipment": [
+            "cam_A"
+          ],
+          "mood": "dynamic",
+          "bestFor": [
+            "broll",
+            "routine"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-197",
+          "description": "Remplir valise",
+          "difficulty": "easy",
+          "equipment": [
+            "cam_A"
+          ],
+          "mood": "dynamic",
+          "bestFor": [
+            "broll",
+            "routine"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-198",
+          "description": "Filmer casque",
+          "difficulty": "easy",
+          "equipment": [
+            "cam_A",
+            "headphones"
+          ],
+          "mood": "intimate",
+          "bestFor": [
+            "broll",
+            "closeup"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-199",
+          "description": "Filmer lit plusieurs positions",
+          "difficulty": "easy",
+          "equipment": [
+            "cam_A"
+          ],
+          "mood": "intimate",
+          "bestFor": [
+            "broll",
+            "routine"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-200",
+          "description": "Verre se pose sur table",
+          "difficulty": "easy",
+          "equipment": [
+            "cam_A"
+          ],
+          "mood": "intimate",
+          "bestFor": [
+            "broll",
+            "motion"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-201",
+          "description": "Robinet coule/se ferme",
+          "difficulty": "easy",
+          "equipment": [
+            "cam_A"
+          ],
+          "mood": "dynamic",
+          "bestFor": [
+            "broll",
+            "motion"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-202",
+          "description": "Contre-plongée buvant café mousse lèvres",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A"
+          ],
+          "mood": "intimate",
+          "bestFor": [
+            "closeup",
+            "routine"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-203",
+          "description": "POV verser café hauteur tasse",
+          "difficulty": "easy",
+          "equipment": [
+            "cam_A"
+          ],
+          "mood": "intimate",
+          "bestFor": [
+            "pov",
+            "routine"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-204",
+          "description": "Plongée clavier doigts mouvement",
+          "difficulty": "easy",
+          "equipment": [
+            "cam_A"
+          ],
+          "mood": "intimate",
+          "bestFor": [
+            "closeup",
+            "broll"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-205",
+          "description": "Cam A 10mm face + cam B 45mm plongée verser café",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A",
+            "cam_B"
+          ],
+          "mood": "dynamic",
+          "bestFor": [
+            "broll",
+            "dual_cam"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-206",
+          "description": "Cam B coin grand angle routine matinale",
+          "difficulty": "easy",
+          "equipment": [
+            "cam_B"
+          ],
+          "mood": "intimate",
+          "bestFor": [
+            "broll",
+            "routine"
+          ],
+          "soloFriendly": true
+        }
+      ]
+    },
+    {
+      "id": "CAT-13",
+      "name": "Objets et Détails",
+      "icon": "🔍",
+      "description": "Plans focalisés sur les détails et les objets",
+      "plans": [
+        {
+          "id": "PS-207",
+          "description": "Gros plans objets pas discernables autour sujet",
+          "difficulty": "easy",
+          "equipment": [
+            "cam_A"
+          ],
+          "mood": "intimate",
+          "bestFor": [
+            "closeup",
+            "broll"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-208",
+          "description": "Plan stylo + macro stylo mouvement",
+          "difficulty": "easy",
+          "equipment": [
+            "cam_A",
+            "macro_lens"
+          ],
+          "mood": "intimate",
+          "bestFor": [
+            "closeup",
+            "broll"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-209",
+          "description": "Objet tourne (toupie, roue, ballon) hyperlapse toi flou",
+          "difficulty": "hard",
+          "equipment": [
+            "cam_A",
+            "timelapse"
+          ],
+          "mood": "experimental",
+          "bestFor": [
+            "artistic",
+            "motion"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-210",
+          "description": "Plateau tournant changer objets",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A",
+            "turntable"
+          ],
+          "mood": "dynamic",
+          "bestFor": [
+            "broll",
+            "cinematic"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-211",
+          "description": "Insert cut sablier sable coulant main renverse",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A",
+            "hourglass"
+          ],
+          "mood": "dramatic",
+          "bestFor": [
+            "montage",
+            "transition"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-212",
+          "description": "Par-dessus épaule écran téléphone message important",
+          "difficulty": "easy",
+          "equipment": [
+            "cam_A",
+            "smartphone"
+          ],
+          "mood": "intimate",
+          "bestFor": [
+            "pov",
+            "closeup"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-213",
+          "description": "Plan rotatif autour objet (stylo, verre) angles",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A",
+            "gimbal"
+          ],
+          "mood": "cinematic",
+          "bestFor": [
+            "cinematic",
+            "motion"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-214",
+          "description": "Insert vieil appareil (gramophone, téléphone cadran) contraste",
+          "difficulty": "easy",
+          "equipment": [
+            "cam_A",
+            "vintage_object"
+          ],
+          "mood": "artistic",
+          "bestFor": [
+            "broll",
+            "artistic"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-215",
+          "description": "Plongée plateau jeu (échecs, cartes) main pièce stratégique",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A",
+            "game"
+          ],
+          "mood": "cinematic",
+          "bestFor": [
+            "overhead",
+            "broll"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-216",
+          "description": "Cam B objet suspension (fil transparent)",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_B",
+            "object",
+            "wire"
+          ],
+          "mood": "artistic",
+          "bestFor": [
+            "closeup",
+            "artistic"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-217",
+          "description": "Doigts ouvrent/ferment objet focus variable",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A"
+          ],
+          "mood": "intimate",
+          "bestFor": [
+            "closeup",
+            "motion"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-218",
+          "description": "Entre deux bookends effleurer tranches",
+          "difficulty": "easy",
+          "equipment": [
+            "cam_A",
+            "books"
+          ],
+          "mood": "intimate",
+          "bestFor": [
+            "broll",
+            "texture"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-219",
+          "description": "Tilt-up tasse thé fumante → regard pensif",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A"
+          ],
+          "mood": "dramatic",
+          "bestFor": [
+            "transition",
+            "dramatic"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-220",
+          "description": "Billet entre doigts grain papier gros plan",
+          "difficulty": "easy",
+          "equipment": [
+            "cam_A",
+            "macro_lens"
+          ],
+          "mood": "intimate",
+          "bestFor": [
+            "closeup",
+            "broll"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-221",
+          "description": "Cadre carré centré post-it mots-clés",
+          "difficulty": "easy",
+          "equipment": [
+            "cam_A"
+          ],
+          "mood": "intimate",
+          "bestFor": [
+            "closeup",
+            "broll"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-222",
+          "description": "Collier/pendentif tourner reflet lumière",
+          "difficulty": "easy",
+          "equipment": [
+            "cam_A",
+            "necklace"
+          ],
+          "mood": "intimate",
+          "bestFor": [
+            "closeup",
+            "broll"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-223",
+          "description": "Macro rosée matinale poignet",
+          "difficulty": "hard",
+          "equipment": [
+            "cam_A",
+            "macro_lens"
+          ],
+          "mood": "artistic",
+          "bestFor": [
+            "closeup",
+            "artistic"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-224",
+          "description": "Macro incisions objet (texte billet, grain bois) reflété regard",
+          "difficulty": "hard",
+          "equipment": [
+            "cam_A",
+            "macro_lens"
+          ],
+          "mood": "artistic",
+          "bestFor": [
+            "closeup",
+            "artistic"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-225",
+          "description": "Détail ongles cam B serrée lumière tamisée",
+          "difficulty": "easy",
+          "equipment": [
+            "cam_B",
+            "dim_light"
+          ],
+          "mood": "intimate",
+          "bestFor": [
+            "closeup",
+            "broll"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-226",
+          "description": "Macro texture livre ancien pages craquent",
+          "difficulty": "hard",
+          "equipment": [
+            "cam_A",
+            "macro_lens",
+            "old_book"
+          ],
+          "mood": "intimate",
+          "bestFor": [
+            "closeup",
+            "artistic"
+          ],
+          "soloFriendly": true
+        }
+      ]
+    },
+    {
+      "id": "CAT-14",
+      "name": "Effets Créatifs et Expérimentaux",
+      "icon": "🎨",
+      "description": "Plans créatifs et expérimentaux avec effets visuels complexes",
+      "plans": [
+        {
+          "id": "PS-227",
+          "description": "GoPro collée poitrine s'extirper d'un sac",
+          "difficulty": "medium",
+          "equipment": [
+            "GoPro"
+          ],
+          "mood": "dynamic",
+          "bestFor": [
+            "pov",
+            "motion"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-228",
+          "description": "Double exposition (post-prod) fusionnant deux scènes",
+          "difficulty": "hard",
+          "equipment": [
+            "cam_A"
+          ],
+          "mood": "artistic",
+          "bestFor": [
+            "artistic",
+            "dramatic"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-229",
+          "description": "Cam B sur casque audio plan stabilisé 45mm",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_B",
+            "headphones"
+          ],
+          "mood": "intimate",
+          "bestFor": [
+            "pov",
+            "broll"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-230",
+          "description": "Cam B contre-jour fenêtre tissu transparent flare coloré",
+          "difficulty": "hard",
+          "equipment": [
+            "cam_B",
+            "window",
+            "fabric"
+          ],
+          "mood": "cinematic",
+          "bestFor": [
+            "artistic",
+            "cinematic"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-231",
+          "description": "Split-focus cam B visage net macro + lampe bureau floue",
+          "difficulty": "hard",
+          "equipment": [
+            "cam_B",
+            "macro_lens",
+            "lamp"
+          ],
+          "mood": "cinematic",
+          "bestFor": [
+            "artistic",
+            "cinematic"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-232",
+          "description": "Deux trépieds face-à-face duel intérieur costume différent",
+          "difficulty": "hard",
+          "equipment": [
+            "cam_A",
+            "cam_B",
+            "tripod"
+          ],
+          "mood": "experimental",
+          "bestFor": [
+            "artistic",
+            "dramatic"
+          ],
+          "soloFriendly": false
+        },
+        {
+          "id": "PS-233",
+          "description": "Stop motion vêtements couleur",
+          "difficulty": "hard",
+          "equipment": [
+            "cam_A",
+            "clothes"
+          ],
+          "mood": "experimental",
+          "bestFor": [
+            "artistic",
+            "transition"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-234",
+          "description": "Ruban tissu devant cam A main à travers effet voile",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A",
+            "fabric"
+          ],
+          "mood": "artistic",
+          "bestFor": [
+            "artistic",
+            "transition"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-235",
+          "description": "Plongée cam A étagère lever tête vers elle",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A"
+          ],
+          "mood": "cinematic",
+          "bestFor": [
+            "cinematic",
+            "transition"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-236",
+          "description": "Cam B derrière fenêtre filmant extérieur intimité/isolement",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_B",
+            "window"
+          ],
+          "mood": "dramatic",
+          "bestFor": [
+            "mood",
+            "artistic"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-237",
+          "description": "Cam B face porte entrouverte pas ouvrir halo lumière",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_B",
+            "door",
+            "light"
+          ],
+          "mood": "dramatic",
+          "bestFor": [
+            "dramatic",
+            "mood"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-238",
+          "description": "Macro grain poussière/particule contre-jour",
+          "difficulty": "hard",
+          "equipment": [
+            "cam_A",
+            "macro_lens",
+            "backlight"
+          ],
+          "mood": "artistic",
+          "bestFor": [
+            "artistic",
+            "broll"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-239",
+          "description": "Cam B épaule conversation intérieure hors champ",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_B"
+          ],
+          "mood": "intimate",
+          "bestFor": [
+            "mood",
+            "pov"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-240",
+          "description": "Main devant caméra effet voile réapparaître net",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A"
+          ],
+          "mood": "dramatic",
+          "bestFor": [
+            "artistic",
+            "transition"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-241",
+          "description": "Plan fixe ombre jouant violon contraste réel/ombre",
+          "difficulty": "hard",
+          "equipment": [
+            "cam_A",
+            "light_source"
+          ],
+          "mood": "artistic",
+          "bestFor": [
+            "artistic",
+            "dramatic"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-242",
+          "description": "Rideau claque vent émerger silhouette",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A",
+            "curtain"
+          ],
+          "mood": "dramatic",
+          "bestFor": [
+            "dramatic",
+            "transition"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-243",
+          "description": "Peindre/dessiner mot clé sur vitre peinture coule",
+          "difficulty": "easy",
+          "equipment": [
+            "cam_A",
+            "paint",
+            "glass"
+          ],
+          "mood": "artistic",
+          "bestFor": [
+            "artistic",
+            "broll"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-244",
+          "description": "Macro prisme cristal arcs-en-ciel visage",
+          "difficulty": "hard",
+          "equipment": [
+            "cam_A",
+            "macro_lens",
+            "prism"
+          ],
+          "mood": "artistic",
+          "bestFor": [
+            "artistic",
+            "broll"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-245",
+          "description": "Glissement latéral derrière rideau révéler visage",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A",
+            "curtain"
+          ],
+          "mood": "dramatic",
+          "bestFor": [
+            "dramatic",
+            "transition"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-246",
+          "description": "Flamme bougie vacillante cut visage même fréquence",
+          "difficulty": "hard",
+          "equipment": [
+            "cam_A",
+            "candle"
+          ],
+          "mood": "artistic",
+          "bestFor": [
+            "artistic",
+            "transition"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-247",
+          "description": "Macro plume caressant visage",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A",
+            "macro_lens",
+            "feather"
+          ],
+          "mood": "intimate",
+          "bestFor": [
+            "closeup",
+            "artistic"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-248",
+          "description": "Micro grain peau caméra très proche",
+          "difficulty": "hard",
+          "equipment": [
+            "cam_A",
+            "macro_lens"
+          ],
+          "mood": "intimate",
+          "bestFor": [
+            "closeup",
+            "artistic"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-249",
+          "description": "Horloge tourne bruit puis baisser progressivement",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A",
+            "clock"
+          ],
+          "mood": "dramatic",
+          "bestFor": [
+            "artistic",
+            "transition"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-250",
+          "description": "Cuillère gros plan entrant dans bouche satisfaction/dégoût storytelling cuisine",
+          "difficulty": "easy",
+          "equipment": [
+            "cam_A"
+          ],
+          "mood": "intimate",
+          "bestFor": [
+            "closeup",
+            "reaction"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-251",
+          "description": "Réussite fictive réseaux sociaux (grosse voiture mais frigo vide/intérieur vide)",
+          "difficulty": "hard",
+          "equipment": [
+            "cam_A",
+            "car"
+          ],
+          "mood": "dramatic",
+          "bestFor": [
+            "dramatic",
+            "artistic"
+          ],
+          "soloFriendly": false
+        }
+      ]
+    },
+    {
+      "id": "CAT-15",
+      "name": "Accroches Visuelles",
+      "icon": "🎯",
+      "description": "Plans d'accroche visuelle pour commencer les vidéos",
+      "plans": [
+        {
+          "id": "PS-252",
+          "description": "Faire tomber téléphone deux plans caméra (mains + téléphone qui tombe)",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A",
+            "cam_B",
+            "smartphone"
+          ],
+          "mood": "dynamic",
+          "bestFor": [
+            "hook",
+            "dramatic"
+          ],
+          "soloFriendly": true
+        },
+        {
+          "id": "PS-253",
+          "description": "Faire tomber un verre",
+          "difficulty": "medium",
+          "equipment": [
+            "cam_A",
+            "glass"
+          ],
+          "mood": "dynamic",
+          "bestFor": [
+            "hook",
+            "dramatic"
+          ],
+          "soloFriendly": true
+        }
+      ]
+    }
+  ]
+}
