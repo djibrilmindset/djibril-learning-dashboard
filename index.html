@@ -286,7 +286,7 @@ body { font-family:'Inter',-apple-system,sans-serif; background:var(--bg-void); 
   <div class="nav-item" data-page="scripts"><span class="icon">📜</span><span>Scripts</span></div>
   <div class="nav-item" data-page="warroom"><span class="icon">⚔️</span><span>War Room</span></div>
   <div class="nav-item" data-page="comptes"><span class="icon">📊</span><span>Comptes</span></div>
-  <div class="nav-item" data-page="theses"><span class="icon">📖</span><span>Atlas Thèses</span><span class="nav-badge" style="background:rgba(248,87,166,0.2); color:var(--accent-pink);">NEW</span></div>
+  <div class="nav-item" data-page="theses"><span class="icon">📖</span><span>Atlas Thèses</span><span class="nav-badge" style="background:rgba(248,87,166,0.2); color:var(--accent-pink);">111</span></div>
   <div class="nav-item" data-page="plans"><span class="icon">🎬</span><span>Plans Scène</span><span class="nav-badge" style="background:rgba(255,189,46,0.2); color:var(--accent-amber);">253</span></div>
   <div class="nav-item" data-page="frameworks"><span class="icon">🧬</span><span>Frameworks</span></div>
   <div class="nav-item" data-page="tofufactory"><span class="icon">🏭</span><span>TOFU Factory</span><span class="nav-badge" style="background:rgba(255,77,77,0.2); color:#ff4757;">20</span></div>
@@ -971,11 +971,12 @@ function renderTheses(filterCat='all', search='') {
   const total = allTheses.length;
   const ready = allTheses.filter(t => t.status==='ready').length;
   const draft = allTheses.filter(t => t.status==='draft').length;
+  const withExamples = allTheses.filter(t => t.examples && t.examples.length).length;
   document.getElementById('theses-kpis').innerHTML = `
     <div class="kpi"><div class="kpi-label">Total thèses</div><div class="kpi-value">${total}</div></div>
     <div class="kpi"><div class="kpi-label">Prêtes à filmer</div><div class="kpi-value" style="background:linear-gradient(135deg,#14f195,#9945ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">${ready}</div></div>
-    <div class="kpi"><div class="kpi-label">Brouillons</div><div class="kpi-value">${draft}</div></div>
     <div class="kpi"><div class="kpi-label">Catégories</div><div class="kpi-value">${cats.length}</div></div>
+    <div class="kpi"><div class="kpi-label">Avec exemples</div><div class="kpi-value">${withExamples}</div></div>
   `;
 
   // Tabs
@@ -1021,7 +1022,10 @@ function renderTheses(filterCat='all', search='') {
         <div class="ec-detail-grid">
           <div class="ec-detail-item"><div class="ec-detail-label">💡 Insight clé</div><div class="ec-detail-value">${t.keyInsight||'—'}</div></div>
           <div class="ec-detail-item"><div class="ec-detail-label">📝 Idée brute</div><div class="ec-detail-value" style="font-style:italic;">${t.rawIdea||'—'}</div></div>
+          ${t.nicheLink ? `<div class="ec-detail-item"><div class="ec-detail-label">🎯 Lien niche (cérébral)</div><div class="ec-detail-value" style="color:var(--accent-cyan);">${t.nicheLink}</div></div>` : ''}
+          ${t.sourceQuote ? `<div class="ec-detail-item"><div class="ec-detail-label">💬 Citation source</div><div class="ec-detail-value" style="color:var(--accent-amber);font-style:italic;">« ${t.sourceQuote} »</div></div>` : ''}
         </div>
+        ${t.examples && t.examples.length ? `<div style="margin-top:10px;padding:10px;background:rgba(153,69,255,0.06);border-radius:8px;border-left:3px solid var(--accent-purple);"><div style="font-size:10px;font-weight:700;color:var(--accent-purple);margin-bottom:6px;text-transform:uppercase;">📌 Exemples concrets</div>${t.examples.map(ex => `<div style="font-size:12px;color:var(--text-secondary);margin-bottom:4px;">→ ${ex}</div>`).join('')}</div>` : ''}
         ${t.linkedConcepts && t.linkedConcepts.length ? `<div style="margin-top:8px;font-size:11px;color:var(--text-muted);">🔗 Liens: ${t.linkedConcepts.join(', ')}</div>` : ''}
       </div>
     </div>
