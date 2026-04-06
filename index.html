@@ -503,6 +503,21 @@ function navigateTo(page) {
   if (navD) navD.classList.add('active');
   if (navM) navM.classList.add('active');
   document.getElementById('page-' + page).classList.add('active');
+  // Re-render page data on navigation to fix timing issues
+  const reRenders = {
+    tofufactory: () => renderTofuFactory(),
+    theses: () => renderTheses(),
+    problemes: () => renderProblemes(),
+    cockpit: () => renderCockpit(),
+    arsenal: () => renderArsenal(),
+    scripts: () => renderScripts(),
+    warroom: () => renderWarRoom(),
+    comptes: () => renderComptes(),
+    plans: () => renderPlans(),
+    frameworks: () => renderFrameworks(),
+    systeme: () => renderSysteme()
+  };
+  if (reRenders[page]) reRenders[page]();
 }
 document.querySelectorAll('.nav-item').forEach(item => item.addEventListener('click', () => navigateTo(item.dataset.page)));
 document.querySelectorAll('.mob-item').forEach(item => item.addEventListener('click', () => navigateTo(item.dataset.page)));
