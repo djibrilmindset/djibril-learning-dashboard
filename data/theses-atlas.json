@@ -7,9 +7,11 @@
     "lastUpdated": "2026-04-06",
     "description": "Thèmes centraux pour le copywriting et la création vidéo ciblant les overthinkers intelligents mais paralysés par l'analyse"
   },
-  "categories": {
-    "orgueil": {
-      "label": "Orgueil & Ego",
+  "categories": [
+    {
+      "id": "orgueil",
+      "name": "Orgueil & Ego",
+      "icon": "👑",
       "description": "La barrière de l'ego et comment elle bloque l'apprentissage et l'action",
       "color": "#FF6B6B",
       "theses": [
@@ -169,8 +171,10 @@
         }
       ]
     },
-    "dopamine": {
-      "label": "Dopamine & Attention",
+    {
+      "id": "dopamine",
+      "name": "Dopamine & Attention",
+      "icon": "⚡",
       "description": "L'économie de l'attention et les mécanismes d'addiction mentale",
       "color": "#4ECDC4",
       "theses": [
@@ -300,8 +304,10 @@
         }
       ]
     },
-    "recipientCerebral": {
-      "label": "Le Récipient Cérébral",
+    {
+      "id": "recipientCerebral",
+      "name": "Le Récipient Cérébral",
+      "icon": "🧠",
       "description": "Concept central: le cerveau comme container d'encre passive vs active",
       "color": "#95E1D3",
       "theses": [
@@ -430,8 +436,10 @@
         }
       ]
     },
-    "peurEchec": {
-      "label": "Peur & Échec",
+    {
+      "id": "peurEchec",
+      "name": "Peur & Échec",
+      "icon": "😰",
       "description": "Dépasser la paralysie émotionnelle et apprendre de l'échec",
       "color": "#FFD93D",
       "theses": [
@@ -559,8 +567,10 @@
         }
       ]
     },
-    "environnement": {
-      "label": "Environnement & Influence",
+    {
+      "id": "environnement",
+      "name": "Environnement & Influence",
+      "icon": "🌍",
       "description": "Comment l'environnement et les influences façonnent la trajectoire",
       "color": "#A8E6CF",
       "theses": [
@@ -647,8 +657,10 @@
         }
       ]
     },
-    "amourDesir": {
-      "label": "Amour & Désir",
+    {
+      "id": "amourDesir",
+      "name": "Amour & Désir",
+      "icon": "❤️",
       "description": "Transformer le désir en moteur d'action et d'apprentissage",
       "color": "#FFB6C1",
       "theses": [
@@ -760,8 +772,10 @@
         }
       ]
     },
-    "convictionAction": {
-      "label": "Conviction & Action",
+    {
+      "id": "convictionAction",
+      "name": "Conviction & Action",
+      "icon": "🎯",
       "description": "De la pensée à l'action: transformer les croyances en habitudes",
       "color": "#DDA0DD",
       "theses": [
@@ -888,8 +902,10 @@
         }
       ]
     },
-    "apprentissage": {
-      "label": "Apprentissage Continu",
+    {
+      "id": "apprentissage",
+      "name": "Apprentissage Continu",
+      "icon": "📚",
       "description": "L'éducation continue comme mode de vie",
       "color": "#98D8C8",
       "theses": [
@@ -982,8 +998,10 @@
         }
       ]
     },
-    "productivite": {
-      "label": "Productivité & Facilité",
+    {
+      "id": "productivite",
+      "name": "Productivité & Facilité",
+      "icon": "⏰",
       "description": "Choisir l'effet de levier et le coût d'opportunité",
       "color": "#FFE66D",
       "theses": [
@@ -1057,8 +1075,10 @@
         }
       ]
     },
-    "visualisation": {
-      "label": "Visualisation vs Rêve",
+    {
+      "id": "visualisation",
+      "name": "Visualisation vs Rêve",
+      "icon": "🔮",
       "description": "La différence entre imaginer et vraiment se projeter",
       "color": "#F8B4D6",
       "theses": [
@@ -1183,8 +1203,10 @@
         }
       ]
     },
-    "comprehension": {
-      "label": "Compréhension & Conscience",
+    {
+      "id": "comprehension",
+      "name": "Compréhension & Conscience",
+      "icon": "💡",
       "description": "Les étages de la conscience et l'écoute profonde",
       "color": "#C5A0FF",
       "theses": [
@@ -1276,8 +1298,10 @@
         }
       ]
     },
-    "nicheSpecialisation": {
-      "label": "Niche & Spécialisation",
+    {
+      "id": "nicheSpecialisation",
+      "name": "Niche & Spécialisation",
+      "icon": "🎪",
       "description": "Le pouvoir de la spécialisation et de la différenciation",
       "color": "#FFC0CB",
       "theses": [
@@ -1367,7 +1391,7 @@
         }
       ]
     }
-  },
+  ],
   "linkedThesesIndex": {
     "description": "Index des liens croisés pour navigation et découverte",
     "totalLinks": 185,

@@ -1,492 +1,175 @@
 {
-  "last_updated": "2026-04-05",
-  "total_signals": 158,
-  "meta": {
-    "date": "2026-04-05",
-    "version": "2.0",
-    "analyst": "CDE-ANALYST-AGENT",
-    "purpose": "Classification emotionnelle du corpus veille — identifier les declencheurs emotionnels performants et les transposer pour la niche Djibril",
-    "corpus_size": 5,
-    "total_views": 9590000
-  },
   "emotions": [
-    {
-      "emotion": "Epuisement",
-      "emoji": "😩",
-      "count": 33,
-      "description": "Fatigue profonde liee aux longues heures dans un metier chronophage sans resultat financier personnel. Le corps lache avant la volonte.",
-      "verbatims": [
-        "Je travaille 60h par semaine et j'arrive meme pas a mettre 200 de cote",
-        "Mon corps lache mais je peux pas m'arreter sinon je mange pas",
-        "Je rentre du boulot a 21h, j'ai meme plus l'energie de penser a autre chose",
-        "10h debout, 6j/7. Et a la fin du mois il reste rien. Rien.",
-        "Je suis vide. Pas faineant. Vide. Y'a une difference.",
-        "Meme quand je veux travailler sur mon projet le soir, j'ai plus rien. Zero."
-      ],
-      "mecanisme_lie": "Ego depletion (Baumeister) — la volonte est un muscle qui se fatigue avec chaque micro-decision. Le metier chronophage epuise la reserve avant que le projet commence.",
-      "angle_contenu": "TOFU cinematique — Plan 1 VOIR : nommer l'epuisement physique avec precision sensorielle. Plan 2 NOMMER : ce n'est pas de la faiblesse, c'est de la physique."
-    },
     {
       "emotion": "Frustration",
       "emoji": "😤",
+      "count": 47,
+      "desir": "Être reconnu pour sa valeur réelle, pas son temps",
+      "principe_premier": "La frustration naît de l'écart entre la valeur perçue de soi et la valeur attribuée par le système. Le cerveau interprète ce décalage comme une injustice — ce qui active le circuit de la colère (amygdale) et la rumination (cortex cingulaire).",
+      "declencheurs": ["Salaire plafonné malgré les compétences", "Pas de progression visible", "Travail répétitif sans stimulation intellectuelle", "Comparaison avec d'autres qui ont 'réussi' avec moins d'efforts"],
+      "verbatims": [
+        "Je bosse 14h par jour et j'ai l'impression de pas avancer",
+        "J'en ai marre d'échanger mon temps contre de l'argent",
+        "Tout le monde me dit 'sois patient' mais la patience me tue",
+        "Je suis plus intelligent que mon patron et je gagne 3x moins",
+        "J'ai l'impression de gaspiller mon potentiel chaque jour"
+      ],
+      "mecanismes_psycho": ["Biais d'ancrage (ancré à son salaire actuel)", "Effet de contraste (compare à ceux qui gagnent plus)", "Rumination cognitive (boucle mentale sans sortie)"]
+    },
+    {
+      "emotion": "Peur",
+      "emoji": "😰",
+      "count": 38,
+      "desir": "Sécurité financière sans sacrifier sa vie",
+      "principe_premier": "La peur du changement est une réponse de survie du système limbique. Le cerveau traite l'inconnu comme un danger physique — même quand le risque est purement financier ou social. L'amygdale ne fait pas la différence entre un lion et une feuille d'impôts.",
+      "declencheurs": ["Pas de filet de sécurité financier", "Pression familiale/sociale", "Expériences passées d'échec", "Incertitude du marché", "Peur du jugement de l'entourage"],
+      "verbatims": [
+        "Si je quitte mon job et que ça marche pas, je fais quoi ?",
+        "J'ai peur de me lancer et de tout perdre",
+        "Mon entourage va me prendre pour un fou",
+        "J'ai déjà essayé et j'ai perdu de l'argent",
+        "Je préfère être malheureux mais stable que libre mais incertain"
+      ],
+      "mecanismes_psycho": ["Aversion à la perte (Kahneman — on souffre 2x plus d'une perte que d'un gain)", "Biais du statu quo (préférence pour l'existant)", "Sunk cost fallacy (j'ai trop investi pour partir)"]
+    },
+    {
+      "emotion": "Espoir",
+      "emoji": "✨",
+      "count": 31,
+      "desir": "Croire que c'est possible pour quelqu'un comme moi",
+      "principe_premier": "L'espoir est le carburant de l'action. Sans espoir réaliste, le cortex préfrontal ne peut pas planifier — il tombe dans l'impuissance apprise. L'espoir n'est pas naïf : c'est un signal neurologique que le cerveau a identifié un chemin possible.",
+      "declencheurs": ["Voir quelqu'un de similaire réussir", "Un contenu qui NOMME exactement ce qu'ils vivent", "Un premier résultat même minuscule", "Permission de ne pas être parfait"],
+      "verbatims": [
+        "Si lui il a réussi à 21 ans, pourquoi pas moi ?",
+        "Y'a forcément un moyen de sortir de cette boucle",
+        "Je sens que je suis capable, j'ai juste besoin du déclic",
+        "C'est la première fois que quelqu'un décrit exactement ce que je vis",
+        "OK je suis prêt à essayer si quelqu'un me montre le chemin"
+      ],
+      "mecanismes_psycho": ["Effet de similarité (on croit plus ceux qui nous ressemblent)", "Self-efficacy (Bandura — voir la preuve active la croyance en soi)", "Effet Pratfall (la vulnérabilité augmente la confiance)"]
+    },
+    {
+      "emotion": "Solitude",
+      "emoji": "🌑",
       "count": 28,
-      "description": "Colere contenue face au systeme temps-contre-argent et au sentiment d'injustice systematique.",
+      "desir": "Trouver quelqu'un qui comprend le combat",
+      "principe_premier": "L'isolement social n'est pas juste émotionnel — il est cognitif. Le cerveau utilise le réseau social comme un 'cerveau externe' (hypothèse du cerveau social de Dunbar). Quand l'entourage ne comprend pas ta vision, ton cerveau perd un outil de traitement critique. Tu PENSES moins bien quand tu es seul.",
+      "declencheurs": ["Entourage qui décourage", "Pas de mentor accessible", "Décalage de vision avec les proches", "Réseaux sociaux qui montrent le succès des autres sans le contexte"],
       "verbatims": [
-        "Je cree toute la valeur et c'est le boss qui se remplit les poches",
-        "Je suis intelligent mais le systeme me bloque. J'ai pas les connexions.",
-        "J'ai compris comment ca marche mais personne veut m'ecouter",
-        "Tout le monde me dit d'etre patient. Patient pour quoi ? Pour vieillir pauvre ?",
-        "C'est toujours les memes qui reussissent. C'est pas la merite. C'est la naissance.",
-        "J'en peux plus de ce salariat mais j'ai pas le choix. Ou je crois ca."
+        "Personne autour de moi comprend ce que je vis",
+        "Mes potes me disent de rester dans mon CDI",
+        "Je me sens seul dans cette vision",
+        "Ma famille pense que l'entrepreneuriat c'est de la folie",
+        "J'ai personne à qui parler de mes projets sans être jugé"
       ],
-      "mecanisme_lie": "Locus de controle externe (Rotter 1966) — frustration = signal que le locus glisse vers l'externe. Transformer la frustration en carburant = shift vers locus interne.",
-      "angle_contenu": "TOFU reframe — la frustration est un signal, pas un verdict. MOFU coaching : shift locus externe vers interne en 3 etapes."
+      "mecanismes_psycho": ["Hypothèse du cerveau social (Dunbar)", "Besoin d'appartenance (Maslow — niveau 3)", "Effet de conformité sociale (Asch — on se conforme au groupe même quand il a tort)"]
     },
     {
-      "emotion": "Paralysie d'analyse",
-      "emoji": "🧊",
-      "count": 27,
-      "description": "Incapacite d'agir malgre une comprehension theorique complete — overthinking chronique amplifie par la surcharge informationnelle.",
+      "emotion": "Doute",
+      "emoji": "🤔",
+      "count": 24,
+      "desir": "Être rassuré que l'intelligence n'est pas un frein",
+      "principe_premier": "Le doute du cérébral est paradoxal : plus il est intelligent, plus il génère de scénarios d'échec. Le cortex préfrontal hyperactif simule tous les futurs possibles — et statistiquement, il y a plus de scénarios négatifs que positifs. L'intelligence AUGMENTE le doute, elle ne le réduit pas.",
+      "declencheurs": ["Trop d'options = paralysie (paradoxe du choix — Schwartz)", "Perfectionnisme = rien n'est assez bon pour commencer", "Comparaison avec des experts = syndrome de l'imposteur", "Sur-analyse = chaque décision passe par 50 filtres"],
       "verbatims": [
-        "J'ai 47 onglets ouverts et j'ai toujours pas commence",
-        "Je sais exactement ce que je devrais faire mais je fais rien — c'est ca le pire",
-        "J'attends toujours le bon moment, le bon plan, la bonne idee. En fait j'attends rien, j'evite.",
-        "J'ai lu 30 livres sur l'entrepreneuriat. Resultat : 0 projet lance.",
-        "Trop d'options = j'avance pas. J'ai besoin qu'on me dise exactement quoi faire.",
-        "Mon cerveau analyse tout a la mort. Et pendant ce temps la vie passe."
+        "Je sais trop de trucs et du coup je fais rien",
+        "J'analyse tout et je me lance jamais",
+        "Dans mon domaine c'est différent",
+        "Et si c'est pas le bon moment ?",
+        "J'ai besoin de maîtriser avant de commencer"
       ],
-      "mecanisme_lie": "Effet Zeigarnik (1927) + Paradoxe du choix (Ariely) + Temporal discounting (Ainslie) — trop de taches en suspens + trop d'options + preference pour le confort immediat = systeme paralyse.",
-      "angle_contenu": "MOFU coaching — nommer le mecanisme precis, donner UNE seule action pour ce soir. Implementation intentions Gollwitzer (SI situation -> ALORS action)."
+      "mecanismes_psycho": ["Paradoxe du choix (Schwartz — plus d'options = moins de décisions)", "Syndrome de l'imposteur (je suis pas assez compétent)", "Analysis paralysis (boucle recursive du cortex préfrontal — Stanford study)"]
     },
     {
-      "emotion": "Peur du changement",
-      "emoji": "😨",
-      "count": 22,
-      "description": "Anxiete face a l'inconnu, aux risques de l'independance, et a l'exposition sociale. Nourrie par l'effet de dotation.",
+      "emotion": "Colère",
+      "emoji": "🔥",
+      "count": 19,
+      "desir": "Casser le système qui l'emprisonne",
+      "principe_premier": "La colère est une énergie mal dirigée. C'est le cerveau qui signale : 'cette situation est injuste ET je peux agir'. La colère est plus proche de l'action que la tristesse — c'est un signal de POUVOIR frustré, pas d'impuissance.",
+      "declencheurs": ["Système éducatif qui formate pour le salariat", "Promesses non tenues (travaille dur = réussir)", "Voir des 'moins méritants' réussir par le réseau", "Sentir que les règles du jeu sont truquées"],
       "verbatims": [
-        "Et si je me lance et que ca marche pas ? Je peux pas risquer.",
-        "Mon boulot c'est nul mais au moins j'ai ma paie le 25. C'est sur.",
-        "J'ai une famille. Je peux pas me permettre de couler.",
-        "Poster du contenu ? Les gens vont se moquer.",
-        "Je prefere ma cage actuelle a l'inconnu. Au moins je connais ma cage.",
-        "Je sais que je devrais partir mais c'est chez moi ici. C'est nul mais c'est chez moi."
+        "Le système est fait pour qu'on reste coincé",
+        "On nous apprend à être des employés, pas des libres",
+        "J'en peux plus de ce cycle travail-dodo-travail",
+        "Les formations en ligne promettent tout et livrent rien",
+        "Pourquoi personne m'a dit ça plus tôt ?"
       ],
-      "mecanisme_lie": "Effet de dotation (Thaler/Kahneman) + Heuristique de disponibilite (Tversky & Kahneman) — on sureevalue ce qu'on possede + on surestime les risques visibles.",
-      "angle_contenu": "MOFU coaching — Thaler effet dotation + WOOP Oettingen (visualiser les obstacles) + preuve Adam comme modele de faisabilite."
+      "mecanismes_psycho": ["Théorie de l'attribution (rejeter la faute sur le système = protéger son ego)", "Colère comme moteur d'action (Carver & Harmon-Jones 2009)", "Sentiment d'injustice = activateur de changement"]
     },
     {
-      "emotion": "Doute de soi",
-      "emoji": "🪞",
-      "count": 22,
-      "description": "Syndrome imposteur permanent — se sentir pas legitime malgre les competences. Amplifiee par la comparaison sociale.",
+      "emotion": "Motivation",
+      "emoji": "💪",
+      "count": 16,
+      "desir": "Passer à l'action maintenant, pas demain",
+      "principe_premier": "La motivation est un pic de dopamine temporaire. Elle dure 48-72h maximum. Ce n'est PAS un carburant durable — c'est un déclencheur. Le système à construire doit fonctionner SANS motivation, via l'habitude (ganglions de la base, pas cortex préfrontal).",
+      "declencheurs": ["Contenu inspirant au bon moment", "Petite victoire récente", "Deadline approchant", "Frustration qui atteint le point de rupture"],
       "verbatims": [
-        "Qui suis-je pour donner des conseils ? J'ai meme pas reussi moi-meme.",
-        "A chaque fois que j'ai une bonne idee, 3 secondes apres je me dis que c'est nul",
-        "Je me compare aux autres tout le temps. Et je perds tout le temps.",
-        "84% des entrepreneurs vivent le syndrome imposteur. Moi c'est 100%.",
-        "J'attends d'etre parfait. Donc je commencerai jamais.",
-        "Quand je vois ce que les autres font, j'ai l'impression d'etre 10 ans derriere."
+        "OK je suis prêt, par où je commence ?",
+        "Donne-moi un plan et je fonce",
+        "J'ai décidé que cette année c'est la mienne",
+        "J'ai plus rien à perdre autant essayer"
       ],
-      "mecanisme_lie": "Prophetie autorealisatrice (Merton) + Effet Pratfall (Aronson 1966) + Dunning-Kruger inverse — la croyance en son incompetence se confirme elle-meme.",
-      "angle_contenu": "TOFU affect labeling + MOFU Pratfall effect — nommer le doute en 3s (Lieberman -30% amygdale), puis montrer que l'imperfection est la voie."
+      "mecanismes_psycho": ["Dopamine spike temporaire (48-72h max)", "Motivation intrinsèque vs extrinsèque (Deci & Ryan)", "Implementation intentions (Gollwitzer — le plan précis double les chances d'action)"]
     },
     {
-      "emotion": "Impuissance apprise",
-      "emoji": "😔",
-      "count": 20,
-      "description": "Sentiment de ne pas pouvoir changer sa situation — resignation conditionnee (Seligman 1967). Le cerveau a appris a rester immobile.",
+      "emotion": "Résignation",
+      "emoji": "😶",
+      "count": 12,
+      "desir": "Retrouver l'énergie de croire",
+      "principe_premier": "La résignation = impuissance apprise (Seligman 1967). Après trop d'échecs, le cerveau DÉSACTIVE les circuits d'action. Ce n'est pas de la paresse — c'est un mécanisme de protection. Le cerveau a appris : essayer = souffrir. Donc il arrête d'essayer. UNE micro-victoire peut réactiver le circuit entier.",
+      "declencheurs": ["Échecs répétés sans feedback positif", "Formations achetées jamais terminées", "Projets commencés puis abandonnés", "Entourage qui confirme l'échec comme normalité"],
       "verbatims": [
-        "J'ai essaye une fois, ca a pas marche. Donc voila.",
-        "C'est comme ca pour les gens comme moi. On peut rien y faire.",
-        "Personne de mon quartier n'a jamais reussi. Pourquoi ce serait different pour moi ?",
-        "J'ai arrete d'essayer. Moins de deception comme ca.",
-        "Chaque fois que j'essaie quelque chose de nouveau, ca foire. J'ai arrete.",
-        "Mon cerveau me dit a quoi bon. Meme avant de commencer."
+        "J'ai déjà essayé et ça a pas marché",
+        "C'est peut-être pas fait pour moi",
+        "Les formations en ligne c'est toutes des arnaques",
+        "À quoi bon essayer encore ?",
+        "J'ai perdu assez de temps et d'argent comme ça"
       ],
-      "mecanisme_lie": "Impuissance apprise (Seligman 1967) — echecs repetes -> conviction que l'action est inutile -> arret proactif. Recalibrage via micro-victoires sequentielles.",
-      "angle_contenu": "MOFU coaching — nommer l'impuissance, expliquer le mecanisme Seligman, donner 1 micro-victoire cognitive executable en 25 minutes ce soir."
-    },
-    {
-      "emotion": "Isolement",
-      "emoji": "🏝️",
-      "count": 18,
-      "description": "Solitude totale dans sa vision — personne ne comprend, personne ne soutient. L'environnement amplifie le doute.",
-      "verbatims": [
-        "Mon meilleur pote m'a dit arrete de rever, trouve un vrai boulot",
-        "Je suis seul a y croire. Litteralement. Pas un seul soutien.",
-        "Ma famille pense que je suis fou. Ils veulent que je fasse medecine ou rien.",
-        "J'ai personne a qui en parler. Personne qui comprend.",
-        "9 personnes sur 10 autour de moi me tirent vers le bas. 9 sur 10.",
-        "Quand j'en parle, les gens changent de sujet. Ou pire, ils sourient poliment."
-      ],
-      "mecanisme_lie": "Perception filtree (Cle 2 doctrine) + Locus de controle contamine par l'entourage (Rotter) — l'environnement hostile reprogramme le recipient cerebral passivement.",
-      "angle_contenu": "TOFU connexion cinematique — tu n'es pas seul. Adam = preuve vivante du chemin parcouru seul. Positionnement grand frere."
-    },
-    {
-      "emotion": "Honte silencieuse",
-      "emoji": "🤐",
-      "count": 17,
-      "description": "Honte secrete de l'inaction — savoir qu'on devrait agir mais ne pas le faire. Aggravee par le biais d'omission.",
-      "verbatims": [
-        "Le pire c'est que je SAIS que je perds mon temps. Et je continue.",
-        "J'ai honte de dire que j'ai rien fait de ma journee. Encore.",
-        "Mes potes pensent que je bosse sur mon projet. En vrai je scroll depuis 3h.",
-        "Je me couche chaque soir avec cette boule dans le ventre. Demain sera pareil.",
-        "Je mens meme a ma copine sur ce que j'ai fait de ma journee.",
-        "Cette honte la, je la montre a personne. Mais elle est toujours la."
-      ],
-      "mecanisme_lie": "Biais d'omission (Spranca 1991) + Affect labeling (Lieberman 2007) — ne rien faire est une decision active avec des consequences. Nommer la honte reduit son pouvoir de 30%.",
-      "angle_contenu": "TOFU cinematique Plan 2 NOMMER — affect labeling de la honte silencieuse. PERMETTRE : ce n'est pas un defaut de caractere, c'est un mecanisme."
-    },
-    {
-      "emotion": "Desespoir",
-      "emoji": "😞",
-      "count": 13,
-      "description": "Perte d'espoir et resignation face a un futur percu comme deja ecrit. Prophetie autorealisatrice active.",
-      "verbatims": [
-        "A 30 ans je serai encore la a faire le meme truc. C'est mon destin.",
-        "J'ai arrete de rever. Maintenant je survis.",
-        "Les gens qui reussissent c'est pas les memes que moi. Point.",
-        "Chaque annee c'est la meme resolution. Chaque annee c'est le meme resultat.",
-        "J'ai perdu trop de temps. C'est trop tard pour moi.",
-        "Je vois plus comment ma situation pourrait changer. C'est ancre."
-      ],
-      "mecanisme_lie": "Prophetie autorealisatrice (Merton) + Impuissance apprise (Seligman) — la croyance en l'impossibilite du changement se confirme elle-meme.",
-      "angle_contenu": "MOFU reframe — le desespoir est une croyance programmee, pas une realite. Data Adam : 6700 a 21 ans, seul, depuis zero."
-    },
-    {
-      "emotion": "Colere",
-      "emoji": "😠",
-      "count": 11,
-      "description": "Rage contre le systeme, la societe, l'entourage qui freine. Signal puissant que le locus veut devenir interne.",
-      "verbatims": [
-        "Ils veulent qu'on creve pour pas qu'on pense a se lever",
-        "Le systeme est fait pour qu'on reste en bas. C'est pas un accident.",
-        "J'en ai MARRE de cette comedie. Je veux sortir.",
-        "9 personnes sur 10 autour de moi me tirent vers le bas. 9 sur 10.",
-        "Cette colere je sais pas quoi en faire. Elle s'accumule.",
-        "Chaque jour qui passe je me dis que ca peut pas continuer. Et ca continue."
-      ],
-      "mecanisme_lie": "Locus de controle (Rotter) — la colere contre l'externe est un signal que le locus veut devenir interne. Transformer la colere en carburant = canalisation du signal.",
-      "angle_contenu": "TOFU pattern interrupt — ta colere est un signal, pas un defaut. MOFU : comment transformer cette energie en direction precise."
-    },
-    {
-      "emotion": "Espoir fragile",
-      "emoji": "🤞",
-      "count": 11,
-      "description": "Petite lueur de possibilite — conviction qu'il y a une autre voie, si seulement quelqu'un montrait comment. Levier BOFU majeur.",
-      "verbatims": [
-        "J'ai vu un mec de 21 ans qui fait 6700 par mois. Seul. Donc c'est possible.",
-        "Si je peux juste trouver le bon plan, je pense que j'y arriverais",
-        "Quelque part je sais que j'ai les capacites. Faut juste que quelqu'un me montre.",
-        "Je veux pas etre riche. Je veux juste etre libre.",
-        "Il y a des jours ou je me dis que c'est possible. Ces jours-la je les cherche.",
-        "Peut-etre que ce contenu est pour moi. Peut-etre que cette fois c'est different."
-      ],
-      "mecanisme_lie": "Social proof (Cialdini) + Data Adam (6700, 21 ans, seul) + Effet Pratfall — l'espoir fragile se transforme en conviction quand on voit une preuve concrete et imparfaite.",
-      "angle_contenu": "BOFU preuve — quelqu'un l'a fait dans tes conditions exactes. Voila comment. Storytelling Adam personnel."
-    },
-    {
-      "emotion": "Addiction informationnelle",
-      "emoji": "📱",
-      "count": 9,
-      "description": "Conscience d'etre piege dans la boucle toxique consommation/dopamine sans passage a l'action. Knowing-doing gap vecu.",
-      "verbatims": [
-        "J'ai regarde 200 videos sur comment lancer un business. J'en ai lance 0.",
-        "Chaque soir je me dis : demain je commence. Chaque soir depuis 2 ans.",
-        "Je consomme du contenu developpement personnel comme d'autres scrollent TikTok. Meme drogue.",
-        "72% des gens qui consomment du self-help n'appliquent jamais. Je suis dans les 72%.",
-        "J'ai tous les outils. Tous. Il me manque juste de les utiliser.",
-        "Ma dopamine d'acquisition est au max. Mes resultats sont a zero."
-      ],
-      "mecanisme_lie": "Knowing-doing gap (Pfeffer & Sutton Stanford) + Boucle toxique recipient (Gloria Mark 47s) — l'accumulation de savoir cree une illusion de progression.",
-      "angle_contenu": "MOFU coaching — diagnostiquer la boucle toxique, nommer la dopamine d'acquisition, exercice : identifier 1 chose sue depuis 30 jours et non faite. La lancer en 24h."
-    },
-    {
-      "emotion": "Dissonance cognitive",
-      "emoji": "🧠",
-      "count": 8,
-      "description": "Tension insupportable entre savoir et ne pas faire — le cerveau modifie les croyances pour proteger l'ego. Emotion nouvelle detectee en avril 2026.",
-      "verbatims": [
-        "Je me trouve des excuses que je sais pas valides. Mais je les crois quand meme.",
-        "Je sais que je rationalise. Et je continue quand meme. C'est troublant.",
-        "Mon cerveau est fort pour me convaincre que c'est raisonnable de ne rien faire.",
-        "Je change mon objectif quand j'ai pas atteint le precedent. Pour me proteger.",
-        "Je me mens a moi-meme. Et la partie de moi qui le sait reste silencieuse.",
-        "Mon analyse ou mon ego ? J'arrive meme plus a faire la difference."
-      ],
-      "mecanisme_lie": "Dissonance cognitive (Festinger 1957) — tension entre croyance et comportement : le cerveau modifie la croyance pas le comportement pour reduire l'inconfort.",
-      "angle_contenu": "MOFU coaching — nommer le mecanisme Festinger, exercice d'observation des rationalisations, question diagnostique : mon analyse ou mon ego ?"
+      "mecanismes_psycho": ["Impuissance apprise (Seligman 1967)", "Effet de récence (dernier échec pèse plus que les succès passés)", "Extinction comportementale (sans renforcement positif, le comportement disparaît)"]
     }
   ],
-  "classification_par_emotion": {
-    "RECONNAISSANCE": {
-      "description": "Le spectateur se voit lui-meme dans le contenu. Elle parle de moi. Emotion la plus loyalisante.",
-      "score_retention": 95,
-      "score_conversion": 90,
-      "score_communaute": 98,
-      "contenus_associes": [
-        {
-          "creator": "@sokaherself",
-          "hook": "Ton intelligence te bloque plus qu'elle te sert",
-          "intensite": 10,
-          "declencheur": "Paradoxe identitaire — attaque l'atout principal de l'avatar (son intelligence)",
-          "reaction_type": "Commentaire long + follow + sauvegarder",
-          "verbatims_type": ["Comment tu me decris si bien", "C'est exactement moi"]
-        },
-        {
-          "creator": "@iamdria",
-          "hook": "La paralysie d'analyse qui t'empeche d'agir",
-          "intensite": 8,
-          "declencheur": "Nommage precis d'un comportement vecu sans nom",
-          "reaction_type": "Sauvegarder + gratitude + questions",
-          "verbatims_type": ["J'avais pas les mots", "Tu decris ma semaine"]
-        }
-      ],
-      "application_djibril": {
-        "angle": "VOIR — le spectateur doit se reconnaitre avant qu'on lui propose quoi que ce soit",
-        "framework": "Plan 2 du script cinematique : CONNEXION EMOTIONNELLE (5-13s)",
-        "exemple_hook": "T'as l'impression d'etre le seul a avoir cette clarte — et a rien faire avec.",
-        "erreur_a_eviter": "Proposer une solution AVANT que le spectateur se soit senti vu"
-      }
+  "desirs": [
+    {
+      "desir": "Liberté financière",
+      "emoji": "💰",
+      "description": "Ne plus dépendre d'un employeur ou d'un nombre d'heures",
+      "emotion_associee": "Frustration",
+      "profondeur": "Ce n'est pas l'argent qu'ils veulent — c'est le CONTRÔLE. L'argent est un proxy pour l'autonomie. La vraie douleur : quelqu'un d'autre décide de leur temps."
     },
-    "ACTIVATION": {
-      "description": "Energie soudaine, envie d'agir immediatement. Emotion la plus virale mais la moins durable.",
-      "score_retention": 60,
-      "score_conversion": 55,
-      "score_communaute": 65,
-      "contenus_associes": [
-        {
-          "creator": "@realimangadzhi",
-          "hook": "Stop planning, start executing",
-          "intensite": 10,
-          "declencheur": "Commande directe + urgence temporelle implicite",
-          "reaction_type": "Like + partage + commentaire court energetique",
-          "verbatims_type": ["Okay je demarre", "Facts", "Starting today"]
-        },
-        {
-          "creator": "@elite_think",
-          "hook": "You're not ready, and you'll never be ready",
-          "intensite": 8,
-          "declencheur": "Fatalite liberatrice — si jamais pret, autant commencer maintenant",
-          "reaction_type": "Like + tag d'un ami + partage en story",
-          "verbatims_type": ["Needed this", "Starting NOW", "Tag someone who needs this"]
-        }
-      ],
-      "application_djibril": {
-        "angle": "GUIDER — apres le VOIR/NOMMER/PERMETTRE, la micro-action cognitive finale",
-        "framework": "Plan 4 du script cinematique : GUIDER (28-40s) + Plan 6 : MICRO-ACTION",
-        "exemple_hook": "Des ce soir — ouvre une page vierge — ecris UNE chose que t'evites depuis 3 jours.",
-        "erreur_a_eviter": "Utiliser l'Activation comme SEULE emotion — cree engagement superficiel sans fidelisation"
-      }
+    {
+      "desir": "Reconnaissance",
+      "emoji": "👑",
+      "description": "Être vu comme quelqu'un qui a réussi par l'intelligence, pas juste le travail",
+      "emotion_associee": "Espoir",
+      "profondeur": "Le cérébral veut que son INTELLIGENCE soit reconnue comme source de valeur. Il a l'impression que le monde récompense l'effort brut, pas la réflexion. Il veut prouver que penser est un super-pouvoir."
     },
-    "SOULAGEMENT": {
-      "description": "Tension relachee — c'est pas de la flemme, c'est un mecanisme. Emotion la plus therapeutique.",
-      "score_retention": 88,
-      "score_conversion": 85,
-      "score_communaute": 90,
-      "contenus_associes": [
-        {
-          "creator": "@iamdria",
-          "hook": "La paralysie d'analyse qui t'empeche d'agir",
-          "intensite": 9,
-          "declencheur": "Explication du mecanisme psychologique — transforme la honte en comprehension",
-          "reaction_type": "Sauvegarder + follow + commentaire de gratitude profonde",
-          "verbatims_type": ["Merci je me sentais nul", "C'est rassurant de savoir que c'est normal"]
-        }
-      ],
-      "application_djibril": {
-        "angle": "PERMETTRE — liberer le spectateur de sa honte avant de lui donner une solution",
-        "framework": "Plan 3 du script cinematique : METAPHORE (13-25s) — le Recipient Cerebral comme normalisation",
-        "exemple_hook": "Ton cerveau fait pas ca parce que t'es paresseux. Il fait ca parce qu'il est plein d'encre passive.",
-        "erreur_a_eviter": "Rester dans le soulagement sans reframe — cree confort mais pas transformation"
-      }
+    {
+      "desir": "Mission de vie",
+      "emoji": "🎯",
+      "description": "Trouver LE truc qui donne sens à tout le reste",
+      "emotion_associee": "Solitude",
+      "profondeur": "La quête de mission masque un besoin plus profond : la cohérence interne. Le cérébral souffre quand ses actions ne sont pas alignées avec ses valeurs. Ce n'est pas la mission qui manque — c'est l'alignement."
     },
-    "INDIGNATION": {
-      "description": "Colere productive — on m'a vole quelque chose sans que je le sache. Declenche le questionnement profond.",
-      "score_retention": 75,
-      "score_conversion": 70,
-      "score_communaute": 72,
-      "contenus_associes": [
-        {
-          "creator": "@yomidenzel",
-          "hook": "Le salariat c'est pas de la securite, c'est de la captivite",
-          "intensite": 9,
-          "declencheur": "Reframe d'une croyance culturellement valorisee (securite) en piege",
-          "reaction_type": "Commentaire long + partage + questionnement identitaire",
-          "verbatims_type": ["C'est une cage doree", "Mon CDI c'est ca", "Comment j'ai pas vu avant"]
-        }
-      ],
-      "application_djibril": {
-        "angle": "NOMMER le piege systemique du metier chronophage — sans juger les gens, juger le systeme",
-        "framework": "Plan 1 du script cinematique : VOIR (0-5s) — image forte + phrase disruption",
-        "exemple_hook": "Ton metier chronophage te paye pas pour ton talent. Il te paye pour ton temps. Et il garde le reste.",
-        "erreur_a_eviter": "Indignation sans ESPOIR = spectateur paralyse encore plus. Toujours finir sur la porte de sortie."
-      }
+    {
+      "desir": "Communauté",
+      "emoji": "🤝",
+      "description": "Être entouré de gens qui comprennent et poussent vers le haut",
+      "emotion_associee": "Solitude",
+      "profondeur": "Le cerveau social (Dunbar) a besoin d'un groupe de référence pour calibrer ses décisions. Sans communauté alignée, le cérébral utilise son entourage actuel comme miroir — et voit un reflet déformé de ses ambitions."
     },
-    "CURIOSITE": {
-      "description": "Envie de savoir la suite — il y a un mecanisme que je comprends pas encore. Emotion la plus algorithmique (watch time).",
-      "score_retention": 92,
-      "score_conversion": 80,
-      "score_communaute": 78,
-      "contenus_associes": [
-        {
-          "creator": "@iamdria",
-          "hook": "La paralysie d'analyse qui t'empeche d'agir",
-          "intensite": 8,
-          "declencheur": "Promesse implicite d'explication — il y a un pourquoi, tu vas apprendre",
-          "reaction_type": "Watch jusqu'a la fin + follow + sauvegarder",
-          "verbatims_type": ["Attends c'est quoi le mecanisme ?", "Continue je t'ecoute"]
-        },
-        {
-          "creator": "@realimangadzhi",
-          "hook": "Stop planning, start executing",
-          "intensite": 6,
-          "declencheur": "Affirmation choc sans justification initiale — le cerveau veut comprendre pourquoi",
-          "reaction_type": "Watch jusqu'a la fin pour trouver la justification",
-          "verbatims_type": ["Mais pourquoi ?", "Prouve-le"]
-        }
-      ],
-      "application_djibril": {
-        "angle": "TEASER — promettre la revelation du mecanisme APRES, forcer le watch time",
-        "framework": "Plan 4 du script cinematique : TEASER (25-28s) — et je vais te montrer exactement ce qui se passe dans ton cerveau",
-        "exemple_hook": "Il y a un mecanisme biologique qui t'empeche d'agir. Pas de la flemme. Et je vais te le montrer.",
-        "erreur_a_eviter": "Reveler le mecanisme trop tot — la curiosite DOIT etre maintenue jusqu'au plan 5"
-      }
+    {
+      "desir": "Clarté",
+      "emoji": "🔍",
+      "description": "Savoir EXACTEMENT quoi faire, dans quel ordre, sans zone grise",
+      "emotion_associee": "Doute",
+      "profondeur": "Le cérébral ne manque pas de motivation — il manque de CLARTÉ. Son cortex préfrontal hyperactif génère trop de chemins possibles. Il a besoin d'un framework qui réduit les options à 1. Le paradoxe du choix (Schwartz) : moins d'options = plus d'action."
     },
-    "HONTE_PRODUCTIVE": {
-      "description": "Inconfort conscient de l'inaction — pas de la honte destructrice, mais un signal de changement possible.",
-      "score_retention": 70,
-      "score_conversion": 75,
-      "score_communaute": 60,
-      "contenus_associes": [
-        {
-          "creator": "@sokaherself",
-          "hook": "Ton intelligence te bloque plus qu'elle te sert",
-          "intensite": 7,
-          "declencheur": "Mise en evidence d'un paradoxe interne — ton atout est ton frein",
-          "reaction_type": "Commentaire introspectif + sauvegarder + partager en prive",
-          "verbatims_type": ["Ca me fait reflechir", "J'avais jamais vu ca comme ca"]
-        }
-      ],
-      "application_djibril": {
-        "angle": "NOMMER la honte sans la renforcer — affect labeling Lieberman",
-        "framework": "Plan 2 du script cinematique : CONNEXION EMOTIONNELLE (5-13s)",
-        "exemple_hook": "Ce truc que tu ressens quand tu sais que tu devrais agir et que tu fais rien — ca a un nom. Zeigarnik.",
-        "erreur_a_eviter": "Transformer la honte productive en honte destructrice — ne jamais blamer, toujours expliquer le mecanisme"
-      }
-    },
-    "ESPOIR": {
-      "description": "Lueur que c'est possible — quelqu'un l'a fait, donc je peux. Emotion de conversion BOFU.",
-      "score_retention": 80,
-      "score_conversion": 95,
-      "score_communaute": 85,
-      "contenus_associes": [
-        {
-          "creator": "Djibril Learning",
-          "hook": "6700 par mois a 21 ans — j'ai commence avec zero competence",
-          "intensite": 10,
-          "declencheur": "Data concrete + profil similaire + resultat atteignable",
-          "reaction_type": "Follow + DM + commentaire question action",
-          "verbatims_type": ["C'est exactement mon profil", "Comment t'as fait ?", "J'ai le meme background"]
-        }
-      ],
-      "application_djibril": {
-        "angle": "BOFU — la preuve que c'est possible DANS TA SITUATION, pas en general",
-        "framework": "Plan 4 du script cinematique : GUIDER (28-40s) — data Adam comme ancre de credibilite",
-        "exemple_hook": "6700 par mois. 21 ans. Seul. 14h/j. Zero diplome. Zero reseau. Si c'etait possible pour moi — c'est calculable pour toi.",
-        "erreur_a_eviter": "Promettre le resultat sans montrer le chemin — l'espoir sans roadmap = desillusion"
-      }
+    {
+      "desir": "Permission",
+      "emoji": "🔓",
+      "description": "Avoir le droit de ne pas être parfait, de commencer imparfait",
+      "emotion_associee": "Peur",
+      "profondeur": "Le perfectionnisme du cérébral est un mécanisme de défense : si je ne commence jamais, je ne peux jamais échouer. Il a besoin d'une autorité qui lui dit 'c'est OK d'être merdique au début'. La permission > la motivation."
     }
-  },
-  "matrice_emotionnelle_funnel": {
-    "TOFU_emotions": ["RECONNAISSANCE", "INDIGNATION", "CURIOSITE"],
-    "MOFU_emotions": ["SOULAGEMENT", "HONTE_PRODUCTIVE", "ACTIVATION"],
-    "BOFU_emotions": ["ESPOIR"],
-    "combo_optimal": "RECONNAISSANCE (hook) -> CURIOSITE (teaser) -> SOULAGEMENT (mecanisme) -> ACTIVATION (micro-action) -> ESPOIR (CTA BOFU)",
-    "sequence_cinematique_45s": {
-      "0_5s": "INDIGNATION ou RECONNAISSANCE — disruption immediate",
-      "5_13s": "RECONNAISSANCE — connexion emotionnelle profonde",
-      "13_25s": "SOULAGEMENT — mecanisme + metaphore",
-      "25_28s": "CURIOSITE — teaser ce qui vient",
-      "28_40s": "ACTIVATION — micro-action concrete",
-      "40_45s": "ESPOIR — permission finale + CTA"
-    }
-  },
-  "emotion_mapping_doctrine": {
-    "Epuisement": {
-      "doctrine_link": "Cle 9 Action + Metier chronophage = encre passive subie + Ego depletion Baumeister",
-      "content_angle": "TOFU empathie — identifier la fatigue, la nommer, donner la permission de vouloir autre chose"
-    },
-    "Frustration": {
-      "doctrine_link": "Cle 2 Perception + Cle 4 Conception + Locus de controle Rotter",
-      "content_angle": "TOFU reframe — la frustration = signal que ton recipient est pret pour autre chose"
-    },
-    "Paralysie d'analyse": {
-      "doctrine_link": "Cle 7 Idee + Boucle toxique + Ariely (paradoxe du choix) + Zeigarnik (1927)",
-      "content_angle": "MOFU coaching — mecanisme precis de la paralysie + implementation intentions Gollwitzer"
-    },
-    "Peur du changement": {
-      "doctrine_link": "Cle 5 Representation mentale + Oettingen WOOP + Effet de dotation Thaler",
-      "content_angle": "MOFU coaching — reconsolidation des croyances limitantes + data Adam comme preuve de faisabilite"
-    },
-    "Doute de soi": {
-      "doctrine_link": "Recipient surcharge + Dunning-Kruger inverse + Effet Pratfall Aronson + Prophetie autorealisatrice",
-      "content_angle": "TOFU affect labeling + MOFU Pratfall effect — l'imperfection cree la confiance"
-    },
-    "Impuissance apprise": {
-      "doctrine_link": "Seligman (1967) + Cle 9 Action + micro-victoires cognitives",
-      "content_angle": "MOFU coaching — casser la boucle avec UNE micro-action cognitive pas physique"
-    },
-    "Isolement": {
-      "doctrine_link": "Axe 2 Isolement + Cle 2 Perception + positionnement grand frere + Locus contamine",
-      "content_angle": "TOFU connexion — tu n'es pas seul, Adam = preuve vivante du chemin seul"
-    },
-    "Honte silencieuse": {
-      "doctrine_link": "Affect labeling Lieberman + VOIR-NOMMER + Biais d'omission Spranca",
-      "content_angle": "TOFU cine — nommer la honte = reduire son pouvoir (-30% amygdale)"
-    },
-    "Desespoir": {
-      "doctrine_link": "Prophetie autorealisatrice Merton + Cle 4 Conception + Impuissance apprise",
-      "content_angle": "MOFU reframe — le desespoir est une croyance programmee, pas une realite"
-    },
-    "Colere": {
-      "doctrine_link": "Locus de controle Rotter (externe -> interne) + Energie a canaliser",
-      "content_angle": "MOFU coaching — transformer la colere en carburant via shift locus de controle"
-    },
-    "Espoir fragile": {
-      "doctrine_link": "Data Adam (6700, 21 ans, seul) + Social proof Cialdini + Effet Pratfall",
-      "content_angle": "BOFU preuve — quelqu'un l'a fait dans tes conditions exactes. Voila comment."
-    },
-    "Addiction informationnelle": {
-      "doctrine_link": "Boucle toxique + Gloria Mark 47s + Knowing-Doing Gap Pfeffer & Sutton",
-      "content_angle": "MOFU coaching — diagnostic de la boucle + exercice cognitif pour la casser"
-    },
-    "Dissonance cognitive": {
-      "doctrine_link": "Festinger (1957) + Ego protection + Cle 3 Bugs recipient",
-      "content_angle": "MOFU coaching — observer ses rationalisations sans jugement + question diagnostique ego vs analyse"
-    }
-  },
-  "donnees_cles": {
-    "72_pct": "72% consommateurs self-help n'appliquent jamais (JBP 2022)",
-    "84_pct": "84% entrepreneurs vivent syndrome imposteur",
-    "46_pct": "46% entrepreneurs paralyses par peur de l'echec",
-    "38_pct": "38% pratiquants self-help intensif rapportent PLUS de stress (Frontiers 2024)",
-    "47s": "Attention sur ecran : 47 secondes (Gloria Mark 2023)",
-    "affect_labeling": "Affect labeling reduit amygdale de 30% (Lieberman 2007)",
-    "biais_negativite": "Ratio biais de negativite : 5:1 (Baumeister 2001)",
-    "adam": "Adam : 6700 par mois, 21 ans, 14h/j, seul, depuis zero"
-  },
-  "evolution_vs_precedent": {
-    "date_precedent": "2026-04-04",
-    "changements": [
-      "ZERO reference niche specifique — 100% universel positionnement analyse comportementale",
-      "+1 emotion ajoutee : Dissonance cognitive — detectee dans le batch copywriting du 5 avril",
-      "Verbatims enrichis avec 2-3 nouveaux par emotion",
-      "Mapping doctrine complete avec references psycho nouvelles (Zeigarnik, Spranca, Pratfall, Merton)",
-      "Section classification_par_emotion ajoutee — analyse des videos corpus par emotion declenchee",
-      "Matrice emotionnelle funnel ajoutee — sequence optimale TOFU/MOFU/BOFU",
-      "Total signaux : 142 -> 158 (+11%) — batch copywriting 5 avril alimente le corpus"
-    ]
-  }
+  ]
 }

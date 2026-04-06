@@ -889,7 +889,7 @@ function renderTheses(filterCat='all', search='') {
 
   // Filter
   let filtered = filterCat==='all' ? allTheses : allTheses.filter(t => {
-    const cat = cats.find(c => c.theses && c.theses.some(th => th.id === t.id));
+    const cat = cats.find(c => (c.theses||[]).some(th => th.id === t.id));
     return cat && cat.id === filterCat;
   });
   if (search) {
@@ -1022,7 +1022,7 @@ function renderFrameworks() {
         ${fw.keyComponents ? `<div style="display:flex;flex-wrap:wrap;gap:6px;">
           ${fw.keyComponents.map(k => `<span style="font-size:11px;padding:4px 12px;border-radius:20px;background:rgba(153,69,255,0.1);color:var(--accent-purple);font-weight:600;">${k}</span>`).join('')}
         </div>` : ''}
-        ${fw.psychReferences ? `<div style="margin-top:12px;font-size:11px;color:var(--text-muted);">📚 ${fw.psychReferences.join(', ')}</div>` : ''}
+        ${fw.psychologyReferences ? `<div style="margin-top:12px;font-size:11px;color:var(--text-muted);">📚 ${fw.psychologyReferences.join(', ')}</div>` : ''}
       </div>
     </div>
   `).join('');
@@ -1052,10 +1052,10 @@ function renderFrameworks() {
   document.getElementById('fw-colors').innerHTML = colors.map(c => `
     <div class="card" style="text-align:center;">
       <div style="display:flex;justify-content:center;gap:8px;margin-bottom:10px;">
-        ${(c.colors||[]).map(col => `<div style="width:32px;height:32px;border-radius:50%;background:${col.hex||'#999'};border:2px solid var(--border-subtle);"></div>`).join('')}
+        ${(c.hexCodes||[]).map(hex => `<div style="width:32px;height:32px;border-radius:50%;background:${hex||'#999'};border:2px solid var(--border-subtle);"></div>`).join('')}
       </div>
       <div style="font-weight:700;font-size:12px;">${c.name||''}</div>
-      <div style="font-size:10px;color:var(--text-muted);margin-top:4px;">${c.dominant||''} dominant</div>
+      <div style="font-size:10px;color:var(--text-muted);margin-top:4px;">${c.dominantColor||''} dominant</div>
       ${c.psychology ? `<div style="font-size:10px;color:var(--accent-cyan);margin-top:4px;">${c.psychology}</div>` : ''}
     </div>
   `).join('');
