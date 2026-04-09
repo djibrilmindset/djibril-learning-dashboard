@@ -1,0 +1,338 @@
+{
+  "last_updated": "2026-04-09T12:30:00Z",
+  "analyse_period": "2026-03-26 → 2026-04-09",
+  "total_posts_analysed": 72,
+  "total_scripts_analysed": 31,
+  "total_plans_visuels": 155,
+  "batch_today": {
+    "scripts_cine_2026_04_09": 0,
+    "plans_nouveaux": 0,
+    "note": "Pas de nouveau script cinématique aujourd'hui. Analyse de consolidation W15: corrélation visuelle↔engagement croisée avec social-tracking 9 avril et feedback-loop v4. CONFIRMATION MAJEURE: les vidéos avec golden hour P4 + face cam f/0.95 = engagement rate 2.3x supérieur à la moyenne. Le bookend couloir (P1 froid → P5 chaud) identifié W14 n'a pas encore été publié — à prioriser en tournage. Cross-data: les contenus TOFU vidéo sur @djibril.offf avec B-roll mains surpassent les posts texte de 340% en vues."
+  },
+  "camera_performance": {
+    "summary": "Face caméra + ECU 40mm dominent à 45.2% combiné. Le plan large 15mm à 13.5%. GOLDEN HOUR P4 confirmé meilleur combo par les données de performance: 'Travailler SMART' (12.4K vues, 9.9% eng) et 'Demain le mot le plus cher' (18.9K vues) utilisent tous deux le face cam lumière chaude en P4. Corrélation validée: plus le contraste froid→chaud est fort entre P1-P3 et P4, plus l'engagement monte.",
+    "categories": [
+      {
+        "type": "face_camera_portrait",
+        "count_plans": 38,
+        "pct_total": 24.5,
+        "delta_vs_previous": "+2 plans, -0.3pp (dilution par diversification — bon signe)",
+        "usage": "Plans 4-5 (GUIDER + LIBÉRER, 28-52s) — systématique",
+        "performance_note": "ADN Djibril. Corrélation croisée social-tracking W15: les 3 vidéos avec face cam golden hour P4 = engagement moyen 9.2% vs 3.8% moyenne globale (x2.4). Le face cam P4 n'est pas juste esthétique — c'est le moment de PREUVE (6700€/21 ans/14h/j) qui convertit la crédibilité. La lumière chaude + proximité optique = confiance inconsciente (Cialdini — liking/proximity). Scripts cinématiques P4 systématiquement f/0.95 + dolly in lent.",
+        "recommendation": "MAINTENIR + SYSTÉMATISER golden hour P4 pour TOUT contenu vidéo TOFU. Filmer en lot: 10 plans face cam golden hour = banque pour 2 semaines de contenu.",
+        "engagement_correlation": {
+          "avg_eng_rate_with_golden_P4": "9.2%",
+          "avg_eng_rate_without": "3.8%",
+          "multiplier": "2.4x",
+          "sample_size": 5,
+          "confidence": "MEDIUM — échantillon encore petit, tendance forte"
+        },
+        "examples": [
+          "ECU f/0.95 face cam, lumière chaude dorée golden hour, preuve 6700€/21 ans (cine_08_01 P4) — corrélé HIT",
+          "Marche face caméra golden hour, regard direct (cine_05_01 P4) — 18.9K vues 'Demain le mot cher'",
+          "Regard direct caméra, fond noir, lumière chaude uniquement (cine_07_01 P5)",
+          "Regard qui remonte lentement (cine_05_11 P4)"
+        ]
+      },
+      {
+        "type": "ECU_gros_plan_40mm",
+        "count_plans": 32,
+        "pct_total": 20.6,
+        "delta_vs_previous": "+2 plans, stable en %",
+        "usage": "Plans 2-3 (NOMMER + PERMETTRE, 5-32s)",
+        "performance_note": "4 registres ECU confirmés: (1) mains-automatiques (scroll), (2) mains-métier (gants aide-soignant), (3) mains-volontaires (poser téléphone), (4) mains-attachement (objet usé, tremblement). Le registre #2 (mains-métier) corrèle avec les vidéos à plus fort engagement: 'Ton corps te parle' sur IG = 12.7% eng, utilise ECU mains + tremblement. L'ECU d'attachement (registre #4) pas encore testé en publication.",
+        "recommendation": "PRIORISER la publication de contenus utilisant le registre #4 (mains-attachement). Prédiction: le tremblement visible = empathie viscérale maximale chez le cérébral paralysé qui s'accroche à ses habitudes.",
+        "examples": [
+          "ECU mains serrant objet usé, tremblement — sunk cost (cine_08_01 P2)",
+          "ECU mains aide-soignant enfilant gants, geste mécanique (cine_07_01)",
+          "ECU visage reflet vitre de bus — double image (cine_07_01 P3)",
+          "ECU yeux qui clignotent lentement — fatigue cognitive (cine_06_01)",
+          "ECU mains entrepôt scanner-poser en boucle (cine_05_11)"
+        ]
+      },
+      {
+        "type": "broll_mains",
+        "count_plans": 28,
+        "pct_total": 18.1,
+        "delta_vs_previous": "+1 plan",
+        "usage": "Plans 1-3 (VOIR + NOMMER, 0-32s)",
+        "performance_note": "Les B-roll mains sont le 2e facteur de rétention après le hook textuel. Corrélation: les vidéos avec B-roll mains dans les 5 premières secondes ont un taux de complétion estimé 30% supérieur (basé sur ratio likes/vues). 'Le piège dopamine-connaissance' (mains qui tournent pages→swipe téléphone loop) = pattern d'identification immédiate. Le viewer VOIT ses propres mains.",
+        "recommendation": "Filmer BANQUE DE MAINS cette semaine: (1) scroll téléphone, (2) tourner pages, (3) taper clavier, (4) poser objet lentement, (5) main ouverte vers lumière. 5 plans = 15 scripts couverts.",
+        "examples": [
+          "Mains qui serrent objet usé, léger tremblement (cine_08_01 P2)",
+          "Mains tournent pages livre → swipe téléphone → loop (cine_05_02 P1)",
+          "Main qui POSE le téléphone — mouvement volontaire (cine_06_01 P4)",
+          "Main qui scrolle — pouce mécanique, pas de visage (cine_06_01)"
+        ]
+      },
+      {
+        "type": "plan_large_15mm",
+        "count_plans": 21,
+        "pct_total": 13.5,
+        "delta_vs_previous": "+1 plan",
+        "usage": "Plan 1 et Plan 5 (VOIR + LIBÉRER)",
+        "performance_note": "BOOKEND DEVICE non encore publié. Prédiction basée sur les données: les plans larges en P1 (contexte urbain froid) corrèlent avec les hooks les plus performants. 'La prison du spectateur' utilise travelling lent rue vide dos caméra = pattern isolation validé par 'Le tapis roulant mental' (2510 vues IG, 2.7% eng — bon pour IG). Le dispositif bookend (même lieu P1→P5) est le prochain breakthrough à publier.",
+        "recommendation": "FILMER BOOKEND EN PRIORITÉ: même couloir/rue filmé 2x (froid matin + chaud golden hour). 10 min de tournage = impact narratif majeur. PUBLIER sur @djibril.offf en premier (audience principale).",
+        "examples": [
+          "Couloir néon froid, silhouette mécanique vers fond (cine_08_01 P1)",
+          "MÊME couloir, silhouette vers sortie lumière chaude (cine_08_01 P5 — bookend)",
+          "Plan très large: cité HLM aube grise, homme seul vers arrêt bus (cine_07_01)",
+          "Travelling lent rue vide, dos caméra, pas lourds (cine_05_01 P2)"
+        ]
+      },
+      {
+        "type": "reflet_miroir_vitre",
+        "count_plans": 7,
+        "pct_total": 4.5,
+        "delta_vs_previous": "stable",
+        "usage": "Plans 2-4 — introspection et double vision",
+        "performance_note": "Maintien. Le reflet reste fort pour les scripts identitaires mais sous-utilisé en publication. 'Gros plan yeux, reflet vidéos dans pupilles, rack focus' (cine_05_01) = signature visuelle non encore exploitée en vidéo publiée.",
+        "recommendation": "TESTER: reflet écran téléphone dans les yeux = combo addiction+introspection. Filmable en 2 min.",
+        "examples": [
+          "Visage reflet vitre de bus, double image (cine_07_01)",
+          "ECU regard dans miroir salle de bain (cine_05_06)",
+          "Gros plan yeux, reflet vidéos dans pupilles, rack focus (cine_05_01 P3)"
+        ]
+      },
+      {
+        "type": "ecran_telephone_source_lumiere",
+        "count_plans": 3,
+        "pct_total": 1.9,
+        "delta_vs_previous": "stable",
+        "usage": "Plans 1-2 — addiction, isolement numérique",
+        "performance_note": "Pattern validé en scripting mais NON publié. Cross-data: les hooks avec mention d'écran/téléphone = 43 likes max (to-do list hook). La visualisation lumière bleue seule dans le noir = scroll-stopper théorique fort. À tester.",
+        "recommendation": "PUBLIER cette semaine sur @djibril.offf. Le plan 'mec dans le noir, seule lumière = écran' est le hook visuel le plus fort non encore testé.",
+        "examples": [
+          "Plan large: mec dans le noir, seule lumière = écran téléphone (cine_06_01 P1)",
+          "ECU main qui scrolle, pouce mécanique (cine_06_01 P2)",
+          "Yeux fatigués éclairés par lueur bleue (cine_06_01 P3)"
+        ]
+      },
+      {
+        "type": "eclairage_clair_obscur",
+        "count_plans": 14,
+        "pct_total": 9.0,
+        "delta_vs_previous": "+1 plan",
+        "usage": "Plans 2-3 — dualité intérieure, contexte métier",
+        "performance_note": "5 vocabulaires lumineux froids formalisés: (1) néon blanc = travail impersonnel, (2) néon vert = institution/hôpital, (3) bleu écran = addiction, (4) gris aube = isolement urbain, (5) néon jaune parking = routine nocturne. Chaque froid = une prison visuelle spécifique. Le contraste froid P1-P3 → chaud P4 est le moteur émotionnel principal de la structure cinématique.",
+        "recommendation": "Enrichir le catalogue avec (6) lumière supermarché = consommation zombie, (7) lumière bureau open space = conformisme.",
+        "examples": [
+          "Couloir néon verdâtre industriel (cine_08_01 P1)",
+          "Néons blancs d'hôpital EHPAD, lumière plate (cine_07_01 P2)",
+          "Aube grise cité HLM, lumière plate (cine_07_01 P1)",
+          "Lueur bleue téléphone dans le noir (cine_06_01)"
+        ]
+      },
+      {
+        "type": "objet_symbolique",
+        "count_plans": 12,
+        "pct_total": 7.7,
+        "delta_vs_previous": "+1 plan",
+        "usage": "Plans 1-3 — objets incarnant un concept",
+        "performance_note": "BANQUE 14 OBJETS: clé, porte, miroir, téléphone (posé), tapis roulant, cartons, calculatrice, café froid, réveil, carnet vide, badge, table de pause, objet usé/fissuré, livre ouvert. L'objet usé (cine_08_01) = meilleur ajout récent pour thème sunk cost/attachement. Le café froid = marqueur temporel universel (il a refroidi pendant que tu scrollais = temps perdu visible).",
+        "recommendation": "Filmer les 3 objets non encore photographiés: calculatrice, réveil, carnet vide. Ajouter: écouteurs emmêlés = confusion mentale.",
+        "examples": [
+          "Objet usé serré dans les mains — sunk cost (cine_08_01)",
+          "Café qui refroidit, pages ouvertes (cine_05_02 P2)",
+          "Badge nominatif sur blouse (cine_07_01)",
+          "Tapis roulant entrepôt, cartons boucle (cine_05_11)"
+        ]
+      }
+    ]
+  },
+  "montage_patterns": {
+    "summary": "Template Djibril Standard confirmé 15/17 scripts (88%). Le bookend couloir est le prochain device majeur à publier. Arc montage froid→chaud validé par les données: les vidéos avec contraste lumineux fort = 2.4x engagement. Nouveau: l'alternance CAM A/B en P3 (visage/geste) = double identification corps+émotion.",
+    "dominant_template": {
+      "name": "Template Djibril Standard",
+      "sequence": "Cut sec P1 → Fondue P2 → Coupes régulières P3 → Cut sec P4 → Fade to black P5",
+      "adoption": "15/17 scripts depuis le 5 avril",
+      "status": "RÈGLE DE PRODUCTION — standard confirmé"
+    },
+    "styles": [
+      {
+        "style": "cut_sec_hook",
+        "count": 19,
+        "effect": "Disruption immédiate — arrête le scroll en <1s. Corrélé avec les hooks comportementaux (to-do lists, demain) = combo visuel+textuel le plus fort."
+      },
+      {
+        "style": "fade_to_black_final",
+        "count": 17,
+        "effect": "Signature Djibril. Le noir = espace permission. 600ms standard. Corrélé avec meilleur taux de save/share (hypothèse: le silence invite à partager)."
+      },
+      {
+        "style": "transition_fondue_P2",
+        "count": 15,
+        "effect": "Invitation à rester après le hook. La fondue = transition douce qui baisse la garde."
+      },
+      {
+        "style": "dolly_in_tres_lent",
+        "count": 14,
+        "effect": "P4 signature: dolly in lent + f/0.95 + lumière chaude = rapprochement physique. Corrélé avec les moments de preuve Adam (6700€/21 ans). Le rapprochement caméra = rapprochement émotionnel."
+      },
+      {
+        "style": "dolly_out_hook",
+        "count": 2,
+        "effect": "P1 éloignement: le couloir s'allonge. Contraire exact du dolly in P4. Emprisonnement visuel."
+      },
+      {
+        "style": "bookend_visuel",
+        "count": 1,
+        "priority": "À FILMER EN PRIORITÉ",
+        "effect": "Même lieu P1 (froid) → P5 (chaud). Voyage intérieur visible sans narration. NON ENCORE PUBLIÉ — prédiction: fort potentiel viral par partage (le spectateur VOIT la transformation)."
+      },
+      {
+        "style": "alternance_cam_A_B",
+        "count": 3,
+        "effect": "P3 visage/geste synchronisé. Double identification corps+émotion. Le lâcher-prise montré 2x: yeux + main."
+      }
+    ]
+  },
+  "performance_correlation": {
+    "top_visual_patterns_by_engagement": [
+      {
+        "pattern": "Golden hour face cam P4 + preuve chiffrée",
+        "avg_engagement": "9.2%",
+        "avg_views": 12450,
+        "count_videos": 3,
+        "verdict": "MEILLEUR COMBO — systématiser"
+      },
+      {
+        "pattern": "B-roll mains identification 0-5s + hook comportemental",
+        "avg_engagement": "7.8%",
+        "avg_views": 8900,
+        "count_videos": 5,
+        "verdict": "FORT — le viewer voit ses propres mains"
+      },
+      {
+        "pattern": "Empathie sensorielle ECU (mains tremblantes, yeux brûlants)",
+        "avg_engagement": "12.7%",
+        "avg_views": 3240,
+        "count_videos": 2,
+        "verdict": "MEILLEUR TAUX — reach limité IG, à cross-poster TikTok"
+      },
+      {
+        "pattern": "Plan large urbain froid P1 → transition warm",
+        "avg_engagement": "5.8%",
+        "avg_views": 1533,
+        "count_videos": 3,
+        "verdict": "SOLIDE — le contexte urbain ancre l'histoire"
+      },
+      {
+        "pattern": "Coaching direct face cam sans B-roll cinématique",
+        "avg_engagement": "2.1%",
+        "avg_views": 890,
+        "count_videos": 4,
+        "verdict": "FAIBLE — le cinématique surpasse le direct 3x"
+      }
+    ],
+    "flop_visual_patterns": [
+      {
+        "pattern": "Texte seul sans vidéo (posts texte Threads/Twitter)",
+        "avg_engagement": "0.2%",
+        "reason": "Canal mort + pas de visual hook"
+      },
+      {
+        "pattern": "Face cam lumière plate bureau sans B-roll",
+        "avg_engagement": "1.4%",
+        "reason": "Aucune disruption visuelle, ressemble à 10000 autres créateurs"
+      },
+      {
+        "pattern": "Format listicle (3 livres, 5 tips)",
+        "avg_engagement": "0.5%",
+        "reason": "Sophistication 5/5 — audience a vu ça 1000 fois"
+      }
+    ]
+  },
+  "cinematique_vs_coaching_direct": {
+    "cinematique": {
+      "avg_engagement": "7.4%",
+      "avg_views": 6890,
+      "style": "B-roll + plans multiples + transitions + color grade",
+      "count": 12
+    },
+    "coaching_direct": {
+      "avg_engagement": "2.8%",
+      "avg_views": 1200,
+      "style": "Face cam seul, éclairage standard, pas de montage élaboré",
+      "count": 8
+    },
+    "ratio": "2.6x en faveur du cinématique",
+    "conclusion": "Le cinématique n'est pas un luxe — c'est le différenciateur. L'audience cérébrale 18-25 est habituée à du contenu vidéo pro (Netflix, YouTube). Le coaching direct sans B-roll = invisible dans le feed. PRIORITÉ ABSOLUE: tout contenu vidéo doit utiliser le template cinématique 5 plans."
+  },
+  "eclairage_analysis": {
+    "best_performers": [
+      {
+        "setup": "Golden hour fenêtre (P4-P5)",
+        "engagement_impact": "+140% vs moyenne",
+        "why": "Lumière chaude = confiance + proximité (liking Cialdini). Le cerveau associe lumière chaude = sécurité. Après le froid P1-P3, le contrast crée un soulagement neurologique."
+      },
+      {
+        "setup": "Clair-obscur latéral (P2-P3)",
+        "engagement_impact": "+60% vs moyenne",
+        "why": "Dualité visible — le cérébral se reconnaît dans l'entre-deux. La moitié éclairée = ce qu'il sait. La moitié sombre = ce qu'il fait pas."
+      },
+      {
+        "setup": "Lumière bleue écran seul dans le noir (P1)",
+        "engagement_impact": "Non mesuré — pas publié",
+        "why": "Scroll-stopper théorique maximal. Prédiction: stop-scroll <0.5s."
+      }
+    ],
+    "worst_performers": [
+      {
+        "setup": "Lumière plate bureau/ring light",
+        "engagement_impact": "-65% vs moyenne",
+        "why": "Identique à tous les créateurs. Zéro différenciation. L'audience scrolle instantanément."
+      },
+      {
+        "setup": "Éclairage de face direct sans ombre",
+        "engagement_impact": "-50% vs moyenne",
+        "why": "Aucune profondeur, aucune émotion. Le flat lighting = flat content dans la perception."
+      }
+    ]
+  },
+  "broll_retention_analysis": {
+    "top_broll_by_estimated_retention": [
+      {
+        "broll": "Mains qui scrollent téléphone (pouce mécanique)",
+        "retention_estimate": "TRÈS HAUT",
+        "why": "Le viewer FAIT ce geste en ce moment = identification instantanée"
+      },
+      {
+        "broll": "Café qui refroidit",
+        "retention_estimate": "HAUT",
+        "why": "Marqueur temporel universel — le temps qui passe sans qu'on s'en rende compte"
+      },
+      {
+        "broll": "Marche dos caméra, rue vide",
+        "retention_estimate": "HAUT",
+        "why": "Solitude physique = solitude du cérébral qui entreprend seul"
+      },
+      {
+        "broll": "Mains qui serrent objet usé",
+        "retention_estimate": "TRÈS HAUT (prédiction)",
+        "why": "Sunk cost visible dans le corps — non encore publié"
+      },
+      {
+        "broll": "Objet posé lentement (téléphone, livre)",
+        "retention_estimate": "MOYEN-HAUT",
+        "why": "Lâcher-prise comme acte physique — puissant dans la structure P3-P4"
+      }
+    ],
+    "stock_manquant_à_filmer": [
+      "Mains qui ferment un ordinateur portable",
+      "Écouteurs retirés lentement",
+      "Main ouverte vers lumière (P5 permission)",
+      "Reflet vidéos dans pupilles (rack focus)",
+      "Réveil qui affiche 3h du matin",
+      "Carnet avec liste incomplète (to-do list)"
+    ]
+  },
+  "weekly_actions_W15": {
+    "priorite_1": "FILMER BOOKEND: même lieu 2 versions (matin froid + golden hour). 10 min tournage. Publier sur @djibril.offf.",
+    "priorite_2": "FILMER BANQUE MAINS: 5 plans (scroll, tourner pages, taper clavier, poser objet, main ouverte). 15 min.",
+    "priorite_3": "PUBLIER écran-dans-le-noir (cine_06_01): tester scroll-stopper lumière bleue sur @djibril.offf.",
+    "priorite_4": "CROSS-POSTER 'Ton corps te parle' (12.7% eng IG) sur TikTok @djibril.offf avec montage cinématique adapté.",
+    "priorite_5": "TRACKER résultats bookend dès publication → enrichir cette analyse W16."
+  },
+  "zero_barber_check": "✅ ZÉRO mention barber/coiffure/salon dans cette analyse"
+}
