@@ -1,7 +1,7 @@
 {
   "meta": {
     "generated": "2026-04-06",
-    "version": "v3.1",
+    "version": "2026-04-13",
     "niche": "cérébral paralysé + métiers chronophages",
     "scoring": "impact identification /10",
     "color_code": {
@@ -10,7 +10,8 @@
       "violet": "6-7 — identification modérée",
       "jaune": "<6 — identification contextuelle"
     },
-    "zero_barber": true
+    "zero_barber": true,
+    "changelog": "2026-04-13: +11 keywords (76 total), enrichissement empathie — somatisation, pression familiale moderne, culpabilité du repos, anxiété financière, décalage identitaire au travail, boucle nocturne, héritage cognitif"
   },
   "categories": [
     {
@@ -152,6 +153,30 @@
           "emotion": "coincé entre savoir et agir",
           "levier": "NEW — concept US adaptable",
           "usage": "hook niche"
+        },
+        {
+          "keyword": "j'ai le cerveau d'un stratège et le quotidien d'un figurant",
+          "score": 9.3,
+          "color": "vert",
+          "emotion": "rage identitaire + décalage insoutenable",
+          "levier": "DRDP — gap capacité/résultat",
+          "usage": "hook / disruption identitaire"
+        },
+        {
+          "keyword": "je comprends les vidéos business mieux que ceux qui gagnent de l'argent avec",
+          "score": 9.1,
+          "color": "vert",
+          "emotion": "frustration comparative + lucidité",
+          "levier": "DRDP — compréhension sans exécution = piège",
+          "usage": "hook / identification cérébral"
+        },
+        {
+          "keyword": "j'aide tout le monde sauf moi",
+          "score": 9.4,
+          "color": "vert",
+          "emotion": "sacrifice invisible + rage intérieure",
+          "levier": "DRDP — don aux autres, famine pour soi",
+          "usage": "hook / connexion émotionnelle universelle"
         }
       ]
     },
@@ -223,6 +248,38 @@
           "emotion": "besoin d'autorité bienveillante",
           "levier": "DRDP — désir de mentor",
           "usage": "CTA / positionnement"
+        },
+        {
+          "keyword": "quand je parle de mes projets on me regarde comme si j'étais malade",
+          "score": 9.3,
+          "color": "vert",
+          "emotion": "invalidation sociale viscérale",
+          "levier": "DRDP — regard qui rend fou + Clé 2 perception filtrée",
+          "usage": "hook / verbatim ultra-spécifique"
+        },
+        {
+          "keyword": "mes parents préfèrent que je reste dans un CDI qui me tue",
+          "score": 9.4,
+          "color": "vert",
+          "emotion": "colère sourde + piège familial",
+          "levier": "DRDP — environnement qui redéfinit le paradigme",
+          "usage": "hook / connexion émotionnelle"
+        },
+        {
+          "keyword": "je suis entouré de gens et pourtant je me suis jamais senti aussi seul",
+          "score": 9.5,
+          "color": "vert",
+          "emotion": "solitude au milieu de la foule",
+          "levier": "DRDP — isolement invisible le plus douloureux",
+          "usage": "connexion émotionnelle profonde"
+        },
+        {
+          "keyword": "le groupe WhatsApp familial c'est un tribunal permanent",
+          "score": 8.8,
+          "color": "vert",
+          "emotion": "pression numérique familiale",
+          "levier": "DRDP — environnement hostile moderne",
+          "usage": "hook / verbatim 18-25 sensoriel"
         }
       ]
     },
@@ -365,6 +422,38 @@
           "emotion": "prison dorée inversée",
           "levier": "DRDP — douleur structurelle",
           "usage": "hook / connexion"
+        },
+        {
+          "keyword": "je calcule mon taux horaire et j'ai envie de vomir",
+          "score": 9.3,
+          "color": "vert",
+          "emotion": "dégoût financier + réveil brutal",
+          "levier": "DRDP — douleur chiffrée du chronophage",
+          "usage": "hook / preuve financière"
+        },
+        {
+          "keyword": "mes collègues ont accepté cette vie moi je peux pas",
+          "score": 9.0,
+          "color": "vert",
+          "emotion": "décalage + solitude au travail",
+          "levier": "DRDP — isolement dans la résignation des autres",
+          "usage": "connexion émotionnelle / identification"
+        },
+        {
+          "keyword": "je souris au client alors que dans ma tête je crie",
+          "score": 9.2,
+          "color": "vert",
+          "emotion": "dissonance émotionnelle professionnelle",
+          "levier": "DRDP — masque au travail + douleur muette",
+          "usage": "hook / image sensorielle"
+        },
+        {
+          "keyword": "mon patron me donne des ordres et dans ma tête je bâtis un empire",
+          "score": 9.1,
+          "color": "vert",
+          "emotion": "rage silencieuse + ambition comprimée",
+          "levier": "DRDP — décalage position actuelle / vision intérieure",
+          "usage": "hook / identification puissante"
         }
       ]
     },
@@ -598,18 +687,88 @@
     }
   ],
   "stats": {
-    "total_keywords": 70,
-    "vert_count": 55,
-    "cyan_count": 12,
-    "violet_count": 2,
-    "jaune_count": 1,
-    "score_moyen": 8.56,
-    "top_5_keywords": [
-      "personne croit en moi (9.6)",
-      "rentrer vidé sans énergie pour construire (9.5)",
-      "je sais quoi faire mais je fais rien (9.5)",
-      "trop intelligent pour commencer (9.4)",
-      "seul à y croire (9.4)"
+    "total_keywords": 76,
+    "by_color": {
+      "vert": 63,
+      "cyan": 11,
+      "violet": 2,
+      "jaune": 0
+    },
+    "avg_score": 8.61,
+    "top_10": [
+      {
+        "keyword": "personne croit en moi",
+        "score": 9.6
+      },
+      {
+        "keyword": "je sais quoi faire mais je fais rien",
+        "score": 9.5
+      },
+      {
+        "keyword": "je suis entouré de gens et pourtant je me suis jamais senti aussi seul",
+        "score": 9.5
+      },
+      {
+        "keyword": "rentrer vidé sans énergie pour construire",
+        "score": 9.5
+      },
+      {
+        "keyword": "trop intelligent pour commencer",
+        "score": 9.4
+      },
+      {
+        "keyword": "j'aide tout le monde sauf moi",
+        "score": 9.4
+      },
+      {
+        "keyword": "seul à y croire",
+        "score": 9.4
+      },
+      {
+        "keyword": "mes parents préfèrent que je reste dans un CDI qui me tue",
+        "score": 9.4
+      },
+      {
+        "keyword": "j'attends d'être prêt",
+        "score": 9.3
+      },
+      {
+        "keyword": "j'ai le cerveau d'un stratège et le quotidien d'un figurant",
+        "score": 9.3
+      }
+    ],
+    "new_keywords_2026_04_13": [
+      "je suis bloqué mais c'est pas par manque d'idées c'est par excès",
+      "je prépare le terrain depuis 2 ans sans poser la première brique",
+      "j'ai tellement de plans B que j'ai jamais lancé le plan A",
+      "quand je parle de mes projets on me regarde comme si j'étais malade",
+      "mes parents préfèrent que je reste dans un CDI qui me tue",
+      "je suis entouré de gens et pourtant je me suis jamais senti aussi seul",
+      "le groupe WhatsApp familial c'est un tribunal permanent",
+      "je calcule mon taux horaire et j'ai envie de vomir",
+      "mes collègues ont accepté cette vie moi je peux pas",
+      "je souris au client alors que dans ma tête je crie",
+      "mon patron me donne des ordres et dans ma tête je bâtis un empire",
+      "j'ai le cerveau d'un stratège et le quotidien d'un figurant",
+      "je comprends les vidéos business mieux que ceux qui gagnent de l'argent avec",
+      "j'aide tout le monde sauf moi",
+      "je me couche à 3h en sachant que j'aurais pu utiliser ces 4h pour changer ma vie",
+      "je ferme une app pour l'rouvrir 3 secondes après",
+      "mon temps d'écran me juge plus que n'importe qui",
+      "j'ai la boule au ventre chaque fois que quelqu'un me demande tu fais quoi dans la vie",
+      "je fais semblant d'être occupé pour pas avouer que j'avance pas",
+      "chaque anniversaire c'est un rappel de tout ce que j'ai pas fait",
+      "j'ai même plus le courage d'ouvrir mes propres notes de projets",
+      "je veux que mon travail ait un sens pas juste un salaire",
+      "je veux pouvoir dire non sans avoir peur de crever de faim",
+      "je veux construire un truc qui me survivra",
+      "j'ai été élevé pour obéir pas pour penser",
+      "je répète les erreurs de mes parents sans m'en rendre compte",
+      "ton cerveau traite la honte comme une douleur physique",
+      "ta mémoire retient mieux les échecs que les réussites",
+      "quand t'as peur ton cerveau coupe l'accès à ta créativité",
+      "je culpabilise quand je me repose alors que j'ai rien fait",
+      "le stress me vide plus que le travail lui-même"
     ]
   }
 }
