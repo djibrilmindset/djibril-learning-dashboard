@@ -1,451 +1,1372 @@
 {
-  "audit_date": "2026-04-07",
-  "audit_type": "daily_script_sharpener",
-  "source": "guide-tournage-2026-04-07.html",
-  "total_scripts": 6,
-  "breakdown": {
-    "tofu_cinematique": 1,
-    "mofu_coaching": 5
-  },
-  "barber_check": "CLEAN — ZÉRO mention barber/coiffure/salon",
-  "scripts": [
-    {
-      "id": "CINE-2026-04-07-TOFU-01",
-      "titre": "Le double écran",
-      "type": "TOFU_CINEMATIQUE",
-      "duree": "48s",
-      "sources_psycho": [
-        "Baumeister, Roy — Ego Depletion and Self-Control Failure (2002)",
-        "Gloria Mark — Attention Span: A Groundbreaking Way to Restore Balance (2023)",
-        "Leroy, Sophie — Why is it so hard to do my work? (2009)"
-      ],
-      "doctrine_djibril": "Encre invisible — scroll nocturne remplit récipient d'encre passive. Boucle toxique: corps vidé → cerveau cherche stimulation facile → encre passive → plus vidé.",
-      "structure": {
-        "framework": "VOIR-NOMMER-PERMETTRE-GUIDER-LIBÉRER",
-        "plans_count": 5,
-        "conforme": true,
-        "details": {
-          "VOIR_0-5s": {
-            "cam": "CAM A (15mm)",
-            "conforme": true,
-            "note": "Plan large mec dans le noir, seule lumière = écran téléphone. Image forte, isolement viscéral."
-          },
-          "NOMMER_5-13s": {
-            "cam": "CAM B (40mm)",
-            "conforme": true,
-            "note": "ECU main qui scrolle, pouce mécanique. Affect labeling implicite. B-roll réveil 1h47 = ancrage temporel."
-          },
-          "PERMETTRE_13-28s": {
-            "cam": "CAM B + CAM A alternance",
-            "conforme": true,
-            "note": "ECU yeux fatigués + vue zenithal. Baumeister ego depletion + Gloria Mark 47s correctement expliqués."
-          },
-          "GUIDER_28-42s": {
-            "cam": "CAM B (40mm)",
-            "conforme": true,
-            "note": "Transition lumière bleue → chaude. Preuve Adam 14h/j + micro-action: 15 min d'encre active AVANT basculement."
-          },
-          "LIBÉRER_42-48s": {
-            "cam": "CAM B (40mm)",
-            "conforme": true,
-            "note": "Regard direct caméra, phrase de permission. Silence + fade to black."
-          }
-        }
-      },
-      "cameras_2cam": true,
-      "empathie_viscerale": {
-        "score": 9,
-        "detail": "Le prospect se reconnaît immédiatement: rentrer épuisé + allumer le téléphone = expérience universelle 18-25 ans métier chronophage. Identification < 3s."
-      },
-      "micro_action": {
-        "type": "cognitive",
-        "action": "Protéger 15 min d'encre active AVANT que le cerveau bascule en mode survie",
-        "executable_yeux_fermes": true,
-        "conforme": true,
-        "note": "Légèrement comportemental (protéger une fenêtre de temps) mais ancré dans le mécanisme cognitif ego depletion. Acceptable."
-      },
-      "metaphore": {
-        "texte": "Verre d'eau + encre sale / deuxième écran = anesthésie",
-        "tests_4": {
-          "compris_3s": true,
-          "associations_completes": true,
-          "une_seule_par_section": true,
-          "experience_physique_universelle": true
-        },
-        "conforme": true
-      },
-      "sources_correctes": true,
-      "barber_check": "CLEAN",
-      "scores": {
-        "empathie_viscerale": 9,
-        "cameras_2cam": 9,
-        "sources_psycho": 9,
-        "micro_action_cognitive": 8,
-        "structure_VNPGL": 9,
-        "ton_oral": 9,
-        "metaphore": 9,
-        "hook_disruption": 9,
-        "preuve_adam": 8,
-        "unicite": 9
-      },
-      "score_global": 8.8,
-      "points_forts": [
-        "Image d'ouverture cinématiquement puissante (clair-obscur téléphone)",
-        "Transition lumière froide → chaude = arc narratif visuel",
-        "Ego depletion + Gloria Mark = double ancrage scientifique solide",
-        "Doctrine récipient cérébral bien intégrée (encre invisible)"
-      ],
-      "points_amelioration": [
-        "Micro-action pourrait être plus spécifiquement COGNITIVE (question de reframe plutôt que 'protéger 15 min')",
-        "Preuve Adam sans mention 6700€ = bien diversifié mais pourrait inclure un résultat concret"
-      ]
-    },
-    {
-      "id": "CINE-2026-04-07-MOFU-01",
-      "titre": "Tu deviens ce que tu t'attends à être",
-      "type": "MOFU_COACHING",
-      "duree": "48s",
-      "sources_psycho": [
-        "Merton, Robert K. — The Self-Fulfilling Prophecy (The Antioch Review, 1948)",
-        "Rosenthal, Robert & Jacobson, Lenore — Pygmalion in the Classroom (1968)"
-      ],
-      "doctrine_djibril": "Récipient se remplit des ATTENTES des autres — encre invisible la plus toxique",
-      "structure": {
-        "framework": "HOOK-CONNEXION-MÉCANISME-MICRO_ACTION-CTA",
-        "plans_count": 5,
-        "conforme": true
-      },
-      "cameras_2cam": true,
-      "empathie_viscerale": {
-        "score": 9,
-        "detail": "Scène familiale où le projet est accueilli par l'indifférence polie. Ultra identifiant pour les 18-25 qui ont été refroidis par leur entourage."
-      },
-      "micro_action": {
-        "type": "cognitive",
-        "action": "Inventaire mental: 5 personnes proches → quelle attente RÉELLE sur ton avenir? VOIR la donnée pour décider si elle programme ton récipient.",
-        "executable_yeux_fermes": true,
-        "conforme": true,
-        "note": "Exercice d'auto-observation cognitive parfait. Pas d'outil externe, juste du reframe mental."
-      },
-      "metaphore": {
-        "texte": "Plafond invisible créé par les attentes des autres",
-        "tests_4": {
-          "compris_3s": true,
-          "associations_completes": true,
-          "une_seule_par_section": true,
-          "experience_physique_universelle": true
-        },
-        "conforme": true
-      },
-      "sources_correctes": true,
-      "barber_check": "CLEAN",
-      "scores": {
-        "empathie_viscerale": 9,
-        "cameras_2cam": 9,
-        "sources_psycho": 10,
-        "micro_action_cognitive": 9,
-        "structure_HCMMC": 9,
-        "ton_oral": 9,
-        "metaphore": 8,
-        "hook_disruption": 9,
-        "preuve_adam": 8,
-        "unicite": 9
-      },
-      "score_global": 8.9,
-      "points_forts": [
-        "Merton 1948 + Rosenthal 1968 = double source académique impeccable",
-        "Scène table familiale = viscéralement identifiant",
-        "Micro-action cognitive d'inventaire mental = exécutable sans outil",
-        "Doctrine récipient bien ancrée (encre invisible = attentes des autres)"
-      ],
-      "points_amelioration": [
-        "Métaphore 'plafond invisible' pourrait être plus sensorielle (corps/maison plutôt qu'abstrait)"
-      ]
-    },
-    {
-      "id": "CINE-2026-04-07-MOFU-02",
-      "titre": "Ton cerveau voit pas la différence",
-      "type": "MOFU_COACHING",
-      "duree": "50s",
-      "sources_psycho": [
-        "Pascual-Leone, Alvaro — The brain that plays music also plays itself (2001)",
-        "Yue, Guang & Cole, Kelly — Strength increases from motor program (1992)"
-      ],
-      "doctrine_djibril": "Encre active — visualisation = forme la plus pure d'encre active, choix conscient sans bouger",
-      "structure": {
-        "framework": "HOOK-CONNEXION-MÉCANISME-MICRO_ACTION-CTA",
-        "plans_count": 5,
-        "conforme": true
-      },
-      "cameras_2cam": true,
-      "empathie_viscerale": {
-        "score": 8,
-        "detail": "Accroche sur l'imagination du pire (scénarios d'échec). Identification bonne mais légèrement moins viscérale que le script précédent."
-      },
-      "micro_action": {
-        "type": "cognitive",
-        "action": "Fermer les yeux 2 min, visualiser UNE action repoussée — pas le résultat, l'ACTION. Toi en train de faire.",
-        "executable_yeux_fermes": true,
-        "conforme": true,
-        "note": "Exercice de visualisation mentale pur. Ancré dans Pascual-Leone. Chrono 2 min. Parfait."
-      },
-      "metaphore": {
-        "texte": "Cerveau ne distingue pas imagination/réalité — pianistes mentaux",
-        "tests_4": {
-          "compris_3s": true,
-          "associations_completes": true,
-          "une_seule_par_section": true,
-          "experience_physique_universelle": true
-        },
-        "conforme": true
-      },
-      "sources_correctes": true,
-      "barber_check": "CLEAN",
-      "scores": {
-        "empathie_viscerale": 8,
-        "cameras_2cam": 9,
-        "sources_psycho": 10,
-        "micro_action_cognitive": 10,
-        "structure_HCMMC": 9,
-        "ton_oral": 8,
-        "metaphore": 9,
-        "hook_disruption": 9,
-        "preuve_adam": 7,
-        "unicite": 9
-      },
-      "score_global": 8.8,
-      "points_forts": [
-        "Pascual-Leone + Yue & Cole = sources neuroscience solides et peu citées = unicité",
-        "Micro-action de visualisation = 100% cognitive, parfaitement ancrée",
-        "ECU yeux fermés en ouverture = visuellement unique",
-        "Encre active reliée à la doctrine récipient"
-      ],
-      "points_amelioration": [
-        "Preuve Adam moins présente — pourrait intégrer un moment où Adam a lui-même utilisé la visualisation",
-        "Hook pourrait être plus disruptif (le concept 'force musculaire sans bouger' est connu)"
-      ]
-    },
-    {
-      "id": "CINE-2026-04-07-MOFU-03",
-      "titre": "Plus t'as de temps, moins tu fais",
-      "type": "MOFU_COACHING",
-      "duree": "~48s",
-      "sources_psycho": [
-        "Parkinson, Cyril Northcote — Parkinson's Law (The Economist, 1955)",
-        "Ariely, Dan & Wertenbroch, Klaus — Procrastination, Deadlines, and Performance"
-      ],
-      "doctrine_djibril": "Loi de Parkinson appliquée au cérébral paralysé — le temps illimité = piège",
-      "structure": {
-        "framework": "HOOK-CONNEXION-MÉCANISME-MICRO_ACTION-CTA",
-        "plans_count": 5,
-        "conforme": true
-      },
-      "cameras_2cam": true,
-      "empathie_viscerale": {
-        "score": 9,
-        "detail": "Journée entière disponible + rien fait = expérience universelle du cérébral paralysé. Identification immédiate."
-      },
-      "micro_action": {
-        "type": "cognitive_comportemental",
-        "action": "Choisir UNE tâche repoussée, se donner 25 min chrono. Pas la plus grosse, celle qu'on sait faire mais fait jamais.",
-        "executable_yeux_fermes": true,
-        "conforme": true,
-        "note": "Légèrement comportemental (timer) mais le CHOIX de la tâche est cognitif. La contrainte temporelle est le mécanisme même de Parkinson. Cohérent."
-      },
-      "metaphore": {
-        "texte": "Temps illimité = piège / gaz qui remplit tout l'espace",
-        "tests_4": {
-          "compris_3s": true,
-          "associations_completes": true,
-          "une_seule_par_section": true,
-          "experience_physique_universelle": true
-        },
-        "conforme": true
-      },
-      "sources_correctes": true,
-      "barber_check": "CLEAN",
-      "scores": {
-        "empathie_viscerale": 9,
-        "cameras_2cam": 9,
-        "sources_psycho": 9,
-        "micro_action_cognitive": 8,
-        "structure_HCMMC": 9,
-        "ton_oral": 9,
-        "metaphore": 8,
-        "hook_disruption": 8,
-        "preuve_adam": 7,
-        "unicite": 8
-      },
-      "score_global": 8.4,
-      "points_forts": [
-        "Parkinson's Law bien vulgarisée et appliquée à l'avatar",
-        "Empathie viscérale forte — la journée vide qui passe sans rien faire",
-        "Lien clair entre mécanisme et micro-action (contrainte = solution)"
-      ],
-      "points_amelioration": [
-        "Concept Parkinson's Law est plus connu = unicité moindre",
-        "Micro-action 25 min = technique Pomodoro déjà surexposée chez l'audience sophistiquée (niveau 3-4)",
-        "Preuve Adam pourrait être plus spécifique sur comment LUI a appliqué la contrainte temporelle"
-      ]
-    },
-    {
-      "id": "CINE-2026-04-07-MOFU-04",
-      "titre": "Parler tue l'action",
-      "type": "MOFU_COACHING",
-      "duree": "~48s",
-      "sources_psycho": [
-        "Gollwitzer, Peter — When Intentions Go Public (Psychological Science, 2009)",
-        "Mahler, Vera — Substitution/Identity-Related Behavioral Intentions"
-      ],
-      "doctrine_djibril": "Parler = encre passive déguisée en encre active — le récipient se remplit de l'illusion d'action",
-      "structure": {
-        "framework": "HOOK-CONNEXION-MÉCANISME-MICRO_ACTION-CTA",
-        "plans_count": 5,
-        "conforme": true
-      },
-      "cameras_2cam": true,
-      "empathie_viscerale": {
-        "score": 9,
-        "detail": "Parler de ses projets à tout le monde + recevoir validation sociale + ne rien faire = piège classique du cérébral. Ultra identifiant."
-      },
-      "micro_action": {
-        "type": "cognitive",
-        "action": "Test cognitif: prochaine envie de parler d'un projet → s'arrêter et demander 'est-ce que parler va m'aider à le FAIRE ou juste à me sentir bien?'",
-        "executable_yeux_fermes": true,
-        "conforme": true,
-        "note": "Exercice de métacognition pure. Observer le mécanisme en temps réel. Parfait."
-      },
-      "metaphore": {
-        "texte": "Parler = la valve de la cocotte qui libère la pression AVANT l'action",
-        "tests_4": {
-          "compris_3s": true,
-          "associations_completes": true,
-          "une_seule_par_section": true,
-          "experience_physique_universelle": true
-        },
-        "conforme": true
-      },
-      "sources_correctes": true,
-      "barber_check": "CLEAN",
-      "scores": {
-        "empathie_viscerale": 9,
-        "cameras_2cam": 9,
-        "sources_psycho": 9,
-        "micro_action_cognitive": 10,
-        "structure_HCMMC": 9,
-        "ton_oral": 9,
-        "metaphore": 9,
-        "hook_disruption": 9,
-        "preuve_adam": 7,
-        "unicite": 9
-      },
-      "score_global": 8.9,
-      "points_forts": [
-        "Gollwitzer 2009 = source peu connue de l'audience, unicité forte",
-        "Micro-action métacognitive parfaite (observer le pattern en temps réel)",
-        "Hook 'Plus tu parles, moins tu fais' = disruption paradoxale efficace",
-        "Lien doctrine: parler = encre passive déguisée"
-      ],
-      "points_amelioration": [
-        "Preuve Adam pourrait mentionner spécifiquement son silence stratégique pendant la construction"
-      ]
-    },
-    {
-      "id": "CINE-2026-04-07-MOFU-05",
-      "titre": "Savoir c'est pas savoir faire",
-      "type": "MOFU_COACHING",
-      "duree": "~48s",
-      "sources_psycho": [
-        "Kruger, Justin & Dunning, David — Unskilled and Unaware of It (1999)",
-        "Pfeffer, Jeffrey & Sutton, Robert — The Knowing-Doing Gap (2000)"
-      ],
-      "doctrine_djibril": "Le récipient plein de savoir passif = illusion de compétence. Consommer ≠ apprendre.",
-      "structure": {
-        "framework": "HOOK-CONNEXION-MÉCANISME-MICRO_ACTION-CTA",
-        "plans_count": 5,
-        "conforme": true
-      },
-      "cameras_2cam": true,
-      "empathie_viscerale": {
-        "score": 9,
-        "detail": "200 vidéos regardées, impression de savoir, incapacité à faire. Le cérébral paralysé dans sa forme la plus pure. Identification immédiate."
-      },
-      "micro_action": {
-        "type": "cognitive",
-        "action": "Test: prendre le DERNIER concept appris, essayer de l'expliquer en 30s sans notes. Si impossible = pas acquis. Knowing-doing gap en action.",
-        "executable_yeux_fermes": true,
-        "conforme": true,
-        "note": "Exercice d'auto-évaluation cognitive (Feynman technique adapté). Pas d'outil externe. Révèle le gap immédiatement."
-      },
-      "metaphore": {
-        "texte": "Connaître la recette ≠ savoir cuisiner / regarder le match ≠ jouer",
-        "tests_4": {
-          "compris_3s": true,
-          "associations_completes": true,
-          "une_seule_par_section": true,
-          "experience_physique_universelle": true
-        },
-        "conforme": true
-      },
-      "sources_correctes": true,
-      "barber_check": "CLEAN",
-      "scores": {
-        "empathie_viscerale": 9,
-        "cameras_2cam": 9,
-        "sources_psycho": 9,
-        "micro_action_cognitive": 9,
-        "structure_HCMMC": 9,
-        "ton_oral": 9,
-        "metaphore": 9,
-        "hook_disruption": 9,
-        "preuve_adam": 7,
-        "unicite": 8
-      },
-      "score_global": 8.7,
-      "points_forts": [
-        "Pfeffer & Sutton Knowing-Doing Gap = cadre académique peu connu, autorité forte",
-        "Micro-action Feynman adaptée = test cognitif instantané",
-        "Attaque directe la consommation passive = noyau du problème avatar",
-        "CTA 'FAIRE' = performatif, cohérent avec le message"
-      ],
-      "points_amelioration": [
-        "Dunning-Kruger utilisé dans un script précédent (script_003 locus contrôle) — vérifier non-redondance",
-        "Preuve Adam reste générique — un exemple concret de 'knowing-doing gap' vécu serait plus percutant"
-      ]
-    }
-  ],
-  "synthese_globale": {
-    "score_moyen": 8.75,
-    "scripts_above_8": 6,
-    "scripts_below_7": 0,
-    "barber_violations": 0,
-    "structure_violations": 0,
-    "sources_manquantes": 0,
-    "micro_actions_physiques": 0,
-    "cameras_conformes": 6,
-    "forces_session": [
-      "Sources psycho diversifiées et correctement citées (Baumeister, Gloria Mark, Merton, Rosenthal, Pascual-Leone, Parkinson, Gollwitzer, Pfeffer & Sutton, Kruger & Dunning)",
-      "Doctrine récipient cérébral intégrée dans CHAQUE script (encre passive/active)",
-      "Micro-actions 100% cognitives/comportementales — ZÉRO action physique générique",
-      "Structure 2 caméras respectée partout (CAM A 15mm wide + CAM B 40mm ECU)",
-      "TOFU cinématique avec arc lumière froide → chaude = narratif visuel fort",
-      "Empathie viscérale haute sur tous les scripts (8-9/10)"
-    ],
-    "faiblesses_session": [
-      "Preuve Adam reste souvent générique (14h/j, seul, 21 ans) sans moment spécifique",
-      "MOFU#3 Parkinson's Law + Pomodoro = risque de déjà-vu chez audience sophistiquée (niveau 4-5)",
-      "Aucun script ne mentionne explicitement le 6700€ — c'est voulu mais on perd un ancrage BOFU fort",
-      "5 MOFU et 1 seul TOFU ciné — ratio correct selon mix V2 (1:5) mais les MOFU pourraient varier davantage en format"
-    ],
-    "recommandations": [
-      "Intégrer des anecdotes Adam plus spécifiques (pas juste les chiffres, un MOMENT vécu)",
-      "Pour MOFU#3 (Parkinson), envisager de remplacer le 25min par une contrainte plus originale",
-      "Prochaine session: explorer des sources moins connues (Csikszentmihalyi flow, Deci & Ryan SDT, Lepper overjustification)"
+  "meta": {
+    "run_date": "2026-04-15",
+    "source_file": "data/scripts-cinematiques.json",
+    "total_scripts": 29,
+    "audit_version": "v3.1",
+    "auditor": "djibril-script-sharpener",
+    "scheduled_run": true,
+    "criteres": [
+      "Empathie viscerale <5s",
+      "2 cameras CAM A 15mm wide + CAM B 40mm ECU emotion",
+      "ZERO barber/coiffure/salon (regle 5.1)",
+      "Sources psycho presentes (auteurs + etudes datees)",
+      "Micro-action cognitive (non physique, regle 5.7)",
+      "Structure VOIR-NOMMER-PERMETTRE-GUIDER-LIBERER",
+      "Doctrine RECIPIENT/ENCRE (regle 5.11 ADN permanent)",
+      "ZERO Adam public (regle 5.2)",
+      "Scoring /10 pondere"
     ]
   },
-  "meta": {
-    "generated_by": "djibril-script-sharpener",
-    "timestamp": "2026-04-07T16:00:00Z",
-    "version": "3.0"
-  }
+  "global_score": 7.09,
+  "global_verdict": "MOYEN (moyenne 7.09/10 sur 29 scripts). 14 scripts <7 a corriger. 3 violations Adam publiques CRITIQUES. 14/29 scripts format legacy sans systeme CAM A/B — migration prioritaire. 12/29 convoquent doctrine RECIPIENT/ENCRE — gap ADN 59%.",
+  "global_stats": {
+    "total_audited": 29,
+    "score_min": 5.5,
+    "score_max": 8.9,
+    "score_moyen": 7.09,
+    "nb_excellents_8_5_plus": 3,
+    "nb_bons_7_5_to_8_4": 11,
+    "nb_moyens_6_5_to_7_4": 3,
+    "nb_critiques_sous_6_5": 12,
+    "violations_adam": 3,
+    "violations_barber": 0,
+    "scripts_format_legacy": 14,
+    "scripts_format_riche_vnpgl": 15,
+    "scripts_doctrine_recipient": 12,
+    "scripts_hook_visceral_ok": 3
+  },
+  "alertes_critiques": [
+    {
+      "niveau": "CRITIQUE",
+      "regle_violee": "5.2 — ZERO Adam public",
+      "script_id": "cine_2026-04-05_10",
+      "titre": "La permission",
+      "action": "Remplacer Adam par Djibril ou reformuler en 3e personne anonyme (j’etais ce mec / y’a un mec)"
+    },
+    {
+      "niveau": "CRITIQUE",
+      "regle_violee": "5.2 — ZERO Adam public",
+      "script_id": "cine_2026-04-06_01",
+      "titre": "Le double écran",
+      "action": "Remplacer Adam par Djibril ou reformuler en 3e personne anonyme (j’etais ce mec / y’a un mec)"
+    },
+    {
+      "niveau": "CRITIQUE",
+      "regle_violee": "5.2 — ZERO Adam public",
+      "script_id": "cine_2026-04-07_01",
+      "titre": "Le mur invisible",
+      "action": "Remplacer Adam par Djibril ou reformuler en 3e personne anonyme (j’etais ce mec / y’a un mec)"
+    },
+    {
+      "niveau": "ATTENTION",
+      "regle_violee": "Score global < 7",
+      "script_id": 1,
+      "titre": "La prison du spectateur",
+      "action": "Score 6.6/10 — voir fixes_prioritaires"
+    },
+    {
+      "niveau": "ATTENTION",
+      "regle_violee": "Score global < 7",
+      "script_id": 2,
+      "titre": "Le piège dopamine-connaissance",
+      "action": "Score 5.5/10 — voir fixes_prioritaires"
+    },
+    {
+      "niveau": "ATTENTION",
+      "regle_violee": "Score global < 7",
+      "script_id": 3,
+      "titre": "L'identité programmée",
+      "action": "Score 6.3/10 — voir fixes_prioritaires"
+    },
+    {
+      "niveau": "ATTENTION",
+      "regle_violee": "Score global < 7",
+      "script_id": 4,
+      "titre": "Le code qu'on t'a installé",
+      "action": "Score 5.6/10 — voir fixes_prioritaires"
+    },
+    {
+      "niveau": "ATTENTION",
+      "regle_violee": "Score global < 7",
+      "script_id": 5,
+      "titre": "Ton cerveau te ment",
+      "action": "Score 6.3/10 — voir fixes_prioritaires"
+    },
+    {
+      "niveau": "ATTENTION",
+      "regle_violee": "Score global < 7",
+      "script_id": 6,
+      "titre": "Le gap entre savoir et faire",
+      "action": "Score 5.6/10 — voir fixes_prioritaires"
+    },
+    {
+      "niveau": "ATTENTION",
+      "regle_violee": "Score global < 7",
+      "script_id": 7,
+      "titre": "Les 3 biais qui te contrôlent",
+      "action": "Score 6.1/10 — voir fixes_prioritaires"
+    },
+    {
+      "niveau": "ATTENTION",
+      "regle_violee": "Score global < 7",
+      "script_id": 8,
+      "titre": "T'es pas paresseux — t'es drainé",
+      "action": "Score 6.0/10 — voir fixes_prioritaires"
+    },
+    {
+      "niveau": "ATTENTION",
+      "regle_violee": "Score global < 7",
+      "script_id": 9,
+      "titre": "La boucle toxique",
+      "action": "Score 6.0/10 — voir fixes_prioritaires"
+    },
+    {
+      "niveau": "ATTENTION",
+      "regle_violee": "Score global < 7",
+      "script_id": 10,
+      "titre": "L'encre invisible",
+      "action": "Score 6.2/10 — voir fixes_prioritaires"
+    },
+    {
+      "niveau": "ATTENTION",
+      "regle_violee": "Score global < 7",
+      "script_id": 11,
+      "titre": "Trop de choix tue le choix",
+      "action": "Score 6.2/10 — voir fixes_prioritaires"
+    },
+    {
+      "niveau": "ATTENTION",
+      "regle_violee": "Score global < 7",
+      "script_id": 12,
+      "titre": "Ton identité est un mur",
+      "action": "Score 5.8/10 — voir fixes_prioritaires"
+    },
+    {
+      "niveau": "ATTENTION",
+      "regle_violee": "Score global < 7",
+      "script_id": 13,
+      "titre": "La honte qui te cache",
+      "action": "Score 6.7/10 — voir fixes_prioritaires"
+    },
+    {
+      "niveau": "ATTENTION",
+      "regle_violee": "Score global < 7",
+      "script_id": 14,
+      "titre": "T'as pas de modèle et c'est normal",
+      "action": "Score 5.5/10 — voir fixes_prioritaires"
+    }
+  ],
+  "scripts": [
+    {
+      "id": "cine_2026-04-05_03",
+      "type": "TOFU",
+      "titre": "Rentrer vidé",
+      "duree": "52s",
+      "date": "?",
+      "score": 8.9,
+      "scoring_detail": {
+        "empathie_viscerale": 10,
+        "cameras_assignation": 7,
+        "zero_barber": 10,
+        "sources_psycho": 10,
+        "micro_action_cognitive": 6,
+        "structure_vnpgl": 10,
+        "doctrine_recipient": 10,
+        "zero_adam_public": 10
+      },
+      "forces": [
+        "Hook <5s identification viscérale: \"T'es de retour. 21 heures. T'as 14 heures que t'as laissées au boulot....\"",
+        "CTA en CAM B regard direct — closer visuel",
+        "Sources psycho solides (3 auteurs cités)",
+        "Fil rouge RÉCIPIENT/ENCRE convoqué ✓",
+        "Structure VNPGL complète (5/5 piliers)"
+      ],
+      "faiblesses": [
+        "HOOK en CAM A 15mm (wide) — devrait être CAM B ECU pour punch viscéral"
+      ],
+      "fixes_prioritaires": [
+        "Basculer plan 1 HOOK en CAM B 40mm ECU (regard, bouche)"
+      ],
+      "flags": {
+        "barber_violation": false,
+        "adam_violation": false,
+        "has_cam_system": true,
+        "has_vnpgl_structure": true,
+        "has_doctrine_recipient": true,
+        "hook_visceral": true
+      },
+      "rang": 1
+    },
+    {
+      "id": "cine_2026-04-05_02",
+      "type": "MOFU",
+      "titre": "La voix dans ta tête",
+      "duree": "50s",
+      "date": "?",
+      "score": 8.6,
+      "scoring_detail": {
+        "empathie_viscerale": 6,
+        "cameras_assignation": 10,
+        "zero_barber": 10,
+        "sources_psycho": 7,
+        "micro_action_cognitive": 8,
+        "structure_vnpgl": 10,
+        "doctrine_recipient": 10,
+        "zero_adam_public": 10
+      },
+      "forces": [
+        "CAM B 40mm ECU sur HOOK — punch émotionnel intime",
+        "CTA en CAM B regard direct — closer visuel",
+        "Fil rouge RÉCIPIENT/ENCRE convoqué ✓",
+        "Structure VNPGL complète (5/5 piliers)"
+      ],
+      "faiblesses": [
+        "Hook ne commence pas par T'as/T'es/Tu — perte identification <5s"
+      ],
+      "fixes_prioritaires": [
+        "Réécrire plan 1 voiceover avec ouverture T'as/T'es/Tu directe"
+      ],
+      "flags": {
+        "barber_violation": false,
+        "adam_violation": false,
+        "has_cam_system": true,
+        "has_vnpgl_structure": true,
+        "has_doctrine_recipient": true,
+        "hook_visceral": false
+      },
+      "rang": 2
+    },
+    {
+      "id": "cine_2026-04-05_11",
+      "type": "TOFU",
+      "titre": "La chaîne qui s'arrête jamais",
+      "duree": "48s",
+      "date": "?",
+      "score": 8.5,
+      "scoring_detail": {
+        "empathie_viscerale": 8,
+        "cameras_assignation": 7,
+        "zero_barber": 10,
+        "sources_psycho": 9,
+        "micro_action_cognitive": 6,
+        "structure_vnpgl": 10,
+        "doctrine_recipient": 10,
+        "zero_adam_public": 10
+      },
+      "forces": [
+        "CTA en CAM B regard direct — closer visuel",
+        "Sources psycho solides (2 auteurs cités)",
+        "Fil rouge RÉCIPIENT/ENCRE convoqué ✓",
+        "Structure VNPGL complète (5/5 piliers)"
+      ],
+      "faiblesses": [
+        "HOOK en CAM A 15mm (wide) — devrait être CAM B ECU pour punch viscéral"
+      ],
+      "fixes_prioritaires": [
+        "Basculer plan 1 HOOK en CAM B 40mm ECU (regard, bouche)"
+      ],
+      "flags": {
+        "barber_violation": false,
+        "adam_violation": false,
+        "has_cam_system": true,
+        "has_vnpgl_structure": true,
+        "has_doctrine_recipient": true,
+        "hook_visceral": false
+      },
+      "rang": 3
+    },
+    {
+      "id": "cine_2026-04-06_01",
+      "type": "TOFU",
+      "titre": "Le double écran",
+      "duree": "48s",
+      "date": "?",
+      "score": 8.4,
+      "scoring_detail": {
+        "empathie_viscerale": 10,
+        "cameras_assignation": 7,
+        "zero_barber": 10,
+        "sources_psycho": 10,
+        "micro_action_cognitive": 6,
+        "structure_vnpgl": 10,
+        "doctrine_recipient": 10,
+        "zero_adam_public": 0
+      },
+      "forces": [
+        "Hook <5s identification viscérale: \"T'as bossé 10 heures. T'es rentré. Et là, t'as allumé un deuxième écra...\"",
+        "CTA en CAM B regard direct — closer visuel",
+        "Sources psycho solides (6 auteurs cités)",
+        "Fil rouge RÉCIPIENT/ENCRE convoqué ✓",
+        "Structure VNPGL complète (5/5 piliers)"
+      ],
+      "faiblesses": [
+        "HOOK en CAM A 15mm (wide) — devrait être CAM B ECU pour punch viscéral",
+        "🚨 'Adam' détecté en contenu public — VIOLATION règle 5.2"
+      ],
+      "fixes_prioritaires": [
+        "Basculer plan 1 HOOK en CAM B 40mm ECU (regard, bouche)",
+        "🚨 URGENT: remplacer Adam par Djibril ou anonymiser"
+      ],
+      "flags": {
+        "barber_violation": false,
+        "adam_violation": true,
+        "has_cam_system": true,
+        "has_vnpgl_structure": true,
+        "has_doctrine_recipient": true,
+        "hook_visceral": true
+      },
+      "rang": 4
+    },
+    {
+      "id": "cine_2026-04-05_01",
+      "type": "TOFU",
+      "titre": "Le réveil qui sonne",
+      "duree": "48s",
+      "date": "?",
+      "score": 8.2,
+      "scoring_detail": {
+        "empathie_viscerale": 8,
+        "cameras_assignation": 7,
+        "zero_barber": 10,
+        "sources_psycho": 7,
+        "micro_action_cognitive": 6,
+        "structure_vnpgl": 10,
+        "doctrine_recipient": 10,
+        "zero_adam_public": 10
+      },
+      "forces": [
+        "CTA en CAM B regard direct — closer visuel",
+        "Fil rouge RÉCIPIENT/ENCRE convoqué ✓",
+        "Structure VNPGL complète (5/5 piliers)"
+      ],
+      "faiblesses": [
+        "HOOK en CAM A 15mm (wide) — devrait être CAM B ECU pour punch viscéral"
+      ],
+      "fixes_prioritaires": [
+        "Basculer plan 1 HOOK en CAM B 40mm ECU (regard, bouche)"
+      ],
+      "flags": {
+        "barber_violation": false,
+        "adam_violation": false,
+        "has_cam_system": true,
+        "has_vnpgl_structure": true,
+        "has_doctrine_recipient": true,
+        "hook_visceral": false
+      },
+      "rang": 5
+    },
+    {
+      "id": "cine_2026-04-05_05",
+      "type": "TOFU",
+      "titre": "Le corps qui parle",
+      "duree": "49s",
+      "date": "?",
+      "score": 8.1,
+      "scoring_detail": {
+        "empathie_viscerale": 6,
+        "cameras_assignation": 10,
+        "zero_barber": 10,
+        "sources_psycho": 10,
+        "micro_action_cognitive": 6,
+        "structure_vnpgl": 10,
+        "doctrine_recipient": 5,
+        "zero_adam_public": 10
+      },
+      "forces": [
+        "CAM B 40mm ECU sur HOOK — punch émotionnel intime",
+        "CTA en CAM B regard direct — closer visuel",
+        "Sources psycho solides (3 auteurs cités)",
+        "Structure VNPGL complète (5/5 piliers)"
+      ],
+      "faiblesses": [
+        "Hook ne commence pas par T'as/T'es/Tu — perte identification <5s",
+        "ADN récipient/encre absente — hors marque"
+      ],
+      "fixes_prioritaires": [
+        "Réécrire plan 1 voiceover avec ouverture T'as/T'es/Tu directe",
+        "Injecter 1 référence récipient ou encre passive/active dans voiceover ou doctrine_djibril"
+      ],
+      "flags": {
+        "barber_violation": false,
+        "adam_violation": false,
+        "has_cam_system": true,
+        "has_vnpgl_structure": true,
+        "has_doctrine_recipient": false,
+        "hook_visceral": false
+      },
+      "rang": 6
+    },
+    {
+      "id": "cine_2026-04-05_07",
+      "type": "TOFU",
+      "titre": "La solitude de l'ambition",
+      "duree": "48s",
+      "date": "?",
+      "score": 8.1,
+      "scoring_detail": {
+        "empathie_viscerale": 8,
+        "cameras_assignation": 7,
+        "zero_barber": 10,
+        "sources_psycho": 10,
+        "micro_action_cognitive": 6,
+        "structure_vnpgl": 10,
+        "doctrine_recipient": 5,
+        "zero_adam_public": 10
+      },
+      "forces": [
+        "CTA en CAM B regard direct — closer visuel",
+        "Sources psycho solides (3 auteurs cités)",
+        "Structure VNPGL complète (5/5 piliers)"
+      ],
+      "faiblesses": [
+        "HOOK en CAM A 15mm (wide) — devrait être CAM B ECU pour punch viscéral",
+        "ADN récipient/encre absente — hors marque"
+      ],
+      "fixes_prioritaires": [
+        "Basculer plan 1 HOOK en CAM B 40mm ECU (regard, bouche)",
+        "Injecter 1 référence récipient ou encre passive/active dans voiceover ou doctrine_djibril"
+      ],
+      "flags": {
+        "barber_violation": false,
+        "adam_violation": false,
+        "has_cam_system": true,
+        "has_vnpgl_structure": true,
+        "has_doctrine_recipient": false,
+        "hook_visceral": false
+      },
+      "rang": 7
+    },
+    {
+      "id": "cine_2026-04-05_08",
+      "type": "MOFU",
+      "titre": "Le calcul mental",
+      "duree": "51s",
+      "date": "?",
+      "score": 8.0,
+      "scoring_detail": {
+        "empathie_viscerale": 8,
+        "cameras_assignation": 10,
+        "zero_barber": 10,
+        "sources_psycho": 9,
+        "micro_action_cognitive": 3,
+        "structure_vnpgl": 10,
+        "doctrine_recipient": 5,
+        "zero_adam_public": 10
+      },
+      "forces": [
+        "CAM B 40mm ECU sur HOOK — punch émotionnel intime",
+        "CTA en CAM B regard direct — closer visuel",
+        "Sources psycho solides (2 auteurs cités)",
+        "Structure VNPGL complète (5/5 piliers)"
+      ],
+      "faiblesses": [
+        "ADN récipient/encre absente — hors marque"
+      ],
+      "fixes_prioritaires": [
+        "Injecter 1 référence récipient ou encre passive/active dans voiceover ou doctrine_djibril"
+      ],
+      "flags": {
+        "barber_violation": false,
+        "adam_violation": false,
+        "has_cam_system": true,
+        "has_vnpgl_structure": true,
+        "has_doctrine_recipient": false,
+        "hook_visceral": false
+      },
+      "rang": 8
+    },
+    {
+      "id": "cine_2026-04-05_09",
+      "type": "TOFU",
+      "titre": "Le mode automatique",
+      "duree": "49s",
+      "date": "?",
+      "score": 8.0,
+      "scoring_detail": {
+        "empathie_viscerale": 8,
+        "cameras_assignation": 7,
+        "zero_barber": 10,
+        "sources_psycho": 9,
+        "micro_action_cognitive": 6,
+        "structure_vnpgl": 10,
+        "doctrine_recipient": 5,
+        "zero_adam_public": 10
+      },
+      "forces": [
+        "CTA en CAM B regard direct — closer visuel",
+        "Sources psycho solides (2 auteurs cités)",
+        "Structure VNPGL complète (5/5 piliers)"
+      ],
+      "faiblesses": [
+        "Hook ne commence pas par T'as/T'es/Tu — perte identification <5s",
+        "HOOK en CAM A 15mm (wide) — devrait être CAM B ECU pour punch viscéral",
+        "ADN récipient/encre absente — hors marque"
+      ],
+      "fixes_prioritaires": [
+        "Réécrire plan 1 voiceover avec ouverture T'as/T'es/Tu directe",
+        "Basculer plan 1 HOOK en CAM B 40mm ECU (regard, bouche)",
+        "Injecter 1 référence récipient ou encre passive/active dans voiceover ou doctrine_djibril"
+      ],
+      "flags": {
+        "barber_violation": false,
+        "adam_violation": false,
+        "has_cam_system": true,
+        "has_vnpgl_structure": true,
+        "has_doctrine_recipient": false,
+        "hook_visceral": false
+      },
+      "rang": 9
+    },
+    {
+      "id": "cine_2026-04-07_01",
+      "type": "TOFU",
+      "titre": "Le mur invisible",
+      "duree": "52s",
+      "date": "?",
+      "score": 8.0,
+      "scoring_detail": {
+        "empathie_viscerale": 6,
+        "cameras_assignation": 7,
+        "zero_barber": 10,
+        "sources_psycho": 10,
+        "micro_action_cognitive": 8,
+        "structure_vnpgl": 10,
+        "doctrine_recipient": 10,
+        "zero_adam_public": 0
+      },
+      "forces": [
+        "CTA en CAM B regard direct — closer visuel",
+        "Sources psycho solides (6 auteurs cités)",
+        "Fil rouge RÉCIPIENT/ENCRE convoqué ✓",
+        "Structure VNPGL complète (5/5 piliers)"
+      ],
+      "faiblesses": [
+        "Hook ne commence pas par T'as/T'es/Tu — perte identification <5s",
+        "HOOK en CAM A 15mm (wide) — devrait être CAM B ECU pour punch viscéral",
+        "🚨 'Adam' détecté en contenu public — VIOLATION règle 5.2"
+      ],
+      "fixes_prioritaires": [
+        "Réécrire plan 1 voiceover avec ouverture T'as/T'es/Tu directe",
+        "Basculer plan 1 HOOK en CAM B 40mm ECU (regard, bouche)",
+        "🚨 URGENT: remplacer Adam par Djibril ou anonymiser"
+      ],
+      "flags": {
+        "barber_violation": false,
+        "adam_violation": true,
+        "has_cam_system": true,
+        "has_vnpgl_structure": true,
+        "has_doctrine_recipient": true,
+        "hook_visceral": false
+      },
+      "rang": 10
+    },
+    {
+      "id": "cine_2026-04-08_01",
+      "type": "TOFU",
+      "titre": "Le fantôme du temps perdu",
+      "duree": "48s",
+      "date": "2026-04-08",
+      "score": 7.8,
+      "scoring_detail": {
+        "empathie_viscerale": 6,
+        "cameras_assignation": 5,
+        "zero_barber": 10,
+        "sources_psycho": 10,
+        "micro_action_cognitive": 6,
+        "structure_vnpgl": 10,
+        "doctrine_recipient": 10,
+        "zero_adam_public": 10
+      },
+      "forces": [
+        "Sources psycho solides (3 auteurs cités)",
+        "Fil rouge RÉCIPIENT/ENCRE convoqué ✓",
+        "Structure VNPGL complète (5/5 piliers)"
+      ],
+      "faiblesses": [
+        "Hook ne commence pas par T'as/T'es/Tu — perte identification <5s",
+        "HOOK en CAM A 15mm (wide) — devrait être CAM B ECU pour punch viscéral",
+        "CTA final pas en CAM B regard direct — perte intimité closing"
+      ],
+      "fixes_prioritaires": [
+        "Réécrire plan 1 voiceover avec ouverture T'as/T'es/Tu directe",
+        "Basculer plan 1 HOOK en CAM B 40mm ECU (regard, bouche)",
+        "Dernier plan CAM B 40mm regard caméra pour CTA"
+      ],
+      "flags": {
+        "barber_violation": false,
+        "adam_violation": false,
+        "has_cam_system": true,
+        "has_vnpgl_structure": true,
+        "has_doctrine_recipient": true,
+        "hook_visceral": false
+      },
+      "rang": 11
+    },
+    {
+      "id": "cine_2026-04-08_02",
+      "type": "TOFU",
+      "titre": "Le premier chiffre",
+      "duree": "46s",
+      "date": "2026-04-08",
+      "score": 7.8,
+      "scoring_detail": {
+        "empathie_viscerale": 6,
+        "cameras_assignation": 5,
+        "zero_barber": 10,
+        "sources_psycho": 10,
+        "micro_action_cognitive": 6,
+        "structure_vnpgl": 10,
+        "doctrine_recipient": 10,
+        "zero_adam_public": 10
+      },
+      "forces": [
+        "Sources psycho solides (6 auteurs cités)",
+        "Fil rouge RÉCIPIENT/ENCRE convoqué ✓",
+        "Structure VNPGL complète (5/5 piliers)"
+      ],
+      "faiblesses": [
+        "Hook ne commence pas par T'as/T'es/Tu — perte identification <5s",
+        "HOOK en CAM A 15mm (wide) — devrait être CAM B ECU pour punch viscéral",
+        "CTA final pas en CAM B regard direct — perte intimité closing"
+      ],
+      "fixes_prioritaires": [
+        "Réécrire plan 1 voiceover avec ouverture T'as/T'es/Tu directe",
+        "Basculer plan 1 HOOK en CAM B 40mm ECU (regard, bouche)",
+        "Dernier plan CAM B 40mm regard caméra pour CTA"
+      ],
+      "flags": {
+        "barber_violation": false,
+        "adam_violation": false,
+        "has_cam_system": true,
+        "has_vnpgl_structure": true,
+        "has_doctrine_recipient": true,
+        "hook_visceral": false
+      },
+      "rang": 12
+    },
+    {
+      "id": "cine_2026-04-05_10",
+      "type": "MOFU",
+      "titre": "La permission",
+      "duree": "52s",
+      "date": "?",
+      "score": 7.7,
+      "scoring_detail": {
+        "empathie_viscerale": 6,
+        "cameras_assignation": 10,
+        "zero_barber": 10,
+        "sources_psycho": 10,
+        "micro_action_cognitive": 3,
+        "structure_vnpgl": 10,
+        "doctrine_recipient": 10,
+        "zero_adam_public": 0
+      },
+      "forces": [
+        "CAM B 40mm ECU sur HOOK — punch émotionnel intime",
+        "CTA en CAM B regard direct — closer visuel",
+        "Sources psycho solides (3 auteurs cités)",
+        "Fil rouge RÉCIPIENT/ENCRE convoqué ✓",
+        "Structure VNPGL complète (5/5 piliers)"
+      ],
+      "faiblesses": [
+        "Hook ne commence pas par T'as/T'es/Tu — perte identification <5s",
+        "🚨 'Adam' détecté en contenu public — VIOLATION règle 5.2"
+      ],
+      "fixes_prioritaires": [
+        "Réécrire plan 1 voiceover avec ouverture T'as/T'es/Tu directe",
+        "🚨 URGENT: remplacer Adam par Djibril ou anonymiser"
+      ],
+      "flags": {
+        "barber_violation": false,
+        "adam_violation": true,
+        "has_cam_system": true,
+        "has_vnpgl_structure": true,
+        "has_doctrine_recipient": true,
+        "hook_visceral": false
+      },
+      "rang": 13
+    },
+    {
+      "id": "cine_2026-04-05_04",
+      "type": "MOFU",
+      "titre": "Personne croit en toi",
+      "duree": "51s",
+      "date": "?",
+      "score": 7.6,
+      "scoring_detail": {
+        "empathie_viscerale": 8,
+        "cameras_assignation": 7,
+        "zero_barber": 10,
+        "sources_psycho": 10,
+        "micro_action_cognitive": 3,
+        "structure_vnpgl": 10,
+        "doctrine_recipient": 5,
+        "zero_adam_public": 10
+      },
+      "forces": [
+        "CTA en CAM B regard direct — closer visuel",
+        "Sources psycho solides (3 auteurs cités)",
+        "Structure VNPGL complète (5/5 piliers)"
+      ],
+      "faiblesses": [
+        "HOOK en CAM A 15mm (wide) — devrait être CAM B ECU pour punch viscéral",
+        "ADN récipient/encre absente — hors marque"
+      ],
+      "fixes_prioritaires": [
+        "Basculer plan 1 HOOK en CAM B 40mm ECU (regard, bouche)",
+        "Injecter 1 référence récipient ou encre passive/active dans voiceover ou doctrine_djibril"
+      ],
+      "flags": {
+        "barber_violation": false,
+        "adam_violation": false,
+        "has_cam_system": true,
+        "has_vnpgl_structure": true,
+        "has_doctrine_recipient": false,
+        "hook_visceral": false
+      },
+      "rang": 14
+    },
+    {
+      "id": "cine_2026-04-05_06",
+      "type": "MOFU",
+      "titre": "Le miroir du dimanche",
+      "duree": "50s",
+      "date": "?",
+      "score": 7.4,
+      "scoring_detail": {
+        "empathie_viscerale": 6,
+        "cameras_assignation": 7,
+        "zero_barber": 10,
+        "sources_psycho": 7,
+        "micro_action_cognitive": 3,
+        "structure_vnpgl": 10,
+        "doctrine_recipient": 10,
+        "zero_adam_public": 10
+      },
+      "forces": [
+        "CTA en CAM B regard direct — closer visuel",
+        "Fil rouge RÉCIPIENT/ENCRE convoqué ✓",
+        "Structure VNPGL complète (5/5 piliers)"
+      ],
+      "faiblesses": [
+        "Hook ne commence pas par T'as/T'es/Tu — perte identification <5s",
+        "HOOK en CAM A 15mm (wide) — devrait être CAM B ECU pour punch viscéral"
+      ],
+      "fixes_prioritaires": [
+        "Réécrire plan 1 voiceover avec ouverture T'as/T'es/Tu directe",
+        "Basculer plan 1 HOOK en CAM B 40mm ECU (regard, bouche)"
+      ],
+      "flags": {
+        "barber_violation": false,
+        "adam_violation": false,
+        "has_cam_system": true,
+        "has_vnpgl_structure": true,
+        "has_doctrine_recipient": true,
+        "hook_visceral": false
+      },
+      "rang": 15
+    },
+    {
+      "id": 13,
+      "type": "TOFU",
+      "titre": "La honte qui te cache",
+      "duree": "45s",
+      "date": "2026-04-05",
+      "score": 6.7,
+      "scoring_detail": {
+        "empathie_viscerale": 8,
+        "cameras_assignation": 4,
+        "zero_barber": 10,
+        "sources_psycho": 10,
+        "micro_action_cognitive": 6,
+        "structure_vnpgl": 4,
+        "doctrine_recipient": 5,
+        "zero_adam_public": 10
+      },
+      "forces": [
+        "Sources psycho solides (3 auteurs cités)"
+      ],
+      "faiblesses": [
+        "Format legacy sans système CAM A/CAM B — pas d'assignation caméras",
+        "ADN récipient/encre absente — hors marque"
+      ],
+      "fixes_prioritaires": [
+        "Migrer au format 2 caméras: CAM A 15mm wide + CAM B 40mm ECU",
+        "Injecter 1 référence récipient ou encre passive/active dans voiceover ou doctrine_djibril"
+      ],
+      "flags": {
+        "barber_violation": false,
+        "adam_violation": false,
+        "has_cam_system": false,
+        "has_vnpgl_structure": false,
+        "has_doctrine_recipient": false,
+        "hook_visceral": false
+      },
+      "rang": 16
+    },
+    {
+      "id": 1,
+      "type": "TOFU",
+      "titre": "La prison du spectateur",
+      "duree": "45s",
+      "date": "2026-04-05",
+      "score": 6.6,
+      "scoring_detail": {
+        "empathie_viscerale": 9,
+        "cameras_assignation": 4,
+        "zero_barber": 10,
+        "sources_psycho": 7,
+        "micro_action_cognitive": 6,
+        "structure_vnpgl": 4,
+        "doctrine_recipient": 5,
+        "zero_adam_public": 10
+      },
+      "forces": [
+        "Hook <5s identification viscérale: \"Tu regardes des gens réussir tous les jours sur ton écran....\""
+      ],
+      "faiblesses": [
+        "Format legacy sans système CAM A/CAM B — pas d'assignation caméras",
+        "ADN récipient/encre absente — hors marque"
+      ],
+      "fixes_prioritaires": [
+        "Migrer au format 2 caméras: CAM A 15mm wide + CAM B 40mm ECU",
+        "Injecter 1 référence récipient ou encre passive/active dans voiceover ou doctrine_djibril"
+      ],
+      "flags": {
+        "barber_violation": false,
+        "adam_violation": false,
+        "has_cam_system": false,
+        "has_vnpgl_structure": false,
+        "has_doctrine_recipient": false,
+        "hook_visceral": true
+      },
+      "rang": 17
+    },
+    {
+      "id": 3,
+      "type": "TOFU",
+      "titre": "L'identité programmée",
+      "duree": "45s",
+      "date": "2026-04-05",
+      "score": 6.3,
+      "scoring_detail": {
+        "empathie_viscerale": 5,
+        "cameras_assignation": 4,
+        "zero_barber": 10,
+        "sources_psycho": 7,
+        "micro_action_cognitive": 6,
+        "structure_vnpgl": 4,
+        "doctrine_recipient": 10,
+        "zero_adam_public": 10
+      },
+      "forces": [
+        "Fil rouge RÉCIPIENT/ENCRE convoqué ✓"
+      ],
+      "faiblesses": [
+        "Hook ne commence pas par T'as/T'es/Tu — perte identification <5s",
+        "Format legacy sans système CAM A/CAM B — pas d'assignation caméras"
+      ],
+      "fixes_prioritaires": [
+        "Réécrire plan 1 voiceover avec ouverture T'as/T'es/Tu directe",
+        "Migrer au format 2 caméras: CAM A 15mm wide + CAM B 40mm ECU"
+      ],
+      "flags": {
+        "barber_violation": false,
+        "adam_violation": false,
+        "has_cam_system": false,
+        "has_vnpgl_structure": false,
+        "has_doctrine_recipient": true,
+        "hook_visceral": false
+      },
+      "rang": 18
+    },
+    {
+      "id": 5,
+      "type": "TOFU",
+      "titre": "Ton cerveau te ment",
+      "duree": "45s",
+      "date": "2026-04-05",
+      "score": 6.3,
+      "scoring_detail": {
+        "empathie_viscerale": 5,
+        "cameras_assignation": 4,
+        "zero_barber": 10,
+        "sources_psycho": 9,
+        "micro_action_cognitive": 8,
+        "structure_vnpgl": 4,
+        "doctrine_recipient": 5,
+        "zero_adam_public": 10
+      },
+      "forces": [
+        "Sources psycho solides (2 auteurs cités)"
+      ],
+      "faiblesses": [
+        "Hook ne commence pas par T'as/T'es/Tu — perte identification <5s",
+        "Format legacy sans système CAM A/CAM B — pas d'assignation caméras",
+        "ADN récipient/encre absente — hors marque"
+      ],
+      "fixes_prioritaires": [
+        "Réécrire plan 1 voiceover avec ouverture T'as/T'es/Tu directe",
+        "Migrer au format 2 caméras: CAM A 15mm wide + CAM B 40mm ECU",
+        "Injecter 1 référence récipient ou encre passive/active dans voiceover ou doctrine_djibril"
+      ],
+      "flags": {
+        "barber_violation": false,
+        "adam_violation": false,
+        "has_cam_system": false,
+        "has_vnpgl_structure": false,
+        "has_doctrine_recipient": false,
+        "hook_visceral": false
+      },
+      "rang": 19
+    },
+    {
+      "id": 10,
+      "type": "MOFU",
+      "titre": "L'encre invisible",
+      "duree": "45s",
+      "date": "2026-04-05",
+      "score": 6.2,
+      "scoring_detail": {
+        "empathie_viscerale": 6,
+        "cameras_assignation": 4,
+        "zero_barber": 10,
+        "sources_psycho": 9,
+        "micro_action_cognitive": 3,
+        "structure_vnpgl": 4,
+        "doctrine_recipient": 10,
+        "zero_adam_public": 10
+      },
+      "forces": [
+        "Sources psycho solides (2 auteurs cités)",
+        "Fil rouge RÉCIPIENT/ENCRE convoqué ✓"
+      ],
+      "faiblesses": [
+        "Hook ne commence pas par T'as/T'es/Tu — perte identification <5s",
+        "Format legacy sans système CAM A/CAM B — pas d'assignation caméras"
+      ],
+      "fixes_prioritaires": [
+        "Réécrire plan 1 voiceover avec ouverture T'as/T'es/Tu directe",
+        "Migrer au format 2 caméras: CAM A 15mm wide + CAM B 40mm ECU"
+      ],
+      "flags": {
+        "barber_violation": false,
+        "adam_violation": false,
+        "has_cam_system": false,
+        "has_vnpgl_structure": false,
+        "has_doctrine_recipient": true,
+        "hook_visceral": false
+      },
+      "rang": 20
+    },
+    {
+      "id": 11,
+      "type": "TOFU",
+      "titre": "Trop de choix tue le choix",
+      "duree": "45s",
+      "date": "2026-04-05",
+      "score": 6.2,
+      "scoring_detail": {
+        "empathie_viscerale": 6,
+        "cameras_assignation": 4,
+        "zero_barber": 10,
+        "sources_psycho": 9,
+        "micro_action_cognitive": 6,
+        "structure_vnpgl": 4,
+        "doctrine_recipient": 5,
+        "zero_adam_public": 10
+      },
+      "forces": [
+        "Sources psycho solides (2 auteurs cités)"
+      ],
+      "faiblesses": [
+        "Hook ne commence pas par T'as/T'es/Tu — perte identification <5s",
+        "Format legacy sans système CAM A/CAM B — pas d'assignation caméras",
+        "ADN récipient/encre absente — hors marque"
+      ],
+      "fixes_prioritaires": [
+        "Réécrire plan 1 voiceover avec ouverture T'as/T'es/Tu directe",
+        "Migrer au format 2 caméras: CAM A 15mm wide + CAM B 40mm ECU",
+        "Injecter 1 référence récipient ou encre passive/active dans voiceover ou doctrine_djibril"
+      ],
+      "flags": {
+        "barber_violation": false,
+        "adam_violation": false,
+        "has_cam_system": false,
+        "has_vnpgl_structure": false,
+        "has_doctrine_recipient": false,
+        "hook_visceral": false
+      },
+      "rang": 21
+    },
+    {
+      "id": 7,
+      "type": "TOFU",
+      "titre": "Les 3 biais qui te contrôlent",
+      "duree": "45s",
+      "date": "2026-04-05",
+      "score": 6.1,
+      "scoring_detail": {
+        "empathie_viscerale": 5,
+        "cameras_assignation": 4,
+        "zero_barber": 10,
+        "sources_psycho": 10,
+        "micro_action_cognitive": 6,
+        "structure_vnpgl": 4,
+        "doctrine_recipient": 5,
+        "zero_adam_public": 10
+      },
+      "forces": [
+        "Sources psycho solides (3 auteurs cités)"
+      ],
+      "faiblesses": [
+        "Hook ne commence pas par T'as/T'es/Tu — perte identification <5s",
+        "Format legacy sans système CAM A/CAM B — pas d'assignation caméras",
+        "ADN récipient/encre absente — hors marque"
+      ],
+      "fixes_prioritaires": [
+        "Réécrire plan 1 voiceover avec ouverture T'as/T'es/Tu directe",
+        "Migrer au format 2 caméras: CAM A 15mm wide + CAM B 40mm ECU",
+        "Injecter 1 référence récipient ou encre passive/active dans voiceover ou doctrine_djibril"
+      ],
+      "flags": {
+        "barber_violation": false,
+        "adam_violation": false,
+        "has_cam_system": false,
+        "has_vnpgl_structure": false,
+        "has_doctrine_recipient": false,
+        "hook_visceral": false
+      },
+      "rang": 22
+    },
+    {
+      "id": 8,
+      "type": "MOFU",
+      "titre": "T'es pas paresseux — t'es drainé",
+      "duree": "45s",
+      "date": "2026-04-05",
+      "score": 6.0,
+      "scoring_detail": {
+        "empathie_viscerale": 7,
+        "cameras_assignation": 4,
+        "zero_barber": 10,
+        "sources_psycho": 10,
+        "micro_action_cognitive": 3,
+        "structure_vnpgl": 4,
+        "doctrine_recipient": 5,
+        "zero_adam_public": 10
+      },
+      "forces": [
+        "Sources psycho solides (3 auteurs cités)"
+      ],
+      "faiblesses": [
+        "Format legacy sans système CAM A/CAM B — pas d'assignation caméras",
+        "ADN récipient/encre absente — hors marque"
+      ],
+      "fixes_prioritaires": [
+        "Migrer au format 2 caméras: CAM A 15mm wide + CAM B 40mm ECU",
+        "Injecter 1 référence récipient ou encre passive/active dans voiceover ou doctrine_djibril"
+      ],
+      "flags": {
+        "barber_violation": false,
+        "adam_violation": false,
+        "has_cam_system": false,
+        "has_vnpgl_structure": false,
+        "has_doctrine_recipient": false,
+        "hook_visceral": false
+      },
+      "rang": 23
+    },
+    {
+      "id": 9,
+      "type": "TOFU",
+      "titre": "La boucle toxique",
+      "duree": "45s",
+      "date": "2026-04-05",
+      "score": 6.0,
+      "scoring_detail": {
+        "empathie_viscerale": 5,
+        "cameras_assignation": 4,
+        "zero_barber": 10,
+        "sources_psycho": 9,
+        "micro_action_cognitive": 6,
+        "structure_vnpgl": 4,
+        "doctrine_recipient": 5,
+        "zero_adam_public": 10
+      },
+      "forces": [
+        "Sources psycho solides (2 auteurs cités)"
+      ],
+      "faiblesses": [
+        "Hook ne commence pas par T'as/T'es/Tu — perte identification <5s",
+        "Format legacy sans système CAM A/CAM B — pas d'assignation caméras",
+        "ADN récipient/encre absente — hors marque"
+      ],
+      "fixes_prioritaires": [
+        "Réécrire plan 1 voiceover avec ouverture T'as/T'es/Tu directe",
+        "Migrer au format 2 caméras: CAM A 15mm wide + CAM B 40mm ECU",
+        "Injecter 1 référence récipient ou encre passive/active dans voiceover ou doctrine_djibril"
+      ],
+      "flags": {
+        "barber_violation": false,
+        "adam_violation": false,
+        "has_cam_system": false,
+        "has_vnpgl_structure": false,
+        "has_doctrine_recipient": false,
+        "hook_visceral": false
+      },
+      "rang": 24
+    },
+    {
+      "id": 12,
+      "type": "MOFU",
+      "titre": "Ton identité est un mur",
+      "duree": "45s",
+      "date": "2026-04-05",
+      "score": 5.8,
+      "scoring_detail": {
+        "empathie_viscerale": 6,
+        "cameras_assignation": 4,
+        "zero_barber": 10,
+        "sources_psycho": 10,
+        "micro_action_cognitive": 3,
+        "structure_vnpgl": 4,
+        "doctrine_recipient": 5,
+        "zero_adam_public": 10
+      },
+      "forces": [
+        "Sources psycho solides (3 auteurs cités)"
+      ],
+      "faiblesses": [
+        "Hook ne commence pas par T'as/T'es/Tu — perte identification <5s",
+        "Format legacy sans système CAM A/CAM B — pas d'assignation caméras",
+        "ADN récipient/encre absente — hors marque"
+      ],
+      "fixes_prioritaires": [
+        "Réécrire plan 1 voiceover avec ouverture T'as/T'es/Tu directe",
+        "Migrer au format 2 caméras: CAM A 15mm wide + CAM B 40mm ECU",
+        "Injecter 1 référence récipient ou encre passive/active dans voiceover ou doctrine_djibril"
+      ],
+      "flags": {
+        "barber_violation": false,
+        "adam_violation": false,
+        "has_cam_system": false,
+        "has_vnpgl_structure": false,
+        "has_doctrine_recipient": false,
+        "hook_visceral": false
+      },
+      "rang": 25
+    },
+    {
+      "id": 4,
+      "type": "MOFU",
+      "titre": "Le code qu'on t'a installé",
+      "duree": "45s",
+      "date": "2026-04-05",
+      "score": 5.6,
+      "scoring_detail": {
+        "empathie_viscerale": 5,
+        "cameras_assignation": 4,
+        "zero_barber": 10,
+        "sources_psycho": 10,
+        "micro_action_cognitive": 3,
+        "structure_vnpgl": 4,
+        "doctrine_recipient": 5,
+        "zero_adam_public": 10
+      },
+      "forces": [
+        "Sources psycho solides (3 auteurs cités)"
+      ],
+      "faiblesses": [
+        "Hook ne commence pas par T'as/T'es/Tu — perte identification <5s",
+        "Format legacy sans système CAM A/CAM B — pas d'assignation caméras",
+        "ADN récipient/encre absente — hors marque"
+      ],
+      "fixes_prioritaires": [
+        "Réécrire plan 1 voiceover avec ouverture T'as/T'es/Tu directe",
+        "Migrer au format 2 caméras: CAM A 15mm wide + CAM B 40mm ECU",
+        "Injecter 1 référence récipient ou encre passive/active dans voiceover ou doctrine_djibril"
+      ],
+      "flags": {
+        "barber_violation": false,
+        "adam_violation": false,
+        "has_cam_system": false,
+        "has_vnpgl_structure": false,
+        "has_doctrine_recipient": false,
+        "hook_visceral": false
+      },
+      "rang": 26
+    },
+    {
+      "id": 6,
+      "type": "MOFU",
+      "titre": "Le gap entre savoir et faire",
+      "duree": "45s",
+      "date": "2026-04-05",
+      "score": 5.6,
+      "scoring_detail": {
+        "empathie_viscerale": 5,
+        "cameras_assignation": 4,
+        "zero_barber": 10,
+        "sources_psycho": 10,
+        "micro_action_cognitive": 3,
+        "structure_vnpgl": 4,
+        "doctrine_recipient": 5,
+        "zero_adam_public": 10
+      },
+      "forces": [
+        "Sources psycho solides (5 auteurs cités)"
+      ],
+      "faiblesses": [
+        "Hook ne commence pas par T'as/T'es/Tu — perte identification <5s",
+        "Format legacy sans système CAM A/CAM B — pas d'assignation caméras",
+        "ADN récipient/encre absente — hors marque"
+      ],
+      "fixes_prioritaires": [
+        "Réécrire plan 1 voiceover avec ouverture T'as/T'es/Tu directe",
+        "Migrer au format 2 caméras: CAM A 15mm wide + CAM B 40mm ECU",
+        "Injecter 1 référence récipient ou encre passive/active dans voiceover ou doctrine_djibril"
+      ],
+      "flags": {
+        "barber_violation": false,
+        "adam_violation": false,
+        "has_cam_system": false,
+        "has_vnpgl_structure": false,
+        "has_doctrine_recipient": false,
+        "hook_visceral": false
+      },
+      "rang": 27
+    },
+    {
+      "id": 2,
+      "type": "MOFU",
+      "titre": "Le piège dopamine-connaissance",
+      "duree": "45s",
+      "date": "2026-04-05",
+      "score": 5.5,
+      "scoring_detail": {
+        "empathie_viscerale": 5,
+        "cameras_assignation": 4,
+        "zero_barber": 10,
+        "sources_psycho": 9,
+        "micro_action_cognitive": 3,
+        "structure_vnpgl": 4,
+        "doctrine_recipient": 5,
+        "zero_adam_public": 10
+      },
+      "forces": [
+        "Sources psycho solides (2 auteurs cités)"
+      ],
+      "faiblesses": [
+        "Hook ne commence pas par T'as/T'es/Tu — perte identification <5s",
+        "Format legacy sans système CAM A/CAM B — pas d'assignation caméras",
+        "ADN récipient/encre absente — hors marque"
+      ],
+      "fixes_prioritaires": [
+        "Réécrire plan 1 voiceover avec ouverture T'as/T'es/Tu directe",
+        "Migrer au format 2 caméras: CAM A 15mm wide + CAM B 40mm ECU",
+        "Injecter 1 référence récipient ou encre passive/active dans voiceover ou doctrine_djibril"
+      ],
+      "flags": {
+        "barber_violation": false,
+        "adam_violation": false,
+        "has_cam_system": false,
+        "has_vnpgl_structure": false,
+        "has_doctrine_recipient": false,
+        "hook_visceral": false
+      },
+      "rang": 28
+    },
+    {
+      "id": 14,
+      "type": "MOFU",
+      "titre": "T'as pas de modèle et c'est normal",
+      "duree": "45s",
+      "date": "2026-04-05",
+      "score": 5.5,
+      "scoring_detail": {
+        "empathie_viscerale": 5,
+        "cameras_assignation": 4,
+        "zero_barber": 10,
+        "sources_psycho": 9,
+        "micro_action_cognitive": 3,
+        "structure_vnpgl": 4,
+        "doctrine_recipient": 5,
+        "zero_adam_public": 10
+      },
+      "forces": [
+        "Sources psycho solides (2 auteurs cités)"
+      ],
+      "faiblesses": [
+        "Hook ne commence pas par T'as/T'es/Tu — perte identification <5s",
+        "Format legacy sans système CAM A/CAM B — pas d'assignation caméras",
+        "ADN récipient/encre absente — hors marque"
+      ],
+      "fixes_prioritaires": [
+        "Réécrire plan 1 voiceover avec ouverture T'as/T'es/Tu directe",
+        "Migrer au format 2 caméras: CAM A 15mm wide + CAM B 40mm ECU",
+        "Injecter 1 référence récipient ou encre passive/active dans voiceover ou doctrine_djibril"
+      ],
+      "flags": {
+        "barber_violation": false,
+        "adam_violation": false,
+        "has_cam_system": false,
+        "has_vnpgl_structure": false,
+        "has_doctrine_recipient": false,
+        "hook_visceral": false
+      },
+      "rang": 29
+    }
+  ],
+  "scoring_matrix": {
+    "empathie_viscerale": {
+      "poids": 0.2,
+      "critere": "Hook <5s identification T'as/T'es/Tu + detail sensoriel vecu"
+    },
+    "cameras_assignation": {
+      "poids": 0.15,
+      "critere": "CAM A 15mm wide contexte + CAM B 40mm ECU HOOK et CTA"
+    },
+    "zero_barber": {
+      "poids": 0.1,
+      "critere": "AUCUNE mention barber/coiffure/salon (regle 5.1)"
+    },
+    "sources_psycho": {
+      "poids": 0.1,
+      "critere": "1+ auteurs cites (Kahneman, Bandura...) + etude datee"
+    },
+    "micro_action_cognitive": {
+      "poids": 0.15,
+      "critere": "MOFU = exercice CEREBRAL (ecris/nomme/observe), PAS physique (regle 5.7)"
+    },
+    "structure_vnpgl": {
+      "poids": 0.15,
+      "critere": "VOIR->NOMMER->PERMETTRE->GUIDER->LIBERER 5 piliers"
+    },
+    "doctrine_recipient": {
+      "poids": 0.1,
+      "critere": "Recipient cerebral + encre passive/active convoques (regle 5.11 ADN)"
+    },
+    "zero_adam_public": {
+      "poids": 0.05,
+      "critere": "AUCUN Adam dans contenu public (regle 5.2)"
+    }
+  },
+  "patterns_observes": [
+    "Structure en 2 batchs: 14 scripts legacy (format timing simple) vs 15 scripts format riche (CAM+VNPGL+doctrine)",
+    "Top performers: scripts avec VNPGL + 2 cameras + ancrage doctrine recipient (scores 8.5-8.9)",
+    "Bottom performers: scripts legacy sans camera system, souvent sans doctrine (scores 5.5-6.2)",
+    "Hook visceral <5s: 3/29 scripts reussissent identification immediate (T'as/T'es/Tu + detail sensoriel)",
+    "Violations Adam 100% sur 3 scripts batch 05->07 avril — pattern '21 ans / 14h / seul' toujours risque",
+    "Sources psycho: presentes sur 26/29 mais souvent 1 seul auteur — renforcer avec 2-3 references croisees"
+  ],
+  "recommandations_next_batch": [
+    "URGENT: Patcher les 3 violations Adam (cine_2026-04-05_10, cine_2026-04-06_01, cine_2026-04-07_01) — remplacer Adam par Djibril ou reformuler 3e personne anonyme",
+    "Migrer les 14 scripts legacy (id 1-14) au format CAM A/CAM B + VNPGL — ils sont sous-exploites visuellement",
+    "Pour chaque script MOFU sans micro-action cognitive explicite: ajouter 1 exercice cerebral (ecris / nomme / observe) des ce soir dans lieu precis",
+    "Renforcer ADN recipient/encre sur les 17 scripts qui ne la convoquent pas (regle 5.11 + ADN permanent valide 2026-04-14)",
+    "Prochain batch: prioriser hooks partant par T'as/T'es/Tu + detail sensoriel (telephone/ecran/chambre/reveil) — pattern des top performers",
+    "Ajouter systematiquement 2+ auteurs cites (Kahneman, Bandura, Tversky, Dweck, Bargh, Maslow) pour credibilite composite"
+  ]
 }
