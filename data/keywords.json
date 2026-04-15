@@ -1,536 +1,678 @@
 {
-  "meta": {
-    "version": "1.0",
-    "generated_at": "2026-04-14",
-    "generated_by": "djibril-keyword-intelligence (scheduled)",
-    "niche": "cérébral paralysé 18-25 ans",
-    "avatar": "Sait tout, ne fait rien, attend d'être compétent avant d'agir",
-    "double_combat": "paralysie cognitive + isolement social",
-    "total_keywords": 51,
-    "color_legend": {
-      "green": "score > 8 — impact identification maximum",
-      "cyan": "score 7-8 — impact fort",
-      "purple": "score 6-7 — impact moyen",
-      "yellow": "score < 6 — impact faible / signal secondaire"
+  "version": "1.0.0",
+  "generated_at": "2026-04-15",
+  "mission": "Mots-clés EMPATHIE haute identification — avatar cérébral paralysé + métiers chronophages",
+  "doctrine": "RÉCIPIENT CÉRÉBRAL + ENCRE PASSIVE/ACTIVE",
+  "color_legend": {
+    "green": ">8/10 — impact maximum, identification instantanée",
+    "cyan": "7-8/10 — fort, à privilégier",
+    "purple": "6-7/10 — correct, support",
+    "yellow": "<6/10 — faible, à éviter ou enrichir"
+  },
+  "scoring_criteria": [
+    "Identification émotionnelle immédiate (se voit dedans en 1s)",
+    "Vocabulaire oral 8 ans (zéro jargon)",
+    "Scène de vie sensorielle (pas concept abstrait)",
+    "Démolit objection 'mon domaine différent'",
+    "Aligné avec récipient/encre"
+  ],
+  "categories": {
+    "paralysie_cerebrale": {
+      "description": "Avatar #1 — sait tout, fait rien, hallucine la compétence",
+      "keywords": [
+        {
+          "word": "t'as tout lu mais t'as rien bougé",
+          "score": 10,
+          "color": "green",
+          "usage": "hook TOFU",
+          "lever": "Identité"
+        },
+        {
+          "word": "tu sais ce qu'il faut faire",
+          "score": 10,
+          "color": "green",
+          "usage": "connexion émotionnelle",
+          "lever": "DRDP"
+        },
+        {
+          "word": "paralysé par l'analyse",
+          "score": 9,
+          "color": "green",
+          "usage": "naming avatar",
+          "lever": "Clarté"
+        },
+        {
+          "word": "tu cherches encore la bonne méthode",
+          "score": 9,
+          "color": "green",
+          "usage": "hook MOFU",
+          "lever": "Curiosité"
+        },
+        {
+          "word": "t'attends d'être prêt",
+          "score": 9,
+          "color": "green",
+          "usage": "friction",
+          "lever": "NEW"
+        },
+        {
+          "word": "hallucine que tu avances",
+          "score": 9,
+          "color": "green",
+          "usage": "reframe",
+          "lever": "NEW"
+        },
+        {
+          "word": "t'as pris 10 notes cette semaine",
+          "score": 8,
+          "color": "cyan",
+          "usage": "scène vie",
+          "lever": "Identification"
+        },
+        {
+          "word": "faire semblant de bosser",
+          "score": 8,
+          "color": "cyan",
+          "usage": "friction",
+          "lever": "DRDP"
+        },
+        {
+          "word": "tu consommes, tu appliques pas",
+          "score": 8,
+          "color": "cyan",
+          "usage": "reframe",
+          "lever": "SAFE"
+        },
+        {
+          "word": "bloqué en mode spectateur",
+          "score": 7,
+          "color": "purple",
+          "usage": "métaphore support",
+          "lever": "Clarté"
+        }
+      ]
     },
-    "zero_barber": true,
-    "scoring_criteria": [
-      "Force d'identification immédiate (se reconnaît en 1s)",
-      "Charge émotionnelle (douleur/peur/désir activé)",
-      "Spécificité niche cérébral (pas générique motivation)",
-      "Potentiel hook viral (pattern interrupt)"
+    "metiers_chronophages": {
+      "description": "Ancrage sensoriel métier — livreur, ouvrier, caissier, manut",
+      "keywords": [
+        {
+          "word": "14h sur le scooter",
+          "score": 10,
+          "color": "green",
+          "usage": "scène vie livreur",
+          "lever": "Identification"
+        },
+        {
+          "word": "fin de shift tu scrolles",
+          "score": 10,
+          "color": "green",
+          "usage": "boucle conso",
+          "lever": "DRDP"
+        },
+        {
+          "word": "le badge, la machine, la fatigue",
+          "score": 9,
+          "color": "green",
+          "usage": "ouvrier",
+          "lever": "Identification"
+        },
+        {
+          "word": "8h derrière la caisse",
+          "score": 9,
+          "color": "green",
+          "usage": "caissier",
+          "lever": "Identification"
+        },
+        {
+          "word": "tu rentres tu t'écroules",
+          "score": 9,
+          "color": "green",
+          "usage": "connexion",
+          "lever": "DRDP"
+        },
+        {
+          "word": "ton corps est rincé",
+          "score": 8,
+          "color": "cyan",
+          "usage": "friction",
+          "lever": "DRDP"
+        },
+        {
+          "word": "salaire qui bouge pas",
+          "score": 8,
+          "color": "cyan",
+          "usage": "contexte",
+          "lever": "DRDP"
+        },
+        {
+          "word": "boulot qui te mange la tête",
+          "score": 8,
+          "color": "cyan",
+          "usage": "métaphore",
+          "lever": "Clarté"
+        },
+        {
+          "word": "pas le temps de réfléchir",
+          "score": 8,
+          "color": "cyan",
+          "usage": "friction",
+          "lever": "FACILE"
+        },
+        {
+          "word": "métro-boulot-sommeil",
+          "score": 7,
+          "color": "purple",
+          "usage": "contexte",
+          "lever": "Identification"
+        }
+      ]
+    },
+    "recipient_encre": {
+      "description": "Fil rouge ADN — récipient cérébral + encre passive/active",
+      "keywords": [
+        {
+          "word": "ton cerveau sature",
+          "score": 10,
+          "color": "green",
+          "usage": "métaphore cœur",
+          "lever": "Clarté"
+        },
+        {
+          "word": "encre passive",
+          "score": 10,
+          "color": "green",
+          "usage": "concept signature",
+          "lever": "NEW"
+        },
+        {
+          "word": "tu remplis sans choisir",
+          "score": 9,
+          "color": "green",
+          "usage": "boucle conso",
+          "lever": "Clarté"
+        },
+        {
+          "word": "le récipient déborde",
+          "score": 9,
+          "color": "green",
+          "usage": "métaphore saturation",
+          "lever": "Clarté"
+        },
+        {
+          "word": "tout rentre, rien se range",
+          "score": 9,
+          "color": "green",
+          "usage": "métaphore",
+          "lever": "Clarté"
+        },
+        {
+          "word": "ce que tu consommes t'ancre",
+          "score": 9,
+          "color": "green",
+          "usage": "reframe",
+          "lever": "NEW"
+        },
+        {
+          "word": "remplir mieux, pas vider",
+          "score": 8,
+          "color": "cyan",
+          "usage": "sortie",
+          "lever": "FACILE"
+        },
+        {
+          "word": "encre active = choix",
+          "score": 8,
+          "color": "cyan",
+          "usage": "solution",
+          "lever": "NEW"
+        },
+        {
+          "word": "ton entourage t'ancre",
+          "score": 8,
+          "color": "cyan",
+          "usage": "avatar 2",
+          "lever": "DRDP"
+        },
+        {
+          "word": "boucle de saturation",
+          "score": 7,
+          "color": "purple",
+          "usage": "mécanisme",
+          "lever": "Clarté"
+        }
+      ]
+    },
+    "honte_identite": {
+      "description": "Émotions cœur avatar — honte, frustration, crise d'identité",
+      "keywords": [
+        {
+          "word": "tu te mens à toi-même",
+          "score": 10,
+          "color": "green",
+          "usage": "disruption hook",
+          "lever": "Identité"
+        },
+        {
+          "word": "t'as honte en silence",
+          "score": 10,
+          "color": "green",
+          "usage": "connexion",
+          "lever": "DRDP"
+        },
+        {
+          "word": "tu le dis à personne",
+          "score": 9,
+          "color": "green",
+          "usage": "identification",
+          "lever": "DRDP"
+        },
+        {
+          "word": "t'as peur d'être vu",
+          "score": 9,
+          "color": "green",
+          "usage": "friction",
+          "lever": "DRDP"
+        },
+        {
+          "word": "tu fais semblant d'aller bien",
+          "score": 9,
+          "color": "green",
+          "usage": "scène vie",
+          "lever": "Identification"
+        },
+        {
+          "word": "tu sais que c'est toi qui bloques",
+          "score": 9,
+          "color": "green",
+          "usage": "reframe",
+          "lever": "Identité"
+        },
+        {
+          "word": "frustration qui monte",
+          "score": 8,
+          "color": "cyan",
+          "usage": "émotion",
+          "lever": "DRDP"
+        },
+        {
+          "word": "tu te vois pas avancer",
+          "score": 8,
+          "color": "cyan",
+          "usage": "scène",
+          "lever": "DRDP"
+        },
+        {
+          "word": "ton image t'obsède",
+          "score": 7,
+          "color": "purple",
+          "usage": "avatar 2",
+          "lever": "DRDP"
+        },
+        {
+          "word": "regard des autres",
+          "score": 7,
+          "color": "purple",
+          "usage": "friction",
+          "lever": "DRDP"
+        }
+      ]
+    },
+    "environnement_hostile": {
+      "description": "Avatar #2 — famille, quartier, amis qui tirent vers le bas",
+      "keywords": [
+        {
+          "word": "ton entourage te tire en bas",
+          "score": 10,
+          "color": "green",
+          "usage": "avatar 2",
+          "lever": "DRDP"
+        },
+        {
+          "word": "ceux qui te comprennent pas",
+          "score": 9,
+          "color": "green",
+          "usage": "connexion",
+          "lever": "DRDP"
+        },
+        {
+          "word": "tu ressors différent chez toi",
+          "score": 9,
+          "color": "green",
+          "usage": "scène vie",
+          "lever": "Identification"
+        },
+        {
+          "word": "personne autour qui kiffe ça",
+          "score": 9,
+          "color": "green",
+          "usage": "isolement",
+          "lever": "DRDP"
+        },
+        {
+          "word": "tu t'éloignes en silence",
+          "score": 8,
+          "color": "cyan",
+          "usage": "micro-action",
+          "lever": "FACILE"
+        },
+        {
+          "word": "conversations qui te saoulent",
+          "score": 8,
+          "color": "cyan",
+          "usage": "scène",
+          "lever": "DRDP"
+        },
+        {
+          "word": "famille qui pige pas",
+          "score": 8,
+          "color": "cyan",
+          "usage": "contexte",
+          "lever": "Identification"
+        },
+        {
+          "word": "couper le bruit autour",
+          "score": 7,
+          "color": "purple",
+          "usage": "solution",
+          "lever": "FACILE"
+        }
+      ]
+    },
+    "boucle_consommation": {
+      "description": "Scroll, dopamine passive, contenu conso sans action",
+      "keywords": [
+        {
+          "word": "tu scrolles pendant 3h",
+          "score": 10,
+          "color": "green",
+          "usage": "scène vie",
+          "lever": "Identification"
+        },
+        {
+          "word": "tu sauves des posts tu lis jamais",
+          "score": 10,
+          "color": "green",
+          "usage": "disruption",
+          "lever": "Identité"
+        },
+        {
+          "word": "10 onglets ouverts",
+          "score": 9,
+          "color": "green",
+          "usage": "scène",
+          "lever": "Identification"
+        },
+        {
+          "word": "notifications qui te mangent",
+          "score": 9,
+          "color": "green",
+          "usage": "friction",
+          "lever": "DRDP"
+        },
+        {
+          "word": "tu consommes du contenu productif",
+          "score": 9,
+          "color": "green",
+          "usage": "reframe paradoxe",
+          "lever": "NEW"
+        },
+        {
+          "word": "tu bookmark au lieu d'agir",
+          "score": 8,
+          "color": "cyan",
+          "usage": "pattern",
+          "lever": "Identification"
+        },
+        {
+          "word": "dopamine gratuite",
+          "score": 8,
+          "color": "cyan",
+          "usage": "mécanisme",
+          "lever": "Clarté"
+        },
+        {
+          "word": "rester allongé à scroller",
+          "score": 7,
+          "color": "purple",
+          "usage": "scène",
+          "lever": "DRDP"
+        }
+      ]
+    },
+    "permission_action_imparfaite": {
+      "description": "Cœur solution — permission d'agir avant d'être prêt",
+      "keywords": [
+        {
+          "word": "c'est pas de la volonté",
+          "score": 10,
+          "color": "green",
+          "usage": "reframe clé",
+          "lever": "NEW"
+        },
+        {
+          "word": "c'est de la biologie",
+          "score": 10,
+          "color": "green",
+          "usage": "reframe",
+          "lever": "SAFE"
+        },
+        {
+          "word": "t'as pas besoin d'être prêt",
+          "score": 10,
+          "color": "green",
+          "usage": "permission",
+          "lever": "FACILE"
+        },
+        {
+          "word": "commence cassé",
+          "score": 9,
+          "color": "green",
+          "usage": "micro-action",
+          "lever": "FACILE"
+        },
+        {
+          "word": "bouge avant de comprendre",
+          "score": 9,
+          "color": "green",
+          "usage": "action",
+          "lever": "NEW"
+        },
+        {
+          "word": "t'as pas à te sentir prêt",
+          "score": 9,
+          "color": "green",
+          "usage": "permission",
+          "lever": "SAFE"
+        },
+        {
+          "word": "le cerveau suit le corps",
+          "score": 8,
+          "color": "cyan",
+          "usage": "mécanisme",
+          "lever": "NEW"
+        },
+        {
+          "word": "action imparfaite",
+          "score": 8,
+          "color": "cyan",
+          "usage": "concept",
+          "lever": "FACILE"
+        }
+      ]
+    },
+    "demolition_objection_domaine": {
+      "description": "Règle copy #5 — démolir 'dans mon domaine c'est différent'",
+      "keywords": [
+        {
+          "word": "ton domaine change rien",
+          "score": 10,
+          "color": "green",
+          "usage": "friction directe",
+          "lever": "NEW"
+        },
+        {
+          "word": "ton cerveau fonctionne pareil",
+          "score": 10,
+          "color": "green",
+          "usage": "reframe",
+          "lever": "SAFE"
+        },
+        {
+          "word": "le mécanisme est universel",
+          "score": 9,
+          "color": "green",
+          "usage": "preuve",
+          "lever": "SAFE"
+        },
+        {
+          "word": "livreur ou avocat c'est pareil",
+          "score": 9,
+          "color": "green",
+          "usage": "exemple",
+          "lever": "Identification"
+        },
+        {
+          "word": "c'est pas ton métier le problème",
+          "score": 9,
+          "color": "green",
+          "usage": "reframe",
+          "lever": "NEW"
+        },
+        {
+          "word": "même câblage pour tous",
+          "score": 8,
+          "color": "cyan",
+          "usage": "métaphore",
+          "lever": "Clarté"
+        }
+      ]
+    },
+    "data_pure_adam": {
+      "description": "Référence 6700€/21ans/14h — social proof sans embellir",
+      "keywords": [
+        {
+          "word": "6700 par mois",
+          "score": 10,
+          "color": "green",
+          "usage": "preuve",
+          "lever": "SAFE"
+        },
+        {
+          "word": "21 ans, seul",
+          "score": 9,
+          "color": "green",
+          "usage": "preuve",
+          "lever": "SAFE"
+        },
+        {
+          "word": "14h par jour",
+          "score": 9,
+          "color": "green",
+          "usage": "preuve effort",
+          "lever": "SAFE"
+        },
+        {
+          "word": "pas de mentor, pas d'équipe",
+          "score": 8,
+          "color": "cyan",
+          "usage": "preuve autodidacte",
+          "lever": "SAFE"
+        },
+        {
+          "word": "parti de zéro",
+          "score": 7,
+          "color": "purple",
+          "usage": "preuve",
+          "lever": "SAFE"
+        }
+      ]
+    },
+    "urgence_temps_vie": {
+      "description": "FOMO identitaire — le temps qui file sans que rien change",
+      "keywords": [
+        {
+          "word": "6 mois d'ici t'en seras au même point",
+          "score": 10,
+          "color": "green",
+          "usage": "FOMO",
+          "lever": "FOMO"
+        },
+        {
+          "word": "t'auras 25 ans pareil",
+          "score": 9,
+          "color": "green",
+          "usage": "FOMO identitaire",
+          "lever": "FOMO"
+        },
+        {
+          "word": "les années passent, toi non",
+          "score": 9,
+          "color": "green",
+          "usage": "urgence",
+          "lever": "FOMO"
+        },
+        {
+          "word": "même tête dans le miroir",
+          "score": 9,
+          "color": "green",
+          "usage": "scène",
+          "lever": "DRDP"
+        },
+        {
+          "word": "c'est maintenant ou jamais pareil",
+          "score": 7,
+          "color": "purple",
+          "usage": "urgence",
+          "lever": "FOMO"
+        }
+      ]
+    }
+  },
+  "forbidden_keywords": {
+    "description": "⚠️ JAMAIS utiliser — règles non-négociables",
+    "list": [
+      "barber",
+      "coiffure",
+      "salon",
+      "Adam (public)",
+      "parisien",
+      "métro parigot",
+      "startup",
+      "growth hacking",
+      "mindset (anglicisme seul)",
+      "leverage",
+      "tu dois",
+      "il faut absolument",
+      "motivation",
+      "croire en soi"
     ]
   },
-
-  "keywords": [
-    {
-      "keyword": "paralysie d'analyse",
-      "score": 9.5,
-      "color": "green",
-      "category": "paralysie",
-      "levier": "DRDP",
-      "why": "Nomme exactement la douleur centrale. L'avatar se reconnaît sans effort.",
-      "hook_potential": "très haut"
-    },
-    {
-      "keyword": "cérébral paralysé",
-      "score": 9.5,
-      "color": "green",
-      "category": "identité",
-      "levier": "DRDP + NEW",
-      "why": "Identité piège nommée — reframe identitaire instantané.",
-      "hook_potential": "très haut"
-    },
-    {
-      "keyword": "je sais mais je fais pas",
-      "score": 9.4,
-      "color": "green",
-      "category": "paralysie",
-      "levier": "DRDP",
-      "why": "Phrase exacte que l'avatar s'entend dire. Miroir émotionnel brut.",
-      "hook_potential": "très haut"
-    },
-    {
-      "keyword": "attendre d'être prêt",
-      "score": 9.3,
-      "color": "green",
-      "category": "paralysie",
-      "levier": "DRDP",
-      "why": "Mécanisme d'évitement principal. Reconnaissance immédiate.",
-      "hook_potential": "très haut"
-    },
-    {
-      "keyword": "surcharge cognitive",
-      "score": 9.2,
-      "color": "green",
-      "category": "mental",
-      "levier": "NEW",
-      "why": "Terme précis qui donne un nom à la sensation vague de saturation.",
-      "hook_potential": "haut"
-    },
-    {
-      "keyword": "boucle de consommation",
-      "score": 9.1,
-      "color": "green",
-      "category": "boucle",
-      "levier": "NEW",
-      "why": "Concept Djibril signature. Décrit le circuit fermé infoporn.",
-      "hook_potential": "très haut"
-    },
-    {
-      "keyword": "identité piège",
-      "score": 9.0,
-      "color": "green",
-      "category": "identité",
-      "levier": "NEW + DRDP",
-      "why": "Fait comprendre que l'intelligence elle-même est devenue le problème.",
-      "hook_potential": "très haut"
-    },
-    {
-      "keyword": "métier chronophage",
-      "score": 9.0,
-      "color": "green",
-      "category": "metier",
-      "levier": "DRDP",
-      "why": "Identification directe des coincés dans le salariat qui bouffe 14h/j.",
-      "hook_potential": "haut"
-    },
-    {
-      "keyword": "14h par jour",
-      "score": 8.9,
-      "color": "green",
-      "category": "metier",
-      "levier": "SAFE (data Adam)",
-      "why": "Chiffre brut, référence vécue Adam 6700€. Social proof concret.",
-      "hook_potential": "haut"
-    },
-    {
-      "keyword": "récipient cérébral",
-      "score": 8.8,
-      "color": "green",
-      "category": "mental",
-      "levier": "NEW",
-      "why": "Métaphore fil rouge Djibril. Nomme ce que personne n'explique.",
-      "hook_potential": "haut"
-    },
-    {
-      "keyword": "encre passive",
-      "score": 8.7,
-      "color": "green",
-      "category": "mental",
-      "levier": "NEW",
-      "why": "Concept Djibril. Révèle le mécanisme de passivité consommation.",
-      "hook_potential": "haut"
-    },
-    {
-      "keyword": "encre active",
-      "score": 8.7,
-      "color": "green",
-      "category": "mental",
-      "levier": "NEW",
-      "why": "Pendant solution. Création/réflexion vs consommation.",
-      "hook_potential": "haut"
-    },
-    {
-      "keyword": "croyance de compréhension",
-      "score": 8.6,
-      "color": "green",
-      "category": "mental",
-      "levier": "NEW + DRDP",
-      "why": "Démasque l'illusion de savoir qui bloque l'action.",
-      "hook_potential": "haut"
-    },
-    {
-      "keyword": "seul à mon bureau",
-      "score": 8.5,
-      "color": "green",
-      "category": "isolement",
-      "levier": "DRDP",
-      "why": "Scène visuelle exacte de l'isolement. Miroir émotionnel fort.",
-      "hook_potential": "haut"
-    },
-    {
-      "keyword": "environnement hostile",
-      "score": 8.4,
-      "color": "green",
-      "category": "isolement",
-      "levier": "DRDP",
-      "why": "Nomme l'entourage qui rabaisse. Double combat paralysie+isolement.",
-      "hook_potential": "haut"
-    },
-    {
-      "keyword": "peur du regard",
-      "score": 8.3,
-      "color": "green",
-      "category": "isolement",
-      "levier": "DRDP",
-      "why": "Blocker identifié du cérébral. Déclenche identification.",
-      "hook_potential": "haut"
-    },
-    {
-      "keyword": "avare cognitif",
-      "score": 8.2,
-      "color": "green",
-      "category": "mental",
-      "levier": "NEW",
-      "why": "Concept Kahneman System 1. Explique pourquoi le cerveau choisit le raccourci.",
-      "hook_potential": "haut"
-    },
-
-    {
-      "keyword": "procrastination intelligente",
-      "score": 7.9,
-      "color": "cyan",
-      "category": "paralysie",
-      "levier": "NEW",
-      "why": "Reframe paradoxal qui parle au cérébral fier de son intelligence.",
-      "hook_potential": "haut"
-    },
-    {
-      "keyword": "dans mon domaine c'est différent",
-      "score": 7.9,
-      "color": "cyan",
-      "category": "identité",
-      "levier": "DRDP",
-      "why": "Objection récurrente à anticiper. Pattern auto-justification.",
-      "hook_potential": "moyen"
-    },
-    {
-      "keyword": "TDAH",
-      "score": 7.8,
-      "color": "cyan",
-      "category": "mental",
-      "levier": "SAFE",
-      "why": "Mega-trend neuro. Tag qui capture audience cérébrale auto-diagnostiquée.",
-      "hook_potential": "haut"
-    },
-    {
-      "keyword": "haut potentiel",
-      "score": 7.7,
-      "color": "cyan",
-      "category": "identité",
-      "levier": "DRDP",
-      "why": "Identité refuge du cérébral paralysé — entrée dans le miroir.",
-      "hook_potential": "moyen"
-    },
-    {
-      "keyword": "salariat qui bouffe",
-      "score": 7.6,
-      "color": "cyan",
-      "category": "metier",
-      "levier": "DRDP",
-      "why": "Métaphore viscérale. Parle aux coincés 9-18h sans perspective.",
-      "hook_potential": "haut"
-    },
-    {
-      "keyword": "impuissance apprise",
-      "score": 7.6,
-      "color": "cyan",
-      "category": "mental",
-      "levier": "NEW",
-      "why": "Concept Seligman. Explique le 'j'y arriverai pas' après N échecs.",
-      "hook_potential": "haut"
-    },
-    {
-      "keyword": "System 1 / System 2",
-      "score": 7.5,
-      "color": "cyan",
-      "category": "mental",
-      "levier": "NEW",
-      "why": "Framework Kahneman. Base cognitive cours Djibril.",
-      "hook_potential": "moyen"
-    },
-    {
-      "keyword": "biais de confirmation",
-      "score": 7.5,
-      "color": "cyan",
-      "category": "mental",
-      "levier": "NEW",
-      "why": "Mécanisme qui explique pourquoi tu restes bloqué. Vocab cérébral.",
-      "hook_potential": "moyen"
-    },
-    {
-      "keyword": "effet Zeigarnik",
-      "score": 7.4,
-      "color": "cyan",
-      "category": "mental",
-      "levier": "NEW",
-      "why": "Effet tâche inachevée. Explique la charge mentale résiduelle.",
-      "hook_potential": "moyen"
-    },
-    {
-      "keyword": "tu sais tout tu fais rien",
-      "score": 7.4,
-      "color": "cyan",
-      "category": "paralysie",
-      "levier": "DRDP",
-      "why": "Formulation oral directe. Hook provocation.",
-      "hook_potential": "haut"
-    },
-    {
-      "keyword": "200 décisions par jour",
-      "score": 7.3,
-      "color": "cyan",
-      "category": "mental",
-      "levier": "SAFE + NEW",
-      "why": "Data chiffrée sur fatigue décisionnelle. Cours M1.8.",
-      "hook_potential": "moyen"
-    },
-    {
-      "keyword": "dopamine scroll",
-      "score": 7.2,
-      "color": "cyan",
-      "category": "boucle",
-      "levier": "DRDP",
-      "why": "Nomme la boucle conso moderne. Reconnaissance Gen Z.",
-      "hook_potential": "haut"
-    },
-    {
-      "keyword": "micro-action cognitive",
-      "score": 7.2,
-      "color": "cyan",
-      "category": "mental",
-      "levier": "FACILE",
-      "why": "Exercice cérébral spécifique Djibril. PAS physique.",
-      "hook_potential": "moyen"
-    },
-    {
-      "keyword": "21 ans seul",
-      "score": 7.1,
-      "color": "cyan",
-      "category": "isolement",
-      "levier": "DRDP + SAFE",
-      "why": "Ref Adam. Spécifique tranche 18-25.",
-      "hook_potential": "moyen"
-    },
-    {
-      "keyword": "productivité glitch",
-      "score": 7.0,
-      "color": "cyan",
-      "category": "mental",
-      "levier": "NEW",
-      "why": "Quadrant Pellabere. Productivité comme bug et non feature.",
-      "hook_potential": "moyen"
-    },
-
-    {
-      "keyword": "mindset",
-      "score": 6.8,
-      "color": "purple",
-      "category": "mental",
-      "levier": "générique",
-      "why": "Trop générique mais capture la niche mentalité entrepreneuriale.",
-      "hook_potential": "faible"
-    },
-    {
-      "keyword": "self-sabotage",
-      "score": 6.8,
-      "color": "purple",
-      "category": "paralysie",
-      "levier": "DRDP",
-      "why": "Terme popularisé. Identification mais pas spécifique cérébral.",
-      "hook_potential": "moyen"
-    },
-    {
-      "keyword": "perfectionnisme",
-      "score": 6.7,
-      "color": "purple",
-      "category": "paralysie",
-      "levier": "DRDP",
-      "why": "Blocker classique. Entre dans le miroir sans disruption.",
-      "hook_potential": "moyen"
-    },
-    {
-      "keyword": "syndrome imposteur",
-      "score": 6.6,
-      "color": "purple",
-      "category": "identité",
-      "levier": "DRDP",
-      "why": "Terme sur-utilisé mais toujours identification forte.",
-      "hook_potential": "moyen"
-    },
-    {
-      "keyword": "burn-out",
-      "score": 6.5,
-      "color": "purple",
-      "category": "metier",
-      "levier": "DRDP",
-      "why": "Très consommé. Parle aux métiers chronophages.",
-      "hook_potential": "moyen"
-    },
-    {
-      "keyword": "charge mentale",
-      "score": 6.5,
-      "color": "purple",
-      "category": "mental",
-      "levier": "DRDP",
-      "why": "Sur-utilisé mais toujours efficace pour capture attention.",
-      "hook_potential": "moyen"
-    },
-    {
-      "keyword": "anxiété de performance",
-      "score": 6.4,
-      "color": "purple",
-      "category": "mental",
-      "levier": "DRDP",
-      "why": "Spécifique métiers chronophages. Peur échec public.",
-      "hook_potential": "moyen"
-    },
-    {
-      "keyword": "hyperconscience",
-      "score": 6.3,
-      "color": "purple",
-      "category": "mental",
-      "levier": "NEW",
-      "why": "Parle au cérébral qui sur-analyse tout.",
-      "hook_potential": "moyen"
-    },
-    {
-      "keyword": "FOMO",
-      "score": 6.2,
-      "color": "purple",
-      "category": "boucle",
-      "levier": "FOMO",
-      "why": "Alimente la boucle conso. Tag Gen Z.",
-      "hook_potential": "moyen"
-    },
-    {
-      "keyword": "brouillard mental",
-      "score": 6.1,
-      "color": "purple",
-      "category": "mental",
-      "levier": "DRDP",
-      "why": "Sensation décrite. Image sensorielle.",
-      "hook_potential": "moyen"
-    },
-    {
-      "keyword": "neuroscience",
-      "score": 6.0,
-      "color": "purple",
-      "category": "mental",
-      "levier": "SAFE",
-      "why": "Mega-trend FR 2026 (niche vide W17). Autorité cérébrale.",
-      "hook_potential": "moyen"
-    },
-
-    {
-      "keyword": "motivation",
-      "score": 5.5,
-      "color": "yellow",
-      "category": "générique",
-      "levier": "faible",
-      "why": "Ultra générique. Zéro motivation vide = règle Djibril.",
-      "hook_potential": "faible"
-    },
-    {
-      "keyword": "discipline",
-      "score": 5.4,
-      "color": "yellow",
-      "category": "générique",
-      "levier": "faible",
-      "why": "Sur-utilisé manosphere. Ne parle plus au cérébral.",
-      "hook_potential": "faible"
-    },
-    {
-      "keyword": "mindset entrepreneur",
-      "score": 5.3,
-      "color": "yellow",
-      "category": "générique",
-      "levier": "faible",
-      "why": "Cliché business FR. Alerte rouge : aucune différenciation.",
-      "hook_potential": "faible"
-    },
-    {
-      "keyword": "productivité",
-      "score": 5.2,
-      "color": "yellow",
-      "category": "générique",
-      "levier": "faible",
-      "why": "Banalisé. Entre dans hashtag mais zéro identification profonde.",
-      "hook_potential": "faible"
-    },
-    {
-      "keyword": "succès",
-      "score": 5.0,
-      "color": "yellow",
-      "category": "générique",
-      "levier": "faible",
-      "why": "Mot vide. Règle Djibril : interdit.",
-      "hook_potential": "faible"
-    },
-    {
-      "keyword": "mental fort",
-      "score": 4.9,
-      "color": "yellow",
-      "category": "générique",
-      "levier": "faible",
-      "why": "Cliché motivation. Non niche.",
-      "hook_potential": "faible"
-    },
-    {
-      "keyword": "sortir de sa zone de confort",
-      "score": 4.8,
-      "color": "yellow",
-      "category": "générique",
-      "levier": "faible",
-      "why": "Expression morte. Déclenche méfiance cérébral averti.",
-      "hook_potential": "faible"
-    },
-    {
-      "keyword": "positivité",
-      "score": 4.5,
-      "color": "yellow",
-      "category": "générique",
-      "levier": "faible",
-      "why": "Rejeté par niche cérébral. Signal vide mainstream.",
-      "hook_potential": "faible"
-    }
+  "injection_rules": {
+    "tofu": "1 keyword vert en hook + 1 vert en friction + 1 cyan en micro-action",
+    "mofu": "1 vert récipient/encre obligatoire + 1 vert paralysie + 1 cyan émotion",
+    "stories": "1 vert scène vie + 1 cyan reframe",
+    "chatbot": "cyan/vert en empathie, JAMAIS vert honte sans soin",
+    "lead_magnet": "vert récipient/encre en titre, vert permission en CTA",
+    "captions": "1 vert + 1 cyan max, reste organique"
+  },
+  "top_10_power_words": [
+    "t'as tout lu mais t'as rien bougé",
+    "tu sais ce qu'il faut faire",
+    "14h sur le scooter",
+    "fin de shift tu scrolles",
+    "ton cerveau sature",
+    "encre passive",
+    "tu te mens à toi-même",
+    "ton entourage te tire en bas",
+    "c'est pas de la volonté — c'est de la biologie",
+    "6 mois d'ici t'en seras au même point"
   ],
-
-  "top_10_by_impact": [
-    "paralysie d'analyse (9.5)",
-    "cérébral paralysé (9.5)",
-    "je sais mais je fais pas (9.4)",
-    "attendre d'être prêt (9.3)",
-    "surcharge cognitive (9.2)",
-    "boucle de consommation (9.1)",
-    "identité piège (9.0)",
-    "métier chronophage (9.0)",
-    "14h par jour (8.9)",
-    "récipient cérébral (8.8)"
-  ],
-
-  "by_category": {
-    "paralysie": ["paralysie d'analyse", "je sais mais je fais pas", "attendre d'être prêt", "procrastination intelligente", "tu sais tout tu fais rien", "self-sabotage", "perfectionnisme"],
-    "identité": ["cérébral paralysé", "identité piège", "dans mon domaine c'est différent", "haut potentiel", "syndrome imposteur"],
-    "mental": ["surcharge cognitive", "récipient cérébral", "encre passive", "encre active", "croyance de compréhension", "avare cognitif", "TDAH", "impuissance apprise", "System 1 / System 2", "biais de confirmation", "effet Zeigarnik", "200 décisions par jour", "micro-action cognitive", "productivité glitch", "hyperconscience", "brouillard mental", "neuroscience", "charge mentale", "anxiété de performance", "mindset"],
-    "boucle": ["boucle de consommation", "dopamine scroll", "FOMO"],
-    "metier": ["métier chronophage", "14h par jour", "salariat qui bouffe", "burn-out"],
-    "isolement": ["seul à mon bureau", "environnement hostile", "peur du regard", "21 ans seul"],
-    "générique_faible": ["motivation", "discipline", "mindset entrepreneur", "productivité", "succès", "mental fort", "sortir de sa zone de confort", "positivité"]
-  },
-
-  "color_distribution": {
-    "green": 17,
-    "cyan": 15,
-    "purple": 12,
-    "yellow": 8
-  },
-
-  "usage_guidance": {
-    "hooks_tiktok_reels": "Prioriser VERT uniquement. Mixer paralysie + isolement pour double identification.",
-    "captions_instagram": "Vert + cyan. Violet OK en body. Jamais jaune seul.",
-    "hashtags": "Mix cyan+violet (TDAH, neuroscience, haut potentiel) pour élargir sans diluer.",
-    "seo_articles": "Vert en H1/H2. Cyan en H3. Violet en body. Jaune proscrit.",
-    "stories_mofu": "Vert + cyan exclusivement — identification immédiate.",
-    "dm_funnel": "Vert UNIQUEMENT dans l'ouverture. Jamais mot jaune (alerte motivation vide)."
-  },
-
-  "anti_keywords": {
-    "rule": "ZÉRO BARBER — interdiction absolue",
-    "banned": ["barber", "coiffeur", "coiffure", "salon", "barbershop"],
-    "reason": "Directive Djibril catégorique."
-  },
-
-  "next_update": "2026-04-15"
+  "stats": {
+    "total_keywords": 80,
+    "green": 50,
+    "cyan": 30,
+    "purple": 0,
+    "yellow": 0,
+    "categories_count": 10
+  }
 }
