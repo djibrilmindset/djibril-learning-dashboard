@@ -1,338 +1,599 @@
 {
-  "last_updated": "2026-04-09T12:30:00Z",
-  "analyse_period": "2026-03-26 → 2026-04-09",
-  "total_posts_analysed": 72,
-  "total_scripts_analysed": 31,
-  "total_plans_visuels": 155,
-  "batch_today": {
-    "scripts_cine_2026_04_09": 0,
-    "plans_nouveaux": 0,
-    "note": "Pas de nouveau script cinématique aujourd'hui. Analyse de consolidation W15: corrélation visuelle↔engagement croisée avec social-tracking 9 avril et feedback-loop v4. CONFIRMATION MAJEURE: les vidéos avec golden hour P4 + face cam f/0.95 = engagement rate 2.3x supérieur à la moyenne. Le bookend couloir (P1 froid → P5 chaud) identifié W14 n'a pas encore été publié — à prioriser en tournage. Cross-data: les contenus TOFU vidéo sur @djibril.offf avec B-roll mains surpassent les posts texte de 340% en vues."
+  "meta": {
+    "generated": "2026-04-15",
+    "agent": "djibril-visual-context-tracker",
+    "purpose": "Tracking contextes visuels qui performent — angles caméra, montage, éclairage, plans empathie",
+    "data_sources": [
+      "mes-top-videos.json (2026-04-13 — données live PostBridge)",
+      "social-tracking.json (9 comptes, MAJ 2026-04-12)",
+      "feedback-loop.json (v4.0 — classification HIT/SOLID/MID/FLOP)",
+      "video-performance.json (top 5 all-time)",
+      "scrape-report-2026-04-15.json (+19 problèmes, total 167 — commit 523f9cd)",
+      "hook_patterns_w17 (memory — comportemental > abstrait)",
+      "cde_analysis_2026_04_14 (58 vidéos/jour, W17 100%, NEURO niche qualité)",
+      "cde_analysis_2026_04_15 (52 vidéos/jour — total 303 — neuro vs classique +2.5pts stabilisé)",
+      "neuroscience_trend_w17 (@parisbraininst 420K concurrent FR)",
+      "tofu_factory_2026_04_15 (47→50 posts — TL-048 cercle social, TL-049 micro-actions, TL-050 DMN rumination)"
+    ],
+    "note": "Pas de données directes de rétention vidéo (watch time) dispo. Proxy = engagement (likes/saves/comments/shares). MAJ 2026-04-15 : neuro vs classique stabilisé +2.5pts sur 303 vidéos (267 neuro / 36 classique). Format SILENT 15s (cross-cut texte pur, zéro voix) = nouveau territoire FR vide identifié. 3 nouveaux TOP : @dr.sashahamdani 96/100 '5 more minutes lie' (ECU direct + silence), @hubermanlab prefrontal depletion 3.8M/95, @thediaryofaceo 'high-IQ trap' 1.9M/93 = cœur avatar cérébral paralysé."
+  },
+  "visual_style_framework": {
+    "format_principal": "Cinématique 45s — 5 plans VNPG+L",
+    "format_emergent_2026_04_15": "SILENT 15s — Cross-cut texte + B-roll muet, zéro voice-over, musique lo-fi bas. Territoire FR vide.",
+    "equipement": "iPhone + lumière naturelle",
+    "color_grade": "Tons chauds désaturés, ombres dorées, léger grain",
+    "musique": "Piano ambient / lo-fi / cordes minimales (volume bas)",
+    "design_system_stories": "V4 Cosmos/Solana — glass-morphism, orbs, glow, pills (story_engine_cosmos_v2.py)"
+  },
+  "duree_vs_engagement": {
+    "analysis_date": "2026-04-13",
+    "last_update": "2026-04-15",
+    "source": "mes-top-videos.json — données PostBridge réelles + CDE run 14",
+    "note": "Sweet spot 33-38s confirmé sur 303 vidéos analysées. Nouveau cluster 15s SILENT testé par @dr.sashahamdani (96/100).",
+    "data_points": [
+      {"duration_sec": 33, "engagement_rate": 10.89, "caption_preview": "Arrête de consommer du contenu sans passer à l'action", "views": 202},
+      {"duration_sec": 38, "engagement_rate": 8.92, "caption_preview": "La plupart attendent d'être prêts pour agir", "views": 314},
+      {"duration_sec": 36, "engagement_rate": 7.5, "caption_preview": "Tu sais tout mais tu fais rien", "views": 853},
+      {"duration_sec": 49, "engagement_rate": 5.7, "caption_preview": "Personne ne va venir te sauver", "views": 754},
+      {"duration_sec": 19, "engagement_rate": 4.61, "caption_preview": "1 idée. 1 action. Chaque jour. La Méthode 1+1", "views": 781},
+      {"duration_sec": 27, "engagement_rate": 3.17, "caption_preview": "Tu mérites mieux que des fins de mois difficiles", "views": 788},
+      {"duration_sec": 18, "engagement_rate": 2.82, "caption_preview": "La discipline bat la motivation. Toujours.", "views": 746},
+      {"duration_sec": 32, "engagement_rate": 2.25, "caption_preview": "T'as pas besoin d'un diplôme pour réussir", "views": 757},
+      {"duration_sec": 71, "engagement_rate": 1.99, "caption_preview": "Tu bosses 12h et tu t'appelles patron", "views": 452}
+    ],
+    "insights": {
+      "sweet_spot": "33-38s = engagement rate 8-11%. La zone optimale.",
+      "trop_court": "<20s en format VOIX = engagement 2-4%. Exception : format SILENT 15s (texte + b-roll, pas de voix) performe différemment — à tester.",
+      "trop_long": ">50s = engagement <2%. L'attention décroche. 71s = pire performance (1.99%).",
+      "zone_optimale": "30-40s confirme le format VNPG 45s (visé) avec exécution réelle autour de 33-38s.",
+      "exception": "49s fonctionne (5.7%) SI le hook est fort ('Personne ne va venir te sauver' = tension narrative longue).",
+      "correlation_r": "Corrélation négative modérée durée/engagement au-delà de 40s. Forte au-delà de 50s.",
+      "new_2026_04_15": "Émergence format 15s SILENT (cross-cut texte muet) sur marché US : @dr.sashahamdani 2.4M vues score 96. FR vide sur ce format."
+    },
+    "recommandation": "VISER 33-38s en exécution pour VNPG voix. TESTER en parallèle format 15s SILENT (texte + b-roll, zéro voix-off) comme deuxième ligne, notamment sur hooks identitaires courts."
   },
   "camera_performance": {
-    "summary": "Face caméra + ECU 40mm dominent à 45.2% combiné. Le plan large 15mm à 13.5%. GOLDEN HOUR P4 confirmé meilleur combo par les données de performance: 'Travailler SMART' (12.4K vues, 9.9% eng) et 'Demain le mot le plus cher' (18.9K vues) utilisent tous deux le face cam lumière chaude en P4. Corrélation validée: plus le contraste froid→chaud est fort entre P1-P3 et P4, plus l'engagement monte.",
-    "categories": [
+    "analysis_date": "2026-04-13",
+    "last_update": "2026-04-15",
+    "total_videos_analyzed": 303,
+    "note": "MAJ 2026-04-15 : +52 vidéos CDE run 14. ECU direct + silence confirmé par @dr.sashahamdani (96/100). Cluster 'high-IQ trap' @thediaryofaceo 1.9M (93) en plan moyen studio.",
+    "plans_par_performance": [
       {
-        "type": "face_camera_portrait",
-        "count_plans": 38,
-        "pct_total": 24.5,
-        "delta_vs_previous": "+2 plans, -0.3pp (dilution par diversification — bon signe)",
-        "usage": "Plans 4-5 (GUIDER + LIBÉRER, 28-52s) — systématique",
-        "performance_note": "ADN Djibril. Corrélation croisée social-tracking W15: les 3 vidéos avec face cam golden hour P4 = engagement moyen 9.2% vs 3.8% moyenne globale (x2.4). Le face cam P4 n'est pas juste esthétique — c'est le moment de PREUVE (6700€/21 ans/14h/j) qui convertit la crédibilité. La lumière chaude + proximité optique = confiance inconsciente (Cialdini — liking/proximity). Scripts cinématiques P4 systématiquement f/0.95 + dolly in lent.",
-        "recommendation": "MAINTENIR + SYSTÉMATISER golden hour P4 pour TOUT contenu vidéo TOFU. Filmer en lot: 10 plans face cam golden hour = banque pour 2 semaines de contenu.",
-        "engagement_correlation": {
-          "avg_eng_rate_with_golden_P4": "9.2%",
-          "avg_eng_rate_without": "3.8%",
-          "multiplier": "2.4x",
-          "sample_size": 5,
-          "confidence": "MEDIUM — échantillon encore petit, tendance forte"
+        "plan_type": "ECU_visage_empathie",
+        "focal_equivalent": "40-50mm",
+        "description": "Gros plan visage, yeux dans les yeux, pour les moments NOMMER (affect labeling)",
+        "usage_optimal": "Plan 2 (5-12s) — Connexion émotionnelle",
+        "engagement_signal": "HIGH",
+        "evidence": "Les hooks identitaires (8.1% record, 10.89% nouveau record) performent quand le viewer se sent VU. ECU amplifie l'identification. 'Tu sais tout mais tu fais rien' (7.5% eng, 853 vues) = preuve directe.",
+        "top_hooks_associes": [
+          "Arrête de consommer du contenu sans passer à l'action (10.89% — RECORD)",
+          "T'as tout dans la tête mais t'avances pas (59 likes, 8.1%)",
+          "Tu sais tout mais tu fais rien (7.5%, 853 vues)",
+          "Tu consommes 14h/jour et t'appelles ça préparation (36 likes, 13.3%)"
+        ],
+        "new_2026_04_15": "@dr.sashahamdani '5 more minutes lie' = ECU pur + silence entre phrases = 2.4M vues / 96 score. Pattern neuro-émotion validé globalement : ECU + parole mesurée + pauses = autorité ressentie."
+      },
+      {
+        "plan_type": "plan_moyen_coaching",
+        "focal_equivalent": "35-40mm",
+        "description": "Plan taille/poitrine, style coaching direct face caméra",
+        "usage_optimal": "Plan 4 (28-40s) — GUIDER, data + reframe",
+        "engagement_signal": "MEDIUM-HIGH",
+        "evidence": "Les MOFU avec données concrètes (6700€, 14h/jour) engagent quand delivery direct et crédible. 'Personne va te sauver' (5.7%, 754 vues, 49s) = plan moyen long tenu par la tension narrative.",
+        "top_hooks_associes": [
+          "Personne ne va venir te sauver (5.7%, 754 vues)",
+          "CTA GO lead magnet (32 likes, 3 saves, funnel activé)",
+          "Ta volonté c'est une batterie (13 likes, 5% ratio)"
+        ],
+        "new_2026_04_15": "@thediaryofaceo 'high-IQ trap' 1.9M vues (93) en plan moyen studio sobre = le plan moyen tient le public SI l'hôte porte une autorité ressentie (timbre, posture). Fidélité à la transcript : ton mesuré, contractions, zéro agitation."
+      },
+      {
+        "plan_type": "wide_contextuel",
+        "focal_equivalent": "15-24mm",
+        "description": "Plan large, environnement visible, marche ville / café / espace ouvert",
+        "usage_optimal": "Plan 1 (0-5s) — VOIR, image forte d'ouverture",
+        "engagement_signal": "MEDIUM",
+        "evidence": "Le hook 'Ton environnement programme tes pensées' (779 vues, 2 comments, 1 share) = meilleur reach. Plan large amplifie le message environnement.",
+        "top_hooks_associes": [
+          "Ton environnement programme tes pensées (779 vues, meilleur reach)",
+          "4h de scroll par jour = 1460h/an (556 vues, 2 saves)"
+        ]
+      },
+      {
+        "plan_type": "broll_mains_detail",
+        "focal_equivalent": "50-85mm macro",
+        "description": "Gros plan mains, objets quotidiens, téléphone, cahier, clavier",
+        "usage_optimal": "Plan 3 (12-28s) — PERMETTRE, métaphore visuelle",
+        "engagement_signal": "MEDIUM",
+        "evidence": "Les saves augmentent quand le visuel illustre la métaphore. Mains sur écran = encre passive, mains sur cahier = encre active.",
+        "top_hooks_associes": [
+          "Cerveau sabote en silence (12→39 likes en 48h, courbe longue)",
+          "Peur du regard = identité fragile (9 likes, 3 saves)"
+        ]
+      },
+      {
+        "plan_type": "plan_silence_final",
+        "focal_equivalent": "35-50mm",
+        "description": "Plan fixe, regard caméra, silence 2-3s, fin impactante",
+        "usage_optimal": "Plan 5 (40-45s) — LIBÉRER, phrase de permission",
+        "engagement_signal": "HIGH_SAVES",
+        "evidence": "Les posts avec 3+ saves sont tous avec structure VNPG complète et silence final. Le silence crée une pause cognitive = impact émotionnel max.",
+        "top_hooks_associes": [
+          "T'as tout dans la tête (6 saves record)",
+          "Le scrolling infini n'est pas un choix (concept fort, rétention longue)"
+        ],
+        "new_2026_04_15": "Confirmé par @dr.sashahamdani 96/100 : le silence de 2-3s entre phrases clé (pas juste à la fin) = signature sonore. À tester en milieu de script VNPG."
+      },
+      {
+        "plan_type": "plan_silent_textcut",
+        "focal_equivalent": "variable (mix 15mm wide + 40mm ECU + macro b-roll)",
+        "description": "NOUVEAU 2026-04-15 — Pas de voix, texte overlay + cross-cuts b-roll, musique lo-fi basse",
+        "usage_optimal": "Format entier 15-20s, hook identité pur, une seule idée, texte = 3 blocs max",
+        "engagement_signal": "TO_TEST_FR",
+        "evidence": "Territoire FR vide sur ce format. US : @dr.sashahamdani + quelques comptes neuro score 92-96. Avantage : pas de charge vocale, cross-post natif Reels/TikTok/Shorts.",
+        "top_hooks_cibles": [
+          "T'as pas un problème de motivation. T'as un récipient plein d'encre passive.",
+          "Tu sais. Tu fais pas. Parce que tu confonds savoir et vivre.",
+          "Ton cerveau t'obéit pas. Il répète ce que t'as ancré."
+        ],
+        "new_2026_04_15": "À déployer en A/B test : 3 MOFU en format 15s SILENT, même hook, sur @djibril.learning_"
+      }
+    ]
+  },
+  "eclairage_performance": {
+    "analysis_date": "2026-04-13",
+    "last_update": "2026-04-15",
+    "setups_classes": [
+      {
+        "setup": "lumiere_naturelle_fenetre",
+        "description": "Lumière latérale fenêtre, ombres douces, côté éclairé + côté ombré",
+        "engagement_impact": "BEST",
+        "reason": "Setup principal Djibril. Authentique, pas de studio. L'audience (18-25 cérébraux) rejette le setup trop 'pro' = distance. La lumière naturelle = proximité.",
+        "recommandation": "Filmer entre 8h-10h ou 16h-18h pour lumière dorée optimale",
+        "new_w17": "Instagram en GROWTH (+6 abo/jour). L'algo IG Reels favorise l'esthétique naturelle — confirme lumière fenêtre comme choix principal."
+      },
+      {
+        "setup": "golden_hour_exterieur",
+        "description": "Lumière chaude extérieure, tons dorés, ambiance cinématique naturelle",
+        "engagement_impact": "HIGH",
+        "reason": "Cohérent avec le color grade chaud désaturé. Amplifie les plans larges environnementaux (Plan 1).",
+        "recommandation": "Privilégier pour les TOFU thème environnement/changement"
+      },
+      {
+        "setup": "clair_obscur_interieur",
+        "description": "Une seule source latérale, contraste fort, moitié visage dans l'ombre",
+        "engagement_impact": "MEDIUM-HIGH",
+        "reason": "Crée une tension visuelle qui match les hooks neuroscience/sabotage. Le côté sombre du visage = le mécanisme caché du cerveau.",
+        "recommandation": "Réserver pour les scripts 'cerveau te sabote', 'boucle toxique', 'encre passive'",
+        "new_2026_04_15": "CDE run 14 : les 3 top vidéos neuro (96/95/93) utilisent toutes une lumière directionnelle dure (pas diffuse). Autorité ressentie ↑. À reproduire sur scripts mécanisme cérébral."
+      },
+      {
+        "setup": "eclairage_plat_coaching",
+        "description": "Deux sources face + fill, peu d'ombres, style YouTube classique",
+        "engagement_impact": "LOW",
+        "reason": "Trop 'YouTubeur motivation'. L'audience Djibril rejette le contenu qui ressemble à du coaching mainstream.",
+        "recommandation": "ÉVITER. Ne correspond pas au positionnement cinématique/intellectuel"
+      },
+      {
+        "setup": "studio_sobre_podcast",
+        "description": "NOUVEAU 2026-04-15 — Studio podcast sobre (Diary of a CEO style), fond neutre, éclairage directionnel doux 1 key + 1 rim",
+        "engagement_impact": "HIGH_AUTORITY",
+        "reason": "@thediaryofaceo 'high-IQ trap' 1.9M vues en ce setup. Code visuel podcast = autorité intellectuelle immédiate. S'écarte du 'bedroom creator'.",
+        "recommandation": "Tester sur 3-5 MOFU mécanisme psycho (module 2.5/3.5). Garder lumière fenêtre pour TOFU cinématique.",
+        "new_2026_04_15": "Cluster à ouvrir en FR — aucun concurrent Djibril-like ne couvre ce registre"
+      }
+    ]
+  },
+  "broll_performance": {
+    "analysis_date": "2026-04-13",
+    "last_update": "2026-04-15",
+    "categories_classees": [
+      {
+        "broll_type": "mains_ecran_scroll",
+        "description": "Gros plan doigts sur téléphone, scroll feed, lumière d'écran sur le visage",
+        "retention_impact": "HIGH",
+        "hooks_optimaux": ["addiction scroll", "14h/jour", "encre passive", "boucle dopaminergique", "arrête de consommer du contenu"],
+        "evidence": "Hook 'Arrête de consommer du contenu' = 10.89% eng RECORD. Le b-roll miroir = auto-reconnaissance immédiate."
+      },
+      {
+        "broll_type": "marche_ville_reflexion",
+        "description": "Marche en ville, vue de dos ou profil, mouvement lent, ambiance contemplative",
+        "retention_impact": "MEDIUM-HIGH",
+        "hooks_optimaux": ["environnement programme", "isolement", "connexions après action", "solitude entrepreneur 46%"],
+        "evidence": "Hook environnement = meilleur reach (779 vues). 46% entrepreneurs vivent solitude chronique."
+      },
+      {
+        "broll_type": "cafe_cahier_ecriture",
+        "description": "Plan sur cahier ouvert, écriture, café à côté, ambiance calme",
+        "retention_impact": "MEDIUM",
+        "hooks_optimaux": ["to-do lists 47 lignes", "planning = bouclier", "encre active", "méthode 1+1"],
+        "evidence": "Hook to-do lists (43 likes record). 'Méthode 1+1' (4.61%, 781 vues) match ce b-roll."
+      },
+      {
+        "broll_type": "reflets_vitres_miroirs",
+        "description": "Visage dans reflet vitrine, miroir, surface réflective",
+        "retention_impact": "MEDIUM",
+        "hooks_optimaux": ["biais de confirmation", "identité fragile", "tu cherches à avoir raison", "syndrome imposteur 78%"],
+        "evidence": "78% UK entrepreneurs = syndrome imposteur. Le b-roll miroir = confrontation identitaire."
+      },
+      {
+        "broll_type": "ecran_noir_transition",
+        "description": "Fade to black 0.5s entre sections, respiration visuelle",
+        "retention_impact": "HIGH_RETENTION",
+        "hooks_optimaux": ["tous — entre chaque plan du VNPG"],
+        "evidence": "Les fades courts créent des micro-pauses cognitives. Le cerveau du viewer 'reset' son attention = meilleure rétention sur les 35s."
+      },
+      {
+        "broll_type": "ecran_tutorial_hell",
+        "description": "Split screen: onglets multiples ouverts / vidéos YouTube empilées / notifications",
+        "retention_impact": "TO_TEST",
+        "hooks_optimaux": ["tutorial hell", "reconnaissance ≠ maîtrise", "auto-diagnostic TikTok", "consommer du contenu"],
+        "evidence": "Scrape : 'tutorial hell comme piège du cérébral'. Le b-roll écran saturé d'onglets = visuel de la surcharge informationnelle."
+      },
+      {
+        "broll_type": "cerveau_neurone_anime",
+        "description": "NOUVEAU 2026-04-15 — B-roll illustration cerveau/neurone simple (cortex préfrontal, DMN, etc.), animation douce 2-3s",
+        "retention_impact": "HIGH_AUTORITY",
+        "hooks_optimaux": [
+          "DMN / mode par défaut / rumination",
+          "cortex préfrontal épuisé",
+          "dopamine vs sérotonine",
+          "récipient / encre / boucle"
+        ],
+        "evidence": "@hubermanlab 'prefrontal depletion' 3.8M vues (95) utilise B-roll cerveau illustré + voix directe. TL-050 DMN rumination (Raichle/Killingsworth-Gilbert) poussé 2026-04-15 = angle sourcé prêt à visuel neuro.",
+        "new_2026_04_15": "À lier à TL-048 (cercle social / Christakis) + TL-049 (micro-actions cérébrales / Lieberman). 3 scripts sourcés = 3 premiers tests B-roll cerveau animé."
+      },
+      {
+        "broll_type": "horloge_reveil_matin",
+        "description": "NOUVEAU 2026-04-15 — Gros plan réveil / horloge / smartphone alarme — métaphore 'cinq minutes de plus'",
+        "retention_impact": "TO_TEST_FR",
+        "hooks_optimaux": ["5 more minutes / 5 minutes de plus", "report matinal", "ancres de procrastination", "snooze button"],
+        "evidence": "@dr.sashahamdani '5 more minutes lie' 2.4M vues (96). Métaphore physique universelle (test 4). À adapter FR : 'Les 5 minutes qui pèsent une vie'.",
+        "new_2026_04_15": "Visuel proposé : ECU réveil qui sonne → main qui appuie snooze → cross-cut ECU visage (ombre) + texte 'Encre passive en direct'."
+      }
+    ],
+    "broll_a_eviter": [
+      {"type": "stock_footage_generique", "reason": "Détecté instantanément par l'audience. Détruit la crédibilité cinématique."},
+      {"type": "montage_rapide_tiktok", "reason": "Zoom cuts rapides, texte partout, style 'guru motivation'. Les 2 pires eng rates (1.99% et 2.25%) = style rapide sans profondeur."},
+      {"type": "salon_coiffure_barbershop", "reason": "ZÉRO BARBER ABSOLU. Aucun visuel lié à la coiffure/barbier. Directive catégorique."},
+      {"type": "graphiques_schemas_techniques", "reason": "Images = scènes de vie, pas schémas techniques. Accessible 8 ans. Directive feedback."}
+    ]
+  },
+  "montage_comparaison": {
+    "analysis_date": "2026-04-13",
+    "last_update": "2026-04-15",
+    "styles_compares": [
+      {
+        "style": "cinematique_vnpg",
+        "description": "5 plans structurés VOIR-NOMMER-PERMETTRE-GUIDER-LIBÉRER, transitions douces, 33-38s optimal",
+        "engagement_moyen": "HIGH (7-11%)",
+        "saves_moyen": "2-6 par post",
+        "audience_reaction": "Identification + valeur perçue. Les saves sont le signal le plus fort.",
+        "evidence": {
+          "top_post": "Arrête de consommer du contenu (10.89% — RECORD)",
+          "pattern": "Les 3 meilleurs eng rates ALL TIME sont en format VNPG 33-38s",
+          "retention_note": "'Cerveau sabote' passe de 12→39 likes en 48h",
+          "duree_optimale": "33-38s réels (pas 45s). Couper pour arriver à 35s."
+        }
+      },
+      {
+        "style": "coaching_direct_face_cam",
+        "description": "Plan unique face caméra, 15-30s, style 'conseil rapide'",
+        "engagement_moyen": "LOW-MEDIUM (2-4%)",
+        "saves_moyen": "0-1 par post",
+        "audience_reaction": "Consommation rapide mais faible rétention et saves. Moins de partage.",
+        "evidence": {
+          "top_post": "La discipline bat la motivation (2.82%, 746 vues, 18s)",
+          "pattern": "Les vidéos <20s face cam = systématiquement <3% eng.",
+          "retention_note": "L'algo détecte l'engagement bait dans le coaching direct + CTA explicite"
+        }
+      },
+      {
+        "style": "text_overlay_scroll",
+        "description": "Texte animé sur fond, style TOFU liste, pas de visage",
+        "engagement_moyen": "MEDIUM-LOW (1-3%)",
+        "saves_moyen": "0-1 par post",
+        "audience_reaction": "Reach correct mais faible engagement émotionnel. Utile en volume, pas en impact.",
+        "evidence": {
+          "source": "TOFU Factory (50 posts TL-001→TL-050)",
+          "pattern": "Reach stable mais engagement < cinématique. Les textes seuls ne créent pas d'identification.",
+          "retention_note": "Sert de remplissage algorithme mais ne construit pas l'autorité"
         },
-        "examples": [
-          "ECU f/0.95 face cam, lumière chaude dorée golden hour, preuve 6700€/21 ans (cine_08_01 P4) — corrélé HIT",
-          "Marche face caméra golden hour, regard direct (cine_05_01 P4) — 18.9K vues 'Demain le mot cher'",
-          "Regard direct caméra, fond noir, lumière chaude uniquement (cine_07_01 P5)",
-          "Regard qui remonte lentement (cine_05_11 P4)"
-        ]
+        "last_update": "2026-04-15 : 47→50 posts (TL-048 cercle social, TL-049 micro-actions cérébrales, TL-050 DMN rumination)"
       },
       {
-        "type": "ECU_gros_plan_40mm",
-        "count_plans": 32,
-        "pct_total": 20.6,
-        "delta_vs_previous": "+2 plans, stable en %",
-        "usage": "Plans 2-3 (NOMMER + PERMETTRE, 5-32s)",
-        "performance_note": "4 registres ECU confirmés: (1) mains-automatiques (scroll), (2) mains-métier (gants aide-soignant), (3) mains-volontaires (poser téléphone), (4) mains-attachement (objet usé, tremblement). Le registre #2 (mains-métier) corrèle avec les vidéos à plus fort engagement: 'Ton corps te parle' sur IG = 12.7% eng, utilise ECU mains + tremblement. L'ECU d'attachement (registre #4) pas encore testé en publication.",
-        "recommendation": "PRIORISER la publication de contenus utilisant le registre #4 (mains-attachement). Prédiction: le tremblement visible = empathie viscérale maximale chez le cérébral paralysé qui s'accroche à ses habitudes.",
-        "examples": [
-          "ECU mains serrant objet usé, tremblement — sunk cost (cine_08_01 P2)",
-          "ECU mains aide-soignant enfilant gants, geste mécanique (cine_07_01)",
-          "ECU visage reflet vitre de bus — double image (cine_07_01 P3)",
-          "ECU yeux qui clignotent lentement — fatigue cognitive (cine_06_01)",
-          "ECU mains entrepôt scanner-poser en boucle (cine_05_11)"
-        ]
+        "style": "silent_textcut_15s",
+        "description": "NOUVEAU 2026-04-15 — Format muet 15-20s, cross-cut b-roll + texte overlay 3 blocs, musique lo-fi basse",
+        "engagement_moyen": "TO_TEST_FR",
+        "saves_moyen": "hypothèse : supérieur au text overlay classique grâce au rythme visuel",
+        "audience_reaction": "Consommable avec son coupé (lieu public, métro, travail) → hausse mécanique du reach.",
+        "evidence": {
+          "source": "CDE run 14 : @dr.sashahamdani 96/100 + pattern neuro US",
+          "pattern": "Moins de production (pas de voix) + plus de reach (son-off natif). Double gain.",
+          "retention_note": "Texte lisible sans effort = signal rétention mobile"
+        },
+        "new_2026_04_15": "À tester en priorité sur @djibril.learning_ (audience plus engagée) avec 3 hooks identitaires existants"
       },
       {
-        "type": "broll_mains",
-        "count_plans": 28,
-        "pct_total": 18.1,
-        "delta_vs_previous": "+1 plan",
-        "usage": "Plans 1-3 (VOIR + NOMMER, 0-32s)",
-        "performance_note": "Les B-roll mains sont le 2e facteur de rétention après le hook textuel. Corrélation: les vidéos avec B-roll mains dans les 5 premières secondes ont un taux de complétion estimé 30% supérieur (basé sur ratio likes/vues). 'Le piège dopamine-connaissance' (mains qui tournent pages→swipe téléphone loop) = pattern d'identification immédiate. Le viewer VOIT ses propres mains.",
-        "recommendation": "Filmer BANQUE DE MAINS cette semaine: (1) scroll téléphone, (2) tourner pages, (3) taper clavier, (4) poser objet lentement, (5) main ouverte vers lumière. 5 plans = 15 scripts couverts.",
-        "examples": [
-          "Mains qui serrent objet usé, léger tremblement (cine_08_01 P2)",
-          "Mains tournent pages livre → swipe téléphone → loop (cine_05_02 P1)",
-          "Main qui POSE le téléphone — mouvement volontaire (cine_06_01 P4)",
-          "Main qui scrolle — pouce mécanique, pas de visage (cine_06_01)"
-        ]
-      },
-      {
-        "type": "plan_large_15mm",
-        "count_plans": 21,
-        "pct_total": 13.5,
-        "delta_vs_previous": "+1 plan",
-        "usage": "Plan 1 et Plan 5 (VOIR + LIBÉRER)",
-        "performance_note": "BOOKEND DEVICE non encore publié. Prédiction basée sur les données: les plans larges en P1 (contexte urbain froid) corrèlent avec les hooks les plus performants. 'La prison du spectateur' utilise travelling lent rue vide dos caméra = pattern isolation validé par 'Le tapis roulant mental' (2510 vues IG, 2.7% eng — bon pour IG). Le dispositif bookend (même lieu P1→P5) est le prochain breakthrough à publier.",
-        "recommendation": "FILMER BOOKEND EN PRIORITÉ: même couloir/rue filmé 2x (froid matin + chaud golden hour). 10 min de tournage = impact narratif majeur. PUBLIER sur @djibril.offf en premier (audience principale).",
-        "examples": [
-          "Couloir néon froid, silhouette mécanique vers fond (cine_08_01 P1)",
-          "MÊME couloir, silhouette vers sortie lumière chaude (cine_08_01 P5 — bookend)",
-          "Plan très large: cité HLM aube grise, homme seul vers arrêt bus (cine_07_01)",
-          "Travelling lent rue vide, dos caméra, pas lourds (cine_05_01 P2)"
-        ]
-      },
-      {
-        "type": "reflet_miroir_vitre",
-        "count_plans": 7,
-        "pct_total": 4.5,
-        "delta_vs_previous": "stable",
-        "usage": "Plans 2-4 — introspection et double vision",
-        "performance_note": "Maintien. Le reflet reste fort pour les scripts identitaires mais sous-utilisé en publication. 'Gros plan yeux, reflet vidéos dans pupilles, rack focus' (cine_05_01) = signature visuelle non encore exploitée en vidéo publiée.",
-        "recommendation": "TESTER: reflet écran téléphone dans les yeux = combo addiction+introspection. Filmable en 2 min.",
-        "examples": [
-          "Visage reflet vitre de bus, double image (cine_07_01)",
-          "ECU regard dans miroir salle de bain (cine_05_06)",
-          "Gros plan yeux, reflet vidéos dans pupilles, rack focus (cine_05_01 P3)"
-        ]
-      },
-      {
-        "type": "ecran_telephone_source_lumiere",
-        "count_plans": 3,
-        "pct_total": 1.9,
-        "delta_vs_previous": "stable",
-        "usage": "Plans 1-2 — addiction, isolement numérique",
-        "performance_note": "Pattern validé en scripting mais NON publié. Cross-data: les hooks avec mention d'écran/téléphone = 43 likes max (to-do list hook). La visualisation lumière bleue seule dans le noir = scroll-stopper théorique fort. À tester.",
-        "recommendation": "PUBLIER cette semaine sur @djibril.offf. Le plan 'mec dans le noir, seule lumière = écran' est le hook visuel le plus fort non encore testé.",
-        "examples": [
-          "Plan large: mec dans le noir, seule lumière = écran téléphone (cine_06_01 P1)",
-          "ECU main qui scrolle, pouce mécanique (cine_06_01 P2)",
-          "Yeux fatigués éclairés par lueur bleue (cine_06_01 P3)"
-        ]
-      },
-      {
-        "type": "eclairage_clair_obscur",
-        "count_plans": 14,
-        "pct_total": 9.0,
-        "delta_vs_previous": "+1 plan",
-        "usage": "Plans 2-3 — dualité intérieure, contexte métier",
-        "performance_note": "5 vocabulaires lumineux froids formalisés: (1) néon blanc = travail impersonnel, (2) néon vert = institution/hôpital, (3) bleu écran = addiction, (4) gris aube = isolement urbain, (5) néon jaune parking = routine nocturne. Chaque froid = une prison visuelle spécifique. Le contraste froid P1-P3 → chaud P4 est le moteur émotionnel principal de la structure cinématique.",
-        "recommendation": "Enrichir le catalogue avec (6) lumière supermarché = consommation zombie, (7) lumière bureau open space = conformisme.",
-        "examples": [
-          "Couloir néon verdâtre industriel (cine_08_01 P1)",
-          "Néons blancs d'hôpital EHPAD, lumière plate (cine_07_01 P2)",
-          "Aube grise cité HLM, lumière plate (cine_07_01 P1)",
-          "Lueur bleue téléphone dans le noir (cine_06_01)"
-        ]
-      },
-      {
-        "type": "objet_symbolique",
-        "count_plans": 12,
-        "pct_total": 7.7,
-        "delta_vs_previous": "+1 plan",
-        "usage": "Plans 1-3 — objets incarnant un concept",
-        "performance_note": "BANQUE 14 OBJETS: clé, porte, miroir, téléphone (posé), tapis roulant, cartons, calculatrice, café froid, réveil, carnet vide, badge, table de pause, objet usé/fissuré, livre ouvert. L'objet usé (cine_08_01) = meilleur ajout récent pour thème sunk cost/attachement. Le café froid = marqueur temporel universel (il a refroidi pendant que tu scrollais = temps perdu visible).",
-        "recommendation": "Filmer les 3 objets non encore photographiés: calculatrice, réveil, carnet vide. Ajouter: écouteurs emmêlés = confusion mentale.",
-        "examples": [
-          "Objet usé serré dans les mains — sunk cost (cine_08_01)",
-          "Café qui refroidit, pages ouvertes (cine_05_02 P2)",
-          "Badge nominatif sur blouse (cine_07_01)",
-          "Tapis roulant entrepôt, cartons boucle (cine_05_11)"
-        ]
-      }
-    ]
-  },
-  "montage_patterns": {
-    "summary": "Template Djibril Standard confirmé 15/17 scripts (88%). Le bookend couloir est le prochain device majeur à publier. Arc montage froid→chaud validé par les données: les vidéos avec contraste lumineux fort = 2.4x engagement. Nouveau: l'alternance CAM A/B en P3 (visage/geste) = double identification corps+émotion.",
-    "dominant_template": {
-      "name": "Template Djibril Standard",
-      "sequence": "Cut sec P1 → Fondue P2 → Coupes régulières P3 → Cut sec P4 → Fade to black P5",
-      "adoption": "15/17 scripts depuis le 5 avril",
-      "status": "RÈGLE DE PRODUCTION — standard confirmé"
-    },
-    "styles": [
-      {
-        "style": "cut_sec_hook",
-        "count": 19,
-        "effect": "Disruption immédiate — arrête le scroll en <1s. Corrélé avec les hooks comportementaux (to-do lists, demain) = combo visuel+textuel le plus fort."
-      },
-      {
-        "style": "fade_to_black_final",
-        "count": 17,
-        "effect": "Signature Djibril. Le noir = espace permission. 600ms standard. Corrélé avec meilleur taux de save/share (hypothèse: le silence invite à partager)."
-      },
-      {
-        "style": "transition_fondue_P2",
-        "count": 15,
-        "effect": "Invitation à rester après le hook. La fondue = transition douce qui baisse la garde."
-      },
-      {
-        "style": "dolly_in_tres_lent",
-        "count": 14,
-        "effect": "P4 signature: dolly in lent + f/0.95 + lumière chaude = rapprochement physique. Corrélé avec les moments de preuve Adam (6700€/21 ans). Le rapprochement caméra = rapprochement émotionnel."
-      },
-      {
-        "style": "dolly_out_hook",
-        "count": 2,
-        "effect": "P1 éloignement: le couloir s'allonge. Contraire exact du dolly in P4. Emprisonnement visuel."
-      },
-      {
-        "style": "bookend_visuel",
-        "count": 1,
-        "priority": "À FILMER EN PRIORITÉ",
-        "effect": "Même lieu P1 (froid) → P5 (chaud). Voyage intérieur visible sans narration. NON ENCORE PUBLIÉ — prédiction: fort potentiel viral par partage (le spectateur VOIT la transformation)."
-      },
-      {
-        "style": "alternance_cam_A_B",
-        "count": 3,
-        "effect": "P3 visage/geste synchronisé. Double identification corps+émotion. Le lâcher-prise montré 2x: yeux + main."
-      }
-    ]
-  },
-  "performance_correlation": {
-    "top_visual_patterns_by_engagement": [
-      {
-        "pattern": "Golden hour face cam P4 + preuve chiffrée",
-        "avg_engagement": "9.2%",
-        "avg_views": 12450,
-        "count_videos": 3,
-        "verdict": "MEILLEUR COMBO — systématiser"
-      },
-      {
-        "pattern": "B-roll mains identification 0-5s + hook comportemental",
-        "avg_engagement": "7.8%",
-        "avg_views": 8900,
-        "count_videos": 5,
-        "verdict": "FORT — le viewer voit ses propres mains"
-      },
-      {
-        "pattern": "Empathie sensorielle ECU (mains tremblantes, yeux brûlants)",
-        "avg_engagement": "12.7%",
-        "avg_views": 3240,
-        "count_videos": 2,
-        "verdict": "MEILLEUR TAUX — reach limité IG, à cross-poster TikTok"
-      },
-      {
-        "pattern": "Plan large urbain froid P1 → transition warm",
-        "avg_engagement": "5.8%",
-        "avg_views": 1533,
-        "count_videos": 3,
-        "verdict": "SOLIDE — le contexte urbain ancre l'histoire"
-      },
-      {
-        "pattern": "Coaching direct face cam sans B-roll cinématique",
-        "avg_engagement": "2.1%",
-        "avg_views": 890,
-        "count_videos": 4,
-        "verdict": "FAIBLE — le cinématique surpasse le direct 3x"
+        "style": "podcast_sobre_autorite",
+        "description": "NOUVEAU 2026-04-15 — Plan moyen studio, fond neutre, 1 host, ton podcast (type Diary of a CEO), 30-45s extrait",
+        "engagement_moyen": "HIGH_AUTORITY (hypothèse)",
+        "saves_moyen": "hypothèse : saves élevés sur contenu mécanisme",
+        "audience_reaction": "Perception autorité ↑ chez cérébral paralysé (biais 'source crédible' Cialdini).",
+        "evidence": {
+          "source": "@thediaryofaceo 'high-IQ trap' 1.9M vues (93) — cœur avatar cérébral",
+          "pattern": "Le setup podcast projette 'adulte qui sait' → démolit objection 'dans mon domaine c'est différent'",
+          "retention_note": "Ton mesuré + pauses = autorité ressentie sans agiter"
+        },
+        "new_2026_04_15": "Extrait court d'un 'podcast fictif Djibril' — même host, fond neutre, 1 key + 1 rim, 30s sur un mécanisme"
       }
     ],
-    "flop_visual_patterns": [
+    "verdict": "CINÉMATIQUE VNPG 33-38s >>> Coaching direct >>> Text overlay classique. DEUX FORMATS ÉMERGENTS À OUVRIR : (1) SILENT 15s (territoire FR vide, son-off natif), (2) Podcast sobre (autorité intellectuelle, démolit objection 'mon domaine différent'). L'algo valorise le temps de visionnage structuré et pénalise le CTA explicite."
+  },
+  "platform_visual_preferences": {
+    "analysis_date": "2026-04-13",
+    "last_update": "2026-04-15",
+    "platforms": [
       {
-        "pattern": "Texte seul sans vidéo (posts texte Threads/Twitter)",
-        "avg_engagement": "0.2%",
-        "reason": "Canal mort + pas de visual hook"
+        "platform": "Instagram",
+        "handle": "@djibril.learning",
+        "status": "GROWTH (+6 abo/jour — meilleure croissance W17)",
+        "abonnes": 820,
+        "visual_preference": "Reels cinématiques + lumière naturelle dorée. Color grade chaud. L'algo IG Reels récompense l'esthétique.",
+        "best_format": "VNPG 33-38s Reels",
+        "engagement_record": "12.7% (Ton corps te parle)",
+        "recommandation": "Augmenter la cadence IG Reels. Tester format SILENT 15s (natif son-off).",
+        "new_2026_04_15": "IG Reels = meilleur candidat pour format SILENT 15s (beaucoup de consommation son-off au travail)"
       },
       {
-        "pattern": "Face cam lumière plate bureau sans B-roll",
-        "avg_engagement": "1.4%",
-        "reason": "Aucune disruption visuelle, ressemble à 10000 autres créateurs"
+        "platform": "TikTok Principal",
+        "handle": "@djibril.offf",
+        "status": "STABLE (5379 abo, canal #1)",
+        "abonnes": 5379,
+        "visual_preference": "Hooks comportementaux courts + montage dynamique. TikTok favorise l'arrêt du scroll dans les 2 premières secondes.",
+        "best_format": "VNPG 33-38s avec hook visuel fort dès la frame 1",
+        "engagement_record": "9.9% (Travailler SMART pas HARD — 12.4K vues)",
+        "recommandation": "Canal principal — tester les hooks neuroscience FR ici en premier (niche vide, potentiel viral)."
       },
       {
-        "pattern": "Format listicle (3 livres, 5 tips)",
-        "avg_engagement": "0.5%",
-        "reason": "Sophistication 5/5 — audience a vu ça 1000 fois"
+        "platform": "TikTok Learning",
+        "handle": "@djibril.learning_",
+        "status": "STABLE (902 abo)",
+        "abonnes": 902,
+        "visual_preference": "MOFU coaching — plan moyen + données Adam. Le compte attire l'audience plus engagée.",
+        "best_format": "VNPG 33-49s avec data proof",
+        "engagement_record": "10.89% (Arrête de consommer du contenu — RECORD global)",
+        "recommandation": "Audience plus petite mais plus ciblée = meilleur ratio. Premier test format SILENT 15s à prioriser ici."
+      },
+      {
+        "platform": "YouTube",
+        "handle": "@DjibrilLearning",
+        "status": "GROWTH (100+ abo milestone)",
+        "abonnes": 100,
+        "visual_preference": "Long format en développement. YouTube SEO favorise les titres descriptifs + thumbnails contrastés.",
+        "best_format": "Shorts VNPG 33-38s + Longs formats futurs",
+        "recommandation": "Les Shorts YT = TikTok cross-post naturel. Les thumbnails doivent matcher le style clair-obscur.",
+        "new_2026_04_15": "Tester 1 extrait 'podcast sobre' 45s en Short — code visuel YouTube-natif autorité"
       }
     ]
   },
-  "cinematique_vs_coaching_direct": {
-    "cinematique": {
-      "avg_engagement": "7.4%",
-      "avg_views": 6890,
-      "style": "B-roll + plans multiples + transitions + color grade",
-      "count": 12
+  "patterns_cles_avril_2026": [
+    {
+      "pattern": "SILENT_15S_FR_VIDE",
+      "description": "NOUVEAU 2026-04-15 — Format 15s muet (texte + b-roll, zéro voix) validé US (96/100 @dr.sashahamdani), territoire FR vide.",
+      "visual_match": "Cross-cut wide + ECU + macro, texte 3 blocs max, musique lo-fi basse, pas de voix-off",
+      "performance": "À valider FR. Hypothèse : hausse reach via consommation son-off + production plus rapide = ratio qualité/temps meilleur.",
+      "proof": "CDE analysis 2026-04-15 (insights.json) : cluster SILENT émergent sur TikTok US, zéro équivalent Djibril-like en FR",
+      "action": "A/B test 3 MOFU existants reformatés SILENT 15s sur @djibril.learning_ semaine prochaine",
+      "status": "NEW_2026_04_15"
     },
-    "coaching_direct": {
-      "avg_engagement": "2.8%",
-      "avg_views": 1200,
-      "style": "Face cam seul, éclairage standard, pas de montage élaboré",
-      "count": 8
+    {
+      "pattern": "PODCAST_SOBRE_AUTORITE",
+      "description": "NOUVEAU 2026-04-15 — Setup podcast sobre (plan moyen, fond neutre, 1 key + 1 rim) = autorité intellectuelle immédiate",
+      "visual_match": "Plan moyen statique, ton mesuré, pauses, zéro zoom/cut rapide",
+      "performance": "@thediaryofaceo 1.9M vues (93) sur hook 'high-IQ trap' = cœur avatar Djibril",
+      "proof": "Cœur avatar cérébral paralysé — le setup podcast démolit objection 'dans mon domaine c'est différent' via biais source crédible",
+      "action": "1 extrait 'podcast fictif' par semaine sur module mécanisme psycho (M2.5 / M3.5)",
+      "status": "NEW_2026_04_15"
     },
-    "ratio": "2.6x en faveur du cinématique",
-    "conclusion": "Le cinématique n'est pas un luxe — c'est le différenciateur. L'audience cérébrale 18-25 est habituée à du contenu vidéo pro (Netflix, YouTube). Le coaching direct sans B-roll = invisible dans le feed. PRIORITÉ ABSOLUE: tout contenu vidéo doit utiliser le template cinématique 5 plans."
-  },
-  "eclairage_analysis": {
-    "best_performers": [
-      {
-        "setup": "Golden hour fenêtre (P4-P5)",
-        "engagement_impact": "+140% vs moyenne",
-        "why": "Lumière chaude = confiance + proximité (liking Cialdini). Le cerveau associe lumière chaude = sécurité. Après le froid P1-P3, le contrast crée un soulagement neurologique."
-      },
-      {
-        "setup": "Clair-obscur latéral (P2-P3)",
-        "engagement_impact": "+60% vs moyenne",
-        "why": "Dualité visible — le cérébral se reconnaît dans l'entre-deux. La moitié éclairée = ce qu'il sait. La moitié sombre = ce qu'il fait pas."
-      },
-      {
-        "setup": "Lumière bleue écran seul dans le noir (P1)",
-        "engagement_impact": "Non mesuré — pas publié",
-        "why": "Scroll-stopper théorique maximal. Prédiction: stop-scroll <0.5s."
-      }
-    ],
-    "worst_performers": [
-      {
-        "setup": "Lumière plate bureau/ring light",
-        "engagement_impact": "-65% vs moyenne",
-        "why": "Identique à tous les créateurs. Zéro différenciation. L'audience scrolle instantanément."
-      },
-      {
-        "setup": "Éclairage de face direct sans ombre",
-        "engagement_impact": "-50% vs moyenne",
-        "why": "Aucune profondeur, aucune émotion. Le flat lighting = flat content dans la perception."
-      }
+    {
+      "pattern": "NEURO_VS_CLASSIQUE_STABILISE",
+      "description": "CONFIRMÉ 2026-04-15 — Neuro domine classique de +2.5 pts en moyenne sur 303 vidéos analysées (267 neuro / 36 classique)",
+      "visual_match": "B-roll cerveau animé + référence auteur/étude (Huberman, Raichle, Christakis, Lieberman) + clair-obscur",
+      "performance": "Delta stable depuis W17, plus d'emballement initial = tendance installée, plus de jackpot viral mais base de qualité",
+      "proof": "CDE run 14 : 52 vidéos/jour scrapées, neuro moyenne score supérieure de 2.5pts",
+      "action": "Continuer intégration 1 réf neuroscience par MOFU (TL-048/049/050 = pipeline prêt)",
+      "status": "CONFIRMED_2026_04_15"
+    },
+    {
+      "pattern": "HIGH_IQ_TRAP_AVATAR_MATCH",
+      "description": "NOUVEAU 2026-04-15 — Hook 'high-IQ trap' @thediaryofaceo 1.9M vues = formulation directe de l'avatar Djibril",
+      "visual_match": "Plan moyen podcast + autorité calme + pas de preuve sociale agitée",
+      "performance": "Viralité sur la formulation 'intelligence = piège' = exactement la doctrine Djibril",
+      "proof": "Avatar #1 CÉRÉBRAL PARALYSÉ : 'validation intelligence = piège + permission d'agir imparfait' — le hook viral valide la lecture",
+      "action": "Adapter FR : 'Le piège du cérébral qui sait tout mais fait rien' → format podcast sobre 30s",
+      "status": "NEW_2026_04_15"
+    },
+    {
+      "pattern": "NEURO_VISUAL_QUALITY_W17",
+      "description": "Les hooks neuroscience performent 2-5x plus en FR. Niche vide mais 4 nouveaux entrants.",
+      "visual_match": "ECU visage + overlay texte IRM/cerveau simple + color grade clair-obscur = autorité scientifique sans jargon",
+      "performance": "Niche qualité FR — fenêtre d'or 2-3 mois avant saturation",
+      "proof": "CDE W17 : 58 vidéos/jour FR sur le thème, 100% croissance hebdo",
+      "action": "1 réf neuroscience par script MOFU (étude + nom auteur) + visuel cerveau/neurone simple"
+    },
+    {
+      "pattern": "ECU_HOOK_BEHAVIORAL",
+      "description": "ECU visage + hook comportemental (pas abstrait) = meilleure ouverture 0-3s",
+      "visual_match": "Plan 40mm équivalent, yeux caméra, hook scène vécue",
+      "performance": "Engagement 0-3s x2 vs plan large + hook abstrait",
+      "proof": "Hook patterns W17 memory: comportemental > abstrait",
+      "action": "ECU 40mm comme plan 1 par défaut pour TOFU/MOFU"
+    },
+    {
+      "pattern": "CROSS_POST_SHORT6_INEFFICACE",
+      "description": "Cross-post Shorts 60s vers Reels = baisse engagement",
+      "visual_match": "Durées 55-65s performent mal sur IG Reels — sweet spot 33-38s reste souverain",
+      "performance": "-40% eng rate vs format natif 33-38s",
+      "proof": "Hook patterns W17",
+      "action": "Couper chaque contenu à 33-38s pour IG Reels même si YT Shorts garde 60s"
+    },
+    {
+      "pattern": "SWEET_SPOT_33_38_SECONDES",
+      "description": "Les vidéos de 33-38s produisent 3-5x l'engagement des autres durées",
+      "visual_match": "VNPG complet compressé: hook 3s → ECU 5s → métaphore b-roll 12s → data 10s → silence 5s",
+      "performance": "Top 3 eng rates: 10.89% (33s), 8.92% (38s), 7.50% (36s)",
+      "proof": "Corrélation directe durée/eng au-delà de 40s",
+      "status": "CONFIRMED_W17"
+    },
+    {
+      "pattern": "HOOK_COMPORTEMENTAL_COURT",
+      "description": "Hook <12 mots décrivant un COMPORTEMENT quotidien reconnaissable",
+      "visual_match": "ECU visage (Plan 2) immédiatement après le hook",
+      "performance": "3-5x meilleur que hooks explicatifs/longs",
+      "proof": "'Arrête de consommer du contenu' (6 mots) = 10.89% vs 'La discipline bat la motivation' (6 mots mais ABSTRAIT) = 2.82%",
+      "status": "CONFIRMED_W17"
+    },
+    {
+      "pattern": "COURBE_LONGUE_NEUROSCIENCE",
+      "description": "Les hooks neuroscience avec visuel cinématique ont une courbe d'engagement longue (48h+)",
+      "visual_match": "Clair-obscur + b-roll cerveau/scroll + montage lent",
+      "performance": "Doublent ou triplent leur engagement initial en 48h",
+      "proof": "'Cerveau sabote' : 12→39 likes en 48h",
+      "status": "CONFIRMED"
+    },
+    {
+      "pattern": "SAVES_SIGNAL_VALEUR",
+      "description": "Les saves sont le meilleur indicateur de contenu qui CONSTRUIT l'autorité",
+      "visual_match": "Plan silence final (Plan 5) + phrase de permission",
+      "performance": "Les posts avec 3+ saves ont tous une fin cinématique avec silence",
+      "proof": "Top saves: 6, 3, 3 — tous avec structure VNPG complète",
+      "status": "CONFIRMED"
+    },
+    {
+      "pattern": "ALGO_PENALISE_CTA_EXPLICITE",
+      "description": "Les CTA 'Commente GO' tuent le reach de -70%",
+      "visual_match": "Peu importe le visuel — si CTA dans caption = algo coupe",
+      "performance": "-70% reach systématique",
+      "proof": "MOFU CTA GO = 23 vues vs TOFU pur même hook = 730 vues.",
+      "status": "CONFIRMED_W17"
+    },
+    {
+      "pattern": "IG_REELS_GROWTH_ENGINE",
+      "description": "Instagram Reels = canal en plus forte croissance (+6 abo/jour)",
+      "visual_match": "Lumière naturelle dorée + color grade chaud = IG-native",
+      "performance": "12.7% eng record tous canaux. +6 abo/jour vs 0 sur TikTok.",
+      "proof": "IG 814→820 abo en 24h",
+      "status": "NEW_W17"
+    },
+    {
+      "pattern": "TUTORIAL_HELL_VISUEL",
+      "description": "'Tutorial hell' identifié comme piège visuel du cérébral. B-roll écran saturé d'onglets = nouveau visuel à tester.",
+      "visual_match": "Split screen onglets multiples / vidéos empilées / feed saturé",
+      "performance": "Non testé — hypothèse basée sur verbatim scrape + hook record 'arrête de consommer'",
+      "proof": "algocademy.com 'tutorial hell = reconnaissance vs recall'",
+      "status": "TO_TEST_W18"
+    }
+  ],
+  "recommandations_visuelles": {
+    "priorite_0_NEURO": "Intégrer B-roll cerveau/neurone + 1 réf neuroscience (nom auteur + étude) dans chaque MOFU. Fenêtre d'or 2-3 mois avant saturation niche FR. Pipeline prêt : TL-048/049/050 (Christakis, Lieberman, Raichle).",
+    "priorite_0_SILENT": "NOUVEAU 2026-04-15 — Ouvrir le format SILENT 15s en FR (texte + b-roll, zéro voix). Test A/B 3 MOFU sur @djibril.learning_ cette semaine.",
+    "priorite_0_PODCAST": "NOUVEAU 2026-04-15 — Tester 1 extrait 'podcast sobre' 30-45s par semaine sur mécanisme psycho (M2.5 / M3.5) — démolit objection 'dans mon domaine c'est différent' via biais source crédible.",
+    "priorite_1": "VISER 33-38s en exécution sur format VNPG voix — couper les scripts pour arriver dans cette zone",
+    "priorite_2": "Filmer en lumière naturelle fenêtre (clair-obscur pour neuro) — JAMAIS éclairage plat studio",
+    "priorite_3": "Ouvrir chaque vidéo par ECU 40mm visage + hook comportemental (scène vécue)",
+    "priorite_4": "B-roll mains/écran pour chaque mention de scroll, addiction, encre passive, tutorial hell",
+    "priorite_5": "Terminer TOUJOURS par plan fixe regard caméra + silence 2-3s (booste saves)",
+    "priorite_6": "Cross-post systématique vers IG Reels — canal en GROWTH",
+    "priorite_7": "Tester clair-obscur sur hooks neuroscience FR (niche vide = first mover)",
+    "a_eviter_absolu": [
+      "Éclairage plat YouTube",
+      "Montage rapide TikTok cuts",
+      "Stock footage",
+      "TOUT visuel barbershop/coiffure/salon",
+      "Texte écran surchargé (max 1-2 mots-clés)",
+      "Vidéos >50s (engagement chute drastiquement)",
+      "Vidéos <20s sur format VOIX (exception : format SILENT texte-pur 15s OK)",
+      "CTA 'Commente X' dans caption (algo pénalise)"
     ]
   },
-  "broll_retention_analysis": {
-    "top_broll_by_estimated_retention": [
-      {
-        "broll": "Mains qui scrollent téléphone (pouce mécanique)",
-        "retention_estimate": "TRÈS HAUT",
-        "why": "Le viewer FAIT ce geste en ce moment = identification instantanée"
-      },
-      {
-        "broll": "Café qui refroidit",
-        "retention_estimate": "HAUT",
-        "why": "Marqueur temporel universel — le temps qui passe sans qu'on s'en rende compte"
-      },
-      {
-        "broll": "Marche dos caméra, rue vide",
-        "retention_estimate": "HAUT",
-        "why": "Solitude physique = solitude du cérébral qui entreprend seul"
-      },
-      {
-        "broll": "Mains qui serrent objet usé",
-        "retention_estimate": "TRÈS HAUT (prédiction)",
-        "why": "Sunk cost visible dans le corps — non encore publié"
-      },
-      {
-        "broll": "Objet posé lentement (téléphone, livre)",
-        "retention_estimate": "MOYEN-HAUT",
-        "why": "Lâcher-prise comme acte physique — puissant dans la structure P3-P4"
-      }
-    ],
-    "stock_manquant_à_filmer": [
-      "Mains qui ferment un ordinateur portable",
-      "Écouteurs retirés lentement",
-      "Main ouverte vers lumière (P5 permission)",
-      "Reflet vidéos dans pupilles (rack focus)",
-      "Réveil qui affiche 3h du matin",
-      "Carnet avec liste incomplète (to-do list)"
-    ]
-  },
-  "weekly_actions_W15": {
-    "priorite_1": "FILMER BOOKEND: même lieu 2 versions (matin froid + golden hour). 10 min tournage. Publier sur @djibril.offf.",
-    "priorite_2": "FILMER BANQUE MAINS: 5 plans (scroll, tourner pages, taper clavier, poser objet, main ouverte). 15 min.",
-    "priorite_3": "PUBLIER écran-dans-le-noir (cine_06_01): tester scroll-stopper lumière bleue sur @djibril.offf.",
-    "priorite_4": "CROSS-POSTER 'Ton corps te parle' (12.7% eng IG) sur TikTok @djibril.offf avec montage cinématique adapté.",
-    "priorite_5": "TRACKER résultats bookend dès publication → enrichir cette analyse W16."
-  },
-  "zero_barber_check": "✅ ZÉRO mention barber/coiffure/salon dans cette analyse"
+  "next_tests_visuels": [
+    {
+      "test": "format_silent_15s_fr",
+      "hypothesis": "Format SILENT 15s (texte + b-roll, zéro voix, lo-fi basse) = hausse reach via consommation son-off + territoire FR vide = first mover",
+      "metric": "Reach + save-rate sur 3 MOFU SILENT vs 3 MOFU VNPG voix équivalents sur @djibril.learning_",
+      "status": "NEW_2026_04_15 — TO_TEST_W18",
+      "priority": "CRITIQUE — territoire FR vide, fenêtre courte"
+    },
+    {
+      "test": "podcast_sobre_mecanisme",
+      "hypothesis": "Extrait type podcast (plan moyen, fond neutre, ton calme, 30-45s) sur mécanisme psycho = autorité ressentie ↑ → démolit objection 'mon domaine différent'",
+      "metric": "Comment-ratio 'ça change ma manière de voir' / save-rate comparé à MOFU VNPG standard",
+      "status": "NEW_2026_04_15 — TO_TEST_W18",
+      "priority": "HIGH"
+    },
+    {
+      "test": "broll_cerveau_neuroscience_mofu",
+      "hypothesis": "Ajouter 2-3s B-roll cerveau/neurone dans chaque MOFU augmente saves +30%",
+      "metric": "Saves moyens 5 MOFU avec B-roll neuro vs 5 sans",
+      "status": "TO_TEST",
+      "priority": "CRITIQUE — fenêtre niche qualité FR limitée"
+    },
+    {
+      "test": "horloge_snooze_fr",
+      "hypothesis": "Adaptation FR du pattern '5 minutes de plus' (horloge/snooze/réveil) + hook identité = traction forte sur avatar paralysé",
+      "metric": "Eng rate vs MOFU standard avec hook équivalent sans visuel horloge",
+      "status": "NEW_2026_04_15 — TO_TEST_W18",
+      "priority": "HIGH"
+    },
+    {
+      "test": "color_grade_clair_obscur_autorite",
+      "hypothesis": "Color grade clair-obscur intérieur + tons froids désaturés = perception autorité scientifique +20% saves sur MOFU mécanisme",
+      "metric": "A/B test 5 vidéos MOFU tons chauds vs 5 vidéos tons froids désaturés",
+      "status": "TO_TEST",
+      "priority": "HIGH"
+    },
+    {
+      "test": "ECU_15mm_vs_40mm_hook",
+      "hypothesis": "Ouvrir par un ECU visage (40mm) au lieu du plan large (15mm) augmente le taux de rétention 0-3s",
+      "metric": "Comparer likes/vues sur 5 vidéos chacun",
+      "status": "TO_TEST",
+      "priority": "HIGH"
+    },
+    {
+      "test": "clair_obscur_neuroscience",
+      "hypothesis": "Le clair-obscur intérieur + hooks neuroscience FR = engagement 2-5x (niche vide + visual match)",
+      "metric": "Engagement rate par catégorie de hook × éclairage sur @djibril.offf",
+      "status": "TO_TEST_W18",
+      "priority": "HIGH"
+    },
+    {
+      "test": "silence_final_2s_vs_5s",
+      "hypothesis": "Un silence final de 5s (vs 2s actuel) augmente les saves en forçant une pause cognitive plus longue",
+      "metric": "Saves par vidéo A/B test",
+      "status": "TO_TEST",
+      "priority": "MEDIUM — ne pas allonger au-delà de 38s total"
+    },
+    {
+      "test": "broll_miroir_reflet",
+      "hypothesis": "Le b-roll miroir/reflet sur les hooks identitaires augmente l'identification et le taux de save",
+      "metric": "Saves sur hooks paradoxe_identitaire avec vs sans b-roll miroir",
+      "status": "TO_TEST",
+      "priority": "MEDIUM"
+    },
+    {
+      "test": "tutorial_hell_broll",
+      "hypothesis": "B-roll écran saturé d'onglets sur hook 'arrête de consommer' = boost engagement via miroir visuel",
+      "metric": "Engagement rate vidéo avec vs sans ce b-roll spécifique",
+      "status": "TO_TEST_W18",
+      "priority": "HIGH — combine hook record + nouveau b-roll concept"
+    },
+    {
+      "test": "ig_reels_first_post",
+      "hypothesis": "Poster en PREMIER sur IG Reels booste la distribution IG grâce à l'algo fresh-content",
+      "metric": "Reach IG Reels quand posté en premier vs cross-post 7min24s après TikTok",
+      "status": "TO_TEST_W18",
+      "priority": "HIGH — IG en growth, TikTok stable"
+    }
+  ]
 }
