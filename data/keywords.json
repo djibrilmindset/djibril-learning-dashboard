@@ -1,678 +1,891 @@
 {
-  "version": "1.0.0",
-  "generated_at": "2026-04-15",
-  "mission": "Mots-clés EMPATHIE haute identification — avatar cérébral paralysé + métiers chronophages",
-  "doctrine": "RÉCIPIENT CÉRÉBRAL + ENCRE PASSIVE/ACTIVE",
-  "color_legend": {
-    "green": ">8/10 — impact maximum, identification instantanée",
-    "cyan": "7-8/10 — fort, à privilégier",
-    "purple": "6-7/10 — correct, support",
-    "yellow": "<6/10 — faible, à éviter ou enrichir"
+  "meta": {
+    "version": "1.0.0",
+    "generated_at": "2026-04-18",
+    "generator": "djibril-keyword-intelligence",
+    "mission": "Extraction mots-clés empathie classés par impact identification émotionnelle",
+    "avatar_focus": "Cérébral paralysé 18-25 / métiers chronophages (livreur, ouvrier, caissier)",
+    "exclusions": ["barber", "coiffure", "salon", "Adam"],
+    "color_legend": {
+      "vert": ">=8.5 — identification massive, à utiliser en hook TOFU/MOFU",
+      "cyan": "7.0-8.4 — identification forte, corps de script / reframe",
+      "violet": "6.0-6.9 — identification moyenne, reformulation conseillée",
+      "jaune": "<6.0 — faible, à éviter ou enrichir avec doctrine récipient/encre"
+    },
+    "doctrine_anchor": "RÉCIPIENT + ENCRE PASSIVE/ACTIVE — tout mot-clé doit pouvoir se relier au fil rouge",
+    "usage_map": {
+      "TOFU": "ciné, liste, prise de position — hook fort obligatoire",
+      "MOFU": "coaching, mécanisme psycho, script 30s",
+      "BOFU": "lead magnet, vente, conversion",
+      "Chatbot": "DM ManyChat, empathie, cadrage",
+      "Stories": "daily cosmos, 3-5 frames",
+      "Cours": "M1 M2 M3 brique doctrine"
+    }
   },
-  "scoring_criteria": [
-    "Identification émotionnelle immédiate (se voit dedans en 1s)",
-    "Vocabulaire oral 8 ans (zéro jargon)",
-    "Scène de vie sensorielle (pas concept abstrait)",
-    "Démolit objection 'mon domaine différent'",
-    "Aligné avec récipient/encre"
-  ],
-  "categories": {
-    "paralysie_cerebrale": {
-      "description": "Avatar #1 — sait tout, fait rien, hallucine la compétence",
+  "categories": [
+    {
+      "id": "identity",
+      "name": "Identité & Auto-perception",
+      "description": "Comment l'avatar se voit (ou se ment). Score haut = effet miroir brutal.",
       "keywords": [
         {
-          "word": "t'as tout lu mais t'as rien bougé",
+          "id": "id_01",
+          "keyword": "tu sais tout, tu fais rien",
           "score": 10,
-          "color": "green",
-          "usage": "hook TOFU",
-          "lever": "Identité"
+          "color": "vert",
+          "usage": ["TOFU", "MOFU", "Chatbot"],
+          "trigger_emotion": "honte + reconnaissance",
+          "doctrine_link": "récipient saturé sans encre active",
+          "awareness": 3
         },
         {
-          "word": "tu sais ce qu'il faut faire",
-          "score": 10,
-          "color": "green",
-          "usage": "connexion émotionnelle",
-          "lever": "DRDP"
-        },
-        {
-          "word": "paralysé par l'analyse",
+          "id": "id_02",
+          "keyword": "cérébral paralysé",
           "score": 9,
-          "color": "green",
-          "usage": "naming avatar",
-          "lever": "Clarté"
+          "color": "vert",
+          "usage": ["MOFU", "Cours"],
+          "trigger_emotion": "nomination du syndrome",
+          "doctrine_link": "encre passive dominante bloque l'action",
+          "awareness": 4
         },
         {
-          "word": "tu cherches encore la bonne méthode",
+          "id": "id_03",
+          "keyword": "t'hallucines la compétence",
           "score": 9,
-          "color": "green",
-          "usage": "hook MOFU",
-          "lever": "Curiosité"
+          "color": "vert",
+          "usage": ["TOFU", "MOFU"],
+          "trigger_emotion": "reframe identité",
+          "doctrine_link": "lecture sans application = encre passive qui trompe",
+          "awareness": 3
         },
         {
-          "word": "t'attends d'être prêt",
+          "id": "id_04",
+          "keyword": "tu lis tout, t'appliques rien",
           "score": 9,
-          "color": "green",
-          "usage": "friction",
-          "lever": "NEW"
+          "color": "vert",
+          "usage": ["TOFU", "MOFU", "Stories"],
+          "trigger_emotion": "miroir",
+          "doctrine_link": "manque APPLICATION dans la doctrine LECTURE→RÉFLEXION→ANALYSE→APPLICATION",
+          "awareness": 3
         },
         {
-          "word": "hallucine que tu avances",
+          "id": "id_05",
+          "keyword": "t'es intelligent, mais bloqué",
           "score": 9,
-          "color": "green",
-          "usage": "reframe",
-          "lever": "NEW"
+          "color": "vert",
+          "usage": ["TOFU", "Chatbot"],
+          "trigger_emotion": "validation + permission",
+          "doctrine_link": "intelligence = piège si récipient saturé",
+          "awareness": 2
         },
         {
-          "word": "t'as pris 10 notes cette semaine",
+          "id": "id_06",
+          "keyword": "sur-analyseur chronique",
           "score": 8,
           "color": "cyan",
-          "usage": "scène vie",
-          "lever": "Identification"
+          "usage": ["MOFU", "Cours"],
+          "trigger_emotion": "reconnaissance pattern",
+          "doctrine_link": "boucle encre passive cognitive",
+          "awareness": 4
         },
         {
-          "word": "faire semblant de bosser",
+          "id": "id_07",
+          "keyword": "autodidacte seul dans ta chambre",
           "score": 8,
           "color": "cyan",
-          "usage": "friction",
-          "lever": "DRDP"
+          "usage": ["TOFU", "MOFU"],
+          "trigger_emotion": "identification preuve sociale",
+          "doctrine_link": "6700€/mois data pure",
+          "awareness": 3
         },
         {
-          "word": "tu consommes, tu appliques pas",
-          "score": 8,
-          "color": "cyan",
-          "usage": "reframe",
-          "lever": "SAFE"
-        },
-        {
-          "word": "bloqué en mode spectateur",
+          "id": "id_08",
+          "keyword": "identité en crise",
           "score": 7,
-          "color": "purple",
-          "usage": "métaphore support",
-          "lever": "Clarté"
+          "color": "cyan",
+          "usage": ["Cours"],
+          "trigger_emotion": "nommer le flou",
+          "doctrine_link": "récipient qui ne sait plus qui il est",
+          "awareness": 4
+        },
+        {
+          "id": "id_09",
+          "keyword": "tu te racontes des films",
+          "score": 7,
+          "color": "cyan",
+          "usage": ["TOFU", "Chatbot"],
+          "trigger_emotion": "confrontation douce",
+          "doctrine_link": "fiction mentale = encre passive qui simule action",
+          "awareness": 3
+        },
+        {
+          "id": "id_10",
+          "keyword": "tu joues le rôle du mec qui apprend",
+          "score": 8,
+          "color": "cyan",
+          "usage": ["MOFU"],
+          "trigger_emotion": "miroir dur",
+          "doctrine_link": "théâtre mental sans application",
+          "awareness": 4
         }
       ]
     },
-    "metiers_chronophages": {
-      "description": "Ancrage sensoriel métier — livreur, ouvrier, caissier, manut",
+    {
+      "id": "emotions",
+      "name": "États émotionnels bruts",
+      "description": "Émotions vécues mais jamais verbalisées. Score haut = mots tabous.",
       "keywords": [
         {
-          "word": "14h sur le scooter",
-          "score": 10,
-          "color": "green",
-          "usage": "scène vie livreur",
-          "lever": "Identification"
-        },
-        {
-          "word": "fin de shift tu scrolles",
-          "score": 10,
-          "color": "green",
-          "usage": "boucle conso",
-          "lever": "DRDP"
-        },
-        {
-          "word": "le badge, la machine, la fatigue",
+          "id": "em_01",
+          "keyword": "honte silencieuse",
           "score": 9,
-          "color": "green",
-          "usage": "ouvrier",
-          "lever": "Identification"
+          "color": "vert",
+          "usage": ["MOFU", "Chatbot"],
+          "trigger_emotion": "validation tabou",
+          "doctrine_link": "résidu d'encre passive accumulée",
+          "awareness": 2
         },
         {
-          "word": "8h derrière la caisse",
+          "id": "em_02",
+          "keyword": "vide après le scroll",
           "score": 9,
-          "color": "green",
-          "usage": "caissier",
-          "lever": "Identification"
+          "color": "vert",
+          "usage": ["TOFU", "Stories"],
+          "trigger_emotion": "reconnaissance universelle",
+          "doctrine_link": "symptôme saturation récipient",
+          "awareness": 2
         },
         {
-          "word": "tu rentres tu t'écroules",
+          "id": "em_03",
+          "keyword": "tu te dégoûtes toi-même",
           "score": 9,
-          "color": "green",
-          "usage": "connexion",
-          "lever": "DRDP"
+          "color": "vert",
+          "usage": ["MOFU"],
+          "trigger_emotion": "tabou brisé",
+          "doctrine_link": "récipient qui se rejette",
+          "awareness": 3
         },
         {
-          "word": "ton corps est rincé",
+          "id": "em_04",
+          "keyword": "t'as plus de goût à rien",
           "score": 8,
           "color": "cyan",
-          "usage": "friction",
-          "lever": "DRDP"
+          "usage": ["TOFU", "Chatbot"],
+          "trigger_emotion": "anhédonie nommée",
+          "doctrine_link": "saturation = récipient plein de gris",
+          "awareness": 2
         },
         {
-          "word": "salaire qui bouge pas",
+          "id": "em_05",
+          "keyword": "frustration sourde",
           "score": 8,
           "color": "cyan",
-          "usage": "contexte",
-          "lever": "DRDP"
+          "usage": ["MOFU"],
+          "trigger_emotion": "nomination",
+          "doctrine_link": "encre passive qui s'accumule sans sortie",
+          "awareness": 3
         },
         {
-          "word": "boulot qui te mange la tête",
+          "id": "em_06",
+          "keyword": "ça te ronge de l'intérieur",
           "score": 8,
           "color": "cyan",
-          "usage": "métaphore",
-          "lever": "Clarté"
+          "usage": ["TOFU", "Stories"],
+          "trigger_emotion": "pression interne",
+          "doctrine_link": "récipient qui fuit",
+          "awareness": 2
         },
         {
-          "word": "pas le temps de réfléchir",
-          "score": 8,
-          "color": "cyan",
-          "usage": "friction",
-          "lever": "FACILE"
-        },
-        {
-          "word": "métro-boulot-sommeil",
+          "id": "em_07",
+          "keyword": "tu pleures pour rien",
           "score": 7,
-          "color": "purple",
-          "usage": "contexte",
-          "lever": "Identification"
+          "color": "cyan",
+          "usage": ["Chatbot"],
+          "trigger_emotion": "vulnérabilité masculine",
+          "doctrine_link": "trop-plein récipient",
+          "awareness": 2
+        },
+        {
+          "id": "em_08",
+          "keyword": "t'es fatigué d'être fatigué",
+          "score": 9,
+          "color": "vert",
+          "usage": ["TOFU", "MOFU", "Stories"],
+          "trigger_emotion": "méta-épuisement",
+          "doctrine_link": "saturation cumulée jamais vidée",
+          "awareness": 2
+        },
+        {
+          "id": "em_09",
+          "keyword": "tu te sens invisible",
+          "score": 7,
+          "color": "cyan",
+          "usage": ["MOFU", "Chatbot"],
+          "trigger_emotion": "isolement",
+          "doctrine_link": "récipient ignoré de tous",
+          "awareness": 2
+        },
+        {
+          "id": "em_10",
+          "keyword": "colère contre toi-même",
+          "score": 7,
+          "color": "cyan",
+          "usage": ["MOFU"],
+          "trigger_emotion": "auto-agression",
+          "doctrine_link": "récipient qui rejette son propre contenu",
+          "awareness": 3
         }
       ]
     },
-    "recipient_encre": {
-      "description": "Fil rouge ADN — récipient cérébral + encre passive/active",
+    {
+      "id": "loops",
+      "name": "Boucles comportementales",
+      "description": "Patterns répétés, automatiques, douloureux. Cœur doctrine encre passive.",
       "keywords": [
         {
-          "word": "ton cerveau sature",
+          "id": "lp_01",
+          "keyword": "scroll jusqu'à 3h du matin",
           "score": 10,
-          "color": "green",
-          "usage": "métaphore cœur",
-          "lever": "Clarté"
+          "color": "vert",
+          "usage": ["TOFU", "MOFU", "Stories", "Chatbot"],
+          "trigger_emotion": "miroir comportemental",
+          "doctrine_link": "encre passive pure — exemple canonique",
+          "awareness": 1
         },
         {
-          "word": "encre passive",
+          "id": "lp_02",
+          "keyword": "ton cerveau déborde",
+          "score": 9,
+          "color": "vert",
+          "usage": ["TOFU", "Cours", "Stories"],
+          "trigger_emotion": "image physique",
+          "doctrine_link": "récipient saturé = métaphore centrale",
+          "awareness": 2
+        },
+        {
+          "id": "lp_03",
+          "keyword": "récipient qui sature",
+          "score": 9,
+          "color": "vert",
+          "usage": ["Cours", "MOFU", "BOFU"],
+          "trigger_emotion": "nomination doctrine",
+          "doctrine_link": "FIL ROUGE PROJET — mobiliser partout",
+          "awareness": 3
+        },
+        {
+          "id": "lp_04",
+          "keyword": "pilote automatique",
+          "score": 8,
+          "color": "cyan",
+          "usage": ["TOFU", "MOFU"],
+          "trigger_emotion": "perte de contrôle",
+          "doctrine_link": "comportement automatique déclenché par encre passive ancrée",
+          "awareness": 2
+        },
+        {
+          "id": "lp_05",
+          "keyword": "t'absorbes tout sans choisir",
+          "score": 8,
+          "color": "cyan",
+          "usage": ["Cours", "MOFU"],
+          "trigger_emotion": "prise de conscience",
+          "doctrine_link": "définition encre passive",
+          "awareness": 3
+        },
+        {
+          "id": "lp_06",
+          "keyword": "boucle de conso passive",
+          "score": 8,
+          "color": "cyan",
+          "usage": ["MOFU", "Cours"],
+          "trigger_emotion": "nomination pattern",
+          "doctrine_link": "encre passive → ancrage → comportement automatique",
+          "awareness": 4
+        },
+        {
+          "id": "lp_07",
+          "keyword": "tu rentres, tu scrolles, tu dors",
           "score": 10,
-          "color": "green",
-          "usage": "concept signature",
-          "lever": "NEW"
+          "color": "vert",
+          "usage": ["TOFU", "Stories"],
+          "trigger_emotion": "reflet journée type",
+          "doctrine_link": "cycle 100% encre passive",
+          "awareness": 1
         },
         {
-          "word": "tu remplis sans choisir",
-          "score": 9,
-          "color": "green",
-          "usage": "boucle conso",
-          "lever": "Clarté"
-        },
-        {
-          "word": "le récipient déborde",
-          "score": 9,
-          "color": "green",
-          "usage": "métaphore saturation",
-          "lever": "Clarté"
-        },
-        {
-          "word": "tout rentre, rien se range",
-          "score": 9,
-          "color": "green",
-          "usage": "métaphore",
-          "lever": "Clarté"
-        },
-        {
-          "word": "ce que tu consommes t'ancre",
-          "score": 9,
-          "color": "green",
-          "usage": "reframe",
-          "lever": "NEW"
-        },
-        {
-          "word": "remplir mieux, pas vider",
+          "id": "lp_08",
+          "keyword": "même résultat chaque semaine",
           "score": 8,
           "color": "cyan",
-          "usage": "sortie",
-          "lever": "FACILE"
+          "usage": ["MOFU", "Chatbot"],
+          "trigger_emotion": "stagnation nommée",
+          "doctrine_link": "boucle récipient inchangé",
+          "awareness": 3
         },
         {
-          "word": "encre active = choix",
+          "id": "lp_09",
+          "keyword": "encre passive",
           "score": 8,
           "color": "cyan",
-          "usage": "solution",
-          "lever": "NEW"
+          "usage": ["Cours", "BOFU"],
+          "trigger_emotion": "concept signature",
+          "doctrine_link": "TERME DOCTRINE — à imposer comme vocabulaire",
+          "awareness": 4
         },
         {
-          "word": "ton entourage t'ancre",
-          "score": 8,
-          "color": "cyan",
-          "usage": "avatar 2",
-          "lever": "DRDP"
-        },
-        {
-          "word": "boucle de saturation",
+          "id": "lp_10",
+          "keyword": "encre active",
           "score": 7,
-          "color": "purple",
-          "usage": "mécanisme",
-          "lever": "Clarté"
+          "color": "cyan",
+          "usage": ["Cours", "BOFU"],
+          "trigger_emotion": "solution signature",
+          "doctrine_link": "TERME DOCTRINE — sortie de boucle",
+          "awareness": 5
+        },
+        {
+          "id": "lp_11",
+          "keyword": "trou noir dopamine",
+          "score": 7,
+          "color": "cyan",
+          "usage": ["TOFU", "Stories"],
+          "trigger_emotion": "image scientifique",
+          "doctrine_link": "mécanisme biologique encre passive",
+          "awareness": 3
+        },
+        {
+          "id": "lp_12",
+          "keyword": "tu consommes pour pas penser",
+          "score": 9,
+          "color": "vert",
+          "usage": ["TOFU", "MOFU"],
+          "trigger_emotion": "vérité inconfortable",
+          "doctrine_link": "encre passive comme anesthésie",
+          "awareness": 3
         }
       ]
     },
-    "honte_identite": {
-      "description": "Émotions cœur avatar — honte, frustration, crise d'identité",
+    {
+      "id": "metier",
+      "name": "Contexte métier chronophage",
+      "description": "Réalité quotidienne brute de l'avatar. Aucun barber/coiffure.",
       "keywords": [
         {
-          "word": "tu te mens à toi-même",
-          "score": 10,
-          "color": "green",
-          "usage": "disruption hook",
-          "lever": "Identité"
-        },
-        {
-          "word": "t'as honte en silence",
-          "score": 10,
-          "color": "green",
-          "usage": "connexion",
-          "lever": "DRDP"
-        },
-        {
-          "word": "tu le dis à personne",
+          "id": "mt_01",
+          "keyword": "livreur 12h par jour",
           "score": 9,
-          "color": "green",
-          "usage": "identification",
-          "lever": "DRDP"
+          "color": "vert",
+          "usage": ["TOFU", "MOFU", "Chatbot"],
+          "trigger_emotion": "identification métier",
+          "doctrine_link": "corps cramé + temps volé pour encre active",
+          "awareness": 2
         },
         {
-          "word": "t'as peur d'être vu",
+          "id": "mt_02",
+          "keyword": "14h par jour sans avancer",
           "score": 9,
-          "color": "green",
-          "usage": "friction",
-          "lever": "DRDP"
+          "color": "vert",
+          "usage": ["TOFU", "Stories"],
+          "trigger_emotion": "effort invisible",
+          "doctrine_link": "data pure Djibril — rappel preuve sociale",
+          "awareness": 2
         },
         {
-          "word": "tu fais semblant d'aller bien",
-          "score": 9,
-          "color": "green",
-          "usage": "scène vie",
-          "lever": "Identification"
-        },
-        {
-          "word": "tu sais que c'est toi qui bloques",
-          "score": 9,
-          "color": "green",
-          "usage": "reframe",
-          "lever": "Identité"
-        },
-        {
-          "word": "frustration qui monte",
+          "id": "mt_03",
+          "keyword": "ouvrier à l'usine",
           "score": 8,
           "color": "cyan",
-          "usage": "émotion",
-          "lever": "DRDP"
+          "usage": ["TOFU", "MOFU"],
+          "trigger_emotion": "identification métier",
+          "doctrine_link": "environnement qui remplit d'encre passive",
+          "awareness": 2
         },
         {
-          "word": "tu te vois pas avancer",
+          "id": "mt_04",
+          "keyword": "caissier qui rêve",
+          "score": 7,
+          "color": "cyan",
+          "usage": ["TOFU"],
+          "trigger_emotion": "décalage rêve/réalité",
+          "doctrine_link": "intellect sous-utilisé — récipient sous-rempli d'encre active",
+          "awareness": 2
+        },
+        {
+          "id": "mt_05",
+          "keyword": "job alimentaire",
           "score": 8,
           "color": "cyan",
-          "usage": "scène",
-          "lever": "DRDP"
+          "usage": ["TOFU", "MOFU", "Chatbot"],
+          "trigger_emotion": "mépris de soi / pragmatisme",
+          "doctrine_link": "survie bloque le temps d'encre active",
+          "awareness": 3
         },
         {
-          "word": "ton image t'obsède",
-          "score": 7,
-          "color": "purple",
-          "usage": "avatar 2",
-          "lever": "DRDP"
+          "id": "mt_06",
+          "keyword": "ton corps est cramé",
+          "score": 8,
+          "color": "cyan",
+          "usage": ["TOFU", "Stories"],
+          "trigger_emotion": "épuisement physique nommé",
+          "doctrine_link": "récipient saturé passe aussi par le corps",
+          "awareness": 2
         },
         {
-          "word": "regard des autres",
+          "id": "mt_07",
+          "keyword": "manutention 8h debout",
           "score": 7,
-          "color": "purple",
-          "usage": "friction",
-          "lever": "DRDP"
+          "color": "cyan",
+          "usage": ["TOFU"],
+          "trigger_emotion": "identification précise",
+          "doctrine_link": "temps volé à la réflexion",
+          "awareness": 2
+        },
+        {
+          "id": "mt_08",
+          "keyword": "fin de mois c'est le vide",
+          "score": 8,
+          "color": "cyan",
+          "usage": ["TOFU", "Chatbot"],
+          "trigger_emotion": "précarité financière",
+          "doctrine_link": "6700€/mois comme contre-preuve",
+          "awareness": 2
+        },
+        {
+          "id": "mt_09",
+          "keyword": "tu bosses pour payer tes factures",
+          "score": 8,
+          "color": "cyan",
+          "usage": ["TOFU"],
+          "trigger_emotion": "piège financier",
+          "doctrine_link": "cycle qui empêche l'encre active",
+          "awareness": 2
+        },
+        {
+          "id": "mt_10",
+          "keyword": "étudiant dans la boucle conso",
+          "score": 7,
+          "color": "cyan",
+          "usage": ["MOFU"],
+          "trigger_emotion": "jeune paralysé",
+          "doctrine_link": "système éducatif = encre passive massive",
+          "awareness": 3
+        },
+        {
+          "id": "mt_11",
+          "keyword": "manut qui veut sortir du schéma",
+          "score": 7,
+          "color": "cyan",
+          "usage": ["TOFU", "MOFU"],
+          "trigger_emotion": "désir de rupture",
+          "doctrine_link": "début de volonté d'encre active",
+          "awareness": 4
         }
       ]
     },
-    "environnement_hostile": {
-      "description": "Avatar #2 — famille, quartier, amis qui tirent vers le bas",
+    {
+      "id": "environment",
+      "name": "Environnement hostile",
+      "description": "Famille, quartier, entourage qui sabote. Isolé sous pression.",
       "keywords": [
         {
-          "word": "ton entourage te tire en bas",
-          "score": 10,
-          "color": "green",
-          "usage": "avatar 2",
-          "lever": "DRDP"
-        },
-        {
-          "word": "ceux qui te comprennent pas",
+          "id": "en_01",
+          "keyword": "ton entourage te tire vers le bas",
           "score": 9,
-          "color": "green",
-          "usage": "connexion",
-          "lever": "DRDP"
+          "color": "vert",
+          "usage": ["TOFU", "MOFU", "Cours"],
+          "trigger_emotion": "validation isolement",
+          "doctrine_link": "encre passive par contagion sociale",
+          "awareness": 3
         },
         {
-          "word": "tu ressors différent chez toi",
-          "score": 9,
-          "color": "green",
-          "usage": "scène vie",
-          "lever": "Identification"
-        },
-        {
-          "word": "personne autour qui kiffe ça",
-          "score": 9,
-          "color": "green",
-          "usage": "isolement",
-          "lever": "DRDP"
-        },
-        {
-          "word": "tu t'éloignes en silence",
+          "id": "en_02",
+          "keyword": "personne à qui parler de ça",
           "score": 8,
           "color": "cyan",
-          "usage": "micro-action",
-          "lever": "FACILE"
+          "usage": ["Chatbot", "Stories"],
+          "trigger_emotion": "solitude nommée",
+          "doctrine_link": "récipient sans miroir extérieur",
+          "awareness": 2
         },
         {
-          "word": "conversations qui te saoulent",
+          "id": "en_03",
+          "keyword": "isolé dans ta tête",
+          "score": 9,
+          "color": "vert",
+          "usage": ["MOFU", "Chatbot"],
+          "trigger_emotion": "prison mentale",
+          "doctrine_link": "récipient fermé sans échange",
+          "awareness": 3
+        },
+        {
+          "id": "en_04",
+          "keyword": "famille qui capte rien",
           "score": 8,
           "color": "cyan",
-          "usage": "scène",
-          "lever": "DRDP"
+          "usage": ["MOFU"],
+          "trigger_emotion": "incompréhension familiale",
+          "doctrine_link": "entourage saturé d'encre passive lui-même",
+          "awareness": 3
         },
         {
-          "word": "famille qui pige pas",
-          "score": 8,
-          "color": "cyan",
-          "usage": "contexte",
-          "lever": "Identification"
-        },
-        {
-          "word": "couper le bruit autour",
+          "id": "en_05",
+          "keyword": "amis qui stagnent",
           "score": 7,
-          "color": "purple",
-          "usage": "solution",
-          "lever": "FACILE"
-        }
-      ]
-    },
-    "boucle_consommation": {
-      "description": "Scroll, dopamine passive, contenu conso sans action",
-      "keywords": [
-        {
-          "word": "tu scrolles pendant 3h",
-          "score": 10,
-          "color": "green",
-          "usage": "scène vie",
-          "lever": "Identification"
-        },
-        {
-          "word": "tu sauves des posts tu lis jamais",
-          "score": 10,
-          "color": "green",
-          "usage": "disruption",
-          "lever": "Identité"
-        },
-        {
-          "word": "10 onglets ouverts",
-          "score": 9,
-          "color": "green",
-          "usage": "scène",
-          "lever": "Identification"
-        },
-        {
-          "word": "notifications qui te mangent",
-          "score": 9,
-          "color": "green",
-          "usage": "friction",
-          "lever": "DRDP"
-        },
-        {
-          "word": "tu consommes du contenu productif",
-          "score": 9,
-          "color": "green",
-          "usage": "reframe paradoxe",
-          "lever": "NEW"
-        },
-        {
-          "word": "tu bookmark au lieu d'agir",
-          "score": 8,
           "color": "cyan",
-          "usage": "pattern",
-          "lever": "Identification"
+          "usage": ["MOFU"],
+          "trigger_emotion": "tension sociale",
+          "doctrine_link": "effet miroir groupe",
+          "awareness": 3
         },
         {
-          "word": "dopamine gratuite",
-          "score": 8,
-          "color": "cyan",
-          "usage": "mécanisme",
-          "lever": "Clarté"
-        },
-        {
-          "word": "rester allongé à scroller",
+          "id": "en_06",
+          "keyword": "quartier qui te colle",
           "score": 7,
-          "color": "purple",
-          "usage": "scène",
-          "lever": "DRDP"
+          "color": "cyan",
+          "usage": ["TOFU", "MOFU"],
+          "trigger_emotion": "déterminisme social",
+          "doctrine_link": "environnement = source d'encre passive",
+          "awareness": 3
+        },
+        {
+          "id": "en_07",
+          "keyword": "tout le monde veut que tu restes le même",
+          "score": 8,
+          "color": "cyan",
+          "usage": ["TOFU", "MOFU"],
+          "trigger_emotion": "sabotage collectif",
+          "doctrine_link": "pression sociale contre l'encre active",
+          "awareness": 4
+        },
+        {
+          "id": "en_08",
+          "keyword": "t'as pas d'exemple autour de toi",
+          "score": 8,
+          "color": "cyan",
+          "usage": ["TOFU", "Chatbot"],
+          "trigger_emotion": "absence de modèle",
+          "doctrine_link": "pas de modèle d'encre active visible",
+          "awareness": 3
         }
       ]
     },
-    "permission_action_imparfaite": {
-      "description": "Cœur solution — permission d'agir avant d'être prêt",
+    {
+      "id": "objections",
+      "name": "Objections à démolir",
+      "description": "Phrases mentales qui bloquent l'action. Score haut = objections universelles.",
       "keywords": [
         {
-          "word": "c'est pas de la volonté",
+          "id": "ob_01",
+          "keyword": "dans mon domaine c'est différent",
           "score": 10,
-          "color": "green",
-          "usage": "reframe clé",
-          "lever": "NEW"
+          "color": "vert",
+          "usage": ["MOFU", "Cours", "Chatbot"],
+          "trigger_emotion": "objection #1 avatar",
+          "doctrine_link": "règle non-négo 5.5 — à démolir systématiquement",
+          "awareness": 3
         },
         {
-          "word": "c'est de la biologie",
-          "score": 10,
-          "color": "green",
-          "usage": "reframe",
-          "lever": "SAFE"
-        },
-        {
-          "word": "t'as pas besoin d'être prêt",
-          "score": 10,
-          "color": "green",
-          "usage": "permission",
-          "lever": "FACILE"
-        },
-        {
-          "word": "commence cassé",
+          "id": "ob_02",
+          "keyword": "moi c'est pas pareil",
           "score": 9,
-          "color": "green",
-          "usage": "micro-action",
-          "lever": "FACILE"
+          "color": "vert",
+          "usage": ["MOFU", "Chatbot"],
+          "trigger_emotion": "exceptionnalisme défensif",
+          "doctrine_link": "variante objection #1",
+          "awareness": 3
         },
         {
-          "word": "bouge avant de comprendre",
-          "score": 9,
-          "color": "green",
-          "usage": "action",
-          "lever": "NEW"
-        },
-        {
-          "word": "t'as pas à te sentir prêt",
-          "score": 9,
-          "color": "green",
-          "usage": "permission",
-          "lever": "SAFE"
-        },
-        {
-          "word": "le cerveau suit le corps",
+          "id": "ob_03",
+          "keyword": "j'ai pas le temps",
           "score": 8,
           "color": "cyan",
-          "usage": "mécanisme",
-          "lever": "NEW"
+          "usage": ["MOFU", "Chatbot"],
+          "trigger_emotion": "excuse temps",
+          "doctrine_link": "à reframe avec 6700€/mois en 14h/j",
+          "awareness": 2
         },
         {
-          "word": "action imparfaite",
+          "id": "ob_04",
+          "keyword": "c'est trop tard pour moi",
           "score": 8,
           "color": "cyan",
-          "usage": "concept",
-          "lever": "FACILE"
-        }
-      ]
-    },
-    "demolition_objection_domaine": {
-      "description": "Règle copy #5 — démolir 'dans mon domaine c'est différent'",
-      "keywords": [
-        {
-          "word": "ton domaine change rien",
-          "score": 10,
-          "color": "green",
-          "usage": "friction directe",
-          "lever": "NEW"
+          "usage": ["TOFU", "MOFU"],
+          "trigger_emotion": "fatalisme",
+          "doctrine_link": "récipient jamais figé, toujours reprogrammable",
+          "awareness": 2
         },
         {
-          "word": "ton cerveau fonctionne pareil",
-          "score": 10,
-          "color": "green",
-          "usage": "reframe",
-          "lever": "SAFE"
-        },
-        {
-          "word": "le mécanisme est universel",
-          "score": 9,
-          "color": "green",
-          "usage": "preuve",
-          "lever": "SAFE"
-        },
-        {
-          "word": "livreur ou avocat c'est pareil",
-          "score": 9,
-          "color": "green",
-          "usage": "exemple",
-          "lever": "Identification"
-        },
-        {
-          "word": "c'est pas ton métier le problème",
-          "score": 9,
-          "color": "green",
-          "usage": "reframe",
-          "lever": "NEW"
-        },
-        {
-          "word": "même câblage pour tous",
-          "score": 8,
-          "color": "cyan",
-          "usage": "métaphore",
-          "lever": "Clarté"
-        }
-      ]
-    },
-    "data_pure_adam": {
-      "description": "Référence 6700€/21ans/14h — social proof sans embellir",
-      "keywords": [
-        {
-          "word": "6700 par mois",
-          "score": 10,
-          "color": "green",
-          "usage": "preuve",
-          "lever": "SAFE"
-        },
-        {
-          "word": "21 ans, seul",
-          "score": 9,
-          "color": "green",
-          "usage": "preuve",
-          "lever": "SAFE"
-        },
-        {
-          "word": "14h par jour",
-          "score": 9,
-          "color": "green",
-          "usage": "preuve effort",
-          "lever": "SAFE"
-        },
-        {
-          "word": "pas de mentor, pas d'équipe",
-          "score": 8,
-          "color": "cyan",
-          "usage": "preuve autodidacte",
-          "lever": "SAFE"
-        },
-        {
-          "word": "parti de zéro",
+          "id": "ob_05",
+          "keyword": "j'suis pas assez doué",
           "score": 7,
-          "color": "purple",
-          "usage": "preuve",
-          "lever": "SAFE"
+          "color": "cyan",
+          "usage": ["MOFU", "Chatbot"],
+          "trigger_emotion": "imposteur",
+          "doctrine_link": "talent = illusion, application = tout",
+          "awareness": 2
+        },
+        {
+          "id": "ob_06",
+          "keyword": "j'ai pas les moyens",
+          "score": 7,
+          "color": "cyan",
+          "usage": ["MOFU", "BOFU"],
+          "trigger_emotion": "excuse financière",
+          "doctrine_link": "encre active souvent gratuite (lecture, pensée)",
+          "awareness": 2
+        },
+        {
+          "id": "ob_07",
+          "keyword": "j'attends le bon moment",
+          "score": 8,
+          "color": "cyan",
+          "usage": ["TOFU", "MOFU"],
+          "trigger_emotion": "procrastination nommée",
+          "doctrine_link": "attendre = laisser l'encre passive continuer",
+          "awareness": 3
+        },
+        {
+          "id": "ob_08",
+          "keyword": "ça marche pas dans la vraie vie",
+          "score": 7,
+          "color": "cyan",
+          "usage": ["MOFU"],
+          "trigger_emotion": "cynisme défensif",
+          "doctrine_link": "réalité = Djibril 6700€/mois",
+          "awareness": 3
         }
       ]
     },
-    "urgence_temps_vie": {
-      "description": "FOMO identitaire — le temps qui file sans que rien change",
+    {
+      "id": "doctrine",
+      "name": "Lexique doctrine RÉCIPIENT + ENCRE",
+      "description": "Vocabulaire signature à imposer dans tout contenu.",
       "keywords": [
         {
-          "word": "6 mois d'ici t'en seras au même point",
+          "id": "dc_01",
+          "keyword": "récipient cérébral",
+          "score": 9,
+          "color": "vert",
+          "usage": ["Cours", "BOFU", "TOFU"],
+          "trigger_emotion": "image fondatrice",
+          "doctrine_link": "METAPHORE CENTRALE — à tous les contenus",
+          "awareness": 3
+        },
+        {
+          "id": "dc_02",
+          "keyword": "saturation",
+          "score": 8,
+          "color": "cyan",
+          "usage": ["Cours", "MOFU"],
+          "trigger_emotion": "état critique récipient",
+          "doctrine_link": "point de bascule boucle",
+          "awareness": 3
+        },
+        {
+          "id": "dc_03",
+          "keyword": "déborder",
+          "score": 8,
+          "color": "cyan",
+          "usage": ["TOFU", "Stories"],
+          "trigger_emotion": "image physique",
+          "doctrine_link": "moment symptôme visible",
+          "awareness": 2
+        },
+        {
+          "id": "dc_04",
+          "keyword": "remplir mieux, pas vider",
+          "score": 8,
+          "color": "cyan",
+          "usage": ["Cours", "BOFU"],
+          "trigger_emotion": "reframe solution",
+          "doctrine_link": "principe central stratégie sortie",
+          "awareness": 4
+        },
+        {
+          "id": "dc_05",
+          "keyword": "LECTURE réflexion analyse APPLICATION",
+          "score": 9,
+          "color": "vert",
+          "usage": ["Cours", "BOFU", "MOFU"],
+          "trigger_emotion": "doctrine signature",
+          "doctrine_link": "FIL ROUGE N°1 — chaque contenu pose une brique",
+          "awareness": 4
+        },
+        {
+          "id": "dc_06",
+          "keyword": "reprogrammer ton récipient",
+          "score": 8,
+          "color": "cyan",
+          "usage": ["BOFU", "MOFU"],
+          "trigger_emotion": "promesse transformation",
+          "doctrine_link": "objectif final encre active",
+          "awareness": 4
+        },
+        {
+          "id": "dc_07",
+          "keyword": "6700 euros par mois seul",
           "score": 10,
-          "color": "green",
-          "usage": "FOMO",
-          "lever": "FOMO"
+          "color": "vert",
+          "usage": ["TOFU", "MOFU", "BOFU", "Chatbot"],
+          "trigger_emotion": "preuve sociale brute",
+          "doctrine_link": "DATA PURE — règle 5.8 rappeler sans embellir",
+          "awareness": 3
         },
         {
-          "word": "t'auras 25 ans pareil",
+          "id": "dc_08",
+          "keyword": "c'est pas de la volonté, c'est de la biologie",
           "score": 9,
-          "color": "green",
-          "usage": "FOMO identitaire",
-          "lever": "FOMO"
+          "color": "vert",
+          "usage": ["TOFU", "Cours"],
+          "trigger_emotion": "décharge culpabilité",
+          "doctrine_link": "PATTERN SITE — voix de marque",
+          "awareness": 3
         },
         {
-          "word": "les années passent, toi non",
-          "score": 9,
-          "color": "green",
-          "usage": "urgence",
-          "lever": "FOMO"
-        },
-        {
-          "word": "même tête dans le miroir",
-          "score": 9,
-          "color": "green",
-          "usage": "scène",
-          "lever": "DRDP"
-        },
-        {
-          "word": "c'est maintenant ou jamais pareil",
+          "id": "dc_09",
+          "keyword": "retiens ça",
           "score": 7,
-          "color": "purple",
-          "usage": "urgence",
-          "lever": "FOMO"
+          "color": "cyan",
+          "usage": ["Cours", "Stories"],
+          "trigger_emotion": "ancrage",
+          "doctrine_link": "PATTERN SITE — encart signature",
+          "awareness": 3
+        },
+        {
+          "id": "dc_10",
+          "keyword": "pas X c'est Y",
+          "score": 8,
+          "color": "cyan",
+          "usage": ["TOFU", "MOFU", "Cours"],
+          "trigger_emotion": "reframe signature",
+          "doctrine_link": "PATTERN SITE — reframing systématique",
+          "awareness": 4
+        }
+      ]
+    },
+    {
+      "id": "aspirations",
+      "name": "Aspirations & Sortie",
+      "description": "Ce que l'avatar veut mais ne nomme jamais. Angle lead magnet / BOFU.",
+      "keywords": [
+        {
+          "id": "as_01",
+          "keyword": "sortir de la boucle",
+          "score": 9,
+          "color": "vert",
+          "usage": ["BOFU", "MOFU", "Lead magnet"],
+          "trigger_emotion": "promesse libération",
+          "doctrine_link": "switch passive → active",
+          "awareness": 4
+        },
+        {
+          "id": "as_02",
+          "keyword": "construire de zéro",
+          "score": 8,
+          "color": "cyan",
+          "usage": ["TOFU", "BOFU"],
+          "trigger_emotion": "aspiration indépendance",
+          "doctrine_link": "encre active accumulée → résultat",
+          "awareness": 4
+        },
+        {
+          "id": "as_03",
+          "keyword": "reprendre le volant",
+          "score": 7,
+          "color": "cyan",
+          "usage": ["MOFU", "Cours"],
+          "trigger_emotion": "contrôle retrouvé",
+          "doctrine_link": "métaphore compatible récipient",
+          "awareness": 4
+        },
+        {
+          "id": "as_04",
+          "keyword": "devenir celui que t'aurais dû être",
+          "score": 8,
+          "color": "cyan",
+          "usage": ["TOFU", "BOFU"],
+          "trigger_emotion": "identité projetée",
+          "doctrine_link": "récipient rempli d'encre active = nouvelle identité",
+          "awareness": 4
+        },
+        {
+          "id": "as_05",
+          "keyword": "arrêter de subir",
+          "score": 8,
+          "color": "cyan",
+          "usage": ["TOFU", "MOFU", "Stories"],
+          "trigger_emotion": "rupture passive",
+          "doctrine_link": "définition bascule encre passive → active",
+          "awareness": 3
+        },
+        {
+          "id": "as_06",
+          "keyword": "comprendre comment ton cerveau marche",
+          "score": 8,
+          "color": "cyan",
+          "usage": ["BOFU", "Lead magnet"],
+          "trigger_emotion": "promesse clarté",
+          "doctrine_link": "entrée encre active via analyse",
+          "awareness": 4
+        },
+        {
+          "id": "as_07",
+          "keyword": "arrêter de t'auto-saboter",
+          "score": 8,
+          "color": "cyan",
+          "usage": ["MOFU", "Cours"],
+          "trigger_emotion": "auto-bienveillance",
+          "doctrine_link": "reprogrammation récipient",
+          "awareness": 4
+        },
+        {
+          "id": "as_08",
+          "keyword": "avoir un vrai cadre",
+          "score": 7,
+          "color": "cyan",
+          "usage": ["BOFU", "Lead magnet"],
+          "trigger_emotion": "besoin structure",
+          "doctrine_link": "cadre = protocole d'encre active",
+          "awareness": 4
         }
       ]
     }
-  },
-  "forbidden_keywords": {
-    "description": "⚠️ JAMAIS utiliser — règles non-négociables",
-    "list": [
-      "barber",
-      "coiffure",
-      "salon",
-      "Adam (public)",
-      "parisien",
-      "métro parigot",
-      "startup",
-      "growth hacking",
-      "mindset (anglicisme seul)",
-      "leverage",
-      "tu dois",
-      "il faut absolument",
-      "motivation",
-      "croire en soi"
-    ]
-  },
-  "injection_rules": {
-    "tofu": "1 keyword vert en hook + 1 vert en friction + 1 cyan en micro-action",
-    "mofu": "1 vert récipient/encre obligatoire + 1 vert paralysie + 1 cyan émotion",
-    "stories": "1 vert scène vie + 1 cyan reframe",
-    "chatbot": "cyan/vert en empathie, JAMAIS vert honte sans soin",
-    "lead_magnet": "vert récipient/encre en titre, vert permission en CTA",
-    "captions": "1 vert + 1 cyan max, reste organique"
-  },
-  "top_10_power_words": [
-    "t'as tout lu mais t'as rien bougé",
-    "tu sais ce qu'il faut faire",
-    "14h sur le scooter",
-    "fin de shift tu scrolles",
-    "ton cerveau sature",
-    "encre passive",
-    "tu te mens à toi-même",
-    "ton entourage te tire en bas",
-    "c'est pas de la volonté — c'est de la biologie",
-    "6 mois d'ici t'en seras au même point"
   ],
-  "stats": {
-    "total_keywords": 80,
-    "green": 50,
-    "cyan": 30,
-    "purple": 0,
-    "yellow": 0,
-    "categories_count": 10
-  }
+  "top_10_hooks_ready": [
+    {"rank": 1, "keyword": "tu sais tout, tu fais rien", "use_as": "hook TOFU série cérébral paralysé"},
+    {"rank": 2, "keyword": "scroll jusqu'à 3h du matin", "use_as": "hook MOFU encre passive"},
+    {"rank": 3, "keyword": "dans mon domaine c'est différent", "use_as": "objection MOFU à démolir"},
+    {"rank": 4, "keyword": "tu rentres, tu scrolles, tu dors", "use_as": "hook ciné journée type"},
+    {"rank": 5, "keyword": "6700 euros par mois seul", "use_as": "preuve sociale CTA"},
+    {"rank": 6, "keyword": "t'es fatigué d'être fatigué", "use_as": "hook Stories empathie"},
+    {"rank": 7, "keyword": "honte silencieuse", "use_as": "MOFU connexion émotionnelle"},
+    {"rank": 8, "keyword": "ton entourage te tire vers le bas", "use_as": "TOFU environnement"},
+    {"rank": 9, "keyword": "c'est pas de la volonté, c'est de la biologie", "use_as": "reframe central"},
+    {"rank": 10, "keyword": "tu consommes pour pas penser", "use_as": "MOFU mécanisme"}
+  ],
+  "counts": {
+    "total_keywords": 77,
+    "by_color": {
+      "vert": 25,
+      "cyan": 52,
+      "violet": 0,
+      "jaune": 0
+    },
+    "by_usage": {
+      "TOFU": 38,
+      "MOFU": 46,
+      "BOFU": 14,
+      "Chatbot": 19,
+      "Stories": 13,
+      "Cours": 21,
+      "Lead magnet": 3
+    }
+  },
+  "injection_rules": [
+    "Chaque TOFU doit contenir >=1 keyword score>=9",
+    "Chaque MOFU doit mobiliser >=1 keyword doctrine (lp_02, lp_03, lp_05, lp_09, lp_10, dc_*)",
+    "Chaque objection-kill (MOFU/Cours) doit démolir ob_01 ou une variante",
+    "Chaque BOFU/Lead magnet doit promettre un switch passive→active (as_01, as_05, dc_04, dc_06)",
+    "Chaque Chatbot réponse froide empathie doit utiliser >=1 keyword catégorie emotions",
+    "ZÉRO barber / coiffure / salon dans toute référence métier — remplacer par mt_* (livreur, ouvrier, caissier, manut)"
+  ]
 }
