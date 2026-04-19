@@ -1,0 +1,103 @@
+{
+  "_meta": {
+    "name": "Djibril Learning · Bus inter-agents",
+    "role": "Carnet partagé lu/écrit par tous les crons et sous-agents. Source de vérité unique pour l'ADN avatar, la fraîcheur data, les handoffs et la mémoire court-terme.",
+    "version": "1.0.0",
+    "created_at": "2026-04-19",
+    "updated_at": "2026-04-19T11:45:00+02:00",
+    "maintainer": "djibril-qg-consolidator (23:45 local)"
+  },
+
+  "avatar_adn": {
+    "persona_nom": "Cérébral paralysé",
+    "age": "18-25",
+    "contexte": "métier chronophage (livreur, ouvrier usine, caissier, manut) + boucle conso passive",
+    "double_combat": "soi (paralysie interne) + environnement (famille/quartier/amis qui tirent vers le bas)",
+    "etat_interne": ["honte", "sur-analyse", "hallucination de compétence", "identité en crise"],
+    "objection_recurrente": "dans mon domaine c'est différent",
+    "besoin_reel": "validation que l'intelligence sans action = piège + permission d'agir imparfait + cadre pour couper",
+    "positioning_voix": "grand frère bienveillant autodidacte — zéro guru, zéro motivation vide",
+    "langage": "français oral 8 ans, contractions (t'as / j'suis / ça / frère), phrases courtes",
+    "interdits_public": ["nom Adam", "barber/coiffure/salon", "jargon", "anglicismes", "références parisiennes"],
+    "data_pure": "6700€/mois seul, 21 ans, 14h/j autodidacte — à rappeler sans embellir"
+  },
+
+  "doctrine_fil_rouge": {
+    "schema": "LECTURE → RÉFLEXION → ANALYSE → APPLICATION",
+    "metaphore_ADN": "RÉCIPIENT + ENCRE",
+    "recipient": "le cerveau = récipient. On le remplit. Il sature. Il déborde.",
+    "encre_passive": "tout ce qui entre sans choix (scroll, conso, environnement, entourage). Ancre par défaut.",
+    "encre_active": "tout ce qui entre PAR CHOIX (lecture, réflexion, analyse, application). Re-programme.",
+    "boucle": "encre passive → ancrage → comportement auto → même résultat → encore plus d'encre passive",
+    "sortie": "on ne vide pas — on remplit mieux jusqu'à ce que la proportion bascule",
+    "regle_dor": "Chaque cours/script/post/DM/lead-magnet doit convoquer (directement ou indirectement) le couple récipient/encre. Sans ça → hors marque → réécrire."
+  },
+
+  "leviers_psycho": {
+    "NEW": "dopamine, inédit, que personne t'explique",
+    "SAFE": "social proof + faisabilité prouvée (6700€/mois seul)",
+    "FACILE": "réduire temps/effort/ressources",
+    "FOMO": "peur de rater, opportunité massive",
+    "DRDP": "Désir / Rêve / Douleur / Peur"
+  },
+
+  "data_freshness": {
+    "tofu-lists.json": { "last_updated": null, "source_task": "djibril-tofu-factory-daily", "cadence": "daily 07:09", "owner_agent": "TOFU FACTORY" },
+    "theses.json": { "last_updated": null, "source_task": "djibril-daily-scrape-enrich", "cadence": "daily 07:10", "owner_agent": "MOFU COACHING" },
+    "problemes.json": { "last_updated": null, "source_task": "djibril-problemes-scraper", "cadence": "weekly", "owner_agent": "RESEARCH" },
+    "croyances.json": { "last_updated": null, "source_task": "djibril-daily-scrape-enrich", "cadence": "daily", "owner_agent": "MOFU COACHING" },
+    "hooks.json": { "last_updated": null, "source_task": "djibril-market-hooks-copier", "cadence": "daily", "owner_agent": "COPY" },
+    "emociones.json": { "last_updated": null, "source_task": null, "cadence": "orphan — relancée par consolidator", "owner_agent": "AUDIT" },
+    "war-room.json": { "last_updated": null, "source_task": null, "cadence": "orphan — relancée par consolidator", "owner_agent": "RESEARCH" },
+    "theses-atlas.json": { "last_updated": null, "source_task": null, "cadence": "orphan — relancée par consolidator", "owner_agent": "MOFU COACHING" },
+    "mofu-coaching.json": { "last_updated": null, "source_task": "djibril-daily-copywriting", "cadence": "daily 08:38", "owner_agent": "MOFU COACHING" },
+    "scripts-video.json": { "last_updated": null, "source_task": "djibril-script-sharpener", "cadence": "weekly", "owner_agent": "COPY" },
+    "stories-daily.json": { "last_updated": null, "source_task": "djibril-daily-stories-canva", "cadence": "daily 05:07", "owner_agent": "STORIES" },
+    "tracker-weekly.json": { "last_updated": null, "source_task": "djibril-weekly-tracker-evolver", "cadence": "weekly sunday 20:10", "owner_agent": "AUDIT" },
+    "keyword-intel.json": { "last_updated": null, "source_task": "djibril-keyword-intelligence", "cadence": "daily", "owner_agent": "RESEARCH" },
+    "daily-digest.json": { "last_updated": null, "source_task": "djibril-qg-consolidator", "cadence": "daily 23:45", "owner_agent": "CONSOLIDATOR" }
+  },
+
+  "recent_activity": [],
+
+  "handoffs_pending": [],
+
+  "stale_orphans_to_relance": [
+    { "file": "emociones.json", "last_seen_age_days": 11, "assigned_to": "djibril-qg-consolidator", "action": "regen emotion map depuis memory 02-DOCTRINE + memory 07-FEEDBACKS" },
+    { "file": "war-room.json", "last_seen_age_days": 13, "assigned_to": "djibril-qg-consolidator", "action": "recompute weekly from tofu-lists + hooks top 20 + keyword-intel" },
+    { "file": "theses-atlas.json", "last_seen_age_days": 13, "assigned_to": "djibril-qg-consolidator", "action": "rebuild index from theses.json + cross-ref avatar_adn" }
+  ],
+
+  "agents_registry": {
+    "COPY":       { "role": "scripts/hooks/captions/CTA",        "trigger": ["script","hook","caption","TOFU","MOFU"] },
+    "DASHBOARD":  { "role": "QG V8, data files, deploy",          "trigger": ["QG","dashboard","deploy","data file"] },
+    "CHATBOT":    { "role": "edge function Supabase + ManyChat",  "trigger": ["chatbot","edge","Mistral","V18"] },
+    "CRONS":      { "role": "schedule + automation pipeline",     "trigger": ["cron","schedule","automation"] },
+    "STORIES":    { "role": "IG stories V4 Cosmos",               "trigger": ["story","stories daily","Canva"] },
+    "TOFU_FACTORY":{ "role": "44 templates, cron 07:09",         "trigger": ["nouveau TOFU","TL-"] },
+    "MOFU_COACHING":{ "role": "mécanismes psycho + cours",      "trigger": ["MOFU","coaching","module","mécanisme"] },
+    "AUDIT":      { "role": "checklist 10 pts + score",           "trigger": ["relis","check","score","améliore"] },
+    "RESEARCH":   { "role": "tendances + neuroscience",           "trigger": ["recherche","neuroscience","bio-research"] },
+    "CONSOLIDATOR":{ "role": "meta coordinator 23:45 daily",      "trigger": ["consolidation","heal","bloc note"] }
+  },
+
+  "doctrine_bus_protocol": {
+    "write_rules": [
+      "Avant d'écrire : read bus.json, vérifier data_freshness du fichier qu'on produit",
+      "Après avoir produit un JSON : update data_freshness[fichier].last_updated + push bus.json",
+      "Si un artefact sort dégradé (source manquante, avatar hors ADN) : push entry dans handoffs_pending avec reason",
+      "Ajouter 1 ligne dans recent_activity (max 50 entries, rolling)",
+      "Jamais dépasser 128KB — consolidator trim si besoin"
+    ],
+    "read_rules": [
+      "Avant toute génération : lire avatar_adn + doctrine_fil_rouge",
+      "Si handoffs_pending > 0 : consolidator route la tâche au bon agent"
+    ]
+  },
+
+  "links": {
+    "dashboard_v7_main": "https://djibrilmindset.github.io/djibril-learning-dashboard/",
+    "dashboard_v8_preview": "https://djibrilmindset.github.io/djibril-learning-dashboard/index-v8.html",
+    "repo": "https://github.com/djibrilmindset/djibril-learning-dashboard"
+  }
+}
