@@ -421,6 +421,17 @@
       <div id="scripts-list"></div>
     </section>
 
+    <section class="page" data-page="shotlists">
+      <div class="page-head">
+        <div>
+          <h1 class="page-title">Shot lists DJIBRIL</h1>
+          <div class="page-sub">Prompts génération vidéo IA Opus 4.7 — découpage 8s, character consistency Djibril, Sora/Veo/Kling/Runway/Hedra</div>
+        </div>
+      </div>
+      <div class="kpis" id="kpi-shotlists"></div>
+      <div id="shotlists-list"></div>
+    </section>
+
     <section class="page" data-page="simulator">
       <div class="page-head">
         <div>
@@ -449,6 +460,7 @@ const SCHEMAS = {
   brief:          { url: 'data/dashboard_brief.json', extract: d => d || {} },
   briefV2:        { url: 'data/dashboard_brief_v2.json', extract: d => d || {} },
   djaelysScripts: { url: 'data/djaelys-scripts.json', extract: d => Array.isArray(d?.scripts) ? d.scripts : [] },
+  djibrilPrompts: { url: 'data/djibril-prompts.json', extract: d => Array.isArray(d?.prompts) ? d.prompts : [] },
   insights:       { url: 'data/insights.json',        extract: d => Array.isArray(d) ? d : (d?.insights || []) },
   veilleMessages: { url: 'data/veille-messages.json', extract: d => Array.isArray(d) ? d : (d?.messages || []) },
   veilleVideos:   { url: 'data/veille-videos.json',   extract: d => Array.isArray(d) ? d : (d?.videos || []) },
@@ -543,6 +555,7 @@ const NAV_ITEMS = [
   { id: 'convos',     label: 'Conversations', count: () => (STATE.broadcasts?.length || 0) },
   { id: 'logs',       label: 'Logs & LLM',    count: () => (STATE.llmSpend?.by_model?.length || 0) },
   { id: 'scripts',    label: 'Scripts DJAELYS', count: () => (STATE.djaelysScripts?.length || 0) },
+  { id: 'shotlists',  label: 'Shot lists DJIBRIL', count: () => (STATE.djibrilPrompts?.length || 0) },
   { id: 'simulator',  label: 'Simulateur',    count: () => '' },
 ];
 
@@ -1197,6 +1210,7 @@ async function boot() {
   safeRender(renderConvos,     'convos-list',   'Convos');
   safeRender(renderLogs,       'logs-models',   'Logs');
   safeRender(renderScripts,    'scripts-list',  'Scripts');
+  safeRender(renderShotlists,  'shotlists-list', 'Shotlists');
 
   const meta = STATE._raw_agentStatus?._meta || {};
   const ts = meta.generated_at || STATE.brief?.last_scrape || new Date().toISOString();
@@ -1231,6 +1245,41 @@ function renderScripts() {
       <div style="margin-bottom:12px;">${vars} ${ctas}</div>
       <details><summary style="cursor:pointer; color:var(--cyan); font-size:13px; margin-bottom:8px;">Voir script complet (${(c.script_md || '').length} chars)</summary>
         <pre style="background:#fafafa; padding:16px; border-radius:6px; font-family:'JetBrains Mono',monospace; font-size:12px; line-height:1.55; overflow-x:auto; white-space:pre-wrap; max-height:600px; overflow-y:auto;">${esc(c.script_md || '')}</pre>
+      </details>
+    </div>`;
+  }).join('');
+}
+
+function renderShotlists() {
+  const items = STATE.djibrilPrompts || [];
+  const totalScenes = items.reduce((s, x) => s + (x.content?.n_scenes || 0), 0);
+  const totalDur = items.reduce((s, x) => s + (x.content?.duration_s || 0), 0);
+  $('#kpi-shotlists').innerHTML = `
+    <div class="kpi accent-pink"><div class="kpi-label">Shot lists DJIBRIL</div><div class="kpi-value">${items.length}</div></div>
+    <div class="kpi accent-orange"><div class="kpi-label">Scènes totales</div><div class="kpi-value">${totalScenes}</div></div>
+    <div class="kpi accent-cyan"><div class="kpi-label">Durée vidéos analysées</div><div class="kpi-value">${Math.round(totalDur)}s</div></div>
+    <div class="kpi"><div class="kpi-label">Modèle</div><div class="kpi-value mono">Opus 4.7</div></div>
+  `;
+  if (!items.length) {
+    $('#shotlists-list').innerHTML = emptyBox('Aucun shot list', 'data/djibril-prompts.json vide. Génère via ~/agence-ia/manager/run_djibril.sh "<URL_IG_REEL>"');
+    return;
+  }
+  $('#shotlists-list').innerHTML = items.map(s => {
+    const c = s.content || {};
+    return `<div class="card" style="margin-bottom:16px;">
+      <div class="card-head">
+        <div>
+          <div class="card-title">${esc(s.title || s.slug)}</div>
+          <div class="card-sub">${esc(c.ref_source || '—')} · ${esc(c.format || '')} · ${c.n_scenes || 0} scènes ${c.scene_duration_s || 8}s · ${esc((c.generated_at || '').slice(0,10))}</div>
+        </div>
+      </div>
+      <div style="margin-bottom:12px;">
+        <span class="pill pill-pink">${c.n_scenes || 0} scènes</span>
+        <span class="pill pill-muted">${c.duration_s || 0}s vidéo</span>
+        <span class="pill pill-muted">${esc(c.format || '')}</span>
+      </div>
+      <details><summary style="cursor:pointer; color:var(--cyan); font-size:13px; margin-bottom:8px;">Voir shot list complet (${(c.shot_list_md || '').length} chars)</summary>
+        <pre style="background:#fafafa; padding:16px; border-radius:6px; font-family:'JetBrains Mono',monospace; font-size:12px; line-height:1.55; overflow-x:auto; white-space:pre-wrap; max-height:700px; overflow-y:auto;">${esc(c.shot_list_md || '')}</pre>
       </details>
     </div>`;
   }).join('');
