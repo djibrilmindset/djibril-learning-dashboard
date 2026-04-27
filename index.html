@@ -223,10 +223,19 @@
         </div>
       </div>
       <div class="kpis" id="dash-kpis"></div>
+
+      <div class="card" id="brief-v2-card" style="margin-bottom: 16px; background: linear-gradient(135deg, #fef7f7 0%, #fff8f0 100%); border-left: 4px solid #ff6b9f;">
+        <div class="card-head">
+          <div class="card-title" style="font-family:'Bricolage Grotesque',serif;">ADELLE Brief Intelligent</div>
+          <span class="pill pill-pink" id="brief-v2-time">…</span>
+        </div>
+        <div id="dash-brief-v2"></div>
+      </div>
+
       <div class="grid grid-2" style="margin-bottom: 16px;">
         <div class="card">
           <div class="card-head">
-            <div class="card-title">Brief du jour</div>
+            <div class="card-title">Brief du jour (legacy)</div>
             <span class="pill pill-pink" id="brief-time">…</span>
           </div>
           <div id="dash-brief"></div>
@@ -427,9 +436,13 @@ const SCHEMAS = {
   ig:             { url: 'data/ig-metrics.json',      extract: d => d || {} },
   avatars:        { url: 'data/avatars.json',         extract: d => d?.canon_avatars || [] },
   brief:          { url: 'data/dashboard_brief.json', extract: d => d || {} },
+  briefV2:        { url: 'data/dashboard_brief_v2.json', extract: d => d || {} },
   insights:       { url: 'data/insights.json',        extract: d => Array.isArray(d) ? d : (d?.insights || []) },
   veilleMessages: { url: 'data/veille-messages.json', extract: d => Array.isArray(d) ? d : (d?.messages || []) },
   veilleVideos:   { url: 'data/veille-videos.json',   extract: d => Array.isArray(d) ? d : (d?.videos || []) },
+  veilleVideosEnriched:   { url: 'data/legacy/enriched/veille-videos-enriched.json',   extract: d => Array.isArray(d) ? d : [] },
+  veilleMessagesEnriched: { url: 'data/legacy/enriched/veille-messages-enriched.json', extract: d => Array.isArray(d) ? d : [] },
+  insightsEnriched:       { url: 'data/legacy/enriched/insights-enriched.json',        extract: d => d || {} },
   socialTracking: { url: 'data/social-tracking.json', extract: d => Array.isArray(d) ? d : (d?.accounts || d || {}) },
   contentCat:     { url: 'data/content-by-category.json', extract: d => d || {} },
 
@@ -577,6 +590,43 @@ function renderDashboard() {
     <div style="font-size: 12.5px; color: var(--text-2);"><strong>CTA :</strong> <a href="${esc(b.cta_url)}" target="_blank" class="list-item-link">${esc(b.cta_url)}</a></div>
   ` : emptyBox('Brief non disponible', 'dashboard_brief.json vide');
 
+  // Brief V2 intelligent
+  const v2 = STATE.briefV2 || {};
+  $('#brief-v2-time').textContent = v2.generated_at ? relativeTime(v2.generated_at) : '—';
+  if (!v2.top_3_pain_emergents) {
+    $('#dash-brief-v2').innerHTML = emptyBox('Brief V2 non disponible', 'dashboard_brief_v2.json vide ou en cours de génération');
+  } else {
+    const pains = (v2.top_3_pain_emergents || []).map(p => `<li style="margin-bottom:6px;">${esc(p)}</li>`).join('');
+    const videos = (v2.top_3_videos_inspirantes || []).map(v => `
+      <div style="background:#fff; padding:10px 12px; margin-bottom:8px; border-radius:6px; border:1px solid #fce4ec;">
+        <div style="font-family:'Bricolage Grotesque',serif; font-weight:600; font-size:13.5px; color:#0f172a;">${esc(v.titre || v.title || '—')}</div>
+        ${v.angle_djibril ? `<div style="font-size:12.5px; color:#475569; margin-top:4px;"><strong style="color:#e11d6e;">Angle :</strong> ${esc(v.angle_djibril)}</div>` : ''}
+      </div>`).join('');
+    const recs = (v2.recommandations_contenu_semaine || []).map((r, i) => `
+      <div style="display:flex; gap:8px; align-items:flex-start; padding:6px 0;">
+        <span style="background:#ff6b9f; color:#fff; width:22px; height:22px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; flex-shrink:0; margin-top:2px;">${i+1}</span>
+        <span style="font-size:13.5px; line-height:1.5;">${esc(r)}</span>
+      </div>`).join('');
+
+    $('#dash-brief-v2').innerHTML = `
+      ${v2.alerte_marche ? `<div style="background:#fef3c7; border-left:4px solid #f59e0b; padding:10px 14px; margin-bottom:14px; border-radius:4px; font-size:13.5px;"><strong style="font-family:'Bricolage Grotesque',serif; color:#b45309;">Alerte marché :</strong> ${esc(v2.alerte_marche)}</div>` : ''}
+
+      <div class="grid grid-2" style="gap:16px;">
+        <div>
+          <h4 style="font-family:'Bricolage Grotesque',serif; font-size:14px; margin:0 0 10px; color:#0f172a;">Top 3 pains émergents</h4>
+          <ul style="margin:0; padding-left:18px; font-size:13.5px; line-height:1.6;">${pains}</ul>
+
+          <h4 style="font-family:'Bricolage Grotesque',serif; font-size:14px; margin:18px 0 10px; color:#0f172a;">Recommandations semaine</h4>
+          <div>${recs}</div>
+        </div>
+        <div>
+          <h4 style="font-family:'Bricolage Grotesque',serif; font-size:14px; margin:0 0 10px; color:#0f172a;">Top 3 vidéos inspirantes</h4>
+          ${videos}
+        </div>
+      </div>
+    `;
+  }
+
   const leads = STATE._raw_agentStatus?.lead_tier_distribution || [];
   const totalLeads = leads.reduce((s, l) => s + (l.users || 0), 0);
   $('#leads-sub').textContent = fmtNum(totalLeads) + ' users tracked';
@@ -619,6 +669,12 @@ function renderDashboard() {
 }
 
 function renderVeille() {
+  // Build enrichment map by text key
+  const enrichedMap = new Map();
+  (STATE.veilleMessagesEnriched || []).forEach(m => {
+    if (m.text && m.enrichment) enrichedMap.set(m.text, m.enrichment);
+  });
+
   const live = (STATE.veilleMessages || []).map(m => ({ ...m, source: 'live' }));
   const legacy = (STATE.veilleMessagesLegacy || []).map(m => ({ ...m, source: 'legacy' }));
   const all = [...live, ...legacy];
@@ -630,6 +686,7 @@ function renderVeille() {
     m._jtbd = m.jtbd || m.category || m.topic || '';
     m._sentiment = m.sentiment || '';
     m._date = m.date || m.date_seen || '';
+    m._enrichment = enrichedMap.get(m.text) || m.enrichment || null;
   });
 
   const platforms = new Set(all.map(m => m._platform).filter(p => p && p !== '—'));
@@ -664,22 +721,32 @@ function renderVeille() {
       list.innerHTML = emptyBox('Aucun message', 'Pas de résultat pour ces filtres');
       return;
     }
-    list.innerHTML = filtered.slice(0, 100).map(m => `
+    list.innerHTML = filtered.slice(0, 100).map((m, idx) => {
+      const e = m._enrichment;
+      const intensite = e?.intensite_emotion ? Number(e.intensite_emotion) : null;
+      const intensiteCol = intensite ? (intensite >= 8 ? '#e11d6e' : intensite >= 5 ? '#f59e0b' : '#6b7280') : null;
+      return `
       <div class="list-item">
-        <div class="list-item-head">
-          <div class="list-item-title">${esc(m._title)}</div>
+        ${e?.pain_central ? `<div style="font-family:'Bricolage Grotesque',serif; font-size:16px; font-weight:600; color:#0f172a; margin-bottom:6px;">${esc(e.pain_central)}</div>` : `<div class="list-item-title">${esc(m._title)}</div>`}
+        <div class="list-item-meta" style="margin-bottom:6px;">
+          ${m._platform && m._platform !== '—' ? `<span class="pill pill-muted">${esc(m._platform)}</span>` : ''}
+          ${e?.jtbd_clarified ? `<span class="pill pill-pink">${esc(e.jtbd_clarified)}</span>` : (m._jtbd ? `<span class="pill pill-pink">${esc(m._jtbd)}</span>` : '')}
+          ${intensite ? `<span class="pill" style="background:${intensiteCol}; color:#fff;">Intensité ${intensite}/10</span>` : ''}
+          ${m._sentiment ? `<span class="pill ${m._sentiment === 'negative' ? 'pill-error' : m._sentiment === 'positive' ? 'pill-ok' : 'pill-muted'}">${esc(m._sentiment)}</span>` : ''}
           ${m._date ? `<span class="card-sub" style="white-space: nowrap;">${esc(m._date)}</span>` : ''}
         </div>
-        ${m._text && m._text !== m._title ? `<div class="list-item-text">${esc(m._text)}</div>` : ''}
-        <div class="list-item-meta">
-          ${m._platform && m._platform !== '—' ? `<span class="pill pill-muted">${esc(m._platform)}</span>` : ''}
-          ${m._jtbd ? `<span class="pill pill-pink">${esc(m._jtbd)}</span>` : ''}
-          ${m._sentiment ? `<span class="pill ${m._sentiment === 'negative' ? 'pill-error' : m._sentiment === 'positive' ? 'pill-ok' : 'pill-muted'}">${esc(m._sentiment)}</span>` : ''}
+        ${e?.angle_djibril ? `<div style="background:#fff0f6; border-left:3px solid #ff6b9f; padding:8px 12px; margin:8px 0; border-radius:4px; font-size:13.5px; line-height:1.5;"><strong style="font-family:'Bricolage Grotesque',serif; color:#e11d6e;">Angle Djibril :</strong> ${esc(e.angle_djibril)}</div>` : ''}
+        <details style="margin-top:6px;">
+          <summary style="cursor:pointer; font-size:12px; color:#6b7280;">Voir texte original ${e?.text_fr && e.text_fr !== m._text ? '(traduit FR ci-dessous)' : ''}</summary>
+          ${e?.text_fr && e.text_fr !== m._text ? `<div class="list-item-text" style="margin-top:6px;">${esc(e.text_fr)}</div>` : ''}
+          <div class="list-item-text" style="margin-top:6px; color:#64748b; font-size:12.5px;">${esc(m._text)}</div>
+        </details>
+        <div class="list-item-meta" style="margin-top:6px;">
           ${m.url ? `<a href="${esc(m.url)}" target="_blank" class="list-item-link">${esc(m.url.slice(0, 60))}…</a>` : ''}
           <span class="pill pill-muted">${m.source}</span>
         </div>
       </div>
-    `).join('') + (filtered.length > 100 ? `<div class="card-sub" style="padding: 12px; text-align: center;">… et ${filtered.length - 100} autres</div>` : '');
+    `;}).join('') + (filtered.length > 100 ? `<div class="card-sub" style="padding: 12px; text-align: center;">… et ${filtered.length - 100} autres</div>` : '');
   }
 
   $('#veille-search').addEventListener('input', update);
@@ -689,6 +756,12 @@ function renderVeille() {
 }
 
 function renderVideos() {
+  // Build enrichment map
+  const enrichedMap = new Map();
+  (STATE.veilleVideosEnriched || []).forEach(v => {
+    if (v.title && v.enrichment) enrichedMap.set(v.title, v.enrichment);
+  });
+
   const live = (STATE.veilleVideos || []).map(v => ({ ...v, source: 'live' }));
   const legacy = (STATE.veilleVideosLegacy || []).map(v => ({ ...v, source: 'legacy' }));
   const all = [...live, ...legacy];
@@ -700,6 +773,7 @@ function renderVideos() {
     v._views = Number(v.views) || 0;
     v._summary = v.summary || v.notes || v.hook || '';
     v._date = v.date || v.date_seen || '';
+    v._enrichment = enrichedMap.get(v.title) || v.enrichment || null;
   });
 
   const totalViews = all.reduce((s, v) => s + v._views, 0);
@@ -729,21 +803,38 @@ function renderVideos() {
     });
     const list = $('#videos-list');
     if (filtered.length === 0) { list.innerHTML = emptyBox('Aucune vidéo', 'Aucun résultat pour ces filtres'); return; }
-    list.innerHTML = filtered.slice(0, 100).map(v => `
+    list.innerHTML = filtered.slice(0, 100).map(v => {
+      const e = v._enrichment;
+      const score = e?.score_pertinence ? Number(e.score_pertinence) : null;
+      const cat = e?.categorie || '';
+      const catColors = { hook: '#06b6d4', pain: '#e11d6e', solution: '#10b981', lifestyle: '#a855f7', transformation: '#f59e0b', objection: '#ef4444' };
+      const catColor = catColors[cat] || '#6b7280';
+      return `
       <div class="list-item">
         <div class="list-item-head">
-          <div class="list-item-title">${esc(v._title)}</div>
+          <div class="list-item-title" style="font-family:'Bricolage Grotesque',serif; font-size:16px;">${esc(e?.title_fr || v._title)}</div>
           ${v._views ? `<span class="pill pill-pink">${fmtNum(v._views)} vues</span>` : ''}
         </div>
-        ${v._summary ? `<div class="list-item-text">${esc(v._summary)}</div>` : ''}
-        <div class="list-item-meta">
+        <div class="list-item-meta" style="margin:6px 0;">
           ${v._platform && v._platform !== '—' ? `<span class="pill pill-muted">${esc(v._platform)}</span>` : ''}
+          ${cat ? `<span class="pill" style="background:${catColor}; color:#fff;">${esc(cat)}</span>` : ''}
+          ${score ? `<span class="pill" style="background:#fff8e1; color:#92400e; border:1px solid #fbbf24;">Score ${score}/10</span>` : ''}
           ${v._niche ? `<span class="pill pill-pink">${esc(v._niche)}</span>` : ''}
           ${v._date ? `<span class="card-sub">${esc(v._date)}</span>` : ''}
-          ${v.url ? `<a href="${esc(v.url)}" target="_blank" class="list-item-link">${esc(v.url.slice(0, 60))}…</a>` : ''}
         </div>
+        ${e?.resume_fr ? `<div class="list-item-text" style="margin-bottom:8px;">${esc(e.resume_fr)}</div>` : (v._summary ? `<div class="list-item-text">${esc(v._summary)}</div>` : '')}
+        ${e?.angle_djibril ? `<div style="background:#fff0f6; border-left:3px solid #ff6b9f; padding:8px 12px; margin:8px 0; border-radius:4px; font-size:13.5px; line-height:1.5;"><strong style="font-family:'Bricolage Grotesque',serif; color:#e11d6e;">Angle Djibril :</strong> ${esc(e.angle_djibril)}</div>` : ''}
+        <details style="margin-top:6px;">
+          <summary style="cursor:pointer; font-size:12px; color:#6b7280;">Voir détails originaux</summary>
+          <div style="font-size:12.5px; color:#64748b; margin-top:6px;">
+            <div><strong>Titre original :</strong> ${esc(v._title)}</div>
+            ${v.hook ? `<div><strong>Hook :</strong> ${esc(v.hook)}</div>` : ''}
+            ${v.notes ? `<div><strong>Notes :</strong> ${esc(v.notes)}</div>` : ''}
+            ${v.url ? `<a href="${esc(v.url)}" target="_blank" class="list-item-link">${esc(v.url.slice(0, 80))}…</a>` : ''}
+          </div>
+        </details>
       </div>
-    `).join('') + (filtered.length > 100 ? `<div class="card-sub" style="padding: 12px; text-align: center;">… et ${filtered.length - 100} autres</div>` : '');
+    `;}).join('') + (filtered.length > 100 ? `<div class="card-sub" style="padding: 12px; text-align: center;">… et ${filtered.length - 100} autres</div>` : '');
   }
   $('#videos-search').addEventListener('input', update);
   platSel.addEventListener('change', update);
@@ -826,17 +917,27 @@ function renderInsights() {
   }
 
   const leg = STATE.insightsLegacy || {};
-  const opps = leg.opportunites_djibril || leg.opportunities || [];
+  const enr = STATE.insightsEnriched || {};
+  // Use enriched opps if available
+  const opps = (enr.opportunites_djibril_enriched && enr.opportunites_djibril_enriched.length)
+    ? enr.opportunites_djibril_enriched
+    : (leg.opportunites_djibril || leg.opportunities || []);
   const patterns = leg.patterns || [];
   const sections = [];
   if (Array.isArray(opps) && opps.length) {
     sections.push(`<h4 style="font-family:'Bricolage Grotesque',serif; margin: 4px 0 10px; font-size: 13px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em;">Opportunités (${opps.length})</h4>`);
-    sections.push(opps.slice(0, 15).map(o => `
+    sections.push(opps.slice(0, 15).map(o => {
+      const e = o.enrichment;
+      const title = o.title || o.titre || o.opportunity || (o.source ? `${o.source} — ${o.jtbd_dominant || ''}` : JSON.stringify(o).slice(0, 80));
+      const baseDesc = o.detail || o.description || (o.signal_count ? `${o.signal_count} signaux captés` : '');
+      return `
       <div class="list-item">
-        <div class="list-item-title">${esc(o.title || o.titre || o.opportunity || JSON.stringify(o).slice(0, 80))}</div>
-        ${o.detail || o.description ? `<div class="list-item-text">${esc(o.detail || o.description)}</div>` : ''}
+        <div class="list-item-title" style="font-family:'Bricolage Grotesque',serif;">${esc(title)}</div>
+        ${baseDesc ? `<div class="list-item-text" style="margin-bottom:6px;">${esc(baseDesc)}</div>` : ''}
+        ${e?.interpretation_djibril ? `<div style="background:#f0f9ff; border-left:3px solid #06b6d4; padding:8px 12px; margin:8px 0; border-radius:4px; font-size:13px; line-height:1.5;"><strong style="font-family:'Bricolage Grotesque',serif; color:#0891b2;">Interprétation Djibril :</strong> ${esc(e.interpretation_djibril)}</div>` : ''}
+        ${e?.action_concrete ? `<div style="background:#fef3c7; border-left:3px solid #f59e0b; padding:8px 12px; margin:8px 0; border-radius:4px; font-size:13px; line-height:1.5;"><strong style="font-family:'Bricolage Grotesque',serif; color:#b45309;">Action 24h :</strong> ${esc(e.action_concrete)}</div>` : ''}
       </div>
-    `).join(''));
+    `;}).join(''));
   }
   if (Array.isArray(patterns) && patterns.length) {
     sections.push(`<h4 style="font-family:'Bricolage Grotesque',serif; margin: 16px 0 10px; font-size: 13px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em;">Patterns (${patterns.length})</h4>`);
