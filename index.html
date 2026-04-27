@@ -470,8 +470,68 @@ async function loadAll() {
     state.data.insights = state.data.insightsLive;
   }
 
+  // ========== SCHEMA NORMALIZER (data live = arrays, JS attend objects) ==========
+  const wrap = (data, key) => Array.isArray(data) ? { [key]: data } : data;
+  state.data.veilleMessages = wrap(state.data.veilleMessages, 'messages');
+  state.data.veilleVideos = wrap(state.data.veilleVideos, 'videos');
+  // socialTracking live = array, legacy = {accounts: {...}}
+  if (Array.isArray(state.data.socialTracking)) {
+    const accObj = {};
+    state.data.socialTracking.forEach(a => { accObj[a.handle || a.username || a.account || a.id || ('acc_' + Math.random())] = a; });
+    state.data.socialTracking = { accounts: accObj };
+  }
+  // agentStatus live = {_meta, agents_24h, lead_tier_distribution, kpi_nord} → flatten to array for JS
+  if (state.data.agentStatus?.agents_24h) {
+    state.data._kpiNord = state.data.agentStatus.kpi_nord;
+    state.data._leadTiers = state.data.agentStatus.lead_tier_distribution;
+    state.data.agentStatus = state.data.agentStatus.agents_24h;
+  }
+  // recentRuns live = {_meta, runs: [...]} → flatten array
+  if (state.data.recentRuns?.runs) state.data.recentRuns = state.data.recentRuns.runs;
+  // broadcasts live = {_meta, broadcasts: [...]} → flatten array
+  if (state.data.broadcasts?.broadcasts) state.data.broadcasts = state.data.broadcasts.broadcasts;
+  // llmSpend live = {_meta, by_model: [...], total_cost_usd, total_calls} → adapt
+  if (state.data.llmSpend) {
+    const ls = state.data.llmSpend;
+    if (ls.total_cost_usd != null && ls.total_usd == null) ls.total_usd = ls.total_cost_usd;
+    if (ls._meta?.total_calls) ls.total_calls = ls._meta.total_calls;
+    if (Array.isArray(ls.by_model) && !ls.models) {
+      const m = {};
+      ls.by_model.forEach(x => { m[x.model] = { calls: x.calls, tokens: (x.tokens_in||0)+(x.tokens_out||0), cost: x.cost_usd }; });
+      ls.models = m;
+    }
+  }
+  // avatars live = {_meta, canon_avatars: [...]} → flatten array
+  if (state.data.avatars?.canon_avatars) state.data.avatars = state.data.avatars.canon_avatars;
+  // igMetrics live = {_meta, latest_per_account: [...], djibril_perso_history_30d} → expose followers
+  if (state.data.igMetrics?.latest_per_account?.length) {
+    const first = state.data.igMetrics.latest_per_account.find(a => a.account_owner === 'djibril_perso')
+      || state.data.igMetrics.latest_per_account[0];
+    state.data.igMetrics.followers = first?.followers_count;
+    state.data.igMetrics.accounts = state.data.igMetrics.latest_per_account;
+  }
+  // insights live = array brut → wrap pour compatibilité JS render
+  if (Array.isArray(state.data.insights)) {
+    state.data.insights = { opportunites_djibril: state.data.insights, meta: { source: 'live' } };
+  }
+  // insightsLive de meme
+  if (Array.isArray(state.data.insightsLive)) {
+    if (!state.data.insights?.opportunites_djibril) {
+      state.data.insights = { opportunites_djibril: state.data.insightsLive, meta: { source: 'live' } };
+    }
+  }
+  // bus.json missing → synthétiser depuis broadcasts
+  if (!state.data.bus) {
+    state.data.bus = { broadcasts: state.data.broadcasts || [], recent_activity: state.data.recentRuns?.slice(0, 10) || [] };
+  }
+  // contentByCat live = {_meta, categories: [...]} → flatten for direct access
+  if (state.data.contentByCat?.categories) {
+    state.data.contentByCat = state.data.contentByCat.categories;
+  }
+  // ========== END NORMALIZER ==========
+
   document.getElementById('last-update').textContent = 'Maj : ' + new Date().toLocaleString('fr-FR', { hour: '2-digit', minute: '2-digit', day: '2-digit', month: '2-digit' });
-  renderAll();
+  try { renderAll(); } catch(e) { console.error('renderAll failed:', e); document.getElementById('brief-content').innerHTML = '<div style="color:#dc2626; padding:12px;">Erreur rendering : ' + escape(String(e)) + '. Voir console.</div>'; }
 }
 
 function renderAll() {
