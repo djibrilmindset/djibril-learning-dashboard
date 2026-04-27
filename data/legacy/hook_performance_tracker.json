@@ -1,0 +1,789 @@
+{
+  "meta": {
+    "created": "2026-04-05",
+    "last_update": "2026-04-20",
+    "purpose": "Tracker hooks performance marché + Djibril, alimente copywriter — feedback loop réel + veille quotidienne + recos rotation roulette",
+    "week": "W22-OPEN (jour 1 — lundi)",
+    "agent": "HOOK INTELLIGENCE — CDE (scheduled)",
+    "version": "2026-04-20-v8",
+    "sources": [
+      "workspace/data/cde-feedback-daily.json (80 entrées historiques — dernier scrape 2026-04-19 partial IG only / TikTok anti-bot 3 comptes)",
+      "workspace/data/veille-videos.json (391 vidéos, +12 aujourd'hui VV-042001→042012 via WebSearch 8 requêtes)",
+      "workspace/data/insights.json (scrape_2026_04_20 + recommendations_2026_04_20 ajoutés)",
+      "workspace/data/cde-analysis-report-2026-04-20.md (rapport analyst quotidien)",
+      "workspace/data/scripts-video-2026-04-20.md (6 scripts 068-073 livrés ouverture W22)",
+      "workspace/memory/CDE-CREATORS-REFERENCE.json (42 créateurs tiers, +62 new 2026-04-20)",
+      "MEMORY.md — CDE Analyst 2026-04-20 + Copywriting batch 2026-04-20 + Audit Chatbot run 23 + CDE Scrape 2026-04-20"
+    ],
+    "changelog_v8": [
+      "W21-CLOSE → W22-OPEN transition. Score système stable 62. 18e run consécutif 0/20 doctrine chatbot = gap absolu (hors scope ce tracker mais toujours prioritaire Djibril).",
+      "CDE Analyst 2026-04-20 : +12 deep analyses VV-042001→042012, transférabilité moyenne 9.58/10 (9 entrées 10/10). Corpus 379→391.",
+      "NEW 6 concepts neuro formalisés : PFC_offline_basal_ganglia_autopilot (Huberman 94) / sustained_attention_rewiring_23pct (Netpsychology 91) / variable_ratio_TikTok_slot_machine (Michigan Journal Economics 89) / anticipated_shame_social_rejection (La Clinique E-Santé 87) / limiting_beliefs_loop_inherited (Asana 85) / dopamine_baseline_reset_intentional_boredom (Indiana Daily 86) / overthinking_prevalence_73pct (Univ Michigan 87) / prefrontal_maturation_beyond_25 (Rude Baguette 88) / freedom_paradox_autonomy_decision_fatigue (Marque Employeur 88) / accelerated_cognitive_aging_short_form (National Geo 90) / anterior_cingulate_asymmetric_discounting (Inserm/CNRS 93 — RÉCONFIRMÉ avec mécanisme maths coût/récompense) / glutamate_clearance_lateral_PFC (Pessiglione RECONFIRMÉ 92)",
+      "Format SCIENCE-CITATION 30s UPGRADÉ et FORMALISÉ W22 : 0-3s auteur+année / 3-8s chiffre d'effet / 8-18s métaphore RÉCIPIENT/ENCRE / 18-25s micro-action cérébrale / 25-30s CTA GO 6700€ raison Cialdini. KPI cible : rétention 15s >55%, save_rate >2.3%. Tests pilotes W22 : Pessiglione glutamate 19h / Gollwitzer IF-THEN d=0.65 / Kahneman fluence cognitive.",
+      "Copywriter 2026-04-20 a déjà livré 6 scripts 068-073 (2T/2M/2B, récipient 6/6 100%) qui exploitent 3/3 angles top W22 (Pessiglione glutamate / Declercq 18-25 / Gollwitzer IF-THEN) → ré-utiliser ces briques pour hooks multi-plateformes.",
+      "NEW catégorie systemic_reframing détectée : déplacer l'identité 'addict/faible' vers 'cible d'un système industriel' (VV-042007 dopamine economy TikTok slot machine 500 ingénieurs). Permission massive sans déresponsabilisation. À tester W22.",
+      "AMYGDALE_HIJACK consolidée (2e angle entre Amber Gannon imposter + La Clinique E-Santé peur de la honte sociale) — catégorie ancrée, plus vierge. Lien direct extension COUVERCLE (MH-081→095).",
+      "Non-négos W22 actés (recos analyst) : 1) zone+molécule+timing précis dans 20 premiers mots des hooks neuro, 2) récipient/encre ≥80% (vs 58% actuel), 3) BLACKLIST hook TOFU CAM A (plan fixe visage neutre) — récidive 3e semaine → mouvement obligatoire 0→2s.",
+      "Opportunité FR non exploitée rappel : Retardmaxxing 2.4M Gen Z toujours sans ambassadeur francophone clair (2e semaine signalé) — claim hook #3 top_5 maintenu.",
+      "Chrome MCP non utilisé ce run (WebSearch-only) — TikTok anti-bot 3 comptes reste bloqué. Fallback TikTok Studio Analytics manuel toujours P0 Djibril pour feedback loop réel.",
+      "Aucun nouveau créateur FR >10K détecté aujourd'hui (8 nouveaux tous <10K)."
+    ]
+  },
+
+  "categories": {
+    "paradoxe_identitaire": {
+      "definition": "Tu fais X mais tu veux Y — contradiction comportement/désir",
+      "performance_confirmee": "TOP performer Djibril stable — HIT 59L 'Comprendre ≠ avancer' (8.1% ratio) + SOLID 36L '14h/jour préparation=drogue'. Run 18 confirme : 3/12 entrées (TikTok slot machine / 10 croyances / peur échec=honte) toutes scores 85-89 = famille robuste.",
+      "priority": "MAX",
+      "usage_recommande": "3 hooks / semaine minimum — coupler RÉCIPIENT 3/3",
+      "exemples_marche_top": [
+        "@thediaryofaceo 'Le piège du QI élevé' 2.4M",
+        "@alex_brb_1 'Tu sais tout. Tu fais rien.' 890K FR",
+        "Michigan Journal of Economics 'T'es pas accro à TikTok — t'es dans une machine à sous de casino conçue par 500 ingénieurs' (run 18 score 89)",
+        "Asana 'T'as pas 10 problèmes — t'as 10 phrases qui tournent en boucle' (run 18 score 85)",
+        "La Clinique E-Santé 'T'as pas peur d'échouer — t'as peur de ce qu'on va dire' (run 18 score 87)",
+        "Marque Employeur '1 entrepreneur FR sur 4 veut redevenir salarié en 2027' (run 18 score 88)",
+        "@thepsychdoctormd 'analysis paralysis = brain stalling'",
+        "Dynamique Mag 2026 'T'es pas paresseux — tu régules ton humeur en évitant la tâche'"
+      ]
+    },
+    "neuroscience_vulgarisee": {
+      "definition": "Terme technique neuro + comportement quotidien reconnaissable + zone PRÉCISE obligatoire W22",
+      "performance_confirmee": "HIT 39L 'sabote en silence' + SOLID 27L 'cerveau change physiquement'. Analyst 2026-04-20 confirme : neuro précis scoreur 9.83 vs classique 9.33. Neuro flou = bat par paradoxe identitaire bien construit.",
+      "priority": "MAX — obligatoire zone + molécule + timing PRÉCIS dans les 20 premiers mots",
+      "usage_recommande": "2 hooks / semaine — toujours avec récipient / encre + zone cerveau nommée",
+      "exemples_marche_top": [
+        "@hubermanlab 'PFC décroche, ganglions basaux reprennent le volant' 2.1M (run 18 score 94 — TOP AUJOURD'HUI)",
+        "Inserm/CNRS 'Cingulaire antérieur fait les maths de travers' (run 18 score 93)",
+        "Pessiglione Current Biology 'glutamate = déchet métabolique cortex latéral' (run 18 score 92 — RECONFIRMÉ)",
+        "Netpsychology 'Attention soutenue -23% mesurée tests standardisés, recâblable 6 sem' (run 18 score 91)",
+        "National Geographic '1h scroll = 12 min cerveau en moins DEMAIN' (run 18 score 90)",
+        "@thepsychdoctormd 'système limbique kidnappe' 1.75M FR",
+        "@hubermanlab 'cortex préfrontal épuisé pas paresse' 3.8M FR",
+        "Hamilton Biological Psychiatry 'DMN mPFC-précuneus sur-câblé rumination'",
+        "Institut du Cerveau Pessiglione 'cingulaire antérieur efface la récompense'"
+      ]
+    },
+    "curiosity_secret": {
+      "definition": "Le piège / le secret / ce que personne t'explique",
+      "performance_confirmee": "@thediaryofaceo 'high-IQ trap' 2.4M — angle FR toujours ouvert.",
+      "priority": "MAX",
+      "usage_recommande": "2 hooks / semaine — formule 'le piège du [identité] que personne t'explique'",
+      "exemples_marche_top": [
+        "@thediaryofaceo 'high-IQ trap' 2.4M — COEUR avatar",
+        "@realimangadzhi 'information addiction nobody talks about' 5.8M — FR VIERGE",
+        "@jayshetty 'shift identité dont personne parle' 1.8M"
+      ]
+    },
+    "diagnostic_emotionnel": {
+      "definition": "Si tu ressens X, c'est parce que Y — ton posé, tendre, pas accusatoire",
+      "performance_confirmee": "MID 9L/3S 'peur du regard = identité fragile'. Run 18 ajoute Indiana Daily 'rawdogging boredom' comme angle générationnel.",
+      "priority": "HAUTE",
+      "usage_recommande": "1-2 hooks / semaine — ton calme, pas accusatoire",
+      "exemples_marche_top": [
+        "@sokaherself 'tu réfléchis trop parce que peur de te tromper' 1.9M",
+        "@dankoe 'objectifs inconscients protègent identité' 5.2M",
+        "Indiana Daily 'la gen qui a grandi sur TikTok invente rawdogger l'ennui 20 min' (run 18 score 86)",
+        "Dr Inge Declercq '7sur7.be paralysie = problème génération'",
+        "Univ. Michigan '73% des 25-35 = overthinkers' (run 18 score 87)"
+      ]
+    },
+    "injonction_directe": {
+      "definition": "Arrête de X / Fais X maintenant",
+      "performance_confirmee": "🚨 ABSENTE 8/8 derniers scripts Djibril W20 + 0 test W21 public confirmé. GAP MAINTENU W22. 6 scripts livrés 068-073 2026-04-20 : 0 injonction confirmée sur ouverture W22 → urgence jour 2-3.",
+      "priority": "HAUTE (rééquilibrage roulette URGENT 3e semaine)",
+      "usage_recommande": "2 hooks / semaine minimum — toujours suivi d'un mécanisme dans les 3s",
+      "exemples_marche_top": [
+        "@realimangadzhi 'stop planning start executing' 3.4M",
+        "@garyvee 'arrête consommer commence produire moche' 2.4M",
+        "@chriswillx 'corriges pas = 2026 terminé' 3.8M",
+        "@davidgoggins 'stop negotiating with your weak self' 3.1M"
+      ]
+    },
+    "stat_choc_quantifiee": {
+      "definition": "Chiffre + SOURCE ACADÉMIQUE + disruption cognitive — obligation source citée dans les 5s",
+      "performance_confirmee": "SOLID 22L 4h scroll. Run 18 ajoute 3 stats puissantes FR/US : 12 min cerveau/demain (National Geo) / -23% attention (Netpsychology) / 1 indépendant sur 4 (Marque Employeur FR) / 73% overthinkers (Michigan).",
+      "priority": "HAUTE",
+      "usage_recommande": "1-2 hooks / semaine — toujours avec source citée",
+      "exemples_marche_top": [
+        "@davidgoggins 'mental lâche 40%' 3.1M",
+        "@decisionsci 'juges 65%→10%' Danziger 2011 1.34M",
+        "@neurosity.brain 'DMN 47%' Killingsworth-Gilbert 1.95M",
+        "National Geographic '1h scroll = 12 min cerveau demain' (run 18 score 90) — RATIO OPÉRATIONNEL 24h",
+        "Netpsychology 'TikTok -23% attention recâblable 6 sem' (run 18 score 91)",
+        "Pessiglione 'glutamate sature +10% impulsivité le soir' (run 18 score 92)",
+        "Mercola 2026 '2h/j × 6 mois = cortex perd 35% capacité stop'",
+        "Gollwitzer méta 94 études 8000+ participants effet d=.65"
+      ]
+    },
+    "permission_paradoxale": {
+      "definition": "T'as le droit de X (contraire de ce qu'ils croient)",
+      "performance_confirmee": "Levier montant marché. Run 18 confirme via Rude Baguette 'majorité cérébrale = 25 ans min, parfois 30' (score 88) + Retardmaxxing toujours non claimé FR.",
+      "priority": "HAUTE montante",
+      "usage_recommande": "1 hook / semaine minimum — W22 obligatoire",
+      "exemples_marche_top": [
+        "@alexhormozi 'besoin de moins de honte pas plus d'info' 3.8M",
+        "@realimangadzhi 'expliquer tes plans les tue' 1.68M",
+        "Retardmaxxing trend 2.4M 'exécuter lamentablement la bonne > exécuter parfaitement la mauvaise' — FIRST-MOVER FR TOUJOURS OUVERT (2e sem)",
+        "Rude Baguette 'La majorité cérébrale c'est pas 18 ans — c'est 25 min, parfois 30' (run 18 score 88)",
+        "Cairn.info '18-25 = cortex en chantier, décider fait partie du chantier'",
+        "@therapyinanutshell 'brain is lying, you need to move' 1.45M"
+      ]
+    },
+    "permission_biologique": {
+      "definition": "Ton état vient d'une contrainte biologique mesurable — tu n'es pas défaillant",
+      "performance_confirmee": "Sous-famille permission_paradoxale qui gagne en puissance avec neuro précis. Run 18 : Rude Baguette maturation PFC (88) + Pessiglione glutamate soir (92) + Huberman PFC offline ganglions basaux (94) = trio identitaire fort.",
+      "priority": "HAUTE",
+      "usage_recommande": "1-2 hooks / semaine — toujours coupler avec MICRO-ACTION dans la fenêtre biologique favorable",
+      "exemples_marche_top": [
+        "Rude Baguette 'majorité cérébrale = 25 min' (run 18 score 88)",
+        "Pessiglione 'décider avant midi — le soir ton cerveau est chimiquement sale' (run 18 score 92)",
+        "Huberman 'agis dans ta fenêtre PFC frais (matin) — le soir c'est ta vieille version' (run 18 score 94)",
+        "Cairn.info 'cortex en chantier 18-25 — câblage de maintenant tient 40 ans'"
+      ]
+    },
+    "amygdale_hijack": {
+      "definition": "Ton anxiété/imposter/paralysie = amygdale qui lit un signal non-danger comme une menace de mort",
+      "performance_confirmee": "Catégorie CONSOLIDÉE run 18 : 2 angles valides ajoutés (Amber Gannon imposter 91 + La Clinique E-Santé peur de la honte sociale 87). Extension COUVERCLE (batch MH-081→095) = métaphore maître de la famille.",
+      "priority": "HAUTE — vierge Djibril à ouvrir W22",
+      "usage_recommande": "1 hook / semaine — coupler récipient 'couvercle d'alarme' + micro-action exposition graduée",
+      "exemples_marche_top": [
+        "Dr. Amber Gannon 'imposter = amygdale lit ton pitch comme danger de mort'",
+        "La Clinique E-Santé 'peur d'échouer = peur de la honte sociale anticipée — amygdale confond honte et mort' (run 18 score 87)",
+        "Extension COUVERCLE : récipient scellé quand amygdale active = plus d'encre active ne rentre"
+      ]
+    },
+    "systemic_reframing": {
+      "definition": "NEW W22 — déplacer l'identité 'addict/faible/indiscipliné' vers 'cible d'un système industriel calibré' (permission massive SANS déresponsabilisation)",
+      "performance_confirmee": "Catégorie détectée run 18 via Michigan Journal of Economics 'TikTok = slot machine, 500 ingénieurs, ratio variable' (score 89) — vierge Djibril. Pattern qui combine colère libératrice + action réappropriation.",
+      "priority": "HAUTE TEST",
+      "usage_recommande": "1 hook test W22 — obligatoire terminer par ACTION RÉAPPROPRIATION (pas victimaire)",
+      "exemples_marche_top": [
+        "Michigan Journal 'ratio variable = pattern le plus addictif connu en psycho' (run 18 score 89)",
+        "Addict Aide / Village des Addictions 'doomscrolling Gen Z'",
+        "Pattern : comprendre que le robinet d'encre passive est INDUSTRIEL permet de le fermer au lieu de s'épuiser à vider"
+      ],
+      "garde_fou": "Ne JAMAIS rester en 'c'est pas de ta faute tu peux rien faire'. Toujours terminer par une action précise (ex : désactiver notif push, planifier encre active)."
+    },
+    "question_provocatrice": {
+      "definition": "Pourquoi tu continues à X ?",
+      "performance_confirmee": "Peu testé Djibril — reste à explorer",
+      "priority": "MOYENNE",
+      "usage_recommande": "1 hook / semaine pour tester",
+      "exemples_marche_top": [
+        "r/france 'À 25 ans je sais tout mais je fais rien — normal ?' — formulation avatar pure",
+        "@thediaryofaceo 'Le piège du QI élevé que personne t'a expliqué' 2.4M"
+      ]
+    },
+    "confession_vulnerabilite": {
+      "definition": "J'ai fait X et voilà ce qui s'est passé",
+      "performance_confirmee": "Peu testé — format narratif risqué pour compte d'auteur. Briefing W22 copywriter : 1 confession brute 1 seul take due 22/04.",
+      "priority": "BASSE-MOYENNE (montée briefing W22)",
+      "usage_recommande": "0-1 hook / semaine",
+      "exemples_marche_top": [
+        "@sokaherself 'j'ai arrêté de me préparer 3 ans — j'ai juste commencé' 420K"
+      ]
+    },
+    "identification_generationnelle": {
+      "definition": "Tu fais partie d'une génération spécifiquement touchée — tu n'es pas seul / tu n'es pas bizarre",
+      "performance_confirmee": "Run 18 : 2 angles ajoutés (Univ Michigan 73% 25-35 overthinkers / Indiana Daily Gen Zen rawdogging boredom). Dé-isolement = levier fort sur avatar Cérébral Paralysé.",
+      "priority": "HAUTE",
+      "usage_recommande": "1 hook / semaine — dépersonnaliser la honte SANS normaliser la rumination comme fatalité",
+      "exemples_marche_top": [
+        "Univ. Michigan '73% des 25-35 sont overthinkers, 57% femmes' (run 18 score 87)",
+        "Indiana Daily 'la gen TikTok invente rawdogger l'ennui 20 min' (run 18 score 86)",
+        "National Geographic 'Gen Z = vieillissement cognitif accéléré mesurable' (run 18 score 90)"
+      ]
+    },
+    "silent_pov_15s": {
+      "definition": "Face caméra zéro voix + texte overlay seul — POV neuro",
+      "performance_confirmee": "🚨 OPERATION SILENT FR W22 toujours non testée. 2 reports consécutifs (W21 puis W22-OPEN).",
+      "priority": "MAX TEST — 3e semaine sans test",
+      "usage_recommande": "3 tests W22 minimum — si 2/3 perf > 500 vues, industrialiser",
+      "pattern_recommande": "Tu crois que X / Non c'est Y (concept neuro FR) / Tape [mot] si c'est toi",
+      "exemples_marche_top": [
+        "@khaby.lame 38M-42M gestes silencieux vs complication",
+        "@samcatcart 'POV Instagram 47 min' 5.6M"
+      ]
+    },
+    "talking_citation_20s": {
+      "definition": "Face caméra + overlay en bas qui cite une source académique",
+      "performance_confirmee": "Format vierge Djibril toujours. Évolue vers SCIENCE-CITATION 30s pour MOFU W22.",
+      "priority": "MOYENNE",
+      "usage_recommande": "1 test W22 — si saves > 0.8%, continuer sur series neuro courtes",
+      "pattern_recommande": "Face caméra 0-5s hook neuro / overlay source 5-15s / reformulation 15-20s avec récipient",
+      "exemples_marche_top": [
+        "Institut du Cerveau Paris + @paris_brain_institute 890K",
+        "Dr Anna Lembke Stanford via Psypost",
+        "Sharpe & Spooner Sage Journal 2025"
+      ]
+    },
+    "science_citation_30s": {
+      "definition": "Format W22 FORMALISÉ : 0-3s AUTEUR+ANNÉE ÉTUDE (zoom texte) | 3-8s CHIFFRE D'EFFET (d=0.65, 58%, 6700€) gros | 8-18s MÉTAPHORE RÉCIPIENT/ENCRE | 18-25s MICRO-ACTION cérébrale | 25-30s CTA GO 6700€ raison Cialdini",
+      "performance_confirmee": "Format reco CDE Analyst 2026-04-20 pour MOFU neuro. KPI cible : rétention 15s >55% + save_rate >2.3%. Tests pilotes W22 : Pessiglione glutamate / Gollwitzer IF-THEN / Kahneman fluence cognitive.",
+      "priority": "HAUTE TEST — pilote W22 obligatoire",
+      "usage_recommande": "2 tests W22 minimum — si saves > 2.3%, industrialiser sur TOUTES les series neuro MOFU",
+      "pattern_recommande": "0-3s AUTEUR+ANNÉE / 3-8s CHIFFRE / 8-18s RÉCIPIENT / 18-25s MICRO-ACTION / 25-30s CTA",
+      "exemples_marche_top": [
+        "Peter M. Gollwitzer méta 94 études 8000+ participants d=.65",
+        "Pessiglione Current Biology glutamate cortex latéral",
+        "Hamilton Biological Psychiatry DMN mPFC-précuneus",
+        "Netpsychology -23% attention Stroop CPT 6 sem réversibilité"
+      ]
+    }
+  },
+
+  "feedback_loop_djibril": {
+    "date_analyse": "2026-04-20",
+    "source": "cde-feedback-daily.json — 80 entrées historiques (pas de nouveau scrape comptes Djibril aujourd'hui, WebSearch-only run)",
+    "score_systeme_w21_close_w22_open": 62,
+    "evolution": "W19 63 → W20 61 → W20-CLOSE 58 → W21-OPEN 58 → W21-CLOSE 62 (+4) → W22-OPEN 62 (stabilisation haute). Content pipeline excellent, chatbot 18 runs 0/20 doctrine = bottleneck principal hors scope tracker.",
+    "cause_principale_gap_content": "Chrome MCP IG rebranché mais TikTok anti-bot 3 comptes Djibril depuis 2026-04-19 = aucune donnée vidéo-niveau TK 2e semaine. Fallback TikTok Studio Analytics manuel REQUIS 5 derniers posts @djibril.offf.",
+    "comptes_actifs": {
+      "@djibril.offf": "Compte PRINCIPAL TikTok — tous HITs + SOLIDs historiques (5 378 followers -1 vs 04-11, 205 vidéos +2, 179.8K likes). Stats vidéo-niveau BLOQUÉES anti-bot depuis 2026-04-19.",
+      "@djibril.learning_": "Compte SECONDAIRE TikTok EN PANNE — 0 likes sur 10 reposts (902 followers +1, 189 vidéos). Distribution morte. Scroll vidéo bloqué anti-bot.",
+      "@djibril.short6": "Cross-post INEFFICACE TikTok — 0 likes systématique (41 followers, 151 vidéos +3). À PAUSER. Scroll vidéo bloqué anti-bot.",
+      "@djibril.learning (IG)": "Tracking OK 2026-04-19 — 821 followers +6 vs 04-11 (+0.75%/sem), 6 vidéos, baseline 20.8 interactions/post. Tous SOLID. Gap doctrine récipient 0/6 à corriger en priorité W22."
+    },
+    "baseline_ig_2026_04_19": {
+      "n_posts": 6,
+      "date_range": "2026-03-16 → 2026-03-23",
+      "avg_interactions_per_post": 20.8,
+      "seuils": {
+        "HIT": ">41.6",
+        "SOLID": "10.4→41.6",
+        "MID": "4.2→10.4",
+        "FLOP": "<4.2"
+      },
+      "top_post": {
+        "id": "DWNaduACEQX",
+        "hook": "🏆 (emoji seul, zéro texte)",
+        "likes": 34,
+        "comments": 1,
+        "total": 36,
+        "multiplier_vs_baseline": "1.73x"
+      },
+      "signal": "Post emoji seul > hook texte argent/lecture (36 vs 18 int). Sur IG l'avatar Cérébral Paralysé cherche reconnaissance/statut autant que l'éclair intellectuel. Test A/B emoji vs doctrine texte à lancer W22.",
+      "gap_doctrine": "0/6 posts IG convoquent RÉCIPIENT/ENCRE. À corriger en priorité W22 sur IG."
+    },
+    "top_5_hooks_djibril_reference_stables": [
+      {
+        "hook": "T'as tout dans la tête mais t'avances pas. Ton cerveau te piège. Comprendre ≠ avancer.",
+        "categorie": "paradoxe_identitaire",
+        "likes": 59,
+        "views": 756,
+        "saves": 6,
+        "ratio_engagement": "8.1%",
+        "classification": "HIT",
+        "score_disruption": 9,
+        "pourquoi": "Paradoxe comportement/désir + reframe identitaire + égalité mathématique visuelle (≠)",
+        "a_reexploiter": true,
+        "formule_transposable": "[Capacité cognitive] mais [absence d'action]. Ton cerveau te piège. [X] ≠ [Y]."
+      },
+      {
+        "hook": "T'as des to-do lists de 47 lignes… et t'en coches aucune. Normal. Ton cerveau utilise le planning comme drogue.",
+        "categorie": "diagnostic_comportemental",
+        "likes": 43,
+        "classification": "MID/SOLID",
+        "score_disruption": 9,
+        "pourquoi": "Chiffre absurde précis (47) + comportement universel + reframe neuro dopamine sans jargon",
+        "a_reexploiter": true,
+        "formule_transposable": "T'as [comportement chiffré absurde]. Et t'en [échec prévisible]. Normal. Ton cerveau utilise [outil] comme [mécanisme dopaminergique]."
+      },
+      {
+        "hook": "Ton cerveau te sabote en silence. C'est pas un manque de volonté — c'est un mécanisme.",
+        "categorie": "neuroscience_vulgarisee",
+        "likes": 39,
+        "views": 772,
+        "saves": 6,
+        "ratio_engagement": "5.1%",
+        "classification": "HIT",
+        "score_disruption": 8,
+        "pourquoi": "Déculpabilisation + promesse mécanique (pas motivation)",
+        "a_reexploiter": true,
+        "formule_transposable": "Ton cerveau [te sabote / t'arrête / te bloque] en silence. C'est pas [jugement moral] — c'est un mécanisme."
+      },
+      {
+        "hook": "Tu consommes du contenu 14h/jour et t'appelles ça de la préparation. Ton cerveau appelle ça une drogue.",
+        "categorie": "paradoxe_identitaire",
+        "likes": 36,
+        "views": 270,
+        "classification": "SOLID",
+        "score_disruption": 10,
+        "pourquoi": "Chiffre data pure (14h) + reframe brutal préparation = drogue",
+        "a_reexploiter": true,
+        "formule_transposable": "Tu [comportement] [X h/jour] et t'appelles ça [étiquette noble]. Ton cerveau appelle ça [étiquette brutale]."
+      },
+      {
+        "hook": "Ton cerveau change PHYSIQUEMENT. Chaque habitude crée de nouveaux circuits. T'es pas câblé à vie.",
+        "categorie": "neuroscience_vulgarisee",
+        "likes": 27,
+        "views": 787,
+        "saves": 11,
+        "classification": "SOLID",
+        "score_disruption": 8,
+        "pourquoi": "Neuroplasticité vulgarisée + promesse transformation physique + permission. 11 saves = TOP valeur perçue.",
+        "a_reexploiter": true
+      }
+    ],
+    "ig_top_reference": [
+      {
+        "post_id": "DWNaduACEQX",
+        "date": "2026-03-23",
+        "hook": "🏆 (emoji seul)",
+        "likes": 34,
+        "comments": 1,
+        "total_interactions": 36,
+        "classification": "SOLID top batch",
+        "pourquoi": "Signal statut / identité pure sans texte. Avatar Cérébral Paralysé = faim reconnaissance aussi forte que besoin insight. Algo IG récompense cadence série (batch 5 posts même jour 23/03).",
+        "a_reexploiter": true,
+        "test_w22_a_b": "Publier 2 posts IG 2h écart : A = hook doctrine récipient/encre / B = visuel + emoji unique (🧠 ou 🔐). Si B>A +50% → pivot approche MOFU IG vers signal visuel identité."
+      }
+    ],
+    "flops_confirmes": [
+      {
+        "pattern": "CTA nu isolé",
+        "exemples": ["Commente « GO »", "Écris « GO » en commentaire"],
+        "correction": "Toujours preambule 3-5s mécanisme avant le CTA + raison Cialdini"
+      },
+      {
+        "pattern": "Concept abstrait sans comportement",
+        "exemples": ["Le biais de confirmation te piège"],
+        "correction": "Ajouter chiffre + action quotidienne reconnaissable"
+      },
+      {
+        "pattern": "Externalisation douce",
+        "exemples": ["Tu repousses parce que t'as pas le bon réseau"],
+        "correction": "Ramener au mécanisme cérébral, pas à l'environnement social"
+      },
+      {
+        "pattern": "Cross-post @djibril.short6 sans adaptation",
+        "correction": "Pauser compte OU produire natif différent"
+      },
+      {
+        "pattern": "Distribution @djibril.learning_ cassée",
+        "correction": "URGENT décaler publication 3h+ vs @djibril.offf + caption différente + premier plan switch"
+      },
+      {
+        "pattern": "Caption IG vide sur 4/6 posts 23/03",
+        "correction": "Ajouter caption doctrine récipient/encre + micro-action cérébrale + CTA DM AUDIT"
+      },
+      {
+        "pattern": "HOOK TOFU CAM A (plan fixe visage neutre) — récidive 3e semaine",
+        "correction": "BLACKLIST W22. Imposer MOUVEMENT (marche, geste main, changement plan 0→2s). Consigne briefing tournage."
+      }
+    ],
+    "patterns_confirmes_w21_w22": [
+      "COMPORTEMENTAL > ABSTRAIT : chiffres précis battent formules générales (43 vs 12 likes même compte)",
+      "Paradoxe identitaire = cheval n°1 (cumul 95 likes sur 2 HITs)",
+      "Neuroscience vulgarisée + déculpabilisation = cheval n°2 (combo 'c'est pas X, c'est un mécanisme')",
+      "≠ / mais / normal / c'est pas = mots-ponts déclencheurs",
+      "Saves/vues > 0.8% = valeur perçue forte (mécanisme > motivation)",
+      "HIT sur @djibril.offf = +150% vues en 48h (307→772) — fenêtre utile",
+      "Cross-post brut court = 0 vues systématique — shadowban confirmé short6/learning_",
+      "Hook chiffré + source académique = ratio likes/vues 5-8% (20K followers+)",
+      "CONFIRMÉ W22 : Neuro PRÉCIS (zone/molécule/timing) > Neuro flou (+0.50 pts analyst 2026-04-20)",
+      "CONFIRMÉ W21-W22 IG : Signal visuel emoji unique > hook texte (36 vs 18 int)",
+      "CONFIRMÉ W21-W22 IG : Batch série 5 posts même jour = récompensé par algo (grappe)",
+      "NEW W22 : Chiffre d'effet (d=.65, -23%, 47%) dans les 5s = ancrage mémoriel fort",
+      "NEW W22 : Systemic reframing ('500 ingénieurs bossent à te faire perdre') libère la honte sans déresponsabiliser"
+    ],
+    "gaps_w22_a_traiter": [
+      "🚨 TikTok anti-bot 3 comptes Djibril depuis 2026-04-19 (2e semaine) — fallback TikTok Studio Analytics manuel P0 (5 derniers posts @djibril.offf)",
+      "🚨 INJONCTION_DIRECTE absente 8/8 W20 + 0 test W21 + 0 sur 6 scripts 068-073 W22-OPEN → minimum 2 hooks W22 obligatoire",
+      "🚨 RÉCIPIENT/ENCRE doctrine IG = 0/6 posts actuels (gap doctrine absolu sur IG) — test A/B texte vs emoji à lancer W22",
+      "🚨 Retardmaxxing FIRST-MOVER FR toujours non claimé — 3e semaine — hook permission_paradoxale P0",
+      "🚨 Récipient/encre threading corpus marché 58% → cible 80% via adaptations Djibril",
+      "🚨 HOOK TOFU CAM A blacklist W22 — mouvement obligatoire 0→2s",
+      "Format SCIENCE-CITATION 30s : 2 tests pilotes W22 à livrer (Pessiglione glutamate + Gollwitzer IF-THEN déjà en script 068 + 070 — à tourner)",
+      "Format SILENT 15s FR : 3e semaine consécutive sans test — imposer jour 5 W22",
+      "Scoreur chatbot -1/100 (23e run) — hors scope tracker mais rappel priorité Djibril",
+      "CTA 'GO' saturé → tester 'RESET' / 'DÉCLIC' / 'CLARTÉ' en A/B W22",
+      "Amygdale_hijack vierge Djibril — 1 hook test W22 (2 angles marché consolidés : Amber Gannon imposter + La Clinique E-Santé honte)",
+      "Systemic_reframing nouvelle catégorie vierge Djibril — 1 hook test W22 (TikTok slot machine 500 ingénieurs)"
+    ]
+  },
+
+  "hooks_marche": {
+    "date_collecte": "2026-04-20",
+    "total_scrape": 391,
+    "total_aujourd_hui_run18": 12,
+    "repartition_run18": "6 neuroscience_vulgarisee (mécanismes précis) + 2 stat_choc_quantifiee (12min/demain + -23% attention) + 1 paradoxe_identitaire (TikTok slot machine) + 1 permission_paradoxale (majorité cérébrale 25-30) + 1 identification_generationnelle (rawdogging boredom) + 1 amygdale_hijack (peur=honte anticipée). 50% neuro / 50% cérébral.",
+    "verdict_neuro_vs_classique_global": "Neuro 349/391 (89.3%) vs Classique 42/391 — surperformance neuro UNIQUEMENT si précis (zone+molécule+timing). Différenciant 2026 = zone/molécule PRÉCISE + RÉCIPIENT/ENCRE + CHIFFRE D'EFFET.",
+    "top_performers_run18_2026_04_20": [
+      {
+        "hook_source": "@hubermanlab — Habit formation PFC→basal ganglia",
+        "hook_fr": "Quand ton cortex préfrontal cramé s'éteint, c'est pas le chaos — c'est ta VIEILLE version qui reprend le volant",
+        "categorie": "neuroscience_vulgarisee + mecanisme_psycho_actionnable",
+        "neuro_concept": "PFC_offline_basal_ganglia_autopilot_old_habits",
+        "score_disruption": 10,
+        "perf_score": 94,
+        "utile_pour_djibril": "🎯 P0 MOFU — explique LA question avatar 'je sais quoi faire mais j'y retourne'. Mécanisme 2 zones + conséquence identitaire. RÉCIPIENT : l'encre active se dépose PFC-online (matin), le soir le cerveau suinte l'encre passive présente.",
+        "adaptation_proposee": "Le soir tu fais toujours les mêmes conneries alors que le matin t'avais décidé le contraire. C'est pas toi. Ton PFC est cramé et il DÉCROCHE. Les ganglions basaux prennent le volant — c'est ta VIEILLE VERSION qui rentre. La nouvelle tient le matin, pas la nuit. Agis avant 11h. Le soir, le récipient suinte ce qu'il y avait AVANT.",
+        "format_reco": "SCIENCE-CITATION 30s ou MOFU 45s cinéma"
+      },
+      {
+        "hook_source": "Inserm/CNRS — Cortex cingulaire antérieur décision procrastiner",
+        "hook_fr": "Quand tu repousses une tâche, c'est pas toi qui triches — c'est une zone de ton cerveau qui fait les maths de travers et gonfle l'effort",
+        "categorie": "neuroscience_vulgarisee + permission_biologique",
+        "neuro_concept": "anterior_cingulate_asymmetric_discounting_cost_reward",
+        "score_disruption": 10,
+        "perf_score": 93,
+        "utile_pour_djibril": "🎯 P0 TOFU — mécanisme mathématique asymétrique (coût/récompense) démolit la honte procrastination. Source Inserm = autorité FR. RÉCIPIENT : encre passive coût perçu=0, encre active coût perçu=énorme → cingulaire fait ce calcul.",
+        "adaptation_proposee": "Quand tu repousses, c'est pas de la flemme. Y'a une zone dans ton cerveau — le cingulaire antérieur — qui fait les maths coût/récompense. Et elle triche : elle gonfle l'effort, rétrécit la récompense. Résultat : tout ce qui est PAYANT À LONG TERME paraît lourd. Tout ce qui est FACILE ET NUL paraît urgent. Tu court-circuites avec UNE action de 2 min — le coût devient trop faible pour que la récompense soit battue."
+      },
+      {
+        "hook_source": "Pessiglione & Wiehler — Current Biology (glutamate cortex latéral)",
+        "hook_fr": "Si tu prends tes décisions nulles le soir, c'est pas ta personnalité — c'est un déchet métabolique qui sature le cortex latéral",
+        "categorie": "neuroscience_vulgarisee + stat_choc_quantifiee + permission_biologique",
+        "neuro_concept": "glutamate_clearance_saturation_threshold_lateral_PFC",
+        "score_disruption": 10,
+        "perf_score": 92,
+        "utile_pour_djibril": "🎯 P0 TOFU RECONFIRMÉ — déjà en script 068 W22. Timing horaire précis (19h) + source Current Biology + zone+molécule. RÉCIPIENT = boue au fond qui empêche encre active de pénétrer.",
+        "adaptation_proposee": "Si tu prends tes décisions nulles le soir c'est pas ta personnalité. C'est un DÉCHET dans ton cerveau. Le glutamate s'accumule dans le cortex latéral comme de la boue au fond du récipient. À 19h tu peux plus. C'est mesuré. Décide avant midi. Le soir, ton cerveau est chimiquement sale.",
+        "timing_publi_reco": "19h locale (résonance max)"
+      },
+      {
+        "hook_source": "Netpsychology — TikTok attention span -23%",
+        "hook_fr": "Tu peux plus lire 10 pages d'affilée, tu peux plus regarder un film sans ton tel — ton attention a été recâblée, pas perdue",
+        "categorie": "stat_choc_quantifiee + neuroscience_vulgarisee",
+        "neuro_concept": "sustained_attention_rewiring_23_percent_drop_daily_users",
+        "score_disruption": 10,
+        "perf_score": 91,
+        "utile_pour_djibril": "🎯 SCIENCE-CITATION 30s idéal. Scène de vie universelle avatar + chiffre précis -23% + tests standardisés Stroop/CPT + réversibilité 6 semaines = CHOC + ESPOIR. RÉCIPIENT : 23% d'encre passive en plus.",
+        "adaptation_proposee": "Tu peux plus lire 10 pages d'affilée. Tu peux plus regarder un film sans ton tel. -23% d'attention soutenue — mesuré sur tests standardisés (Stroop, CPT). Recâblée, pas perdue. 6 semaines d'exposition différente et ça revient. 1 session/jour de 25 min de lecture, tel dans une autre pièce. Le muscle se reconstruit par reps, pas par volume.",
+        "format_reco": "SCIENCE-CITATION 30s"
+      },
+      {
+        "hook_source": "National Geographic — Brain rot accelerated cognitive aging",
+        "hook_fr": "Une heure de scroll aujourd'hui = 12 minutes de ton cerveau en moins demain. Pas demain dans 20 ans — demain demain",
+        "categorie": "stat_choc_quantifiee",
+        "neuro_concept": "accelerated_cognitive_aging_short_form_video_exposure",
+        "score_disruption": 10,
+        "perf_score": 90,
+        "utile_pour_djibril": "🎯 STAT CHOC MAÎTRE — ratio opérationnel à 24h (pas 20 ans). Source Nat Geo = crédibilité non-mindset élargie. RÉCIPIENT : dette cognitive d'hier bouche le récipient de ce matin.",
+        "adaptation_proposee": "1 heure de scroll aujourd'hui = 12 minutes de cerveau en moins DEMAIN. Pas demain dans 20 ans — demain demain. Le jour d'après. National Geographic l'a mesuré. Ta dette cognitive d'hier bouche ton récipient de ce matin. Coupe 90 min avant de dormir. Le cerveau solde la dette pendant le sommeil — mais seulement si tu lui laisses l'accès."
+      },
+      {
+        "hook_source": "Michigan Journal of Economics — Dopamine economy / TikTok slot machine",
+        "hook_fr": "T'es pas accro à TikTok — t'es dans une machine à sous de casino, conçue par 500 ingénieurs pour être impossible à lâcher",
+        "categorie": "paradoxe_identitaire + systemic_reframing",
+        "neuro_concept": "variable_ratio_reinforcement_TikTok_slot_machine_design",
+        "score_disruption": 10,
+        "perf_score": 89,
+        "utile_pour_djibril": "🎯 NOUVELLE catégorie systemic_reframing — vierge Djibril. Colère libératrice + permission sans déresponsabilisation. RÉCIPIENT : robinet industriel calibré ≠ accident personnel.",
+        "adaptation_proposee": "T'es pas accro à TikTok. T'es dans une machine à sous. 500 ingénieurs bossent à plein temps pour que chaque swipe te donne une shot de dopamine calibrée. Le concept s'appelle 'ratio variable' — le plus addictif connu en psycho. T'as pas perdu ta volonté. On te la prend. Désactive les notif push : -43% d'ouvertures sans effort (étude Facebook 2019). Tu fermes le robinet industriel avant de vider le récipient."
+      },
+      {
+        "hook_source": "Rude Baguette — Maturation cérébrale 25-30 ans",
+        "hook_fr": "La majorité cérébrale, c'est pas 18 ans — c'est 25 minimum, et pour certains 30. Tu fais des choix d'adulte avec un câblage pas fini",
+        "categorie": "permission_paradoxale + permission_biologique",
+        "neuro_concept": "prefrontal_maturation_beyond_25_individual_variability",
+        "score_disruption": 9,
+        "perf_score": 88,
+        "utile_pour_djibril": "🎯 P0 TOFU — déjà en script 069 W22. Avatar direct 18-25 + permission biologique. RÉCIPIENT prend sa forme DÉFINITIVE pendant cette fenêtre.",
+        "adaptation_proposee": "La majorité cérébrale c'est pas 18 ans. C'est 25 minimum, parfois 30. Donc quand tu fais tes choix de vie à 21, t'as un câblage PAS FINI. Bonne nouvelle : ce que tu y mets maintenant tient 40 ans. Mauvaise : l'encre passive que tu y colles aujourd'hui, elle marque aussi 40 ans. Choisis le moule ou l'environnement choisit pour toi."
+      },
+      {
+        "hook_source": "Marque Employeur — 1 indépendant FR sur 4 envisage salariat 2027",
+        "hook_fr": "Les gens te vendent 'quitte ton taf', personne te dit qu'1 indépendant sur 4 veut retourner au salariat en 2027",
+        "categorie": "paradoxe_identitaire",
+        "neuro_concept": "freedom_paradox_autonomy_decision_fatigue",
+        "score_disruption": 9,
+        "perf_score": 88,
+        "utile_pour_djibril": "Utile mais pas centre. Doctrine récipient : liberté = autre forme de saturation décisionnelle. Permet de désamorcer la pression 'quitte ton taf maintenant'.",
+        "adaptation_proposee": "1 indépendant français sur 4 veut retourner salarié d'ici 2027. Ça veut pas dire que l'entrepreneuriat c'est mort. Ça veut dire que la liberté TOTALE est une autre forme de saturation — décisions infinies, revenus instables. Construis ton truc PENDANT que tu es salarié. Pas après. Automatise les 10 décisions répétitives AVANT de couper le cadre.",
+        "garde_fou": "Ne pas brouiller message 6700€/mois — usage parcimonieux"
+      },
+      {
+        "hook_source": "Univ. Michigan — 73% des 25-35 overthinkers",
+        "hook_fr": "Si tu rumines, t'es pas bizarre — 3 personnes sur 4 de ton âge font pareil, sans jamais en parler",
+        "categorie": "stat_choc_quantifiee + identification_generationnelle",
+        "neuro_concept": "overthinking_prevalence_gender_age_bracket",
+        "score_disruption": 9,
+        "perf_score": 87,
+        "utile_pour_djibril": "🎯 TOFU MASTER — casse la honte isolante. Associer SYSTÉMATIQUEMENT à micro-action cérébrale + doctrine récipient (rumination = glutamate qui traîne).",
+        "adaptation_proposee": "Si tu rumines H24, t'es pas cassé. T'as juste pas parlé avec les 3 autres personnes de ton âge qui font pareil — 73% des 25-35 ruminent. Le drame c'est qu'aucun en parle. Du coup chacun croit qu'il est le seul. Écris la boucle à laquelle tu repasses le plus souvent. Nommer + savoir que c'est un pattern partagé = -40% charge affective (Lieberman)."
+      },
+      {
+        "hook_source": "La Clinique E-Santé — Peur d'échouer = anticipation honte sociale",
+        "hook_fr": "T'as pas peur d'échouer — t'as peur de ce qu'on va dire si tu échoues. Nuance qui change tout",
+        "categorie": "paradoxe_identitaire + amygdale_hijack",
+        "neuro_concept": "anticipated_shame_social_rejection_paralysis",
+        "score_disruption": 10,
+        "perf_score": 87,
+        "utile_pour_djibril": "🎯 MOFU MASTER — consolide amygdale_hijack + extension COUVERCLE. Avatar 2 isolé sous pression.",
+        "adaptation_proposee": "T'as pas peur d'échouer. T'as peur de ce qu'on va dire quand t'auras échoué. Nuance qui change tout. Parce que l'échec objectif, dans ton corps, c'est rarement dangereux. La HONTE sociale par contre, ton amygdale la traite comme une menace de survie. Elle met le couvercle sur ton récipient. Plus rien ne rentre. Échoue volontairement devant UNE personne safe cette semaine. L'amygdale apprend : visibilité imparfaite ≠ exclusion. Recâblage en 14 expositions."
+      },
+      {
+        "hook_source": "Indiana Daily — Gen Zen 'rawdogging boredom'",
+        "hook_fr": "La même génération qui a grandi sur TikTok invente maintenant 'rawdogger l'ennui' — rester assis 20 min sans rien",
+        "categorie": "diagnostic_emotionnel + identification_generationnelle",
+        "neuro_concept": "dopamine_baseline_reset_intentional_boredom",
+        "score_disruption": 9,
+        "perf_score": 86,
+        "utile_pour_djibril": "Appartenance générationnelle + action concrète 20 min + reset dopamine. Traduire 'rawdogger' en FR oral assumé ou garder l'anglicisme.",
+        "adaptation_proposee": "La génération qui a grandi sur TikTok vient d'inventer un truc dingue : 'rawdogger' l'ennui. 20 minutes assis. Zéro tel. Zéro musique. Zéro rien. Ils ont compris avant les vieux que leur cerveau est saturé. Reset dopamine baseline = 14 jours. Tu vas détester 3 jours. Après, tu redeviens capable de lire 20 pages d'affilée."
+      },
+      {
+        "hook_source": "Asana — 10 croyances limitantes 18-30",
+        "hook_fr": "T'as pas 10 problèmes — t'as 10 phrases qui tournent en boucle dans ta tête, et elles sont écrites par d'autres",
+        "categorie": "paradoxe_identitaire",
+        "neuro_concept": "limiting_beliefs_loop_inherited_narratives",
+        "score_disruption": 9,
+        "perf_score": 85,
+        "utile_pour_djibril": "🎯 MOFU PARFAIT — externalise la pensée limitante (elle devient objet) + origine héritée. Micro-action cérébrale claire.",
+        "adaptation_proposee": "T'as pas 10 problèmes. T'as 10 phrases. En boucle. Dans ta tête. Et elles sont écrites par d'autres : école, famille, environnement. 'Je suis pas fait pour ça' — c'est pas toi qui l'as décidé. C'est un fil d'encre passive que t'as avalé à 12 ans. Maintenant ça tourne tout seul. Écris les 3 phrases qui reviennent le plus. À côté : 'qui me l'a dit en premier ?'. Repérer la source coupe 50% de l'adhérence."
+      }
+    ],
+    "tendances_w22_confirmees_ou_montantes": [
+      "Zone PRÉCISE cerveau nommée > neuro flou (+0.50 pts analyst 2026-04-20, cingulaire/glutamate/mPFC/amygdale/ganglions basaux)",
+      "Chiffre d'effet dans les 5s (d=.65, -23%, 12 min/demain, 73%) = ancrage mémoriel fort — format SCIENCE-CITATION 30s",
+      "Permission biologique 18-25/25-30 = angle avatar direct encore ouvert FR (Cairn + Rude Baguette)",
+      "Systemic reframing (TikTok slot machine 500 ingénieurs) = permission libératrice nouvelle catégorie",
+      "Amygdala-hijack consolidée (imposter + peur honte) = extension COUVERCLE opérable",
+      "Identification générationnelle montante (73% overthinkers / rawdogging boredom / Gen Z brain rot) — triple tempo FR",
+      "Timing horaire précis (19h glutamate / 11h PFC frais) = levier concrétude fort",
+      "Format SCIENCE-CITATION 30s formalisé W22 (auteur+année+chiffre+zone+récipient+micro-action+CTA)",
+      "IG feed = signal visuel/identité domine texte (emoji 🏆 36 > hook texte 18)",
+      "IG = doctrine RÉCIPIENT/ENCRE à injecter (gap 0/6 actuels)",
+      "Retardmaxxing trend 2.4M = FIRST-MOVER FR ouvert 3e semaine",
+      "Information addiction (@realimangadzhi 5.8M) toujours non claimée FR"
+    ]
+  },
+
+  "top_5_hooks_a_tester_demain": {
+    "date": "2026-04-21",
+    "contexte": "W22-OPEN jour 2. Chrome MCP non utilisé aujourd'hui (WebSearch-only) / TikTok anti-bot 3 comptes Djibril 2e semaine. CDE Analyst 2026-04-20 : 3 recos P0 (SCIENCE-CITATION 30s sur MOFU neuro / récipient-encre 58%→80% / BLACKLIST HOOK TOFU CAM A). Copywriter a déjà livré 068 Pessiglione + 069 Cortex 18-25 + 070 Gollwitzer IF-THEN — prolonger sur 3 angles neufs + 1 injonction (gap 9/9) + 1 systemic_reframing (test vierge).",
+    "criteres_selection": [
+      "Chaque hook couvre une catégorie DIFFÉRENTE (roulette anti-répétition)",
+      "5/5 convoquent RÉCIPIENT/ENCRE explicitement (gap IG 0/6 → cible W22 5/5)",
+      "1/5 INJONCTION_DIRECTE (catégorie absente 9/9 → relance urgente)",
+      "1/5 SYSTEMIC_REFRAMING (nouvelle catégorie, test vierge W22)",
+      "1/5 AMYGDALE_HIJACK (consolidation + extension COUVERCLE)",
+      "1/5 NEUROSCIENCE_VULGARISEE PFC offline (Huberman 94 — top aujourd'hui)",
+      "1/5 STAT_CHOC 12min/demain (National Geo 90 — ratio opérationnel 24h)",
+      "Chaque hook contient un COMPORTEMENT concret reconnaissable (règle d'or W17)",
+      "Chaque hook démolit objection 'dans mon domaine c'est différent'",
+      "Zéro barber / Zéro Adam / FR oral 8 ans / CTA non-nu / zone+molécule+timing précis dans 20 premiers mots des hooks neuro",
+      "Zéro HOOK TOFU CAM A — mouvement obligatoire 0→2s (blacklist W22)"
+    ],
+    "hooks": [
+      {
+        "n": 1,
+        "categorie": "neuroscience_vulgarisee + mecanisme_psycho_actionnable + permission_biologique",
+        "hook": "Le soir tu fais toujours les mêmes conneries alors que le matin t'avais décidé le contraire. C'est pas toi. Ton PFC est CRAMÉ et il DÉCROCHE. Les ganglions basaux prennent le volant — et c'est ta VIEILLE VERSION qui rentre. L'encre active se dépose le matin, quand le récipient est propre. Le soir il suinte ce qu'il y avait AVANT. Agis avant 11h. Sinon t'es ta version d'hier.",
+        "levier": "SAFE (Huberman) + NEW (mécanisme 2 zones) + FACILE (fenêtre matin)",
+        "justif": "P0 MOFU — score 94 top aujourd'hui. Explique LA question avatar 'je sais quoi faire / j'y retourne'. Gap 'récidive comportementale' enfin nommée. RÉCIPIENT suintement soir.",
+        "score_projete": 10,
+        "source_inspiration": "@hubermanlab Habit formation PFC→basal ganglia VV-042008 run 18 score 94",
+        "recipient_encre_convoque": true,
+        "compte_cible": "@djibril.offf (TikTok) + IG @djibril.learning (caption doctrine récipient)",
+        "type": "MOFU",
+        "format_reco": "cinéma 45s ou SCIENCE-CITATION 30s test"
+      },
+      {
+        "n": 2,
+        "categorie": "stat_choc_quantifiee + science_citation_30s",
+        "hook": "[0-3s AUTEUR] 'National Geographic 2026 — brain rot accelerated cognitive aging.' / [3-8s CHIFFRE] '1 heure de scroll = 12 minutes de cerveau en MOINS DEMAIN.' / [8-18s RÉCIPIENT] 'Pas demain dans 20 ans — demain demain. La dette cognitive d'hier bouche le récipient de ce matin. Chaque heure de scroll c'est une couche d'encre passive qui stagne.' / [18-25s MICRO-ACTION] 'Dès ce soir — coupe le tel 90 min avant de dormir. Le cerveau solde la dette pendant le sommeil, si tu lui laisses l'accès.' / [25-30s CTA] 'Commente RESET — je t'envoie le protocole 21 jours.'",
+        "levier": "SAFE (Nat Geo autorité non-mindset) + NEW format SCIENCE-CITATION + FACILE (couper 90 min)",
+        "justif": "P0 format SCIENCE-CITATION 30s test pilote W22. Ratio opérationnel 24h casse l'excuse 'ça m'arrive pas'. RÉCIPIENT dette cognitive visible demain. CTA RESET au lieu de GO (saturé).",
+        "score_projete": 10,
+        "source_inspiration": "National Geographic VV-042006 run 18 score 90 + CDE Analyst reco format",
+        "recipient_encre_convoque": true,
+        "compte_cible": "@djibril.offf + IG @djibril.learning",
+        "type": "TOFU"
+      },
+      {
+        "n": 3,
+        "categorie": "systemic_reframing + paradoxe_identitaire",
+        "hook": "T'es pas accro à TikTok. T'es dans une machine à sous. 500 ingénieurs bossent à plein temps pour que chaque swipe te donne une shot de dopamine calibrée. Le concept s'appelle 'ratio variable' — le plus addictif connu en psycho comportementale. T'as pas perdu ta volonté. ON TE LA PREND. Désactive les notif push : -43% d'ouvertures sans effort. Tu fermes le robinet industriel AVANT de vider le récipient.",
+        "levier": "NEW (catégorie vierge) + DRDP (colère libératrice) + FACILE (notif off)",
+        "justif": "Nouvelle catégorie systemic_reframing VIERGE Djibril. Permission massive sans déresponsabilisation (garde-fou action terminale). RÉCIPIENT robinet industriel.",
+        "score_projete": 9,
+        "source_inspiration": "Michigan Journal of Economics VV-042007 run 18 score 89",
+        "recipient_encre_convoque": true,
+        "compte_cible": "@djibril.offf + Threads @djibril.learning (format colère libératrice marche)",
+        "type": "TOFU"
+      },
+      {
+        "n": 4,
+        "categorie": "injonction_directe",
+        "hook": "Arrête de LIRE sur la dopamine. Coupe UN scroll. MAINTENANT. Chaque livre sans action = encre passive qui remplit le récipient à ras. Chaque coupure imparfaite = encre active qui change la composition. T'as pas besoin d'un 11e livre. T'as besoin de poser le tel. Pas demain — maintenant. Commente DÉCLIC si tu coupes dans les 10 min.",
+        "levier": "FACILE + NEW + DRDP (urgence) + CTA action immédiate",
+        "justif": "Rééquilibrage catégorie ABSENTE 9/9 scripts W20→W22-OPEN. Doctrine LECTURE→APPLICATION pure. RÉCIPIENT/ENCRE explicite. CTA DÉCLIC (alternatif à GO saturé).",
+        "score_projete": 9,
+        "source_inspiration": "Gap catégorie 3e semaine + @garyvee 'arrête consommer' 2.4M + @realimangadzhi 'stop planning' 3.4M",
+        "recipient_encre_convoque": true,
+        "compte_cible": "@djibril.offf",
+        "type": "TOFU"
+      },
+      {
+        "n": 5,
+        "categorie": "amygdale_hijack + paradoxe_identitaire",
+        "hook": "T'as pas peur d'échouer. T'as peur de ce qu'on va dire quand t'auras échoué. Nuance qui change tout. L'échec objectif c'est rarement dangereux. La HONTE sociale par contre, ton amygdale la lit comme une menace de mort. Elle met le COUVERCLE sur ton récipient. Plus rien ne rentre. Échoue devant UNE personne safe cette semaine. 14 expositions imparfaites = l'amygdale recâble. Visibilité bancale ≠ exclusion.",
+        "levier": "SAFE (thérapie FR) + NEW (distinction peur échec vs peur honte) + FACILE (1 personne)",
+        "justif": "Amygdale_hijack consolidée (2e angle) + extension COUVERCLE (batch MH-081→095) activée. Avatar 2 isolé sous pression. Micro-action cérébrale graduée 14 reps.",
+        "score_projete": 10,
+        "source_inspiration": "La Clinique E-Santé VV-042011 run 18 score 87 + Dr Amber Gannon",
+        "recipient_encre_convoque": true,
+        "compte_cible": "@djibril.offf + IG @djibril.learning (caption exposition graduée)",
+        "type": "MOFU"
+      }
+    ],
+    "roulette_categories_couverte": {
+      "neuroscience_vulgarisee_mecanisme": 1,
+      "stat_choc_quantifiee_science_citation": 1,
+      "systemic_reframing": 1,
+      "injonction_directe": 1,
+      "amygdale_hijack": 1,
+      "paradoxe_identitaire": 0,
+      "curiosity_secret": 0,
+      "permission_paradoxale": 0,
+      "permission_biologique": 0,
+      "silent_pov_15s": 0,
+      "question_provocatrice": 0,
+      "confession_vulnerabilite": 0,
+      "diagnostic_emotionnel": 0,
+      "identification_generationnelle": 0
+    },
+    "recipient_encre_ratio": "5/5 = 100% (cible 80% analyst 2026-04-20 largement dépassée — corrige gap marché 58% + gap IG 0/6)",
+    "rotation_prevue_semaine_w22": {
+      "jour_2_2026_04_21": "Hooks 1-2-3 (Huberman PFC offline MOFU + National Geo SCIENCE-CITATION 30s + TikTok slot machine systemic_reframing)",
+      "jour_3_2026_04_22": "Hooks 4-5 (INJONCTION relance 9/9 + amygdale_hijack peur honte) + 1 confession brute 1 seul take (règle D2 briefing W22)",
+      "jour_4_2026_04_23": "1 permission_paradoxale Retardmaxxing FR FIRST-MOVER (3e semaine) + 1 identification_generationnelle (73% overthinkers ou rawdogging boredom)",
+      "jour_5_2026_04_24": "1 SILENT 15s (operation FR vide 3e semaine consécutive — imposer) + 1 curiosity_secret information addiction @realimangadzhi FR vierge",
+      "jour_6_2026_04_25": "1 diagnostic_emotionnel Dweck/Dynamique Mag reframing + 1 stat_choc Mercola 35% 2h×6mois",
+      "jour_7_2026_04_26": "Recheck feedback loop W22 + 1 injonction_directe #2 (rééquilibrage complet) + TEST A/B IG emoji vs texte doctrine récipient"
+    },
+    "regles_rappel": [
+      "Publier prioritairement sur @djibril.offf (seul compte qui performe côté TK)",
+      "IG @djibril.learning : injecter caption doctrine récipient/encre (gap 0/6 actuel)",
+      "Pour @djibril.learning_ : URGENT varier caption + premier plan + décaler 3h+ (pas 7m24s)",
+      "Pauser @djibril.short6 ou produire natif court différent",
+      "Chaque hook = 1 COMPORTEMENT concret reconnaissable (règle d'or W17)",
+      "Zéro CTA nu — toujours preambule mécanisme 3-5s avant RESET/DÉCLIC/CLARTÉ",
+      "Tester CTA 'RESET' ou 'DÉCLIC' au lieu de 'GO' (saturé par algo)",
+      "Décalage 7m24s entre posts anti-shadowban (sauf @djibril.learning_ = 3h+)",
+      "W22 = INJONCTION obligatoire 2 hooks/semaine minimum (hook #4 = 1re, planifier 2e jour 7)",
+      "W22 = format SCIENCE-CITATION 30s test pilote 2 scripts minimum (National Geo + Gollwitzer IF-THEN déjà en 070)",
+      "Hooks neuro : AUTEUR + ÉTUDE + CHIFFRE + ZONE/MOLÉCULE dans 20 premiers mots (non-négo W22)",
+      "Récipient/encre ≥80% batch (seuil analyst 2026-04-20)",
+      "BLACKLIST HOOK TOFU CAM A (plan fixe visage neutre) — mouvement 0→2s obligatoire",
+      "Retardmaxxing = claim FIRST-MOVER FR 3e semaine (planifier jour 4)",
+      "Pessiglione glutamate 068 = publier à 19h locale (résonance horaire)",
+      "TikTok anti-bot → fallback TikTok Studio Analytics manuel pour 5 derniers @djibril.offf (2e semaine P0)"
+    ]
+  },
+
+  "alertes": [
+    {
+      "niveau": "CRITIQUE",
+      "sujet": "TikTok anti-bot 3 comptes Djibril (offf / learning_ / short6) — tracking vidéo-niveau bloqué 2e semaine",
+      "diagnostic": "Chrome MCP 2026-04-19 : affichage 'Une erreur est survenue' sur @djibril.offf + grille vidéos vide sur learning_ et short6. 2e run sans donnée vidéo-niveau. Stats profils OK via __UNIVERSAL_DATA_FOR_REHYDRATION__ mais pas les posts individuels.",
+      "action": "P0 Fallback TikTok Studio Analytics manuel URGENT : login compte natif → analytics → export CSV → remplir feedback-template-simple.csv pour 5 derniers posts @djibril.offf. Si bloqué run#3 → fallback permanent + alerter Djibril sur besoin tracking alternatif (Shopify/Metricool/etc.)."
+    },
+    {
+      "niveau": "CRITIQUE",
+      "sujet": "INJONCTION_DIRECTE absente 9/9 — 0 test depuis W20 + 0 script sur 068-073 ouverture W22",
+      "diagnostic": "Gap catégorie roulette AGGRAVÉ 3e semaine. Pipeline uniforme. Perte angles.",
+      "action": "Hook #4 top_5 2026-04-21 = 1re relance ('Arrête de LIRE. Coupe UN scroll. Maintenant.'). 2e injonction à planifier jour 7 (2026-04-26). Zéro délai."
+    },
+    {
+      "niveau": "CRITIQUE",
+      "sujet": "Retardmaxxing 2.4M = FIRST-MOVER FR 3e semaine sans claim",
+      "diagnostic": "Trend viral Gen Z 2.4M vues + 9500 commentaires. Aucun ambassadeur francophone clair. Permission paradoxale pure. Transférabilité 9/10. Opportunité se referme.",
+      "action": "Planifier hook permission_paradoxale jour 4 (2026-04-23) — adaptation FR + récipient. Publier TOFU sur @djibril.offf + Threads."
+    },
+    {
+      "niveau": "CRITIQUE",
+      "sujet": "Récipient/encre threading corpus 58% — cible analyst 80% W22",
+      "diagnostic": "CDE Analyst 2026-04-20 : 42% des vidéos analysées mobilisent la métaphore mais sans retour explicite au couple passive/active. Les vidéos qui thread la doctrine scorent +1 en transférabilité.",
+      "action": "Réécrire les hooks 068-073 pour insérer la métaphore RÉCIPIENT dans les 3 premières phrases, pas en fin de vidéo. Appliquer également tous hooks top_5 2026-04-21 (5/5 déjà en ratio 100%)."
+    },
+    {
+      "niveau": "CRITIQUE",
+      "sujet": "BLACKLIST HOOK TOFU CAM A (plan fixe visage neutre) — récidive 3e semaine",
+      "diagnostic": "Feedback daily baseline IG 20.8 int + emoji 🏆 solo 1.73× + script sharpener W21 run 19 = le pattern visuel sans mouvement sous-performe systématiquement.",
+      "action": "Imposer MOUVEMENT (marche, geste main, changement plan 0→2s) sur TOUS les TOFU W22. Blacklist visuelle CAM A dans le prompt de tournage. Consigne copywriter + tourneur."
+    },
+    {
+      "niveau": "HAUTE",
+      "sujet": "IG doctrine RÉCIPIENT/ENCRE = 0/6 posts actuels — gap doctrine absolu",
+      "diagnostic": "Scrape Chrome MCP 2026-04-19 : 6 posts IG classifiés, aucun ne convoque récipient/encre. Baseline IG 20.8 int/post.",
+      "action": "Prochain batch IG = 3 posts consécutifs doctrine récipient (image + caption courte). Test A/B W22 hook texte récipient vs visuel emoji unique (emoji 🏆 = 1.73× baseline)."
+    },
+    {
+      "niveau": "HAUTE",
+      "sujet": "Format SCIENCE-CITATION 30s = format pilote W22 formalisé",
+      "diagnostic": "CDE Analyst 2026-04-20 reco formalise : 0-3s AUTEUR+ANNÉE / 3-8s CHIFFRE D'EFFET / 8-18s RÉCIPIENT/ENCRE / 18-25s MICRO-ACTION / 25-30s CTA. KPI cible saves >2.3%, rétention 15s >55%.",
+      "action": "Hook #2 top_5 2026-04-21 (National Geo 12 min/demain) = test #2. Script 070 Gollwitzer IF-THEN = test #1 (déjà livré copywriter, à tourner). Objectif : 2 tests W22 minimum."
+    },
+    {
+      "niveau": "HAUTE",
+      "sujet": "Nouvelle catégorie systemic_reframing vierge Djibril — 1 hook test W22",
+      "diagnostic": "Michigan Journal of Economics run 18 'TikTok = slot machine 500 ingénieurs' score 89. Permission massive sans déresponsabilisation.",
+      "action": "Hook #3 top_5 2026-04-21 = 1er test. Garde-fou : toujours terminer par action réappropriation (notif off / suppression app / etc.)."
+    },
+    {
+      "niveau": "HAUTE",
+      "sujet": "Amygdale_hijack consolidée 2e angle (peur échec = peur honte anticipée)",
+      "diagnostic": "La Clinique E-Santé run 18 score 87 + Dr Amber Gannon imposter 91 = catégorie ancrée. Extension COUVERCLE (batch MH-081→095) opérable.",
+      "action": "Hook #5 top_5 2026-04-21 = 1er test (distinction peur échec vs peur honte + exposition graduée 14 reps)."
+    },
+    {
+      "niveau": "HAUTE",
+      "sujet": "Saturation neuro générique marché (89.3% corpus) — différenciation RÉCIPIENT/ENCRE + zone PRÉCISE + CHIFFRE D'EFFET seules portes",
+      "diagnostic": "CDE Analyst 2026-04-20 : neuro surperforme UNIQUEMENT avec précision. Neuro flou perd contre paradoxe identitaire bien construit.",
+      "action": "Tous hooks W22 neuro doivent nommer UNE zone/molécule PRÉCISE + UN chiffre d'effet (glutamate+cortex latéral / cingulaire antérieur / ganglions basaux / amygdale / mPFC-précuneus / cortex orbitofrontal)."
+    },
+    {
+      "niveau": "HAUTE",
+      "sujet": "@realimangadzhi 5.8M 'information addiction' = méga-niche W22 toujours non claimée",
+      "diagnostic": "Angle FR VIERGE, score disruption 10/10, lien direct ENCRE PASSIVE (scroll=sucre). Signalé 3e semaine.",
+      "action": "Programmer hook information-addiction jour 5 W22 (2026-04-24) — curiosity_secret."
+    },
+    {
+      "niveau": "HAUTE",
+      "sujet": "Compte @djibril.learning_ distribution morte 0 likes sur 100-130 vues",
+      "diagnostic": "Reposts détectés par algo (7m24s trop court + caption identique). Shadowban probable.",
+      "action": "URGENT décaler 3h+, caption différente, premier plan switch, sinon pauser 7j."
+    },
+    {
+      "niveau": "MOYENNE",
+      "sujet": "Test A/B IG immédiat — hook doctrine vs visuel emoji unique (3e semaine reportée)",
+      "diagnostic": "Post emoji 🏆 seul = 36 int (1.73× baseline) > hook texte argent/lecture = 18 int. Signal statut/identité pure > texte sur IG feed saturé.",
+      "action": "Publier 2 posts IG 2h écart jour 7 (2026-04-26) : A = hook texte récipient / B = visuel + emoji unique (🧠 ou 🔐). Si B>A +50% → pivot MOFU IG signal visuel."
+    },
+    {
+      "niveau": "MOYENNE",
+      "sujet": "CTA 'GO' saturé — tester 'RESET' / 'DÉCLIC' / 'CLARTÉ'",
+      "diagnostic": "3 occurrences 'GO' à 0 likes sur @djibril.learning_. Mot probablement listé par algo.",
+      "action": "A/B test 'RESET' (hook #2) ou 'DÉCLIC' (hook #4) sur hooks W22 + preambule 5s obligatoire."
+    },
+    {
+      "niveau": "MOYENNE",
+      "sujet": "Format SILENT 15s W22 3e semaine consécutive sans test",
+      "diagnostic": "OPERATION SILENT FR W22 prévue. Top_5 2026-04-21 priorise SCIENCE-CITATION 30s et autres. À imposer jour 5.",
+      "action": "Programmer SILENT 15s jour 5 W22 (2026-04-24)."
+    },
+    {
+      "niveau": "MOYENNE",
+      "sujet": "Dashboard V8 Éditorial Cosmos swap 2026-04-19 + cron integrity stale 6e run",
+      "diagnostic": "V7.1→V8 swap commit 37f60649 depuis 2026-04-19. Cron cherche 'COMMAND CENTER' obsolète 2 versions (memory dashboard_integrity_cron_stale 2026-04-20_run6). 38 data files OK.",
+      "action": "Mettre à jour test intégrité cron sur 'V8 Éditorial Cosmos' + vérifier hook_performance_tracker.json reste lisible dans nouvelle UI."
+    },
+    {
+      "niveau": "MOYENNE",
+      "sujet": "Scoreur chatbot -1/100 (23e run) — hors scope tracker mais rappel prio",
+      "diagnostic": "MEMORY djibril_audit_2026-04-20_run23 : edge function scoreur cassé 23e run. Insights dashboard illisibles côté hook_performance.",
+      "action": "Fix scoreur avant prochain weekly-deep W22. Hors scope tracker — rappel équipe."
+    },
+    {
+      "niveau": "MOYENNE",
+      "sujet": "Copywriter a déjà livré 6 scripts 068-073 ouverture W22 — cross-check angles vs tracker",
+      "diagnostic": "MEMORY copywriting_batch_2026-04-20 : 068 Pessiglione glutamate + 069 Cortex 18-25 + 070 Gollwitzer IF-THEN = top 3 analyst exploités 3/3. 071 COUVERCLE + 072 PROPORTION + 073 BOFU Adam data.",
+      "action": "Top_5 2026-04-21 PROLONGE sans doublonner (Huberman PFC offline / National Geo 12min / TikTok slot machine / INJONCTION / amygdale=honte). 5/5 angles neufs vs batch 068-073."
+    }
+  ]
+}

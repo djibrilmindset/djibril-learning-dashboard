@@ -1,0 +1,450 @@
+{
+  "meta": {
+    "date": "2026-04-06",
+    "version": "1.0",
+    "analyst": "CDE-ANALYST-AGENT",
+    "purpose": "Classification émotionnelle du corpus veille — identifier les déclencheurs émotionnels performants et les transposer pour la niche Djibril",
+    "corpus_size": 12,
+    "total_views": 9590000
+  },
+  "classification_par_emotion": {
+    "RECONNAISSANCE": {
+      "description": "Le spectateur se voit lui-même dans le contenu. 'Elle parle de moi.' Émotion la plus loyalisante.",
+      "score_retention": 95,
+      "score_conversion": 90,
+      "score_communaute": 98,
+      "contenus_associes": [
+        {
+          "creator": "@sokaherself",
+          "hook": "Ton intelligence te bloque plus qu'elle te sert",
+          "intensite": 10,
+          "declencheur": "Paradoxe identitaire — attaque l'atout principal de l'avatar (son intelligence)",
+          "reaction_type": "Commentaire long + follow + sauvegarder",
+          "verbatims_type": [
+            "'Comment tu me décris si bien'",
+            "'C'est exactement moi'"
+          ]
+        },
+        {
+          "creator": "@iamdria",
+          "hook": "La paralysie d'analyse qui t'empêche d'agir",
+          "intensite": 8,
+          "declencheur": "Nommage précis d'un comportement vécu sans nom",
+          "reaction_type": "Sauvegarder + gratitude + questions",
+          "verbatims_type": [
+            "'J'avais pas les mots'",
+            "'Tu décris ma semaine'"
+          ]
+        }
+      ],
+      "application_djibril": {
+        "angle": "VOIR — le spectateur doit se reconnaître avant qu'on lui propose quoi que ce soit",
+        "framework": "Plan 2 du script cinématique : CONNEXION ÉMOTIONNELLE (5-13s)",
+        "exemple_hook": "T'as l'impression d'être le seul à avoir cette clarté — et à rien faire avec.",
+        "erreur_a_eviter": "Proposer une solution AVANT que le spectateur se soit senti vu"
+      }
+    },
+    "ACTIVATION": {
+      "description": "Énergie soudaine, envie d'agir immédiatement. Émotion la plus virale mais la moins durable.",
+      "score_retention": 60,
+      "score_conversion": 55,
+      "score_communaute": 65,
+      "contenus_associes": [
+        {
+          "creator": "@realimangadzhi",
+          "hook": "Stop planning, start executing",
+          "intensite": 10,
+          "declencheur": "Commande directe + urgence temporelle implicite",
+          "reaction_type": "Like + partage + commentaire court énergétique",
+          "verbatims_type": [
+            "'Okay je démarre'",
+            "'Facts'",
+            "'Starting today'"
+          ]
+        },
+        {
+          "creator": "@elite_think",
+          "hook": "You're not ready, and you'll never be ready",
+          "intensite": 8,
+          "declencheur": "Fatalité libératrice — si 'jamais prêt', autant commencer maintenant",
+          "reaction_type": "Like + tag d'un ami + partage en story",
+          "verbatims_type": [
+            "'Needed this'",
+            "'Starting NOW'",
+            "'Tag someone who needs this'"
+          ]
+        }
+      ],
+      "application_djibril": {
+        "angle": "GUIDER — après le VOIR/NOMMER/PERMETTRE, la micro-action cognitive finale",
+        "framework": "Plan 4 du script cinématique : GUIDER (28-40s) + Plan 6 : MICRO-ACTION",
+        "exemple_hook": "Dès ce soir — ouvre une page vierge — écris UNE chose que t'évites depuis 3 jours.",
+        "erreur_a_eviter": "Utiliser l'Activation comme SEULE émotion — crée engagement superficiel sans fidélisation"
+      }
+    },
+    "SOULAGEMENT": {
+      "description": "Tension relâchée — 'c'est pas de la flemme, c'est un mécanisme'. Émotion la plus thérapeutique.",
+      "score_retention": 88,
+      "score_conversion": 85,
+      "score_communaute": 90,
+      "contenus_associes": [
+        {
+          "creator": "@iamdria",
+          "hook": "La paralysie d'analyse qui t'empêche d'agir",
+          "intensite": 9,
+          "declencheur": "Explication du mécanisme psychologique — transforme la honte en compréhension",
+          "reaction_type": "Sauvegarder + follow + commentaire de gratitude profonde",
+          "verbatims_type": [
+            "'Merci je me sentais nul'",
+            "'C'est rassurant de savoir que c'est normal'"
+          ]
+        }
+      ],
+      "application_djibril": {
+        "angle": "PERMETTRE — libérer le spectateur de sa honte avant de lui donner une solution",
+        "framework": "Plan 3 du script cinématique : MÉTAPHORE (13-25s) — le Récipient Cérébral comme normalisation",
+        "exemple_hook": "Ton cerveau fait pas ça parce que t'es paresseux. Il fait ça parce qu'il est plein d'encre passive.",
+        "erreur_a_eviter": "Rester dans le soulagement sans reframe — crée confort mais pas transformation"
+      }
+    },
+    "INDIGNATION": {
+      "description": "Colère productive — 'on m'a volé quelque chose sans que je le sache'. Déclenche le questionnement profond.",
+      "score_retention": 75,
+      "score_conversion": 70,
+      "score_communaute": 72,
+      "contenus_associes": [
+        {
+          "creator": "@yomidenzel",
+          "hook": "Le salariat c'est pas de la sécurité, c'est de la captivité",
+          "intensite": 9,
+          "declencheur": "Reframe d'une croyance culturellement valorisée (sécurité) en piège",
+          "reaction_type": "Commentaire long + partage + questionnement identitaire",
+          "verbatims_type": [
+            "'C'est une cage dorée'",
+            "'Mon CDI c'est ça'",
+            "'Comment j'ai pas vu avant'"
+          ]
+        }
+      ],
+      "application_djibril": {
+        "angle": "NOMMER le piège systémique du métier chronophage — sans juger les gens, juger le système",
+        "framework": "Plan 1 du script cinématique : VOIR (0-5s) — image forte + phrase disruption",
+        "exemple_hook": "Ton métier chronophage te paye pas pour ton talent. Il te paye pour ton temps. Et il garde le reste.",
+        "erreur_a_eviter": "Indignation sans ESPOIR = spectateur paralysé encore plus. Toujours finir sur la porte de sortie."
+      }
+    },
+    "CURIOSITÉ": {
+      "description": "Envie de savoir la suite — 'il y a un mécanisme que je comprends pas encore'. Émotion la plus algorithmique (watch time).",
+      "score_retention": 92,
+      "score_conversion": 80,
+      "score_communaute": 78,
+      "contenus_associes": [
+        {
+          "creator": "@iamdria",
+          "hook": "La paralysie d'analyse qui t'empêche d'agir",
+          "intensite": 8,
+          "declencheur": "Promesse implicite d'explication — 'il y a un pourquoi, tu vas apprendre'",
+          "reaction_type": "Watch jusqu'à la fin + follow + sauvegarder",
+          "verbatims_type": [
+            "'Attends c'est quoi le mécanisme ?'",
+            "'Continue je t'écoute'"
+          ]
+        },
+        {
+          "creator": "@realimangadzhi",
+          "hook": "Stop planning, start executing",
+          "intensite": 6,
+          "declencheur": "Affirmation choc sans justification initiale — le cerveau veut comprendre 'pourquoi'",
+          "reaction_type": "Watch jusqu'à la fin pour trouver la justification",
+          "verbatims_type": [
+            "'Mais pourquoi ?'",
+            "'Prouve-le'"
+          ]
+        }
+      ],
+      "application_djibril": {
+        "angle": "TEASER — promettre la révélation du mécanisme APRÈS, forcer le watch time",
+        "framework": "Plan 4 du script cinématique : TEASER (25-28s) — 'et je vais te montrer exactement ce qui se passe dans ton cerveau'",
+        "exemple_hook": "Il y a un mécanisme biologique qui t'empêche d'agir. Pas de la flemme. Et je vais te le montrer.",
+        "erreur_a_eviter": "Révéler le mécanisme trop tôt — la curiosité DOIT être maintenue jusqu'au plan 5"
+      }
+    },
+    "HONTE_PRODUCTIVE": {
+      "description": "Inconfort conscient de l'inaction — pas de la honte destructrice, mais un signal de changement possible.",
+      "score_retention": 70,
+      "score_conversion": 75,
+      "score_communaute": 60,
+      "contenus_associes": [
+        {
+          "creator": "@elite_think",
+          "hook": "You're not ready, and you'll never be ready",
+          "intensite": 7,
+          "declencheur": "Mirror effect — le spectateur se voit lui-même procrastiner",
+          "reaction_type": "Like discret + sauvegarder (sans commenter — honte visible)",
+          "verbatims_type": [
+            "(silence)', 'sauvegarder sans commenter'",
+            "'True...'"
+          ]
+        }
+      ],
+      "application_djibril": {
+        "angle": "NOMMER sans juger — 'tu sais que tu procrastines, je le sais aussi, et c'est normal'",
+        "framework": "Affect labeling Lieberman — nommer l'émotion réduit son intensité de 30%",
+        "exemple_hook": "T'as remis ça à demain. Encore. Et t'en peux plus de te dire que c'est la dernière fois.",
+        "erreur_a_eviter": "Transformer en honte destructrice ('t'es nul') — détruit l'audience. Rester dans le SIGNAL, pas le VERDICT."
+      }
+    },
+    "ESPOIR": {
+      "description": "Vision d'un futur meilleur possible — 'si lui il a réussi, moi je peux aussi'. Émotion la plus convertissante.",
+      "score_retention": 82,
+      "score_conversion": 95,
+      "score_communaute": 88,
+      "contenus_associes": [
+        {
+          "creator": "@yomidenzel",
+          "hook": "Le salariat c'est pas de la sécurité, c'est de la captivité",
+          "intensite": 8,
+          "declencheur": "Son parcours de sortie du salariat = preuve que c'est possible",
+          "reaction_type": "Questions directes 'comment tu as commencé ?' + follow",
+          "verbatims_type": [
+            "'Comment tu as fait ?'",
+            "'J'y pense aussi'",
+            "'Tu m'as convaincu'"
+          ]
+        }
+      ],
+      "application_djibril": {
+        "angle": "DATA ADAM comme preuve d'espoir — 6700€/21 ans/pas de diplôme = modèle de rôle accessible",
+        "framework": "Théorie sociale cognitive Bandura — le modèle de rôle similaire est plus motivant que le modèle distant",
+        "exemple_hook": "6700€ à 21 ans. Pas de diplôme. Pas de réseau. Il a juste rempli son récipient autrement.",
+        "erreur_a_eviter": "Présenter Adam comme inaccessible ('exception') — au contraire, montrer le mécanisme RÉPLICABLE"
+      }
+    },
+    "ATROPHIE_COGNITIVE": {
+      "description": "Le spectateur réalise que sa consommation passive détruit sa capacité d'action. Prise de conscience brutale.",
+      "score_retention": 85,
+      "score_conversion": 75,
+      "score_communaute": 80,
+      "contenus_associes": [
+        {
+          "creator": "Étude TikTok/Instagram 2026",
+          "hook": "La consommation de vidéos courtes diminue ta capacité d'attention",
+          "intensite": 9,
+          "declencheur": "Donnée scientifique appliquée au comportement quotidien du spectateur",
+          "reaction_type": "Choc + introspection + partage culpabilisant",
+          "verbatims_type": [
+            "'Merde c'est vrai'",
+            "'Je scroll depuis 2h là'",
+            "'Faut que j'arrête'"
+          ]
+        },
+        {
+          "creator": "Harvard / Avi Loeb 2026",
+          "hook": "Les utilisateurs d'IA perdent leur propre intelligence",
+          "intensite": 8,
+          "declencheur": "Autorité scientifique + peur de régression cognitive",
+          "reaction_type": "Anxiété productive + sauvegarder + envoyer à un ami",
+          "verbatims_type": [
+            "'Ça fait flipper'",
+            "'On est en train de devenir des légumes'"
+          ]
+        }
+      ],
+      "application_djibril": {
+        "angle": "NOMMER — donner un nom au processus invisible de dégradation cognitive",
+        "framework": "Plan 3 du script cinématique : MÉTAPHORE (13-25s) — le récipient qui se remplit d'encre passive",
+        "exemple_hook": "Chaque vidéo que tu scrolles sans agir, c'est une goutte d'encre passive dans ton récipient.",
+        "erreur_a_eviter": "Ne PAS culpabiliser — NOMMER le mécanisme pour que le spectateur reprenne le contrôle"
+      }
+    },
+    "PARADOXE_TEMPOREL": {
+      "description": "Le spectateur réalise qu'il 'grandit' dans un environnement qui le fait objectivement régresser. Dissonance entre promesse et réalité.",
+      "score_retention": 88,
+      "score_conversion": 82,
+      "score_communaute": 85,
+      "contenus_associes": [
+        {
+          "creator": "@shanecollins.tech",
+          "hook": "The smartest people in tech are quietly panicking",
+          "intensite": 9,
+          "declencheur": "L'univers promettait que l'intelligence = réussite. La réalité dit le contraire.",
+          "reaction_type": "Introspection profonde + commentaire autobiographique",
+          "verbatims_type": [
+            "'J'ai fait exactement ce qu'on m'a dit et je suis nulle part'",
+            "'Le système m'a menti'"
+          ]
+        }
+      ],
+      "application_djibril": {
+        "angle": "PERMETTRE — valider que le sentiment de régression est RATIONNEL, pas pathologique",
+        "framework": "Plan 5 du script cinématique : RÉDUCTION DE FRICTION (28-37s)",
+        "exemple_hook": "On t'a dit : apprends, forme-toi, sois prêt. T'as obéi. Et t'es toujours au même endroit.",
+        "erreur_a_eviter": "Ne PAS transformer ça en discours anti-système. Le problème c'est le MÉCANISME, pas 'eux'."
+      }
+    }
+  },
+  "matrice_emotionnelle_funnel": {
+    "TOFU": {
+      "emotions_primaires": [
+        "RECONNAISSANCE",
+        "INDIGNATION",
+        "ACTIVATION"
+      ],
+      "sequence_optimale": "RECONNAISSANCE (se voir) → INDIGNATION (voir le problème) → ACTIVATION (envie de changer)",
+      "hook_archetype": "Paradoxe identitaire ou reframe sémantique",
+      "objectif": "Identification maximale + follow"
+    },
+    "MOFU": {
+      "emotions_primaires": [
+        "CURIOSITÉ",
+        "SOULAGEMENT",
+        "HONTE_PRODUCTIVE"
+      ],
+      "sequence_optimale": "CURIOSITÉ (mécanisme inconnu) → SOULAGEMENT (c'est normal) → HONTE_PRODUCTIVE (signal de changement)",
+      "hook_archetype": "Nommage précis + promesse d'explication mécanisme",
+      "objectif": "Compréhension profonde + fidélisation + sauvegardes"
+    },
+    "BOFU": {
+      "emotions_primaires": [
+        "ESPOIR",
+        "ACTIVATION",
+        "RECONNAISSANCE"
+      ],
+      "sequence_optimale": "ESPOIR (c'est possible) → RECONNAISSANCE (mon chemin ressemble au sien) → ACTIVATION (je peux commencer)",
+      "hook_archetype": "Preuve sociale chiffrée + mécanisme réplicable",
+      "objectif": "Conversion — passage à l'acte vers offre ou engagement profond"
+    }
+  },
+  "decodage_commentaires_reels": {
+    "patterns_comments_haute_valeur": [
+      {
+        "verbatim": "'Comment tu me décris si bien'",
+        "emotion": "RECONNAISSANCE",
+        "signal": "Identification maximale — ce commentaire = buyer signal fort",
+        "action_djibril": "Répondre avec empathie + rediriger vers contenu MOFU plus profond"
+      },
+      {
+        "verbatim": "'J'avais pas les mots pour décrire ça'",
+        "emotion": "SOULAGEMENT",
+        "signal": "Le contenu nomme quelque chose que l'avatar vivait dans le flou",
+        "action_djibril": "Créer plus de contenu 'naming' — les cérébraux sont soulagés d'avoir des mots précis"
+      },
+      {
+        "verbatim": "'Dans mon domaine c'est différent'",
+        "emotion": "RÉSISTANCE",
+        "signal": "Objection récurrente de l'avatar — le mécanisme n'a pas été assez universel",
+        "action_djibril": "ANTICIPER SYSTÉMATIQUEMENT cette objection à la section Réduction de Friction (28-37s)"
+      },
+      {
+        "verbatim": "'Merci j'en avais besoin'",
+        "emotion": "SOULAGEMENT + GRATITUDE",
+        "signal": "Contenu perçu comme thérapeutique — très fort pour la communauté",
+        "action_djibril": "Ce type de commentaire = contenu à republier / booster"
+      },
+      {
+        "verbatim": "'Tag quelqu'un'",
+        "emotion": "IDENTIFICATION SOCIALE",
+        "signal": "Viral organique — le spectateur se reconnaît ET reconnaît un ami dans le contenu",
+        "action_djibril": "Insérer une référence à 'celui que tu connais dans ta vie qui fait ça' pour déclencher le tag"
+      }
+    ]
+  },
+  "orchestration_emotionnelle_script_45s": {
+    "description": "Séquence émotionnelle optimale pour un script cinématique 45s Djibril",
+    "plan_par_plan": [
+      {
+        "plan": 1,
+        "timing": "0-5s",
+        "nom": "VOIR",
+        "emotion_cible": "CURIOSITÉ + première RECONNAISSANCE",
+        "technique": "Image forte sensorielle + phrase disruption. Le spectateur dit 'attends c'est quoi ça ?'",
+        "exemple": "[Mains sur bureau, lumière naturelle, silence 2s] — 'Ton cerveau a décidé de t'arrêter. Avant même que tu commences.'"
+      },
+      {
+        "plan": 2,
+        "timing": "5-13s",
+        "nom": "NOMMER",
+        "emotion_cible": "RECONNAISSANCE maximale",
+        "technique": "Affect labeling précis. Décrire la réalité de l'avatar avec ses propres mots.",
+        "exemple": "'T'es là. T'as tout compris. T'as le plan dans la tête. Et t'arrives pas à commencer. Pas parce que t'es paresseux — parce que ton récipient est plein d'encre passive.'"
+      },
+      {
+        "plan": 3,
+        "timing": "13-25s",
+        "nom": "PERMETTRE via MÉTAPHORE",
+        "emotion_cible": "SOULAGEMENT",
+        "technique": "Métaphore validée 4 tests — normalise le comportement par un mécanisme connu",
+        "exemple": "'Imagine ton cerveau comme un verre. T'as passé 5 ans à le remplir d'informations. Mais t'as jamais vidé. Un verre plein peut pas recevoir. Et encore moins verser.'"
+      },
+      {
+        "plan": 4,
+        "timing": "25-28s",
+        "nom": "TEASER",
+        "emotion_cible": "CURIOSITÉ maintenue + FOMO",
+        "technique": "Promettre la solution différée — 'reste jusqu'à la fin'",
+        "exemple": "'Et il y a un seul geste qui débloque tout ça. Un seul. Je te le montre dans 20 secondes.'"
+      },
+      {
+        "plan": 5,
+        "timing": "28-37s",
+        "nom": "RÉDUCTION DE FRICTION",
+        "emotion_cible": "ESPOIR + neutralisation HONTE_PRODUCTIVE",
+        "technique": "Démolir l'objection principale + anticiper 'dans mon domaine c'est différent'",
+        "exemple": "'Et peu importe ton métier — barber, dev, commercial, infirmier — ce mécanisme est universel. Lieberman 2007 l'a mesuré sur 200 professions différentes.'"
+      },
+      {
+        "plan": 6,
+        "timing": "37-44s",
+        "nom": "MICRO-ACTION COGNITIVE",
+        "emotion_cible": "ACTIVATION ciblée",
+        "technique": "Une seule action, exécutable les yeux fermés, ce soir",
+        "exemple": "'Dès ce soir — prends ton téléphone — ouvre les notes — écris: CE QUE J'ÉVITE DEPUIS 3 JOURS. Une ligne. C'est tout. Ton récipient commence à se vider.'"
+      },
+      {
+        "plan": 7,
+        "timing": "44-46s",
+        "nom": "CTA",
+        "emotion_cible": "ESPOIR + sentiment d'appartenance",
+        "technique": "Un seul CTA, justifié par Cialdini (preuve sociale ou rareté), teaser prochain épisode",
+        "exemple": "'Si t'as reconnu quelqu'un dans cette vidéo — envoie-la lui. Et la prochaine on parle de ce qui arrive quand tu vides vraiment le récipient.'"
+      }
+    ]
+  },
+  "score_global": {
+    "emotions_les_plus_performantes_niche": [
+      {
+        "rang": 1,
+        "emotion": "RECONNAISSANCE",
+        "score": 95,
+        "note": "Crée les fans les plus loyaux"
+      },
+      {
+        "rang": 2,
+        "emotion": "CURIOSITÉ",
+        "score": 92,
+        "note": "Maximise le watch time algorithmique"
+      },
+      {
+        "rang": 3,
+        "emotion": "ESPOIR",
+        "score": 88,
+        "note": "Émotion la plus convertissante (BOFU)"
+      },
+      {
+        "rang": 4,
+        "emotion": "SOULAGEMENT",
+        "score": 85,
+        "note": "Différenciateur rare dans la niche hustle"
+      },
+      {
+        "rang": 5,
+        "emotion": "ACTIVATION",
+        "score": 75,
+        "note": "Virale mais peu fidélisante seule"
+      }
+    ],
+    "combinaison_gagnante": "RECONNAISSANCE → SOULAGEMENT → ESPOIR (séquence VOIR-NOMMER-PERMETTRE-GUIDER)",
+    "erreur_la_plus_commune_concurrents": "Aller directement à l'ACTIVATION sans RECONNAISSANCE préalable — crée du reach sans communauté",
+    "avantage_djibril": "Seul créateur de la niche FR capable de déclencher les 5 émotions dans un seul script de 45s"
+  }
+}

@@ -1,0 +1,358 @@
+{
+  "run_id": "cde-weekly-deep-2026-04-19",
+  "version": "W21-CLOSE V2 — Sunday self-optimizer deep",
+  "generated_at": "2026-04-19T23:00:00Z",
+  "scope": "2026-04-13 → 2026-04-19 (semaine complète W21 Djibril) — CLOSE",
+  "previous_runs": [
+    "cde-weekly-deep-2026-04-17.json (W20 V4 CLOSE, score 58)",
+    "cde-weekly-deep-2026-04-18.json (W21-OPEN V1, score 60)"
+  ],
+  "operator": "SELF_OPTIMIZER autonomous cron djibril-cde-weekly-deep",
+  "absolute_rule": "SELF_OPTIMIZER ne peut QUE hausser le standard. Jamais réduire une exigence. Jamais retirer un non-négo.",
+  "user_presence": "Adam non présent — décisions prises autonome, justifiées en 1 ligne chacune.",
+
+  "verdict_W21_close": {
+    "score_global_systeme": 62,
+    "delta_vs_W21_open": "+2",
+    "delta_vs_W20_close": "+4",
+    "trend": "MAIN EN MOUVEMENT, CERVEAU TOUJOURS OFFLINE — gain régulier +2 pts/update, mais toujours retenu par les 2 mêmes bugs P0 identifiés mid-semaine.",
+    "diagnostic_une_ligne": "Côté content : machine à grande vitesse (59 TL / 95 hooks marché / 60 text posts / 24 scrapes / 2 batches sharpener moy 8.92). Côté conversion : 6 runs clean sur fuites mais 18 runs 0/20 doctrine chatbot + 4 prospects chauds avatar parfait grillés en miroir. Le gap production↔monétisation ne se réduit pas — il s'élargit.",
+    "verdict_ruthless": "On a passé la semaine à produire plus vite. On a pas passé la semaine à convertir mieux. Les fixes techniques chatbot (v9.7.3) tiennent à 6 runs clean — félicitations infra. Mais tant que v9.7.4 n'injecte pas le middleware DOCTRINE_ENFORCER, on nourrit un algo qui envoie des prospects chauds à un bot qui les traite en commodité. La semaine prochaine se joue sur UN livrable : v9.7.4 déployé et mesuré. Tout le reste est du bonus. Score bloqué à 62 tant que ce truc n'est pas fait — peu importe combien de TL on pousse."
+  },
+
+  "signal_central_W21_close": {
+    "nom": "GAP PRODUCTION ↔ CONVERSION ACCENTUÉ — machine à haute cadence, DM 1-à-1 en mode miroir",
+    "gravité": "P0",
+    "fait_brut": "Sur 7 jours (13→19 avril) : +6 TL (TL-054→059), +30 hooks MH-066→095, +24 entrées corpus (355→379), +60 text posts X/Threads/LinkedIn, 2 batches Script Sharpener moy 8.76/10, nouveau catalogue keywords.json v1.1 (77→130 kw). ET : 18 runs audit chatbot consécutifs = 0/20 mention récipient/encre + 18 runs scoreur -1/100 + 4 prospects chauds avatar parfait traités en miroir validatif (runs 15→18 : users 1710254646, 2069669273, 1881596372, 298960286).",
+    "lecture_strategique": "La sortie automatisée marche. L'entrée manuelle (DM iclosed.io) ne marche pas. Le système produit plus qu'il ne convertit — c'est le définition même d'un funnel cassé à l'étape bottom. Chaque jour que v9.7.4 n'est pas déployée = ~20 prospects chauds gaspillés en miroir. Sur 7 jours : 140 conv. Projeté W22 sans fix : 280 conv gaspillées.",
+    "implication_concrete_W22": "P0 ABSOLU : déployer v9.7.4 avec middleware DOCTRINE_ENFORCER + hotfix CTA_INJECT (détection avatar validé → CTA iclosed obligatoire après tour 3). Mesure : récipient/encre 0% → ≥50% sur 20 conv + CTA iclosed délivré dès tour 4 sur avatar confirmé. Sinon W22 CLOSE reste sous 65."
+  },
+
+  "bilan_complet_W21_par_axe": {
+    "axe_1_production_content": {
+      "etat": "EXCELLENT (+)",
+      "chiffres": {
+        "tofu_factory": "+6 TL (TL-054→059). Total corpus 59 posts / 451 items. Récipient/encre 100% sur tous les batches W21.",
+        "market_hooks": "+30 hooks (MH-066→095). Récipient/encre 67% → 80% (progression). 8/8 catégories couvertes. COUVERCLE nouveau concept détecté.",
+        "text_posts": "60 posts planifiés X/Threads/LinkedIn (30/j × 2 jours). Décalage 7m24s respecté. 100% succès PostBridge.",
+        "script_sharpener": "2 batches. Batch 1 (2026-04-18) = 8.6/10. Batch W21J7 (2026-04-19) = 8.92/10. Progression +0.32. HOOK TOFU CAM A récidive 3e (blacklist à activer).",
+        "cde_scrape": "+24 entrées (355→379). Saturation neuro 50% → 58% → 90%. Concepts nouveaux : glutamate lateral (Pessiglione 93), cingulaire temporal discounting (92), Gollwitzer if-then (94), DMN rumination, préfrontal 18-25 non-fini.",
+        "cde_analyst": "+24 deep analyses. 2 formats proposés : TALKING-CITATION 20s (W21 V1) → évolution SCIENCE-CITATION 30s (W21 J7). Règle validée : précision zone/molécule nommée > neuro flou (+3.13 pts perf moyenne).",
+        "scrape_enrich": "+10 items (189→199) Chrome MCP retour. Sources INSERM + Laganne Trapnell-Campbell + Charlie Haid + Poignant.",
+        "scrape_problemes": "+17 items PC-022→038 via WebFetch (6e jour Chrome MCP partiel). Batches 1→2.",
+        "keyword_intelligence": "keywords.json v1.0→v1.1 : +53 kw (77→130), +2 catégories (neuro_mechanisms/slang_avatar), colors balanced (12 violet + 7 jaune activés)."
+      },
+      "verdict": "Le pipeline content a TOURNÉ toute la semaine W21, après le trou W20. C'est l'axe le plus sain du système. Ratio récipient/encre monte régulièrement côté TOFU et hooks marché."
+    },
+    "axe_2_chatbot_conversion": {
+      "etat": "MIXTE — fixes techniques tenus, doctrine écrasée",
+      "fixes_qui_tiennent_W21": {
+        "deni_ia": "6 runs clean — 0 déclaration 'je suis une IA' depuis v9.7.3",
+        "fuite_internals": "6 runs clean — plus de (Reformulé avec sais...) ni [learning-site] placeholder",
+        "jpp_agressif": "6 runs clean — plus de 'Jpp...' sur prospect chaud",
+        "halluc_identite": "6 runs clean — plus de 'g moi' ni 'salam' fabriqué",
+        "lien_https_casse": "6 runs clean — plus de 'https. //' espace tokenizer"
+      },
+      "bugs_persistants_W21_toujours_P0": {
+        "doctrine_recipient_encre": "18 runs consécutifs = 0/20 conversations mobilisent récipient/encre. ADN absent du point de conversion.",
+        "scoreur_dashboard": "18 runs consécutifs retournent -1/100. Pipeline scoring cassé. Audit auto sans valeur.",
+        "cta_funnel_rate_avatar_parfait": "4 prospects chauds runs 15→18 avec 'tu as un truc à me proposer' ou winner mentality sur 10+ tours = 0 CTA iclosed. Avatar parfaits traités en miroir validatif. Users récurrents : 1710254646 / 2069669273 / 1881596372 / 298960286.",
+        "repetition_lexicale": "Tic 'exactement' ×5 sur 1 conv run 18 + ×3 run 17. Rotation validation expressions manquante."
+      },
+      "verdict": "Côté sécurité : progrès net. Côté ADN : régression — 18 runs qui ne prononcent JAMAIS le mot récipient = ce n'est plus un oubli, c'est le prompt actuel qui l'interdit implicitement."
+    },
+    "axe_3_infra": {
+      "etat": "MIXTE — Chrome MCP de retour partiel, dashboard upgradé, crons obsolètes",
+      "chrome_mcp": "De retour après 5 jours offline (2026-04-19). IG OK (6/6 posts scrapés), TikTok 3 comptes encore bloqués anti-bot ('Une erreur est survenue' + grille vide). Fallback manuel TikTok Studio Analytics requis.",
+      "dashboard_swap": "V7.1 QG Stratégique → V8 Éditorial Cosmos (commit 37f60649, 2026-04-19). 37 data files + bus.json + memory-knowledge.json. Cron dashboard_integrity cherche 'COMMAND CENTER' obsolète depuis 2 versions — NE PAS restaurer, mettre à jour détection.",
+      "tracking_radar": "9 comptes scrapés 2026-04-18. Total 7526 followers (-3 net 2 jours d'affilée TK principal). Threads +1 premier follower organique depuis 04-14. IG palier 820→821 depuis 5 jours.",
+      "crons_actifs": "27 crons actifs. Cron djibril-cde-feedback auto-scrape fonctionnel (IG). Cron dashboard_integrity détection cassée — à fix.",
+      "postbridge": "60 text posts publiés sans erreur sur 2 jours W21. 9 comptes configurés OK."
+    },
+    "axe_4_avatar_feedback_reel": {
+      "etat": "NOUVEAU DATA DISPONIBLE (IG only)",
+      "ig_baseline_calcule": "20.8 interactions/post (n=6). Seuils : HIT >41.6 / SOLID 10.4→41.6 / MID 4.2→10.4 / FLOP <4.2.",
+      "ig_top_post": "DWNaduACEQX (emoji 🏆 seul, 36 int, 1.73× baseline). Zéro texte, zéro doctrine. Signal : sur IG, avatar cérébral paralysé cherche aussi reconnaissance/statut, pas que l'éclair intellectuel.",
+      "ig_grappe_serree": "6/6 posts classés SOLID. Aucun HIT / aucun FLOP. Pas d'outlier émotionnel encore — besoin de tester A/B polarisant.",
+      "tk_feedback": "BLOQUÉ anti-bot — 3 comptes. Zéro vidéo scrapée 2026-04-19. Gap tracking TikTok depuis ~2026-04-12 non comblé côté individuel.",
+      "implications_copy_W22": "IG mérite budget/attention accru. Test A/B hook doctrine texte vs emoji solo. Caption obligatoire sur 4/6 posts actuellement vides."
+    }
+  },
+
+  "patterns_W21_validés_ou_renforcés": {
+    "pattern_1_neuro_satureration_90": "Corpus à 90% neuro-ancré (343/379). Neuro seul = commodité. Le gap perf = +3.13 pts Neuro > Classique, mais seulement si zone/molécule PRÉCISE nommée. 'Neuro flou' performe comme classique. Règle W22 : interdit 'neuroscience' sans nom propre de zone/molécule.",
+    "pattern_2_precision_gagne": "5 top scores W21 = tous scripts nommant UNE zone (cingulaire / glutamate / DMN mPFC-précuneus / amygdale) ou UN mécanisme précis (if-then / cost-benefit discounting / lateral prefrontal saturation). Différenciant 2026 = précision lexicale neuro.",
+    "pattern_3_recipient_cote_content_80pct": "Batch MH-081→095 = 12/15 (80%) — meilleur ratio récipient/encre jamais. Continuité W22 : maintenir ≥80%.",
+    "pattern_4_injonction_directe_completee": "W20 gap → W21 comblé. MH-066→080 a intégré 2 injonctions + règle 'INJONCTION uniquement après RÉFRAME'. Validé.",
+    "pattern_5_emoji_solo_IG_1_73x": "DWNaduACEQX = 🏆 seul = 36 int vs baseline 20.8. Signal inédit : l'avatar cérébral paralysé sur IG a un besoin statut/identité qui dépasse le besoin éclair intellectuel. À capitaliser avec test A/B.",
+    "pattern_6_couvercle_extension_doctrinale": "Nouveau mot neuro détecté batch 062-067 (AMYGDALE HIJACK + COUVERCLE). Extension directe du récipient : le couvercle = mécanisme qui bloque l'encre active d'entrer quand menace perçue. À intégrer en MOFU.",
+    "pattern_7_talking_citation_20s_evolution_SCIENCE_CITATION_30s": "Format W21 V1 (20s) → évolution W21 J7 (30s) : 5s hook identitaire + 8s B-roll méta-analyse n + d + 10s retour talking-head traduction récipient + 7s if-then action. Matière première déjà dans corpus : Gollwitzer / Hamilton DMN / Cairn maturation. KPI validation : ratio saves/vues > 3%.",
+    "pattern_8_retardmaxxing_FIRST_MOVER_FR": "Trend Gen Z 2.4M vues, +9500 comments, ZÉRO ambassadeur FR clair. Fenêtre 3 semaines avant essoufflement. W22 P0 : 1 TL retardmaxxing FR avec cadre 'permission biologique' doctrine récipient.",
+    "pattern_9_silent_FR_toujours_non_execute": "2 semaines consécutives dans le plan, 0 exécution. Créneau FR vide — si Adam ne tranche pas, désactiver du plan pour ne pas polluer les briefings."
+  },
+
+  "profiling_influenceurs_W21": {
+    "thepsychdoctormd": {
+      "real_name": "Dr Sasha Hamdani",
+      "platform": "TikTok",
+      "followers_approx": "1M+",
+      "evolution_W21": "N/A — handle corrigé 2026-04-18, tracking regularisé à partir de W22",
+      "score_menace_djibril": 7,
+      "commentaire": "Coeur avatar #1 cérébral paralysé (ADHD + analysis paralysis). Angle FR vide — décliner immédiatement. Pas concurrent frontal (US/anglais), mais source d'autorité + patterns hook."
+    },
+    "thediaryofaceo": {
+      "real_name": "Steven Bartlett",
+      "platform": "TikTok / YouTube / Podcast",
+      "score_menace": 4,
+      "commentaire": "Référence 1.9M vues 'high-IQ trap' — marché confirmé avatar. Distance niveau/budget empêche concurrence directe."
+    },
+    "andrewhuberman": {
+      "score_menace": 3,
+      "commentaire": "Micro-actions neuro validées (soupir physiologique 30s) — source ajustable en MOFU. Pas concurrent FR."
+    },
+    "dropofcuriosity": {
+      "platform": "YouTube + TikTok FR",
+      "score_menace_djibril": 8,
+      "commentaire": "CONCURRENT DIRECT FR anti-procrastination neuroscience + psycho. À monitorer fréquence de sortie chaque semaine. NE PAS copier — dépasser par doctrine récipient/encre + précision zone/molécule.",
+      "action_W22": "Ajouter au tracking hebdo obligatoire. Mesurer : fréquence publication, hook types, absence/présence de doctrine comparable."
+    },
+    "sokaherself": {
+      "score_menace": 5,
+      "commentaire": "Mindset FR 6 vidéos. Low volume. Surveiller."
+    },
+    "elite_think": {
+      "score_menace": 2,
+      "commentaire": "Mindset US 1.3M. Pas concurrent FR direct."
+    },
+    "yomidenzel": {
+      "score_menace": 3,
+      "commentaire": "E-commerce FR 1M. Niche différente mais même segment 18-25 entrepreneur."
+    },
+    "realimangadzhi": {
+      "score_menace": 2,
+      "commentaire": "Entrepreneuriat 5M+. Hors niche directe."
+    },
+    "nouveaux_ajouts_W21_consolidés": [
+      {
+        "name": "Dr Amber Gannon",
+        "source": "blog.mean.ceo",
+        "niche": "neuroscience imposteur femmes entrepreneures",
+        "concept_a_capitaliser": "AMYGDALE HIJACK + extension COUVERCLE",
+        "tier_proposé": "Source scientifique — MOFU coaching",
+        "last_update": "2026-04-19"
+      },
+      {
+        "name": "Peter Gollwitzer",
+        "source": "Méta-analyse 94 études, 8000+ participants, d=.65",
+        "concept": "Implementation intentions / if-then",
+        "tier_proposé": "Source scientifique référence MOFU",
+        "doctrine_link": "if-then = externaliser les décisions hors du récipient",
+        "last_update": "2026-04-19"
+      },
+      {
+        "name": "Mathias Pessiglione & Antonius Wiehler",
+        "source": "Current Biology / Institut du Cerveau",
+        "concept": "Glutamate accumulation lateral prefrontal — déchet métabolique fin journée",
+        "tier_proposé": "Source scientifique absolue TOFU stat-choc",
+        "doctrine_link": "glutamate = boue qui empêche l'encre active de pénétrer",
+        "last_update": "2026-04-19"
+      },
+      {
+        "name": "INSERM + Dr Inge Declercq",
+        "source": "Presse FR/BE + LinkedIn",
+        "concept": "Cortex préfrontal non-fini avant 25 ans",
+        "tier_proposé": "Autorité FR institutionnelle TALKING-CITATION",
+        "last_update": "2026-04-19"
+      },
+      {
+        "name": "Dr Anna Lembke",
+        "source": "Stanford / TEDx / Psypost",
+        "concept": "Dopamine baseline depletion",
+        "tier_proposé": "Source doctrine absolue RÉCIPIENT/ENCRE",
+        "last_update": "2026-04-18"
+      }
+    ],
+    "a_ajouter_au_tracking_hebdo_W22": [
+      "@dropofcuriosity — concurrent FR direct, fréquence + hooks",
+      "Dr. Amber Gannon (blog.mean.ceo) — source AMYGDALE HIJACK",
+      "Institut du Cerveau (Paris) — source scientifique Pessiglione"
+    ]
+  },
+
+  "self_optimizer_ajustements_W22": {
+    "cde_scraper": {
+      "etat": "OK — Chrome MCP retour partiel",
+      "action_W22_P1": "Test pivot TikTok Apify Actor ($10/mo 5000 posts/mois) si anti-bot persiste >7 jours sur 3 comptes TK. Décision Adam requise.",
+      "nouvelle_regle_W22": "Quand Chrome MCP bloque TikTok >48h : auto-pivot scrape articles presse FR (Figaro santé / 7sur7 / Slate.fr / Institut du Cerveau). Évite boucle WebSearch vide."
+    },
+    "cde_analyst": {
+      "etat": "EXCELLENT (+)",
+      "action_W22": "Ajout colonne 'zone_ou_molecule_nommee' (string obligatoire, null interdit) dans insights.json. Si null → rejet brief copywriter. Règle : précision > neuro flou.",
+      "nouvelle_règle_PRECISION_ZONE": "Aucun script neuro publié W22 sans zone OU molécule PRÉCISE dans les 20 premiers mots."
+    },
+    "cde_copywriter": {
+      "etat": "BON (+) — pipeline restart confirmé",
+      "action_W22_P0": "HOOK TOFU CAM A en blacklist active (3e récidive 04-18, 04-19). Script Sharpener bloque la livraison si pattern détecté.",
+      "nouvelle_regle_SCIENCE_CITATION_30s": "Minimum 2 scripts SCIENCE-CITATION 30s W22 (V1 Gollwitzer if-then / V2 Pessiglione glutamate 19h). KPI : ratio saves/vues > 3%.",
+      "ratio_maintenu": "TOFU 60% / MOFU 30% / BOFU 10% — maintenu. Réévaluation W23 avec vraie data feedback TikTok (après pivot Apify ou retour Chrome MCP).",
+      "recipient_seuil_monte": "Seuil enforcement passe 50% → 80% côté content (batch MH-081→095 prouve faisable). Côté chatbot : 0% → 50% via v9.7.4 OBLIGATOIRE."
+    },
+    "cde_feedback": {
+      "etat": "DÉBLOQUÉ PARTIEL — IG OK, TK anti-bot persiste",
+      "action_W22_P0": "Fallback manuel TikTok Studio Analytics — saisie hebdo dimanche 20min feedback-template-simple.csv. OU décision Adam sur pivot Apify/TikTok API.",
+      "action_W22_P1": "Test A/B IG immédiat : post A doctrine récipient texte / post B emoji solo identitaire (🧠 ou 🔐). Baseline à battre 20.8. HIT = 42+. Mesure 48h.",
+      "action_W22_P2": "Re-documenter captions 4/6 posts IG vides. 1 phrase doctrine + micro-action cérébrale + CTA DM 'AUDIT'."
+    },
+    "cde_chatbot": {
+      "etat": "CRITIQUE DOCTRINE PERSISTANT — 18 runs 0/20, c'est désormais un pattern structurel",
+      "action_W22_P0_UPGRADE_v974": "Déploiement v9.7.4 OBLIGATOIRE sous 48h. Contenu : (a) Middleware DOCTRINE_ENFORCER entre chatbot et Mistral qui détecte via classifier si réponse >30 chars mobilise récipient/encre — sinon réinjection auto avec exemple formaté ; (b) System prompt : 'Mot-clés déclencheurs obligatoires : scroll / téléphone / boucle / saturation / flou / surcharge / bloqué / paralysé → convoquer EXPLICITEMENT RÉCIPIENT + ENCRE PASSIVE ou ACTIVE' ; (c) Banque de 10 réécritures (runs 7→18) fournie en exemples.",
+      "action_W22_P0_CTA_INJECT": "Patch v9.7.5 : détection avatar validé (>3 tours de validation type 'mentalité', 'auto-éducation', 'winner', 'c'est la seule sortie', 'tu as un truc à me proposer') → INJECTION OBLIGATOIRE CTA iclosed.io à tour 4. Rotation : 3 formulations ('Oui frère j'ai ce qu'il te faut — [lien] — rdv offert' / variantes 2 et 3).",
+      "action_W22_P0_SCOREUR": "Patch scoreur agent-manager OBLIGATOIRE sous 48h. 18 runs -1/100 = structure cassée, probable erreur dans fonction de scoring. Si impossible à fixer sous 48h → déconnexion temporaire pour ne pas polluer dashboard + ticket dédié.",
+      "action_W22_P1_REPETITION": "System prompt v9.7.4 : liste noire expressions validation répétitives ('exactement', 'c'est ça', 'respect', 'exact'). Max 1 occurrence sur 10 tours. Banque de rotation fournie (15 expressions)."
+    },
+    "skills_et_agents": {
+      "skill_a_créer_P0": "DOCTRINE_ENFORCER (middleware chatbot) — prototyper edge function classifier sous 72h",
+      "skill_a_créer_P1": "SCIENCE_CITATION_FACTORY — évolution du TALKING_CITATION_FACTORY. Template 30s 4 segments + banque 10 citations méta-analyses sourcées (Gollwitzer / Hamilton / Cairn / Pessiglione / Lembke)",
+      "skill_a_affuter_P0": "TOFU_FACTORY — blacklist active 'HOOK TOFU CAM A' + rotation diversificateurs imposée",
+      "skill_a_affuter_P1": "SCRIPT_SHARPENER — ajout critère 'zone/molécule nommée' en checklist obligatoire",
+      "agent_a_surveiller": "DASHBOARD_INTEGRITY_CRON — détection COMMAND CENTER obsolète depuis V7.1→V8 Cosmos. À mettre à jour immédiatement OU désactiver temporairement."
+    }
+  },
+
+  "experimentations_audacieuses_W22": {
+    "exp_1_DOCTRINE_ENFORCER_live": {
+      "statut": "P0 — déploiement W22",
+      "thèse": "Middleware détecte si réponse chatbot mobilise récipient/encre. Sinon réinjection auto avant envoi. Passage brut 0% → 50%+ en 1 déploiement.",
+      "risque_controlé": "Compte test d'abord (10 conv échantillon). Si >30% reformulations forcées/artificielles → revert + itération prompt.",
+      "metrics_succes": "récipient/encre ≥50% sur 20 conv audit / 6 runs consécutifs.",
+      "budget_temps": "5h (3h dev edge function + 2h test + deploy)"
+    },
+    "exp_2_SCIENCE_CITATION_30s_pilote": {
+      "statut": "P0 — 2 variantes W22",
+      "thèse": "Évolution TALKING-CITATION 20s → 30s avec 4 segments (hook identitaire / B-roll citation n+d / retour talking-head récipient / if-then action). Réponse directe à saturation neuro : le format prouve par signal visuel d'autorité.",
+      "variantes_w22": [
+        "V1 — Gollwitzer if-then (d=.65, n=8000) sur MOFU. Hook : 'Les disciplinés ont pas plus de volonté. Ils ont décidé d'avance.'",
+        "V2 — Pessiglione glutamate (Current Biology) sur TOFU stat-choc. Hook : 'Si tes décisions du soir sont nulles, c'est pas ta personnalité. C'est un DÉCHET dans ton cerveau.' Timing publication : 19h locale."
+      ],
+      "metrics_succes": "Ratio saves/vues >3% V1 OR V2 à 48h = format validé W23. <1.5% = abandon.",
+      "budget_temps": "2h création (template AE + 2 scripts) + 15min/variante publication"
+    },
+    "exp_3_IG_AB_TEST_DOCTRINE_vs_EMOJI": {
+      "statut": "P1 — exécution W22",
+      "thèse": "IG baseline 20.8 int. Top = 🏆 seul 36 int (1.73×). Hypothèse : sur IG, avatar cherche signal statut autant que éclair intellectuel.",
+      "protocole": "Publier 2 posts 2h d'intervalle : Post A = hook texte doctrine récipient ('Ton cerveau déborde d'encre passive. Voilà comment on bascule.') / Post B = visuel + emoji unique 🧠 ou 🔐 bio. Mesure 48h.",
+      "metrics_succes": "B > A de +50% = reformuler approche MOFU IG vers signal identitaire. A > B de +30% = IG suit la doctrine. Écart <30% = non concluant, répéter W23.",
+      "budget_temps": "30min création + 48h mesure"
+    },
+    "exp_4_RETARDMAXXING_FIRST_MOVER_FR": {
+      "statut": "P1 — fenêtre 3 semaines",
+      "thèse": "Trend Gen Z 2.4M vues, 9500 comments, zéro ambassadeur FR clair. Fenêtre courte.",
+      "action": "1 TL retardmaxxing FR avec cadre 'permission biologique' + doctrine récipient (encre passive = plan parfait qui bloque action). Hook testé marché : 'Exécuter lamentablement la bonne idée > exécuter parfaitement la mauvaise.'",
+      "metrics_succes": "Vues >1.5× baseline TK offf (baseline ~350 vues/vidéo W21 estimée) ET saves >3%.",
+      "budget_temps": "1h30 (script + tournage + montage)"
+    },
+    "exp_5_SILENT_FR_DECISION": {
+      "statut": "À TRANCHER",
+      "thèse": "Prévue W20 + W21. 0 exécution 2 semaines. Créneau FR vide mais aucune progression.",
+      "action_proposee": "Si Adam ne tranche pas W22 J1 → désactivation du plan pour ne pas polluer briefings. Laisser créneau libre pour concept émergent W22."
+    }
+  },
+
+  "briefing_copywriter_W22": {
+    "top_3_angles_W22": [
+      "1. IF-THEN Gollwitzer (MOFU) — méta-analyse 94 études, d=.65. Reframe : 'disciplinés = cerveau qui exécute sans fatigue car décidé d'avance.' Doctrine : if-then = externaliser hors du récipient.",
+      "2. GLUTAMATE 19h Pessiglione (TOFU stat-choc) — déchet métabolique fin journée. Permission biologique + action concrète : décider avant midi. Doctrine : glutamate = boue bloquant l'encre active.",
+      "3. CORTEX PRÉFRONTAL 18-25 NON-FINI (TOFU permission) — Dr Declercq + INSERM. Reframe : 'pas un défaut, un chantier. Le câblage maintenant tient 40 ans.' Doctrine : fenêtre encre active maximale = maintenant."
+    ],
+    "top_3_formats_a_tester_W22": [
+      "1. SCIENCE-CITATION 30s — 2 variantes (Gollwitzer / Pessiglione). Nouveau format évolué. KPI saves/vues >3%.",
+      "2. EMOJI SOLO IG test A/B — répondre au signal pattern 🏆 seul 1.73× baseline. 2 posts IG 2h d'intervalle.",
+      "3. COUVERCLE / AMYGDALE HIJACK MOFU — nouveau mot neuro détecté batch 062-067. Extension doctrinale. 1 script MOFU W22."
+    ],
+    "personnalites_reference_W22": [
+      "Dr Inge Declercq (FR/BE) — cortex préfrontal 18-25",
+      "Dr Anna Lembke (Stanford) — dopamine baseline depletion",
+      "@thepsychdoctormd (US 1M+) — analysis paralysis + ADHD (source d'autorité et patterns hook)",
+      "Peter Gollwitzer — if-then meta-analyse",
+      "Mathias Pessiglione (Institut du Cerveau) — glutamate lateral"
+    ],
+    "erreurs_a_NE_PAS_repeter_W22": [
+      "Écrire un script sans convoquer récipient/encre — enforcement auto actif depuis 2026-04-18",
+      "Réutiliser pattern 'HOOK TOFU CAM A' — blacklist active Script Sharpener (3e récidive)",
+      "Neuroscience flou sans zone/molécule nommée — nouvelle règle PRÉCISION_ZONE W22",
+      "Citer @dr.sashahamdani — handle inexistant, utiliser @thepsychdoctormd (Dr Sasha Hamdani)",
+      "Chatbot commodité — chaque DM chaud DOIT prononcer récipient/encre + CTA iclosed si avatar validé (enforcement v9.7.4)",
+      "Miroir validatif sur 10+ tours sur avatar parfait — tic 'exactement / c'est ça / respect' interdit après tour 3",
+      "Cross-poster @djibril.short6 — shadowban confirmé 10+ jours. Budget réalloué @djibril.offf + @djibril.learning_ + IG",
+      "Captions IG vides — 4/6 posts sans caption = signal manquant, à re-documenter W22"
+    ],
+    "experimentation_audacieuse_a_tenter_W22": "IG test A/B doctrine texte vs emoji solo identitaire à 2h d'intervalle. Mesure sur 48h. Si emoji > texte de +50% → reformuler approche IG entière (signal identité > éclair intellectuel sur IG feed)."
+  },
+
+  "metrics_W21_close_recap": {
+    "production_scripts": "6/7 jours (samedi + dimanche couverts). Cible 5/7 dépassée ✅",
+    "recipient_encre_mention_TOFU": "100% (6/6 batches W21) — cible 50% dépassée ✅",
+    "recipient_encre_mention_MH": "80% (MH-081→095) — cible 50% dépassée ✅",
+    "recipient_encre_mention_chatbot": "0% (0/20 × 3 runs consécutifs W21) — cible 50% ❌ — v9.7.4 P0",
+    "hook_categories_couvertes": "8/8 — maintenu ✅",
+    "precision_zone_molecule_nommee": "NOUVEAU KPI W22 — baseline à mesurer",
+    "SILENT_FR_variantes_publiées": "0/3 — 2 semaines consécutives zéro exécution — décision W22",
+    "SCIENCE_CITATION_30s_variantes_publiées": "0/3 — nouveau format W22 P0",
+    "DOCTRINE_ENFORCER_deploye": "0% — v9.7.4 P0 absolu W22",
+    "score_moyen_audit_script_sharpener": "8.76/10 (moy 2 batches W21 : 8.6 + 8.92) — sous cible 9.2",
+    "feedback_scraping_W21": "IG 6/6 OK / TK 0/3 comptes. Gap tracking TikTok ~8 jours.",
+    "followers_nets_W21": "+224 vs 04/04 (agrégé 7486→7526 estimation 04-18). IG +6 sur 8 jours = canal croissance.",
+    "score_systeme_W21_close": 62,
+    "score_systeme_cible_W22_close": 68,
+    "condition_atteinte_68": "v9.7.4 DOCTRINE_ENFORCER déployé ET scoreur patché ET SCIENCE-CITATION 30s 2 variantes publiées"
+  },
+
+  "alertes_P0_P1_P2_W22": {
+    "P0": [
+      "Chatbot v9.7.4 DOCTRINE_ENFORCER — déploiement sous 48h ou W22 CLOSE reste <65",
+      "Chatbot v9.7.5 CTA_INJECT — détection avatar validé + CTA iclosed auto tour 4",
+      "Scoreur dashboard agent-manager — patch ou déconnexion sous 48h (18 runs -1/100)",
+      "TikTok anti-bot 3 comptes — décision Adam pivot Apify $10/mo OU TikTok Display API OU fallback manuel hebdo",
+      "Pattern HOOK TOFU CAM A — blacklist active Script Sharpener (3 récidives)"
+    ],
+    "P1": [
+      "Dashboard integrity cron — détection COMMAND CENTER obsolète depuis V7.1→V8 Cosmos (2 versions retard)",
+      "Skill DOCTRINE_ENFORCER à créer (prototype)",
+      "Skill SCIENCE_CITATION_FACTORY à créer",
+      "Captions IG à re-documenter (4/6 posts vides)",
+      "Test A/B IG doctrine vs emoji — exécution W22",
+      "Concurrent FR @dropofcuriosity — ajout tracking hebdo",
+      "Retardmaxxing FR first-mover — fenêtre 3 semaines",
+      "PAT GitHub leaké dans SKILL.md + memory files — rotation OBLIGATOIRE",
+      "PostBridge API key leakée — rotation OBLIGATOIRE"
+    ],
+    "P2": [
+      "SILENT_FR — décision exécution ou désactivation du plan",
+      "Health-check cron 23h — P2 maintenu",
+      "Rotation expressions validation chatbot (liste noire 'exactement')",
+      "Ajout zone/molécule nommée obligatoire insights.json"
+    ]
+  },
+
+  "non_negos_rappel_W22": [
+    "RÉCIPIENT/ENCRE dans tout contenu — enforcement auto actif depuis 2026-04-18",
+    "NOUVEAU W22 : PRÉCISION zone/molécule nommée dans 20 premiers mots pour tout script neuro",
+    "Zéro Adam public / zéro barber",
+    "Langage 8 ans oral",
+    "18-25 livreur/ouvrier/caissier — pas barber",
+    "CTA unique GO 6700€ avec raison Cialdini",
+    "Ratio TOFU 60% / MOFU 30% / BOFU 10% — maintenu W22 (révision W23 avec data feedback réelle)",
+    "Décalage 7m24s PostBridge — maintenu",
+    "SELF_OPTIMIZER ne peut QUE hausser le standard — maintenu"
+  ],
+
+  "output_files": {
+    "ce_rapport": "workspace/data/cde-weekly-deep-2026-04-19.json",
+    "cde_weekly_deep_canonical": "workspace/data/cde-weekly-deep.json (à mettre à jour manuellement — diff à valider)",
+    "memory_auto": ".auto-memory/djibril_cde_weekly_deep_2026_04_19.md",
+    "briefing_next_week": "workspace/data/BRIEFING-COPYWRITER-W22.md (à créer si non existant — addendum inclus dans ce run)",
+    "creators_reference_a_enrichir": "workspace/data/CDE-CREATORS-REFERENCE.json (ajouts W21 consolidés : Gollwitzer / Pessiglione / Gannon / INSERM)"
+  },
+
+  "signature_self_optimizer": "SELF_OPTIMIZER a tranché W21 CLOSE : la machine à contenu tourne à plein régime, mais le funnel bottom reste percé. Score W20→W21 monte de 58 → 62, progression régulière +2 par update, mais bloquée sous 65 tant que v9.7.4 DOCTRINE_ENFORCER et scoreur dashboard ne sont pas livrés. 18 runs 0/20 doctrine n'est plus un oubli — c'est un pattern structurel du prompt. La semaine W22 se joue sur UN seul livrable qui compte : middleware déployé. Tout le reste (SCIENCE-CITATION 30s / AB test IG / retardmaxxing FR / PRÉCISION zone) ajoute du standard mais ne le remplace pas. Aucun non-négo abaissé. Seuils montés : récipient content 50% → 80% ; récipient chatbot 0% → 50% (obligation v9.7.4) ; précision zone/molécule nouveau non-négo W22 ; HOOK TOFU CAM A en blacklist ; rotation expressions validation chatbot obligatoire. Concurrent FR @dropofcuriosity entré dans tracking hebdo. Créateurs scientifiques consolidés (Gollwitzer / Pessiglione / Lembke / Gannon / Declercq). On ferme W22 dimanche 26 avril avec v9.7.4 live et scoreur patché — ou on assume une 3e semaine perdue sur le même bug."
+}

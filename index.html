@@ -1,1150 +1,942 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ADELLE — Dashboard Djibril Mindset</title>
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-<script type="module">
-  import Lenis from 'https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.mjs';
-  window.__Lenis = Lenis;
-</script>
+<meta name="description" content="ADELLE V3 — dashboard live agence-ia + workspace Djibril">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --bg:#08090c;
-  --bg-soft:#0e1015;
-  --panel:#13151c;
-  --panel-2:#181b25;
-  --line:rgba(255,255,255,.06);
-  --line-strong:rgba(255,255,255,.12);
-  --text:#eef0f5;
-  --text-2:#a4a8b6;
-  --muted:#6b6f7e;
-  --accent:#5cf2d4;            /* cyan désaturé sophistiqué */
-  --accent-2:#ff7a4d;           /* orange chaud */
-  --warn:#fec96b;
-  --bad:#ff5c7a;
-  --ok:#7be0a3;
-  --grain-opacity:.045;
-  --shadow-soft:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.25);
-  --radius:14px;
-  --radius-sm:10px;
-  --sidebar-w:248px;
-  --transition:.4s cubic-bezier(.16,1,.3,1);
-  --font-display:'Bricolage Grotesque','Inter Display',system-ui,sans-serif;
-  --font-body:'Inter','DM Sans',system-ui,-apple-system,sans-serif;
-  --font-mono:'JetBrains Mono','SF Mono',monospace;
-}
-html{scroll-behavior:smooth}
-body{
-  background:var(--bg);
-  color:var(--text);
-  font-family:var(--font-body);
-  font-size:14.5px;
-  line-height:1.55;
-  letter-spacing:-.005em;
-  font-weight:400;
-  min-height:100vh;
-  overflow-x:hidden;
-  -webkit-font-smoothing:antialiased;
-}
-::-webkit-scrollbar{width:7px;height:7px}
-::-webkit-scrollbar-track{background:var(--bg)}
-::-webkit-scrollbar-thumb{background:var(--panel-2);border-radius:4px}
-::-webkit-scrollbar-thumb:hover{background:var(--muted)}
+  :root {
+    /* Palette V3 — blanc minimal + accents Djibril (pink/cyan/orange) en touches */
+    --bg: #fafafa;
+    --bg-card: #ffffff;
+    --bg-soft: #f5f5f5;
+    --text: #0a0a0a;
+    --text-2: #525252;
+    --text-muted: #a3a3a3;
+    --border: #e5e5e5;
+    --border-strong: #d4d4d4;
+    /* Accents Djibril (mêmes hex que les 2 sites) */
+    --pink: #ff2e93;
+    --cyan: #0891b2;
+    --orange: #ea580c;
+    --green: #16a34a;
+    --red: #dc2626;
+    --yellow: #ca8a04;
+    /* Fonts niche (alignées Djibril) */
+    --font-serif: 'Playfair Display', Georgia, serif;
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'JetBrains Mono', SF Mono, Consolas, monospace;
+    --sidebar-w: 220px;
+    --radius: 8px;
+    --radius-sm: 4px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--font-sans);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.55;
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::-webkit-scrollbar { width: 8px; height: 8px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
 
-/* ───── GRAIN OVERLAY (noise SVG) ───── */
-.grain{
-  position:fixed;inset:0;pointer-events:none;z-index:1000;opacity:var(--grain-opacity);mix-blend-mode:overlay;
-  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.95' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
-}
+  .app { display: grid; grid-template-columns: var(--sidebar-w) 1fr; min-height: 100vh; }
 
-/* ───── LAYOUT ───── */
-#app{display:flex;min-height:100vh}
+  aside {
+    background: var(--bg-card);
+    border-right: 1px solid var(--border);
+    padding: 24px 16px;
+    position: sticky; top: 0; height: 100vh; overflow-y: auto;
+  }
+  .brand {
+    display: flex; align-items: center; gap: 10px;
+    padding: 0 8px 24px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 20px;
+  }
+  .brand-dot {
+    width: 22px; height: 12px; border-radius: 999px;
+    background: linear-gradient(135deg, #ff3d3d 0%, #ff7a3d 50%, #ff2e93 100%);
+    box-shadow: 0 0 8px rgba(255,46,147,.3);
+  }
+  .brand-name {
+    font-family: var(--font-serif); font-weight: 900;
+    font-size: 18px; letter-spacing: 1px; color: var(--text);
+  }
+  .brand-sub { font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-muted); }
 
-/* ───── SIDEBAR ───── */
-#sidebar{
-  width:var(--sidebar-w);
-  position:fixed;left:0;top:0;bottom:0;z-index:200;
-  background:var(--bg-soft);
-  border-right:1px solid var(--line);
-  display:flex;flex-direction:column;
-  transition:transform var(--transition);
-  padding:22px 14px 18px;
-}
-.sidebar-brand{
-  display:flex;align-items:center;gap:11px;padding:0 8px 22px;
-  border-bottom:1px solid var(--line);margin-bottom:14px;
-}
-.brand-mark{
-  width:34px;height:34px;border-radius:9px;
-  background:linear-gradient(135deg,var(--accent) 0%,var(--accent-2) 100%);
-  display:grid;place-items:center;
-  font-family:var(--font-display);font-weight:800;font-size:14px;color:#0a0a0a;
-  letter-spacing:-.02em;
-  box-shadow:0 0 24px rgba(92,242,212,.18);
-}
-.brand-text{display:flex;flex-direction:column;gap:1px}
-.brand-name{font-family:var(--font-display);font-weight:700;font-size:17px;letter-spacing:-.02em}
-.brand-sub{font-family:var(--font-mono);font-size:9.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.12em}
+  nav { display: flex; flex-direction: column; gap: 2px; }
+  .nav-item {
+    display: flex; align-items: center; gap: 10px;
+    padding: 8px 10px; border-radius: var(--radius-sm);
+    cursor: pointer; transition: all 0.15s;
+    font-weight: 500; color: var(--text-2); font-size: 13px;
+  }
+  .nav-item:hover { background: var(--bg-soft); color: var(--text); }
+  .nav-item.active { background: var(--text); color: var(--bg-card); }
+  .nav-item .num {
+    margin-left: auto;
+    font-size: 10px; font-family: var(--font-mono);
+    color: var(--text-muted);
+  }
+  .nav-item.active .num { color: rgba(255,255,255,.6); }
+  .nav-section {
+    font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--text-muted); margin: 18px 10px 6px;
+  }
 
-.nav{list-style:none;display:flex;flex-direction:column;gap:2px;padding-top:6px}
-.nav-item{
-  display:flex;align-items:center;gap:11px;
-  padding:10px 12px;border-radius:9px;
-  font-size:13.5px;font-weight:500;color:var(--text-2);
-  cursor:pointer;
-  transition:background .25s ease,color .25s ease,transform .25s ease;
-  position:relative;
-}
-.nav-item:hover{background:rgba(255,255,255,.03);color:var(--text);transform:translateX(2px)}
-.nav-item.active{background:rgba(92,242,212,.07);color:var(--accent)}
-.nav-item.active::before{
-  content:"";position:absolute;left:-14px;top:50%;transform:translateY(-50%);
-  width:3px;height:18px;border-radius:0 3px 3px 0;background:var(--accent);
-}
-.nav-icon{font-size:16px;line-height:1;width:18px;text-align:center;opacity:.85}
-.nav-section-title{
-  font-family:var(--font-mono);font-size:10px;color:var(--muted);
-  letter-spacing:.16em;text-transform:uppercase;
-  padding:14px 12px 6px;
-}
+  main { padding: 28px 36px 60px; max-width: 1400px; }
 
-.sidebar-footer{
-  margin-top:auto;padding-top:16px;border-top:1px solid var(--line);
-  display:flex;flex-direction:column;gap:8px;
-}
-.footer-link{font-size:11.5px;color:var(--muted);font-family:var(--font-mono);padding:0 8px}
-.footer-link a{color:var(--text-2);text-decoration:none}
-.footer-link a:hover{color:var(--accent)}
-.status-pill{
-  display:inline-flex;align-items:center;gap:6px;
-  padding:5px 10px;background:var(--panel-2);border-radius:99px;font-size:10.5px;
-  font-family:var(--font-mono);color:var(--text-2);
-  width:fit-content;margin-left:8px;
-}
-.status-dot{width:6px;height:6px;border-radius:50%;background:var(--ok);animation:pulse 2s ease-in-out infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+  header.topbar {
+    display: flex; justify-content: space-between; align-items: center;
+    padding-bottom: 20px; margin-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+  }
+  .page-title {
+    font-family: var(--font-serif); font-weight: 700;
+    font-size: 28px; letter-spacing: -0.5px;
+  }
+  .page-sub { color: var(--text-muted); font-size: 12px; margin-top: 2px; }
+  .topbar-right {
+    display: flex; align-items: center; gap: 16px;
+    font-family: var(--font-mono); font-size: 11px; color: var(--text-2);
+  }
+  .live-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--green); box-shadow: 0 0 6px rgba(22,163,74,.5);
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse { 50% { opacity: 0.5; } }
 
-/* ───── MAIN ───── */
-#main{
-  margin-left:var(--sidebar-w);
-  flex:1;min-width:0;
-  padding:32px 44px 80px;
-  max-width:calc(100vw - var(--sidebar-w));
-}
+  .section { display: none; animation: fadein 0.25s ease-out; }
+  .section.active { display: block; }
+  @keyframes fadein { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
 
-/* topbar */
-.topbar{
-  display:flex;align-items:center;justify-content:space-between;
-  padding-bottom:24px;border-bottom:1px solid var(--line);margin-bottom:32px;
-  position:sticky;top:0;background:linear-gradient(180deg,var(--bg) 65%,transparent);z-index:50;padding-top:8px;
-}
-.topbar-left{display:flex;flex-direction:column;gap:5px}
-.topbar-eyebrow{font-family:var(--font-mono);font-size:10.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.16em}
-.topbar-title{font-family:var(--font-display);font-weight:700;font-size:28px;letter-spacing:-.025em;line-height:1.05}
-.topbar-right{display:flex;align-items:center;gap:14px}
-.refresh-btn{
-  display:inline-flex;align-items:center;gap:8px;
-  padding:9px 14px;border:1px solid var(--line-strong);border-radius:99px;
-  background:var(--panel);color:var(--text);font-family:var(--font-mono);font-size:11.5px;
-  cursor:pointer;transition:all .3s ease;
-}
-.refresh-btn:hover{border-color:var(--accent);color:var(--accent);box-shadow:0 0 18px rgba(92,242,212,.12)}
-.refresh-btn .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent)}
-.last-updated{font-family:var(--font-mono);font-size:11px;color:var(--muted)}
+  .kpi-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px; margin-bottom: 28px;
+  }
+  .kpi {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 18px 20px;
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  .kpi:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,.04); }
+  .kpi-label { font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 8px; }
+  .kpi-value { font-family: var(--font-serif); font-size: 28px; font-weight: 700; color: var(--text); }
+  .kpi.accent-pink .kpi-value { color: var(--pink); }
+  .kpi.accent-orange .kpi-value { color: var(--orange); }
+  .kpi.accent-cyan .kpi-value { color: var(--cyan); }
 
-/* mobile drawer */
-.menu-toggle{
-  display:none;background:none;border:1px solid var(--line-strong);
-  width:40px;height:40px;border-radius:9px;color:var(--text);
-  align-items:center;justify-content:center;cursor:pointer;font-size:18px;
-}
-@media (max-width:980px){
-  #sidebar{transform:translateX(-100%);box-shadow:0 0 40px rgba(0,0,0,.5)}
-  #sidebar.open{transform:translateX(0)}
-  #main{margin-left:0;padding:24px 20px 64px;max-width:100vw}
-  .menu-toggle{display:inline-flex}
-  .topbar-title{font-size:22px}
-}
+  .card {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 20px;
+    margin-bottom: 16px;
+    transition: box-shadow 0.15s;
+  }
+  .card:hover { box-shadow: 0 2px 8px rgba(0,0,0,.04); }
+  .card-title {
+    font-weight: 600; font-size: 14px; margin-bottom: 12px;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .card-title .badge { font-family: var(--font-mono); font-size: 10px; color: var(--text-muted); }
 
-/* ───── SECTIONS ───── */
-.section{
-  display:none;
-  opacity:0;
-  transform:translateY(8px);
-}
-.section.active{display:block;opacity:1;transform:none;animation:fadeUp .55s cubic-bezier(.16,1,.3,1) forwards}
-@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  thead th {
+    text-align: left; font-weight: 600; font-size: 11px;
+    letter-spacing: 0.5px; text-transform: uppercase;
+    color: var(--text-muted); padding: 8px 12px;
+    border-bottom: 1px solid var(--border);
+  }
+  tbody td {
+    padding: 10px 12px; border-bottom: 1px solid var(--border);
+    color: var(--text);
+  }
+  tbody tr:nth-child(even) { background: var(--bg-soft); }
+  tbody tr:hover { background: #f0f0f0; }
+  tbody td.mono { font-family: var(--font-mono); font-size: 12px; }
+  tbody td.num { text-align: right; font-family: var(--font-mono); }
 
-.section-header{
-  display:flex;align-items:flex-end;justify-content:space-between;gap:24px;
-  padding-bottom:18px;border-bottom:1px solid var(--line);margin-bottom:28px;
-}
-.section-header h2{
-  font-family:var(--font-display);font-weight:700;font-size:34px;letter-spacing:-.03em;line-height:1.05;
-}
-.section-header p{color:var(--text-2);font-size:14px;max-width:540px;margin-top:6px}
-.section-meta{font-family:var(--font-mono);font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.12em}
+  .tag {
+    display: inline-flex; align-items: center; gap: 4px;
+    padding: 2px 8px; border-radius: 999px;
+    font-size: 10px; font-weight: 600; letter-spacing: 0.3px;
+    background: var(--bg-soft); color: var(--text-2);
+    border: 1px solid var(--border);
+  }
+  .tag.tt { background: #fff1f5; color: var(--pink); border-color: #ffd6e0; }
+  .tag.ig { background: #fff7ed; color: var(--orange); border-color: #fed7aa; }
+  .tag.yt { background: #fef2f2; color: var(--red); border-color: #fecaca; }
+  .tag.fb { background: #eff6ff; color: #2563eb; border-color: #bfdbfe; }
+  .tag.green { background: #f0fdf4; color: var(--green); border-color: #bbf7d0; }
+  .tag.warn { background: #fef9c3; color: var(--yellow); border-color: #fef08a; }
+  .tag.red { background: #fef2f2; color: var(--red); border-color: #fecaca; }
+  .tag.muted { background: var(--bg-soft); color: var(--text-muted); }
 
-/* ───── KPI GRID ───── */
-.kpi-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:14px;
-  margin-bottom:34px;
-}
-.kpi-card{
-  position:relative;
-  background:var(--panel);
-  border:1px solid var(--line);
-  border-radius:var(--radius);
-  padding:22px 22px 20px;
-  overflow:hidden;
-  transition:border-color .35s ease,transform .35s ease;
-}
-.kpi-card::before{
-  content:"";position:absolute;inset:0;
-  background:radial-gradient(circle at 100% 0%,rgba(92,242,212,.04) 0%,transparent 50%);
-  opacity:0;transition:opacity .4s ease;pointer-events:none;
-}
-.kpi-card:hover{border-color:var(--line-strong);transform:translateY(-2px)}
-.kpi-card:hover::before{opacity:1}
-.kpi-label{
-  font-family:var(--font-mono);font-size:10.5px;color:var(--muted);
-  text-transform:uppercase;letter-spacing:.12em;margin-bottom:10px;
-}
-.kpi-value{
-  font-family:var(--font-display);font-weight:700;font-size:34px;letter-spacing:-.03em;line-height:1;
-}
-.kpi-delta{
-  display:inline-flex;align-items:center;gap:5px;
-  font-family:var(--font-mono);font-size:11px;margin-top:9px;
-  color:var(--text-2);
-}
-.kpi-delta.up{color:var(--ok)}
-.kpi-delta.down{color:var(--bad)}
-.kpi-sublabel{font-size:11.5px;color:var(--muted);margin-top:4px;font-family:var(--font-mono)}
+  .msg {
+    border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 14px 16px; margin-bottom: 10px; background: var(--bg-card);
+  }
+  .msg-header { display: flex; gap: 8px; align-items: center; margin-bottom: 8px; flex-wrap: wrap; }
+  .msg-text {
+    font-family: var(--font-serif); font-style: italic;
+    color: var(--text); line-height: 1.4; font-size: 14px;
+  }
+  .msg-meta { display: flex; gap: 12px; margin-top: 8px; font-size: 11px; color: var(--text-muted); font-family: var(--font-mono); }
 
-/* ───── CARDS GENERIC ───── */
-.card{
-  background:var(--panel);
-  border:1px solid var(--line);
-  border-radius:var(--radius);
-  padding:24px;
-  margin-bottom:18px;
-  transition:border-color .35s ease;
-  position:relative;
-  overflow:hidden;
-}
-.card:hover{border-color:var(--line-strong)}
-.card-title{
-  font-family:var(--font-display);font-weight:600;font-size:18px;letter-spacing:-.018em;
-  margin-bottom:6px;
-}
-.card-sub{color:var(--text-2);font-size:13px;margin-bottom:18px}
+  .video-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 14px; }
+  .vid {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 14px; transition: all 0.15s;
+  }
+  .vid:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,.06); border-color: var(--border-strong); }
+  .vid-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+  .vid-title { font-weight: 600; font-size: 13px; line-height: 1.35; margin-bottom: 6px; }
+  .vid-hook { font-family: var(--font-serif); font-style: italic; color: var(--text-2); font-size: 12px; margin-bottom: 8px; }
+  .vid-stats { display: flex; gap: 10px; font-size: 11px; font-family: var(--font-mono); color: var(--text-muted); }
+  .vid-stats span strong { color: var(--text); }
 
-.two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-@media (max-width:880px){.two-col{grid-template-columns:1fr}}
+  .filters { display: flex; gap: 8px; margin-bottom: 14px; flex-wrap: wrap; align-items: center; }
+  .filters select, .filters input {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: var(--radius-sm); padding: 6px 10px;
+    font-size: 12px; font-family: var(--font-sans); color: var(--text);
+  }
+  .filters input:focus, .filters select:focus { outline: none; border-color: var(--text); }
 
-/* ───── TABLES ───── */
-.tbl{width:100%;border-collapse:collapse;font-size:13px}
-.tbl th{
-  text-align:left;font-family:var(--font-mono);font-size:10.5px;
-  color:var(--muted);text-transform:uppercase;letter-spacing:.1em;
-  padding:11px 14px;border-bottom:1px solid var(--line);font-weight:500;
-}
-.tbl td{
-  padding:13px 14px;border-bottom:1px solid var(--line);
-  color:var(--text-2);
-  transition:background .25s ease;
-}
-.tbl tr:hover td{background:rgba(255,255,255,.018);color:var(--text)}
-.tbl td.mono{font-family:var(--font-mono);font-size:12px}
+  .empty { text-align: center; padding: 40px; color: var(--text-muted); font-style: italic; font-family: var(--font-serif); }
 
-/* badges */
-.badge{
-  display:inline-flex;align-items:center;gap:4px;
-  padding:3px 9px;border-radius:99px;font-size:10.5px;font-family:var(--font-mono);
-  font-weight:500;
-}
-.badge.ok{background:rgba(123,224,163,.12);color:var(--ok)}
-.badge.warn{background:rgba(254,201,107,.12);color:var(--warn)}
-.badge.bad{background:rgba(255,92,122,.12);color:var(--bad)}
-.badge.info{background:rgba(92,242,212,.1);color:var(--accent)}
-.badge.neutral{background:rgba(255,255,255,.06);color:var(--text-2)}
+  .log-line {
+    font-family: var(--font-mono); font-size: 11px; padding: 4px 0;
+    border-bottom: 1px solid var(--border); color: var(--text-2);
+  }
+  .log-line .ts { color: var(--text-muted); margin-right: 12px; }
+  .log-line .lvl { display: inline-block; width: 50px; font-weight: 600; }
+  .log-line .lvl.OK { color: var(--green); }
+  .log-line .lvl.ERR { color: var(--red); }
+  .log-line .lvl.WARN { color: var(--yellow); }
+  .log-line .lvl.INFO { color: var(--cyan); }
 
-/* ───── AVATAR THIERRY EDITOR ───── */
-.avatar-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:18px}
-@media (max-width:980px){.avatar-grid{grid-template-columns:1fr}}
-.avatar-section{margin-bottom:20px}
-.avatar-section h4{
-  font-family:var(--font-mono);font-size:11px;text-transform:uppercase;letter-spacing:.12em;
-  color:var(--muted);margin-bottom:8px;
-}
-.editable{
-  background:var(--bg-soft);border:1px solid var(--line);border-radius:var(--radius-sm);
-  padding:14px 16px;color:var(--text);font-family:var(--font-body);font-size:13.5px;line-height:1.55;
-  width:100%;min-height:80px;resize:vertical;
-  transition:border-color .25s ease;
-}
-.editable:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(92,242,212,.08)}
-.tag-list{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
-.tag{
-  background:var(--panel-2);border:1px solid var(--line);
-  padding:5px 10px;border-radius:99px;font-size:11.5px;font-family:var(--font-mono);color:var(--text-2);
-  cursor:pointer;transition:all .25s ease;
-}
-.tag:hover{border-color:var(--accent);color:var(--accent)}
-.btn-save{
-  background:var(--accent);color:#04130f;border:none;
-  padding:11px 20px;border-radius:99px;font-family:var(--font-mono);font-size:12px;font-weight:600;
-  cursor:pointer;letter-spacing:.05em;text-transform:uppercase;
-  transition:all .3s ease;
-  display:inline-flex;align-items:center;gap:8px;
-}
-.btn-save:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(92,242,212,.25)}
-.btn-save:disabled{opacity:.5;cursor:not-allowed;transform:none;box-shadow:none}
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 900px) { .two-col { grid-template-columns: 1fr; } .app { grid-template-columns: 1fr; } aside { display: none; } }
 
-/* ───── CONTENU PRODUCTION ───── */
-.filter-bar{
-  display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;
-  padding:12px;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
-}
-.filter-chip{
-  padding:7px 13px;border-radius:99px;border:1px solid var(--line);background:transparent;
-  color:var(--text-2);font-size:12px;font-family:var(--font-mono);cursor:pointer;
-  transition:all .25s ease;
-}
-.filter-chip:hover{border-color:var(--line-strong);color:var(--text)}
-.filter-chip.active{background:var(--accent);color:#04130f;border-color:var(--accent);font-weight:600}
-.search-input{
-  flex:1;min-width:220px;
-  padding:8px 14px;background:var(--bg-soft);border:1px solid var(--line);border-radius:99px;
-  color:var(--text);font-family:var(--font-body);font-size:13px;
-}
-.search-input:focus{outline:none;border-color:var(--accent)}
-
-.content-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:14px}
-.content-card{
-  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
-  padding:18px;cursor:pointer;transition:all .35s cubic-bezier(.16,1,.3,1);
-  position:relative;overflow:hidden;
-}
-.content-card:hover{
-  transform:translateY(-3px);border-color:var(--line-strong);
-  box-shadow:0 18px 40px rgba(0,0,0,.35);
-}
-.content-card .cat-tag{
-  display:inline-block;padding:3px 9px;border-radius:99px;
-  background:rgba(92,242,212,.1);color:var(--accent);
-  font-family:var(--font-mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;
-  margin-bottom:10px;
-}
-.content-card h5{
-  font-family:var(--font-display);font-weight:600;font-size:15px;letter-spacing:-.015em;
-  margin-bottom:6px;line-height:1.3;
-}
-.content-card .preview{font-size:12.5px;color:var(--text-2);line-height:1.55;
-  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;
-}
-.content-card .meta{
-  font-family:var(--font-mono);font-size:10.5px;color:var(--muted);
-  margin-top:12px;display:flex;justify-content:space-between;
-}
-
-/* ───── AGENT STATUS GRID ───── */
-.agent-grid{
-  display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:11px;
-}
-.agent-card{
-  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-sm);
-  padding:14px 16px;
-  display:flex;flex-direction:column;gap:6px;
-  transition:all .25s ease;
-}
-.agent-card:hover{border-color:var(--line-strong)}
-.agent-name{font-family:var(--font-display);font-weight:600;font-size:14px;letter-spacing:-.01em}
-.agent-meta{font-family:var(--font-mono);font-size:10.5px;color:var(--muted);display:flex;justify-content:space-between;align-items:center;margin-top:6px}
-
-/* ───── BROADCASTS ───── */
-.broadcast-list{display:flex;flex-direction:column;gap:11px}
-.broadcast-item{
-  background:var(--panel);border:1px solid var(--line);border-left:2px solid var(--accent);
-  padding:14px 18px;border-radius:var(--radius-sm);
-  display:flex;flex-direction:column;gap:5px;
-  transition:transform .25s ease,border-left-color .25s ease;
-}
-.broadcast-item:hover{transform:translateX(3px)}
-.broadcast-item.warn{border-left-color:var(--warn)}
-.broadcast-item.bad{border-left-color:var(--bad)}
-.broadcast-meta{font-family:var(--font-mono);font-size:10.5px;color:var(--muted);display:flex;gap:14px}
-.broadcast-topic{font-weight:600;color:var(--text);font-size:13px}
-.broadcast-payload{font-size:12.5px;color:var(--text-2);font-family:var(--font-mono);background:var(--bg-soft);padding:8px 11px;border-radius:6px;margin-top:6px;overflow-x:auto;white-space:pre-wrap;line-height:1.5}
-
-/* ───── MAONA / VEILLE LIST ───── */
-.list-item{
-  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-sm);
-  padding:14px 16px;margin-bottom:10px;
-  transition:all .25s ease;
-  display:flex;flex-direction:column;gap:5px;
-}
-.list-item:hover{border-color:var(--line-strong);transform:translateX(2px)}
-.list-item h6{font-family:var(--font-display);font-weight:600;font-size:14px;letter-spacing:-.01em}
-.list-item p{font-size:12.5px;color:var(--text-2);line-height:1.55}
-.list-item .meta{font-family:var(--font-mono);font-size:10.5px;color:var(--muted);margin-top:5px}
-
-/* ───── EMPTY STATES & LOADERS ───── */
-.empty{
-  text-align:center;padding:50px 20px;color:var(--muted);font-size:13px;
-  border:1px dashed var(--line);border-radius:var(--radius);
-}
-.skeleton{
-  background:linear-gradient(90deg,var(--panel) 25%,var(--panel-2) 50%,var(--panel) 75%);
-  background-size:200% 100%;
-  animation:shimmer 1.6s infinite linear;
-  border-radius:var(--radius-sm);
-}
-@keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
-.loading{display:flex;align-items:center;justify-content:center;gap:10px;padding:40px;color:var(--muted);font-family:var(--font-mono);font-size:12px}
-.spinner{
-  width:14px;height:14px;border:2px solid var(--panel-2);border-top-color:var(--accent);
-  border-radius:50%;animation:spin .8s linear infinite;
-}
-@keyframes spin{to{transform:rotate(360deg)}}
-
-.toast{
-  position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(20px);
-  background:var(--panel);border:1px solid var(--line-strong);border-radius:99px;
-  padding:11px 22px;color:var(--text);font-family:var(--font-mono);font-size:12px;
-  box-shadow:var(--shadow-soft);opacity:0;pointer-events:none;
-  transition:all .35s cubic-bezier(.16,1,.3,1);z-index:1000;
-}
-.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
-.toast.ok{border-color:var(--ok)}
-.toast.bad{border-color:var(--bad);color:var(--bad)}
+  .avatar-portrait {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 24px;
+    margin-bottom: 16px; display: grid; grid-template-columns: 80px 1fr; gap: 20px;
+  }
+  .avatar-emoji {
+    font-size: 60px; text-align: center;
+    background: var(--bg-soft); border-radius: 50%;
+    width: 80px; height: 80px; display: flex; align-items: center; justify-content: center;
+  }
+  .avatar-name { font-family: var(--font-serif); font-size: 22px; font-weight: 700; }
+  .avatar-tagline { color: var(--text-2); font-style: italic; margin: 4px 0 12px; font-family: var(--font-serif); }
+  .avatar-stats { display: flex; gap: 24px; font-size: 12px; flex-wrap: wrap; }
+  .avatar-stats strong { display: block; font-family: var(--font-mono); font-size: 16px; }
+  .avatar-stats span { color: var(--text-muted); font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; }
 </style>
 </head>
 <body>
-<div class="grain"></div>
-
-<div id="app">
-
-  <!-- ─────── SIDEBAR ─────── -->
-  <aside id="sidebar">
-    <div class="sidebar-brand">
-      <div class="brand-mark">A</div>
-      <div class="brand-text">
-        <span class="brand-name">ADELLE</span>
-        <span class="brand-sub">Mindset · v2.0</span>
+<div class="app">
+  <aside>
+    <div class="brand">
+      <div class="brand-dot"></div>
+      <div>
+        <div class="brand-name">ADELLE</div>
+        <div class="brand-sub">v3 · djibril mindset</div>
       </div>
     </div>
-
-    <ul class="nav">
-      <div class="nav-section-title">Pilotage</div>
-      <li class="nav-item active" data-target="overview"><span class="nav-icon">◆</span><span>Vue d'ensemble</span></li>
-      <li class="nav-item" data-target="avatar"><span class="nav-icon">●</span><span>Avatar Thierry</span></li>
-
-      <div class="nav-section-title">Production</div>
-      <li class="nav-item" data-target="content"><span class="nav-icon">▤</span><span>Contenu</span></li>
-      <li class="nav-item" data-target="maona"><span class="nav-icon">▶</span><span>MAONA briefs</span></li>
-
-      <div class="nav-section-title">Operations</div>
-      <li class="nav-item" data-target="agents"><span class="nav-icon">▣</span><span>Agents Stéphane</span></li>
-      <li class="nav-item" data-target="basile"><span class="nav-icon">◌</span><span>Conversations Basile</span></li>
-
-      <div class="nav-section-title">Intelligence</div>
-      <li class="nav-item" data-target="veille"><span class="nav-icon">◎</span><span>Veille Instagram</span></li>
-      <li class="nav-item" data-target="logs"><span class="nav-icon">≡</span><span>Logs &amp; Broadcasts</span></li>
-    </ul>
-
-    <div class="sidebar-footer">
-      <div class="status-pill"><span class="status-dot"></span>Live</div>
-      <div class="footer-link">supabase · <a href="https://nbnbsljqtolzzuqnkyae.supabase.co" target="_blank">project</a></div>
-      <div class="footer-link"><span style="color:var(--muted)">© 2026 Djibril Mindset</span></div>
-    </div>
+    <nav id="nav">
+      <div class="nav-section">Workspace</div>
+      <div class="nav-item active" data-target="dashboard">Dashboard <span class="num" id="nav-dashboard-num"></span></div>
+      <div class="nav-item" data-target="veille-marche">Veille Marché <span class="num" id="nav-veille-num"></span></div>
+      <div class="nav-item" data-target="videos">Vidéos Veille <span class="num" id="nav-videos-num"></span></div>
+      <div class="nav-item" data-target="reseaux">Réseaux Sociaux <span class="num" id="nav-reseaux-num"></span></div>
+      <div class="nav-item" data-target="insights">Insights <span class="num" id="nav-insights-num"></span></div>
+      <div class="nav-item" data-target="avatar">Avatar Thierry</div>
+      <div class="nav-item" data-target="production">Production</div>
+      <div class="nav-section">Live agence-ia</div>
+      <div class="nav-item" data-target="agents">Agents Stéphane <span class="num" id="nav-agents-num"></span></div>
+      <div class="nav-item" data-target="conversations">Conversations <span class="num" id="nav-conv-num"></span></div>
+      <div class="nav-item" data-target="logs">Logs &amp; LLM <span class="num" id="nav-logs-num"></span></div>
+      <div class="nav-section">Outils</div>
+      <div class="nav-item" data-target="simulateur">Simulateur</div>
+    </nav>
   </aside>
 
-  <!-- ─────── MAIN ─────── -->
-  <main id="main">
-
+  <main>
     <header class="topbar">
-      <div class="topbar-left">
-        <div style="display:flex;align-items:center;gap:14px">
-          <button class="menu-toggle" id="menuToggle" aria-label="Menu">≡</button>
-          <div>
-            <div class="topbar-eyebrow">Dashboard de pilotage · niche Thierry 25</div>
-            <h1 class="topbar-title" id="topbarTitle">Vue d'ensemble</h1>
-          </div>
-        </div>
+      <div>
+        <div class="page-title" id="pg-title">Dashboard</div>
+        <div class="page-sub" id="pg-sub">Vue d'ensemble agence-ia + workspace Djibril</div>
       </div>
       <div class="topbar-right">
-        <span class="last-updated" id="lastUpdated">—</span>
-        <button class="refresh-btn" id="refreshBtn"><span class="dot"></span><span>Refresh</span></button>
+        <span class="live-dot"></span>
+        <span id="last-update">Maj : --</span>
       </div>
     </header>
 
-    <!-- ────── SECTION : OVERVIEW ────── -->
-    <section class="section active" id="section-overview" data-section>
-      <div class="section-header">
-        <div>
-          <h2>Vue d'ensemble</h2>
-          <p>État global de l'agence Djibril Mindset. Mise à jour automatique toutes les 30 secondes depuis Supabase.</p>
-        </div>
-        <span class="section-meta" id="overviewMeta">—</span>
-      </div>
-
-      <div class="kpi-grid" id="kpiGrid">
-        <!-- rendered by JS -->
-      </div>
-
+    <section class="section active" id="sec-dashboard">
+      <div class="kpi-grid" id="kpi-main"></div>
       <div class="two-col">
-        <div class="card" data-anim>
-          <div class="card-title">Top agents 24h</div>
-          <div class="card-sub">Activité la plus récente</div>
-          <div id="topAgentsList"><div class="loading"><div class="spinner"></div>Chargement…</div></div>
+        <div class="card">
+          <div class="card-title">Brief du jour <span class="badge" id="brief-date">—</span></div>
+          <div id="brief-content" class="empty">Chargement…</div>
         </div>
-        <div class="card" data-anim>
-          <div class="card-title">Catégories de contenu produites</div>
-          <div class="card-sub">Volume des briefs/scripts récents</div>
-          <div id="topCatsList"><div class="loading"><div class="spinner"></div>Chargement…</div></div>
+        <div class="card">
+          <div class="card-title">Activité agents (récents)</div>
+          <div id="recent-mini"></div>
         </div>
       </div>
     </section>
 
-    <!-- ────── SECTION : AVATAR ────── -->
-    <section class="section" id="section-avatar" data-section>
-      <div class="section-header">
-        <div>
-          <h2>Avatar niche : Thierry, 25 ans</h2>
-          <p>Persona canonique utilisée par tous les agents (Basile, Stéphane, MAONA, ADELLE). Toute modification ici écrase la version Supabase.</p>
-        </div>
-        <button class="btn-save" id="saveAvatarBtn" disabled>↑ Sauvegarder Supabase</button>
+    <section class="section" id="sec-veille-marche">
+      <div class="kpi-grid" id="kpi-veille"></div>
+      <div class="filters">
+        <input type="text" id="vm-search" placeholder="Rechercher un message…">
+        <select id="vm-platform"><option value="">Toutes plateformes</option></select>
+        <select id="vm-jtbd"><option value="">Tous JTBD</option></select>
       </div>
-
-      <div id="avatarLoader"><div class="loading"><div class="spinner"></div>Chargement avatar…</div></div>
-
-      <div id="avatarEditor" style="display:none">
-        <div class="avatar-grid">
-          <div>
-            <div class="card">
-              <div class="avatar-section">
-                <h4>Description</h4>
-                <textarea class="editable" id="av-description" rows="3"></textarea>
-              </div>
-              <div class="avatar-section">
-                <h4>Verbatim source</h4>
-                <textarea class="editable" id="av-verbatim" rows="4"></textarea>
-              </div>
-              <div class="avatar-section">
-                <h4>Pain points</h4>
-                <div class="tag-list" id="av-pain-points"></div>
-                <input type="text" class="editable" id="av-pain-add" placeholder="Ajouter un pain point + Entrée" style="margin-top:8px;min-height:auto;padding:9px 14px">
-              </div>
-              <div class="avatar-section">
-                <h4>Blocages</h4>
-                <div class="tag-list" id="av-blocages"></div>
-                <input type="text" class="editable" id="av-bloc-add" placeholder="Ajouter blocage + Entrée" style="margin-top:8px;min-height:auto;padding:9px 14px">
-              </div>
-              <div class="avatar-section">
-                <h4>Besoins</h4>
-                <div class="tag-list" id="av-besoins"></div>
-                <input type="text" class="editable" id="av-besoin-add" placeholder="Ajouter besoin + Entrée" style="margin-top:8px;min-height:auto;padding:9px 14px">
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <div class="card">
-              <div class="avatar-section">
-                <h4>Ton de voix</h4>
-                <input type="text" class="editable" id="av-ton" style="min-height:auto;padding:11px 14px">
-              </div>
-              <div class="avatar-section">
-                <h4>Mots interdits</h4>
-                <div class="tag-list" id="av-interdits"></div>
-              </div>
-              <div class="avatar-section">
-                <h4>Contractions du langage</h4>
-                <div class="tag-list" id="av-contractions"></div>
-              </div>
-              <div class="avatar-section">
-                <h4>Mots obligatoires</h4>
-                <div class="tag-list" id="av-obligatoires"></div>
-              </div>
-            </div>
-
-            <div class="card">
-              <div class="card-title">Utilisé par</div>
-              <div id="av-use-by-agents" style="display:flex;flex-direction:column;gap:8px"></div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <div id="vm-list"></div>
     </section>
 
-    <!-- ────── SECTION : CONTENU ────── -->
-    <section class="section" id="section-content" data-section>
-      <div class="section-header">
-        <div>
-          <h2>Production de contenu</h2>
-          <p>Scripts, hooks, stories, keywords, insights produits par les agents Stéphane. Filtrer par catégorie ou rechercher.</p>
-        </div>
-        <span class="section-meta" id="contentMeta">—</span>
+    <section class="section" id="sec-videos">
+      <div class="kpi-grid" id="kpi-videos"></div>
+      <div class="filters">
+        <input type="text" id="vd-search" placeholder="Rechercher une vidéo / hook…">
+        <select id="vd-platform"><option value="">Toutes plateformes</option></select>
+        <select id="vd-niche"><option value="">Toutes niches</option></select>
       </div>
-
-      <div class="filter-bar">
-        <input type="text" class="search-input" id="contentSearch" placeholder="Rechercher dans le contenu…">
-        <div id="contentFilters"></div>
-      </div>
-
-      <div class="content-grid" id="contentGrid">
-        <div class="loading"><div class="spinner"></div>Chargement contenu…</div>
-      </div>
+      <div class="video-grid" id="vd-list"></div>
     </section>
 
-    <!-- ────── SECTION : AGENTS ────── -->
-    <section class="section" id="section-agents" data-section>
-      <div class="section-header">
-        <div>
-          <h2>Agents Stéphane (Cron tasks)</h2>
-          <p>Statut temps réel des 33+ crons qui orchestrent la veille, la production, les audits et la messagerie.</p>
-        </div>
-        <span class="section-meta" id="agentsMeta">—</span>
-      </div>
-
-      <div class="card" style="margin-bottom:18px">
-        <div class="card-title">Statistiques 24h</div>
-        <div class="card-sub">Vue agrégée des runs des dernières 24 heures</div>
-        <div class="kpi-grid" id="agentStats" style="margin-bottom:0"></div>
-      </div>
-
-      <div class="agent-grid" id="agentGrid">
-        <div class="loading"><div class="spinner"></div>Chargement agents…</div>
-      </div>
-    </section>
-
-    <!-- ────── SECTION : BASILE ────── -->
-    <section class="section" id="section-basile" data-section>
-      <div class="section-header">
-        <div>
-          <h2>Conversations Basile (Bot IG)</h2>
-          <p>Derniers messages, leads chauds, funnel de conversion. Données depuis <span class="badge info">conversation_history</span>.</p>
-        </div>
-        <span class="section-meta" id="basileMeta">—</span>
-      </div>
-
-      <div class="kpi-grid" id="basileKpi"></div>
-
+    <section class="section" id="sec-reseaux">
+      <div class="kpi-grid" id="kpi-reseaux"></div>
       <div class="card">
-        <div class="card-title">Dernières conversations</div>
-        <table class="tbl">
-          <thead><tr><th>Lead</th><th>Dernier msg</th><th>Tier</th><th>Quand</th></tr></thead>
-          <tbody id="basileTbody"><tr><td colspan="4" style="text-align:center;color:var(--muted);padding:40px">Chargement…</td></tr></tbody>
-        </table>
+        <div class="card-title">Comptes trackés</div>
+        <div id="rs-table"></div>
       </div>
-    </section>
-
-    <!-- ────── SECTION : VEILLE IG ────── -->
-    <section class="section" id="section-veille" data-section>
-      <div class="section-header">
-        <div>
-          <h2>Veille Instagram</h2>
-          <p>Scraping quotidien du compte Djibril + comptes niche surveillés. Métriques, posts récents, tendances.</p>
+      <div class="two-col">
+        <div class="card">
+          <div class="card-title">IG Mes Reels (live)</div>
+          <div id="rs-ig"></div>
         </div>
-        <span class="section-meta" id="veilleMeta">—</span>
-      </div>
-
-      <div class="card">
-        <div class="card-title">Compte Djibril (perso)</div>
-        <div class="card-sub" id="djibrilHandle">@djibrilmindset</div>
-        <div class="kpi-grid" id="djibrilIgKpi" style="margin-bottom:0"></div>
-      </div>
-
-      <div class="card">
-        <div class="card-title">Posts récents — Djibril</div>
-        <div id="djibrilPosts"><div class="loading"><div class="spinner"></div>Chargement…</div></div>
-      </div>
-
-      <div class="card">
-        <div class="card-title">Comptes niche surveillés</div>
-        <div class="card-sub">Snapshot daily des comptes concurrents/inspiration. Cron <span class="badge info">com.djibril.ig-scraper-daily</span> à 06:00.</div>
-        <table class="tbl">
-          <thead><tr><th>Handle</th><th>Followers</th><th>Posts</th><th>Engagement</th><th>Dernière maj</th></tr></thead>
-          <tbody id="veilleTbody"><tr><td colspan="5" style="text-align:center;color:var(--muted);padding:40px">Chargement…</td></tr></tbody>
-        </table>
-      </div>
-    </section>
-
-    <!-- ────── SECTION : MAONA BRIEFS ────── -->
-    <section class="section" id="section-maona" data-section>
-      <div class="section-header">
-        <div>
-          <h2>MAONA briefs</h2>
-          <p>Analyses de vidéos sources + prompts Remotion finaux générés par MAONA_PATTERN_AGGREGATOR.</p>
+        <div class="card">
+          <div class="card-title">Engagement &amp; Croissance</div>
+          <div id="rs-growth"></div>
         </div>
-        <span class="section-meta" id="maonaMeta">—</span>
       </div>
-      <div id="maonaList"><div class="loading"><div class="spinner"></div>Chargement briefs…</div></div>
     </section>
 
-    <!-- ────── SECTION : LOGS ────── -->
-    <section class="section" id="section-logs" data-section>
-      <div class="section-header">
-        <div>
-          <h2>Logs &amp; Broadcasts</h2>
-          <p>Bus inter-agents temps réel. Messages d'orchestration, alertes, decisions stratégiques.</p>
+    <section class="section" id="sec-insights">
+      <div class="kpi-grid" id="kpi-insights"></div>
+      <div id="insights-content"></div>
+    </section>
+
+    <section class="section" id="sec-avatar">
+      <div id="avatar-content"></div>
+      <div class="card">
+        <div class="card-title">Problèmes &amp; Croyances Top</div>
+        <div id="avatar-pc"></div>
+      </div>
+      <div class="card">
+        <div class="card-title">Palette émotionnelle</div>
+        <div id="avatar-emo"></div>
+      </div>
+    </section>
+
+    <section class="section" id="sec-production">
+      <div class="kpi-grid" id="kpi-prod"></div>
+      <div class="card">
+        <div class="card-title">Scripts vidéo récents</div>
+        <div id="prod-scripts"></div>
+      </div>
+      <div class="card">
+        <div class="card-title">Hooks performants</div>
+        <div id="prod-hooks"></div>
+      </div>
+    </section>
+
+    <section class="section" id="sec-agents">
+      <div class="kpi-grid" id="kpi-agents"></div>
+      <div class="card">
+        <div class="card-title">Statut des agents</div>
+        <div id="agents-table"></div>
+      </div>
+      <div class="card">
+        <div class="card-title">Runs récents</div>
+        <div id="agents-runs"></div>
+      </div>
+    </section>
+
+    <section class="section" id="sec-conversations">
+      <div class="card">
+        <div class="card-title">Bus inter-agents (live)</div>
+        <div id="conv-bus"></div>
+      </div>
+    </section>
+
+    <section class="section" id="sec-logs">
+      <div class="kpi-grid" id="kpi-logs"></div>
+      <div class="two-col">
+        <div class="card">
+          <div class="card-title">Broadcasts récents</div>
+          <div id="logs-broadcasts"></div>
         </div>
-        <span class="section-meta" id="logsMeta">—</span>
-      </div>
-      <div class="broadcast-list" id="broadcastList">
-        <div class="loading"><div class="spinner"></div>Chargement broadcasts…</div>
+        <div class="card">
+          <div class="card-title">LLM Spend (24h)</div>
+          <div id="logs-llm"></div>
+        </div>
       </div>
     </section>
 
+    <section class="section" id="sec-simulateur">
+      <div class="card">
+        <div class="card-title">Simulateur Djibril</div>
+        <p style="color:var(--text-2); font-style:italic; font-family:var(--font-serif);">Le simulateur original (dark theme conservé) reste accessible dans une nouvelle fenêtre.</p>
+        <p style="margin-top:12px;"><a href="simulator.html" target="_blank" style="color:var(--pink); text-decoration:underline;">→ Ouvrir le simulateur</a></p>
+      </div>
+    </section>
   </main>
 </div>
 
-<div class="toast" id="toast"></div>
-
 <script>
-/* ─────────────────────────────────────────────
-   ADELLE Dashboard 2.0 — Live Supabase fetch
-   ───────────────────────────────────────────── */
-const SUPA_URL='https://nbnbsljqtolzzuqnkyae.supabase.co';
-const SUPA_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5ibmJzbGpxdG9senp1cW5reWFlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjgzODk2MDYsImV4cCI6MjA4Mzk2NTYwNn0.0Io_TLbntyxYeUUcv_krbcl4txHp6wSwdMy_BzORmV4';
-const REFRESH_MS=30000;
-const CTA_URL='https://app.iclosed.io/e/djibrilsylearning/reset-1-to1';
+const state = { data: {}, loading: true };
+const fmt = n => typeof n === 'number' ? n.toLocaleString('fr-FR') : (n || '—');
+const escape = s => String(s || '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
-const apiHeaders={apikey:SUPA_KEY,'Authorization':'Bearer '+SUPA_KEY,'Content-Type':'application/json'};
-
-async function supa(path){
-  try{
-    const res=await fetch(SUPA_URL+'/rest/v1/'+path,{headers:apiHeaders,cache:'no-store'});
-    if(!res.ok) throw new Error('HTTP '+res.status);
-    return await res.json();
-  }catch(e){console.error('[supa]',path,e);return null;}
-}
-async function supaPatch(path,body){
-  try{
-    const res=await fetch(SUPA_URL+'/rest/v1/'+path,{method:'PATCH',headers:{...apiHeaders,'Prefer':'return=minimal'},body:JSON.stringify(body)});
-    if(!res.ok) throw new Error('HTTP '+res.status);
-    return true;
-  }catch(e){console.error('[supaPatch]',path,e);return false;}
+async function loadJSON(path) {
+  try { const r = await fetch(path, { cache: 'no-store' }); if (!r.ok) return null; return await r.json(); }
+  catch { return null; }
 }
 
-const fmtNum=n=>{if(n==null)return'—';if(n>=1e6)return(n/1e6).toFixed(1)+'M';if(n>=1e3)return(n/1e3).toFixed(1)+'k';return String(n);};
-const timeAgo=ts=>{if(!ts)return'—';const d=new Date(ts);const s=Math.floor((Date.now()-d.getTime())/1000);if(s<60)return s+'s';if(s<3600)return Math.floor(s/60)+'m';if(s<86400)return Math.floor(s/3600)+'h';return Math.floor(s/86400)+'d';};
-const escHtml=s=>String(s||'').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-
-function toast(msg,type=''){const t=document.getElementById('toast');t.textContent=msg;t.className='toast show '+type;setTimeout(()=>t.className='toast',2400);}
-function setLastUpdated(){document.getElementById('lastUpdated').textContent='Sync il y a '+timeAgo(new Date().toISOString());}
-
-/* ───── NAVIGATION ───── */
-const sectionTitles={overview:"Vue d'ensemble",avatar:"Avatar Thierry",content:"Production contenu",agents:"Agents Stéphane",basile:"Conversations Basile",veille:"Veille Instagram",maona:"MAONA briefs",logs:"Logs & Broadcasts"};
-document.querySelectorAll('.nav-item').forEach(item=>{
-  item.addEventListener('click',()=>{
-    const target=item.dataset.target;
-    document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));
-    item.classList.add('active');
-    document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
-    document.getElementById('section-'+target).classList.add('active');
-    document.getElementById('topbarTitle').textContent=sectionTitles[target]||target;
-    if(window.innerWidth<=980) document.getElementById('sidebar').classList.remove('open');
-    refreshSection(target);
+document.querySelectorAll('.nav-item').forEach(it => {
+  it.addEventListener('click', () => {
+    document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    it.classList.add('active');
+    const t = it.dataset.target;
+    document.getElementById('sec-' + t)?.classList.add('active');
+    document.getElementById('pg-title').textContent = it.firstChild.textContent.trim();
   });
 });
-document.getElementById('menuToggle').addEventListener('click',()=>{
-  document.getElementById('sidebar').classList.toggle('open');
-});
 
-/* ───── OVERVIEW ───── */
-async function loadOverview(){
-  const since=new Date(Date.now()-86400000).toISOString();
-  const [runs,content,broadcasts,igMetrics]=await Promise.all([
-    supa(`agence_runs?select=agent,status,started_at,metrics&started_at=gte.${since}&order=started_at.desc&limit=200`),
-    supa(`dashboard_content?select=category,created_at&created_at=gte.${since}&order=created_at.desc&limit=200`),
-    supa(`agence_broadcasts?select=topic,severity,created_at&created_at=gte.${since}`),
-    supa(`dashboard_ig_metrics?select=followers_count,snapshot_at,account_handle&account_owner=eq.djibril_perso&order=snapshot_at.desc&limit=2`)
-  ]);
-
-  const runsArr=runs||[];
-  const okCount=runsArr.filter(r=>r.status==='ok').length;
-  const failedCount=runsArr.filter(r=>r.status==='failed').length;
-  const runningCount=runsArr.filter(r=>r.status==='running').length;
-  const okPct=runsArr.length?Math.round(okCount*100/runsArr.length):0;
-  const contentCount=(content||[]).length;
-  const broadCount=(broadcasts||[]).length;
-  const followers=(igMetrics&&igMetrics[0])?igMetrics[0].followers_count:null;
-  const followersDelta=(igMetrics&&igMetrics.length>=2)?(igMetrics[0].followers_count||0)-(igMetrics[1].followers_count||0):null;
-
-  const kpis=[
-    {label:'Runs OK 24h',value:okPct+'%',sub:`${okCount}/${runsArr.length}`,delta:failedCount>0?`-${failedCount} failed`:null,deltaClass:failedCount>0?'down':''},
-    {label:'Contenu produit 24h',value:fmtNum(contentCount),sub:'briefs · scripts · hooks',delta:null},
-    {label:'Followers IG',value:followers!=null?fmtNum(followers):'—',sub:'@djibrilmindset',delta:followersDelta!=null?(followersDelta>=0?'+':'')+followersDelta:null,deltaClass:followersDelta>0?'up':(followersDelta<0?'down':'')},
-    {label:'Agents actifs',value:runningCount,sub:'running maintenant',delta:null},
-    {label:'Broadcasts 24h',value:broadCount,sub:'bus inter-agents',delta:null},
-    {label:'Conversion',value:'—',sub:'iClosed · setup pending',delta:null}
-  ];
-  document.getElementById('kpiGrid').innerHTML=kpis.map(k=>`
-    <div class="kpi-card">
-      <div class="kpi-label">${k.label}</div>
-      <div class="kpi-value">${k.value}</div>
-      ${k.delta?`<div class="kpi-delta ${k.deltaClass||''}">${k.delta}</div>`:''}
-      <div class="kpi-sublabel">${k.sub}</div>
-    </div>`).join('');
-
-  const agentCounts={};
-  runsArr.forEach(r=>{agentCounts[r.agent]=(agentCounts[r.agent]||0)+1;});
-  const topAgents=Object.entries(agentCounts).sort((a,b)=>b[1]-a[1]).slice(0,8);
-  document.getElementById('topAgentsList').innerHTML=topAgents.length?topAgents.map(([a,n])=>`
-    <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--line)">
-      <span style="font-family:var(--font-mono);font-size:12.5px">${escHtml(a)}</span>
-      <span style="font-family:var(--font-mono);font-size:12px;color:var(--accent)">${n} runs</span>
-    </div>`).join(''):`<div class="empty">Aucun run récent</div>`;
-
-  const catCounts={};
-  (content||[]).forEach(c=>{catCounts[c.category]=(catCounts[c.category]||0)+1;});
-  const topCats=Object.entries(catCounts).sort((a,b)=>b[1]-a[1]).slice(0,8);
-  document.getElementById('topCatsList').innerHTML=topCats.length?topCats.map(([c,n])=>`
-    <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--line)">
-      <span style="font-family:var(--font-mono);font-size:12.5px">${escHtml(c)}</span>
-      <span style="font-family:var(--font-mono);font-size:12px;color:var(--accent-2)">${n} items</span>
-    </div>`).join(''):`<div class="empty">Aucun contenu récent</div>`;
-
-  document.getElementById('overviewMeta').textContent=`${runsArr.length} runs · ${contentCount} items · ${broadCount} broadcasts`;
-}
-
-/* ───── AVATAR ───── */
-let avatarRowId=null;
-let avatarData=null;
-async function loadAvatar(){
-  const data=await supa('dashboard_avatars?is_canon=eq.true&select=*&limit=1');
-  if(!data||!data.length){document.getElementById('avatarLoader').innerHTML='<div class="empty">Aucun avatar canon trouvé</div>';return;}
-  avatarData=data[0];
-  avatarRowId=avatarData.id;
-  document.getElementById('avatarLoader').style.display='none';
-  document.getElementById('avatarEditor').style.display='block';
-
-  document.getElementById('av-description').value=avatarData.description||'';
-  document.getElementById('av-verbatim').value=avatarData.verbatim||'';
-  renderTags('av-pain-points',avatarData.pain_points||[],'pain_points');
-  renderTags('av-blocages',avatarData.blocages||[],'blocages');
-  renderTags('av-besoins',avatarData.besoins||[],'besoins');
-
-  const lang=avatarData.langage_style||{};
-  document.getElementById('av-ton').value=lang.ton||'';
-  renderTags('av-interdits',lang.interdits||[],'_interdits');
-  renderTags('av-contractions',lang.contractions||[],'_contractions');
-  renderTags('av-obligatoires',lang.obligatoires||[],'_obligatoires');
-
-  const useBy=avatarData.use_by_agents||{};
-  document.getElementById('av-use-by-agents').innerHTML=Object.entries(useBy).map(([k,v])=>`
-    <div style="background:var(--bg-soft);padding:11px 13px;border-radius:8px;border:1px solid var(--line)">
-      <div style="font-family:var(--font-mono);font-size:12px;font-weight:600;color:var(--accent)">${escHtml(k)}</div>
-      <div style="font-size:12px;color:var(--text-2);margin-top:4px"><b>${escHtml(v.load_on||'—')}</b> → ${escHtml(v.use_for||'—')}</div>
-    </div>`).join('')||'<div class="empty">Aucun mapping</div>';
-
-  document.getElementById('saveAvatarBtn').disabled=false;
-  setupAvatarInputs();
-}
-function renderTags(targetId,arr,key){
-  const el=document.getElementById(targetId);
-  if(!el)return;
-  el.dataset.key=key;
-  el.dataset.values=JSON.stringify(arr||[]);
-  el.innerHTML=(arr||[]).map((v,i)=>`<span class="tag" data-i="${i}">${escHtml(v)} ✕</span>`).join('');
-  el.querySelectorAll('.tag').forEach(t=>{
-    t.addEventListener('click',()=>{
-      const arr=JSON.parse(el.dataset.values);
-      arr.splice(parseInt(t.dataset.i),1);
-      renderTags(targetId,arr,key);
-    });
-  });
-}
-function setupAvatarInputs(){
-  const adders=[
-    {input:'av-pain-add',target:'av-pain-points'},
-    {input:'av-bloc-add',target:'av-blocages'},
-    {input:'av-besoin-add',target:'av-besoins'},
-  ];
-  adders.forEach(({input,target})=>{
-    const inp=document.getElementById(input);
-    if(!inp)return;
-    inp.addEventListener('keydown',e=>{
-      if(e.key==='Enter'&&inp.value.trim()){
-        const el=document.getElementById(target);
-        const arr=JSON.parse(el.dataset.values);
-        arr.push(inp.value.trim());
-        renderTags(target,arr,el.dataset.key);
-        inp.value='';
-      }
-    });
-  });
-}
-document.getElementById('saveAvatarBtn').addEventListener('click',async()=>{
-  if(!avatarRowId)return;
-  const btn=document.getElementById('saveAvatarBtn');
-  btn.disabled=true;btn.textContent='Sauvegarde…';
-
-  const payload={
-    description:document.getElementById('av-description').value,
-    verbatim:document.getElementById('av-verbatim').value,
-    pain_points:JSON.parse(document.getElementById('av-pain-points').dataset.values),
-    blocages:JSON.parse(document.getElementById('av-blocages').dataset.values),
-    besoins:JSON.parse(document.getElementById('av-besoins').dataset.values),
-    langage_style:{
-      ton:document.getElementById('av-ton').value,
-      interdits:JSON.parse(document.getElementById('av-interdits').dataset.values),
-      contractions:JSON.parse(document.getElementById('av-contractions').dataset.values),
-      obligatoires:JSON.parse(document.getElementById('av-obligatoires').dataset.values),
-    },
-    updated_at:new Date().toISOString(),
+async function loadAll() {
+  const files = {
+    agentStatus: 'data/agent-status.json',
+    recentRuns: 'data/recent-runs.json',
+    broadcasts: 'data/broadcasts.json',
+    llmSpend: 'data/llm-spend.json',
+    contentByCat: 'data/content-by-category.json',
+    igMetrics: 'data/ig-metrics.json',
+    avatars: 'data/avatars.json',
+    brief: 'data/dashboard_brief.json',
+    bus: 'data/bus.json',
+    insightsLive: 'data/insights.json',
+    socialLive: 'data/social-tracking.json',
+    veilleMessagesLive: 'data/veille-messages.json',
+    veilleVideosLive: 'data/veille-videos.json',
+    veilleMessages: 'data/legacy/veille-messages.json',
+    veilleVideos: 'data/legacy/veille-videos.json',
+    socialTracking: 'data/legacy/social-tracking.json',
+    insights: 'data/legacy/insights.json',
+    cdeFeedback: 'data/legacy/cde-feedback-daily.json',
+    cdeAnalysis: 'data/legacy/cde-analysis-daily.json',
+    cdeWeekly: 'data/legacy/cde-weekly-deep.json',
+    audit: 'data/legacy/audit-quality-daily.json',
+    mesTopVideos: 'data/legacy/mes-top-videos.json',
+    hookPerf: 'data/legacy/hook_performance_tracker.json',
+    problemes: 'data/legacy/problemes-croyances.json',
+    emociones: 'data/legacy/emociones.json',
+    scripts: 'data/legacy/scripts-video.json',
+    competitive: 'data/legacy/competitive-data.json'
   };
+  const entries = await Promise.all(Object.entries(files).map(async ([k, p]) => [k, await loadJSON(p)]));
+  state.data = Object.fromEntries(entries);
+  state.loading = false;
 
-  const ok=await supaPatch(`dashboard_avatars?id=eq.${avatarRowId}`,payload);
-  btn.textContent='↑ Sauvegarder Supabase';btn.disabled=false;
-  toast(ok?'Avatar Thierry mis à jour ✓':'Erreur de sauvegarde',ok?'ok':'bad');
-});
+  state.data.veilleMessages = state.data.veilleMessagesLive || state.data.veilleMessages;
+  state.data.veilleVideos = state.data.veilleVideosLive || state.data.veilleVideos;
+  state.data.socialTracking = state.data.socialLive || state.data.socialTracking;
+  if (state.data.insightsLive && (state.data.insightsLive.opportunites_djibril || state.data.insightsLive.meta)) {
+    state.data.insights = state.data.insightsLive;
+  }
 
-/* ───── CONTENU ───── */
-let contentCache=[];
-let activeFilter='all';
-async function loadContent(){
-  const data=await supa('dashboard_content?select=id,category,title,body,payload,created_at&order=created_at.desc&limit=200');
-  contentCache=data||[];
-  document.getElementById('contentMeta').textContent=`${contentCache.length} items chargés`;
-
-  const cats=[...new Set(contentCache.map(c=>c.category))].sort();
-  document.getElementById('contentFilters').innerHTML=
-    `<button class="filter-chip ${activeFilter==='all'?'active':''}" data-f="all">Tout</button>`+
-    cats.map(c=>`<button class="filter-chip ${activeFilter===c?'active':''}" data-f="${escHtml(c)}">${escHtml(c)}</button>`).join('');
-  document.querySelectorAll('#contentFilters .filter-chip').forEach(b=>{
-    b.addEventListener('click',()=>{activeFilter=b.dataset.f;loadContent();});
-  });
-  renderContent();
-}
-function renderContent(){
-  const q=(document.getElementById('contentSearch').value||'').toLowerCase();
-  const filtered=contentCache.filter(c=>{
-    if(activeFilter!=='all'&&c.category!==activeFilter)return false;
-    if(q&&!(((c.title||'')+' '+(c.body||'')+' '+JSON.stringify(c.payload||{}))).toLowerCase().includes(q))return false;
-    return true;
-  });
-  const grid=document.getElementById('contentGrid');
-  if(!filtered.length){grid.innerHTML='<div class="empty">Aucun contenu trouvé</div>';return;}
-  grid.innerHTML=filtered.slice(0,60).map(c=>{
-    const preview=c.body||(c.payload?JSON.stringify(c.payload).slice(0,160):'');
-    return`<div class="content-card">
-      <span class="cat-tag">${escHtml(c.category)}</span>
-      <h5>${escHtml(c.title||'(sans titre)')}</h5>
-      <div class="preview">${escHtml(preview)}</div>
-      <div class="meta"><span>${timeAgo(c.created_at)}</span><span>id:${String(c.id).slice(0,8)}</span></div>
-    </div>`;
-  }).join('');
-}
-document.getElementById('contentSearch').addEventListener('input',renderContent);
-
-/* ───── AGENTS ───── */
-async function loadAgents(){
-  const since=new Date(Date.now()-86400000).toISOString();
-  const data=await supa(`agence_runs?select=agent,status,started_at,completed_at,metrics&started_at=gte.${since}&order=started_at.desc&limit=500`);
-  const runs=data||[];
-
-  const byAgent={};
-  runs.forEach(r=>{
-    if(!byAgent[r.agent])byAgent[r.agent]={total:0,ok:0,failed:0,running:0,last:null,lastStatus:null};
-    byAgent[r.agent].total++;
-    byAgent[r.agent][r.status==='ok'?'ok':r.status==='failed'?'failed':'running']++;
-    if(!byAgent[r.agent].last||new Date(r.started_at)>new Date(byAgent[r.agent].last)){
-      byAgent[r.agent].last=r.started_at;byAgent[r.agent].lastStatus=r.status;
-    }
-  });
-
-  const totalAgents=Object.keys(byAgent).length;
-  const totalRuns=runs.length;
-  const totalOk=runs.filter(r=>r.status==='ok').length;
-  const totalFailed=runs.filter(r=>r.status==='failed').length;
-  document.getElementById('agentStats').innerHTML=`
-    <div class="kpi-card"><div class="kpi-label">Agents actifs</div><div class="kpi-value">${totalAgents}</div><div class="kpi-sublabel">crons distincts</div></div>
-    <div class="kpi-card"><div class="kpi-label">Runs total</div><div class="kpi-value">${totalRuns}</div><div class="kpi-sublabel">dernières 24h</div></div>
-    <div class="kpi-card"><div class="kpi-label">Succès</div><div class="kpi-value">${totalOk}</div><div class="kpi-delta up">${totalRuns?Math.round(totalOk*100/totalRuns):0}%</div></div>
-    <div class="kpi-card"><div class="kpi-label">Échecs</div><div class="kpi-value">${totalFailed}</div><div class="kpi-delta ${totalFailed>0?'down':''}">${totalRuns?Math.round(totalFailed*100/totalRuns):0}%</div></div>
-  `;
-
-  const sorted=Object.entries(byAgent).sort((a,b)=>new Date(b[1].last)-new Date(a[1].last));
-  document.getElementById('agentGrid').innerHTML=sorted.map(([name,d])=>{
-    const cls=d.lastStatus==='ok'?'ok':d.lastStatus==='failed'?'bad':'warn';
-    return`<div class="agent-card">
-      <div class="agent-name">${escHtml(name)}</div>
-      <div style="display:flex;gap:6px;flex-wrap:wrap">
-        <span class="badge ok">${d.ok} ok</span>
-        ${d.failed?`<span class="badge bad">${d.failed} fail</span>`:''}
-        ${d.running?`<span class="badge warn">${d.running} run</span>`:''}
-      </div>
-      <div class="agent-meta">
-        <span class="badge ${cls}">${d.lastStatus||'—'}</span>
-        <span>${timeAgo(d.last)}</span>
-      </div>
-    </div>`;
-  }).join('');
-  document.getElementById('agentsMeta').textContent=`${totalAgents} agents · ${totalRuns} runs / 24h`;
+  document.getElementById('last-update').textContent = 'Maj : ' + new Date().toLocaleString('fr-FR', { hour: '2-digit', minute: '2-digit', day: '2-digit', month: '2-digit' });
+  renderAll();
 }
 
-/* ───── BASILE ───── */
-async function loadBasile(){
-  const since=new Date(Date.now()-86400000*7).toISOString();
-  const conv=await supa(`conversation_history?select=lead_id,message,sender,created_at,tier&created_at=gte.${since}&order=created_at.desc&limit=80`);
-  const arr=conv||[];
-
-  const totalMsgs=arr.length;
-  const uniqueLeads=new Set(arr.map(c=>c.lead_id)).size;
-  const hotLeads=arr.filter(c=>(c.tier||'').toLowerCase().includes('hot')||(c.tier||'').toLowerCase().includes('chaud')).length;
-
-  document.getElementById('basileKpi').innerHTML=`
-    <div class="kpi-card"><div class="kpi-label">Messages 7j</div><div class="kpi-value">${totalMsgs}</div><div class="kpi-sublabel">conv historiques</div></div>
-    <div class="kpi-card"><div class="kpi-label">Leads uniques</div><div class="kpi-value">${uniqueLeads}</div><div class="kpi-sublabel">7 derniers jours</div></div>
-    <div class="kpi-card"><div class="kpi-label">Leads chauds</div><div class="kpi-value">${hotLeads}</div><div class="kpi-delta ${hotLeads>0?'up':''}">tier=hot/chaud</div></div>
-    <div class="kpi-card"><div class="kpi-label">CTA iClosed</div><div class="kpi-value" style="font-size:12px;font-family:var(--font-mono);font-weight:500"><a href="${CTA_URL}" target="_blank" style="color:var(--accent);text-decoration:none">reset-1-to1 →</a></div><div class="kpi-sublabel">lien actif</div></div>`;
-
-  const tbody=document.getElementById('basileTbody');
-  if(!arr.length){tbody.innerHTML='<tr><td colspan="4" style="text-align:center;color:var(--muted);padding:40px">Aucune conversation</td></tr>';document.getElementById('basileMeta').textContent='—';return;}
-  tbody.innerHTML=arr.slice(0,30).map(c=>{
-    const tierCls=(c.tier||'').toLowerCase().includes('hot')?'bad':(c.tier||'').toLowerCase().includes('warm')?'warn':'neutral';
-    return`<tr>
-      <td class="mono">${escHtml(String(c.lead_id||'').slice(0,12))}…</td>
-      <td>${escHtml((c.message||'').slice(0,80))}…</td>
-      <td><span class="badge ${tierCls}">${escHtml(c.tier||'—')}</span></td>
-      <td class="mono">${timeAgo(c.created_at)}</td>
-    </tr>`;
-  }).join('');
-  document.getElementById('basileMeta').textContent=`${totalMsgs} msgs · ${uniqueLeads} leads`;
+function renderAll() {
+  renderDashboard();
+  renderVeilleMarche();
+  renderVideos();
+  renderReseaux();
+  renderInsights();
+  renderAvatar();
+  renderProduction();
+  renderAgents();
+  renderConversations();
+  renderLogs();
+  updateNavCounts();
 }
 
-/* ───── VEILLE IG ───── */
-async function loadVeille(){
-  const dj=await supa('dashboard_ig_metrics?account_owner=eq.djibril_perso&order=snapshot_at.desc&limit=1&select=*');
-  if(dj&&dj.length){
-    const m=dj[0];
-    document.getElementById('djibrilHandle').textContent='@'+(m.account_handle||'djibrilmindset');
-    document.getElementById('djibrilIgKpi').innerHTML=`
-      <div class="kpi-card"><div class="kpi-label">Followers</div><div class="kpi-value">${m.followers_count!=null?fmtNum(m.followers_count):'—'}</div><div class="kpi-sublabel">${escHtml(m.source_method||'—')}</div></div>
-      <div class="kpi-card"><div class="kpi-label">Posts</div><div class="kpi-value">${m.posts_count||0}</div><div class="kpi-sublabel">total</div></div>
-      <div class="kpi-card"><div class="kpi-label">Engagement</div><div class="kpi-value">${m.engagement_rate?Number(m.engagement_rate).toFixed(2)+'%':'—'}</div><div class="kpi-sublabel">avg likes+comments / followers</div></div>
-      <div class="kpi-card"><div class="kpi-label">Snapshot</div><div class="kpi-value" style="font-size:14px;font-family:var(--font-mono)">${timeAgo(m.snapshot_at)}</div><div class="kpi-sublabel">${new Date(m.snapshot_at).toLocaleString('fr-FR')}</div></div>`;
+function updateNavCounts() {
+  const d = state.data;
+  const setNum = (id, n) => { const el = document.getElementById(id); if (el && n) el.textContent = n; };
+  setNum('nav-veille-num', d.veilleMessages?.messages?.length || d.veilleMessages?.entries?.length);
+  setNum('nav-videos-num', d.veilleVideos?.videos?.length);
+  setNum('nav-reseaux-num', d.socialTracking?.accounts ? Object.keys(d.socialTracking.accounts).length : 0);
+  setNum('nav-insights-num', d.insights?.opportunites_djibril?.length || (d.insights ? Object.keys(d.insights).length : 0));
+  setNum('nav-agents-num', d.agentStatus?.length);
+  setNum('nav-conv-num', d.bus?.broadcasts?.length || d.broadcasts?.length);
+  setNum('nav-logs-num', d.broadcasts?.length);
+}
 
-    const posts=Array.isArray(m.recent_posts)?m.recent_posts:[];
-    document.getElementById('djibrilPosts').innerHTML=posts.length?
-      `<div class="content-grid">${posts.slice(0,9).map(p=>`
-        <div class="content-card">
-          ${p.media_type?`<span class="cat-tag">${escHtml(p.media_type)}</span>`:''}
-          <h5>${escHtml((p.caption||'(no caption)').slice(0,80))}…</h5>
-          <div class="meta"><span>♥ ${p.like_count||0}</span><span>💬 ${p.comments_count||0}</span><span>${timeAgo(p.timestamp)}</span></div>
-        </div>`).join('')}</div>`:
-      '<div class="empty">Aucun post récent (Graph API requis)</div>';
+function renderDashboard() {
+  const d = state.data;
+  const totalAgents = d.agentStatus?.length || 0;
+  const okAgents = d.agentStatus?.filter(a => ['ok','success','running'].includes((a.status||'').toLowerCase())).length || 0;
+  const totalMsgs = d.veilleMessages?.messages?.length || 0;
+  const totalVids = d.veilleVideos?.videos?.length || 0;
+  const igFollowers = d.igMetrics?.followers || d.igMetrics?.total_followers || '—';
+  const llmCost = d.llmSpend?.total_usd || d.llmSpend?.total || 0;
+
+  const kpis = [
+    { label: 'Agents actifs', value: `${okAgents}/${totalAgents}`, accent: 'pink' },
+    { label: 'Messages veille', value: fmt(totalMsgs) },
+    { label: 'Vidéos trackées', value: fmt(totalVids) },
+    { label: 'IG followers', value: fmt(igFollowers), accent: 'orange' },
+    { label: 'LLM coût (24h)', value: '$' + (typeof llmCost === 'number' ? llmCost.toFixed(2) : llmCost), accent: 'cyan' }
+  ];
+  document.getElementById('kpi-main').innerHTML = kpis.map(k =>
+    `<div class="kpi ${k.accent ? 'accent-' + k.accent : ''}"><div class="kpi-label">${k.label}</div><div class="kpi-value">${k.value}</div></div>`
+  ).join('');
+
+  const b = d.brief;
+  const brief = document.getElementById('brief-content');
+  if (b && (b.summary || b.brief)) {
+    document.getElementById('brief-date').textContent = b.date || b.generated_at || '';
+    brief.classList.remove('empty');
+    brief.innerHTML = `<div style="font-family:var(--font-serif); font-size:15px; line-height:1.5; color:var(--text-2);">${escape(b.summary || b.brief || '')}</div>`;
+    if (b.priorities?.length) brief.innerHTML += '<ul style="margin-top:12px; padding-left:20px;">' + b.priorities.map(p => `<li style="margin:4px 0; font-size:13px;">${escape(p)}</li>`).join('') + '</ul>';
   } else {
-    document.getElementById('djibrilIgKpi').innerHTML='<div class="empty">Aucune donnée IG (cron pas encore lancé)</div>';
-    document.getElementById('djibrilPosts').innerHTML='<div class="empty">—</div>';
+    brief.innerHTML = 'Aucun brief disponible';
   }
 
-  const niche=await supa('dashboard_ig_metrics?account_owner=neq.djibril_perso&order=snapshot_at.desc&limit=50&select=account_handle,account_owner,followers_count,posts_count,engagement_rate,snapshot_at');
-  const tbody=document.getElementById('veilleTbody');
-  const arr=niche||[];
-  if(!arr.length){tbody.innerHTML='<tr><td colspan="5" style="text-align:center;color:var(--muted);padding:40px">Aucun compte niche surveillé. Ajouter via Supabase dashboard_ig_metrics.</td></tr>';}
-  else{
-    const seen=new Set();
-    const uniq=arr.filter(r=>{if(seen.has(r.account_handle))return false;seen.add(r.account_handle);return true;});
-    tbody.innerHTML=uniq.map(r=>`<tr>
-      <td class="mono">@${escHtml(r.account_handle)}</td>
-      <td>${fmtNum(r.followers_count)}</td>
-      <td>${r.posts_count||0}</td>
-      <td>${r.engagement_rate?Number(r.engagement_rate).toFixed(2)+'%':'—'}</td>
-      <td class="mono">${timeAgo(r.snapshot_at)}</td>
-    </tr>`).join('');
+  const runs = (d.recentRuns || []).slice(0, 8);
+  document.getElementById('recent-mini').innerHTML = runs.length ?
+    `<table><thead><tr><th>Agent</th><th>Statut</th><th>Time</th></tr></thead><tbody>${runs.map(r => {
+      const st = (r.status || '').toLowerCase();
+      const cls = st.includes('success') || st === 'ok' ? 'green' : st.includes('fail') || st.includes('error') ? 'red' : 'warn';
+      return `<tr><td>${escape(r.agent || r.name || '?')}</td><td><span class="tag ${cls}">${escape(r.status || '?')}</span></td><td class="mono num">${escape((r.started_at || r.timestamp || '').slice(11, 16))}</td></tr>`;
+    }).join('')}</tbody></table>` : '<div class="empty">Aucun run récent</div>';
+}
+
+function renderVeilleMarche() {
+  const d = state.data;
+  const messages = d.veilleMessages?.messages || d.veilleMessages?.entries || [];
+  const platforms = [...new Set(messages.map(m => m.platform).filter(Boolean))];
+  const jtbds = [...new Set(messages.map(m => m.jtbd).filter(Boolean))];
+
+  document.getElementById('vm-platform').innerHTML = '<option value="">Toutes plateformes</option>' + platforms.map(p => `<option>${escape(p)}</option>`).join('');
+  document.getElementById('vm-jtbd').innerHTML = '<option value="">Tous JTBD</option>' + jtbds.map(j => `<option>${escape(j)}</option>`).join('');
+
+  const kpis = [
+    { label: 'Messages collectés', value: fmt(messages.length), accent: 'pink' },
+    { label: 'Plateformes', value: platforms.length },
+    { label: 'JTBD distincts', value: jtbds.length },
+    { label: 'Sentiment négatif', value: fmt(messages.filter(m => m.sentiment === 'negative').length) }
+  ];
+  document.getElementById('kpi-veille').innerHTML = kpis.map(k =>
+    `<div class="kpi ${k.accent ? 'accent-' + k.accent : ''}"><div class="kpi-label">${k.label}</div><div class="kpi-value">${k.value}</div></div>`
+  ).join('');
+
+  function applyFilters() {
+    const q = document.getElementById('vm-search').value.toLowerCase();
+    const p = document.getElementById('vm-platform').value;
+    const j = document.getElementById('vm-jtbd').value;
+    const filtered = messages.filter(m =>
+      (!q || (m.text || '').toLowerCase().includes(q)) &&
+      (!p || m.platform === p) && (!j || m.jtbd === j)
+    ).slice(0, 80);
+    document.getElementById('vm-list').innerHTML = filtered.length ? filtered.map(m => {
+      const tag = (m.platform || 'web').toLowerCase().slice(0, 2);
+      const sentClass = m.sentiment === 'negative' ? 'red' : m.sentiment === 'positive' ? 'green' : 'muted';
+      return `<div class="msg">
+        <div class="msg-header">
+          <span class="tag ${tag}">${escape(m.platform || 'web')}</span>
+          ${m.jtbd ? `<span class="tag muted">${escape(m.jtbd)}</span>` : ''}
+          <span class="tag ${sentClass}">${escape(m.sentiment || '?')}</span>
+        </div>
+        <div class="msg-text">"${escape(m.text || '')}"</div>
+        <div class="msg-meta">
+          <span>${escape(m.date || '—')}</span>
+          ${m.author ? `<span>par ${escape(m.author)}</span>` : ''}
+        </div>
+      </div>`;
+    }).join('') : '<div class="empty">Aucun message correspondant</div>';
   }
-  document.getElementById('veilleMeta').textContent=`Djibril + ${arr.length} comptes niche`;
+  ['vm-search', 'vm-platform', 'vm-jtbd'].forEach(id => document.getElementById(id).addEventListener('input', applyFilters));
+  applyFilters();
 }
 
-/* ───── MAONA ───── */
-async function loadMaona(){
-  const data=await supa('dashboard_content?category=in.(maona_brief,maona_video_analysis,maona_remotion_prompt)&order=created_at.desc&limit=40&select=*');
-  const arr=data||[];
-  document.getElementById('maonaMeta').textContent=`${arr.length} briefs`;
-  if(!arr.length){document.getElementById('maonaList').innerHTML='<div class="empty">Aucun brief MAONA disponible</div>';return;}
-  document.getElementById('maonaList').innerHTML=arr.map(c=>`
-    <div class="list-item">
-      <h6>${escHtml(c.title||'(sans titre)')}</h6>
-      <p>${escHtml((c.body||JSON.stringify(c.payload||{})).slice(0,300))}…</p>
-      <div class="meta"><span class="badge info">${escHtml(c.category)}</span> · ${timeAgo(c.created_at)}</div>
-    </div>`).join('');
+function renderVideos() {
+  const d = state.data;
+  const vids = d.veilleVideos?.videos || [];
+  const platforms = [...new Set(vids.map(v => v.platform).filter(Boolean))];
+  const niches = [...new Set(vids.map(v => v.niche || v.category).filter(Boolean))];
+  document.getElementById('vd-platform').innerHTML = '<option value="">Toutes plateformes</option>' + platforms.map(p => `<option>${escape(p)}</option>`).join('');
+  document.getElementById('vd-niche').innerHTML = '<option value="">Toutes niches</option>' + niches.map(n => `<option>${escape(n)}</option>`).join('');
+
+  const totalViews = vids.reduce((s, v) => s + (v.views || v.view_count || 0), 0);
+  const top = [...vids].sort((a, b) => (b.views || 0) - (a.views || 0))[0];
+  const kpis = [
+    { label: 'Vidéos collectées', value: fmt(vids.length), accent: 'orange' },
+    { label: 'Vues cumulées', value: fmt(totalViews) },
+    { label: 'Top vidéo (vues)', value: fmt(top?.views || 0) },
+    { label: 'Niches distinctes', value: niches.length }
+  ];
+  document.getElementById('kpi-videos').innerHTML = kpis.map(k =>
+    `<div class="kpi ${k.accent ? 'accent-' + k.accent : ''}"><div class="kpi-label">${k.label}</div><div class="kpi-value">${k.value}</div></div>`
+  ).join('');
+
+  function applyFilters() {
+    const q = document.getElementById('vd-search').value.toLowerCase();
+    const p = document.getElementById('vd-platform').value;
+    const n = document.getElementById('vd-niche').value;
+    const filtered = vids.filter(v =>
+      (!q || ((v.title || '') + ' ' + (v.hook || '')).toLowerCase().includes(q)) &&
+      (!p || v.platform === p) && (!n || (v.niche || v.category) === n)
+    ).slice(0, 60);
+    document.getElementById('vd-list').innerHTML = filtered.length ? filtered.map(v => {
+      const tag = (v.platform || 'web').toLowerCase().slice(0, 2);
+      return `<div class="vid">
+        <div class="vid-head">
+          <span class="tag ${tag}">${escape(v.platform || 'web')}</span>
+          <span class="tag muted">${escape(v.niche || v.category || '—')}</span>
+        </div>
+        <div class="vid-title">${escape((v.title || v.compte || '(sans titre)').slice(0, 80))}</div>
+        ${v.hook ? `<div class="vid-hook">"${escape(v.hook.slice(0, 120))}"</div>` : ''}
+        <div class="vid-stats">
+          <span><strong>${fmt(v.views || v.view_count || 0)}</strong> vues</span>
+          ${v.likes ? `<span><strong>${fmt(v.likes)}</strong> ❤</span>` : ''}
+          ${v.engagement ? `<span><strong>${escape(v.engagement)}</strong> eng</span>` : ''}
+          ${v.url ? `<span><a href="${escape(v.url)}" target="_blank" style="color:var(--pink); text-decoration:none;">↗</a></span>` : ''}
+        </div>
+      </div>`;
+    }).join('') : '<div class="empty">Aucune vidéo correspondante</div>';
+  }
+  ['vd-search', 'vd-platform', 'vd-niche'].forEach(id => document.getElementById(id).addEventListener('input', applyFilters));
+  applyFilters();
 }
 
-/* ───── LOGS / BROADCASTS ───── */
-async function loadLogs(){
-  const data=await supa('agence_broadcasts?order=created_at.desc&limit=40&select=*');
-  const arr=data||[];
-  document.getElementById('logsMeta').textContent=`${arr.length} broadcasts récents`;
-  if(!arr.length){document.getElementById('broadcastList').innerHTML='<div class="empty">Aucun broadcast</div>';return;}
-  document.getElementById('broadcastList').innerHTML=arr.map(b=>{
-    const sev=b.severity==='critical'||b.severity==='bad'?'bad':b.severity==='warn'?'warn':'';
-    return`<div class="broadcast-item ${sev}">
-      <div class="broadcast-meta">
-        <span><b style="color:var(--accent)">${escHtml(b.source_agent||'—')}</b></span>
-        <span>${timeAgo(b.created_at)}</span>
-        <span class="badge ${sev||'info'}">${escHtml(b.severity||'info')}</span>
+function renderReseaux() {
+  const d = state.data;
+  const accounts = d.socialTracking?.accounts || {};
+  const accList = Object.entries(accounts);
+  const totalFollowers = accList.reduce((s, [_, a]) => s + (a.followers || 0), 0);
+  const totalLikes = accList.reduce((s, [_, a]) => s + (a.likes_total || 0), 0);
+  const igLive = d.igMetrics || {};
+
+  const kpis = [
+    { label: 'Comptes trackés', value: accList.length, accent: 'pink' },
+    { label: 'Followers cumulés', value: fmt(totalFollowers) },
+    { label: 'Likes cumulés', value: fmt(totalLikes), accent: 'orange' },
+    { label: 'IG engagement live', value: igLive.engagement || igLive.engagement_rate || '—', accent: 'cyan' }
+  ];
+  document.getElementById('kpi-reseaux').innerHTML = kpis.map(k =>
+    `<div class="kpi ${k.accent ? 'accent-' + k.accent : ''}"><div class="kpi-label">${k.label}</div><div class="kpi-value">${k.value}</div></div>`
+  ).join('');
+
+  document.getElementById('rs-table').innerHTML = accList.length ?
+    `<table><thead><tr><th>Compte</th><th>Plateforme</th><th>Followers</th><th>Vidéos/Posts</th><th>Engagement</th><th>Statut</th><th>Maj</th></tr></thead><tbody>${
+      accList.map(([key, a]) => {
+        const platform = key.split('_')[0];
+        const tagCls = platform === 'tiktok' ? 'tt' : platform === 'instagram' ? 'ig' : platform === 'youtube' ? 'yt' : 'fb';
+        const stCls = ['BEST','GROWING'].includes(a.status) ? 'green' : a.status === 'WARN' ? 'warn' : 'red';
+        return `<tr><td>${escape(key.replace(platform + '_', ''))}</td><td><span class="tag ${tagCls}">${escape(platform)}</span></td><td class="num">${fmt(a.followers)}</td><td class="num">${fmt(a.videos_count || a.posts_count || 0)}</td><td class="num mono">${escape(a.engagement || '—')}</td><td><span class="tag ${stCls}">${escape(a.status || '?')}</span></td><td class="mono">${escape(a.last_update || '')}</td></tr>`;
+      }).join('')
+    }</tbody></table>` : '<div class="empty">Aucun compte tracké</div>';
+
+  const igHTML = igLive.recent_reels || igLive.reels || igLive.posts;
+  document.getElementById('rs-ig').innerHTML = Array.isArray(igHTML) && igHTML.length ?
+    igHTML.slice(0, 6).map(r =>
+      `<div style="padding:8px 0; border-bottom:1px solid var(--border); font-size:12px;">
+        <div style="font-weight:600;">${escape((r.caption || r.title || '(reel)').slice(0, 60))}</div>
+        <div style="color:var(--text-muted); font-family:var(--font-mono); font-size:11px; margin-top:2px;">
+          ${fmt(r.views || r.play_count || 0)} vues · ${fmt(r.likes || 0)} ❤ · ${fmt(r.comments || 0)} 💬
+        </div>
+      </div>`).join('') :
+    `<div style="font-size:12px; color:var(--text-2);">Followers : <strong>${fmt(igLive.followers || 0)}</strong> · Posts : <strong>${fmt(igLive.posts || 0)}</strong> · Engagement : <strong>${igLive.engagement_rate || igLive.engagement || '—'}</strong></div>`;
+
+  const g = d.socialTracking?.growth || {};
+  document.getElementById('rs-growth').innerHTML = Object.keys(g).length ?
+    Object.entries(g).slice(0, 8).map(([k, v]) =>
+      `<div style="display:flex; justify-content:space-between; padding:6px 0; border-bottom:1px solid var(--border); font-size:12px;">
+        <span>${escape(k)}</span><span class="mono num"><strong>${typeof v === 'object' ? JSON.stringify(v).slice(0, 30) : v}</strong></span>
+      </div>`).join('') : '<div class="empty">Aucune donnée croissance</div>';
+}
+
+function renderInsights() {
+  const d = state.data;
+  const ins = d.insights || {};
+  const opps = ins.opportunites_djibril || [];
+  const patterns = ins.patterns_cross_niche || [];
+  const mix = ins.mix_contenu_recommande || ins.mix_recommande || {};
+
+  const kpis = [
+    { label: 'Opportunités identifiées', value: opps.length, accent: 'cyan' },
+    { label: 'Patterns cross-niche', value: patterns.length },
+    { label: 'Niches analysées', value: ins.meta?.niches_count || (Array.isArray(ins.meta?.niches) ? ins.meta.niches.length : '—') }
+  ];
+  document.getElementById('kpi-insights').innerHTML = kpis.map(k =>
+    `<div class="kpi ${k.accent ? 'accent-' + k.accent : ''}"><div class="kpi-label">${k.label}</div><div class="kpi-value">${k.value}</div></div>`
+  ).join('');
+
+  let html = '';
+  if (opps.length) {
+    html += `<div class="card"><div class="card-title">Opportunités Djibril (top ${Math.min(opps.length, 12)})</div>`;
+    html += opps.slice(0, 12).map((o, i) => `
+      <div style="padding:10px 0; border-bottom:1px solid var(--border);">
+        <div style="display:flex; gap:10px; align-items:baseline;">
+          <span style="font-family:var(--font-serif); font-size:18px; color:var(--pink); font-weight:700;">${i + 1}.</span>
+          <div style="flex:1;">
+            <div style="font-weight:600; margin-bottom:4px;">${escape(o.titre || o.opportunity || o.name || 'Opportunité')}</div>
+            <div style="font-size:12px; color:var(--text-2); font-family:var(--font-serif); font-style:italic;">${escape(o.description || o.detail || o.explanation || '')}</div>
+            ${o.score ? `<div style="margin-top:4px;"><span class="tag green">Score ${o.score}</span></div>` : ''}
+          </div>
+        </div>
+      </div>`).join('');
+    html += '</div>';
+  }
+  if (patterns.length) {
+    html += `<div class="card"><div class="card-title">Patterns cross-niche</div>`;
+    html += patterns.slice(0, 10).map(p => `<div style="padding:8px 0; border-bottom:1px solid var(--border); font-size:13px;">${escape(typeof p === 'string' ? p : (p.pattern || p.titre || JSON.stringify(p).slice(0, 200)))}</div>`).join('');
+    html += '</div>';
+  }
+  if (Object.keys(mix).length) {
+    html += `<div class="card"><div class="card-title">Mix contenu recommandé</div><table><tbody>`;
+    html += Object.entries(mix).map(([k, v]) => `<tr><td>${escape(k)}</td><td class="num mono"><strong>${typeof v === 'object' ? JSON.stringify(v).slice(0, 60) : v}</strong></td></tr>`).join('');
+    html += '</tbody></table></div>';
+  }
+  document.getElementById('insights-content').innerHTML = html || '<div class="empty">Aucun insight disponible</div>';
+}
+
+function renderAvatar() {
+  const d = state.data;
+  const av = d.avatars?.[0] || d.avatars?.thierry || d.avatars || {};
+  const av2 = av.thierry || av;
+  document.getElementById('avatar-content').innerHTML = `
+    <div class="avatar-portrait">
+      <div class="avatar-emoji">👨</div>
+      <div>
+        <div class="avatar-name">${escape(av2.name || 'Thierry')}</div>
+        <div class="avatar-tagline">${escape(av2.tagline || av2.description || 'Avatar client cible Djibril')}</div>
+        <div class="avatar-stats">
+          <div><strong>${escape(av2.age || '35-45')}</strong><span>Âge</span></div>
+          <div><strong>${escape(av2.profession || av2.job || 'Salarié')}</strong><span>Profession</span></div>
+          <div><strong>${escape(av2.revenu_mensuel || av2.income || '2-4K')}</strong><span>Revenu</span></div>
+          <div><strong>${escape(av2.niveau_conscience || av2.consciousness || '—')}</strong><span>Conscience</span></div>
+        </div>
       </div>
-      <div class="broadcast-topic">${escHtml(b.topic||'—')}</div>
-      ${b.payload?`<div class="broadcast-payload">${escHtml(JSON.stringify(b.payload,null,2).slice(0,400))}</div>`:''}
     </div>`;
-  }).join('');
+
+  const pc = d.problemes?.problemes_croyances || {};
+  const pcEntries = Object.entries(pc).slice(0, 8);
+  document.getElementById('avatar-pc').innerHTML = pcEntries.length ?
+    pcEntries.map(([k, v]) => {
+      const items = Array.isArray(v) ? v : (v.items || v.list || [v]);
+      return `<div style="margin-bottom:14px;">
+        <div style="font-weight:600; font-size:13px; color:var(--pink); margin-bottom:6px; text-transform:uppercase; letter-spacing:0.5px;">${escape(k.replace(/_/g, ' '))}</div>
+        ${items.slice(0, 4).map(i => `<div style="font-family:var(--font-serif); font-style:italic; font-size:13px; color:var(--text-2); padding:4px 0; border-bottom:1px dotted var(--border);">"${escape(typeof i === 'string' ? i : (i.text || i.croyance || JSON.stringify(i).slice(0, 120)))}"</div>`).join('')}
+      </div>`;
+    }).join('') : '<div class="empty">Aucune donnée</div>';
+
+  const emo = d.emociones?.matrice_emotionnelle_funnel || d.emociones?.classification_par_emotion || {};
+  const emoEntries = Object.entries(emo).slice(0, 6);
+  document.getElementById('avatar-emo').innerHTML = emoEntries.length ?
+    `<div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(180px, 1fr)); gap:10px;">${
+      emoEntries.map(([k, v]) =>
+        `<div style="padding:10px; background:var(--bg-soft); border-radius:var(--radius-sm); border-left:3px solid var(--orange);">
+          <div style="font-weight:600; font-size:12px; text-transform:capitalize; margin-bottom:4px;">${escape(k.replace(/_/g, ' '))}</div>
+          <div style="font-size:11px; color:var(--text-2);">${escape(typeof v === 'string' ? v : (v.description || v.intensite || JSON.stringify(v).slice(0, 100)))}</div>
+        </div>`).join('')
+    }</div>` : '<div class="empty">Aucune palette émotionnelle</div>';
 }
 
-/* ───── ROUTING + REFRESH ───── */
-async function refreshSection(name){
-  setLastUpdated();
-  switch(name){
-    case'overview':await loadOverview();break;
-    case'avatar':await loadAvatar();break;
-    case'content':await loadContent();break;
-    case'agents':await loadAgents();break;
-    case'basile':await loadBasile();break;
-    case'veille':await loadVeille();break;
-    case'maona':await loadMaona();break;
-    case'logs':await loadLogs();break;
-  }
+function renderProduction() {
+  const d = state.data;
+  const scriptsData = d.scripts;
+  const scriptsList = Array.isArray(scriptsData) ? scriptsData :
+    (scriptsData?.scripts || scriptsData?.entries || Object.entries(scriptsData || {}).map(([k, v]) => typeof v === 'object' ? { ...v, id: k } : { id: k, text: v }));
+  const hooksData = d.hookPerf?.hooks_marche || d.hookPerf?.hooks || [];
+  const hooksList = Array.isArray(hooksData) ? hooksData : Object.entries(hooksData).map(([k, v]) => ({ ...v, hook: k }));
+  const cats = d.contentByCat || {};
+
+  const kpis = [
+    { label: 'Scripts vidéo', value: fmt(scriptsList.length), accent: 'pink' },
+    { label: 'Hooks tracked', value: fmt(hooksList.length), accent: 'orange' },
+    { label: 'Catégories contenu', value: Object.keys(cats).length },
+    { label: 'Pipeline', value: scriptsList.filter(s => (s.date || '').startsWith('2026-04')).length || '—' }
+  ];
+  document.getElementById('kpi-prod').innerHTML = kpis.map(k =>
+    `<div class="kpi ${k.accent ? 'accent-' + k.accent : ''}"><div class="kpi-label">${k.label}</div><div class="kpi-value">${k.value}</div></div>`
+  ).join('');
+
+  const scriptsTop = scriptsList.slice(0, 12);
+  document.getElementById('prod-scripts').innerHTML = scriptsTop.length ?
+    `<table><thead><tr><th>ID</th><th>Titre</th><th>Hook</th><th>Statut</th><th>Date</th></tr></thead><tbody>${
+      scriptsTop.map(s => `<tr>
+        <td class="mono">${escape(String(s.id || s.script_id || '').slice(0, 12))}</td>
+        <td>${escape(String(s.titre || s.title || s.theme || '—').slice(0, 60))}</td>
+        <td style="font-style:italic; color:var(--text-2);">${escape(String(s.hook || '').slice(0, 60))}</td>
+        <td><span class="tag ${s.status === 'published' ? 'green' : 'warn'}">${escape(s.status || s.statut || 'draft')}</span></td>
+        <td class="mono">${escape(String(s.date || s.created_at || '').slice(0, 10))}</td>
+      </tr>`).join('')
+    }</tbody></table>` : '<div class="empty">Aucun script disponible</div>';
+
+  const hooksTop = hooksList.slice(0, 12);
+  document.getElementById('prod-hooks').innerHTML = hooksTop.length ?
+    hooksTop.map(h => `<div style="padding:10px 0; border-bottom:1px solid var(--border);">
+      <div style="font-family:var(--font-serif); font-style:italic; font-size:14px; color:var(--text);">"${escape(String(h.hook || h.text || '').slice(0, 200))}"</div>
+      <div style="margin-top:4px; font-size:11px; color:var(--text-muted); font-family:var(--font-mono);">
+        ${h.score ? `Score: <strong style="color:var(--pink);">${h.score}</strong> · ` : ''}
+        ${h.uses ? `Utilisations: ${h.uses} · ` : ''}
+        ${h.category ? `Cat: ${escape(h.category)}` : ''}
+      </div>
+    </div>`).join('') : '<div class="empty">Aucun hook disponible</div>';
 }
-function refreshAll(){
-  const active=document.querySelector('.nav-item.active').dataset.target;
-  refreshSection(active);
+
+function renderAgents() {
+  const d = state.data;
+  const agents = d.agentStatus || [];
+  const runs = d.recentRuns || [];
+
+  const total = agents.length;
+  const ok = agents.filter(a => ['ok', 'running', 'success'].includes((a.status || '').toLowerCase())).length;
+  const fails = runs.filter(r => ['fail', 'error', 'failed'].includes((r.status || '').toLowerCase())).length;
+  const last = runs[0];
+
+  const kpis = [
+    { label: 'Total agents', value: total, accent: 'pink' },
+    { label: 'Agents OK', value: ok, accent: 'cyan' },
+    { label: 'Échecs récents', value: fails, accent: 'orange' },
+    { label: 'Dernière run', value: last?.agent || '—' }
+  ];
+  document.getElementById('kpi-agents').innerHTML = kpis.map(k =>
+    `<div class="kpi ${k.accent ? 'accent-' + k.accent : ''}"><div class="kpi-label">${k.label}</div><div class="kpi-value" style="font-size:${typeof k.value === 'string' && k.value.length > 12 ? '16px' : '28px'};">${k.value}</div></div>`
+  ).join('');
+
+  document.getElementById('agents-table').innerHTML = agents.length ?
+    `<table><thead><tr><th>Nom</th><th>Statut</th><th>Dernière exec</th><th>Cron</th><th>Description</th></tr></thead><tbody>${
+      agents.slice(0, 30).map(a => {
+        const st = (a.status || '').toLowerCase();
+        const cls = ['ok', 'running', 'success'].includes(st) ? 'green' : ['fail', 'error', 'failed', 'down'].includes(st) ? 'red' : 'warn';
+        return `<tr>
+          <td><strong>${escape(a.name || a.id || '?')}</strong></td>
+          <td><span class="tag ${cls}">${escape(a.status || '?')}</span></td>
+          <td class="mono">${escape((a.last_run || a.last_execution || '').slice(0, 16))}</td>
+          <td class="mono" style="font-size:11px;">${escape(a.cron || a.schedule || '—')}</td>
+          <td style="font-size:12px; color:var(--text-2);">${escape((a.description || a.purpose || '').slice(0, 80))}</td>
+        </tr>`;
+      }).join('')
+    }</tbody></table>` : '<div class="empty">Aucun agent enregistré</div>';
+
+  document.getElementById('agents-runs').innerHTML = runs.length ?
+    `<table><thead><tr><th>Agent</th><th>Statut</th><th>Démarré</th><th>Durée</th><th>Output</th></tr></thead><tbody>${
+      runs.slice(0, 25).map(r => {
+        const st = (r.status || '').toLowerCase();
+        const cls = ['ok', 'success', 'completed'].includes(st) ? 'green' : ['fail', 'error', 'failed'].includes(st) ? 'red' : 'warn';
+        return `<tr>
+          <td><strong>${escape(r.agent || r.name || '?')}</strong></td>
+          <td><span class="tag ${cls}">${escape(r.status || '?')}</span></td>
+          <td class="mono" style="font-size:11px;">${escape((r.started_at || r.timestamp || '').slice(0, 16))}</td>
+          <td class="mono num">${escape(r.duration_ms ? (r.duration_ms / 1000).toFixed(1) + 's' : (r.duration || '—'))}</td>
+          <td style="font-size:11px; color:var(--text-2);">${escape((r.output || r.message || r.summary || '').slice(0, 60))}</td>
+        </tr>`;
+      }).join('')
+    }</tbody></table>` : '<div class="empty">Aucun run récent</div>';
 }
-document.getElementById('refreshBtn').addEventListener('click',()=>{refreshAll();toast('Sync en cours…');});
 
-/* ───── INIT ───── */
-window.addEventListener('DOMContentLoaded',async()=>{
-  await loadOverview();
-  setLastUpdated();
-  setInterval(refreshAll,REFRESH_MS);
+function renderConversations() {
+  const d = state.data;
+  const msgs = d.bus?.broadcasts || d.bus?.messages || d.broadcasts || [];
+  document.getElementById('conv-bus').innerHTML = msgs.length ?
+    msgs.slice(0, 40).map(m => `<div style="padding:10px 12px; border-bottom:1px solid var(--border); font-size:12px;">
+      <div style="display:flex; gap:8px; align-items:baseline; margin-bottom:4px;">
+        <span class="tag muted">${escape(m.from || m.agent || '?')}</span>
+        ${m.to ? `<span style="color:var(--text-muted);">→ <span class="tag">${escape(m.to)}</span></span>` : ''}
+        ${m.type ? `<span class="tag ${m.type === 'alert' ? 'red' : m.type === 'success' ? 'green' : 'muted'}">${escape(m.type)}</span>` : ''}
+        <span style="margin-left:auto; font-family:var(--font-mono); font-size:10px; color:var(--text-muted);">${escape((m.timestamp || m.ts || '').slice(0, 16))}</span>
+      </div>
+      <div style="font-family:var(--font-serif); color:var(--text);">${escape(String(m.message || m.content || m.text || '').slice(0, 300))}</div>
+    </div>`).join('') : '<div class="empty">Aucune conversation sur le bus</div>';
+}
 
-  // GSAP intro animation
-  if(window.gsap){
-    gsap.from('.brand-mark',{y:-12,opacity:0,duration:.6,ease:'power3.out'});
-    gsap.from('.nav-item',{x:-12,opacity:0,duration:.4,stagger:.04,delay:.1,ease:'power2.out'});
-    gsap.from('.topbar-title',{y:14,opacity:0,duration:.7,ease:'power3.out'});
-    gsap.from('.kpi-card',{y:18,opacity:0,duration:.55,stagger:.06,delay:.15,ease:'power3.out'});
+function renderLogs() {
+  const d = state.data;
+  const bcs = d.broadcasts || [];
+  const llm = d.llmSpend || {};
+
+  const kpis = [
+    { label: 'Broadcasts', value: bcs.length, accent: 'pink' },
+    { label: 'LLM coût total', value: '$' + (typeof (llm.total_usd || llm.total) === 'number' ? (llm.total_usd || llm.total).toFixed(2) : '0.00'), accent: 'orange' },
+    { label: 'Tokens', value: fmt(llm.total_tokens || llm.tokens || '—') },
+    { label: 'Modèle top', value: llm.top_model || llm.most_used || '—' }
+  ];
+  document.getElementById('kpi-logs').innerHTML = kpis.map(k =>
+    `<div class="kpi ${k.accent ? 'accent-' + k.accent : ''}"><div class="kpi-label">${k.label}</div><div class="kpi-value" style="font-size:${typeof k.value === 'string' && k.value.length > 16 ? '14px' : '28px'};">${k.value}</div></div>`
+  ).join('');
+
+  document.getElementById('logs-broadcasts').innerHTML = bcs.length ?
+    bcs.slice(0, 30).map(b => {
+      const lvl = (b.level || b.severity || 'INFO').toUpperCase();
+      return `<div class="log-line">
+        <span class="ts">${escape((b.timestamp || b.ts || '').slice(11, 19))}</span>
+        <span class="lvl ${lvl}">${lvl}</span>
+        <span>${escape(String(b.message || b.content || JSON.stringify(b).slice(0, 200)).slice(0, 250))}</span>
+      </div>`;
+    }).join('') : '<div class="empty">Aucun broadcast</div>';
+
+  const models = llm.by_model || llm.models || {};
+  document.getElementById('logs-llm').innerHTML = Object.keys(models).length ?
+    `<table><thead><tr><th>Modèle</th><th>Calls</th><th>Tokens</th><th>$ USD</th></tr></thead><tbody>${
+      Object.entries(models).slice(0, 12).map(([m, v]) =>
+        `<tr><td><strong>${escape(m)}</strong></td><td class="num mono">${fmt(v.calls || v.count || 0)}</td><td class="num mono">${fmt(v.tokens || v.total_tokens || 0)}</td><td class="num mono">$${typeof (v.cost || v.usd) === 'number' ? (v.cost || v.usd).toFixed(3) : '0.000'}</td></tr>`
+      ).join('')
+    }</tbody></table>` :
+    `<div style="font-size:13px; color:var(--text-2); padding:8px;">
+      <div>Total : <strong>$${typeof (llm.total_usd || llm.total) === 'number' ? (llm.total_usd || llm.total).toFixed(2) : '0.00'}</strong></div>
+      <div>Tokens : <strong>${fmt(llm.total_tokens || 0)}</strong></div>
+    </div>`;
+}
+
+async function refreshLive() {
+  const paths = {
+    agentStatus: 'data/agent-status.json',
+    recentRuns: 'data/recent-runs.json',
+    broadcasts: 'data/broadcasts.json',
+    llmSpend: 'data/llm-spend.json',
+    igMetrics: 'data/ig-metrics.json',
+    bus: 'data/bus.json'
+  };
+  for (const [k, p] of Object.entries(paths)) {
+    const fresh = await loadJSON(p);
+    if (fresh) state.data[k] = fresh;
   }
+  document.getElementById('last-update').textContent = 'Maj : ' + new Date().toLocaleString('fr-FR', { hour: '2-digit', minute: '2-digit', day: '2-digit', month: '2-digit' });
+  renderDashboard(); renderAgents(); renderConversations(); renderLogs();
+}
 
-  // Lenis smooth scroll
-  if(window.__Lenis){
-    const lenis=new window.__Lenis({duration:1.1,easing:t=>Math.min(1,1.001-Math.pow(2,-10*t))});
-    function raf(time){lenis.raf(time);requestAnimationFrame(raf);}
-    requestAnimationFrame(raf);
-  }
-});
+loadAll().then(() => setInterval(refreshLive, 30000));
 </script>
 </body>
 </html>
