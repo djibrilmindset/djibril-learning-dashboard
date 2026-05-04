@@ -1,13 +1,13 @@
 {
   "_meta": {
-    "generated_at": "2026-05-04T10:35:51Z",
+    "generated_at": "2026-05-04T12:50:36Z",
     "window_hours": 24,
-    "total_calls": 20,
-    "total_cost_usd": 0.0079,
-    "models_count": 35,
-    "providers_count": 10,
+    "total_calls": 78,
+    "total_cost_usd": 0.1884,
+    "models_count": 40,
+    "providers_count": 11,
     "errors_count": 9,
-    "healthy_count": 31,
+    "healthy_count": 37,
     "error_count": 9
   },
   "by_model": [
@@ -209,13 +209,13 @@
     {
       "model": "minimax/MiniMax-M2.7",
       "provider": "minimax",
-      "calls": 2,
-      "successes": 1,
+      "calls": 25,
+      "successes": 24,
       "errors": 1,
-      "cost_usd": 0.0011,
-      "tokens_in": 500,
-      "tokens_out": 200,
-      "status": "degraded",
+      "cost_usd": 0.049656,
+      "tokens_in": 19008,
+      "tokens_out": 10216,
+      "status": "healthy",
       "price_in_per_1k": 0.001,
       "price_out_per_1k": 0.003
     },
@@ -454,6 +454,71 @@
       "price_out_per_1k": 0.005
     },
     {
+      "model": "moonshot-direct/kimi-k2.6",
+      "provider": "other",
+      "calls": 23,
+      "successes": 23,
+      "errors": 0,
+      "cost_usd": 0.071987,
+      "tokens_in": 20379,
+      "tokens_out": 12238,
+      "status": "healthy",
+      "price_in_per_1k": 0.0005,
+      "price_out_per_1k": 0.0015
+    },
+    {
+      "model": "zhipu-direct/glm-5.1",
+      "provider": "other",
+      "calls": 4,
+      "successes": 4,
+      "errors": 0,
+      "cost_usd": 0.020154,
+      "tokens_in": 5154,
+      "tokens_out": 5000,
+      "status": "healthy",
+      "price_in_per_1k": 0.0005,
+      "price_out_per_1k": 0.0015
+    },
+    {
+      "model": "comet/qwen-max-latest",
+      "provider": "comet",
+      "calls": 1,
+      "successes": 1,
+      "errors": 0,
+      "cost_usd": 0.004135,
+      "tokens_in": 2635,
+      "tokens_out": 500,
+      "status": "healthy",
+      "price_in_per_1k": 0.0005,
+      "price_out_per_1k": 0.0015
+    },
+    {
+      "model": "stepfun-direct/step-3.5-flash",
+      "provider": "other",
+      "calls": 4,
+      "successes": 4,
+      "errors": 0,
+      "cost_usd": 0.013933,
+      "tokens_in": 5314,
+      "tokens_out": 2873,
+      "status": "healthy",
+      "price_in_per_1k": 0.0005,
+      "price_out_per_1k": 0.0015
+    },
+    {
+      "model": "dashscope/qwen3.6-max-preview",
+      "provider": "other",
+      "calls": 3,
+      "successes": 3,
+      "errors": 0,
+      "cost_usd": 0.021737,
+      "tokens_in": 2681,
+      "tokens_out": 6352,
+      "status": "healthy",
+      "price_in_per_1k": 0.0005,
+      "price_out_per_1k": 0.0015
+    },
+    {
       "model": "aihubmix/qwen/qwen3-max",
       "provider": "aihubmix",
       "calls": 3,
@@ -469,7 +534,7 @@
   ],
   "errors": [
     {
-      "ts": "2026-05-04T10:35:51.720723+00:00",
+      "ts": "2026-05-04T12:50:36.178316+00:00",
       "model": "moonshotai/kimi-k2.6",
       "category": "api_error",
       "detail": "[Errno 54] Connection reset by peer",
@@ -477,7 +542,7 @@
       "source_log": "cron_djemaly_niche.out.log"
     },
     {
-      "ts": "2026-05-04T10:35:51.720723+00:00",
+      "ts": "2026-05-04T12:50:36.178316+00:00",
       "model": "aihubmix/qwen/qwen3-max",
       "category": "api_error",
       "detail": "[Errno 54] Connection reset by peer",
@@ -485,7 +550,7 @@
       "source_log": "cron_djemaly_niche.out.log"
     },
     {
-      "ts": "2026-05-04T10:35:51.720723+00:00",
+      "ts": "2026-05-04T12:50:36.178316+00:00",
       "model": "deepseek/deepseek-v4-pro",
       "category": "api_error",
       "detail": "The read operation timed out",
@@ -493,7 +558,7 @@
       "source_log": "cron_djemaly_niche.out.log"
     },
     {
-      "ts": "2026-05-04T10:35:51.720723+00:00",
+      "ts": "2026-05-04T12:50:36.178316+00:00",
       "model": "zhipu/glm-5.1",
       "category": "api_error",
       "detail": "The read operation timed out",
@@ -501,7 +566,7 @@
       "source_log": "cron_djemaly_niche.out.log"
     },
     {
-      "ts": "2026-05-04T10:35:51.720723+00:00",
+      "ts": "2026-05-04T12:50:36.178316+00:00",
       "model": "moonshotai/kimi-k2.6",
       "category": "api_error",
       "detail": "HTTP Error 400: Bad Request",
@@ -509,7 +574,7 @@
       "source_log": "cron_djemaly_niche.out.log"
     },
     {
-      "ts": "2026-05-04T10:35:51.720723+00:00",
+      "ts": "2026-05-04T12:50:36.178316+00:00",
       "model": "aihubmix/qwen/qwen3-max",
       "category": "api_error",
       "detail": "HTTP Error 400: Bad Request",
@@ -517,7 +582,7 @@
       "source_log": "cron_djemaly_niche.out.log"
     },
     {
-      "ts": "2026-05-04T10:35:51.720723+00:00",
+      "ts": "2026-05-04T12:50:36.178316+00:00",
       "model": "deepseek/deepseek-v4-pro",
       "category": "api_error",
       "detail": "HTTP Error 400: Bad Request",
@@ -525,7 +590,7 @@
       "source_log": "cron_djemaly_niche.out.log"
     },
     {
-      "ts": "2026-05-04T10:35:51.720723+00:00",
+      "ts": "2026-05-04T12:50:36.178316+00:00",
       "model": "zhipu/glm-5.1",
       "category": "api_error",
       "detail": "HTTP Error 400: Bad Request",
@@ -533,7 +598,7 @@
       "source_log": "cron_djemaly_niche.out.log"
     },
     {
-      "ts": "2026-05-04T10:35:51.720723+00:00",
+      "ts": "2026-05-04T12:50:36.178316+00:00",
       "model": "minimax/MiniMax-M2.7",
       "category": "api_error",
       "detail": "HTTP Error 400: Bad Request",
@@ -563,13 +628,14 @@
       ]
     },
     "comet": {
-      "calls": 0,
-      "cost_usd": 0.0,
+      "calls": 1,
+      "cost_usd": 0.0041,
       "models": [
         "comet/deepseek-r1",
         "comet/doubao-seed-2-0-pro",
         "comet/hunyuan-t1",
-        "comet/hunyuan-turbos"
+        "comet/hunyuan-turbos",
+        "comet/qwen-max-latest"
       ]
     },
     "deepseek": {
@@ -582,8 +648,8 @@
       ]
     },
     "minimax": {
-      "calls": 2,
-      "cost_usd": 0.0011,
+      "calls": 25,
+      "cost_usd": 0.0497,
       "models": [
         "minimax/MiniMax-M2.5",
         "minimax/MiniMax-M2.7",
@@ -606,6 +672,16 @@
       "cost_usd": 0.0,
       "models": [
         "openai/gpt-5-pro"
+      ]
+    },
+    "other": {
+      "calls": 34,
+      "cost_usd": 0.1278,
+      "models": [
+        "moonshot-direct/kimi-k2.6",
+        "zhipu-direct/glm-5.1",
+        "stepfun-direct/step-3.5-flash",
+        "dashscope/qwen3.6-max-preview"
       ]
     },
     "stepfun": {
