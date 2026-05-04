@@ -488,6 +488,36 @@
       </div>
     </section>
 
+    <section class="page" data-page="models">
+      <div class="page-head">
+        <div>
+          <h1 class="page-title">Classement Modèles</h1>
+          <div class="page-sub">Top 30 · intelligence · coût · fiabilité · agentic · ranking temps réel</div>
+        </div>
+      </div>
+      <div class="kpis" id="models-kpis"></div>
+      <div class="grid grid-2" style="margin-bottom:16px">
+        <div class="card"><div class="card-head"><div class="card-title">🏆 Top 15 — Score Global</div></div><div id="models-top"></div></div>
+        <div class="card"><div class="card-head"><div class="card-title">⚡ Meilleurs Agentic</div></div><div id="models-agentic"></div></div>
+      </div>
+      <div class="grid grid-2" style="margin-bottom:16px">
+        <div class="card"><div class="card-head"><div class="card-title">💰 Meilleur Rapport Qualité/Prix</div></div><div id="models-value"></div></div>
+        <div class="card"><div class="card-head"><div class="card-title">🔴 Modèles en Erreur</div></div><div id="models-errors"></div></div>
+      </div>
+    </section>
+
+    <section class="page" data-page="alerts">
+      <div class="page-head">
+        <div>
+          <h1 class="page-title">Alertes Live</h1>
+          <div class="page-sub">Console ops · broadcasts · patterns · severity tracking</div>
+        </div>
+      </div>
+      <div class="kpis" id="alerts-kpis"></div>
+      <div class="card"><div class="card-head"><div class="card-title">Dernières alertes (24h)</div><span class="card-sub">Auto-refresh</span></div><div id="alerts-feed"></div></div>
+      <div class="card" style="margin-top:16px"><div class="card-head"><div class="card-title">Top Patterns Récurrents</div></div><div id="alerts-patterns"></div></div>
+    </section>
+
     <section class="page" data-page="simulator">
       <div class="page-head">
         <div>
@@ -614,6 +644,8 @@ const NAV_ITEMS = [
   { id: 'shotlists',  label: 'Shot lists DJIBRIL', count: () => (STATE.djibrilPrompts?.length || 0) },
   { id: 'tokens',     label: 'Tokens',       count: () => '$' + (STATE.llmSpend?.total_cost_usd || 0).toFixed(2) },
   { id: 'basile',     label: 'Basile',        count: () => (STATE.runs?.filter(r => r.agent?.includes('BASILE')).length || 0) },
+  { id: 'models',     label: 'Modèles',      count: () => (STATE.llmSpend?.by_model?.filter(m=>m.status==='error').length||0)+'⚠' },
+  { id: 'alerts',     label: 'Alertes',       count: () => (STATE.broadcasts?.filter(b=>b.severity==='critical').length||0)+'!' },
   { id: 'simulator',  label: 'Simulateur',    count: () => '' },
 ];
 
@@ -1176,7 +1208,44 @@ function renderAgents() {
         }).join('')}
       </tbody>
     </table>
+    <h3 style="font-family:var(--font-display);font-size:18px;color:var(--ink);margin:24px 0 12px">Agents nommés · Rôles & Impact</h3>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:10px" id="named-agents-grid"></div>
   `;
+
+  // Named agents
+  var namedAgents = [
+    {name:'Djibril',role:'Coach · Stratégie contenu',model:'Claude Opus 4.7',color:'#e85d2c',icon:'🧠'},
+    {name:'Amelia',role:'Lead Scoring · Funnel',model:'Claude Sonnet 4.5',color:'#d4951a',icon:'🎯'},
+    {name:'Emalie',role:'Copywriting · Contenu',model:'GLM 5.1',color:'#6b3a4f',icon:'✍️'},
+    {name:'Aelys',role:'Scripts DJAELYS · Générateur',model:'Claude Opus 4.7',color:'#ff6bb0',icon:'📜'},
+    {name:'Maona',role:'Pattern Aggregator · Insights',model:'MiniMax M2.7',color:'#4aa9c4',icon:'🔍'},
+    {name:'Mariam',role:'Message Relay · Routing',model:'DeepSeek V4 Pro',color:'#b42837',icon:'📨'},
+    {name:'Adèle',role:'Dashboard · Infra Monitor',model:'DeepSeek V4 Pro',color:'#1d8a6f',icon:'📊'}
+  ];
+  var runs = STATE.runs || [];
+  setTimeout(function(){
+    var gridHtml = namedAgents.map(function(a){
+      var agentRuns = runs.filter(function(r){return (r.agent||'').toUpperCase().includes(a.name.toUpperCase());});
+      var ok = agentRuns.filter(function(r){return r.status==='ok';}).length;
+      var total = agentRuns.length;
+      var rate = total > 0 ? ((ok/total)*100).toFixed(0) : '—';
+      var last = agentRuns[0] ? relativeTime(agentRuns[0].started_at) : 'N/A';
+      return '<div class="card" style="border-left:4px solid '+a.color+'">'+
+        '<div style="display:flex;align-items:center;gap:10px;margin-bottom:6px">'+
+          '<span style="font-size:24px">'+a.icon+'</span>'+
+          '<div><div style="font-weight:700;font-size:14px">'+a.name+'</div><div style="font-size:11px;color:var(--muted)">'+a.role+'</div></div>'+
+        '</div>'+
+        '<div style="display:flex;gap:16px;font-size:12px;margin-top:8px">'+
+          '<div><span style="color:var(--muted)">Modèle</span><br><span class="mono" style="font-size:11px">'+a.model+'</span></div>'+
+          '<div><span style="color:var(--muted)">Runs 24h</span><br><span style="font-weight:700">'+total+'</span></div>'+
+          '<div><span style="color:var(--muted)">Succès</span><br><span style="font-weight:700;color:'+(rate>80?'var(--success)':rate>50?'var(--orange)':'var(--error)')+'">'+rate+(rate!=='—'?'%':'')+'</span></div>'+
+          '<div><span style="color:var(--muted)">Dernier</span><br><span style="font-size:11px">'+last+'</span></div>'+
+        '</div>'+
+      '</div>';
+    }).join('');
+    var grid = document.getElementById('named-agents-grid');
+    if(grid) grid.innerHTML = gridHtml;
+  }, 100);
 }
 
 function renderConvos() {
@@ -1271,6 +1340,8 @@ async function boot() {
   safeRender(renderShotlists,  'shotlists-list', 'Shotlists');
   safeRender(renderTokens,     'tokens-kpis',   'Tokens');
   safeRender(renderBasile,     'basile-kpis',   'Basile');
+  safeRender(renderModels,     'models-kpis',   'Models');
+  safeRender(renderAlerts,     'alerts-kpis',   'Alerts');
 
   const meta = STATE._raw_agentStatus?._meta || {};
   const ts = meta.generated_at || STATE.brief?.last_scrape || new Date().toISOString();
@@ -1592,6 +1663,133 @@ function renderBasile() {
           ).join('') +
         '</tbody>' +
       '</table>';
+  }
+}
+
+function renderModels() {
+  const llm = STATE.llmSpend || {};
+  const byModel = llm.by_model || [];
+  const meta = llm._meta || {};
+
+  // Score each model on multiple axes
+  const scored = byModel.map(m => {
+    const errors = m.errors || 0;
+    const calls = m.calls || 1;
+    const errorRate = errors / Math.max(calls, 1);
+    const successRate = 1 - errorRate;
+    // Agentic score: models used by more agents = more versatile
+    const agenticScore = m.agent_count ? Math.min(m.agent_count / 5, 1) : 0.5;
+    // Value score: low cost + high success
+    const avgCost = (m.price_in_per_1k || 0 + m.price_out_per_1k || 0) / 2;
+    const valueScore = avgCost > 0 ? successRate / (avgCost + 0.001) : successRate * 100;
+    // Global score
+    const globalScore = (successRate * 0.4 + agenticScore * 0.3 + Math.min(valueScore / 20, 1) * 0.3) * 100;
+    return { ...m, errorRate, successRate, agenticScore, valueScore, globalScore };
+  });
+
+  const top15 = [...scored].sort((a,b) => b.globalScore - a.globalScore).slice(0, 15);
+  const topAgentic = [...scored].sort((a,b) => b.agenticScore - a.agenticScore).slice(0, 10);
+  const topValue = [...scored].sort((a,b) => b.valueScore - a.valueScore).slice(0, 10);
+  const errorModels = scored.filter(m => m.status === 'error');
+  const healthyCount = scored.filter(m => m.status === 'healthy').length;
+
+  $('#models-kpis').innerHTML =
+    '<div class="kpi kpi-accent-cyan"><div class="kpi-label">Modèles actifs</div><div class="kpi-value">' + byModel.length + '</div><div class="kpi-sub">' + healthyCount + ' healthy / ' + errorModels.length + ' erreur</div></div>' +
+    '<div class="kpi kpi-accent-orange"><div class="kpi-label">Coût total 24h</div><div class="kpi-value mono">' + fmtMoney(llm.total_cost_usd || 0) + '</div></div>' +
+    '<div class="kpi"><div class="kpi-label">Providers</div><div class="kpi-value">' + (meta.providers_count || 0) + '</div></div>' +
+    '<div class="kpi kpi-accent-pink"><div class="kpi-label">Erreurs 24h</div><div class="kpi-value">' + (meta.errors_count || 0) + '</div></div>';
+
+  // Top 15 ranking
+  var ranks = ['🥇','🥈','🥉'];
+  $('#models-top').innerHTML = top15.map((m, i) =>
+    '<div class="bar-row" style="grid-template-columns:30px 180px 1fr 60px;">' +
+      '<div class="bar-label" style="font-weight:700;text-align:center">' + (ranks[i] || (i+1)) + '</div>' +
+      '<div class="bar-label">' + esc(m.model) + '<br><span style="font-size:10px;color:var(--muted)">' + esc(m.provider||'') + '</span></div>' +
+      '<div class="bar-track"><div class="bar-fill" style="width:' + m.globalScore.toFixed(1) + '%;background:linear-gradient(90deg,var(--cyan),var(--pink))"></div></div>' +
+      '<div class="bar-value" style="font-weight:700">' + m.globalScore.toFixed(0) + '</div>' +
+    '</div>'
+  ).join('') || emptyBox('Aucun modèle', 'by_model vide');
+
+  // Agentic ranking
+  $('#models-agentic').innerHTML = topAgentic.map(m =>
+    '<div class="bar-row" style="grid-template-columns:180px 1fr 60px;">' +
+      '<div class="bar-label">' + esc(m.model) + '</div>' +
+      '<div class="bar-track"><div class="bar-fill" style="width:' + (m.agenticScore * 100).toFixed(0) + '%;background:linear-gradient(90deg,var(--plum),var(--pink))"></div></div>' +
+      '<div class="bar-value">' + (m.successRate * 100).toFixed(0) + '%</div>' +
+    '</div>'
+  ).join('') || emptyBox('Pas de données agentic', '');
+
+  // Value ranking
+  $('#models-value').innerHTML = topValue.map(m =>
+    '<div class="bar-row" style="grid-template-columns:180px 1fr 80px;">' +
+      '<div class="bar-label">' + esc(m.model) + '</div>' +
+      '<div class="bar-track"><div class="bar-fill" style="width:' + Math.min(100, m.valueScore * 5) + '%;background:linear-gradient(90deg,var(--gold),var(--jade))"></div></div>' +
+      '<div class="bar-value mono">' + fmtMoney(m.price_in_per_1k || m.price_out_per_1k || 0) + '/k</div>' +
+    '</div>'
+  ).join('') || emptyBox('Pas assez de données prix', '');
+
+  // Error models
+  $('#models-errors').innerHTML = errorModels.length === 0 ?
+    emptyBox('✅ Aucune erreur', 'Tous les modèles sont healthy') :
+    errorModels.map(m =>
+      '<div class="list-item" style="border-left:3px solid var(--error)">' +
+        '<div class="list-item-head"><div class="list-item-title">' + esc(m.model) + '</div><span class="pill pill-error">' + m.errors + ' erreurs</span></div>' +
+        '<div class="list-item-meta"><span class="pill pill-muted">' + esc(m.provider) + '</span><span class="pill pill-muted">' + m.calls + ' calls</span></div>' +
+      '</div>'
+    ).join('');
+}
+
+function renderAlerts() {
+  const broadcasts = STATE.broadcasts || [];
+  const critical = broadcasts.filter(b => b.severity === 'critical');
+  const warns = broadcasts.filter(b => b.severity === 'warn');
+  const infos = broadcasts.filter(b => b.severity === 'info');
+
+  $('#alerts-kpis').innerHTML =
+    '<div class="kpi kpi-accent-pink"><div class="kpi-label">Critiques</div><div class="kpi-value">' + critical.length + '</div></div>' +
+    '<div class="kpi kpi-accent-orange"><div class="kpi-label">Warnings</div><div class="kpi-value">' + warns.length + '</div></div>' +
+    '<div class="kpi"><div class="kpi-label">Info</div><div class="kpi-value">' + infos.length + '</div></div>' +
+    '<div class="kpi kpi-accent-cyan"><div class="kpi-label">Agents actifs</div><div class="kpi-value">' + [...new Set(broadcasts.map(b => b.source_agent))].length + '</div></div>';
+
+  // Alert feed
+  if (broadcasts.length === 0) {
+    $('#alerts-feed').innerHTML = emptyBox('Aucune alerte 24h', 'Système stable ✓');
+  } else {
+    $('#alerts-feed').innerHTML = broadcasts.map(b => {
+      var sevClass = b.severity === 'critical' ? 'error' : b.severity === 'warn' ? 'orange' : 'cyan';
+      return '<div class="list-item" style="border-left:3px solid var(--' + sevClass + ')">' +
+        '<div class="list-item-head">' +
+          '<span class="pill pill-' + sevClass + '">' + esc(b.severity) + '</span>' +
+          '<div class="list-item-title">' + esc(b.topic) + '</div>' +
+          '<span class="card-sub">' + esc(b.source_agent) + '</span>' +
+        '</div>' +
+        '<div class="list-item-meta">' +
+          '<span class="card-sub">' + (b.created_at || '').slice(0, 19) + '</span>' +
+          (b.payload ? '<span class="pill pill-muted">' + esc(JSON.stringify(b.payload).slice(0, 80)) + '</span>' : '') +
+        '</div>' +
+      '</div>';
+    }).join('');
+  }
+
+  // Patterns
+  var patterns = {};
+  broadcasts.forEach(b => {
+    var key = b.topic || 'unknown';
+    patterns[key] = (patterns[key] || 0) + 1;
+  });
+  var topPatterns = Object.entries(patterns).sort((a,b) => b[1] - a[1]).slice(0, 8);
+
+  if (topPatterns.length === 0) {
+    $('#alerts-patterns').innerHTML = emptyBox('Pas assez de données', '');
+  } else {
+    var maxP = Math.max(...topPatterns.map(p => p[1]), 1);
+    $('#alerts-patterns').innerHTML = topPatterns.map(([name, count]) =>
+      '<div class="bar-row" style="grid-template-columns:200px 1fr 60px;">' +
+        '<div class="bar-label">' + esc(name) + '</div>' +
+        '<div class="bar-track"><div class="bar-fill" style="width:' + ((count / maxP) * 100).toFixed(1) + '%;background:' + (count > 5 ? 'var(--grad-blood)' : count > 2 ? 'linear-gradient(90deg,#f59e0b,#e85d2c)' : 'linear-gradient(90deg,var(--cyan),var(--plum))') + '"></div></div>' +
+        '<div class="bar-value" style="font-weight:700">×' + count + '</div>' +
+      '</div>'
+    ).join('');
   }
 }
 
