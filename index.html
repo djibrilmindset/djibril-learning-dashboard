@@ -432,6 +432,62 @@
       <div id="shotlists-list"></div>
     </section>
 
+    <section class="page" data-page="tokens">
+      <div class="page-head">
+        <div>
+          <h1 class="page-title">Token Economy</h1>
+          <div class="page-sub">Coûts réels par API/LLM · cumul · projections · optimisation</div>
+        </div>
+      </div>
+      <div class="kpis" id="tokens-kpis"></div>
+      <div class="card" style="margin-bottom: 16px;">
+        <div class="card-head"><div class="card-title">Distribution par provider</div><span class="card-sub">Agrégation temps réel</span></div>
+        <div id="tokens-providers"></div>
+      </div>
+      <div class="grid grid-2" style="margin-bottom: 16px;">
+        <div class="card">
+          <div class="card-head"><div class="card-title">Top modèles par coût</div><span class="card-sub">24h</span></div>
+          <div id="tokens-models-cost"></div>
+        </div>
+        <div class="card">
+          <div class="card-head"><div class="card-title">Modèles en erreur</div><span class="card-sub">À corriger</span></div>
+          <div id="tokens-errors"></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-head"><div class="card-title">Projection mensuelle</div><span class="card-sub">Basé sur tendance 24h</span></div>
+        <div id="tokens-projection"></div>
+      </div>
+    </section>
+
+    <section class="page" data-page="basile">
+      <div class="page-head">
+        <div>
+          <h1 class="page-title">Basile Tracker</h1>
+          <div class="page-sub">Erreurs · patterns · opportunités d'amélioration</div>
+        </div>
+      </div>
+      <div class="kpis" id="basile-kpis"></div>
+      <div class="grid grid-2" style="margin-bottom: 16px;">
+        <div class="card">
+          <div class="card-head"><div class="card-title">Dernières erreurs</div><span class="card-sub">Priorité critique</span></div>
+          <div id="basile-errors"></div>
+        </div>
+        <div class="card">
+          <div class="card-head"><div class="card-title">Patterns positifs</div><span class="card-sub">À amplifier</span></div>
+          <div id="basile-positive"></div>
+        </div>
+      </div>
+      <div class="card" style="margin-bottom: 16px;">
+        <div class="card-head"><div class="card-title">Opportunités d'amélioration</div><span class="card-sub">Actions concrètes</span></div>
+        <div id="basile-opportunities"></div>
+      </div>
+      <div class="card">
+        <div class="card-head"><div class="card-title">Activity log 24h</div><span class="card-sub">Runs Basile</span></div>
+        <div id="basile-activity"></div>
+      </div>
+    </section>
+
     <section class="page" data-page="simulator">
       <div class="page-head">
         <div>
@@ -556,6 +612,8 @@ const NAV_ITEMS = [
   { id: 'logs',       label: 'Logs & LLM',    count: () => (STATE.llmSpend?.by_model?.length || 0) },
   { id: 'scripts',    label: 'Scripts DJAELYS', count: () => (STATE.djaelysScripts?.length || 0) },
   { id: 'shotlists',  label: 'Shot lists DJIBRIL', count: () => (STATE.djibrilPrompts?.length || 0) },
+  { id: 'tokens',     label: 'Tokens',       count: () => '$' + (STATE.llmSpend?.total_cost_usd || 0).toFixed(2) },
+  { id: 'basile',     label: 'Basile',        count: () => (STATE.runs?.filter(r => r.agent?.includes('BASILE')).length || 0) },
   { id: 'simulator',  label: 'Simulateur',    count: () => '' },
 ];
 
@@ -1211,6 +1269,8 @@ async function boot() {
   safeRender(renderLogs,       'logs-models',   'Logs');
   safeRender(renderScripts,    'scripts-list',  'Scripts');
   safeRender(renderShotlists,  'shotlists-list', 'Shotlists');
+  safeRender(renderTokens,     'tokens-kpis',   'Tokens');
+  safeRender(renderBasile,     'basile-kpis',   'Basile');
 
   const meta = STATE._raw_agentStatus?._meta || {};
   const ts = meta.generated_at || STATE.brief?.last_scrape || new Date().toISOString();
@@ -1283,6 +1343,256 @@ function renderShotlists() {
       </details>
     </div>`;
   }).join('');
+}
+
+function renderTokens() {
+  const llm = STATE.llmSpend || {};
+  const byModel = llm.by_model || [];
+  const total = llm.total_cost_usd || 0;
+  const calls = llm.total_calls || 0;
+  const meta = llm._meta || {};
+
+  // Aggregate by provider
+  const byProvider = {};
+  byModel.forEach(m => {
+    const p = m.provider || 'unknown';
+    if (!byProvider[p]) byProvider[p] = { cost_usd: 0, calls: 0, errors: 0, success: 0, models: 0 };
+    byProvider[p].cost_usd += (m.cost_usd || 0);
+    byProvider[p].calls += (m.calls || 0);
+    byProvider[p].errors += (m.errors || 0);
+    byProvider[p].success += (m.successes || 0);
+    byProvider[p].models += 1;
+  });
+  const provList = Object.entries(byProvider).sort((a,b) => b[1].cost_usd - a[1].cost_usd);
+
+  // KPI
+  const dailyCost = total;
+  const monthlyEstimate = dailyCost * 30;
+  const errorModels = byModel.filter(m => m.status === 'error').length;
+  const healthyModels = byModel.filter(m => m.status === 'healthy').length;
+
+  $('#tokens-kpis').innerHTML = 
+    '<div class="kpi kpi-accent-orange"><div class="kpi-label">Coût 24h</div><div class="kpi-value mono">' + fmtMoney(dailyCost) + '</div></div>' +
+    '<div class="kpi kpi-accent-pink"><div class="kpi-label">Projection /mois</div><div class="kpi-value mono">' + fmtMoney(monthlyEstimate) + '</div></div>' +
+    '<div class="kpi"><div class="kpi-label">Providers actifs</div><div class="kpi-value">' + provList.length + '</div></div>' +
+    '<div class="kpi"><div class="kpi-label">Modèles</div><div class="kpi-value">' + byModel.length + ' (' + healthyModels + ' ok/' + errorModels + ' err)</div></div>' +
+    '<div class="kpi kpi-accent-cyan"><div class="kpi-label">Tokens in/out</div><div class="kpi-value mono" style="font-size:16px;">' + fmtNum(meta.tokens_in || 0) + ' / ' + fmtNum(meta.tokens_out || 0) + '</div></div>';
+
+  // Provider bars
+  if (provList.length === 0) {
+    $('#tokens-providers').innerHTML = emptyBox('Aucune donnée', 'llm-spend.json vide');
+  } else {
+    const maxProv = Math.max(...provList.map(p => p[1].cost_usd), 0.0001);
+    $('#tokens-providers').innerHTML = provList.map(([name, d]) =>
+      '<div class="bar-row" style="grid-template-columns: 160px 1fr 100px 80px 80px;">' +
+        '<div class="bar-label" style="font-weight:600;">' + esc(name) + '</div>' +
+        '<div class="bar-track"><div class="bar-fill" style="width:' + ((d.cost_usd / maxProv) * 100).toFixed(1) + '%"></div></div>' +
+        '<div class="bar-value">' + d.models + ' modèles</div>' +
+        '<div class="bar-value">' + d.calls + ' calls</div>' +
+        '<div class="bar-value" style="color:' + (d.errors > 0 ? 'var(--error)' : 'var(--success)') + '">' + d.errors + ' err</div>' +
+      '</div>'
+    ).join('');
+  }
+
+  // Top models by cost
+  const topModels = [...byModel].sort((a,b) => (b.cost_usd||0) - (a.cost_usd||0)).slice(0, 12);
+  if (topModels.length === 0) {
+    $('#tokens-models-cost').innerHTML = emptyBox('Aucun modèle', 'by_model vide');
+  } else {
+    const maxCost = Math.max(...topModels.map(m => m.cost_usd || 0), 0.0001);
+    $('#tokens-models-cost').innerHTML = topModels.map(m =>
+      '<div class="bar-row" style="grid-template-columns: 180px 1fr 80px;">' +
+        '<div class="bar-label">' + esc(m.model) + '</div>' +
+        '<div class="bar-track"><div class="bar-fill" style="width:' + ((m.cost_usd / maxCost) * 100).toFixed(1) + '%; background: linear-gradient(90deg, var(--' + (m.status === 'error' ? 'error' : 'cyan') + '), var(--' + (m.status === 'error' ? 'orange' : 'pink') + '));"></div></div>' +
+        '<div class="bar-value">' + fmtMoney(m.cost_usd) + '</div>' +
+      '</div>'
+    ).join('');
+  }
+
+  // Error models
+  const errModels = byModel.filter(m => m.status === 'error');
+  if (errModels.length === 0) {
+    $('#tokens-errors').innerHTML = emptyBox('Aucune erreur', 'Tous les modèles sont healthy ✓');
+  } else {
+    $('#tokens-errors').innerHTML = errModels.map(m =>
+      '<div class="list-item" style="border-left: 3px solid var(--error);">' +
+        '<div class="list-item-head">' +
+          '<div class="list-item-title">' + esc(m.model) + '</div>' +
+          '<span class="pill pill-error">' + m.errors + ' erreurs</span>' +
+        '</div>' +
+        '<div class="list-item-meta">' +
+          '<span class="pill pill-muted">' + esc(m.provider) + '</span>' +
+          '<span class="pill pill-muted">' + m.calls + ' calls</span>' +
+          '<span class="card-sub">Prix: ' + fmtMoney(m.price_in_per_1k || 0) + '/' + fmtMoney(m.price_out_per_1k || 0) + ' par 1k tokens</span>' +
+        '</div>' +
+      '</div>'
+    ).join('');
+  }
+
+  // Projection
+  const monthlyProj = dailyCost * 30;
+  const yearlyProj = dailyCost * 365;
+  const topProvider = provList[0];
+  $('#tokens-projection').innerHTML = 
+    '<div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px;">' +
+      '<div style="background: linear-gradient(135deg, #fff8f0, #fff0f6); border-radius: 8px; padding: 20px; text-align: center;">' +
+        '<div style="font-family:\'Bricolage Grotesque\',serif; font-size: 28px; font-weight: 700; color: var(--orange);">' + fmtMoney(monthlyProj) + '</div>' +
+        '<div style="font-size: 11px; color: var(--muted); margin-top: 4px;">ESTIMATION MENSUELLE</div>' +
+      '</div>' +
+      '<div style="background: linear-gradient(135deg, #f0f9ff, #f0fff4); border-radius: 8px; padding: 20px; text-align: center;">' +
+        '<div style="font-family:\'Bricolage Grotesque\',serif; font-size: 28px; font-weight: 700; color: var(--cyan);">' + fmtMoney(yearlyProj) + '</div>' +
+        '<div style="font-size: 11px; color: var(--muted); margin-top: 4px;">ESTIMATION ANNUELLE</div>' +
+      '</div>' +
+      '<div style="background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 20px; text-align: center;">' +
+        '<div style="font-family:\'Bricolage Grotesque\',serif; font-size: 18px; font-weight: 700; color: var(--text);">' + (topProvider ? esc(topProvider[0]) : '—') + '</div>' +
+        '<div style="font-size: 11px; color: var(--muted); margin-top: 4px;">PROVIDER LE PLUS CHER</div>' +
+        '<div style="font-size: 13px; color: var(--orange); margin-top: 4px;">' + (topProvider ? fmtMoney(topProvider[1].cost_usd) + '/24h' : '—') + '</div>' +
+      '</div>' +
+      '<div style="background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 20px; text-align: center;">' +
+        '<div style="font-family:\'Bricolage Grotesque\',serif; font-size: 18px; font-weight: 700; color: var(--text);">' + fmtNum(meta.cost_ratio_source?.tokens_in || 0) + ' / ' + fmtNum(meta.cost_ratio_source?.tokens_out || 0) + '</div>' +
+        '<div style="font-size: 11px; color: var(--muted); margin-top: 4px;">TOKENS IN/OUT 24H</div>' +
+        '<div style="font-size: 13px; color: var(--cyan); margin-top: 4px;">Ratio: ' + (meta.cost_ratio_source?.tokens_out ? ((meta.cost_ratio_source.tokens_in / meta.cost_ratio_source.tokens_out) || 0).toFixed(1) + ':1' : '—') + '</div>' +
+      '</div>' +
+    '</div>';
+}
+
+function renderBasile() {
+  const runs = STATE.runs || [];
+  const basileRuns = runs.filter(r => r.agent?.toUpperCase().includes('BASILE'));
+  const agents = STATE.agentStatus || [];
+  const basileAgent = agents.find(a => a.agent?.toUpperCase().includes('BASILE'));
+  const broadcasts = STATE.broadcasts || [];
+  const basileBroadcasts = broadcasts.filter(b => 
+    (b.source_agent || '').toUpperCase().includes('BASILE') || 
+    (b.topic || '').toUpperCase().includes('BASILE')
+  );
+
+  // KPI
+  const totalRuns = basileRuns.length;
+  const okRuns = basileRuns.filter(r => r.status === 'ok').length;
+  const failedRuns = basileRuns.filter(r => r.status === 'failed').length;
+  const runningRuns = basileRuns.filter(r => r.status === 'running').length;
+  const successRate = totalRuns > 0 ? ((okRuns / totalRuns) * 100).toFixed(0) : 0;
+  const lastRun = basileRuns[0];
+  const agentStats = basileAgent || { total: 0, ok: 0, failed: 0 };
+
+  $('#basile-kpis').innerHTML = 
+    '<div class="kpi"><div class="kpi-label">Runs 24h</div><div class="kpi-value">' + totalRuns + '</div><div class="kpi-sub">' + okRuns + ' ok / ' + failedRuns + ' fail / ' + runningRuns + ' run</div></div>' +
+    '<div class="kpi ' + (successRate >= 90 ? 'kpi-accent-cyan' : successRate >= 50 ? '' : 'kpi-accent-pink') + '"><div class="kpi-label">Success rate</div><div class="kpi-value">' + successRate + '%</div></div>' +
+    '<div class="kpi"><div class="kpi-label">Agent status</div><div class="kpi-value mono" style="font-size: 16px;">' + (agentStats.total > 0 ? agentStats.ok + '/' + agentStats.total + ' ok' : 'N/A') + '</div><div class="kpi-sub">' + (lastRun ? relativeTime(lastRun.started_at) : 'aucun run') + '</div></div>' +
+    '<div class="kpi"><div class="kpi-label">Broadcasts</div><div class="kpi-value">' + basileBroadcasts.length + '</div></div>';
+
+  // Errors
+  const errors = basileRuns.filter(r => r.status === 'failed' || r.status === 'error');
+  if (errors.length === 0) {
+    $('#basile-errors').innerHTML = emptyBox('Aucune erreur récente', 'Basile tourne sans erreur ✓');
+  } else {
+    $('#basile-errors').innerHTML = errors.slice(0, 10).map(r =>
+      '<div class="list-item" style="border-left: 3px solid var(--error);">' +
+        '<div class="list-item-head">' +
+          '<div class="list-item-title" style="font-family:\'JetBrains Mono\',monospace; font-size: 12px;">' + esc(r.agent) + '</div>' +
+          '<span class="pill pill-error">' + esc(r.status) + '</span>' +
+        '</div>' +
+        '<div class="list-item-meta">' +
+          '<span class="card-sub">' + fmtDate(r.started_at) + '</span>' +
+          (r.metrics ? '<span class="pill pill-muted">' + esc(JSON.stringify(r.metrics)) + '</span>' : '') +
+          (r.deliverable_path ? '<span class="pill pill-muted">' + esc(r.deliverable_path) + '</span>' : '') +
+        '</div>' +
+      '</div>'
+    ).join('');
+  }
+
+  // Positive patterns - runs that succeeded with metrics
+  const positive = basileRuns.filter(r => r.status === 'ok' && r.metrics);
+  if (positive.length === 0) {
+    $('#basile-positive').innerHTML = emptyBox('Pas assez de données', 'En attente de runs avec métriques');
+  } else {
+    $('#basile-positive').innerHTML = 
+      '<div style="font-size: 13px; color: var(--text-2); margin-bottom: 12px;">Patterns détectés dans ' + positive.length + ' runs réussis :</div>' +
+      positive.slice(0, 8).map(r => {
+        const metricsStr = typeof r.metrics === 'object' ? JSON.stringify(r.metrics) : String(r.metrics || '');
+        return '<div class="list-item" style="border-left: 3px solid var(--success);">' +
+          '<div class="list-item-head">' +
+            '<div class="list-item-title" style="font-size: 13px;">' + fmtDate(r.started_at) + '</div>' +
+            '<span class="pill pill-ok">succès</span>' +
+          '</div>' +
+          '<div class="list-item-text" style="font-family:\'JetBrains Mono\',monospace; font-size: 11px;">' + esc(metricsStr) + '</div>' +
+        '</div>';
+      }).join('');
+  }
+
+  // Opportunities
+  const insights = STATE.insights || [];
+  const relevantInsights = insights.filter(i => 
+    (i.title || '').toUpperCase().includes('BASILE') || 
+    (i.detail || '').toUpperCase().includes('BASILE') ||
+    (i.type || '').toUpperCase().includes('AGENT')
+  );
+
+  if (relevantInsights.length === 0 && basileRuns.length === 0) {
+    $('#basile-opportunities').innerHTML = 
+      '<div style="padding: 24px; text-align: center;">' +
+        '<div style="font-family:\'Bricolage Grotesque\',serif; font-size: 18px; margin-bottom: 8px;">Suggestions d\'amélioration</div>' +
+        '<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; margin-top: 16px;">' +
+          '<div class="card" style="background: #fef7f7; border-left: 4px solid var(--pink);">' +
+            '<div style="font-weight: 600; margin-bottom: 6px;">🔍 Monitorer les erreurs</div>' +
+            '<div style="font-size: 13px; color: var(--text-2);">Activer le tracking d\'erreurs par type (API timeout, rate limit, parsing) pour identifier les patterns récurrents.</div>' +
+          '</div>' +
+          '<div class="card" style="background: #f7fef7; border-left: 4px solid var(--success);">' +
+            '<div style="font-weight: 600; margin-bottom: 6px;">📊 Métriques de succès</div>' +
+            '<div style="font-size: 13px; color: var(--text-2);">Tracker le taux de conversion des conversations Basile → call booked pour mesurer l\'impact réel.</div>' +
+          '</div>' +
+          '<div class="card" style="background: #f7f9fe; border-left: 4px solid var(--cyan);">' +
+            '<div style="font-weight: 600; margin-bottom: 6px;">🔄 Auto-correction</div>' +
+            '<div style="font-size: 13px; color: var(--text-2);">Implémenter un mécanisme où Basile détecte ses propres erreurs et ajuste son comportement en temps réel.</div>' +
+          '</div>' +
+          '<div class="card" style="background: #fef9f7; border-left: 4px solid var(--orange);">' +
+            '<div style="font-weight: 600; margin-bottom: 6px;">📈 Coût par conversation</div>' +
+            '<div style="font-size: 13px; color: var(--text-2);">Calculer le coût LLM par conversation Basile pour optimiser le choix du modèle selon le contexte.</div>' +
+          '</div>' +
+          '<div class="card" style="background: #f7f7fe; border-left: 4px solid #a855f7;">' +
+            '<div style="font-weight: 600; margin-bottom: 6px;">🎯 Pattern matching</div>' +
+            '<div style="font-size: 13px; color: var(--text-2);">Identifier les patterns de conversation qui mènent à un call → les reproduire systématiquement.</div>' +
+          '</div>' +
+          '<div class="card" style="background: #fefce8; border-left: 4px solid #eab308;">' +
+            '<div style="font-weight: 600; margin-bottom: 6px;">⏱️ Latence tracking</div>' +
+            '<div style="font-size: 13px; color: var(--text-2);">Mesurer le temps de réponse moyen et identifier les modèles/contextes qui ralentissent Basile.</div>' +
+          '</div>' +
+        '</div>' +
+      '</div>';
+  } else {
+    $('#basile-opportunities').innerHTML = relevantInsights.slice(0, 6).map(i =>
+      '<div class="list-item" style="border-left: 3px solid var(--orange);">' +
+        '<div class="list-item-head">' +
+          '<div class="list-item-title">' + esc(i.title || 'Insight') + '</div>' +
+          (i.type ? '<span class="pill pill-pink">' + esc(i.type) + '</span>' : '') +
+        '</div>' +
+        (i.detail ? '<div class="list-item-text">' + esc(i.detail) + '</div>' : '') +
+      '</div>'
+    ).join('') || emptyBox('Données insuffisantes', '');
+  }
+
+  // Activity log
+  if (basileRuns.length === 0) {
+    $('#basile-activity').innerHTML = emptyBox('Aucune activité Basile 24h', 'Pas de runs détectés');
+  } else {
+    $('#basile-activity').innerHTML = 
+      '<table>' +
+        '<thead><tr><th>Heure</th><th>Agent</th><th>Status</th><th>Métriques</th></tr></thead>' +
+        '<tbody>' +
+          basileRuns.slice(0, 20).map(r =>
+            '<tr>' +
+              '<td class="mono">' + fmtDate(r.started_at) + '</td>' +
+              '<td style="font-weight: 600;">' + esc(r.agent) + '</td>' +
+              '<td>' + statusPill(r.status) + '</td>' +
+              '<td class="mono" style="max-width: 300px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--text-2);">' + 
+                (r.metrics ? esc(JSON.stringify(r.metrics).slice(0, 80)) : '—') + 
+              '</td>' +
+            '</tr>'
+          ).join('') +
+        '</tbody>' +
+      '</table>';
+  }
 }
 
 document.addEventListener('DOMContentLoaded', boot);
