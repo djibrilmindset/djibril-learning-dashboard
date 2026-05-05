@@ -1,10 +1,1 @@
-{
-  "_meta": {
-    "generated_at": "2026-05-03T20:16:06Z",
-    "generated_by": "run_dashboard_refresh.sh",
-    "cadence": "1h"
-  },
-  "agents_24h": [{"agent":"ARCHITECTURE_VALIDATOR","total":3,"ok":3,"failed":0,"running":0,"last_run":"2026-05-03T20:12:15.110784+00:00","last_status":"ok"},{"agent":"BASILE_FOLLOWUP","total":2,"ok":2,"failed":0,"running":0,"last_run":"2026-05-03T19:53:26.073606+00:00","last_status":"ok"},{"agent":"CLEANUP_ORPHANS","total":5,"ok":5,"failed":0,"running":0,"last_run":"2026-05-03T20:14:09.450689+00:00","last_status":"ok"},{"agent":"DASHBOARD_REFRESH","total":1,"ok":0,"failed":0,"running":1,"last_run":"2026-05-03T20:16:06.746478+00:00","last_status":"running"},{"agent":"MAONA_PATTERN_AGGREGATOR","total":1,"ok":1,"failed":0,"running":0,"last_run":"2026-05-03T19:26:51.658872+00:00","last_status":"ok"},{"agent":"MARIAM","total":33,"ok":33,"failed":0,"running":0,"last_run":"2026-05-03T20:14:39.882856+00:00","last_status":"ok"},{"agent":"META_ORCHESTRATOR","total":1,"ok":1,"failed":0,"running":0,"last_run":"2026-05-03T19:15:05.165218+00:00","last_status":"ok"},{"agent":"NOTIFY_USER","total":3,"ok":3,"failed":0,"running":0,"last_run":"2026-05-03T20:08:44.603591+00:00","last_status":"ok"},{"agent":"NURTURE_RELANCE","total":1,"ok":1,"failed":0,"running":0,"last_run":"2026-05-03T19:54:37.350603+00:00","last_status":"ok"}],
-  "lead_tier_distribution": [{"tier":"closer","users":2,"messages":29,"last_msg":"2026-04-28T13:34:32.553218+00:00"},{"tier":"cold","users":125,"messages":328,"last_msg":"2026-05-02T17:33:29.469419+00:00"},{"tier":"hot","users":3,"messages":18,"last_msg":"2026-05-01T13:31:41.223484+00:00"},{"tier":"vsl_seen","users":2,"messages":7,"last_msg":"2026-04-26T21:51:11.247327+00:00"},{"tier":"warm","users":15,"messages":81,"last_msg":"2026-05-01T11:43:20.148059+00:00"},{"tier":"unscored","users":30,"messages":97,"last_msg":"2026-05-03T20:00:06.720669+00:00"}],
-  "kpi_nord": {"engaged_3plus":52,"link_sent":0,"engaged_with_link":0,"pct_engaged_with_link":0.00}}
-}
+{"message":"Invalid API key","hint":"Double check your Supabase `anon` or `service_role` API key."}
