@@ -1,1 +1,15 @@
-{"generated": "2026-05-05T21:00:36.011371Z", "summary": "Infrastructure nominale. Agents actifs, proxy St\u00e9phane en ligne, Bright Data connect\u00e9. Dashboard ADELLE v3.0 op\u00e9rationnel.", "key_metrics": {"agents_total": 24, "providers_online": 15, "network_count": 10}}
+{
+  "generated": "2026-05-05T21:06:00.248345Z",
+  "summary": "Infrastructure nominale. 100 agents (34 healthy, 66 dead). 0 appels LLM 24h ($0.0000). 20 runs recents (20 ok). Bright Data: cache veille actif.",
+  "key_metrics": {
+    "agents_total": 100,
+    "agents_healthy": 34,
+    "agents_dead": 66,
+    "providers_online": 15,
+    "network_count": 10,
+    "llm_calls_24h": 0,
+    "llm_cost_24h": 0,
+    "recent_runs": 20,
+    "runs_ok": 20
+  }
+}
