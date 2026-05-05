@@ -1,0 +1,29 @@
+{
+  "generated": "2026-05-05T18:05:32.712626Z",
+  "period": "24h",
+  "models": [
+    {
+      "model": "deepseek-v4-pro",
+      "calls": 4,
+      "tokens_in": 6000,
+      "tokens_out": 2000,
+      "cost_usd": 0.072
+    },
+    {
+      "model": "moonshotai/kimi-k2.6",
+      "calls": 1,
+      "tokens_in": 4000,
+      "tokens_out": 2000,
+      "cost_usd": 0.012
+    },
+    {
+      "model": "deepseek/deepseek-v4-pro",
+      "calls": 1,
+      "tokens_in": 3000,
+      "tokens_out": 800,
+      "cost_usd": 0.002
+    }
+  ],
+  "total_calls": 6,
+  "total_cost_usd": 0.086
+}
