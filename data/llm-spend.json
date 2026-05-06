@@ -1,12 +1,12 @@
 {
   "_meta": {
-    "generated_at": "2026-05-06T14:00:36Z",
+    "generated_at": "2026-05-06T15:01:01Z",
     "window_hours": 24,
     "total_calls": 7,
     "total_cost_usd": 0.0896,
     "models_count": 37,
     "providers_count": 10,
-    "errors_count": 261,
+    "errors_count": 279,
     "healthy_count": 34,
     "error_count": 3,
     "cost_ratio_source": {
@@ -22,9 +22,9 @@
     {
       "model": "deepseek/deepseek-v4-pro",
       "provider": "deepseek",
-      "calls": 189,
+      "calls": 188,
       "successes": 0,
-      "errors": 192,
+      "errors": 214,
       "cost_usd": 0.002422,
       "tokens_in": 372,
       "tokens_out": 135,
@@ -63,7 +63,7 @@
       "provider": "moonshotai",
       "calls": 1,
       "successes": 0,
-      "errors": 5,
+      "errors": 3,
       "cost_usd": 0.002422,
       "tokens_in": 372,
       "tokens_out": 135,
@@ -347,9 +347,9 @@
     {
       "model": "comet/doubao-seed-2-0-pro",
       "provider": "comet",
-      "calls": 2,
+      "calls": 1,
       "successes": 1,
-      "errors": 1,
+      "errors": 0,
       "cost_usd": 0.002422,
       "tokens_in": 372,
       "tokens_out": 135,
@@ -503,149 +503,149 @@
   ],
   "errors": [
     {
-      "ts": "2026-05-06T10:23:02",
-      "model": "moonshot_direct/moonshot/kimi-k2.6",
-      "category": "empty_response",
-      "detail": "Moonshot: ",
-      "task_type": "chinese"
-    },
-    {
-      "ts": "2026-05-06T10:23:03",
-      "model": "deepseek_direct/deepseek/deepseek-v4-pro",
-      "category": "fail_in_chain",
-      "detail": "Fallback moonshot/kimi-k2.6 also failed",
-      "task_type": "chinese"
-    },
-    {
-      "ts": "2026-05-06T10:25:00",
-      "model": "moonshot_direct/moonshot/kimi-k2.6",
-      "category": "empty_response",
-      "detail": "Moonshot: ",
-      "task_type": "chinese"
-    },
-    {
-      "ts": "2026-05-06T10:25:00",
-      "model": "moonshot_direct/moonshot/kimi-k2.6",
-      "category": "empty_response",
-      "detail": "Moonshot: ",
-      "task_type": "chinese"
-    },
-    {
-      "ts": "2026-05-06T10:25:00",
-      "model": "moonshot_direct/moonshot/kimi-k2.6",
-      "category": "empty_response",
-      "detail": "Moonshot: ",
-      "task_type": "chinese"
-    },
-    {
-      "ts": "2026-05-06T10:25:01",
-      "model": "deepseek_direct/deepseek/deepseek-v4-pro",
-      "category": "fail_in_chain",
-      "detail": "Fallback moonshot/kimi-k2.6 also failed",
-      "task_type": "chinese"
-    },
-    {
-      "ts": "2026-05-06T10:25:01",
-      "model": "deepseek_direct/deepseek/deepseek-v4-pro",
-      "category": "fail_in_chain",
-      "detail": "Fallback moonshot/kimi-k2.6 also failed",
-      "task_type": "chinese"
-    },
-    {
-      "ts": "2026-05-06T10:25:01",
-      "model": "deepseek_direct/deepseek/deepseek-v4-pro",
-      "category": "fail_in_chain",
-      "detail": "Fallback moonshot/kimi-k2.6 also failed",
-      "task_type": "chinese"
-    },
-    {
-      "ts": "2026-05-06T10:25:20",
-      "model": "moonshot_direct/moonshot/kimi-k2.6",
-      "category": "empty_response",
-      "detail": "Moonshot: ",
-      "task_type": "chinese"
-    },
-    {
-      "ts": "2026-05-06T10:25:20",
-      "model": "moonshot_direct/moonshot/kimi-k2.6",
-      "category": "empty_response",
-      "detail": "Moonshot: ",
-      "task_type": "chinese"
-    },
-    {
-      "ts": "2026-05-06T10:25:21",
-      "model": "deepseek_direct/deepseek/deepseek-v4-pro",
-      "category": "fail_in_chain",
-      "detail": "Fallback moonshot/kimi-k2.6 also failed",
-      "task_type": "chinese"
-    },
-    {
-      "ts": "2026-05-06T10:25:21",
-      "model": "deepseek_direct/deepseek/deepseek-v4-pro",
-      "category": "fail_in_chain",
-      "detail": "Fallback moonshot/kimi-k2.6 also failed",
-      "task_type": "chinese"
-    },
-    {
-      "ts": "2026-05-06T10:25:25",
-      "model": "moonshot_direct/moonshot/kimi-k2.6",
-      "category": "empty_response",
-      "detail": "Moonshot: ",
-      "task_type": "chinese"
-    },
-    {
-      "ts": "2026-05-06T10:25:26",
-      "model": "deepseek_direct/deepseek/deepseek-v4-pro",
-      "category": "fail_in_chain",
-      "detail": "Fallback moonshot/kimi-k2.6 also failed",
-      "task_type": "chinese"
-    },
-    {
-      "ts": "2026-05-06T10:25:50",
-      "model": "moonshot_direct/moonshot/kimi-k2.6",
-      "category": "empty_response",
-      "detail": "Moonshot: ",
-      "task_type": "chinese"
-    },
-    {
-      "ts": "2026-05-06T10:25:51",
-      "model": "deepseek_direct/deepseek/deepseek-v4-pro",
-      "category": "fail_in_chain",
-      "detail": "Fallback moonshot/kimi-k2.6 also failed",
-      "task_type": "chinese"
-    },
-    {
-      "ts": "2026-05-06T10:26:10",
-      "model": "moonshot_direct/moonshot/kimi-k2.6",
-      "category": "empty_response",
-      "detail": "Moonshot: ",
-      "task_type": "chinese"
-    },
-    {
-      "ts": "2026-05-06T10:26:11",
-      "model": "deepseek_direct/deepseek/deepseek-v4-pro",
-      "category": "fail_in_chain",
-      "detail": "Fallback moonshot/kimi-k2.6 also failed",
-      "task_type": "chinese"
-    },
-    {
-      "ts": "2026-05-06T12:49:38",
-      "model": "deepseek_direct/deepseek-v4-pro",
-      "category": "fail_after_retries",
-      "detail": "DeepSeek direct rc=1 after 5 retries",
-      "task_type": "reasoning"
-    },
-    {
-      "ts": "2026-05-06T13:05:41",
+      "ts": "2026-05-06T14:57:13",
       "model": "deepseek_direct/deepseek/deepseek-v4-pro",
       "category": "fail_after_retries",
-      "detail": "DeepSeek direct rc=1 after 5 retries",
+      "detail": "DeepSeek direct rc=126 after 5 retries",
+      "task_type": "chinese"
+    },
+    {
+      "ts": "2026-05-06T14:57:43",
+      "model": "deepseek_direct/deepseek/deepseek-v4-pro",
+      "category": "fail_after_retries",
+      "detail": "DeepSeek direct rc=126 after 5 retries",
+      "task_type": "chinese"
+    },
+    {
+      "ts": "2026-05-06T14:58:13",
+      "model": "deepseek_direct/deepseek/deepseek-v4-pro",
+      "category": "fail_after_retries",
+      "detail": "DeepSeek direct rc=126 after 5 retries",
+      "task_type": "chinese"
+    },
+    {
+      "ts": "2026-05-06T14:58:42",
+      "model": "deepseek_direct/deepseek/deepseek-v4-pro",
+      "category": "fail_after_retries",
+      "detail": "DeepSeek direct rc=126 after 5 retries",
+      "task_type": "chinese"
+    },
+    {
+      "ts": "2026-05-06T14:58:42",
+      "model": "deepseek_direct/deepseek/deepseek-v4-pro",
+      "category": "fail_after_retries",
+      "detail": "DeepSeek direct rc=126 after 5 retries",
+      "task_type": "chinese"
+    },
+    {
+      "ts": "2026-05-06T14:59:27",
+      "model": "deepseek_direct/deepseek/deepseek-v4-pro",
+      "category": "fail_after_retries",
+      "detail": "DeepSeek direct rc=126 after 5 retries",
+      "task_type": "chinese"
+    },
+    {
+      "ts": "2026-05-06T15:00:03",
+      "model": "deepseek_direct/deepseek/deepseek-v4-pro",
+      "category": "fail_after_retries",
+      "detail": "DeepSeek direct rc=126 after 5 retries",
+      "task_type": "chinese"
+    },
+    {
+      "ts": "2026-05-06T15:00:12",
+      "model": "deepseek_direct/deepseek/deepseek-v4-pro",
+      "category": "fail_after_retries",
+      "detail": "DeepSeek direct rc=126 after 5 retries",
+      "task_type": "chinese"
+    },
+    {
+      "ts": "2026-05-06T15:00:12",
+      "model": "deepseek_direct/deepseek/deepseek-v4-pro",
+      "category": "fail_after_retries",
+      "detail": "DeepSeek direct rc=126 after 5 retries",
+      "task_type": "chinese"
+    },
+    {
+      "ts": "2026-05-06T15:00:12",
+      "model": "deepseek_direct/deepseek/deepseek-v4-pro",
+      "category": "fail_after_retries",
+      "detail": "DeepSeek direct rc=126 after 5 retries",
+      "task_type": "chinese"
+    },
+    {
+      "ts": "2026-05-06T15:00:12",
+      "model": "deepseek_direct/deepseek/deepseek-v4-pro",
+      "category": "fail_after_retries",
+      "detail": "DeepSeek direct rc=126 after 5 retries",
+      "task_type": "chinese"
+    },
+    {
+      "ts": "2026-05-06T15:00:12",
+      "model": "deepseek_direct/deepseek/deepseek-v4-pro",
+      "category": "fail_after_retries",
+      "detail": "DeepSeek direct rc=126 after 5 retries",
+      "task_type": "chinese"
+    },
+    {
+      "ts": "2026-05-06T15:00:12",
+      "model": "deepseek_direct/deepseek/deepseek-v4-pro",
+      "category": "fail_after_retries",
+      "detail": "DeepSeek direct rc=126 after 5 retries",
+      "task_type": "chinese"
+    },
+    {
+      "ts": "2026-05-06T15:00:12",
+      "model": "deepseek_direct/deepseek/deepseek-v4-pro",
+      "category": "fail_after_retries",
+      "detail": "DeepSeek direct rc=126 after 5 retries",
+      "task_type": "chinese"
+    },
+    {
+      "ts": "2026-05-06T15:00:12",
+      "model": "deepseek_direct/deepseek/deepseek-v4-pro",
+      "category": "fail_after_retries",
+      "detail": "DeepSeek direct rc=126 after 5 retries",
+      "task_type": "chinese"
+    },
+    {
+      "ts": "2026-05-06T15:00:12",
+      "model": "deepseek_direct/deepseek/deepseek-v4-pro",
+      "category": "fail_after_retries",
+      "detail": "DeepSeek direct rc=126 after 5 retries",
+      "task_type": "chinese"
+    },
+    {
+      "ts": "2026-05-06T15:00:12",
+      "model": "deepseek_direct/deepseek/deepseek-v4-pro",
+      "category": "fail_after_retries",
+      "detail": "DeepSeek direct rc=126 after 5 retries",
+      "task_type": "chinese"
+    },
+    {
+      "ts": "2026-05-06T15:00:12",
+      "model": "deepseek_direct/deepseek/deepseek-v4-pro",
+      "category": "fail_after_retries",
+      "detail": "DeepSeek direct rc=126 after 5 retries",
+      "task_type": "chinese"
+    },
+    {
+      "ts": "2026-05-06T15:00:12",
+      "model": "deepseek_direct/deepseek/deepseek-v4-pro",
+      "category": "fail_after_retries",
+      "detail": "DeepSeek direct rc=126 after 5 retries",
+      "task_type": "chinese"
+    },
+    {
+      "ts": "2026-05-06T15:00:49",
+      "model": "deepseek_direct/deepseek/deepseek-v4-pro",
+      "category": "fail_after_retries",
+      "detail": "DeepSeek direct rc=126 after 5 retries",
       "task_type": "chinese"
     }
   ],
   "by_provider": {
     "deepseek": {
-      "calls": 193,
+      "calls": 192,
       "cost_usd": 0.007266,
       "models": [
         "deepseek/deepseek-v4-pro",
@@ -706,7 +706,7 @@
       ]
     },
     "comet": {
-      "calls": 6,
+      "calls": 5,
       "cost_usd": 0.009688,
       "models": [
         "comet/doubao-seed-2-0-pro",
