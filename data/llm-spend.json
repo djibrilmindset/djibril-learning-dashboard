@@ -1,0 +1,53 @@
+{
+  "generated": "2026-05-07T01:17:49.404089Z",
+  "period": "24h",
+  "models": [
+    {
+      "model": "deepseek-v4-pro",
+      "calls": 4,
+      "success": 4,
+      "errors": 0,
+      "tokens_in": 6000,
+      "tokens_out": 2000,
+      "cost_usd": 0.072
+    },
+    {
+      "model": "dashscope:qwen-max-latest",
+      "calls": 5,
+      "success": 5,
+      "errors": 0,
+      "tokens_in": 4000,
+      "tokens_out": 1000,
+      "cost_usd": 0.018
+    },
+    {
+      "model": "mistral:mistral-large-latest",
+      "calls": 3,
+      "success": 3,
+      "errors": 0,
+      "tokens_in": 2400,
+      "tokens_out": 600,
+      "cost_usd": 0.0108
+    },
+    {
+      "model": "dashscope:qwen-max-latest:RACE",
+      "calls": 2,
+      "success": 2,
+      "errors": 0,
+      "tokens_in": 1600,
+      "tokens_out": 400,
+      "cost_usd": 0.0072
+    },
+    {
+      "model": "deepseek/deepseek-v4-pro",
+      "calls": 1,
+      "success": 1,
+      "errors": 0,
+      "tokens_in": 3000,
+      "tokens_out": 800,
+      "cost_usd": 0.002
+    }
+  ],
+  "total_calls": 15,
+  "total_cost_usd": 0.11
+}
