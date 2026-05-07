@@ -1,0 +1,62 @@
+{
+  "generated": "2026-05-07T03:11:39.294001Z",
+  "period": "24h",
+  "models": [
+    {
+      "model": "moonshotai/kimi-k2.6",
+      "calls": 1,
+      "success": 1,
+      "errors": 0,
+      "tokens_in": 0,
+      "tokens_out": 0,
+      "cost_usd": 0.012
+    },
+    {
+      "model": "mistral:mistral-large-latest",
+      "calls": 7,
+      "success": 7,
+      "errors": 0,
+      "tokens_in": 0,
+      "tokens_out": 0,
+      "cost_usd": 0.025199999999999997
+    },
+    {
+      "model": "deepseek-v4-pro",
+      "calls": 4,
+      "success": 4,
+      "errors": 0,
+      "tokens_in": 0,
+      "tokens_out": 0,
+      "cost_usd": 0.072
+    },
+    {
+      "model": "dashscope:qwen-max-latest:RACE",
+      "calls": 2,
+      "success": 2,
+      "errors": 0,
+      "tokens_in": 0,
+      "tokens_out": 0,
+      "cost_usd": 0.0072
+    },
+    {
+      "model": "dashscope:qwen-max-latest",
+      "calls": 5,
+      "success": 5,
+      "errors": 0,
+      "tokens_in": 0,
+      "tokens_out": 0,
+      "cost_usd": 0.018
+    },
+    {
+      "model": "deepseek/deepseek-v4-pro",
+      "calls": 1,
+      "success": 1,
+      "errors": 0,
+      "tokens_in": 0,
+      "tokens_out": 0,
+      "cost_usd": 0.002
+    }
+  ],
+  "total_calls": 20,
+  "total_cost_usd": 0.1364
+}
