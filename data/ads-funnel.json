@@ -1,0 +1,103 @@
+{
+  "_meta": {
+    "generated": "2026-05-16T20:00:00Z",
+    "provider": "meta_ads",
+    "period_days": 30,
+    "schema_version": "1.0",
+    "next_ingest_step": "ingest_meta_ads.py via Marketing API + token longue durée business account"
+  },
+  "kpi": {
+    "spend_eur": 2400,
+    "impressions": 145000,
+    "reach": 89000,
+    "clicks": 3200,
+    "ctr": 0.022,
+    "cpc_eur": 0.75,
+    "cpm_eur": 16.55,
+    "bookings_direct": 18,
+    "bookings_post_nurture": 4,
+    "bookings_total": 22,
+    "no_book_clicks": 3178,
+    "conversion_clicks_to_book_direct": 0.0056,
+    "conversion_no_book_to_book_nurtured": 0.00126,
+    "cpa_book_eur": 109.09,
+    "roas": 5.83
+  },
+  "delta_vs_prev": {
+    "spend_eur": 0.08,
+    "bookings_total": 0.16,
+    "cpa_book_eur": -0.07
+  },
+  "by_campaign": [
+    {
+      "id": "camp_001",
+      "name": "Reset Ultra Q2 — Barbier 93",
+      "objective": "leads",
+      "status": "active",
+      "spend": 1200,
+      "impressions": 72000,
+      "clicks": 1600,
+      "ctr": 0.0222,
+      "cpc": 0.75,
+      "book_direct": 11,
+      "book_nurtured": 3,
+      "book_total": 14,
+      "cpa": 85.71,
+      "best_creative": "VSL_30s_face_cam_problem",
+      "worst_creative": "Static_carousel_pricing"
+    },
+    {
+      "id": "camp_002",
+      "name": "Coach Banlieue Test A",
+      "objective": "leads",
+      "status": "active",
+      "spend": 800,
+      "impressions": 48000,
+      "clicks": 1100,
+      "ctr": 0.0229,
+      "cpc": 0.73,
+      "book_direct": 5,
+      "book_nurtured": 1,
+      "book_total": 6,
+      "cpa": 133.33,
+      "best_creative": "UGC_testimonial_15s",
+      "worst_creative": "Reel_repurpose_30s"
+    },
+    {
+      "id": "camp_003",
+      "name": "Retargeting 30j visitors",
+      "objective": "conversions",
+      "status": "active",
+      "spend": 400,
+      "impressions": 25000,
+      "clicks": 500,
+      "ctr": 0.0200,
+      "cpc": 0.80,
+      "book_direct": 2,
+      "book_nurtured": 0,
+      "book_total": 2,
+      "cpa": 200,
+      "best_creative": "Carousel_FAQ",
+      "worst_creative": "Static_offer_PUSH"
+    }
+  ],
+  "nurture_flow": {
+    "label": "Parcours non-booké → booké via remarketing",
+    "stages": [
+      { "stage": "Clicked ad, did NOT book", "users": 3178, "drop_pct": 0 },
+      { "stage": "Viewed LP > 30s", "users": 2890, "drop_pct": 0.091 },
+      { "stage": "Scrolled to VSL section", "users": 1640, "drop_pct": 0.433 },
+      { "stage": "Watched VSL > 30s", "users": 920, "drop_pct": 0.439 },
+      { "stage": "Re-targeted (J+3)", "users": 720, "drop_pct": 0.217 },
+      { "stage": "Re-clicked retarget ad", "users": 180, "drop_pct": 0.750 },
+      { "stage": "Form started", "users": 28, "drop_pct": 0.844 },
+      { "stage": "Booking completed (nurtured)", "users": 4, "drop_pct": 0.857 }
+    ]
+  },
+  "creative_performance": [
+    { "name": "VSL_30s_face_cam_problem", "spend_eur": 600, "ctr": 0.028, "cpa": 75, "score": 92 },
+    { "name": "UGC_testimonial_15s", "spend_eur": 400, "ctr": 0.025, "cpa": 95, "score": 84 },
+    { "name": "Carousel_FAQ", "spend_eur": 300, "ctr": 0.018, "cpa": 150, "score": 62 },
+    { "name": "Static_carousel_pricing", "spend_eur": 250, "ctr": 0.012, "cpa": 250, "score": 38 }
+  ]
+}

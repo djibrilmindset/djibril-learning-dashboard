@@ -1,0 +1,128 @@
+{
+  "_meta": {
+    "generated": "2026-05-16T20:00:00Z",
+    "source": "fathom_csv_import + llm_t1_analyzer",
+    "owner_calls_tracked": 12,
+    "client_cold_calls_tracked": 8,
+    "schema_version": "1.0",
+    "next_ingest_step": "Pipeline: Fathom export CSV → ingest_fathom.py → analyzer LLM T1 (Kimi K2.6 long-context) → scoring 6 dimensions + extraction moments positifs/négatifs"
+  },
+  "summary": {
+    "calls_total": 20,
+    "avg_score_global": 72,
+    "delta_score_30d": 4,
+    "top_strength": "Closing direct + cas client concret",
+    "top_weakness": "Discovery trop longue (>15min)",
+    "win_rate_top_pattern": 0.85
+  },
+  "scoring_dimensions": [
+    { "id": "rapport", "label": "Rapport / présence" },
+    { "id": "discovery", "label": "Discovery / questions" },
+    { "id": "pain_amplification", "label": "Amplification pain" },
+    { "id": "offer_clarity", "label": "Clarté offre / mécanisme" },
+    { "id": "objection_handling", "label": "Gestion objections" },
+    { "id": "closing_attempt", "label": "Tentative closing" }
+  ],
+  "calls_perso": [
+    {
+      "id": "fathom-2026-05-14-marc-barbier-93",
+      "owner": "djibril",
+      "type": "discovery",
+      "prospect": "Marc — Barbier 93",
+      "date": "2026-05-14T15:00:00Z",
+      "duration_min": 38,
+      "outcome": "closed_won",
+      "score_global": 86,
+      "scores": { "rapport": 90, "discovery": 82, "pain_amplification": 85, "offer_clarity": 88, "objection_handling": 80, "closing_attempt": 92 },
+      "moments_positifs": [
+        { "t_min": 4, "label": "Reformulation pain point excellente" },
+        { "t_min": 18, "label": "Cas Mael 14/14 utilisé au bon moment" },
+        { "t_min": 32, "label": "Closing direct sans bavure" }
+      ],
+      "moments_negatifs": [
+        { "t_min": 12, "label": "Discovery un peu longue, prospect a montré impatience" }
+      ],
+      "fathom_url": "fathom.video/share/abc",
+      "next_action": "Onboarding semaine prochaine"
+    },
+    {
+      "id": "fathom-2026-05-10-yanis-coach",
+      "owner": "djibril",
+      "type": "closing",
+      "prospect": "Yanis — Coach perf banlieue",
+      "date": "2026-05-10T17:30:00Z",
+      "duration_min": 52,
+      "outcome": "closed_lost",
+      "score_global": 58,
+      "scores": { "rapport": 75, "discovery": 70, "pain_amplification": 45, "offer_clarity": 60, "objection_handling": 42, "closing_attempt": 55 },
+      "moments_positifs": [
+        { "t_min": 6, "label": "Build rapport rapide via histoire commune" }
+      ],
+      "moments_negatifs": [
+        { "t_min": 22, "label": "Objection prix mal recadrée — pas de reverse pain" },
+        { "t_min": 35, "label": "Trop d'info offre, prospect perdu" },
+        { "t_min": 48, "label": "Closing soft alors qu'il fallait closer ferme" }
+      ],
+      "fathom_url": "fathom.video/share/def",
+      "next_action": "Sequence relance 7j avec cas client"
+    },
+    {
+      "id": "fathom-2026-05-06-amine-barbier",
+      "owner": "djibril",
+      "type": "discovery",
+      "prospect": "Amine — Barbier Argenteuil",
+      "date": "2026-05-06T11:00:00Z",
+      "duration_min": 31,
+      "outcome": "closed_won",
+      "score_global": 81,
+      "scores": { "rapport": 85, "discovery": 78, "pain_amplification": 82, "offer_clarity": 80, "objection_handling": 75, "closing_attempt": 86 },
+      "moments_positifs": [
+        { "t_min": 8, "label": "Pain amplification chirurgicale sur revenu perdu" },
+        { "t_min": 24, "label": "Reverse pain sur 'pas le bon moment'" }
+      ],
+      "moments_negatifs": [],
+      "fathom_url": "fathom.video/share/ghi",
+      "next_action": "Onboarding mardi"
+    }
+  ],
+  "patterns_success": [
+    { "pattern": "Cas client concret entre min 15-25", "win_rate": 0.78, "samples": 9, "example_calls": ["fathom-2026-05-14-marc-barbier-93", "fathom-2026-05-06-amine-barbier"] },
+    { "pattern": "Closing direct < 45min", "win_rate": 0.71, "samples": 7, "example_calls": ["fathom-2026-05-14-marc-barbier-93"] },
+    { "pattern": "Reverse pain sur objection prix", "win_rate": 0.85, "samples": 6, "example_calls": ["fathom-2026-05-06-amine-barbier"] },
+    { "pattern": "Pain amplification > 80 score", "win_rate": 0.80, "samples": 5 }
+  ],
+  "patterns_failure": [
+    { "pattern": "Discovery > 15min", "loss_rate": 0.68, "samples": 8, "example_calls": ["fathom-2026-05-10-yanis-coach"] },
+    { "pattern": "Pas de cas client mentionné", "loss_rate": 0.75, "samples": 5 },
+    { "pattern": "Objection prix sans reverse pain", "loss_rate": 0.82, "samples": 6, "example_calls": ["fathom-2026-05-10-yanis-coach"] },
+    { "pattern": "Closing soft (vs ferme)", "loss_rate": 0.70, "samples": 4 }
+  ],
+  "client_cold_calls": [
+    {
+      "client": "Mael — barbier 93",
+      "calls_analyzed": 12,
+      "avg_score_global": 72,
+      "delta_30d": 8,
+      "trend": "📈 progression",
+      "top_strength": "Rapport rapide + énergie",
+      "top_weakness": "Pas assez de pain amplification (-15 vs benchmark)",
+      "last_call": { "date": "2026-05-15", "score": 78, "outcome": "booked_followup" },
+      "next_coaching": "Drill 30min sur pain amplification — exercices Reset Ultra module 3"
+    },
+    {
+      "client": "Yacine — coach perf",
+      "calls_analyzed": 6,
+      "avg_score_global": 58,
+      "delta_30d": -3,
+      "trend": "📉 baisse",
+      "top_strength": "Discovery structurée",
+      "top_weakness": "Closing évité 4/6 calls, pivot trop tôt en infomercial",
+      "last_call": { "date": "2026-05-13", "score": 52, "outcome": "closed_lost" },
+      "next_coaching": "Bloc closing 1h obligatoire avant prochain call client"
+    }
+  ],
+  "queue_to_analyze": [
+    { "fathom_id": "fathom-2026-05-15-prospect-x", "owner": "djibril", "status": "pending_llm" },
+    { "fathom_id": "fathom-2026-05-15-mael-call-13", "owner": "mael", "status": "pending_llm" }
+  ]
+}

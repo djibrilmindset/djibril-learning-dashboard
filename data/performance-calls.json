@@ -1,0 +1,81 @@
+{
+  "_meta": {
+    "generated": "2026-05-16T20:00:00Z",
+    "owner": "djibril",
+    "period_days": 30,
+    "schema_version": "1.0",
+    "data_source": "manual_csv + fathom_imports",
+    "next_ingest_step": "Construire ingest_calls.py qui lit ~/agence-ia/data/calls_perso/*.csv"
+  },
+  "kpi": {
+    "calls_total": 42,
+    "calls_qualified": 28,
+    "calls_qualified_pct": 0.667,
+    "noshow_count": 6,
+    "noshow_pct": 0.143,
+    "closed_count": 8,
+    "closing_pct_qualified": 0.286,
+    "closing_pct_total": 0.190,
+    "revenue_total_eur": 32000,
+    "avg_deal_eur": 4000,
+    "calls_per_week_avg": 9.8,
+    "ttf_close_days_avg": 6.5
+  },
+  "delta_vs_prev_period": {
+    "calls_total": 0.12,
+    "closing_pct_qualified": -0.04,
+    "noshow_pct": 0.02,
+    "revenue_total_eur": 0.28
+  },
+  "trend_30d": [
+    { "date": "2026-04-17", "calls": 1, "qualified": 1, "closed": 0, "noshow": 0 },
+    { "date": "2026-04-18", "calls": 2, "qualified": 1, "closed": 0, "noshow": 1 },
+    { "date": "2026-04-19", "calls": 0, "qualified": 0, "closed": 0, "noshow": 0 },
+    { "date": "2026-04-20", "calls": 0, "qualified": 0, "closed": 0, "noshow": 0 },
+    { "date": "2026-04-21", "calls": 2, "qualified": 2, "closed": 1, "noshow": 0 },
+    { "date": "2026-04-22", "calls": 1, "qualified": 1, "closed": 0, "noshow": 0 },
+    { "date": "2026-04-23", "calls": 3, "qualified": 2, "closed": 1, "noshow": 0 },
+    { "date": "2026-04-24", "calls": 2, "qualified": 2, "closed": 1, "noshow": 0 },
+    { "date": "2026-04-25", "calls": 1, "qualified": 0, "closed": 0, "noshow": 1 },
+    { "date": "2026-04-26", "calls": 0, "qualified": 0, "closed": 0, "noshow": 0 },
+    { "date": "2026-04-27", "calls": 0, "qualified": 0, "closed": 0, "noshow": 0 },
+    { "date": "2026-04-28", "calls": 2, "qualified": 1, "closed": 0, "noshow": 0 },
+    { "date": "2026-04-29", "calls": 3, "qualified": 2, "closed": 1, "noshow": 0 },
+    { "date": "2026-04-30", "calls": 1, "qualified": 1, "closed": 0, "noshow": 0 },
+    { "date": "2026-05-01", "calls": 2, "qualified": 1, "closed": 0, "noshow": 1 },
+    { "date": "2026-05-02", "calls": 1, "qualified": 1, "closed": 0, "noshow": 0 },
+    { "date": "2026-05-03", "calls": 0, "qualified": 0, "closed": 0, "noshow": 0 },
+    { "date": "2026-05-04", "calls": 0, "qualified": 0, "closed": 0, "noshow": 0 },
+    { "date": "2026-05-05", "calls": 2, "qualified": 1, "closed": 0, "noshow": 1 },
+    { "date": "2026-05-06", "calls": 3, "qualified": 2, "closed": 1, "noshow": 0 },
+    { "date": "2026-05-07", "calls": 2, "qualified": 2, "closed": 0, "noshow": 0 },
+    { "date": "2026-05-08", "calls": 1, "qualified": 1, "closed": 0, "noshow": 0 },
+    { "date": "2026-05-09", "calls": 2, "qualified": 1, "closed": 1, "noshow": 0 },
+    { "date": "2026-05-10", "calls": 1, "qualified": 1, "closed": 0, "noshow": 0 },
+    { "date": "2026-05-11", "calls": 0, "qualified": 0, "closed": 0, "noshow": 0 },
+    { "date": "2026-05-12", "calls": 2, "qualified": 1, "closed": 0, "noshow": 1 },
+    { "date": "2026-05-13", "calls": 3, "qualified": 2, "closed": 1, "noshow": 0 },
+    { "date": "2026-05-14", "calls": 2, "qualified": 2, "closed": 1, "noshow": 0 },
+    { "date": "2026-05-15", "calls": 1, "qualified": 1, "closed": 0, "noshow": 0 },
+    { "date": "2026-05-16", "calls": 2, "qualified": 1, "closed": 0, "noshow": 1 }
+  ],
+  "by_source": [
+    { "source": "Instagram organique", "calls": 18, "qualified": 14, "closed": 5, "noshow": 2, "closing_pct_qualified": 0.357, "revenue_eur": 20000 },
+    { "source": "Ads Meta", "calls": 14, "qualified": 8, "closed": 2, "noshow": 3, "closing_pct_qualified": 0.250, "revenue_eur": 8000 },
+    { "source": "Referral", "calls": 6, "qualified": 4, "closed": 1, "noshow": 0, "closing_pct_qualified": 0.250, "revenue_eur": 4000 },
+    { "source": "Cold outreach", "calls": 4, "qualified": 2, "closed": 0, "noshow": 1, "closing_pct_qualified": 0, "revenue_eur": 0 }
+  ],
+  "objections_top": [
+    { "objection": "Pricing trop élevé", "count": 7, "closed_anyway": 1, "best_counter": "Reverse pain : combien tu perds en restant bloqué" },
+    { "objection": "Pas le bon timing", "count": 4, "closed_anyway": 0, "best_counter": "Pas testé encore — à investiguer" },
+    { "objection": "Besoin réflexion équipe", "count": 3, "closed_anyway": 2, "best_counter": "Book closing call avec décideur dans 48h" },
+    { "objection": "Déjà essayé un truc similaire", "count": 3, "closed_anyway": 1, "best_counter": "Différenciation mécanisme unique Reset Ultra" }
+  ],
+  "outcomes_breakdown": {
+    "closed_won": 8,
+    "closed_lost": 16,
+    "noshow": 6,
+    "followup_pending": 8,
+    "disqualified": 4
+  }
+}

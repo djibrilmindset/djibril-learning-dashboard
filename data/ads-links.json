@@ -1,0 +1,86 @@
+{
+  "_meta": {
+    "generated": "2026-05-16T20:00:00Z",
+    "tracker": "shortlink_v1 + UTM",
+    "period_days": 30,
+    "schema_version": "1.0",
+    "next_ingest_step": "Stack: short.io ou bit.ly + Posthog/Plausible LP events → ingest_links_funnel.py"
+  },
+  "summary": {
+    "total_links_tracked": 8,
+    "total_clicks": 3200,
+    "total_unique_visitors": 2580,
+    "best_converting_slug": "rs-bar-q2-vsl",
+    "worst_converting_slug": "rt-30j-faq",
+    "median_time_on_lp_s": 47
+  },
+  "links": [
+    {
+      "slug": "rs-bar-q2-vsl",
+      "long_url": "https://djibrilmindset.com/reset-ultra?utm_source=ig&utm_campaign=rs-bar-q2&utm_content=vsl",
+      "campaign": "Reset Ultra Q2 — Barbier",
+      "tunnel_label": "Ads → LP → VSL → Booking",
+      "clicks": 1600,
+      "unique_visitors": 1340,
+      "bounce_pct": 0.18,
+      "avg_time_on_lp_s": 52,
+      "next_step_pct": { "to_vsl_play": 0.62, "to_form_open": 0.21, "to_form_submit": 0.09 },
+      "main_drop_off": { "stage": "VSL @ 35s", "drop_pct": 0.61, "diagnostic": "VSL hook trop long avant promesse" },
+      "score": 82
+    },
+    {
+      "slug": "rs-bar-q2-ugc",
+      "long_url": "https://djibrilmindset.com/reset-ultra?utm_source=ig&utm_campaign=rs-bar-q2&utm_content=ugc",
+      "campaign": "Reset Ultra Q2 — Barbier",
+      "tunnel_label": "UGC → LP → Form direct",
+      "clicks": 800,
+      "unique_visitors": 680,
+      "bounce_pct": 0.24,
+      "avg_time_on_lp_s": 38,
+      "next_step_pct": { "to_vsl_play": 0.45, "to_form_open": 0.18, "to_form_submit": 0.07 },
+      "main_drop_off": { "stage": "Above fold", "drop_pct": 0.24, "diagnostic": "Promesse pas assez claire au-dessus de la ligne" },
+      "score": 68
+    },
+    {
+      "slug": "cb-test-a-faq",
+      "long_url": "https://djibrilmindset.com/coach-banlieue?utm_source=ig&utm_campaign=cb-test-a&utm_content=faq",
+      "campaign": "Coach Banlieue Test A",
+      "tunnel_label": "Carousel → LP FAQ → Booking",
+      "clicks": 600,
+      "unique_visitors": 510,
+      "bounce_pct": 0.32,
+      "avg_time_on_lp_s": 41,
+      "next_step_pct": { "to_vsl_play": 0.38, "to_form_open": 0.15, "to_form_submit": 0.06 },
+      "main_drop_off": { "stage": "FAQ section", "drop_pct": 0.55, "diagnostic": "FAQ trop dense, manque hiérarchie visuelle" },
+      "score": 58
+    },
+    {
+      "slug": "rt-30j-faq",
+      "long_url": "https://djibrilmindset.com/reset-ultra?utm_source=ig&utm_campaign=rt-30j&utm_content=faq",
+      "campaign": "Retargeting 30j",
+      "tunnel_label": "Retargeting → LP → Form",
+      "clicks": 200,
+      "unique_visitors": 170,
+      "bounce_pct": 0.38,
+      "avg_time_on_lp_s": 28,
+      "next_step_pct": { "to_vsl_play": 0.25, "to_form_open": 0.10, "to_form_submit": 0.03 },
+      "main_drop_off": { "stage": "Bounce immédiat", "drop_pct": 0.38, "diagnostic": "Visiteurs déjà vus, message pas assez nouveau" },
+      "score": 42
+    }
+  ],
+  "tunnel_universal_stages": [
+    { "stage": "Ad click", "users": 3200, "drop_pct": 0 },
+    { "stage": "LP load + above-fold view", "users": 2890, "drop_pct": 0.097 },
+    { "stage": "Read 5s+ above fold", "users": 2580, "drop_pct": 0.107 },
+    { "stage": "Scroll 50%", "users": 1640, "drop_pct": 0.364 },
+    { "stage": "VSL play", "users": 1180, "drop_pct": 0.280 },
+    { "stage": "VSL 30s+", "users": 920, "drop_pct": 0.220 },
+    { "stage": "Booking form open", "users": 285, "drop_pct": 0.690 },
+    { "stage": "Booking form submit", "users": 22, "drop_pct": 0.923 }
+  ],
+  "diagnostics_top": [
+    { "issue": "VSL hook trop long (35s avant promesse)", "impact_pct": 0.61, "affected_links": ["rs-bar-q2-vsl"], "fix": "Promesse à 7-10s max + boucle" },
+    { "issue": "FAQ trop dense", "impact_pct": 0.55, "affected_links": ["cb-test-a-faq"], "fix": "FAQ accordéon + 3 top en haut" },
+    { "issue": "Above fold pas assez clair", "impact_pct": 0.24, "affected_links": ["rs-bar-q2-ugc"], "fix": "H1 promesse + proof number + CTA" }
+  ]
+}

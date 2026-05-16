@@ -1,0 +1,133 @@
+{
+  "_meta": {
+    "generated": "2026-05-16T20:00:00Z",
+    "platforms": ["instagram_reels", "tiktok"],
+    "owner": "djibril.learning",
+    "schema_version": "1.0",
+    "next_ingest_step": "Scraper TikTok (yt-dlp + Bright Data) + IG Graph API per-post insights. Détection patterns via Qwen3-VL council T1 (vision)."
+  },
+  "summary": {
+    "videos_tracked": 12,
+    "total_views_30d": 145800,
+    "avg_engagement_pct": 0.072,
+    "top_pattern": "frustration_positive_hook",
+    "best_retention_t3s": 0.91,
+    "worst_retention_t3s": 0.42
+  },
+  "patterns_lexicon": [
+    { "id": "frustration_positive_hook", "label": "Hook frustration positive", "description": "Question/affirmation qui touche pain point en 3s", "best_window_s": [0, 3] },
+    { "id": "loop_pattern", "label": "Boucle invisible", "description": "Dernière frame raccord avec hook → replay", "best_window_s": [27, 30] },
+    { "id": "soft_cta_dm", "label": "CTA mot-clé DM", "description": "Demander d'envoyer un mot précis en DM", "best_window_s": [20, 28] },
+    { "id": "result_before_after", "label": "Transformation visuelle", "description": "Avant/après brut sans transition", "best_window_s": [12, 22] },
+    { "id": "pain_point_text_overlay", "label": "Overlay texte sur pain", "description": "Texte gros + face cam silence", "best_window_s": [5, 10] },
+    { "id": "energy_shift_transition", "label": "Shift énergie cut sec", "description": "Cut sec + changement décor/cadre", "best_window_s": [10, 14] }
+  ],
+  "videos": [
+    {
+      "id": "ig_reel_2026-05-12_taper-fade",
+      "platform": "instagram_reels",
+      "title": "Taper fade 30s — pattern boucle barbier",
+      "url": "https://instagram.com/p/abc123",
+      "posted": "2026-05-12T18:00:00Z",
+      "duration_s": 30,
+      "stats": {
+        "views": 14500,
+        "likes": 980,
+        "comments": 47,
+        "shares": 124,
+        "saves": 89,
+        "engagement_pct": 0.0855,
+        "watch_time_avg_s": 18,
+        "completion_pct": 0.60,
+        "loop_pct": 0.42
+      },
+      "timeline": [
+        { "t": 0, "event": "Face cam — 'T'as fait combien de coupes ratées ce mois ?'", "retention_pct": 1.00, "pattern": "frustration_positive_hook" },
+        { "t": 3, "event": "Cut B-roll — clipper en main", "retention_pct": 0.91, "pattern": "visual_proof" },
+        { "t": 7, "event": "Overlay texte 'Tu perds 200€/coupe ratée'", "retention_pct": 0.82, "pattern": "pain_point_text_overlay" },
+        { "t": 12, "event": "Transition zoom — démo gesture", "retention_pct": 0.74, "pattern": "energy_shift_transition" },
+        { "t": 18, "event": "Avant/après — split screen", "retention_pct": 0.68, "pattern": "result_before_after" },
+        { "t": 24, "event": "Face cam — 'DM RESET pour la méthode'", "retention_pct": 0.62, "pattern": "soft_cta_dm" },
+        { "t": 30, "event": "Frame raccord au hook initial", "retention_pct": 0.55, "pattern": "loop_pattern" }
+      ],
+      "patterns_detected": ["frustration_positive_hook", "loop_pattern", "soft_cta_dm", "result_before_after", "pain_point_text_overlay"],
+      "score": 84,
+      "verdict": "TOP — réplique le pattern hook+loop sur autres niches"
+    },
+    {
+      "id": "tk_2026-05-09_cold-open",
+      "platform": "tiktok",
+      "title": "Cold open ironique — coach banlieue",
+      "url": "https://tiktok.com/@djibril.learning/video/xyz",
+      "posted": "2026-05-09T20:30:00Z",
+      "duration_s": 22,
+      "stats": {
+        "views": 38400,
+        "likes": 2100,
+        "comments": 156,
+        "shares": 480,
+        "saves": 320,
+        "engagement_pct": 0.0796,
+        "watch_time_avg_s": 14,
+        "completion_pct": 0.64,
+        "loop_pct": 0.51
+      },
+      "timeline": [
+        { "t": 0, "event": "Cold open — ironie 'Coach 500€/mois'", "retention_pct": 1.00, "pattern": "frustration_positive_hook" },
+        { "t": 4, "event": "Cut — révélation cas réel", "retention_pct": 0.88, "pattern": "energy_shift_transition" },
+        { "t": 9, "event": "Démo écran — DM réels floutés", "retention_pct": 0.78, "pattern": "social_proof" },
+        { "t": 15, "event": "Reverse — 'Tu paies 0€ pour ça'", "retention_pct": 0.71, "pattern": "reverse_offer" },
+        { "t": 20, "event": "CTA — 'Lien bio'", "retention_pct": 0.66, "pattern": "soft_cta_link" },
+        { "t": 22, "event": "Frame ironique fin", "retention_pct": 0.64, "pattern": "loop_pattern" }
+      ],
+      "patterns_detected": ["frustration_positive_hook", "energy_shift_transition", "social_proof", "reverse_offer", "loop_pattern"],
+      "score": 89,
+      "verdict": "TOP — completion 64% + share-rate 1.25% exceptionnel"
+    },
+    {
+      "id": "ig_reel_2026-05-05_tutorial",
+      "platform": "instagram_reels",
+      "title": "Tutorial offre Reset Ultra — 45s",
+      "url": "https://instagram.com/p/def456",
+      "posted": "2026-05-05T19:00:00Z",
+      "duration_s": 45,
+      "stats": {
+        "views": 4200,
+        "likes": 180,
+        "comments": 12,
+        "shares": 18,
+        "saves": 24,
+        "engagement_pct": 0.0557,
+        "watch_time_avg_s": 11,
+        "completion_pct": 0.24,
+        "loop_pct": 0.08
+      },
+      "timeline": [
+        { "t": 0, "event": "Slide titre — 'Comment je structure'", "retention_pct": 1.00, "pattern": "info_intro" },
+        { "t": 3, "event": "Talking head explication", "retention_pct": 0.72, "pattern": "talking_head" },
+        { "t": 10, "event": "Voice over + slides", "retention_pct": 0.55, "pattern": "info_dense" },
+        { "t": 20, "event": "Continue voice over", "retention_pct": 0.38, "pattern": "info_dense" },
+        { "t": 30, "event": "Récap visuel", "retention_pct": 0.28, "pattern": "summary" },
+        { "t": 45, "event": "CTA outro", "retention_pct": 0.24, "pattern": "hard_cta" }
+      ],
+      "patterns_detected": ["info_intro", "talking_head", "info_dense"],
+      "score": 38,
+      "verdict": "FLOP — pas de hook frustration, info dense sans pattern interrupts → refondre en 22s avec hook+loop"
+    }
+  ],
+  "patterns_winners": [
+    { "pattern": "frustration_positive_hook (t=0-3)", "uses": 8, "avg_retention_t3": 0.89, "avg_score": 82 },
+    { "pattern": "loop_pattern (t=27-30)", "uses": 6, "avg_loop_pct": 0.45, "avg_score": 86 },
+    { "pattern": "soft_cta_dm (t=20-28)", "uses": 5, "avg_dm_inbound": 18, "avg_score": 78 }
+  ],
+  "patterns_losers": [
+    { "pattern": "info_intro slide titre (t=0-3)", "uses": 4, "avg_retention_t3": 0.62, "avg_score": 42 },
+    { "pattern": "talking_head sans cut (>8s)", "uses": 3, "avg_retention_t8": 0.48, "avg_score": 38 }
+  ],
+  "recommendations": [
+    "Remplacer tous les intros slide-titre par hook frustration positive en face cam.",
+    "Forcer un cut visuel max toutes les 4s sur les talking head.",
+    "Tester loop_pattern systématique sur 100% des reels < 30s.",
+    "Couper toutes les VO > 8s sans cut, ajouter overlays texte synchronisés."
+  ]
+}
