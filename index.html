@@ -1752,7 +1752,15 @@ function renderVideoLab(el) {
 // ══════════════════════════════════════════════════════════════
 function renderCallsIntel(el) {
   el.innerHTML = `<div class="grid grid-4" style="margin-bottom:var(--gap)" id="ci-kpi"></div>
-    <div class="card" style="margin-bottom:var(--gap)"><div class="eyebrow" style="margin-bottom:12px">CALLS PERSO · DERNIERS ANALYSÉS</div><div id="ci-calls"></div></div>
+    <div class="card" style="margin-bottom:var(--gap);border:2px solid rgba(168,85,247,0.4);background:linear-gradient(135deg,rgba(168,85,247,0.04),rgba(0,229,255,0.04))">
+      <div class="eyebrow" style="margin-bottom:12px;color:var(--violet);font-size:11px">🎯 80/20 · LEVIERS PRIORITAIRES AGRÉGÉS · 30j</div>
+      <div id="ci-8020-aggregate"></div>
+    </div>
+    <div class="card" style="margin-bottom:var(--gap);border:2px solid rgba(0,229,255,0.4);background:linear-gradient(135deg,rgba(0,229,255,0.04),rgba(34,238,136,0.04))">
+      <div class="eyebrow" style="margin-bottom:12px;color:var(--cyan);font-size:11px">🔄 CROSS-CHANNEL · ACTIONS PAR CANAL · AGRÉGÉ</div>
+      <div id="ci-crosschannel"></div>
+    </div>
+    <div class="card" style="margin-bottom:var(--gap)"><div class="eyebrow" style="margin-bottom:12px">CALLS PERSO · DERNIERS ANALYSÉS · 80/20 + CROSS-CHANNEL</div><div id="ci-calls"></div></div>
     <div class="grid grid-2" style="margin-bottom:var(--gap)">
       <div class="card"><div class="eyebrow" style="margin-bottom:12px">PATTERNS · SUCCÈS</div><div id="ci-win"></div></div>
       <div class="card"><div class="eyebrow" style="margin-bottom:12px">PATTERNS · ÉCHEC</div><div id="ci-fail"></div></div>
@@ -1768,6 +1776,43 @@ function renderCallsIntel(el) {
       metricCard('TOP STRENGTH', `<span style="font-family:var(--font-mono);font-size:12px;color:var(--green);line-height:1.3">${s.top_strength}</span>`, 'ok', 'force #1'),
       metricCard('TOP WEAKNESS', `<span style="font-family:var(--font-mono);font-size:12px;color:var(--red);line-height:1.3">${s.top_weakness}</span>`, 'warn', `win rate top pattern: ${pct(s.win_rate_top_pattern,0)}`)
     ].join('');
+    // 80/20 agrégé · top leviers par rank
+    const allLev = (d.top_leviers_8020_aggregated || []).slice().sort((a,b) => (b.impact||0) - (a.impact||0));
+    document.getElementById('ci-8020-aggregate').innerHTML = allLev.length
+      ? `<div class="grid grid-2">${allLev.slice(0, 8).map(l => `
+          <div style="padding:12px;border-left:3px solid var(--violet);background:rgba(168,85,247,0.05);border-radius:0 8px 8px 0;margin-bottom:8px">
+            <div style="display:flex;justify-content:space-between;margin-bottom:6px">
+              <span class="mono" style="font-size:10px;color:var(--cyan)">[${l.timestamp_ref || '—'}] ${l.from_call}</span>
+              <span style="font-weight:700;color:var(--violet);font-size:13px">+${l.impact || '?'} pts</span>
+            </div>
+            <div style="font-size:11px;color:var(--text-2);line-height:1.4">${(l.levier || '').slice(0, 200)}</div>
+          </div>`).join('')}</div>`
+      : '<p style="color:var(--text-3)">Pas encore de leviers — analyse en cours...</p>';
+    // Cross-channel agrégé · par canal
+    const cci = d.cross_channel_insights || {};
+    const cciLabels = {
+      to_instagram_reels:    {label: '📱 Instagram Reels',    color: 'var(--neon)'},
+      to_meta_ads:           {label: '📢 Meta Ads',           color: 'var(--amber)'},
+      to_basile_dm:          {label: '💬 Basile DM IG',       color: 'var(--cyan)'},
+      to_lp_vsl:             {label: '🌐 LP / VSL',           color: 'var(--violet)'},
+      to_mariam_email:       {label: '📧 Mariam Email',       color: 'var(--green)'},
+      to_cold_calls_clients: {label: '📞 Cold calls clients', color: 'var(--indigo)'},
+    };
+    document.getElementById('ci-crosschannel').innerHTML = Object.keys(cciLabels).map(k => {
+      const items = cci[k] || [];
+      const meta = cciLabels[k];
+      return `<details style="margin-bottom:8px;border:1px solid var(--line);border-radius:8px;padding:10px 12px;background:var(--surface)">
+        <summary style="cursor:pointer;display:flex;justify-content:space-between;align-items:center">
+          <span style="font-weight:600;color:${meta.color}">${meta.label}</span>
+          <span class="mono" style="font-size:11px;color:var(--text-3)">${items.length} insights</span>
+        </summary>
+        ${items.length ? `<div style="margin-top:10px;display:flex;flex-direction:column;gap:8px">${items.map(it => `
+          <div style="padding:8px;background:rgba(255,255,255,0.02);border-radius:6px;font-size:11px;line-height:1.5">
+            <div style="color:var(--text-4);font-size:10px;margin-bottom:3px">${it.from_call} · ${(it.date||'').slice(0,10)} · score ${it.score}</div>
+            <div style="color:var(--text-2)">${it.insight}</div>
+          </div>`).join('')}</div>` : '<p style="color:var(--text-3);margin-top:8px">Aucun insight pour ce canal.</p>'}
+      </details>`;
+    }).join('');
     // Calls perso list
     document.getElementById('ci-calls').innerHTML = d.calls_perso.map(c => {
       const scColor = c.score_global >= 75 ? 'var(--green)' : c.score_global >= 55 ? 'var(--amber)' : 'var(--red)';
@@ -1779,14 +1824,37 @@ function renderCallsIntel(el) {
       }).join('');
       const positifs = (c.moments_positifs || []).map(m => `<li style="color:var(--green);font-size:11px;margin-bottom:3px"><span class="mono" style="color:var(--text-4);font-size:10px">${m.t_min}min</span> ${m.label}</li>`).join('');
       const negatifs = (c.moments_negatifs || []).map(m => `<li style="color:var(--red);font-size:11px;margin-bottom:3px"><span class="mono" style="color:var(--text-4);font-size:10px">${m.t_min}min</span> ${m.label}</li>`).join('');
+      // 80/20 levers per call (doctrine v2)
+      const lev8020 = (c.top_2_leviers_8020 || []).map(l => `
+        <div style="padding:10px;background:rgba(168,85,247,0.06);border-left:3px solid var(--violet);border-radius:0 6px 6px 0;margin-bottom:6px">
+          <div style="display:flex;justify-content:space-between;margin-bottom:4px;font-size:10px">
+            <span class="mono" style="color:var(--cyan)">[${l.timestamp_ref || '—'}] #${l.rank}</span>
+            <span style="font-weight:700;color:var(--violet)">+${l.impact_attendu_points || '?'} pts</span>
+          </div>
+          <div style="font-size:11px;color:var(--text);line-height:1.4;margin-bottom:4px"><strong>${l.levier || ''}</strong></div>
+          <div style="font-size:10px;color:var(--text-3);font-style:italic">→ ${l.fix_concret || ''}</div>
+        </div>`).join('');
+      // Cross-channel per call (compact: 2-3 top channels)
+      const cciCall = c.cross_channel_implications || {};
+      const cciItems = Object.entries(cciCall)
+        .filter(([k,v]) => v && !String(v).toLowerCase().startsWith('n/a') && !String(v).toLowerCase().startsWith('aucun'))
+        .slice(0, 6)
+        .map(([k,v]) => {
+          const meta = cciLabels[k] || {label: k, color: 'var(--text-3)'};
+          return `<div style="padding:6px 8px;background:rgba(255,255,255,0.02);border-radius:6px;font-size:11px;line-height:1.4">
+            <span style="color:${meta.color};font-weight:600">${meta.label}</span> <span style="color:var(--text-2)">${String(v).slice(0, 200)}</span>
+          </div>`;
+        }).join('');
       return `<div style="padding:16px;border:1px solid var(--line);border-radius:12px;margin-bottom:14px;background:var(--surface)">
         <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:12px">
           <div>
             <div style="color:var(--text);font-weight:600;margin-bottom:3px">${c.prospect}</div>
-            <div style="font-size:11px;color:var(--text-4)">${new Date(c.date).toLocaleDateString('fr-FR')} · ${c.duration_min}min · ${c.type}</div>
+            <div style="font-size:11px;color:var(--text-4)">${new Date(c.date).toLocaleDateString('fr-FR')} · ${c.duration_min}min · ${c.type} ${c.fathom_share_url ? `· <a href="${c.fathom_share_url}" target="_blank" style="color:var(--cyan)">▶ replay</a>` : ''}</div>
           </div>
           <div style="text-align:right"><div style="font-size:28px;font-weight:700;color:${scColor}">${c.score_global}</div><span class="badge badge--${outcomeBadge[0]}" style="font-size:9px">${outcomeBadge[1]}</span></div>
         </div>
+        ${lev8020 ? `<div style="margin-bottom:14px"><div class="eyebrow" style="font-size:10px;margin-bottom:8px;color:var(--violet)">🎯 80/20 · 2 LEVIERS PRIORITAIRES</div>${lev8020}</div>` : ''}
+        ${cciItems ? `<div style="margin-bottom:14px"><div class="eyebrow" style="font-size:10px;margin-bottom:8px;color:var(--cyan)">🔄 CROSS-CHANNEL · 6 CANAUX</div><div style="display:flex;flex-direction:column;gap:6px">${cciItems}</div></div>` : ''}
         <div class="grid grid-2">
           <div><div class="eyebrow" style="font-size:9px;margin-bottom:8px">SCORES 6 DIMENSIONS</div>${scoreBars}</div>
           <div>
@@ -1794,7 +1862,7 @@ function renderCallsIntel(el) {
             ${negatifs ? `<div class="eyebrow" style="font-size:9px;margin-bottom:6px;color:var(--red)">MOMENTS NÉGATIFS</div><ul style="margin:0;padding-left:18px">${negatifs}</ul>` : '<div style="font-size:11px;color:var(--green);font-style:italic">✓ Aucun moment négatif détecté</div>'}
           </div>
         </div>
-        <div style="margin-top:12px;padding-top:10px;border-top:1px solid var(--line);font-size:11px;color:var(--text-3)"><strong style="color:var(--text-2)">Next:</strong> ${c.next_action}</div>
+        <div style="margin-top:12px;padding-top:10px;border-top:1px solid var(--line);font-size:11px;color:var(--text-3)"><strong style="color:var(--text-2)">Verdict:</strong> ${c.verdict || c.next_action}</div>
       </div>`;
     }).join('');
     // Patterns success
