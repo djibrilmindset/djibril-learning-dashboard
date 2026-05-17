@@ -389,6 +389,7 @@ const NAV = [
   { id: 'ads-links', label: 'Ads Link Lab', icon: '⇆' },
   { id: 'video-lab', label: 'Video Pattern Lab', icon: '✦' },
   { id: 'calls-intel', label: 'Calls Intelligence', icon: '⚯' },
+  { id: 'library', label: 'Bibliothèque', icon: '⌬' },
   { section: 'Infrastructure' },
   { id: 'dashboard', label: 'Dashboard', icon: '◈' },
   { id: 'agents', label: 'Agent Health', icon: '⬢', count: '…', countClass: 'ok' },
@@ -473,6 +474,7 @@ function renderPageContent(pageId, container) {
     case 'ads-links': renderAdsLinks(contentDiv); break;
     case 'video-lab': renderVideoLab(contentDiv); break;
     case 'calls-intel': renderCallsIntel(contentDiv); break;
+    case 'library': renderLibrary(contentDiv); break;
     case 'dashboard': renderDashboard(contentDiv); break;
     case 'agents': renderAgents(contentDiv); break;
     case 'agents-detail': renderAgentsDetailed(contentDiv); break;
@@ -502,6 +504,7 @@ function renderPageContent(pageId, container) {
     'ads-links': 'UTM + tunnel · par URL · drop-off précis + diagnostic',
     'video-lab': 'IG Reels + TikTok · timeline par seconde · patterns détectés · hook→loop',
     'calls-intel': 'Fathom transcripts · scoring 6 dims · moments + / − · patterns succès/échec · clients cold calls',
+    'library': 'Bibliothèque scannée Qwen Turbo · concepts · glossaire · citations · cross-link vers calls',
     dashboard: 'Synthèse temps réel — agents, marché, IG, coûts LLM',
     agents: 'Grille 24 agents · ping toutes les 30s · healthy/stale/dead',
     'agents-detail': 'Fiches détaillées 24 agents · tâches, inputs/outputs, coûts, modèles',
@@ -1750,6 +1753,112 @@ function renderVideoLab(el) {
 // ══════════════════════════════════════════════════════════════
 // ── CALLS INTELLIGENCE (Fathom) ──
 // ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════════════════════════
+// ── LIBRARY (Bibliothèque scannée Qwen Turbo) ──
+// ══════════════════════════════════════════════════════════════
+function renderLibrary(el) {
+  el.innerHTML = `<div class="grid grid-4" style="margin-bottom:var(--gap)" id="lib-kpi"></div>
+    <div class="card" style="margin-bottom:var(--gap)">
+      <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+        <input id="lib-search" type="text" placeholder="🔍 Rechercher concept/terme/livre..." style="flex:1;min-width:240px"/>
+        <div id="lib-cat-pills" style="display:flex;gap:6px;flex-wrap:wrap"></div>
+      </div>
+    </div>
+    <div class="grid grid-2" style="margin-bottom:var(--gap)">
+      <div class="card"><div class="eyebrow" style="margin-bottom:12px;color:var(--violet)">📚 LIVRES SCANNÉS</div><div id="lib-books"></div></div>
+      <div class="card"><div class="eyebrow" style="margin-bottom:12px;color:var(--cyan)">📖 GLOSSAIRE TERMES SPÉCIAUX</div><div id="lib-glossary" style="max-height:600px;overflow-y:auto"></div></div>
+    </div>
+    <div class="card"><div class="eyebrow" style="margin-bottom:12px;color:var(--neon)">🧬 CONCEPTS PAR CATÉGORIE — accordion</div><div id="lib-concepts"></div></div>`;
+  loadJSON('library.json').then(d => {
+    if (!d) {
+      el.querySelector('#lib-books').innerHTML = '<p style="color:var(--text-3);padding:20px">Bibliothèque pas encore scannée. Lance: <code>python3 ~/agence-ia/manager/calls_intelligence/book_scanner.py --all</code></p>';
+      return;
+    }
+    const s = d.summary;
+    document.getElementById('lib-kpi').innerHTML = [
+      metricCard('LIVRES', `<span class="stat-num stat-num--cosmos">${s.books_count}</span>`, 'ok', 'scannés Qwen Turbo'),
+      metricCard('CONCEPTS', `<span class="stat-num stat-num--aurora">${s.concepts_count}</span>`, 'ok', `${s.categories.length} catégories`),
+      metricCard('TERMES SPÉCIAUX', `<span class="stat-num stat-num--neon">${s.terms_count}</span>`, 'ok', 'glossaire révisable'),
+      metricCard('SCANNER', `<span style="font-family:var(--font-mono);font-size:11px;color:var(--cyan);line-height:1.3">qwen-turbo</span>`, 'info', 'DashScope · $0.05/M')
+    ].join('');
+
+    // Books list
+    document.getElementById('lib-books').innerHTML = (d.books || []).map(b => `
+      <details style="margin-bottom:8px;border:1px solid var(--line);border-radius:8px;padding:10px 12px;background:var(--surface)">
+        <summary style="cursor:pointer;display:flex;justify-content:space-between;align-items:center">
+          <span><strong style="color:var(--text)">${b.title}</strong> <span style="font-size:10px;color:var(--text-4);margin-left:6px">${b.category}</span></span>
+          <span class="mono" style="font-size:11px;color:var(--text-3)">${b.stats?.concepts_count || 0} concepts · ${b.stats?.terms_count || 0} termes</span>
+        </summary>
+        ${(b.concepts_top || []).length ? `<div style="margin-top:10px"><div class="eyebrow" style="font-size:9px;margin-bottom:6px;color:var(--violet)">TOP CONCEPTS</div>${(b.concepts_top || []).map(c => `
+          <div style="padding:6px 8px;margin-bottom:4px;background:rgba(168,85,247,0.05);border-radius:6px;font-size:11px;line-height:1.4">
+            <strong style="color:var(--text)">${c.name}</strong> <span style="color:var(--text-4);font-size:10px">· ${c.category || ''}</span>
+            <div style="color:var(--text-3);margin-top:2px">${(c.definition || '').slice(0, 200)}</div>
+            ${c.actionable_for_calls ? `<div style="color:var(--green);margin-top:3px;font-size:10px">→ <em>Call:</em> ${c.actionable_for_calls.slice(0, 160)}</div>` : ''}
+          </div>`).join('')}</div>` : ''}
+        ${(b.quotes_top || []).length ? `<div style="margin-top:8px"><div class="eyebrow" style="font-size:9px;margin-bottom:6px;color:var(--cyan)">CITATIONS</div>${(b.quotes_top || []).map(q => `
+          <blockquote style="margin:4px 0;padding:6px 10px;border-left:2px solid var(--cyan);background:rgba(0,229,255,0.04);font-size:10px;font-style:italic;color:var(--text-2)">« ${q.quote} » <span style="color:var(--text-4);font-style:normal">— ${q.theme || ''}</span></blockquote>`).join('')}</div>` : ''}
+      </details>`).join('');
+
+    // Glossary
+    document.getElementById('lib-glossary').innerHTML = (d.glossary || []).map(g => `
+      <div style="padding:10px;border-bottom:1px solid var(--line)">
+        <div style="display:flex;justify-content:space-between;margin-bottom:4px">
+          <strong style="color:var(--cyan);font-size:13px;text-transform:capitalize">${g.term}</strong>
+          <span class="mono" style="font-size:9px;color:var(--text-4)">${g.sources_count}× livre${g.sources_count > 1 ? 's' : ''}</span>
+        </div>
+        <div style="font-size:11px;color:var(--text-2);line-height:1.4;margin-bottom:4px">${g.definition_short}</div>
+        ${g.definition_long ? `<details style="margin-top:4px"><summary style="cursor:pointer;font-size:10px;color:var(--text-3)">Définition détaillée + synonymes</summary>
+          <div style="margin-top:6px;font-size:11px;color:var(--text-3);line-height:1.5">${g.definition_long}</div>
+          ${g.synonyms ? `<div style="margin-top:4px;font-size:10px;color:var(--text-4)"><em>Synonymes :</em> ${g.synonyms}</div>` : ''}
+          ${g.source_book ? `<div style="margin-top:4px;font-size:10px;color:var(--violet)"><em>Source :</em> ${g.source_book}</div>` : ''}
+        </details>` : ''}
+      </div>`).join('');
+
+    // Concepts by category
+    const cats = Object.keys(d.concepts_by_category || {});
+    document.getElementById('lib-cat-pills').innerHTML = ['all', ...cats].map(c =>
+      `<button class="filter-pill ${c==='all'?'is-active':''}" data-cat="${c}" onclick="filterLibCat('${c}',this)">${c}</button>`).join('');
+    window._libConcepts = d.concepts_by_category || {};
+    window._libAllConcepts = Object.entries(d.concepts_by_category || {}).flatMap(([cat, items]) => items.map(c => ({...c, category: cat})));
+    renderLibConcepts('all');
+
+    // Search wire
+    document.getElementById('lib-search').addEventListener('input', e => filterLibSearch(e.target.value));
+  });
+}
+
+function renderLibConcepts(cat) {
+  const items = cat === 'all' ? window._libAllConcepts : (window._libConcepts[cat] || []);
+  const html = items.slice(0, 60).map(c => `
+    <div style="padding:12px;border:1px solid var(--line);border-radius:8px;background:var(--surface);margin-bottom:8px">
+      <div style="display:flex;justify-content:space-between;margin-bottom:6px">
+        <strong style="color:var(--text);font-size:13px">${c.name}</strong>
+        <span style="font-family:var(--font-mono);font-size:9px;color:var(--text-4)">${c.category || ''} · ${(c.books_using||[]).length}× livre${(c.books_using||[]).length > 1 ? 's' : ''}</span>
+      </div>
+      <div style="font-size:11px;color:var(--text-2);line-height:1.4;margin-bottom:6px">${(c.definition || '').slice(0, 280)}</div>
+      ${c.actionable_for_calls ? `<div style="font-size:10px;color:var(--green);line-height:1.4">→ <strong>Call:</strong> ${c.actionable_for_calls.slice(0, 200)}</div>` : ''}
+    </div>`).join('');
+  document.getElementById('lib-concepts').innerHTML = html || '<p style="color:var(--text-3)">Aucun concept dans cette catégorie.</p>';
+}
+
+function filterLibCat(cat, btn) {
+  btn.parentElement.querySelectorAll('.filter-pill').forEach(p => p.classList.remove('is-active'));
+  btn.classList.add('is-active');
+  renderLibConcepts(cat);
+}
+
+function filterLibSearch(q) {
+  if (!q || q.length < 2) { renderLibConcepts('all'); return; }
+  const ql = q.toLowerCase();
+  const items = (window._libAllConcepts || []).filter(c =>
+    (c.name||'').toLowerCase().includes(ql) ||
+    (c.definition||'').toLowerCase().includes(ql) ||
+    (c.actionable_for_calls||'').toLowerCase().includes(ql));
+  document.getElementById('lib-concepts').innerHTML = items.length
+    ? items.slice(0, 30).map(c => `<div style="padding:12px;border:1px solid var(--line);border-radius:8px;background:var(--surface);margin-bottom:8px"><strong>${c.name}</strong> · ${c.category||''}<br><span style="font-size:11px;color:var(--text-3)">${(c.definition||'').slice(0,280)}</span></div>`).join('')
+    : '<p style="color:var(--text-3)">Aucun résultat.</p>';
+}
+
 function renderCallsIntel(el) {
   el.innerHTML = `<div class="grid grid-4" style="margin-bottom:var(--gap)" id="ci-kpi"></div>
     <div class="card" style="margin-bottom:var(--gap);border:2px solid rgba(168,85,247,0.4);background:linear-gradient(135deg,rgba(168,85,247,0.04),rgba(0,229,255,0.04))">
