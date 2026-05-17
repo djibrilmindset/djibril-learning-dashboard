@@ -1,128 +1,1028 @@
 {
   "_meta": {
-    "generated": "2026-05-16T20:00:00Z",
-    "source": "fathom_csv_import + llm_t1_analyzer",
-    "owner_calls_tracked": 12,
-    "client_cold_calls_tracked": 8,
-    "schema_version": "1.0",
-    "next_ingest_step": "Pipeline: Fathom export CSV → ingest_fathom.py → analyzer LLM T1 (Kimi K2.6 long-context) → scoring 6 dimensions + extraction moments positifs/négatifs"
+    "generated": "2026-05-17T16:38:56.081477Z",
+    "source": "fathom_api + moonshot_kimi_k2.5_analyzer + frameworks_corpus_v1",
+    "owner_calls_tracked": 6,
+    "client_cold_calls_tracked": 0,
+    "schema_version": "1.1",
+    "frameworks_corpus": "~/agence-ia/manager/calls_intelligence/frameworks_corpus.json",
+    "reports_path": "/Users/pardin/agence-ia/manager/calls_intelligence/reports"
   },
   "summary": {
-    "calls_total": 20,
-    "avg_score_global": 72,
-    "delta_score_30d": 4,
-    "top_strength": "Closing direct + cas client concret",
-    "top_weakness": "Discovery trop longue (>15min)",
-    "win_rate_top_pattern": 0.85
+    "calls_total": 6,
+    "avg_score_global": 59.2,
+    "delta_score_30d": 0,
+    "top_strength": "Rapport / présence",
+    "top_weakness": "Tentative closing",
+    "win_rate_top_pattern": 0.2,
+    "best_call": {
+      "id": "fathom-147052275",
+      "score": 52
+    },
+    "dim_averages": {
+      "rapport_presence": 73.5,
+      "discovery_spin": 61.8,
+      "pain_amplification": 62.3,
+      "offer_clarity": 57.5,
+      "objection_handling": 56.2,
+      "closing_attempt": 43.3
+    }
   },
   "scoring_dimensions": [
-    { "id": "rapport", "label": "Rapport / présence" },
-    { "id": "discovery", "label": "Discovery / questions" },
-    { "id": "pain_amplification", "label": "Amplification pain" },
-    { "id": "offer_clarity", "label": "Clarté offre / mécanisme" },
-    { "id": "objection_handling", "label": "Gestion objections" },
-    { "id": "closing_attempt", "label": "Tentative closing" }
+    {
+      "id": "rapport_presence",
+      "label": "Rapport / présence"
+    },
+    {
+      "id": "discovery_spin",
+      "label": "Discovery / questions SPIN"
+    },
+    {
+      "id": "pain_amplification",
+      "label": "Amplification pain"
+    },
+    {
+      "id": "offer_clarity",
+      "label": "Clarté offre / mécanisme"
+    },
+    {
+      "id": "objection_handling",
+      "label": "Gestion objections"
+    },
+    {
+      "id": "closing_attempt",
+      "label": "Tentative closing"
+    }
   ],
   "calls_perso": [
     {
-      "id": "fathom-2026-05-14-marc-barbier-93",
+      "id": "fathom-147052275",
       "owner": "djibril",
-      "type": "discovery",
-      "prospect": "Marc — Barbier 93",
-      "date": "2026-05-14T15:00:00Z",
-      "duration_min": 38,
-      "outcome": "closed_won",
-      "score_global": 86,
-      "scores": { "rapport": 90, "discovery": 82, "pain_amplification": 85, "offer_clarity": 88, "objection_handling": 80, "closing_attempt": 92 },
+      "recording_id": 147052275,
+      "fathom_share_url": "https://fathom.video/share/6JCVHxhv-tT2W1zsa6QFVaKyGtNQptWc",
+      "prospect": "Seyfeddine Boubaker",
+      "title": "Seyfeddine avec djibril  @ 17 mai 2026 - 12:00 - Europe/Paris (GMT+2)",
+      "date": "2026-05-17T10:02:47Z",
+      "duration_min": 60,
+      "outcome": "pending",
+      "score_global": 52,
+      "scores": {
+        "rapport_presence": 72,
+        "discovery_spin": 48,
+        "pain_amplification": 58,
+        "offer_clarity": 42,
+        "objection_handling": 55,
+        "closing_attempt": 35
+      },
+      "spin_breakdown": {
+        "situation_pct": "65%",
+        "problem_pct": "20%",
+        "implication_pct": "10%",
+        "needpayoff_pct": "5%",
+        "ratio_prospect_djibril_speaking": 0.52
+      },
       "moments_positifs": [
-        { "t_min": 4, "label": "Reformulation pain point excellente" },
-        { "t_min": 18, "label": "Cas Mael 14/14 utilisé au bon moment" },
-        { "t_min": 32, "label": "Closing direct sans bavure" }
+        {
+          "t_min": 0,
+          "label": "Framing clair: objectif 5000€/90j en ouverture",
+          "framework": "hormozi_value_eq"
+        },
+        {
+          "t_min": 3,
+          "label": "Métaphore 'mains faites pour l'or dans la merde'",
+          "framework": "belfort_emotional"
+        },
+        {
+          "t_min": 3,
+          "label": "Mirroring 'bridé ?' amplifiant la douleur",
+          "framework": "voss_mirror_used"
+        },
+        {
+          "t_min": 18,
+          "label": "Labeling émotionnel sur l'attachement au parcours",
+          "framework": "voss_labeling"
+        },
+        {
+          "t_min": 59,
+          "label": "Garantie chiffrée 5000€ + 1000€ compensation",
+          "framework": "risk_reversal_explicit"
+        }
       ],
       "moments_negatifs": [
-        { "t_min": 12, "label": "Discovery un peu longue, prospect a montré impatience" }
+        {
+          "t_min": 1,
+          "label": "Phase S trop longue (14 min sur passé pro)",
+          "anti_pattern": "discovery_too_long"
+        },
+        {
+          "t_min": 42,
+          "label": "Monologue 3min+ sur les modules sans interaction",
+          "anti_pattern": "monologue_djibril"
+        },
+        {
+          "t_min": 44,
+          "label": "Listing features sans stack valeur avant prix",
+          "anti_pattern": "feature_dumping"
+        },
+        {
+          "t_min": 59,
+          "label": "Fin confuse sur salon coiffure, pas de next step daté",
+          "anti_pattern": "no_next_step"
+        }
       ],
-      "fathom_url": "fathom.video/share/abc",
-      "next_action": "Onboarding semaine prochaine"
+      "patterns_detected": [
+        "frustration_positive_hook",
+        "voss_mirror_used",
+        "risk_reversal_explicit"
+      ],
+      "anti_patterns_detected": [
+        "discovery_too_long",
+        "feature_dumping",
+        "no_case_study",
+        "monologue_djibril",
+        "soft_close_pattern",
+        "no_next_step"
+      ],
+      "frameworks_used_well": [
+        "Never Split The Difference - Voss (mirroring 'bridé ?' et labeling émotionnel)",
+        "Way of the Wolf - Belfort (métaphore émotionnelle 'mains dans la merde')",
+        "100M Offers - Hormozi (garantie inversée avec compensation mentionnée)"
+      ],
+      "frameworks_missed": [
+        "SPIN Selling - Rackham (Implication chiffrée absente, Need-payoff non mené par le prospect)",
+        "100M Offers - Hormozi (Stack de valeur avant prix non construit, mécanisme Reset Ultra peu explicité)",
+        "Never Split The Difference - Voss (Questions à 'non' absentes pour le closing)",
+        "Ultimate Sales Machine - Holmes (Case study concret Mael 14/14 non utilisé comme preuve)"
+      ],
+      "next_actions": [
+        "Préparer 3 case studies chiffrés (Mael 14/14, CA généré, ROI client) pour preuve sociale concrète",
+        "Structurer le pitch avec Value Stack: Dream Outcome -> Probabilité -> Délai -> Effort avant d'énoncer le prix",
+        "Limiter la phase Situation à 5 minutes max puis pivoter vers Problem->Implication chiffrée (coût du statu quo)",
+        "Préparer des questions à 'no' pour le closing: 'Est-ce que c'est une mauvaise idée de sécuriser ta place maintenant ?'",
+        "Fixer systématiquement un next step daté en fin de call: 'On se reparle mardi 14h, je t'envoie le contrat d'ici demain midi'"
+      ],
+      "next_action": "Préparer 3 case studies chiffrés (Mael 14/14, CA généré, ROI client) pour preuve sociale concrète · Structurer le pitch avec Value Stack: Dream Outcome -> Probabilité -> Délai -> Effort avant d'énoncer le prix",
+      "key_quotes": [
+        {
+          "speaker": "Djibril",
+          "t": "00:00:35",
+          "quote": "On va passer par une phase de questionnement et le but pour moi c'est vraiment d'apprendre à te connaître",
+          "analysis": "Framing correct mais manque de smalltalk authentique avant"
+        },
+        {
+          "speaker": "Djibril",
+          "t": "00:03:39",
+          "quote": "C'est comme si toi, entre guillemets, tu avais les mains faites pour l'or, mais elles sont dans la merde",
+          "analysis": "Métaphore puissante créant une image émotionnelle forte du pain point"
+        },
+        {
+          "speaker": "Prospect",
+          "t": "00:03:45",
+          "quote": "Et bridé, voilà, tu as tout dit, bridé, mais j'ai des personnes qui me brident",
+          "analysis": "Le prospect adopte le vocabulaire et confirme la douleur identifiée"
+        },
+        {
+          "speaker": "Djibril",
+          "t": "00:18:01",
+          "quote": "Ta vraie douleur, elle se retrouve dans le fait que tu es vraiment attaché à ce que tu as fait... et que ta situation te pousserait potentiellement à essayer d'aller chercher d'autres alternatives",
+          "analysis": "Labeling émotionnel avancé validant la frustration du prospect"
+        },
+        {
+          "speaker": "Djibril",
+          "t": "00:59:03",
+          "quote": "Si tu n'as pas les 5000€ de bénéfices nets en un mois, tu auras un remboursement total... et une compensation allant jusqu'à 1000€",
+          "analysis": "Risk reversal fort éliminant la friction de l'engagement financier"
+        },
+        {
+          "speaker": "Prospect",
+          "t": "00:56:00",
+          "quote": "Si tu me poseras la question dans un mois ou deux mois et on est bien ensemble, je peux te dire oui",
+          "analysis": "Indicateur de manque d'urgence créé, besoin de meilleure implication avant"
+        }
+      ],
+      "verdict": "MOYEN: Bonne connexion émotionnelle initiale et garantie forte, mais call trop long en découverte (S excessif), absence de case study chiffré, feature dumping sur l'offre et closing sans next step concret ni question à 'non'.",
+      "type": "discovery"
     },
     {
-      "id": "fathom-2026-05-10-yanis-coach",
+      "id": "fathom-146853932",
       "owner": "djibril",
-      "type": "closing",
-      "prospect": "Yanis — Coach perf banlieue",
-      "date": "2026-05-10T17:30:00Z",
-      "duration_min": 52,
-      "outcome": "closed_lost",
-      "score_global": 58,
-      "scores": { "rapport": 75, "discovery": 70, "pain_amplification": 45, "offer_clarity": 60, "objection_handling": 42, "closing_attempt": 55 },
+      "recording_id": 146853932,
+      "fathom_share_url": "https://fathom.video/share/48yMgoPWnwyJQzZp5aF7bMwRSy88GX1G",
+      "prospect": "TOIHA MMADI",
+      "title": "Découverte",
+      "date": "2026-05-15T15:15:23Z",
+      "duration_min": 59,
+      "outcome": "pending",
+      "score_global": 76,
+      "scores": {
+        "rapport_presence": 85,
+        "discovery_spin": 80,
+        "pain_amplification": 85,
+        "offer_clarity": 75,
+        "objection_handling": 70,
+        "closing_attempt": 60
+      },
+      "spin_breakdown": {
+        "situation_pct": "15",
+        "problem_pct": "25",
+        "implication_pct": "35",
+        "needpayoff_pct": "25",
+        "ratio_prospect_djibril_speaking": 0.65
+      },
       "moments_positifs": [
-        { "t_min": 6, "label": "Build rapport rapide via histoire commune" }
+        {
+          "t_min": 0,
+          "label": "Rappel contexte précédent + hook émotionnel",
+          "framework": "frustration_positive_hook"
+        },
+        {
+          "t_min": 2,
+          "label": "Question calibrée 'Comment tu vis ça ?'",
+          "framework": "voss_calibrated_questions"
+        },
+        {
+          "t_min": 5,
+          "label": "Validation 'C'est ça' - accord prospect",
+          "framework": "thats_right_validation"
+        },
+        {
+          "t_min": 19,
+          "label": "Amplification conséquences 'Que se passe-t-il demain ?'",
+          "framework": "SPIN_implication"
+        },
+        {
+          "t_min": 23,
+          "label": "Prospect déclare son désir de sprint et sa discipline",
+          "framework": "belfort_certainty_transfer"
+        }
       ],
       "moments_negatifs": [
-        { "t_min": 22, "label": "Objection prix mal recadrée — pas de reverse pain" },
-        { "t_min": 35, "label": "Trop d'info offre, prospect perdu" },
-        { "t_min": 48, "label": "Closing soft alors qu'il fallait closer ferme" }
+        {
+          "t_min": 30,
+          "label": "Monologue offre 3min sans interaction",
+          "anti_pattern": "monologue_djibril"
+        },
+        {
+          "t_min": 59,
+          "label": "Fin floue sans rendez-vous calé",
+          "anti_pattern": "no_next_step"
+        },
+        {
+          "t_min": 59,
+          "label": "Soft close 'je t'envoie un lien'",
+          "anti_pattern": "soft_close_pattern"
+        }
       ],
-      "fathom_url": "fathom.video/share/def",
-      "next_action": "Sequence relance 7j avec cas client"
+      "patterns_detected": [
+        "frustration_positive_hook",
+        "spin_chain_full",
+        "thats_right_validation",
+        "risk_reversal_explicit",
+        "direct_close_attempt"
+      ],
+      "anti_patterns_detected": [
+        "monologue_djibril",
+        "soft_close_pattern",
+        "no_next_step"
+      ],
+      "frameworks_used_well": [
+        "SPIN Selling - Rackham (enchaînement S-P-I-N complet avec 35% temps en Implication)",
+        "Never Split The Difference - Voss (questions calibrées 'Comment tu vis ça', 'Que se passe-t-il demain')",
+        "100M Offers - Hormozi (ancrage 10k€ + garantie résultat ou remboursement + 1000€)",
+        "Influence - Cialdini (preuve sociale via témoignages vidéo, rareté 'je choisis mes clients')"
+      ],
+      "frameworks_missed": [
+        "Never Split The Difference - Voss (accusation audit absent, pas de questions orientées 'non')",
+        "Way of the Wolf - Belfort (straight line closing non maintenu, prospect dérive sur racisme sans recadrage)",
+        "Ultimate Sales Machine - Holmes (pas d'agenda écrit confirmé en début d'appel)",
+        "100M Offers - Hormozi (pas de stack de valeur chiffré avant révélation du prix)"
+      ],
+      "next_actions": [
+        "Envoyer le lien WhatsApp promis dans l'heure avec case study chiffré (Mael 14/14) pour passer le 7/10 à 10/10",
+        "Proposer un rendez-vous calé sous 48h avec date/heure précise pour finaliser le paiement des 1000€",
+        "Utiliser un accusation audit au prochain contact : 'Tu vas penser que je suis encore un coach qui promet la lune...'",
+        "Préparer une structure de closing 'No-oriented' : 'Est-ce que c'est une mauvaise idée de bloquer ta place maintenant ?'",
+        "Vérifier la disponibilité financière exacte le 30 du mois pour le versement des 1000€"
+      ],
+      "next_action": "Envoyer le lien WhatsApp promis dans l'heure avec case study chiffré (Mael 14/14) pour passer le 7/10 à 10/10 · Proposer un rendez-vous calé sous 48h avec date/heure précise pour finaliser le paiement des 1000€",
+      "key_quotes": [
+        {
+          "speaker": "Prospect",
+          "t": "00:02:26",
+          "quote": "Je le vis mal dans le sens où je me pose la question... je vois les autres, ils y arrivent, et moi je n'arrive pas",
+          "analysis": "Pain émotionnel fort exprimé spontanément (comparaison sociale négative)"
+        },
+        {
+          "speaker": "Prospect",
+          "t": "00:05:54",
+          "quote": "C'est ça, exactement",
+          "analysis": "Validation 'That's right' de Voss - prospect se sent compris"
+        },
+        {
+          "speaker": "Prospect",
+          "t": "00:18:46",
+          "quote": "C'est chaud parce que je suis en train de taper sur mes économies... il ne me reste plus grand-chose",
+          "analysis": "Coût du statu quo chiffré et urgent (pain financier)"
+        },
+        {
+          "speaker": "Prospect",
+          "t": "00:23:07",
+          "quote": "Une fois que tu as armé la machine et que j'ai tous les outils, il n'y a personne qui peut m'arrêter",
+          "analysis": "Need-payoff prospect généré - il se projette en mode solution"
+        },
+        {
+          "speaker": "Prospect",
+          "t": "00:44:04",
+          "quote": "Je dirais 7... c'est de voir les résultats de ce que je vais faire",
+          "analysis": "Objection 'besoin de preuve' à traiter avec case study spécifique"
+        },
+        {
+          "speaker": "Prospect",
+          "t": "00:52:36",
+          "quote": "Je ne pourrais pas sortir autre chose que 300€... sinon je ne pourrais pas survivre",
+          "analysis": "Objection prix réelle liée à la survie - nécessite structure de paiement créative"
+        },
+        {
+          "speaker": "Djibril",
+          "t": "00:51:20",
+          "quote": "Moi je suis cher sur le marché... je pars à 10 000€",
+          "analysis": "Ancrage prix élevé de Hormozi avant de descendre à l'offre personnalisée"
+        },
+        {
+          "speaker": "Djibril",
+          "t": "00:50:26",
+          "quote": "Si tu n'as pas 5000€ de bénéfices nets... on te rembourse tout et on te donne 1000€",
+          "analysis": "Risk reversal total suivant le modèle Hormozi"
+        }
+      ],
+      "verdict": "MOYEN - Bonne maîtrise du discovery et de l'amplification du pain (famille, racisme, finances), mais closing mou et fin d'appel sans next step concret malgré un prospect chaud et aligné (7/10 conviction).",
+      "type": "discovery"
     },
     {
-      "id": "fathom-2026-05-06-amine-barbier",
+      "id": "fathom-146808954",
       "owner": "djibril",
-      "type": "discovery",
-      "prospect": "Amine — Barbier Argenteuil",
-      "date": "2026-05-06T11:00:00Z",
-      "duration_min": 31,
-      "outcome": "closed_won",
-      "score_global": 81,
-      "scores": { "rapport": 85, "discovery": 78, "pain_amplification": 82, "offer_clarity": 80, "objection_handling": 75, "closing_attempt": 86 },
+      "recording_id": 146808954,
+      "fathom_share_url": "https://fathom.video/share/3MGFE6xBGKYMoobHYjd4A2hjFm9DoQ4x",
+      "prospect": "Mohamed Touati",
+      "title": "Mohamed avec djibril  @ 15 mai 2026 - 16:00 - Europe/Paris (GMT+2)",
+      "date": "2026-05-15T14:00:53Z",
+      "duration_min": 59,
+      "outcome": "pending",
+      "score_global": 64,
+      "scores": {
+        "rapport_presence": 75,
+        "discovery_spin": 82,
+        "pain_amplification": 68,
+        "offer_clarity": 55,
+        "objection_handling": 70,
+        "closing_attempt": 35
+      },
+      "spin_breakdown": {
+        "situation_pct": "15%",
+        "problem_pct": "25%",
+        "implication_pct": "30%",
+        "needpayoff_pct": "30%",
+        "ratio_prospect_djibril_speaking": 0.55
+      },
       "moments_positifs": [
-        { "t_min": 8, "label": "Pain amplification chirurgicale sur revenu perdu" },
-        { "t_min": 24, "label": "Reverse pain sur 'pas le bon moment'" }
+        {
+          "t_min": 1,
+          "label": "Frame control: reporte la presentation apres discovery",
+          "framework": "belfort_control"
+        },
+        {
+          "t_min": 3,
+          "label": "Labeling implication: 'tu es un peu au mur'",
+          "framework": "voss_labeling"
+        },
+        {
+          "t_min": 25,
+          "label": "Risk reversal explicite: garantie avec avocat",
+          "framework": "hormozi_risk_reversal"
+        },
+        {
+          "t_min": 55,
+          "label": "Case study concret: Elies 8k€ en 3j",
+          "framework": "hormozi_proof"
+        },
+        {
+          "t_min": 22,
+          "label": "Validation emotion age: 'on dirait que t'es prudent'",
+          "framework": "voss_labeling"
+        }
       ],
-      "moments_negatifs": [],
-      "fathom_url": "fathom.video/share/ghi",
-      "next_action": "Onboarding mardi"
+      "moments_negatifs": [
+        {
+          "t_min": 31,
+          "label": "Monologue 5min+ sur l'offre SMMA sans interaction",
+          "anti_pattern": "feature_dumping"
+        },
+        {
+          "t_min": 38,
+          "label": "Monologue sur la connexion puis coupure",
+          "anti_pattern": "monologue_djibril"
+        },
+        {
+          "t_min": 59,
+          "label": "Fin sans next step date ni closing",
+          "anti_pattern": "no_next_step"
+        }
+      ],
+      "patterns_detected": [
+        "spin_chain_full",
+        "voss_mirror_used",
+        "case_study_window",
+        "risk_reversal_explicit",
+        "thats_right_validation"
+      ],
+      "anti_patterns_detected": [
+        "feature_dumping",
+        "soft_close_pattern",
+        "pricing_no_anchor",
+        "monologue_djibril",
+        "no_next_step"
+      ],
+      "frameworks_used_well": [
+        "Never Split The Difference - Voss: Utilisation du labeling emotionnel ('tu es un peu au mur', 'deçu par les prestataires') pour creuser le pain",
+        "SPIN Selling - Rackham: Enchainement complet S-P-I-N avec implication sur les consequences a long terme",
+        "Never Split The Difference - Voss: Questions calibrees 'Qu'est-ce qui te fait dire ca ?' pour eviter le defensive",
+        "How to Win Friends - Carnegie: Validation de l'age et de la prudence comme force, pas faiblesse",
+        "100M Offers - Hormozi: Mention de la garantie 'satisfait ou rembourse' comme preuve de conviction"
+      ],
+      "frameworks_missed": [
+        "Way of the Wolf - Belfort: Pas de closing vers la ligne droite (missing Straight Line)",
+        "100M Offers - Hormozi: Pas de Value Stack avant annonce du prix",
+        "Never Split The Difference - Voss: Pas de question orientee 'non' pour faciliter le closing",
+        "Never Split The Difference - Voss: Accusation audit incomplet sur les objections prix/mefiance",
+        "100M Offers - Hormozi: Dream Outcome pas chiffre concretement (5-10k€/mois pas ancre)"
+      ],
+      "next_actions": [
+        "Envoyer un accusation audit ecrit par WhatsApp sur les 3 objections principales (prix, mefiance age, complexite) avant le prochain appel",
+        "Preparer un Value Stack avec calcul ROI chiffre (cout du statu quo vs investissement) pour le prochain echange",
+        "Proposer une question orientee 'non' type: 'Est-ce que ce serait une mauvaise idee de faire un essai de 7 jours avec garantie ?'",
+        "Fixer un rendez-vous calendly concret avant de raccrocher: 'Mardi 14h ou Jeudi 10h ?'",
+        "Creer une case study one-page de Mael 14/14 pour adresser l'objection 'il faut que je goute'"
+      ],
+      "next_action": "Envoyer un accusation audit ecrit par WhatsApp sur les 3 objections principales (prix, mefiance age, complexite) avant le prochain appel · Preparer un Value Stack avec calcul ROI chiffre (cout du statu quo vs investissement) pour le prochain echange",
+      "key_quotes": [
+        {
+          "speaker": "Djibril",
+          "t": "00:01:12",
+          "quote": "Honnêtement, mohamed, je viendrai sur toutes ces questions juste apres, une fois qu'on aura vraiment fait une phase de decouverte sur ta situation",
+          "analysis": "Frame control parfait: maintient le cadre discovery avant de presenter l'offre, evite le premature pitch"
+        },
+        {
+          "speaker": "Djibril",
+          "t": "00:03:55",
+          "quote": "Donc actuellement, si je comprends bien, c'est comme si tu etais un peu au mur",
+          "analysis": "Labeling Voss: verbalise la situation difficile du prospect pour amplifier le pain sans etre agressif"
+        },
+        {
+          "speaker": "Mohamed",
+          "t": "00:22:42",
+          "quote": "Moi, il va falloir que je goute pour... te dire ouais, c'est bon... je ne vais pas te plonger, je vais t'acheter le plat",
+          "analysis": "Objection cle: besoin de preuve tangible avant engagement, indique un profil pragmatique necessitant une demonstration"
+        },
+        {
+          "speaker": "Djibril",
+          "t": "00:25:49",
+          "quote": "Toi, tu parles de satisfait ou rembourse avec un avocat et tout ca. Deja je pense que ca c'est quand meme deja un gage de confiance",
+          "analysis": "Risk reversal Hormozi: utilise la garantie comme preuve de conviction, mais manque de structure (stack) avant"
+        },
+        {
+          "speaker": "Mohamed",
+          "t": "00:50:34",
+          "quote": "En fait, le truc n'est pas aussi simple que je pensais... il faut trouver et le client et l'entreprise",
+          "analysis": "Confusion sur l'offre: le prospect ne comprend pas le modele SMMA, indicateur de feature dumping insuffisamment clarifie"
+        },
+        {
+          "speaker": "Djibril",
+          "t": "00:55:59",
+          "quote": "J'ai un collaborateur qui s'appelle Elies... en l'espace de trois jours, il a signe un contrat a 8000 euros",
+          "analysis": "Case study social proof: exemple concret avec chiffres precis pour contrer la mefiance, mais arrive tardivement (min 56)"
+        }
+      ],
+      "verdict": "MOYEN: Excellente phase de discovery SPIN et connexion empathique, mais offre confuse (SMMA mal expliquee), feature dumping de 20 minutes sans structure, et closing inexistant avec oubli du next step date.",
+      "type": "discovery"
+    },
+    {
+      "id": "fathom-145049654",
+      "owner": "djibril",
+      "recording_id": 145049654,
+      "fathom_share_url": "https://fathom.video/share/EvGA_oESbuQs5yW_J19JFSgehgBcgyeb",
+      "prospect": "Jad Arbid",
+      "title": "Jad avec djibril  @ 10 mai 2026 - 18:00 - Europe/Paris (GMT+2)",
+      "date": "2026-05-10T16:03:06Z",
+      "duration_min": 82,
+      "outcome": "pending",
+      "score_global": 53,
+      "scores": {
+        "rapport_presence": 72,
+        "discovery_spin": 48,
+        "pain_amplification": 45,
+        "offer_clarity": 58,
+        "objection_handling": 42,
+        "closing_attempt": 55
+      },
+      "spin_breakdown": {
+        "situation_pct": "35%",
+        "problem_pct": "25%",
+        "implication_pct": "8%",
+        "needpayoff_pct": "12%",
+        "ratio_prospect_djibril_speaking": 0.38
+      },
+      "moments_positifs": [
+        {
+          "t_min": 0,
+          "label": "Validation 'That's right' sur la comparaison sociale",
+          "framework": "thats_right_validation"
+        },
+        {
+          "t_min": 12,
+          "label": "Identification douleur procrastination/boule au ventre",
+          "framework": "SPIN_selling"
+        },
+        {
+          "t_min": 17,
+          "label": "Confirmation cause racine manque productivité",
+          "framework": "voss_calibrated_questions"
+        },
+        {
+          "t_min": 60,
+          "label": "Case study Mohamed 10k€ en 2 mois",
+          "framework": "case_study_window"
+        },
+        {
+          "t_min": 63,
+          "label": "Tentative closing direct 'Je signe'",
+          "framework": "direct_close_attempt"
+        }
+      ],
+      "moments_negatifs": [
+        {
+          "t_min": 23,
+          "label": "Monologue philosophique 7min+ sur le luxe de penser au futur",
+          "anti_pattern": "monologue_djibril"
+        },
+        {
+          "t_min": 34,
+          "label": "Pitch SMMA confus sans lien pain préalable",
+          "anti_pattern": "feature_dumping"
+        },
+        {
+          "t_min": 67,
+          "label": "Prix 10k€ lancé sans anchor ni stack de valeur préalable",
+          "anti_pattern": "pricing_no_anchor"
+        },
+        {
+          "t_min": 73,
+          "label": "Urgence artificielle 'jusqu'à ce soir/minuit'",
+          "anti_pattern": "soft_close_pattern"
+        }
+      ],
+      "patterns_detected": [
+        "thats_right_validation",
+        "case_study_window",
+        "risk_reversal_explicit",
+        "direct_close_attempt"
+      ],
+      "anti_patterns_detected": [
+        "discovery_too_long",
+        "monologue_djibril",
+        "feature_dumping",
+        "pricing_no_anchor",
+        "soft_close_pattern"
+      ],
+      "frameworks_used_well": [
+        "Never Split The Difference - Voss (thats_right_validation à 00:03:06)",
+        "SPIN Selling - Rackham (phase Problem sur procrastination)",
+        "100M Offers - Hormozi (risk reversal avec garantie 90j à 01:16:00)",
+        "Way of the Wolf - Belfort (tentative close direct 'Je pose un contrat' à 01:03:54)"
+      ],
+      "frameworks_missed": [
+        "Never Split The Difference - Voss (mirroring sur objection prix manqué à 01:07:17)",
+        "SPIN Selling - Rackham (phase Implication chiffrée en € du status quo absente)",
+        "Influence - Cialdini (pas d'ancrage prix avant révélation 10k€)",
+        "Never Split The Difference - Voss (no-oriented question pour fermeture absente)"
+      ],
+      "next_actions": [
+        "Envoyer case study écrit de Mohamed Sébar avec chiffres précis (ROI concret) sous 24h",
+        "Préparer script 'Accusation Audit' pour objection parentale sur le scam (Cialdini/Voss)",
+        "Proposer call de 15min avec les parents pour rassurer sur l'investissement (réduction risque perçu)",
+        "Créer urgency réelle : offre 1500€ valable uniquement si inscription avant 24h et premier RDV technique sous 48h",
+        "Refaire discovery sur objectifs chiffrés précis (combien veut gagner Jad exactement ?) avant tout pitch"
+      ],
+      "next_action": "Envoyer case study écrit de Mohamed Sébar avec chiffres précis (ROI concret) sous 24h · Préparer script 'Accusation Audit' pour objection parentale sur le scam (Cialdini/Voss)",
+      "key_quotes": [
+        {
+          "speaker": "Djibril",
+          "t": "00:03:06",
+          "quote": "That's right.",
+          "analysis": "Validation émotionnelle Voss qui crée connexion et confiance immédiate"
+        },
+        {
+          "speaker": "Jad",
+          "t": "00:12:47",
+          "quote": "Si vraiment il y a une douleur en ce moment... j'ai du mal à me mettre à bosser... j'ai presque pas bossé du week-end",
+          "analysis": "Pain point clair (procrastination) émergent naturellement sans forcing"
+        },
+        {
+          "speaker": "Djibril",
+          "t": "00:17:15",
+          "quote": "C'est comme si tu avais décelé que la cause de tous tes problèmes, c'était ton manque de productivité",
+          "analysis": "Labeling de la cause racine, bonne technique mais monologue suivant trop long"
+        },
+        {
+          "speaker": "Jad",
+          "t": "01:07:17",
+          "quote": "10 000, c'est beaucoup, beaucoup, beaucoup. Je les ai clairement pas.",
+          "analysis": "Objection prix honnête, révélant manque d'ancrage et de stack préalable"
+        },
+        {
+          "speaker": "Djibril",
+          "t": "01:11:00",
+          "quote": "Je serais OK pour descendre à 1500€ pour une porte d'entrée et ensuite échelonner le reste à la performance",
+          "analysis": "Flexibilité tarifaire sans avoir exploré l'objection en profondeur (pas de mirror)"
+        },
+        {
+          "speaker": "Djibril",
+          "t": "01:16:00",
+          "quote": "Garantie sur 90 jours... si tu vas atteindre cet objectif, nous on te rembourse intégralement... compensation jusqu'à 1000 euros",
+          "analysis": "Risk reversal Hormozi bien exécuté pour réduire la friction perçue"
+        }
+      ],
+      "verdict": "MOYEN : Bonne connexion émotionnelle initiale et validation Voss, mais discovery trop long (40min), manque d'amplification du pain chiffré, et fermeture défensive sur le prix sans utilisation du mirroring ni des questions à 'non'.",
+      "type": "discovery"
+    },
+    {
+      "id": "fathom-145016468",
+      "owner": "djibril",
+      "recording_id": 145016468,
+      "fathom_share_url": "https://fathom.video/share/cSLeWuD5Dfxsvwg4SM-HMWDBF1xj1_5b",
+      "prospect": "Sadio Sissoko",
+      "title": "call",
+      "date": "2026-05-09T15:32:40Z",
+      "duration_min": 23,
+      "outcome": "pending",
+      "score_global": 59,
+      "scores": {
+        "rapport_presence": 72,
+        "discovery_spin": 68,
+        "pain_amplification": 88,
+        "offer_clarity": 55,
+        "objection_handling": 45,
+        "closing_attempt": 25
+      },
+      "spin_breakdown": {
+        "situation_pct": 35,
+        "problem_pct": 25,
+        "implication_pct": 30,
+        "needpayoff_pct": 10,
+        "ratio_prospect_djibril_speaking": 0.52
+      },
+      "moments_positifs": [
+        {
+          "t_min": 1,
+          "label": "Question Problem sur la motivation immédiate",
+          "framework": "SPIN_selling"
+        },
+        {
+          "t_min": 4,
+          "label": "Deep dive sur la frustration financière",
+          "framework": "voss_calibrated_questions"
+        },
+        {
+          "t_min": 7,
+          "label": "Exploration émotionnelle physique (mal au ventre)",
+          "framework": "SPIN_implication"
+        },
+        {
+          "t_min": 12,
+          "label": "Mirroring sur le manque d'accompagnement",
+          "framework": "voss_mirror_used"
+        },
+        {
+          "t_min": 14,
+          "label": "Question Need-payoff sur la solution idéale",
+          "framework": "SPIN_selling"
+        }
+      ],
+      "moments_negatifs": [
+        {
+          "t_min": 15,
+          "label": "Monologue 4min sur l'offre sans interaction",
+          "anti_pattern": "monologue_djibril"
+        },
+        {
+          "t_min": 0,
+          "label": "Phase Situation s'étire sur 6min+",
+          "anti_pattern": "discovery_too_long"
+        },
+        {
+          "t_min": 22,
+          "label": "Close vague 'je te rappelle après la prière'",
+          "anti_pattern": "soft_close_pattern"
+        }
+      ],
+      "patterns_detected": [
+        "spin_chain_full",
+        "case_study_window",
+        "thats_right_validation"
+      ],
+      "anti_patterns_detected": [
+        "discovery_too_long",
+        "monologue_djibril",
+        "soft_close_pattern",
+        "no_next_step",
+        "pricing_no_anchor"
+      ],
+      "frameworks_used_well": [
+        "SPIN Selling - Rackham (excellentes questions Implication sur le pain familial)",
+        "Never Split The Difference - Voss (calibrated questions 'Comment tu vois la suite', mirroring implicite)",
+        "Influence - Cialdini (preuve sociale vidéo au moment critique)"
+      ],
+      "frameworks_missed": [
+        "Way of the Wolf - Belfort (pas de straight line closing, absence de date/heure ferme)",
+        "100M$ Offers - Hormozi (pas de value stack structuré avant prix, mécanisme unique évoqué mais confus)",
+        "Ultimate Sales Machine - Holmes (pas de proposition irrésistible avec garantie explicite)"
+      ],
+      "next_actions": [
+        "Envoyer SMS dans l'heure pour fixer date/heure précise avant 48h (éviter soft close)",
+        "Préparer stack de valeur 3-5 points avant énonciation prix sur prochain appel",
+        "Limiter phase S à 3 questions max (temps/revenus/situation actuelle) puis pivoter P+I",
+        "Préparer accusation audit pour objection 'j'ai déjà essayé une formation'",
+        "Préparer close no-oriented 'Est-ce que ce serait une mauvaise idée de commencer lundi?'"
+      ],
+      "next_action": "Envoyer SMS dans l'heure pour fixer date/heure précise avant 48h (éviter soft close) · Préparer stack de valeur 3-5 points avant énonciation prix sur prochain appel",
+      "key_quotes": [
+        {
+          "speaker": "Djibril",
+          "t": "00:01:21",
+          "quote": "Et pourquoi aujourd'hui tu sens besoin de vouloir gagner un peu plus ?",
+          "analysis": "Question Problem pivotant sur la temporalité pour créer urgence"
+        },
+        {
+          "speaker": "Prospect",
+          "t": "00:07:06",
+          "quote": "C'est le mal de ventre. C'est une haine… Envers moi-même",
+          "analysis": "Pain émotionnel profond explicité par le prospect (Implication)"
+        },
+        {
+          "speaker": "Djibril",
+          "t": "00:07:23",
+          "quote": "Parce que c'est comme si tu savais que tu devais faire, mais qu'aujourd'hui, tu n'arrivais pas à le faire ?",
+          "analysis": "Labeling émotionnel de la frustration cognitive"
+        },
+        {
+          "speaker": "Prospect",
+          "t": "00:12:28",
+          "quote": "Je ne posais pas assez de questions... J'étais timide",
+          "analysis": "Prospect identifie lui-même le blocage (Need-payoff en amorçage)"
+        },
+        {
+          "speaker": "Djibril",
+          "t": "00:14:17",
+          "quote": "Qu'est-ce qu'il faudrait pour que Sadio ait un résultat ?",
+          "analysis": "Question Need-payoff faisant projeter la solution"
+        },
+        {
+          "speaker": "Prospect",
+          "t": "00:19:14",
+          "quote": "J'ai 18 ans, j'ai réussi à faire 10 000€ le mois dernier, en 4 mois j'ai fait 40 000",
+          "analysis": "Preuve sociale vidéo bien placée créant crédibilité et désirabilité"
+        },
+        {
+          "speaker": "Djibril",
+          "t": "00:22:37",
+          "quote": "Va faire la prière sur ma prière, on se rappelle, c'est ok ?",
+          "analysis": "Soft close sans engagement temporel précis (danger)"
+        }
+      ],
+      "verdict": "MOYEN - Excellent travail de discovery émotionnel (pain familial/confiance) mais gâché par un monologue offre de 4 minutes et un closing mou sans date/heure ferme.",
+      "type": "discovery"
+    },
+    {
+      "id": "fathom-145008467",
+      "owner": "djibril",
+      "recording_id": 145008467,
+      "fathom_share_url": "https://fathom.video/share/L3c3YeUbK3hQN9QPw3FY3vEZRqNyqjPG",
+      "prospect": "Christopher Brosset",
+      "title": "Reset Ultra ",
+      "date": "2026-05-09T13:06:50Z",
+      "duration_min": 81,
+      "outcome": "booked_followup",
+      "score_global": 51,
+      "scores": {
+        "rapport_presence": 65,
+        "discovery_spin": 45,
+        "pain_amplification": 30,
+        "offer_clarity": 60,
+        "objection_handling": 55,
+        "closing_attempt": 50
+      },
+      "spin_breakdown": {
+        "situation_pct": "35%",
+        "problem_pct": "20%",
+        "implication_pct": "5%",
+        "needpayoff_pct": "10%",
+        "ratio_prospect_djibril_speaking": 0.35
+      },
+      "moments_positifs": [
+        {
+          "t_min": 0,
+          "label": "Smalltalk authentique banque bloquée",
+          "framework": "carnegie_dale"
+        },
+        {
+          "t_min": 13,
+          "label": "Témoignages vidéo preuve sociale",
+          "framework": "hormozi_proof"
+        },
+        {
+          "t_min": 30,
+          "label": "Garantie explicite remboursement + 1000€",
+          "framework": "hormozi_value_equation"
+        },
+        {
+          "t_min": 57,
+          "label": "Appel live avec Gary témoignage client",
+          "framework": "belfort_emotional"
+        },
+        {
+          "t_min": 73,
+          "label": "Négociation flexibilité prix 8000€",
+          "framework": "voss_no_oriented"
+        }
+      ],
+      "moments_negatifs": [
+        {
+          "t_min": 10,
+          "label": "Monologue 3min+ sur modules formation",
+          "anti_pattern": "feature_dumping"
+        },
+        {
+          "t_min": 33,
+          "label": "Prix énoncé sans value stack préalable",
+          "anti_pattern": "pricing_no_anchor"
+        },
+        {
+          "t_min": 35,
+          "label": "Défensive objection % résultats",
+          "anti_pattern": "defensive_objection"
+        },
+        {
+          "t_min": 47,
+          "label": "Monologue tracking sans interaction",
+          "anti_pattern": "monologue_djibril"
+        }
+      ],
+      "patterns_detected": [
+        "case_study_window",
+        "risk_reversal_explicit",
+        "direct_close_attempt"
+      ],
+      "anti_patterns_detected": [
+        "discovery_too_long",
+        "feature_dumping",
+        "pricing_no_anchor",
+        "monologue_djibril",
+        "soft_close_pattern"
+      ],
+      "frameworks_used_well": [
+        "100M$ Offers - Hormozi (garantie risque reversal explicit)",
+        "Way of the Wolf - Belfort (utilisation témoignage client Gary en direct)",
+        "How to Win Friends - Carnegie (smalltalk ouverture banque)"
+      ],
+      "frameworks_missed": [
+        "Never Split The Difference - Voss (pas de mirroring sur objection prix, pas de labeling émotionnel)",
+        "SPIN Selling - Rackham (phase Implication absente, saut vers solution trop tôt)",
+        "100M$ Offers - Hormozi (pas de stack valeur avant prix, dream outcome pas assez creusé)",
+        "Never Split The Difference - Voss (pas de accusation audit sur peur du scam)"
+      ],
+      "next_actions": [
+        "Envoyer le contrat et lien paiement 48h avant le RDV mardi avec rappel SMS",
+        "Préparer un accusation audit sur 'scam/formation arnaque' pour lever la défiance",
+        "Refaire une discovery SPIN complète en focus sur Implication (coût statu quo) au prochain appel",
+        "Créer un value stack écrit (liste bénéfices chiffrés) à présenter avant l'investissement",
+        "Demander à Christopher de préparer son RIB et moyen de paiement avant mardi pour fluidifier le closing"
+      ],
+      "next_action": "Envoyer le contrat et lien paiement 48h avant le RDV mardi avec rappel SMS · Préparer un accusation audit sur 'scam/formation arnaque' pour lever la défiance",
+      "key_quotes": [
+        {
+          "speaker": "Djibril",
+          "t": "00:00:06",
+          "quote": "Pourquoi est bloqué ton compte ?",
+          "analysis": "Calibrated question Voss pour ouvrir le dialogue, bon début mais pas suivi de mirroring"
+        },
+        {
+          "speaker": "Prospect",
+          "t": "00:02:43",
+          "quote": "Bah rien, quoi.",
+          "analysis": "Prospect minimise ses blocages, Djibril ne creuse pas en Implication (Rackham manqué)"
+        },
+        {
+          "speaker": "Djibril",
+          "t": "00:30:12",
+          "quote": "Tu as la garantie que si tu ne génères pas sur les 90 jours 5 000 €… tu seras remboursé de tout ce que tu as investi, plus 1000€ d'endommagement.",
+          "analysis": "Risk reversal Hormozi bien explicite, point fort de l'appel"
+        },
+        {
+          "speaker": "Prospect",
+          "t": "00:34:52",
+          "quote": "Je comprends pas pourquoi mettre 10 000… Prendre des pourcentages sur ce qu'ils gagnent en soi.",
+          "analysis": "Objection prix légitime sur le modèle éco, Djibril répond en défensive au lieu de labeliser (Voss manqué)"
+        },
+        {
+          "speaker": "Djibril",
+          "t": "00:57:55",
+          "quote": "Tudou ? Ouais, Tudou, Tudou. Ça va ou quoi ?",
+          "analysis": "Transition vers témoignage client live Gary, technique de preuve sociale forte (Belfort)"
+        },
+        {
+          "speaker": "Prospect",
+          "t": "01:16:20",
+          "quote": "Là, je ne peux pas débloquer, moi, c'est la banque, je ne suis pas bloqué, genre c'est la bancaire.",
+          "analysis": "Objection technique finale (compte bloqué), Djibril accepte trop facilement sans challenger la date"
+        }
+      ],
+      "verdict": "MOYEN - Bonne énergie et structure globale mais discovery trop longue et superficielle, manque cruel de phase Implication SPIN et de techniques Voss (mirroring/labeling) sur les objections prix et confiance.",
+      "type": "discovery"
     }
   ],
   "patterns_success": [
-    { "pattern": "Cas client concret entre min 15-25", "win_rate": 0.78, "samples": 9, "example_calls": ["fathom-2026-05-14-marc-barbier-93", "fathom-2026-05-06-amine-barbier"] },
-    { "pattern": "Closing direct < 45min", "win_rate": 0.71, "samples": 7, "example_calls": ["fathom-2026-05-14-marc-barbier-93"] },
-    { "pattern": "Reverse pain sur objection prix", "win_rate": 0.85, "samples": 6, "example_calls": ["fathom-2026-05-06-amine-barbier"] },
-    { "pattern": "Pain amplification > 80 score", "win_rate": 0.80, "samples": 5 }
-  ],
-  "patterns_failure": [
-    { "pattern": "Discovery > 15min", "loss_rate": 0.68, "samples": 8, "example_calls": ["fathom-2026-05-10-yanis-coach"] },
-    { "pattern": "Pas de cas client mentionné", "loss_rate": 0.75, "samples": 5 },
-    { "pattern": "Objection prix sans reverse pain", "loss_rate": 0.82, "samples": 6, "example_calls": ["fathom-2026-05-10-yanis-coach"] },
-    { "pattern": "Closing soft (vs ferme)", "loss_rate": 0.70, "samples": 4 }
-  ],
-  "client_cold_calls": [
     {
-      "client": "Mael — barbier 93",
-      "calls_analyzed": 12,
-      "avg_score_global": 72,
-      "delta_30d": 8,
-      "trend": "📈 progression",
-      "top_strength": "Rapport rapide + énergie",
-      "top_weakness": "Pas assez de pain amplification (-15 vs benchmark)",
-      "last_call": { "date": "2026-05-15", "score": 78, "outcome": "booked_followup" },
-      "next_coaching": "Drill 30min sur pain amplification — exercices Reset Ultra module 3"
+      "pattern": "Risk reversal explicit",
+      "win_rate": 0.2,
+      "samples": 5
     },
     {
-      "client": "Yacine — coach perf",
-      "calls_analyzed": 6,
-      "avg_score_global": 58,
-      "delta_30d": -3,
-      "trend": "📉 baisse",
-      "top_strength": "Discovery structurée",
-      "top_weakness": "Closing évité 4/6 calls, pivot trop tôt en infomercial",
-      "last_call": { "date": "2026-05-13", "score": 52, "outcome": "closed_lost" },
-      "next_coaching": "Bloc closing 1h obligatoire avant prochain call client"
+      "pattern": "Thats right validation",
+      "win_rate": 0.25,
+      "samples": 4
+    },
+    {
+      "pattern": "Case study window",
+      "win_rate": 0.0,
+      "samples": 4
+    },
+    {
+      "pattern": "Spin chain full",
+      "win_rate": 0.33,
+      "samples": 3
+    },
+    {
+      "pattern": "Direct close attempt",
+      "win_rate": 0.33,
+      "samples": 3
+    },
+    {
+      "pattern": "Frustration positive hook",
+      "win_rate": 0.5,
+      "samples": 2
+    },
+    {
+      "pattern": "Voss mirror used",
+      "win_rate": 0.0,
+      "samples": 2
     }
   ],
-  "queue_to_analyze": [
-    { "fathom_id": "fathom-2026-05-15-prospect-x", "owner": "djibril", "status": "pending_llm" },
-    { "fathom_id": "fathom-2026-05-15-mael-call-13", "owner": "mael", "status": "pending_llm" }
-  ]
+  "patterns_failure": [
+    {
+      "pattern": "Monologue djibril",
+      "loss_rate": 0.83,
+      "samples": 6
+    },
+    {
+      "pattern": "Soft close pattern",
+      "loss_rate": 0.83,
+      "samples": 6
+    },
+    {
+      "pattern": "Discovery too long",
+      "loss_rate": 1.0,
+      "samples": 4
+    },
+    {
+      "pattern": "Feature dumping",
+      "loss_rate": 1.0,
+      "samples": 4
+    },
+    {
+      "pattern": "No next step",
+      "loss_rate": 0.75,
+      "samples": 4
+    },
+    {
+      "pattern": "Pricing no anchor",
+      "loss_rate": 1.0,
+      "samples": 4
+    },
+    {
+      "pattern": "No case study",
+      "loss_rate": 1.0,
+      "samples": 1
+    }
+  ],
+  "client_cold_calls": [],
+  "queue_to_analyze": []
 }
