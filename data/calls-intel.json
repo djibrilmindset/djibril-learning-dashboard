@@ -1,31 +1,31 @@
 {
   "_meta": {
-    "generated": "2026-05-22T10:25:45.892137Z",
+    "generated": "2026-05-22T14:03:14.961966Z",
     "source": "fathom_api + moonshot_kimi_k2.5_analyzer + frameworks_corpus_v1",
-    "owner_calls_tracked": 11,
+    "owner_calls_tracked": 12,
     "client_cold_calls_tracked": 0,
     "schema_version": "1.1",
     "frameworks_corpus": "~/agence-ia/manager/calls_intelligence/frameworks_corpus.json",
     "reports_path": "/Users/pardin/agence-ia/manager/calls_intelligence/reports"
   },
   "summary": {
-    "calls_total": 11,
+    "calls_total": 12,
     "avg_score_global": 52.5,
     "delta_score_30d": 0,
     "top_strength": "Rapport / présence",
     "top_weakness": "Tentative closing",
     "win_rate_top_pattern": 0.0,
     "best_call": {
-      "id": "fathom-147360259",
-      "score": 59
+      "id": "fathom-147394425",
+      "score": 52
     },
     "dim_averages": {
-      "rapport_presence": 69.6,
-      "discovery_spin": 49.4,
-      "pain_amplification": 47.9,
-      "offer_clarity": 48.2,
-      "objection_handling": 59.6,
-      "closing_attempt": 40.6
+      "rapport_presence": 69.2,
+      "discovery_spin": 46.9,
+      "pain_amplification": 47.2,
+      "offer_clarity": 49.2,
+      "objection_handling": 59.2,
+      "closing_attempt": 43.5
     }
   },
   "scoring_dimensions": [
@@ -55,6 +55,228 @@
     }
   ],
   "calls_perso": [
+    {
+      "id": "fathom-147394425",
+      "owner": "djibril",
+      "recording_id": 147394425,
+      "fathom_share_url": "https://fathom.video/share/GmyLmxdZwrRprSNtdojszz1vzJKbytgs",
+      "prospect": "—",
+      "title": "Impromptu Google Meet Meeting",
+      "date": "2026-05-18T19:03:55Z",
+      "duration_min": 38,
+      "outcome": "closed_won",
+      "score_global": 52,
+      "scores": {
+        "rapport_presence": 65,
+        "discovery_spin": 20,
+        "pain_amplification": 40,
+        "offer_clarity": 60,
+        "objection_handling": 55,
+        "closing_attempt": 75
+      },
+      "spin_breakdown": {
+        "situation_pct": 5,
+        "problem_pct": 10,
+        "implication_pct": 15,
+        "needpayoff_pct": 5,
+        "ratio_prospect_djibril_speaking": 0.28
+      },
+      "top_2_leviers_8020": [
+        {
+          "rank": 1,
+          "levier": "Remplacer le monologue d'ouverture par 2 questions SPIN consécutives",
+          "impact_attendu_points": 28,
+          "fix_concret": "À 00:00, supprimer le pitch de 100 secondes. Dire exactement: 'Ahmed, avant qu'on parle de moi, dis-moi: tu es encore salarié aujourd'hui ou tu as déjà ton agence ?' (S) puis 'Et c'est quoi la partie qui te frustre le plus dans ta situation actuelle ?' (P). Attendre la réponse sans interrompre.",
+          "timestamp_ref": "00:00:00"
+        },
+        {
+          "rank": 2,
+          "levier": "Utiliser le Mirroring + Labeling sur l'objection prix à 20:52",
+          "impact_attendu_points": 18,
+          "fix_concret": "Quand Ahmed dit '10 000 euros c'est cher', répondre: '10 000 euros ?' (mirroring 3 secondes) puis 'On dirait que ça représente plus que ce que tu as de côté actuellement ?' (labeling). Attendre qu'il confirme avant de proposer la flexibilité.",
+          "timestamp_ref": "00:20:52"
+        }
+      ],
+      "cross_channel_implications": {
+        "to_instagram_reels": "Tourner REEL 22s cette semaine: Hook 'Mental 80% vs Technique 20%' — Djibril réfute le mythe avec l'exemple Ronaldo (00:08:28 du call), texte en incrustation 'T'as déjà vu un crack sans mental ?' + CTA 'DM RESET si t'es banlieue et que tu veux passer à 10k/mois'",
+        "to_meta_ads": "Refondre creative Meta: Titre '300€ pour démarrer ton scale' — adresser directement l'objection prix entendue (00:22:38) avec visuel du contrat et mention 'Paiement échelonné disponible'. Ciblage: intérêts 'Jiu-jitsu' + 'Entrepreneuriat' + localisation 93/92/91.",
+        "to_basile_dm": "Durcir script Basile étape 2: Ajouter question calibrée 'Sur une échelle de 1 à 10, quel budget as-tu mis de côté pour investir dans ton avenir pro ?' + 'Si on trouve une solution à X€, tu es prêt à t'engager cette semaine ?' pour qualifier Ahmed avant le call (éviter la négociation surprise sur 300€).",
+        "to_lp_vsl": "Refondre section 'Mécanisme Reset Ultra' à min 2:30 de la VSL — ajouter schéma visuel des 4 phases (S-P-I-N) car prospect confus sur la méthode à 00:15:02 ('Je n'ai pas vu la méthode d'Odjus'). Preuve: cas Mael 14/14 avec chiffres exacts.",
+        "to_mariam_email": "Activer email J-1 séquence 'Préparation dépôt' — anticiper objection 'Je dois aller au distributeur' (00:35:20) avec checklist: 'Prépare tes 300€ en liquide ce soir pour ne pas perdre ta place demain'. Réduire le no-show/ghosting post-call.",
+        "to_cold_calls_clients": "Coaching immédiat à Mael/Yacine: Instaurer 'Règle des 30 secondes' — timer visible sur écran. Si Djibril (ou eux) parle >30s sans question, bipe sonore. Objectif: passer de 72% à 40% de parole vendeur."
+      },
+      "moments_positifs": [
+        {
+          "t_min": 20,
+          "label": "Price anchoring élevé (10k€) avant négociation",
+          "framework": "hormozi_value_equation"
+        },
+        {
+          "t_min": 18,
+          "label": "Garantie explicite avec compensation 1000€",
+          "framework": "risk_reversal_explicit"
+        },
+        {
+          "t_min": 34,
+          "label": "Close final avec structure paiement performance",
+          "framework": "belfort_straight_line"
+        },
+        {
+          "t_min": 23,
+          "label": "Accusation audit partiel sur le prix",
+          "framework": "voss_accusation_audit"
+        }
+      ],
+      "moments_negatifs": [
+        {
+          "t_min": 0,
+          "label": "Monologue de 100s sans question ouverte",
+          "anti_pattern": "monologue_djibril"
+        },
+        {
+          "t_min": 2,
+          "label": "Débat mental vs skills sans découverte préalable",
+          "anti_pattern": "discovery_too_long"
+        },
+        {
+          "t_min": 11,
+          "label": "Absence de cas concret chiffré (Mael 14/14 non détaillé)",
+          "anti_pattern": "no_case_study"
+        }
+      ],
+      "patterns_detected": [
+        "value_stack_pre_price",
+        "risk_reversal_explicit",
+        "direct_close_attempt"
+      ],
+      "anti_patterns_detected": [
+        "monologue_djibril",
+        "no_case_study",
+        "feature_dumping"
+      ],
+      "frameworks_used_well": [
+        {
+          "concept": "Risk Reversal / Garantie inconditionnelle",
+          "book_source": "100M Offers - Hormozi",
+          "evidence_timestamp": "00:18:00",
+          "evidence_quote": "Si tu n'as pas tes 5000€ de bénéfices nets... remboursé complètement et compensation allant jusqu'à 1000€"
+        },
+        {
+          "concept": "Price Anchoring",
+          "book_source": "Influence - Cialdini",
+          "evidence_timestamp": "00:20:52",
+          "evidence_quote": "Moi je suis cher, je suis à 10 000 €... avant de descendre à 300€+performance"
+        },
+        {
+          "concept": "Accusation Audit",
+          "book_source": "Never Split The Difference - Voss",
+          "evidence_timestamp": "00:23:20",
+          "evidence_quote": "Tu vas penser que c'est encore un coach qui promet la lune... que t'as déjà essayé des trucs qui n'ont pas marché"
+        }
+      ],
+      "frameworks_missed": [
+        {
+          "concept": "Mirroring (Effet miroir)",
+          "book_source": "Never Split The Difference - Voss",
+          "definition_quick": "Répéter les 2-3 derniers mots de l'interlocuteur avec intonation montante pour forcer l'élaboration sans pression.",
+          "where_to_apply": "00:20:52",
+          "fix_phrase": "10 000 euros ? (pause 3s) On dirait que c'est hors budget ce mois-ci ?"
+        },
+        {
+          "concept": "Calibrated Questions (Questions calibrées)",
+          "book_source": "Never Split The Difference - Voss",
+          "definition_quick": "Questions 'Comment' ou 'Quoi' qui forcent le prospect à structurer sa pensée et trouver ses propres solutions.",
+          "where_to_apply": "00:00:00",
+          "fix_phrase": "Comment est-ce que tu vois ta situation actuelle évoluer si on ne change rien d'ici 6 mois ?"
+        },
+        {
+          "concept": "SPIN Problem Questions",
+          "book_source": "SPIN Selling - Rackham",
+          "definition_quick": "Questions qui font formuler au prospect lui-même ses difficultés, frustrations et insatisfactions.",
+          "where_to_apply": "00:02:07",
+          "fix_phrase": "Qu'est-ce qui te frustre le plus quand tu entends parler de 'mental' dans la vente ?"
+        },
+        {
+          "concept": "No-Oriented Questions",
+          "book_source": "Never Split The Difference - Voss",
+          "definition_quick": "Questions conçues pour recevoir un 'Non' rassurant plutôt qu'un 'Oui' forcé, donnant le contrôle au prospect.",
+          "where_to_apply": "00:31:30",
+          "fix_phrase": "Est-ce que c'est une mauvaise idée de bloquer ta place maintenant avec les 300€ et d'ajuster le reste après ?"
+        }
+      ],
+      "glossary_terms": [
+        {
+          "term": "Accusation Audit",
+          "definition": "Technique consistant à énoncer à l'avance tous les négatifs que le prospect pourrait penser pour désarmer les objections avant qu'elles n'apparaissent.",
+          "source_book": "Never Split The Difference - Chris Voss"
+        },
+        {
+          "term": "Mirroring",
+          "definition": "Répéter les derniers mots ou la dernière phrase de l'interlocuteur avec une intonation interrogative pour l'inciter à développer sans confrontation.",
+          "source_book": "Never Split The Difference - Chris Voss"
+        },
+        {
+          "term": "Price Anchoring",
+          "definition": "Annoncer un prix élevé initial (même irréaliste) avant de révéler le prix réel, créant une perception de valeur et d'escompte.",
+          "source_book": "Influence - Robert Cialdini"
+        },
+        {
+          "term": "Risk Reversal",
+          "definition": "Inverser le risque de la transaction en offrant une garantie forte (remboursement + pénalité) pour éliminer la peur de l'acheteur.",
+          "source_book": "100M Offers - Alex Hormozi"
+        },
+        {
+          "term": "SPIN Selling",
+          "definition": "Méthodologie de découverte en 4 phases: Situation (faits), Problem (difficultés), Implication (conséquences), Need-payoff (valeur solution).",
+          "source_book": "SPIN Selling - Neil Rackham"
+        },
+        {
+          "term": "Value Stack",
+          "definition": "Récapitulatif de tous les éléments de valeur inclus dans l'offre (mentorat, accès, garanties) juste avant l'annonce du prix pour augmenter la perception de valeur.",
+          "source_book": "DotCom Secrets - Russell Brunson"
+        }
+      ],
+      "next_actions": [
+        "Envoyer à Ahmed dans l'heure le contrat PDF signé par Djibril avec la clause garantie 1000€ en surbrillance (preuve du risk reversal)",
+        "Créer dans le CRM champ 'Budget disponible' obligatoire avant chaque call futur (qualification Basile)",
+        "Programmer le prochain call de suivi Ahmed dans exactement 7 jours pour vérifier consommation des modules (éviter le churn)"
+      ],
+      "next_action": "Envoyer à Ahmed dans l'heure le contrat PDF signé par Djibril avec la clause garantie 1000€ en surbrillance (preuve du risk reversal) · Créer dans le CRM champ 'Budget disponible' obligatoire avant chaque call futur (qualification Basile)",
+      "key_quotes": [
+        {
+          "speaker": "Prospect",
+          "t": "00:02:24",
+          "quote": "Moi je vois ça comme 20% de la chose. Moi je me dis que c'est plus ce que tu vas dire à la personne qui va faire que tu vas vendre.",
+          "analysis": "Révélation clé du mindset prospect: il sous-estime le mental. Levier pour le contenu Instagram."
+        },
+        {
+          "speaker": "Djibril",
+          "t": "00:05:00",
+          "quote": "Le business plan n'importe peu. Ce qui importe, c'est ton côté psychologique, ta façon d'appliquer, de voir les choses.",
+          "analysis": "Positionnement fort mais non découvert (monologue). Doit être transformé en question SPIN."
+        },
+        {
+          "speaker": "Djibril",
+          "t": "00:20:52",
+          "quote": "Moi je suis cher, Ahmed. Je suis à 10 000 €.",
+          "analysis": "Annonce du prix avec ancrage élevé. Bonne technique de négociation."
+        },
+        {
+          "speaker": "Prospect",
+          "t": "00:22:38",
+          "quote": "C'est une question d'argent et aussi pour toi... s'il m'arrange sur un truc, c'est pas...",
+          "analysis": "Objection de principale sur le prix + peur de l'asymétrie. Nécessitait du mirroring."
+        },
+        {
+          "speaker": "Djibril",
+          "t": "00:34:12",
+          "quote": "On serait sur un pourcentage où tu payes les 300 et ensuite en fonction des performances que tu fais tu m'envoies un billet tous les mois.",
+          "analysis": "Close flexible adapté au budget constraint. Validation du deal."
+        }
+      ],
+      "verdict": "MOYEN — Deal fermé (300€+perf) malgré un ratio parole 72/28 défavorable et une découverte inexistante; le levier #1 (Questions SPIN d'ouverture) aurait évité la négociation de 38 minutes et filtré plus tôt.",
+      "type": "discovery"
+    },
     {
       "id": "fathom-147360259",
       "owner": "djibril",
@@ -2630,6 +2852,11 @@
   ],
   "patterns_success": [
     {
+      "pattern": "Risk reversal explicit",
+      "win_rate": 0.0,
+      "samples": 8
+    },
+    {
       "pattern": "Voss mirror used",
       "win_rate": 0.0,
       "samples": 7
@@ -2640,9 +2867,9 @@
       "samples": 7
     },
     {
-      "pattern": "Risk reversal explicit",
+      "pattern": "Direct close attempt",
       "win_rate": 0.0,
-      "samples": 7
+      "samples": 5
     },
     {
       "pattern": "Frustration positive hook",
@@ -2650,22 +2877,17 @@
       "samples": 5
     },
     {
-      "pattern": "Direct close attempt",
-      "win_rate": 0.0,
-      "samples": 4
-    },
-    {
       "pattern": "Case study window",
       "win_rate": 0.0,
       "samples": 3
     },
     {
-      "pattern": "Spin chain full",
+      "pattern": "Value stack pre price",
       "win_rate": 0.0,
       "samples": 1
     },
     {
-      "pattern": "No oriented question",
+      "pattern": "Spin chain full",
       "win_rate": 0.0,
       "samples": 1
     }
@@ -2674,7 +2896,12 @@
     {
       "pattern": "Monologue djibril",
       "loss_rate": 1.0,
-      "samples": 10
+      "samples": 11
+    },
+    {
+      "pattern": "Feature dumping",
+      "loss_rate": 1.0,
+      "samples": 9
     },
     {
       "pattern": "Discovery too long",
@@ -2687,17 +2914,12 @@
       "samples": 9
     },
     {
-      "pattern": "Feature dumping",
+      "pattern": "No case study",
       "loss_rate": 1.0,
-      "samples": 8
+      "samples": 7
     },
     {
       "pattern": "No next step",
-      "loss_rate": 1.0,
-      "samples": 6
-    },
-    {
-      "pattern": "No case study",
       "loss_rate": 1.0,
       "samples": 6
     },
@@ -2716,6 +2938,12 @@
   "queue_to_analyze": [],
   "cross_channel_insights": {
     "to_instagram_reels": [
+      {
+        "from_call": "—",
+        "score": 52,
+        "date": "2026-05-18T19:03:55Z",
+        "insight": "Tourner REEL 22s cette semaine: Hook 'Mental 80% vs Technique 20%' — Djibril réfute le mythe avec l'exemple Ronaldo (00:08:28 du call), texte en incrustation 'T'as déjà vu un crack sans mental ?' + CTA 'DM RESET si t'es banlieue et que tu veux passer à 10k/mois'"
+      },
       {
         "from_call": "Ahmed Razik",
         "score": 59,
@@ -2785,6 +3013,12 @@
     ],
     "to_meta_ads": [
       {
+        "from_call": "—",
+        "score": 52,
+        "date": "2026-05-18T19:03:55Z",
+        "insight": "Refondre creative Meta: Titre '300€ pour démarrer ton scale' — adresser directement l'objection prix entendue (00:22:38) avec visuel du contrat et mention 'Paiement échelonné disponible'. Ciblage: intérêts 'Jiu-jitsu' + 'Entrepreneuriat' + localisation 93/92/91."
+      },
+      {
         "from_call": "Ahmed Razik",
         "score": 59,
         "date": "2026-05-18T18:00:49Z",
@@ -2852,6 +3086,12 @@
       }
     ],
     "to_basile_dm": [
+      {
+        "from_call": "—",
+        "score": 52,
+        "date": "2026-05-18T19:03:55Z",
+        "insight": "Durcir script Basile étape 2: Ajouter question calibrée 'Sur une échelle de 1 à 10, quel budget as-tu mis de côté pour investir dans ton avenir pro ?' + 'Si on trouve une solution à X€, tu es prêt à t'engager cette semaine ?' pour qualifier Ahmed avant le call (éviter la négociation surprise sur 300€)."
+      },
       {
         "from_call": "Ahmed Razik",
         "score": 59,
@@ -2921,6 +3161,12 @@
     ],
     "to_lp_vsl": [
       {
+        "from_call": "—",
+        "score": 52,
+        "date": "2026-05-18T19:03:55Z",
+        "insight": "Refondre section 'Mécanisme Reset Ultra' à min 2:30 de la VSL — ajouter schéma visuel des 4 phases (S-P-I-N) car prospect confus sur la méthode à 00:15:02 ('Je n'ai pas vu la méthode d'Odjus'). Preuve: cas Mael 14/14 avec chiffres exacts."
+      },
+      {
         "from_call": "Ahmed Razik",
         "score": 59,
         "date": "2026-05-18T18:00:49Z",
@@ -2988,6 +3234,12 @@
       }
     ],
     "to_mariam_email": [
+      {
+        "from_call": "—",
+        "score": 52,
+        "date": "2026-05-18T19:03:55Z",
+        "insight": "Activer email J-1 séquence 'Préparation dépôt' — anticiper objection 'Je dois aller au distributeur' (00:35:20) avec checklist: 'Prépare tes 300€ en liquide ce soir pour ne pas perdre ta place demain'. Réduire le no-show/ghosting post-call."
+      },
       {
         "from_call": "Ahmed Razik",
         "score": 59,
@@ -3057,6 +3309,12 @@
     ],
     "to_cold_calls_clients": [
       {
+        "from_call": "—",
+        "score": 52,
+        "date": "2026-05-18T19:03:55Z",
+        "insight": "Coaching immédiat à Mael/Yacine: Instaurer 'Règle des 30 secondes' — timer visible sur écran. Si Djibril (ou eux) parle >30s sans question, bipe sonore. Objectif: passer de 72% à 40% de parole vendeur."
+      },
+      {
         "from_call": "Ahmed Razik",
         "score": 59,
         "date": "2026-05-18T18:00:49Z",
@@ -3125,6 +3383,22 @@
     ]
   },
   "top_leviers_8020_aggregated": [
+    {
+      "rank": 1,
+      "levier": "Remplacer le monologue d'ouverture par 2 questions SPIN consécutives",
+      "impact": 28,
+      "from_call": "—",
+      "timestamp_ref": "00:00:00",
+      "score_call": 52
+    },
+    {
+      "rank": 2,
+      "levier": "Utiliser le Mirroring + Labeling sur l'objection prix à 20:52",
+      "impact": 18,
+      "from_call": "—",
+      "timestamp_ref": "00:20:52",
+      "score_call": 52
+    },
     {
       "rank": 1,
       "levier": "Ajouter Accusation Audit + No-Oriented Question avant toute tentative de closing",
