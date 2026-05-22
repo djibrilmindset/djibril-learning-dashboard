@@ -1,31 +1,31 @@
 {
   "_meta": {
-    "generated": "2026-05-21T18:02:32.297832Z",
+    "generated": "2026-05-22T10:25:45.892137Z",
     "source": "fathom_api + moonshot_kimi_k2.5_analyzer + frameworks_corpus_v1",
-    "owner_calls_tracked": 10,
+    "owner_calls_tracked": 11,
     "client_cold_calls_tracked": 0,
     "schema_version": "1.1",
     "frameworks_corpus": "~/agence-ia/manager/calls_intelligence/frameworks_corpus.json",
     "reports_path": "/Users/pardin/agence-ia/manager/calls_intelligence/reports"
   },
   "summary": {
-    "calls_total": 10,
-    "avg_score_global": 51.9,
+    "calls_total": 11,
+    "avg_score_global": 52.5,
     "delta_score_30d": 0,
     "top_strength": "Rapport / présence",
     "top_weakness": "Tentative closing",
     "win_rate_top_pattern": 0.0,
     "best_call": {
-      "id": "fathom-147065185",
-      "score": 53
+      "id": "fathom-147360259",
+      "score": 59
     },
     "dim_averages": {
-      "rapport_presence": 70.1,
-      "discovery_spin": 47.3,
-      "pain_amplification": 45.2,
-      "offer_clarity": 47.5,
+      "rapport_presence": 69.6,
+      "discovery_spin": 49.4,
+      "pain_amplification": 47.9,
+      "offer_clarity": 48.2,
       "objection_handling": 59.6,
-      "closing_attempt": 41.7
+      "closing_attempt": 40.6
     }
   },
   "scoring_dimensions": [
@@ -55,6 +55,240 @@
     }
   ],
   "calls_perso": [
+    {
+      "id": "fathom-147360259",
+      "owner": "djibril",
+      "recording_id": 147360259,
+      "fathom_share_url": "https://fathom.video/share/x3SGk2gUPxBsC5yJukioUsBxwg2oocYL",
+      "prospect": "Ahmed Razik",
+      "title": "Call djibril ",
+      "date": "2026-05-18T18:00:49Z",
+      "duration_min": 60,
+      "outcome": "booked_followup",
+      "score_global": 59,
+      "scores": {
+        "rapport_presence": 65,
+        "discovery_spin": 70,
+        "pain_amplification": 75,
+        "offer_clarity": 55,
+        "objection_handling": 60,
+        "closing_attempt": 30
+      },
+      "spin_breakdown": {
+        "situation_pct": 25,
+        "problem_pct": 15,
+        "implication_pct": 25,
+        "needpayoff_pct": 10,
+        "ratio_prospect_djibril_speaking": 0.42
+      },
+      "top_2_leviers_8020": [
+        {
+          "rank": 1,
+          "levier": "Ajouter Accusation Audit + No-Oriented Question avant toute tentative de closing",
+          "impact_attendu_points": 18,
+          "fix_concret": "À 45:54 quand Ahmed dit 'je donnerais un petit 6', dire : 'Stop. On dirait que t'as peur que ça marche pas et que tu te sentes encore plus nul après. Tu vas penser que c'est encore une méthode qui promet la lune, que t'as pas le niveau, que tu vas te faire rejeter par les patrons... Est-ce que c'est une mauvaise idée qu'on fasse un test de 3 jours où tu appelles juste 5 boîtes avec mes scripts pour voir si t'es fait pour ça, et si ça te plaît pas on arrête ?'",
+          "timestamp_ref": "00:45:54"
+        },
+        {
+          "rank": 2,
+          "levier": "Condenser la phase Situation et injecter le mécanisme Reset Ultra différenciant dès le début du pitch",
+          "impact_attendu_points": 14,
+          "fix_concret": "À 36:28, supprimer le monologue de 8 minutes sur l'écosystème. Remplacer par : 'On va utiliser Reset Ultra. C'est quoi ? C'est 80 jours où on inverse le risque : moi je te trouve les clients, toi tu appelles avec mes scripts. Si à J30 t'as pas signé un client, je rembourse. Ton seul job : exécuter. On part de zéro, tu montes à 5k€. Ça te parle ou c'est trop rapide pour toi ?'",
+          "timestamp_ref": "00:36:28"
+        }
+      ],
+      "cross_channel_implications": {
+        "to_instagram_reels": "Tourner reel 22s cette semaine : Hook 'J'étais à 500€/semaine et j'osais pas appeler les patrons' → Twist 'Maintenant je fais 8k€/mois' → CTA 'Lien en bio pour la méthode'. Basé sur le pain exact d'Ahmed (00:00-15:00).",
+        "to_meta_ads": "Créative à tester : Split-screen. Gauche : 'SMIC freelance = galère' (texte : 14,80€/heure, dépendance mère). Droite : '5k€/mois en 80j' avec screenshot résultat Iliès. Headline : 'Arrête d'appeler pour rien'.",
+        "to_basile_dm": "Durcir script Basile étape 3 : Ajouter question 'As-tu déjà essayé de démarcher au téléphone ? Si oui, qu'est-ce qui t'a bloqué ?' pour qualifier la peur du cold call avant de booker (éviter les curieux sans appétence pour le téléphone).",
+        "to_lp_vsl": "Ajouter section à 1min30 de la VSL : 'Pourquoi le cold calling est la seule voie quand tu pars de 0 (et pourquoi ça ne marchera jamais sans scripts)'. Répondre à l'objection récurrente d'Ahmed (00:46:00) sur le rejet au téléphone.",
+        "to_mariam_email": "Activer séquence 'Anti-peur du rejet' pour les prospects ayant regardé la VSL mais pas booké. Email J+1 sujet : 'Ce que personne ne te dit sur le démarchage'. Contenu : Accusation audit des peurs d'Ahmed (honte, refus, ego).",
+        "to_cold_calls_clients": "Coaching Mael/Yacine : Si détection de monologue >90s sur phase découverte (comme Djibril à 36:28), couper immédiatement et demander 'Qu'est-ce que tu en penses ?' pour respecter ratio 60/40."
+      },
+      "moments_positifs": [
+        {
+          "t_min": 6,
+          "label": "Labelling émotionnel peur du marché",
+          "framework": "voss_labeling"
+        },
+        {
+          "t_min": 8,
+          "label": "Métaphore combat/submission pour l'ancrage passé",
+          "framework": "belfort_trust_certainty"
+        },
+        {
+          "t_min": 20,
+          "label": "Chaîne implication dépendance financière→honte→mère",
+          "framework": "SPIN_implication"
+        },
+        {
+          "t_min": 25,
+          "label": "Projection future mariage/famille comme amplifyer",
+          "framework": "SPIN_implication"
+        },
+        {
+          "t_min": 28,
+          "label": "Need-payoff : entrepreneuriat comme unique voie concrète",
+          "framework": "SPIN_needpayoff"
+        }
+      ],
+      "moments_negatifs": [
+        {
+          "t_min": 1,
+          "label": "Phase Situation trop longue (>15min sur contexte freelance)",
+          "anti_pattern": "discovery_too_long"
+        },
+        {
+          "t_min": 36,
+          "label": "Monologue 8min sur l'écosystème sans interaction",
+          "anti_pattern": "monologue_djibril"
+        },
+        {
+          "t_min": 55,
+          "label": "Fin sans closing ni date concrète",
+          "anti_pattern": "no_next_step"
+        },
+        {
+          "t_min": 45,
+          "label": "Soft close 6/10 sans isolation objection",
+          "anti_pattern": "soft_close_pattern"
+        }
+      ],
+      "patterns_detected": [
+        "spin_chain_full",
+        "voss_mirror_used",
+        "thats_right_validation"
+      ],
+      "anti_patterns_detected": [
+        "discovery_too_long",
+        "monologue_djibril",
+        "soft_close_pattern",
+        "no_next_step",
+        "feature_dumping"
+      ],
+      "frameworks_used_well": [
+        {
+          "concept": "Labeling émotionnel",
+          "book_source": "Never Split The Difference - Chris Voss",
+          "evidence_timestamp": "00:06:35",
+          "evidence_quote": "Djibril: 'tu as peur de te vendre sur le marché ?' Ahmed: 'C'est ça, un peu'"
+        },
+        {
+          "concept": "SPIN Implication Questions",
+          "book_source": "SPIN Selling - Rackham",
+          "evidence_timestamp": "00:20:08",
+          "evidence_quote": "Djibril: 'tu vis cette situation un peu inconfortable... avec tes potes... comment avec ta mère ?'"
+        },
+        {
+          "concept": "Amplification chaîne conséquences",
+          "book_source": "SPIN Selling - Rackham",
+          "evidence_timestamp": "00:25:42",
+          "evidence_quote": "Ahmed: 'si demain je me marie... je ne peux pas assumer un foyer... santé mentale'"
+        }
+      ],
+      "frameworks_missed": [
+        {
+          "concept": "Accusation Audit",
+          "book_source": "Never Split The Difference - Chris Voss",
+          "definition_quick": "Décrire à l'avance tous les négatifs que le prospect pourrait penser pour désamorcer l'objection avant qu'elle n'arrive.",
+          "where_to_apply": "00:45:54",
+          "fix_phrase": "Tu vas penser que c'est encore une arnaque, que t'es pas fait pour vendre, que tu vas te faire rejeter comme tes anciennes alternances..."
+        },
+        {
+          "concept": "No-Oriented Question",
+          "book_source": "Never Split The Difference - Chris Voss",
+          "definition_quick": "Question formulée pour obtenir un 'non' qui rassure le prospect et lui donne le contrôle, ouvrant le dialogue.",
+          "where_to_apply": "00:48:14",
+          "fix_phrase": "Est-ce que c'est une mauvaise idée de commencer par un test de 7 jours pour voir si tu peux vraiment faire 5 appels par jour ?"
+        },
+        {
+          "concept": "Value Stack",
+          "book_source": "100M$ Offers - Alex Hormozi",
+          "definition_quick": "Énumérer la valeur totale des composantes avant d'annoncer le prix réel pour ancrer haut.",
+          "where_to_apply": "00:44:00",
+          "fix_phrase": "Si je te donne les scripts qui ont fait 8k€ à Iliès, les leads qualifiés, le coaching mental, la garantie 30 jours, c'est facilement 3000€ de valeur. Aujourd'hui tu n'investis que..."
+        },
+        {
+          "concept": "Risk Reversal",
+          "book_source": "100M$ Offers - Alex Hormozi",
+          "definition_quick": "Garantie inconditionnelle qui inverse le risque sur le vendeur pour éliminer la friction d'achat.",
+          "where_to_apply": "00:44:30",
+          "fix_phrase": "Si à J30 t'as pas signé ton premier client, je te rembourse et tu gardes les scripts. Tu prends 0 risque."
+        }
+      ],
+      "glossary_terms": [
+        {
+          "term": "Accusation Audit",
+          "definition": "Technique Voss consistant à lister proactivement toutes les objections négatives possibles avant que le prospect ne les formule, créant une surprise tactique et de la confiance.",
+          "source_book": "Never Split The Difference - Chris Voss"
+        },
+        {
+          "term": "Need-Payoff",
+          "definition": "Phase SPIN où le vendeur fait formuler par le prospect lui-même la valeur et les bénéfices de résoudre son problème, augmentant l'engagement intrinsèque.",
+          "source_book": "SPIN Selling - Rackham"
+        },
+        {
+          "term": "Labeling",
+          "definition": "Verbaliser l'émotion sous-jacente du prospect ('On dirait que...') pour désamorcer la tension et créer une connexion plus forte que 'je comprends'.",
+          "source_book": "Never Split The Difference - Chris Voss"
+        },
+        {
+          "term": "Value Equation",
+          "definition": "Formule Hormozi : Valeur = (Rêve × Probabilité de succès) / (Délai × Effort). L'offre doit maximiser le numérateur et minimiser le dénominateur.",
+          "source_book": "100M$ Offers - Alex Hormozi"
+        },
+        {
+          "term": "Mirroring",
+          "definition": "Répéter les 2-3 derniers mots du prospect avec intonation interrogative pour l'inciter à approfondir sans confrontation.",
+          "source_book": "Never Split The Difference - Chris Voss"
+        },
+        {
+          "term": "Reverse Pain",
+          "definition": "Recadrer une objection (ex: prix) en montrant que ne pas agir coûte plus cher émotionnellement/financièrement que d'agir.",
+          "source_book": "Way of the Wolf - Jordan Belfort"
+        }
+      ],
+      "next_actions": [
+        "Envoyer à Ahmed dans les 2h un voice message de 45s résumant l'Accusation Audit de sa peur spécifique (refus au téléphone) avec une question à 'non'",
+        "Modifier le script de transition vers l'offre à 36:28 pour intégrer le mécanisme 'Reset Ultra' en 30 secondes max",
+        "Créer template 'Objection 6/10' pour tous les closers : isoler le manquant puis proposer micro-commitment 3 jours"
+      ],
+      "next_action": "Envoyer à Ahmed dans les 2h un voice message de 45s résumant l'Accusation Audit de sa peur spécifique (refus au téléphone) avec une question à 'non' · Modifier le script de transition vers l'offre à 36:28 pour intégrer le mécanisme 'Reset Ultra' en 30 secondes max",
+      "key_quotes": [
+        {
+          "speaker": "Prospect",
+          "t": "00:06:44",
+          "quote": "J'ai peur de me vendre sur le marché. C'est démarcher téléphoniquement les entreprises.",
+          "analysis": "Pain principal identifié : peur du rejet liée à traumatisme passé alternance."
+        },
+        {
+          "speaker": "Djibril",
+          "t": "00:08:18",
+          "quote": "C'est comme si au final tu rentrais pas sur le tatami et tu faisais demi-tour.",
+          "analysis": "Métaphore efficace liant le Jiu-jitsu (passion d'Ahmed) à sa peur du démarchage."
+        },
+        {
+          "speaker": "Prospect",
+          "t": "00:22:37",
+          "quote": "J'aurais aimé garder la tête haute. J'aime pas qu'on sente que j'ai besoin, j'ai vraiment besoin.",
+          "analysis": "Pain émotionnel profond (ego, honte) parfaitement exploitable en implication."
+        },
+        {
+          "speaker": "Prospect",
+          "t": "00:45:56",
+          "quote": "Je te donnerais un petit 6. Sur 10.",
+          "analysis": "Signal de closing manqué : objection masquée sous forme de score insuffisant."
+        },
+        {
+          "speaker": "Prospect",
+          "t": "00:59:06",
+          "quote": "C'est le fait que tu sois sûr que tu as des méthodologies qui marchent à 100%.",
+          "analysis": "Besoin de certitude logique (Belfort) non satisfait par la réponse de Djibril."
+        }
+      ],
+      "verdict": "MOYEN — Excellent discovery et implication du pain (I) mais échec total du closing dû à l'absence d'Accusation Audit sur la peur du rejet et de No-Oriented Question pour micro-commitment.",
+      "type": "discovery"
+    },
     {
       "id": "fathom-147065185",
       "owner": "djibril",
@@ -2396,19 +2630,19 @@
   ],
   "patterns_success": [
     {
-      "pattern": "Risk reversal explicit",
+      "pattern": "Voss mirror used",
       "win_rate": 0.0,
       "samples": 7
     },
     {
       "pattern": "Thats right validation",
       "win_rate": 0.0,
-      "samples": 6
+      "samples": 7
     },
     {
-      "pattern": "Voss mirror used",
+      "pattern": "Risk reversal explicit",
       "win_rate": 0.0,
-      "samples": 6
+      "samples": 7
     },
     {
       "pattern": "Frustration positive hook",
@@ -2426,6 +2660,11 @@
       "samples": 3
     },
     {
+      "pattern": "Spin chain full",
+      "win_rate": 0.0,
+      "samples": 1
+    },
+    {
       "pattern": "No oriented question",
       "win_rate": 0.0,
       "samples": 1
@@ -2435,22 +2674,27 @@
     {
       "pattern": "Monologue djibril",
       "loss_rate": 1.0,
+      "samples": 10
+    },
+    {
+      "pattern": "Discovery too long",
+      "loss_rate": 1.0,
       "samples": 9
     },
     {
       "pattern": "Soft close pattern",
       "loss_rate": 1.0,
-      "samples": 8
-    },
-    {
-      "pattern": "Discovery too long",
-      "loss_rate": 1.0,
-      "samples": 8
+      "samples": 9
     },
     {
       "pattern": "Feature dumping",
       "loss_rate": 1.0,
-      "samples": 7
+      "samples": 8
+    },
+    {
+      "pattern": "No next step",
+      "loss_rate": 1.0,
+      "samples": 6
     },
     {
       "pattern": "No case study",
@@ -2463,11 +2707,6 @@
       "samples": 6
     },
     {
-      "pattern": "No next step",
-      "loss_rate": 1.0,
-      "samples": 5
-    },
-    {
       "pattern": "Defensive objection",
       "loss_rate": 1.0,
       "samples": 1
@@ -2477,6 +2716,12 @@
   "queue_to_analyze": [],
   "cross_channel_insights": {
     "to_instagram_reels": [
+      {
+        "from_call": "Ahmed Razik",
+        "score": 59,
+        "date": "2026-05-18T18:00:49Z",
+        "insight": "Tourner reel 22s cette semaine : Hook 'J'étais à 500€/semaine et j'osais pas appeler les patrons' → Twist 'Maintenant je fais 8k€/mois' → CTA 'Lien en bio pour la méthode'. Basé sur le pain exact d'Ahmed (00:00-15:00)."
+      },
       {
         "from_call": "Ismail Benamar",
         "score": 53,
@@ -2540,6 +2785,12 @@
     ],
     "to_meta_ads": [
       {
+        "from_call": "Ahmed Razik",
+        "score": 59,
+        "date": "2026-05-18T18:00:49Z",
+        "insight": "Créative à tester : Split-screen. Gauche : 'SMIC freelance = galère' (texte : 14,80€/heure, dépendance mère). Droite : '5k€/mois en 80j' avec screenshot résultat Iliès. Headline : 'Arrête d'appeler pour rien'."
+      },
+      {
         "from_call": "Ismail Benamar",
         "score": 53,
         "date": "2026-05-17T17:01:15Z",
@@ -2601,6 +2852,12 @@
       }
     ],
     "to_basile_dm": [
+      {
+        "from_call": "Ahmed Razik",
+        "score": 59,
+        "date": "2026-05-18T18:00:49Z",
+        "insight": "Durcir script Basile étape 3 : Ajouter question 'As-tu déjà essayé de démarcher au téléphone ? Si oui, qu'est-ce qui t'a bloqué ?' pour qualifier la peur du cold call avant de booker (éviter les curieux sans appétence pour le téléphone)."
+      },
       {
         "from_call": "Ismail Benamar",
         "score": 53,
@@ -2664,6 +2921,12 @@
     ],
     "to_lp_vsl": [
       {
+        "from_call": "Ahmed Razik",
+        "score": 59,
+        "date": "2026-05-18T18:00:49Z",
+        "insight": "Ajouter section à 1min30 de la VSL : 'Pourquoi le cold calling est la seule voie quand tu pars de 0 (et pourquoi ça ne marchera jamais sans scripts)'. Répondre à l'objection récurrente d'Ahmed (00:46:00) sur le rejet au téléphone."
+      },
+      {
         "from_call": "Ismail Benamar",
         "score": 53,
         "date": "2026-05-17T17:01:15Z",
@@ -2725,6 +2988,12 @@
       }
     ],
     "to_mariam_email": [
+      {
+        "from_call": "Ahmed Razik",
+        "score": 59,
+        "date": "2026-05-18T18:00:49Z",
+        "insight": "Activer séquence 'Anti-peur du rejet' pour les prospects ayant regardé la VSL mais pas booké. Email J+1 sujet : 'Ce que personne ne te dit sur le démarchage'. Contenu : Accusation audit des peurs d'Ahmed (honte, refus, ego)."
+      },
       {
         "from_call": "Ismail Benamar",
         "score": 53,
@@ -2788,6 +3057,12 @@
     ],
     "to_cold_calls_clients": [
       {
+        "from_call": "Ahmed Razik",
+        "score": 59,
+        "date": "2026-05-18T18:00:49Z",
+        "insight": "Coaching Mael/Yacine : Si détection de monologue >90s sur phase découverte (comme Djibril à 36:28), couper immédiatement et demander 'Qu'est-ce que tu en penses ?' pour respecter ratio 60/40."
+      },
+      {
         "from_call": "Ismail Benamar",
         "score": 53,
         "date": "2026-05-17T17:01:15Z",
@@ -2850,6 +3125,22 @@
     ]
   },
   "top_leviers_8020_aggregated": [
+    {
+      "rank": 1,
+      "levier": "Ajouter Accusation Audit + No-Oriented Question avant toute tentative de closing",
+      "impact": 18,
+      "from_call": "Ahmed Razik",
+      "timestamp_ref": "00:45:54",
+      "score_call": 59
+    },
+    {
+      "rank": 2,
+      "levier": "Condenser la phase Situation et injecter le mécanisme Reset Ultra différenciant dès le début du pitch",
+      "impact": 14,
+      "from_call": "Ahmed Razik",
+      "timestamp_ref": "00:36:28",
+      "score_call": 59
+    },
     {
       "rank": 1,
       "levier": "Insérer Accusation Audit + Calibrated Questions sur budget avant 00:40:00 pour détecter faux 'no money' vs réel",
