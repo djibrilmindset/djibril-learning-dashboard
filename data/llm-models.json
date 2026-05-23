@@ -1,0 +1,236 @@
+{
+  "updated": "2026-05-23T22:17:20.098154Z",
+  "version": "2.0 FRESH_MODELS",
+  "tiers": {
+    "T0": {
+      "name": "SUPER BRAIN",
+      "role": "D\u00e9cision/audit/arbitrage/tri-chairman",
+      "cap_tokens": 300,
+      "reasoning": "HIGH",
+      "code": false,
+      "models": [
+        {
+          "name": "Opus 4.7",
+          "provider": "Claude Max",
+          "cost": "$0 (subscription)",
+          "ctx": "200K"
+        },
+        {
+          "name": "GPT-5.5 Pro",
+          "provider": "openai_direct",
+          "cost": "$30/$180M",
+          "ctx": "1M"
+        },
+        {
+          "name": "Gemini 3.5 Flash",
+          "provider": "gemini_direct",
+          "cost": "$1.50/$9M",
+          "ctx": "1M"
+        },
+        {
+          "name": "o3",
+          "provider": "openai_direct",
+          "cost": "$5/$30M",
+          "ctx": "1M"
+        }
+      ]
+    },
+    "T1": {
+      "name": "BRAINS",
+      "role": "Raisonnement/challenge/cross-validation",
+      "cap_tokens": 200,
+      "reasoning": "HIGH",
+      "code": false,
+      "models": [
+        {
+          "name": "DeepSeek V4 Pro",
+          "provider": "deepseek_direct",
+          "cost": "$0.435/$0.87M",
+          "ctx": "1M"
+        },
+        {
+          "name": "Doubao Seed 2.0 Pro",
+          "provider": "doubao_direct",
+          "cost": "direct API",
+          "ctx": "1M"
+        },
+        {
+          "name": "Kimi K2.6",
+          "provider": "moonshot_direct",
+          "cost": "$0.15/$0.50M",
+          "ctx": "1M"
+        },
+        {
+          "name": "GLM 5.1",
+          "provider": "zhipu_direct",
+          "cost": "free on OR",
+          "ctx": "203K"
+        },
+        {
+          "name": "Qwen 3.7 Max",
+          "provider": "comet_direct",
+          "cost": "$2.50/$7.50M",
+          "ctx": "1M"
+        },
+        {
+          "name": "MiniMax M2.7",
+          "provider": "minimax_direct",
+          "cost": "direct API",
+          "ctx": "1M"
+        },
+        {
+          "name": "Hunyuan T1",
+          "provider": "comet_direct",
+          "cost": "direct API",
+          "ctx": "1M"
+        },
+        {
+          "name": "MiMo V2.5 Pro",
+          "provider": "xiaomi_direct",
+          "cost": "$1/$3M",
+          "ctx": "1M"
+        },
+        {
+          "name": "Ernie 5.0 Thinking",
+          "provider": "aihubmix",
+          "cost": "direct API",
+          "ctx": "1M"
+        }
+      ]
+    },
+    "T2": {
+      "name": "WORKER PRO",
+      "role": "Code, lecture <50KB, synth\u00e8se, patches",
+      "cap_tokens": 8000,
+      "reasoning": "medium",
+      "code": true,
+      "models": [
+        {
+          "name": "DeepSeek V4 Flash",
+          "provider": "deepseek_direct",
+          "cost": "$0.112/$0.224M",
+          "ctx": "1M",
+          "role": "PRINCIPAL"
+        },
+        {
+          "name": "Step 3.5 Flash",
+          "provider": "stepfun_direct",
+          "cost": "$0.10/$0.30M",
+          "ctx": "262K"
+        },
+        {
+          "name": "Qwen3.6 35B A3B",
+          "provider": "comet_direct",
+          "cost": "$0.15/$1.00M",
+          "ctx": "262K",
+          "note": "multimodal"
+        },
+        {
+          "name": "Ling 2.6 Flash",
+          "provider": "OpenRouter",
+          "cost": "$0.01/$0.03M",
+          "ctx": "262K",
+          "note": "ultra-cheap"
+        },
+        {
+          "name": "GLM-4.7 Flash",
+          "provider": "OpenRouter",
+          "cost": "$0.06/$0.40M",
+          "ctx": "203K",
+          "note": "coding value"
+        }
+      ]
+    },
+    "T3": {
+      "name": "WORKER CHEAP",
+      "role": "Volumes, classification, parsing, masses",
+      "cap_tokens": 32000,
+      "reasoning": "low",
+      "code": true,
+      "models": [
+        {
+          "name": "GLM-4.7 Flash",
+          "cost": "$0.06/$0.40M",
+          "ctx": "203K",
+          "note": "best coding value"
+        },
+        {
+          "name": "Seed 1.6 Flash",
+          "provider": "ByteDance",
+          "cost": "$0.075/$0.30M",
+          "ctx": "262K"
+        },
+        {
+          "name": "ERNIE 4.5 21B A3B Thinking",
+          "provider": "Baidu",
+          "cost": "$0.07/$0.28M",
+          "ctx": "131K"
+        },
+        {
+          "name": "Qwen3 Turbo",
+          "cost": "~$0.05/$0.20M",
+          "ctx": "131K"
+        },
+        {
+          "name": "Qwen3.6 Plus (free)",
+          "cost": "FREE",
+          "ctx": "1M",
+          "note": "fallback"
+        }
+      ]
+    },
+    "T4": {
+      "name": "WORKER FREE",
+      "role": "Exec massive, pre-digest, illimit\u00e9",
+      "cap_tokens": "illimit\u00e9",
+      "reasoning": "low",
+      "code": true,
+      "models": [
+        {
+          "name": "Owl Alpha",
+          "cost": "FREE",
+          "ctx": "1.05M",
+          "note": "PRINCIPAL #1 free"
+        },
+        {
+          "name": "GLM 5.1",
+          "cost": "FREE",
+          "ctx": "203K",
+          "note": "8h autonomous coding"
+        },
+        {
+          "name": "Nemotron 3 Super",
+          "cost": "FREE",
+          "ctx": "1M",
+          "note": "120B MoE"
+        },
+        {
+          "name": "DeepSeek V4 Flash (free)",
+          "cost": "FREE",
+          "ctx": "1.05M"
+        },
+        {
+          "name": "Qwen3 Coder 480B (free)",
+          "cost": "FREE",
+          "ctx": "1M"
+        },
+        {
+          "name": "Qwen3.6 Plus (free)",
+          "cost": "FREE",
+          "ctx": "1M",
+          "note": "fallback"
+        },
+        {
+          "name": "Step 3.5 Flash (free)",
+          "cost": "FREE",
+          "ctx": "262K"
+        },
+        {
+          "name": "Gemma 4 26B (free)",
+          "cost": "FREE",
+          "ctx": "262K"
+        }
+      ]
+    }
+  }
+}
