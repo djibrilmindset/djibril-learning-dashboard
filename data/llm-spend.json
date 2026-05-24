@@ -1,184 +1,44 @@
 {
-  "generated": "2026-05-23T22:28:56.517949Z",
-  "period": "24h",
-  "total_calls": 179,
-  "total_cost_usd": 0.218985,
-  "models": [
-    {
-      "model": "moonshot-direct/kimi-k2.6",
-      "calls": 29,
-      "tokens_in": 23135,
-      "tokens_out": 18247,
-      "cost_usd": 0.101968
-    },
-    {
-      "model": "minimax-direct/MiniMax-M2.7",
-      "calls": 27,
-      "tokens_in": 19622,
-      "tokens_out": 10996,
-      "cost_usd": 0.05261
-    },
-    {
-      "model": "dashscope/qwen3.6-max-preview",
-      "calls": 3,
-      "tokens_in": 2681,
-      "tokens_out": 6352,
-      "cost_usd": 0.021737
-    },
-    {
-      "model": "zhipu-direct/glm-5.1",
-      "calls": 4,
-      "tokens_in": 5154,
-      "tokens_out": 5000,
-      "cost_usd": 0.020154
-    },
-    {
-      "model": "stepfun-direct/step-3.5-flash",
-      "calls": 5,
-      "tokens_in": 5461,
-      "tokens_out": 2923,
-      "cost_usd": 0.01423
-    },
-    {
-      "model": "comet/qwen-max-latest",
-      "calls": 1,
-      "tokens_in": 2635,
-      "tokens_out": 500,
-      "cost_usd": 0.004135
-    },
-    {
-      "model": "comet/qwen3.6-plus",
-      "calls": 1,
-      "tokens_in": 151,
-      "tokens_out": 704,
-      "cost_usd": 0.002263
-    },
-    {
-      "model": "anthropic-direct/claude-opus-4-7",
-      "calls": 1,
-      "tokens_in": 316,
-      "tokens_out": 134,
-      "cost_usd": 0.000718
-    },
-    {
-      "model": "xiaomi-direct/mimo-v2.5-pro",
-      "calls": 1,
-      "tokens_in": 152,
-      "tokens_out": 50,
-      "cost_usd": 0.000302
-    },
-    {
-      "model": "comet/qwen3-coder-plus",
-      "calls": 1,
-      "tokens_in": 151,
-      "tokens_out": 50,
-      "cost_usd": 0.000301
-    },
-    {
-      "model": "comet/hunyuan-t1-latest",
-      "calls": 1,
-      "tokens_in": 143,
-      "tokens_out": 50,
-      "cost_usd": 0.000293
-    },
-    {
-      "model": "comet/minimax-m2.1",
-      "calls": 1,
-      "tokens_in": 124,
-      "tokens_out": 50,
-      "cost_usd": 0.000274
-    },
-    {
-      "model": "aihubmix/aihubmix/ernie-5.0-thinking-preview",
-      "calls": 67,
-      "tokens_in": 44092,
-      "tokens_out": 35963,
-      "cost_usd": 0.0
-    },
-    {
-      "model": "aihubmix/aihubmix/qwen3-235b-a22b-thinking-2507",
-      "calls": 37,
-      "tokens_in": 18870,
-      "tokens_out": 18666,
-      "cost_usd": 0.0
-    }
-  ],
+  "_meta": {
+    "total_calls": 294,
+    "total_cost_usd": 0.1498,
+    "models_count": 20,
+    "updated": "2026-05-24T04:05:13.080354",
+    "source": "hermes_llm_calls.jsonl"
+  },
+  "total_cost_usd": 0.1498,
   "by_model": [
     {
-      "model": "moonshot-direct/kimi-k2.6",
-      "provider": "moonshot-direct",
-      "calls": 29,
-      "successes": 29,
+      "model": "aihubmix/aihubmix/ernie-5.0-thinking-preview",
+      "provider": "aihubmix",
+      "calls": 134,
+      "successes": 74,
+      "errors": 60,
+      "tokens_in": 86826,
+      "tokens_out": 87057,
+      "cost_usd": 0.056552,
+      "status": "healthy"
+    },
+    {
+      "model": "aihubmix/aihubmix/gpt-5.5",
+      "provider": "aihubmix",
+      "calls": 17,
+      "successes": 17,
       "errors": 0,
-      "tokens_in": 23135,
-      "tokens_out": 18247,
-      "cost_usd": 0.101968,
+      "tokens_in": 5226,
+      "tokens_out": 2216,
+      "cost_usd": 0.035225,
       "status": "healthy"
     },
     {
       "model": "minimax-direct/MiniMax-M2.7",
       "provider": "minimax-direct",
       "calls": 27,
-      "successes": 27,
-      "errors": 0,
+      "successes": 26,
+      "errors": 1,
       "tokens_in": 19622,
       "tokens_out": 10996,
-      "cost_usd": 0.05261,
-      "status": "healthy"
-    },
-    {
-      "model": "dashscope/qwen3.6-max-preview",
-      "provider": "dashscope",
-      "calls": 3,
-      "successes": 3,
-      "errors": 0,
-      "tokens_in": 2681,
-      "tokens_out": 6352,
-      "cost_usd": 0.021737,
-      "status": "healthy"
-    },
-    {
-      "model": "zhipu-direct/glm-5.1",
-      "provider": "zhipu-direct",
-      "calls": 4,
-      "successes": 4,
-      "errors": 0,
-      "tokens_in": 5154,
-      "tokens_out": 5000,
-      "cost_usd": 0.020154,
-      "status": "healthy"
-    },
-    {
-      "model": "stepfun-direct/step-3.5-flash",
-      "provider": "stepfun-direct",
-      "calls": 5,
-      "successes": 5,
-      "errors": 0,
-      "tokens_in": 5461,
-      "tokens_out": 2923,
-      "cost_usd": 0.01423,
-      "status": "healthy"
-    },
-    {
-      "model": "comet/qwen-max-latest",
-      "provider": "comet",
-      "calls": 1,
-      "successes": 1,
-      "errors": 0,
-      "tokens_in": 2635,
-      "tokens_out": 500,
-      "cost_usd": 0.004135,
-      "status": "healthy"
-    },
-    {
-      "model": "comet/qwen3.6-plus",
-      "provider": "comet",
-      "calls": 1,
-      "successes": 1,
-      "errors": 0,
-      "tokens_in": 151,
-      "tokens_out": 704,
-      "cost_usd": 0.002263,
+      "cost_usd": 0.015589,
       "status": "healthy"
     },
     {
@@ -189,18 +49,117 @@
       "errors": 0,
       "tokens_in": 316,
       "tokens_out": 134,
-      "cost_usd": 0.000718,
+      "cost_usd": 0.01479,
       "status": "healthy"
     },
     {
-      "model": "xiaomi-direct/mimo-v2.5-pro",
-      "provider": "xiaomi-direct",
+      "model": "moonshot-direct/kimi-k2.6",
+      "provider": "moonshot-direct",
+      "calls": 30,
+      "successes": 29,
+      "errors": 1,
+      "tokens_in": 23283,
+      "tokens_out": 18297,
+      "cost_usd": 0.012641,
+      "status": "healthy"
+    },
+    {
+      "model": "aihubmix/aihubmix/qwen3-235b-a22b-thinking-2507",
+      "provider": "aihubmix",
+      "calls": 62,
+      "successes": 62,
+      "errors": 0,
+      "tokens_in": 30958,
+      "tokens_out": 33769,
+      "cost_usd": 0.005575,
+      "status": "healthy"
+    },
+    {
+      "model": "dashscope/qwen3.6-max-preview",
+      "provider": "dashscope",
+      "calls": 3,
+      "successes": 3,
+      "errors": 0,
+      "tokens_in": 2681,
+      "tokens_out": 6352,
+      "cost_usd": 0.003712,
+      "status": "healthy"
+    },
+    {
+      "model": "zhipu-direct/glm-5.1",
+      "provider": "zhipu-direct",
+      "calls": 4,
+      "successes": 4,
+      "errors": 0,
+      "tokens_in": 5154,
+      "tokens_out": 5000,
+      "cost_usd": 0.00267,
+      "status": "healthy"
+    },
+    {
+      "model": "comet/qwen-max-latest",
+      "provider": "comet",
+      "calls": 1,
+      "successes": 1,
+      "errors": 0,
+      "tokens_in": 2635,
+      "tokens_out": 500,
+      "cost_usd": 0.000777,
+      "status": "healthy"
+    },
+    {
+      "model": "stepfun-direct/step-3.5-flash",
+      "provider": "stepfun-direct",
+      "calls": 5,
+      "successes": 5,
+      "errors": 0,
+      "tokens_in": 5461,
+      "tokens_out": 2923,
+      "cost_usd": 0.000565,
+      "status": "healthy"
+    },
+    {
+      "model": "comet/doubao-seed-2-0-pro-260215",
+      "provider": "comet",
+      "calls": 1,
+      "successes": 1,
+      "errors": 0,
+      "tokens_in": 175,
+      "tokens_out": 999,
+      "cost_usd": 0.000526,
+      "status": "healthy"
+    },
+    {
+      "model": "comet/minimax-m2",
+      "provider": "comet",
+      "calls": 1,
+      "successes": 1,
+      "errors": 0,
+      "tokens_in": 125,
+      "tokens_out": 208,
+      "cost_usd": 0.000271,
+      "status": "healthy"
+    },
+    {
+      "model": "comet/qwen3.6-plus",
+      "provider": "comet",
+      "calls": 1,
+      "successes": 1,
+      "errors": 0,
+      "tokens_in": 151,
+      "tokens_out": 704,
+      "cost_usd": 0.000226,
+      "status": "healthy"
+    },
+    {
+      "model": "comet/qwen3-vl-plus",
+      "provider": "comet",
       "calls": 1,
       "successes": 1,
       "errors": 0,
       "tokens_in": 152,
       "tokens_out": 50,
-      "cost_usd": 0.000302,
+      "cost_usd": 0.000126,
       "status": "healthy"
     },
     {
@@ -211,18 +170,29 @@
       "errors": 0,
       "tokens_in": 151,
       "tokens_out": 50,
-      "cost_usd": 0.000301,
+      "cost_usd": 0.000126,
       "status": "healthy"
     },
     {
-      "model": "comet/hunyuan-t1-latest",
+      "model": "xiaomi-direct/mimo-v2-omni",
+      "provider": "xiaomi-direct",
+      "calls": 1,
+      "successes": 1,
+      "errors": 0,
+      "tokens_in": 151,
+      "tokens_out": 50,
+      "cost_usd": 0.000126,
+      "status": "healthy"
+    },
+    {
+      "model": "comet/hunyuan-large",
       "provider": "comet",
       "calls": 1,
       "successes": 1,
       "errors": 0,
-      "tokens_in": 143,
-      "tokens_out": 50,
-      "cost_usd": 0.000293,
+      "tokens_in": 142,
+      "tokens_out": 51,
+      "cost_usd": 0.000122,
       "status": "healthy"
     },
     {
@@ -233,30 +203,258 @@
       "errors": 0,
       "tokens_in": 124,
       "tokens_out": 50,
-      "cost_usd": 0.000274,
+      "cost_usd": 0.000112,
       "status": "healthy"
     },
     {
-      "model": "aihubmix/aihubmix/ernie-5.0-thinking-preview",
-      "provider": "aihubmix",
-      "calls": 67,
-      "successes": 67,
+      "model": "xiaomi-direct/mimo-v2.5-pro",
+      "provider": "xiaomi-direct",
+      "calls": 1,
+      "successes": 1,
       "errors": 0,
-      "tokens_in": 44092,
-      "tokens_out": 35963,
-      "cost_usd": 0.0,
+      "tokens_in": 152,
+      "tokens_out": 50,
+      "cost_usd": 4.8e-05,
       "status": "healthy"
     },
     {
-      "model": "aihubmix/aihubmix/qwen3-235b-a22b-thinking-2507",
-      "provider": "aihubmix",
-      "calls": 37,
-      "successes": 37,
+      "model": "comet/hunyuan-t1-latest",
+      "provider": "comet",
+      "calls": 1,
+      "successes": 1,
       "errors": 0,
-      "tokens_in": 18870,
-      "tokens_out": 18666,
-      "cost_usd": 0.0,
+      "tokens_in": 143,
+      "tokens_out": 50,
+      "cost_usd": 4.6e-05,
       "status": "healthy"
     }
-  ]
+  ],
+  "models": [
+    {
+      "model": "ernie-5.0-thinking-preview",
+      "calls": 134,
+      "success": 74,
+      "errors": 60,
+      "tokens_in": 86826,
+      "tokens_out": 87057,
+      "cost_usd": 0.056552
+    },
+    {
+      "model": "gpt-5.5",
+      "calls": 17,
+      "success": 17,
+      "errors": 0,
+      "tokens_in": 5226,
+      "tokens_out": 2216,
+      "cost_usd": 0.035225
+    },
+    {
+      "model": "MiniMax-M2.7",
+      "calls": 27,
+      "success": 26,
+      "errors": 1,
+      "tokens_in": 19622,
+      "tokens_out": 10996,
+      "cost_usd": 0.015589
+    },
+    {
+      "model": "claude-opus-4-7",
+      "calls": 1,
+      "success": 1,
+      "errors": 0,
+      "tokens_in": 316,
+      "tokens_out": 134,
+      "cost_usd": 0.01479
+    },
+    {
+      "model": "kimi-k2.6",
+      "calls": 30,
+      "success": 29,
+      "errors": 1,
+      "tokens_in": 23283,
+      "tokens_out": 18297,
+      "cost_usd": 0.012641
+    },
+    {
+      "model": "qwen3-235b-a22b-thinking-2507",
+      "calls": 62,
+      "success": 62,
+      "errors": 0,
+      "tokens_in": 30958,
+      "tokens_out": 33769,
+      "cost_usd": 0.005575
+    },
+    {
+      "model": "qwen3.6-max-preview",
+      "calls": 3,
+      "success": 3,
+      "errors": 0,
+      "tokens_in": 2681,
+      "tokens_out": 6352,
+      "cost_usd": 0.003712
+    },
+    {
+      "model": "glm-5.1",
+      "calls": 4,
+      "success": 4,
+      "errors": 0,
+      "tokens_in": 5154,
+      "tokens_out": 5000,
+      "cost_usd": 0.00267
+    },
+    {
+      "model": "qwen-max-latest",
+      "calls": 1,
+      "success": 1,
+      "errors": 0,
+      "tokens_in": 2635,
+      "tokens_out": 500,
+      "cost_usd": 0.000777
+    },
+    {
+      "model": "step-3.5-flash",
+      "calls": 5,
+      "success": 5,
+      "errors": 0,
+      "tokens_in": 5461,
+      "tokens_out": 2923,
+      "cost_usd": 0.000565
+    },
+    {
+      "model": "doubao-seed-2-0-pro-260215",
+      "calls": 1,
+      "success": 1,
+      "errors": 0,
+      "tokens_in": 175,
+      "tokens_out": 999,
+      "cost_usd": 0.000526
+    },
+    {
+      "model": "minimax-m2",
+      "calls": 1,
+      "success": 1,
+      "errors": 0,
+      "tokens_in": 125,
+      "tokens_out": 208,
+      "cost_usd": 0.000271
+    },
+    {
+      "model": "qwen3.6-plus",
+      "calls": 1,
+      "success": 1,
+      "errors": 0,
+      "tokens_in": 151,
+      "tokens_out": 704,
+      "cost_usd": 0.000226
+    },
+    {
+      "model": "qwen3-vl-plus",
+      "calls": 1,
+      "success": 1,
+      "errors": 0,
+      "tokens_in": 152,
+      "tokens_out": 50,
+      "cost_usd": 0.000126
+    },
+    {
+      "model": "qwen3-coder-plus",
+      "calls": 1,
+      "success": 1,
+      "errors": 0,
+      "tokens_in": 151,
+      "tokens_out": 50,
+      "cost_usd": 0.000126
+    },
+    {
+      "model": "mimo-v2-omni",
+      "calls": 1,
+      "success": 1,
+      "errors": 0,
+      "tokens_in": 151,
+      "tokens_out": 50,
+      "cost_usd": 0.000126
+    },
+    {
+      "model": "hunyuan-large",
+      "calls": 1,
+      "success": 1,
+      "errors": 0,
+      "tokens_in": 142,
+      "tokens_out": 51,
+      "cost_usd": 0.000122
+    },
+    {
+      "model": "minimax-m2.1",
+      "calls": 1,
+      "success": 1,
+      "errors": 0,
+      "tokens_in": 124,
+      "tokens_out": 50,
+      "cost_usd": 0.000112
+    },
+    {
+      "model": "mimo-v2.5-pro",
+      "calls": 1,
+      "success": 1,
+      "errors": 0,
+      "tokens_in": 152,
+      "tokens_out": 50,
+      "cost_usd": 4.8e-05
+    },
+    {
+      "model": "hunyuan-t1-latest",
+      "calls": 1,
+      "success": 1,
+      "errors": 0,
+      "tokens_in": 143,
+      "tokens_out": 50,
+      "cost_usd": 4.6e-05
+    }
+  ],
+  "daily": {
+    "2026-05-04": {
+      "cost": 0.081322,
+      "calls": 95
+    },
+    "2026-05-05": {
+      "cost": 0.006874,
+      "calls": 7
+    },
+    "2026-05-06": {
+      "cost": 0.020822,
+      "calls": 29
+    },
+    "2026-05-07": {
+      "cost": 0.031044,
+      "calls": 44
+    },
+    "2026-05-17": {
+      "cost": 0.000167,
+      "calls": 2
+    },
+    "2026-05-19": {
+      "cost": 0.001812,
+      "calls": 22
+    },
+    "2026-05-20": {
+      "cost": 0.002229,
+      "calls": 27
+    },
+    "2026-05-21": {
+      "cost": 0.001123,
+      "calls": 14
+    },
+    "2026-05-22": {
+      "cost": 0.001954,
+      "calls": 24
+    },
+    "2026-05-23": {
+      "cost": 0.002124,
+      "calls": 26
+    },
+    "2026-05-24": {
+      "cost": 0.000352,
+      "calls": 4
+    }
+  }
 }
