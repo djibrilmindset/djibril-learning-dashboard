@@ -1,668 +1,47 @@
 {
   "_meta": {
-    "generated_at": "2026-06-04T00:13:05.509338Z",
+    "generated_at": "2026-06-04T22:12:33.201890Z",
     "window_hours": 24,
-    "total_calls": 173,
-    "total_cost_usd": 0.166784,
-    "models_count": 17,
-    "providers_count": 9,
+    "total_calls": 132,
+    "total_cost_usd": 0.191139,
+    "models_count": 22,
+    "providers_count": 11,
     "errors_count": 0,
-    "healthy_count": 17,
+    "healthy_count": 22,
     "error_count": 0
   },
   "entries": [
     {
-      "model": "moonshot-direct/kimi-k2.6",
-      "provider": "moonshot",
-      "timestamp": "2026-06-03T03:37:08Z",
-      "tokens_in": 488,
-      "tokens_out": 5,
-      "cost_usd": 0.000384,
-      "status": "success"
-    },
-    {
-      "model": "zhipu-direct/glm-4.7",
-      "provider": "zhipu",
-      "timestamp": "2026-06-03T03:54:19Z",
-      "tokens_in": 492,
-      "tokens_out": 1152,
-      "cost_usd": 0.003948,
-      "status": "success"
-    },
-    {
-      "model": "minimax-direct/MiniMax-M2.7",
-      "provider": "minimax",
-      "timestamp": "2026-06-03T03:54:21Z",
-      "tokens_in": 480,
-      "tokens_out": 5,
-      "cost_usd": 0.000495,
-      "status": "success"
-    },
-    {
-      "model": "stepfun-direct/step-3.5-flash",
-      "provider": "stepfun",
-      "timestamp": "2026-06-03T04:14:25Z",
-      "tokens_in": 504,
-      "tokens_out": 5,
-      "cost_usd": 0.000519,
-      "status": "success"
-    },
-    {
-      "model": "xiaomi-direct/mimo-v2.5-pro",
-      "provider": "xiaomi",
-      "timestamp": "2026-06-03T04:14:27Z",
-      "tokens_in": 508,
-      "tokens_out": 5,
-      "cost_usd": 0.000523,
-      "status": "success"
-    },
-    {
-      "model": "aihubmix/aihubmix/ernie-5.0-thinking-preview",
-      "provider": "aihubmix",
-      "timestamp": "2026-06-03T04:16:34Z",
-      "tokens_in": 501,
-      "tokens_out": 4,
-      "cost_usd": 0.0,
-      "status": "success"
-    },
-    {
-      "model": "xiaomi-direct/mimo-v2.5-pro",
-      "provider": "xiaomi",
-      "timestamp": "2026-06-03T04:16:35Z",
-      "tokens_in": 508,
-      "tokens_out": 5,
-      "cost_usd": 0.000523,
-      "status": "success"
-    },
-    {
-      "model": "aihubmix/aihubmix/qwen3-235b-a22b-thinking-2507",
-      "provider": "aihubmix",
-      "timestamp": "2026-06-03T04:16:47Z",
-      "tokens_in": 510,
-      "tokens_out": 555,
-      "cost_usd": 0.0,
-      "status": "success"
-    },
-    {
-      "model": "mistral-direct/mistral-large-latest",
-      "provider": "mistral",
-      "timestamp": "2026-06-03T04:21:03Z",
-      "tokens_in": 509,
-      "tokens_out": 5,
-      "cost_usd": 0.000524,
-      "status": "success"
-    },
-    {
-      "model": "zhipu-direct/glm-4.7",
-      "provider": "zhipu",
-      "timestamp": "2026-06-03T10:44:42Z",
-      "tokens_in": 492,
-      "tokens_out": 649,
-      "cost_usd": 0.002439,
-      "status": "success"
-    },
-    {
-      "model": "minimax-direct/MiniMax-M2.7",
-      "provider": "minimax",
-      "timestamp": "2026-06-03T10:44:45Z",
-      "tokens_in": 480,
-      "tokens_out": 5,
-      "cost_usd": 0.000495,
-      "status": "success"
-    },
-    {
-      "model": "stepfun-direct/step-3.5-flash",
-      "provider": "stepfun",
-      "timestamp": "2026-06-03T10:45:36Z",
-      "tokens_in": 504,
-      "tokens_out": 5,
-      "cost_usd": 0.000519,
-      "status": "success"
-    },
-    {
-      "model": "xiaomi-direct/mimo-v2.5-pro",
-      "provider": "xiaomi",
-      "timestamp": "2026-06-03T10:45:38Z",
-      "tokens_in": 508,
-      "tokens_out": 5,
-      "cost_usd": 0.000523,
-      "status": "success"
-    },
-    {
-      "model": "aihubmix/aihubmix/ernie-5.0-thinking-preview",
-      "provider": "aihubmix",
-      "timestamp": "2026-06-03T10:46:00Z",
-      "tokens_in": 501,
-      "tokens_out": 4,
-      "cost_usd": 0.0,
-      "status": "success"
-    },
-    {
-      "model": "xiaomi-direct/mimo-v2.5-pro",
-      "provider": "xiaomi",
-      "timestamp": "2026-06-03T10:46:02Z",
-      "tokens_in": 508,
-      "tokens_out": 5,
-      "cost_usd": 0.000523,
-      "status": "success"
-    },
-    {
-      "model": "aihubmix/aihubmix/qwen3-235b-a22b-thinking-2507",
-      "provider": "aihubmix",
-      "timestamp": "2026-06-03T10:47:06Z",
-      "tokens_in": 510,
-      "tokens_out": 738,
-      "cost_usd": 0.0,
-      "status": "success"
-    },
-    {
-      "model": "mistral-direct/mistral-large-latest",
-      "provider": "mistral",
-      "timestamp": "2026-06-03T10:47:23Z",
-      "tokens_in": 509,
-      "tokens_out": 5,
-      "cost_usd": 0.000524,
-      "status": "success"
-    },
-    {
-      "model": "zhipu-direct/glm-4.7",
-      "provider": "zhipu",
-      "timestamp": "2026-06-03T11:55:20Z",
-      "tokens_in": 492,
-      "tokens_out": 831,
-      "cost_usd": 0.002985,
-      "status": "success"
-    },
-    {
-      "model": "minimax-direct/MiniMax-M2.7",
-      "provider": "minimax",
-      "timestamp": "2026-06-03T11:55:22Z",
-      "tokens_in": 480,
-      "tokens_out": 5,
-      "cost_usd": 0.000495,
-      "status": "success"
-    },
-    {
-      "model": "stepfun-direct/step-3.5-flash",
-      "provider": "stepfun",
-      "timestamp": "2026-06-03T11:56:10Z",
-      "tokens_in": 504,
-      "tokens_out": 5,
-      "cost_usd": 0.000519,
-      "status": "success"
-    },
-    {
-      "model": "xiaomi-direct/mimo-v2.5-pro",
-      "provider": "xiaomi",
-      "timestamp": "2026-06-03T11:56:13Z",
-      "tokens_in": 508,
-      "tokens_out": 5,
-      "cost_usd": 0.000523,
-      "status": "success"
-    },
-    {
-      "model": "aihubmix/aihubmix/ernie-5.0-thinking-preview",
-      "provider": "aihubmix",
-      "timestamp": "2026-06-03T11:56:52Z",
-      "tokens_in": 501,
-      "tokens_out": 4,
-      "cost_usd": 0.0,
-      "status": "success"
-    },
-    {
-      "model": "xiaomi-direct/mimo-v2.5-pro",
-      "provider": "xiaomi",
-      "timestamp": "2026-06-03T11:56:53Z",
-      "tokens_in": 508,
-      "tokens_out": 5,
-      "cost_usd": 0.000523,
-      "status": "success"
-    },
-    {
-      "model": "aihubmix/aihubmix/qwen3-235b-a22b-thinking-2507",
-      "provider": "aihubmix",
-      "timestamp": "2026-06-03T11:57:05Z",
-      "tokens_in": 510,
-      "tokens_out": 565,
-      "cost_usd": 0.0,
-      "status": "success"
-    },
-    {
-      "model": "mistral-direct/mistral-large-latest",
-      "provider": "mistral",
-      "timestamp": "2026-06-03T11:57:22Z",
-      "tokens_in": 509,
-      "tokens_out": 5,
-      "cost_usd": 0.000524,
-      "status": "success"
-    },
-    {
-      "model": "zhipu-direct/glm-4.7",
-      "provider": "zhipu",
-      "timestamp": "2026-06-03T14:25:11Z",
-      "tokens_in": 492,
-      "tokens_out": 1424,
-      "cost_usd": 0.004764,
-      "status": "success"
-    },
-    {
-      "model": "minimax-direct/MiniMax-M2.7",
-      "provider": "minimax",
-      "timestamp": "2026-06-03T14:25:14Z",
-      "tokens_in": 480,
-      "tokens_out": 5,
-      "cost_usd": 0.000495,
-      "status": "success"
-    },
-    {
-      "model": "stepfun-direct/step-3.5-flash",
-      "provider": "stepfun",
-      "timestamp": "2026-06-03T14:51:08Z",
-      "tokens_in": 504,
-      "tokens_out": 5,
-      "cost_usd": 0.000519,
-      "status": "success"
-    },
-    {
-      "model": "xiaomi-direct/mimo-v2.5-pro",
-      "provider": "xiaomi",
-      "timestamp": "2026-06-03T14:51:11Z",
-      "tokens_in": 508,
-      "tokens_out": 5,
-      "cost_usd": 0.000523,
-      "status": "success"
-    },
-    {
-      "model": "aihubmix/aihubmix/ernie-5.0-thinking-preview",
-      "provider": "aihubmix",
-      "timestamp": "2026-06-03T14:51:53Z",
-      "tokens_in": 501,
-      "tokens_out": 4,
-      "cost_usd": 0.0,
-      "status": "success"
-    },
-    {
-      "model": "xiaomi-direct/mimo-v2.5-pro",
-      "provider": "xiaomi",
-      "timestamp": "2026-06-03T14:51:54Z",
-      "tokens_in": 508,
-      "tokens_out": 5,
-      "cost_usd": 0.000523,
-      "status": "success"
-    },
-    {
-      "model": "aihubmix/aihubmix/qwen3-235b-a22b-thinking-2507",
-      "provider": "aihubmix",
-      "timestamp": "2026-06-03T14:52:08Z",
-      "tokens_in": 510,
-      "tokens_out": 600,
-      "cost_usd": 0.0,
-      "status": "success"
-    },
-    {
-      "model": "mistral-direct/mistral-large-latest",
-      "provider": "mistral",
-      "timestamp": "2026-06-03T14:52:57Z",
-      "tokens_in": 509,
-      "tokens_out": 5,
-      "cost_usd": 0.000524,
-      "status": "success"
-    },
-    {
       "model": "gemini-direct/gemini-3.5-flash",
       "provider": "gemini",
-      "timestamp": "2026-06-03T15:01:49Z",
-      "tokens_in": 534,
-      "tokens_out": 12,
-      "cost_usd": 0.00057,
-      "status": "success"
-    },
-    {
-      "model": "moonshot-direct/kimi-k2.6",
-      "provider": "moonshot",
-      "timestamp": "2026-06-03T16:20:47Z",
-      "tokens_in": 488,
-      "tokens_out": 5,
-      "cost_usd": 0.000384,
-      "status": "success"
-    },
-    {
-      "model": "zhipu-direct/glm-4.7",
-      "provider": "zhipu",
-      "timestamp": "2026-06-03T16:21:32Z",
-      "tokens_in": 492,
-      "tokens_out": 2002,
-      "cost_usd": 0.006498,
-      "status": "success"
-    },
-    {
-      "model": "minimax-direct/MiniMax-M2.7",
-      "provider": "minimax",
-      "timestamp": "2026-06-03T16:21:34Z",
-      "tokens_in": 480,
-      "tokens_out": 5,
-      "cost_usd": 0.000495,
-      "status": "success"
-    },
-    {
-      "model": "stepfun-direct/step-3.5-flash",
-      "provider": "stepfun",
-      "timestamp": "2026-06-03T16:22:37Z",
-      "tokens_in": 504,
-      "tokens_out": 5,
-      "cost_usd": 0.000519,
-      "status": "success"
-    },
-    {
-      "model": "xiaomi-direct/mimo-v2.5-pro",
-      "provider": "xiaomi",
-      "timestamp": "2026-06-03T16:22:38Z",
-      "tokens_in": 508,
-      "tokens_out": 5,
-      "cost_usd": 0.000523,
-      "status": "success"
-    },
-    {
-      "model": "aihubmix/aihubmix/ernie-5.0-thinking-preview",
-      "provider": "aihubmix",
-      "timestamp": "2026-06-03T16:23:19Z",
+      "timestamp": "2026-06-04T22:35:00Z",
       "tokens_in": 501,
-      "tokens_out": 4,
-      "cost_usd": 0.0,
-      "status": "success"
-    },
-    {
-      "model": "xiaomi-direct/mimo-v2.5-pro",
-      "provider": "xiaomi",
-      "timestamp": "2026-06-03T16:23:21Z",
-      "tokens_in": 508,
-      "tokens_out": 5,
-      "cost_usd": 0.000523,
-      "status": "success"
-    },
-    {
-      "model": "aihubmix/aihubmix/qwen3-235b-a22b-thinking-2507",
-      "provider": "aihubmix",
-      "timestamp": "2026-06-03T16:23:28Z",
-      "tokens_in": 510,
-      "tokens_out": 308,
-      "cost_usd": 0.0,
-      "status": "success"
-    },
-    {
-      "model": "mistral-direct/mistral-large-latest",
-      "provider": "mistral",
-      "timestamp": "2026-06-03T16:23:44Z",
-      "tokens_in": 509,
-      "tokens_out": 5,
-      "cost_usd": 0.000524,
-      "status": "success"
-    },
-    {
-      "model": "moonshot-direct/kimi-k2.6",
-      "provider": "moonshot",
-      "timestamp": "2026-06-03T17:25:00Z",
-      "tokens_in": 488,
-      "tokens_out": 5,
-      "cost_usd": 0.000384,
-      "status": "success"
-    },
-    {
-      "model": "zhipu-direct/glm-4.7",
-      "provider": "zhipu",
-      "timestamp": "2026-06-03T17:25:18Z",
-      "tokens_in": 492,
-      "tokens_out": 931,
-      "cost_usd": 0.003285,
-      "status": "success"
-    },
-    {
-      "model": "minimax-direct/MiniMax-M2.7",
-      "provider": "minimax",
-      "timestamp": "2026-06-03T17:25:20Z",
-      "tokens_in": 480,
-      "tokens_out": 5,
-      "cost_usd": 0.000495,
-      "status": "success"
-    },
-    {
-      "model": "stepfun-direct/step-3.5-flash",
-      "provider": "stepfun",
-      "timestamp": "2026-06-03T17:27:10Z",
-      "tokens_in": 504,
-      "tokens_out": 5,
-      "cost_usd": 0.000519,
-      "status": "success"
-    },
-    {
-      "model": "xiaomi-direct/mimo-v2.5-pro",
-      "provider": "xiaomi",
-      "timestamp": "2026-06-03T17:27:15Z",
-      "tokens_in": 508,
-      "tokens_out": 5,
-      "cost_usd": 0.000523,
-      "status": "success"
-    },
-    {
-      "model": "aihubmix/aihubmix/ernie-5.0-thinking-preview",
-      "provider": "aihubmix",
-      "timestamp": "2026-06-03T17:27:55Z",
-      "tokens_in": 501,
-      "tokens_out": 4,
-      "cost_usd": 0.0,
-      "status": "success"
-    },
-    {
-      "model": "xiaomi-direct/mimo-v2.5-pro",
-      "provider": "xiaomi",
-      "timestamp": "2026-06-03T17:27:58Z",
-      "tokens_in": 508,
-      "tokens_out": 5,
-      "cost_usd": 0.000523,
-      "status": "success"
-    },
-    {
-      "model": "aihubmix/aihubmix/qwen3-235b-a22b-thinking-2507",
-      "provider": "aihubmix",
-      "timestamp": "2026-06-03T17:28:11Z",
-      "tokens_in": 510,
-      "tokens_out": 426,
-      "cost_usd": 0.0,
-      "status": "success"
-    },
-    {
-      "model": "mistral-direct/mistral-large-latest",
-      "provider": "mistral",
-      "timestamp": "2026-06-03T17:28:28Z",
-      "tokens_in": 509,
-      "tokens_out": 5,
-      "cost_usd": 0.000524,
-      "status": "success"
-    },
-    {
-      "model": "moonshot-direct/kimi-k2.6",
-      "provider": "moonshot",
-      "timestamp": "2026-06-03T18:28:44Z",
-      "tokens_in": 488,
-      "tokens_out": 5,
-      "cost_usd": 0.000384,
-      "status": "success"
-    },
-    {
-      "model": "zhipu-direct/glm-4.7",
-      "provider": "zhipu",
-      "timestamp": "2026-06-03T18:29:13Z",
-      "tokens_in": 492,
-      "tokens_out": 1465,
-      "cost_usd": 0.004887,
-      "status": "success"
-    },
-    {
-      "model": "minimax-direct/MiniMax-M2.7",
-      "provider": "minimax",
-      "timestamp": "2026-06-03T18:29:15Z",
-      "tokens_in": 480,
-      "tokens_out": 5,
-      "cost_usd": 0.000495,
-      "status": "success"
-    },
-    {
-      "model": "stepfun-direct/step-3.5-flash",
-      "provider": "stepfun",
-      "timestamp": "2026-06-03T18:30:05Z",
-      "tokens_in": 504,
-      "tokens_out": 5,
-      "cost_usd": 0.000519,
-      "status": "success"
-    },
-    {
-      "model": "xiaomi-direct/mimo-v2.5-pro",
-      "provider": "xiaomi",
-      "timestamp": "2026-06-03T18:30:09Z",
-      "tokens_in": 508,
-      "tokens_out": 5,
-      "cost_usd": 0.000523,
-      "status": "success"
-    },
-    {
-      "model": "aihubmix/aihubmix/ernie-5.0-thinking-preview",
-      "provider": "aihubmix",
-      "timestamp": "2026-06-03T18:30:25Z",
-      "tokens_in": 501,
-      "tokens_out": 4,
-      "cost_usd": 0.0,
-      "status": "success"
-    },
-    {
-      "model": "xiaomi-direct/mimo-v2.5-pro",
-      "provider": "xiaomi",
-      "timestamp": "2026-06-03T18:30:27Z",
-      "tokens_in": 508,
-      "tokens_out": 5,
-      "cost_usd": 0.000523,
-      "status": "success"
-    },
-    {
-      "model": "aihubmix/aihubmix/qwen3-235b-a22b-thinking-2507",
-      "provider": "aihubmix",
-      "timestamp": "2026-06-03T18:30:42Z",
-      "tokens_in": 510,
-      "tokens_out": 591,
-      "cost_usd": 0.0,
-      "status": "success"
-    },
-    {
-      "model": "mistral-direct/mistral-large-latest",
-      "provider": "mistral",
-      "timestamp": "2026-06-03T18:30:57Z",
-      "tokens_in": 509,
-      "tokens_out": 5,
-      "cost_usd": 0.000524,
-      "status": "success"
-    },
-    {
-      "model": "gemini-direct/gemini-3.5-flash",
-      "provider": "gemini",
-      "timestamp": "2026-06-03T18:49:10Z",
-      "tokens_in": 501,
-      "tokens_out": 4,
-      "cost_usd": 0.000513,
-      "status": "success"
-    },
-    {
-      "model": "gemini-direct/gemini-3.5-flash",
-      "provider": "gemini",
-      "timestamp": "2026-06-03T18:49:21Z",
-      "tokens_in": 503,
-      "tokens_out": 1,
-      "cost_usd": 0.000506,
-      "status": "success"
-    },
-    {
-      "model": "gemini-direct/gemini-3.5-flash",
-      "provider": "gemini",
-      "timestamp": "2026-06-03T18:49:42Z",
-      "tokens_in": 504,
       "tokens_out": 3,
-      "cost_usd": 0.000513,
+      "cost_usd": 0.00051,
       "status": "success"
     },
     {
-      "model": "openai-direct/gpt-5.5",
-      "provider": "openai",
-      "timestamp": "2026-06-03T18:53:12Z",
-      "tokens_in": 494,
-      "tokens_out": 25,
-      "cost_usd": 0.00322,
-      "status": "success"
-    },
-    {
-      "model": "openai-direct/gpt-5.5",
-      "provider": "openai",
-      "timestamp": "2026-06-03T18:53:25Z",
-      "tokens_in": 490,
-      "tokens_out": 38,
-      "cost_usd": 0.00359,
-      "status": "success"
-    },
-    {
-      "model": "gemini-direct/gemini-3.5-flash",
-      "provider": "gemini",
-      "timestamp": "2026-06-03T18:53:37Z",
-      "tokens_in": 508,
-      "tokens_out": 4,
-      "cost_usd": 0.00052,
-      "status": "success"
-    },
-    {
-      "model": "gemini-direct/gemini-3.5-flash",
-      "provider": "gemini",
-      "timestamp": "2026-06-03T18:53:55Z",
-      "tokens_in": 504,
-      "tokens_out": 3,
-      "cost_usd": 0.000513,
-      "status": "success"
-    },
-    {
-      "model": "moonshot-direct/kimi-k2.6",
-      "provider": "moonshot",
-      "timestamp": "2026-06-03T19:31:55Z",
-      "tokens_in": 488,
+      "model": "mistral-direct/mistral-large-latest",
+      "provider": "mistral",
+      "timestamp": "2026-06-04T22:33:00Z",
+      "tokens_in": 509,
       "tokens_out": 5,
-      "cost_usd": 0.000384,
+      "cost_usd": 0.000524,
       "status": "success"
     },
     {
-      "model": "zhipu-direct/glm-4.7",
-      "provider": "zhipu",
-      "timestamp": "2026-06-03T19:32:11Z",
-      "tokens_in": 492,
-      "tokens_out": 1095,
-      "cost_usd": 0.003777,
-      "status": "success"
-    },
-    {
-      "model": "minimax-direct/MiniMax-M2.7",
-      "provider": "minimax",
-      "timestamp": "2026-06-03T19:32:13Z",
-      "tokens_in": 480,
-      "tokens_out": 5,
-      "cost_usd": 0.000495,
-      "status": "success"
-    },
-    {
-      "model": "stepfun-direct/step-3.5-flash",
-      "provider": "stepfun",
-      "timestamp": "2026-06-03T19:33:22Z",
-      "tokens_in": 504,
-      "tokens_out": 5,
-      "cost_usd": 0.000519,
+      "model": "aihubmix/aihubmix/qwen3-235b-a22b-thinking-2507",
+      "provider": "aihubmix",
+      "timestamp": "2026-06-04T22:33:00Z",
+      "tokens_in": 510,
+      "tokens_out": 441,
+      "cost_usd": 0.0,
       "status": "success"
     },
     {
       "model": "xiaomi-direct/mimo-v2.5-pro",
       "provider": "xiaomi",
-      "timestamp": "2026-06-03T19:33:26Z",
+      "timestamp": "2026-06-04T22:33:00Z",
       "tokens_in": 508,
       "tokens_out": 5,
       "cost_usd": 0.000523,
@@ -671,331 +50,79 @@
     {
       "model": "aihubmix/aihubmix/ernie-5.0-thinking-preview",
       "provider": "aihubmix",
-      "timestamp": "2026-06-03T19:33:44Z",
+      "timestamp": "2026-06-04T22:33:00Z",
       "tokens_in": 501,
       "tokens_out": 4,
       "cost_usd": 0.0,
       "status": "success"
     },
     {
-      "model": "xiaomi-direct/mimo-v2.5-pro",
-      "provider": "xiaomi",
-      "timestamp": "2026-06-03T19:33:48Z",
-      "tokens_in": 508,
-      "tokens_out": 5,
-      "cost_usd": 0.000523,
-      "status": "success"
-    },
-    {
-      "model": "aihubmix/aihubmix/qwen3-235b-a22b-thinking-2507",
-      "provider": "aihubmix",
-      "timestamp": "2026-06-03T19:33:58Z",
-      "tokens_in": 510,
-      "tokens_out": 438,
-      "cost_usd": 0.0,
-      "status": "success"
-    },
-    {
-      "model": "mistral-direct/mistral-large-latest",
-      "provider": "mistral",
-      "timestamp": "2026-06-03T19:34:16Z",
-      "tokens_in": 509,
-      "tokens_out": 5,
-      "cost_usd": 0.000524,
-      "status": "success"
-    },
-    {
-      "model": "gemini-direct/gemini-3.5-flash",
-      "provider": "gemini",
-      "timestamp": "2026-06-03T19:36:13Z",
-      "tokens_in": 565,
-      "tokens_out": 1,
-      "cost_usd": 0.000568,
-      "status": "success"
-    },
-    {
-      "model": "gemini-direct/gemini-3.5-flash",
-      "provider": "gemini",
-      "timestamp": "2026-06-03T19:39:49Z",
-      "tokens_in": 581,
-      "tokens_out": 2,
-      "cost_usd": 0.000587,
-      "status": "success"
-    },
-    {
-      "model": "gemini-direct/gemini-3.5-flash",
-      "provider": "gemini",
-      "timestamp": "2026-06-03T19:43:05Z",
-      "tokens_in": 603,
-      "tokens_out": 3,
-      "cost_usd": 0.000612,
-      "status": "success"
-    },
-    {
-      "model": "gemini-direct/gemini-3.5-flash",
-      "provider": "gemini",
-      "timestamp": "2026-06-03T19:48:52Z",
-      "tokens_in": 585,
-      "tokens_out": 3,
-      "cost_usd": 0.000594,
-      "status": "success"
-    },
-    {
-      "model": "gemini-direct/gemini-3.5-flash",
-      "provider": "gemini",
-      "timestamp": "2026-06-03T19:51:29Z",
-      "tokens_in": 594,
-      "tokens_out": 4,
-      "cost_usd": 0.000606,
-      "status": "success"
-    },
-    {
-      "model": "gemini-direct/gemini-3.5-flash",
-      "provider": "gemini",
-      "timestamp": "2026-06-03T20:09:27Z",
-      "tokens_in": 559,
-      "tokens_out": 3,
-      "cost_usd": 0.000568,
-      "status": "success"
-    },
-    {
-      "model": "gemini-direct/gemini-3.5-flash",
-      "provider": "gemini",
-      "timestamp": "2026-06-03T20:13:43Z",
-      "tokens_in": 557,
-      "tokens_out": 4,
-      "cost_usd": 0.000569,
-      "status": "success"
-    },
-    {
-      "model": "gemini-direct/gemini-3.5-flash",
-      "provider": "gemini",
-      "timestamp": "2026-06-03T20:17:53Z",
-      "tokens_in": 534,
-      "tokens_out": 1,
-      "cost_usd": 0.000537,
-      "status": "success"
-    },
-    {
-      "model": "gemini-direct/gemini-3.5-flash",
-      "provider": "gemini",
-      "timestamp": "2026-06-03T20:21:16Z",
-      "tokens_in": 578,
-      "tokens_out": 4,
-      "cost_usd": 0.00059,
-      "status": "success"
-    },
-    {
-      "model": "gemini-direct/gemini-3.5-flash",
-      "provider": "gemini",
-      "timestamp": "2026-06-03T20:24:13Z",
-      "tokens_in": 559,
-      "tokens_out": 4,
-      "cost_usd": 0.000571,
-      "status": "success"
-    },
-    {
-      "model": "moonshot-direct/kimi-k2.6",
-      "provider": "moonshot",
-      "timestamp": "2026-06-03T20:34:54Z",
-      "tokens_in": 488,
-      "tokens_out": 5,
-      "cost_usd": 0.000384,
-      "status": "success"
-    },
-    {
-      "model": "zhipu-direct/glm-4.7",
-      "provider": "zhipu",
-      "timestamp": "2026-06-03T20:35:22Z",
-      "tokens_in": 492,
-      "tokens_out": 1537,
-      "cost_usd": 0.005103,
-      "status": "success"
-    },
-    {
-      "model": "minimax-direct/MiniMax-M2.7",
-      "provider": "minimax",
-      "timestamp": "2026-06-03T20:35:25Z",
-      "tokens_in": 480,
-      "tokens_out": 5,
-      "cost_usd": 0.000495,
-      "status": "success"
-    },
-    {
-      "model": "gemini-direct/gemini-3.5-flash",
-      "provider": "gemini",
-      "timestamp": "2026-06-03T20:35:27Z",
-      "tokens_in": 600,
-      "tokens_out": 4,
-      "cost_usd": 0.000612,
+      "model": "comet/doubao-seed-2-0-pro-260215",
+      "provider": "comet",
+      "timestamp": "2026-06-04T22:33:00Z",
+      "tokens_in": 536,
+      "tokens_out": 920,
+      "cost_usd": 0.003296,
       "status": "success"
     },
     {
       "model": "stepfun-direct/step-3.5-flash",
       "provider": "stepfun",
-      "timestamp": "2026-06-03T20:36:39Z",
+      "timestamp": "2026-06-04T22:32:00Z",
       "tokens_in": 504,
       "tokens_out": 5,
       "cost_usd": 0.000519,
       "status": "success"
     },
     {
-      "model": "xiaomi-direct/mimo-v2.5-pro",
-      "provider": "xiaomi",
-      "timestamp": "2026-06-03T20:36:41Z",
-      "tokens_in": 508,
-      "tokens_out": 5,
-      "cost_usd": 0.000523,
-      "status": "success"
-    },
-    {
-      "model": "aihubmix/aihubmix/ernie-5.0-thinking-preview",
-      "provider": "aihubmix",
-      "timestamp": "2026-06-03T20:37:06Z",
+      "model": "comet/hunyuan-t1-latest",
+      "provider": "comet",
+      "timestamp": "2026-06-04T22:32:00Z",
       "tokens_in": 501,
-      "tokens_out": 4,
-      "cost_usd": 0.0,
-      "status": "success"
-    },
-    {
-      "model": "xiaomi-direct/mimo-v2.5-pro",
-      "provider": "xiaomi",
-      "timestamp": "2026-06-03T20:37:09Z",
-      "tokens_in": 508,
       "tokens_out": 5,
-      "cost_usd": 0.000523,
+      "cost_usd": 0.000516,
       "status": "success"
     },
     {
-      "model": "aihubmix/aihubmix/qwen3-235b-a22b-thinking-2507",
-      "provider": "aihubmix",
-      "timestamp": "2026-06-03T20:37:18Z",
-      "tokens_in": 510,
-      "tokens_out": 407,
-      "cost_usd": 0.0,
-      "status": "success"
-    },
-    {
-      "model": "mistral-direct/mistral-large-latest",
-      "provider": "mistral",
-      "timestamp": "2026-06-03T20:37:34Z",
-      "tokens_in": 509,
+      "model": "dashscope/qwen-turbo",
+      "provider": "dashscop",
+      "timestamp": "2026-06-04T22:32:00Z",
+      "tokens_in": 514,
       "tokens_out": 5,
-      "cost_usd": 0.000524,
-      "status": "success"
-    },
-    {
-      "model": "gemini-direct/gemini-3.5-flash",
-      "provider": "gemini",
-      "timestamp": "2026-06-03T20:38:45Z",
-      "tokens_in": 547,
-      "tokens_out": 1,
-      "cost_usd": 0.00055,
-      "status": "success"
-    },
-    {
-      "model": "gemini-direct/gemini-3.5-flash",
-      "provider": "gemini",
-      "timestamp": "2026-06-03T20:45:38Z",
-      "tokens_in": 566,
-      "tokens_out": 2,
-      "cost_usd": 0.000572,
-      "status": "success"
-    },
-    {
-      "model": "gemini-direct/gemini-3.5-flash",
-      "provider": "gemini",
-      "timestamp": "2026-06-03T20:49:26Z",
-      "tokens_in": 507,
-      "tokens_out": 9,
-      "cost_usd": 0.000534,
-      "status": "success"
-    },
-    {
-      "model": "moonshot-direct/kimi-k2.6",
-      "provider": "moonshot",
-      "timestamp": "2026-06-03T21:37:41Z",
-      "tokens_in": 488,
-      "tokens_out": 5,
-      "cost_usd": 0.000384,
-      "status": "success"
-    },
-    {
-      "model": "zhipu-direct/glm-4.7",
-      "provider": "zhipu",
-      "timestamp": "2026-06-03T21:37:58Z",
-      "tokens_in": 492,
-      "tokens_out": 972,
-      "cost_usd": 0.003408,
+      "cost_usd": 0.000529,
       "status": "success"
     },
     {
       "model": "minimax-direct/MiniMax-M2.7",
       "provider": "minimax",
-      "timestamp": "2026-06-03T21:38:00Z",
+      "timestamp": "2026-06-04T22:32:00Z",
       "tokens_in": 480,
       "tokens_out": 5,
       "cost_usd": 0.000495,
       "status": "success"
     },
     {
-      "model": "stepfun-direct/step-3.5-flash",
-      "provider": "stepfun",
-      "timestamp": "2026-06-03T21:39:03Z",
-      "tokens_in": 504,
+      "model": "zhipu-direct/glm-4.7",
+      "provider": "zhipu",
+      "timestamp": "2026-06-04T22:32:00Z",
+      "tokens_in": 492,
+      "tokens_out": 175,
+      "cost_usd": 0.001017,
+      "status": "success"
+    },
+    {
+      "model": "moonshot-direct/kimi-k2.6",
+      "provider": "moonshot",
+      "timestamp": "2026-06-04T22:32:00Z",
+      "tokens_in": 488,
       "tokens_out": 5,
-      "cost_usd": 0.000519,
-      "status": "success"
-    },
-    {
-      "model": "xiaomi-direct/mimo-v2.5-pro",
-      "provider": "xiaomi",
-      "timestamp": "2026-06-03T21:39:06Z",
-      "tokens_in": 508,
-      "tokens_out": 5,
-      "cost_usd": 0.000523,
-      "status": "success"
-    },
-    {
-      "model": "aihubmix/aihubmix/ernie-5.0-thinking-preview",
-      "provider": "aihubmix",
-      "timestamp": "2026-06-03T21:39:25Z",
-      "tokens_in": 501,
-      "tokens_out": 4,
-      "cost_usd": 0.0,
-      "status": "success"
-    },
-    {
-      "model": "xiaomi-direct/mimo-v2.5-pro",
-      "provider": "xiaomi",
-      "timestamp": "2026-06-03T21:39:45Z",
-      "tokens_in": 508,
-      "tokens_out": 5,
-      "cost_usd": 0.000523,
-      "status": "success"
-    },
-    {
-      "model": "aihubmix/aihubmix/qwen3-235b-a22b-thinking-2507",
-      "provider": "aihubmix",
-      "timestamp": "2026-06-03T21:40:04Z",
-      "tokens_in": 510,
-      "tokens_out": 683,
-      "cost_usd": 0.0,
-      "status": "success"
-    },
-    {
-      "model": "mistral-direct/mistral-large-latest",
-      "provider": "mistral",
-      "timestamp": "2026-06-03T21:40:21Z",
-      "tokens_in": 509,
-      "tokens_out": 5,
-      "cost_usd": 0.000524,
+      "cost_usd": 0.00038437,
       "status": "success"
     },
     {
       "model": "gemini-direct/gemini-3.5-flash",
       "provider": "gemini",
-      "timestamp": "2026-06-03T21:50:47Z",
+      "timestamp": "2026-06-04T22:30:00Z",
       "tokens_in": 501,
       "tokens_out": 1,
       "cost_usd": 0.000504,
@@ -1004,520 +131,7 @@
     {
       "model": "gemini-direct/gemini-3.5-flash",
       "provider": "gemini",
-      "timestamp": "2026-06-03T22:11:01Z",
-      "tokens_in": 517,
-      "tokens_out": 9,
-      "cost_usd": 0.000544,
-      "status": "success"
-    },
-    {
-      "model": "openai-direct/gpt-5.5",
-      "provider": "openai",
-      "timestamp": "2026-06-03T22:11:03Z",
-      "tokens_in": 505,
-      "tokens_out": 153,
-      "cost_usd": 0.007115,
-      "status": "success"
-    },
-    {
-      "model": "minimax-direct/minimax-m2.7",
-      "provider": "minimax",
-      "timestamp": "2026-06-03T22:11:31Z",
-      "tokens_in": 498,
-      "tokens_out": 67,
-      "cost_usd": 0.000699,
-      "status": "success"
-    },
-    {
-      "model": "moonshot-direct/kimi-k2.6",
-      "provider": "moonshot",
-      "timestamp": "2026-06-03T22:11:32Z",
-      "tokens_in": 508,
-      "tokens_out": 300,
-      "cost_usd": 0.001771,
-      "status": "success"
-    },
-    {
-      "model": "zhipu-direct/glm-5.1",
-      "provider": "zhipu",
-      "timestamp": "2026-06-03T22:11:33Z",
-      "tokens_in": 512,
-      "tokens_out": 63,
-      "cost_usd": 0.000701,
-      "status": "success"
-    },
-    {
-      "model": "xiaomi-direct/mimo-v2.5-pro",
-      "provider": "xiaomi",
-      "timestamp": "2026-06-03T22:11:33Z",
-      "tokens_in": 528,
-      "tokens_out": 205,
-      "cost_usd": 0.001143,
-      "status": "success"
-    },
-    {
-      "model": "aihubmix/ernie-5.0-thinking-preview",
-      "provider": "aihubmix",
-      "timestamp": "2026-06-03T22:11:38Z",
-      "tokens_in": 521,
-      "tokens_out": 293,
-      "cost_usd": 0.0,
-      "status": "success"
-    },
-    {
-      "model": "gemini-direct/gemini-3.5-flash",
-      "provider": "gemini",
-      "timestamp": "2026-06-03T22:12:57Z",
-      "tokens_in": 517,
-      "tokens_out": 10,
-      "cost_usd": 0.000547,
-      "status": "success"
-    },
-    {
-      "model": "openai-direct/gpt-5.5",
-      "provider": "openai",
-      "timestamp": "2026-06-03T22:12:59Z",
-      "tokens_in": 505,
-      "tokens_out": 190,
-      "cost_usd": 0.008225,
-      "status": "success"
-    },
-    {
-      "model": "minimax-direct/minimax-m2.7",
-      "provider": "minimax",
-      "timestamp": "2026-06-03T22:13:19Z",
-      "tokens_in": 498,
-      "tokens_out": 57,
-      "cost_usd": 0.000669,
-      "status": "success"
-    },
-    {
-      "model": "moonshot-direct/kimi-k2.6",
-      "provider": "moonshot",
-      "timestamp": "2026-06-03T22:13:20Z",
-      "tokens_in": 508,
-      "tokens_out": 300,
-      "cost_usd": 0.001771,
-      "status": "success"
-    },
-    {
-      "model": "zhipu-direct/glm-5.1",
-      "provider": "zhipu",
-      "timestamp": "2026-06-03T22:13:20Z",
-      "tokens_in": 512,
-      "tokens_out": 62,
-      "cost_usd": 0.000698,
-      "status": "success"
-    },
-    {
-      "model": "xiaomi-direct/mimo-v2.5-pro",
-      "provider": "xiaomi",
-      "timestamp": "2026-06-03T22:13:24Z",
-      "tokens_in": 528,
-      "tokens_out": 76,
-      "cost_usd": 0.000756,
-      "status": "success"
-    },
-    {
-      "model": "aihubmix/ernie-5.0-thinking-preview",
-      "provider": "aihubmix",
-      "timestamp": "2026-06-03T22:13:26Z",
-      "tokens_in": 521,
-      "tokens_out": 294,
-      "cost_usd": 0.0,
-      "status": "success"
-    },
-    {
-      "model": "gemini-direct/gemini-3.5-flash",
-      "provider": "gemini",
-      "timestamp": "2026-06-03T22:16:19Z",
-      "tokens_in": 517,
-      "tokens_out": 10,
-      "cost_usd": 0.000547,
-      "status": "success"
-    },
-    {
-      "model": "openai-direct/gpt-5.5",
-      "provider": "openai",
-      "timestamp": "2026-06-03T22:16:20Z",
-      "tokens_in": 505,
-      "tokens_out": 143,
-      "cost_usd": 0.006815,
-      "status": "success"
-    },
-    {
-      "model": "minimax-direct/minimax-m2.7",
-      "provider": "minimax",
-      "timestamp": "2026-06-03T22:16:35Z",
-      "tokens_in": 498,
-      "tokens_out": 84,
-      "cost_usd": 0.00075,
-      "status": "success"
-    },
-    {
-      "model": "zhipu-direct/glm-5.1",
-      "provider": "zhipu",
-      "timestamp": "2026-06-03T22:16:35Z",
-      "tokens_in": 512,
-      "tokens_out": 65,
-      "cost_usd": 0.000707,
-      "status": "success"
-    },
-    {
-      "model": "moonshot-direct/kimi-k2.6",
-      "provider": "moonshot",
-      "timestamp": "2026-06-03T22:16:36Z",
-      "tokens_in": 508,
-      "tokens_out": 300,
-      "cost_usd": 0.001771,
-      "status": "success"
-    },
-    {
-      "model": "xiaomi-direct/mimo-v2.5-pro",
-      "provider": "xiaomi",
-      "timestamp": "2026-06-03T22:16:38Z",
-      "tokens_in": 528,
-      "tokens_out": 300,
-      "cost_usd": 0.001428,
-      "status": "success"
-    },
-    {
-      "model": "aihubmix/ernie-5.0-thinking-preview",
-      "provider": "aihubmix",
-      "timestamp": "2026-06-03T22:16:42Z",
-      "tokens_in": 521,
-      "tokens_out": 291,
-      "cost_usd": 0.0,
-      "status": "success"
-    },
-    {
-      "model": "minimax-direct/MiniMax-Text-01",
-      "provider": "minimax",
-      "timestamp": "2026-06-03T22:26:50Z",
-      "tokens_in": 510,
-      "tokens_out": 4,
-      "cost_usd": 0.000522,
-      "status": "success"
-    },
-    {
-      "model": "openai-direct/gpt-5.5",
-      "provider": "openai",
-      "timestamp": "2026-06-03T22:26:50Z",
-      "tokens_in": 505,
-      "tokens_out": 46,
-      "cost_usd": 0.003905,
-      "status": "success"
-    },
-    {
-      "model": "gemini-direct/gemini-3.5-flash",
-      "provider": "gemini",
-      "timestamp": "2026-06-03T22:26:50Z",
-      "tokens_in": 517,
-      "tokens_out": 12,
-      "cost_usd": 0.000553,
-      "status": "success"
-    },
-    {
-      "model": "stepfun-direct/step-3.5-flash",
-      "provider": "stepfun",
-      "timestamp": "2026-06-03T22:26:51Z",
-      "tokens_in": 523,
-      "tokens_out": 218,
-      "cost_usd": 0.001177,
-      "status": "success"
-    },
-    {
-      "model": "minimax-direct/minimax-m2.7",
-      "provider": "minimax",
-      "timestamp": "2026-06-03T22:26:51Z",
-      "tokens_in": 498,
-      "tokens_out": 142,
-      "cost_usd": 0.000924,
-      "status": "success"
-    },
-    {
-      "model": "zhipu-direct/glm-5.1",
-      "provider": "zhipu",
-      "timestamp": "2026-06-03T22:26:51Z",
-      "tokens_in": 512,
-      "tokens_out": 52,
-      "cost_usd": 0.000668,
-      "status": "success"
-    },
-    {
-      "model": "zhipu-direct/glm-4.5-air",
-      "provider": "zhipu",
-      "timestamp": "2026-06-03T22:26:52Z",
-      "tokens_in": 513,
-      "tokens_out": 152,
-      "cost_usd": 0.000969,
-      "status": "success"
-    },
-    {
-      "model": "xiaomi-direct/mimo-v2.5-pro",
-      "provider": "xiaomi",
-      "timestamp": "2026-06-03T22:26:52Z",
-      "tokens_in": 528,
-      "tokens_out": 113,
-      "cost_usd": 0.000867,
-      "status": "success"
-    },
-    {
-      "model": "moonshot-direct/kimi-k2.6",
-      "provider": "moonshot",
-      "timestamp": "2026-06-03T22:26:52Z",
-      "tokens_in": 508,
-      "tokens_out": 300,
-      "cost_usd": 0.001771,
-      "status": "success"
-    },
-    {
-      "model": "aihubmix/ernie-5.0-thinking-preview",
-      "provider": "aihubmix",
-      "timestamp": "2026-06-03T22:26:57Z",
-      "tokens_in": 521,
-      "tokens_out": 291,
-      "cost_usd": 0.0,
-      "status": "success"
-    },
-    {
-      "model": "gemini-direct/gemini-3.5-flash",
-      "provider": "gemini",
-      "timestamp": "2026-06-03T22:31:08Z",
-      "tokens_in": 507,
-      "tokens_out": 9,
-      "cost_usd": 0.000534,
-      "status": "success"
-    },
-    {
-      "model": "gemini-direct/gemini-3.5-flash",
-      "provider": "gemini",
-      "timestamp": "2026-06-03T22:31:13Z",
-      "tokens_in": 501,
-      "tokens_out": 4,
-      "cost_usd": 0.000513,
-      "status": "success"
-    },
-    {
-      "model": "moonshot-direct/kimi-k2.6",
-      "provider": "moonshot",
-      "timestamp": "2026-06-03T22:40:26Z",
-      "tokens_in": 488,
-      "tokens_out": 5,
-      "cost_usd": 0.000384,
-      "status": "success"
-    },
-    {
-      "model": "zhipu-direct/glm-4.7",
-      "provider": "zhipu",
-      "timestamp": "2026-06-03T22:41:46Z",
-      "tokens_in": 492,
-      "tokens_out": 4717,
-      "cost_usd": 0.014643,
-      "status": "success"
-    },
-    {
-      "model": "minimax-direct/MiniMax-M2.7",
-      "provider": "minimax",
-      "timestamp": "2026-06-03T22:41:48Z",
-      "tokens_in": 480,
-      "tokens_out": 5,
-      "cost_usd": 0.000495,
-      "status": "success"
-    },
-    {
-      "model": "gemini-direct/gemini-3.5-flash",
-      "provider": "gemini",
-      "timestamp": "2026-06-03T22:42:12Z",
-      "tokens_in": 501,
-      "tokens_out": 4,
-      "cost_usd": 0.000513,
-      "status": "success"
-    },
-    {
-      "model": "stepfun-direct/step-3.5-flash",
-      "provider": "stepfun",
-      "timestamp": "2026-06-03T22:42:53Z",
-      "tokens_in": 504,
-      "tokens_out": 5,
-      "cost_usd": 0.000519,
-      "status": "success"
-    },
-    {
-      "model": "xiaomi-direct/mimo-v2.5-pro",
-      "provider": "xiaomi",
-      "timestamp": "2026-06-03T22:42:57Z",
-      "tokens_in": 508,
-      "tokens_out": 5,
-      "cost_usd": 0.000523,
-      "status": "success"
-    },
-    {
-      "model": "aihubmix/aihubmix/ernie-5.0-thinking-preview",
-      "provider": "aihubmix",
-      "timestamp": "2026-06-03T22:43:21Z",
-      "tokens_in": 501,
-      "tokens_out": 4,
-      "cost_usd": 0.0,
-      "status": "success"
-    },
-    {
-      "model": "xiaomi-direct/mimo-v2.5-pro",
-      "provider": "xiaomi",
-      "timestamp": "2026-06-03T22:43:23Z",
-      "tokens_in": 508,
-      "tokens_out": 5,
-      "cost_usd": 0.000523,
-      "status": "success"
-    },
-    {
-      "model": "aihubmix/aihubmix/qwen3-235b-a22b-thinking-2507",
-      "provider": "aihubmix",
-      "timestamp": "2026-06-03T22:43:32Z",
-      "tokens_in": 510,
-      "tokens_out": 397,
-      "cost_usd": 0.0,
-      "status": "success"
-    },
-    {
-      "model": "mistral-direct/mistral-large-latest",
-      "provider": "mistral",
-      "timestamp": "2026-06-03T22:43:46Z",
-      "tokens_in": 509,
-      "tokens_out": 5,
-      "cost_usd": 0.000524,
-      "status": "success"
-    },
-    {
-      "model": "gemini-direct/gemini-3.5-flash",
-      "provider": "gemini",
-      "timestamp": "2026-06-03T22:51:19Z",
-      "tokens_in": 501,
-      "tokens_out": 4,
-      "cost_usd": 0.000513,
-      "status": "success"
-    },
-    {
-      "model": "gemini-direct/gemini-3.5-flash",
-      "provider": "gemini",
-      "timestamp": "2026-06-03T22:56:13Z",
-      "tokens_in": 501,
-      "tokens_out": 1,
-      "cost_usd": 0.000504,
-      "status": "success"
-    },
-    {
-      "model": "gemini-direct/gemini-3.5-flash",
-      "provider": "gemini",
-      "timestamp": "2026-06-03T23:04:42Z",
-      "tokens_in": 501,
-      "tokens_out": 4,
-      "cost_usd": 0.000513,
-      "status": "success"
-    },
-    {
-      "model": "moonshot-direct/kimi-k2.6",
-      "provider": "moonshot",
-      "timestamp": "2026-06-03T23:19:30Z",
-      "tokens_in": 488,
-      "tokens_out": 5,
-      "cost_usd": 0.000384,
-      "status": "success"
-    },
-    {
-      "model": "zhipu-direct/glm-4.7",
-      "provider": "zhipu",
-      "timestamp": "2026-06-03T23:19:51Z",
-      "tokens_in": 492,
-      "tokens_out": 1060,
-      "cost_usd": 0.003672,
-      "status": "success"
-    },
-    {
-      "model": "minimax-direct/MiniMax-M2.7",
-      "provider": "minimax",
-      "timestamp": "2026-06-03T23:19:53Z",
-      "tokens_in": 480,
-      "tokens_out": 5,
-      "cost_usd": 0.000495,
-      "status": "success"
-    },
-    {
-      "model": "gemini-direct/gemini-3.5-flash",
-      "provider": "gemini",
-      "timestamp": "2026-06-03T23:20:41Z",
-      "tokens_in": 507,
-      "tokens_out": 10,
-      "cost_usd": 0.000537,
-      "status": "success"
-    },
-    {
-      "model": "gemini-direct/gemini-3.5-flash",
-      "provider": "gemini",
-      "timestamp": "2026-06-03T23:20:49Z",
-      "tokens_in": 501,
-      "tokens_out": 2,
-      "cost_usd": 0.000507,
-      "status": "success"
-    },
-    {
-      "model": "stepfun-direct/step-3.5-flash",
-      "provider": "stepfun",
-      "timestamp": "2026-06-03T23:21:06Z",
-      "tokens_in": 504,
-      "tokens_out": 5,
-      "cost_usd": 0.000519,
-      "status": "success"
-    },
-    {
-      "model": "xiaomi-direct/mimo-v2.5-pro",
-      "provider": "xiaomi",
-      "timestamp": "2026-06-03T23:21:08Z",
-      "tokens_in": 508,
-      "tokens_out": 5,
-      "cost_usd": 0.000523,
-      "status": "success"
-    },
-    {
-      "model": "aihubmix/aihubmix/ernie-5.0-thinking-preview",
-      "provider": "aihubmix",
-      "timestamp": "2026-06-03T23:21:36Z",
-      "tokens_in": 501,
-      "tokens_out": 4,
-      "cost_usd": 0.0,
-      "status": "success"
-    },
-    {
-      "model": "xiaomi-direct/mimo-v2.5-pro",
-      "provider": "xiaomi",
-      "timestamp": "2026-06-03T23:21:38Z",
-      "tokens_in": 508,
-      "tokens_out": 5,
-      "cost_usd": 0.000523,
-      "status": "success"
-    },
-    {
-      "model": "aihubmix/aihubmix/qwen3-235b-a22b-thinking-2507",
-      "provider": "aihubmix",
-      "timestamp": "2026-06-03T23:21:53Z",
-      "tokens_in": 510,
-      "tokens_out": 584,
-      "cost_usd": 0.0,
-      "status": "success"
-    },
-    {
-      "model": "mistral-direct/mistral-large-latest",
-      "provider": "mistral",
-      "timestamp": "2026-06-03T23:22:07Z",
-      "tokens_in": 509,
-      "tokens_out": 5,
-      "cost_usd": 0.000524,
-      "status": "success"
-    },
-    {
-      "model": "gemini-direct/gemini-3.5-flash",
-      "provider": "gemini",
-      "timestamp": "2026-06-03T23:25:57Z",
+      "timestamp": "2026-06-04T22:26:00Z",
       "tokens_in": 501,
       "tokens_out": 3,
       "cost_usd": 0.00051,
@@ -1526,7 +140,25 @@
     {
       "model": "gemini-direct/gemini-3.5-flash",
       "provider": "gemini",
-      "timestamp": "2026-06-03T23:34:14Z",
+      "timestamp": "2026-06-04T22:18:00Z",
+      "tokens_in": 501,
+      "tokens_out": 3,
+      "cost_usd": 0.00051,
+      "status": "success"
+    },
+    {
+      "model": "gemini-direct/gemini-3.5-flash",
+      "provider": "gemini",
+      "timestamp": "2026-06-04T21:56:00Z",
+      "tokens_in": 501,
+      "tokens_out": 2,
+      "cost_usd": 0.000507,
+      "status": "success"
+    },
+    {
+      "model": "gemini-direct/gemini-3.5-flash",
+      "provider": "gemini",
+      "timestamp": "2026-06-04T21:51:00Z",
       "tokens_in": 501,
       "tokens_out": 1,
       "cost_usd": 0.000504,
@@ -1535,37 +167,1036 @@
     {
       "model": "gemini-direct/gemini-3.5-flash",
       "provider": "gemini",
-      "timestamp": "2026-06-03T23:38:54Z",
-      "tokens_in": 506,
+      "timestamp": "2026-06-04T21:46:00Z",
+      "tokens_in": 501,
+      "tokens_out": 2,
+      "cost_usd": 0.000507,
+      "status": "success"
+    },
+    {
+      "model": "gemini-direct/gemini-3.5-flash",
+      "provider": "gemini",
+      "timestamp": "2026-06-04T21:41:00Z",
+      "tokens_in": 501,
+      "tokens_out": 3,
+      "cost_usd": 0.00051,
+      "status": "success"
+    },
+    {
+      "model": "gemini-direct/gemini-3.5-flash",
+      "provider": "gemini",
+      "timestamp": "2026-06-04T21:36:00Z",
+      "tokens_in": 501,
       "tokens_out": 4,
-      "cost_usd": 0.000518,
+      "cost_usd": 0.000513,
       "status": "success"
     },
     {
-      "model": "aihubmix/gpt-5.5-pro",
+      "model": "aihubmix/aihubmix/qwen3-235b-a22b-thinking-2507",
       "provider": "aihubmix",
-      "timestamp": "2026-06-03T23:41:05Z",
-      "tokens_in": 497,
-      "tokens_out": 39,
-      "cost_usd": 0.0,
-      "status": "success"
-    },
-    {
-      "model": "aihubmix/ernie-5.1",
-      "provider": "aihubmix",
-      "timestamp": "2026-06-03T23:41:13Z",
-      "tokens_in": 550,
-      "tokens_out": 235,
+      "timestamp": "2026-06-04T21:31:00Z",
+      "tokens_in": 510,
+      "tokens_out": 517,
       "cost_usd": 0.0,
       "status": "success"
     },
     {
       "model": "xiaomi-direct/mimo-v2.5-pro",
       "provider": "xiaomi",
-      "timestamp": "2026-06-03T23:41:27Z",
+      "timestamp": "2026-06-04T21:30:00Z",
+      "tokens_in": 508,
+      "tokens_out": 5,
+      "cost_usd": 0.000523,
+      "status": "success"
+    },
+    {
+      "model": "aihubmix/aihubmix/ernie-5.0-thinking-preview",
+      "provider": "aihubmix",
+      "timestamp": "2026-06-04T21:30:00Z",
+      "tokens_in": 501,
+      "tokens_out": 4,
+      "cost_usd": 0.0,
+      "status": "success"
+    },
+    {
+      "model": "comet/doubao-seed-2-0-pro-260215",
+      "provider": "comet",
+      "timestamp": "2026-06-04T21:30:00Z",
+      "tokens_in": 536,
+      "tokens_out": 656,
+      "cost_usd": 0.002504,
+      "status": "success"
+    },
+    {
+      "model": "xiaomi-direct/mimo-v2.5-pro",
+      "provider": "xiaomi",
+      "timestamp": "2026-06-04T21:30:00Z",
+      "tokens_in": 508,
+      "tokens_out": 5,
+      "cost_usd": 0.000523,
+      "status": "success"
+    },
+    {
+      "model": "stepfun-direct/step-3.5-flash",
+      "provider": "stepfun",
+      "timestamp": "2026-06-04T21:30:00Z",
+      "tokens_in": 504,
+      "tokens_out": 5,
+      "cost_usd": 0.000519,
+      "status": "success"
+    },
+    {
+      "model": "comet/hunyuan-t1-latest",
+      "provider": "comet",
+      "timestamp": "2026-06-04T21:30:00Z",
+      "tokens_in": 501,
+      "tokens_out": 5,
+      "cost_usd": 0.000516,
+      "status": "success"
+    },
+    {
+      "model": "dashscope/qwen-turbo",
+      "provider": "dashscop",
+      "timestamp": "2026-06-04T21:30:00Z",
+      "tokens_in": 514,
+      "tokens_out": 5,
+      "cost_usd": 0.000529,
+      "status": "success"
+    },
+    {
+      "model": "minimax-direct/MiniMax-M2.7",
+      "provider": "minimax",
+      "timestamp": "2026-06-04T21:30:00Z",
+      "tokens_in": 480,
+      "tokens_out": 5,
+      "cost_usd": 0.000495,
+      "status": "success"
+    },
+    {
+      "model": "zhipu-direct/glm-4.7",
+      "provider": "zhipu",
+      "timestamp": "2026-06-04T21:30:00Z",
+      "tokens_in": 492,
+      "tokens_out": 1194,
+      "cost_usd": 0.004074,
+      "status": "success"
+    },
+    {
+      "model": "moonshot-direct/kimi-k2.6",
+      "provider": "moonshot",
+      "timestamp": "2026-06-04T21:29:00Z",
+      "tokens_in": 488,
+      "tokens_out": 5,
+      "cost_usd": 0.00038437,
+      "status": "success"
+    },
+    {
+      "model": "gemini-direct/gemini-3.5-flash",
+      "provider": "gemini",
+      "timestamp": "2026-06-04T19:11:00Z",
+      "tokens_in": 501,
+      "tokens_out": 2,
+      "cost_usd": 0.000507,
+      "status": "success"
+    },
+    {
+      "model": "gemini-direct/gemini-3.5-flash",
+      "provider": "gemini",
+      "timestamp": "2026-06-04T19:06:00Z",
+      "tokens_in": 501,
+      "tokens_out": 4,
+      "cost_usd": 0.000513,
+      "status": "success"
+    },
+    {
+      "model": "gemini-direct/gemini-3.5-flash",
+      "provider": "gemini",
+      "timestamp": "2026-06-04T18:55:00Z",
+      "tokens_in": 501,
+      "tokens_out": 1,
+      "cost_usd": 0.000504,
+      "status": "success"
+    },
+    {
+      "model": "gemini-direct/gemini-3.5-flash",
+      "provider": "gemini",
+      "timestamp": "2026-06-04T18:50:00Z",
+      "tokens_in": 501,
+      "tokens_out": 3,
+      "cost_usd": 0.00051,
+      "status": "success"
+    },
+    {
+      "model": "gemini-direct/gemini-3.5-flash",
+      "provider": "gemini",
+      "timestamp": "2026-06-04T18:45:00Z",
+      "tokens_in": 501,
+      "tokens_out": 3,
+      "cost_usd": 0.00051,
+      "status": "success"
+    },
+    {
+      "model": "gemini-direct/gemini-3.5-flash",
+      "provider": "gemini",
+      "timestamp": "2026-06-04T18:40:00Z",
+      "tokens_in": 501,
+      "tokens_out": 4,
+      "cost_usd": 0.000513,
+      "status": "success"
+    },
+    {
+      "model": "mistral-direct/mistral-large-latest",
+      "provider": "mistral",
+      "timestamp": "2026-06-04T18:27:00Z",
+      "tokens_in": 509,
+      "tokens_out": 5,
+      "cost_usd": 0.000524,
+      "status": "success"
+    },
+    {
+      "model": "aihubmix/aihubmix/qwen3-235b-a22b-thinking-2507",
+      "provider": "aihubmix",
+      "timestamp": "2026-06-04T18:27:00Z",
+      "tokens_in": 510,
+      "tokens_out": 617,
+      "cost_usd": 0.0,
+      "status": "success"
+    },
+    {
+      "model": "aihubmix/aihubmix/ernie-5.0-thinking-preview",
+      "provider": "aihubmix",
+      "timestamp": "2026-06-04T18:26:00Z",
+      "tokens_in": 501,
+      "tokens_out": 4,
+      "cost_usd": 0.0,
+      "status": "success"
+    },
+    {
+      "model": "comet/doubao-seed-2-0-pro-260215",
+      "provider": "comet",
+      "timestamp": "2026-06-04T18:26:00Z",
+      "tokens_in": 536,
+      "tokens_out": 826,
+      "cost_usd": 0.003014,
+      "status": "success"
+    },
+    {
+      "model": "gemini-direct/gemini-3.5-flash",
+      "provider": "gemini",
+      "timestamp": "2026-06-04T18:26:00Z",
+      "tokens_in": 501,
+      "tokens_out": 3,
+      "cost_usd": 0.00051,
+      "status": "success"
+    },
+    {
+      "model": "xiaomi-direct/mimo-v2.5-pro",
+      "provider": "xiaomi",
+      "timestamp": "2026-06-04T18:26:00Z",
+      "tokens_in": 508,
+      "tokens_out": 5,
+      "cost_usd": 0.000523,
+      "status": "success"
+    },
+    {
+      "model": "stepfun-direct/step-3.5-flash",
+      "provider": "stepfun",
+      "timestamp": "2026-06-04T18:26:00Z",
+      "tokens_in": 504,
+      "tokens_out": 5,
+      "cost_usd": 0.000519,
+      "status": "success"
+    },
+    {
+      "model": "comet/hunyuan-t1-latest",
+      "provider": "comet",
+      "timestamp": "2026-06-04T18:26:00Z",
+      "tokens_in": 501,
+      "tokens_out": 5,
+      "cost_usd": 0.000516,
+      "status": "success"
+    },
+    {
+      "model": "dashscope/qwen-turbo",
+      "provider": "dashscop",
+      "timestamp": "2026-06-04T18:26:00Z",
+      "tokens_in": 514,
+      "tokens_out": 5,
+      "cost_usd": 0.000529,
+      "status": "success"
+    },
+    {
+      "model": "minimax-direct/MiniMax-M2.7",
+      "provider": "minimax",
+      "timestamp": "2026-06-04T18:26:00Z",
+      "tokens_in": 480,
+      "tokens_out": 5,
+      "cost_usd": 0.000495,
+      "status": "success"
+    },
+    {
+      "model": "zhipu-direct/glm-4.7",
+      "provider": "zhipu",
+      "timestamp": "2026-06-04T18:26:00Z",
+      "tokens_in": 492,
+      "tokens_out": 1040,
+      "cost_usd": 0.003612,
+      "status": "success"
+    },
+    {
+      "model": "moonshot-direct/kimi-k2.6",
+      "provider": "moonshot",
+      "timestamp": "2026-06-04T18:25:00Z",
+      "tokens_in": 488,
+      "tokens_out": 5,
+      "cost_usd": 0.00038437,
+      "status": "success"
+    },
+    {
+      "model": "gemini-direct/gemini-3.5-flash",
+      "provider": "gemini",
+      "timestamp": "2026-06-04T18:21:00Z",
+      "tokens_in": 501,
+      "tokens_out": 3,
+      "cost_usd": 0.00051,
+      "status": "success"
+    },
+    {
+      "model": "gemini-direct/gemini-3.5-flash",
+      "provider": "gemini",
+      "timestamp": "2026-06-04T18:16:00Z",
+      "tokens_in": 501,
+      "tokens_out": 1,
+      "cost_usd": 0.000504,
+      "status": "success"
+    },
+    {
+      "model": "dashscope/qwen3.6-max-preview",
+      "provider": "dashscop",
+      "timestamp": "2026-06-04T18:10:00Z",
+      "tokens_in": 529,
+      "tokens_out": 1028,
+      "cost_usd": 0.003613,
+      "status": "success"
+    },
+    {
+      "model": "aihubmix/qwen3.7-max",
+      "provider": "dashscop",
+      "timestamp": "2026-06-04T18:10:00Z",
+      "tokens_in": 529,
+      "tokens_out": 1052,
+      "cost_usd": 0.00451542,
+      "status": "success"
+    },
+    {
+      "model": "zhipu-direct/glm-4.5-air",
+      "provider": "zhipu",
+      "timestamp": "2026-06-04T18:10:00Z",
+      "tokens_in": 513,
+      "tokens_out": 334,
+      "cost_usd": 0.001515,
+      "status": "success"
+    },
+    {
+      "model": "stepfun-direct/step-3.5-flash",
+      "provider": "stepfun",
+      "timestamp": "2026-06-04T18:10:00Z",
+      "tokens_in": 523,
+      "tokens_out": 359,
+      "cost_usd": 0.0016,
+      "status": "success"
+    },
+    {
+      "model": "minimax-direct/MiniMax-Text-01",
+      "provider": "minimax",
+      "timestamp": "2026-06-04T18:10:00Z",
+      "tokens_in": 510,
+      "tokens_out": 12,
+      "cost_usd": 0.000546,
+      "status": "success"
+    },
+    {
+      "model": "dashscope/qwen3.7-max",
+      "provider": "dashscop",
+      "timestamp": "2026-06-04T18:10:00Z",
+      "tokens_in": 529,
+      "tokens_out": 1079,
+      "cost_usd": 0.003766,
+      "status": "success"
+    },
+    {
+      "model": "comet/doubao-seed-2-0-pro-260215",
+      "provider": "comet",
+      "timestamp": "2026-06-04T18:10:00Z",
+      "tokens_in": 555,
+      "tokens_out": 370,
+      "cost_usd": 0.001665,
+      "status": "success"
+    },
+    {
+      "model": "aihubmix/ernie-5.0-thinking-preview",
+      "provider": "aihubmix",
+      "timestamp": "2026-06-04T18:10:00Z",
       "tokens_in": 521,
-      "tokens_out": 63,
-      "cost_usd": 0.00071,
+      "tokens_out": 291,
+      "cost_usd": 0.0,
+      "status": "success"
+    },
+    {
+      "model": "minimax-direct/minimax-m2.7",
+      "provider": "minimax",
+      "timestamp": "2026-06-04T18:10:00Z",
+      "tokens_in": 498,
+      "tokens_out": 163,
+      "cost_usd": 0.000987,
+      "status": "success"
+    },
+    {
+      "model": "comet/hunyuan-t1-latest",
+      "provider": "comet",
+      "timestamp": "2026-06-04T18:10:00Z",
+      "tokens_in": 521,
+      "tokens_out": 300,
+      "cost_usd": 0.001421,
+      "status": "success"
+    },
+    {
+      "model": "moonshot-direct/kimi-k2.6",
+      "provider": "moonshot",
+      "timestamp": "2026-06-04T18:10:00Z",
+      "tokens_in": 508,
+      "tokens_out": 300,
+      "cost_usd": 0.00177092,
+      "status": "success"
+    },
+    {
+      "model": "zhipu-direct/glm-5.1",
+      "provider": "zhipu",
+      "timestamp": "2026-06-04T18:10:00Z",
+      "tokens_in": 512,
+      "tokens_out": 58,
+      "cost_usd": 0.000686,
+      "status": "success"
+    },
+    {
+      "model": "xiaomi-direct/mimo-v2.5-pro",
+      "provider": "xiaomi",
+      "timestamp": "2026-06-04T18:10:00Z",
+      "tokens_in": 528,
+      "tokens_out": 36,
+      "cost_usd": 0.000636,
+      "status": "success"
+    },
+    {
+      "model": "openai-direct/gpt-5.5",
+      "provider": "openai",
+      "timestamp": "2026-06-04T18:10:00Z",
+      "tokens_in": 505,
+      "tokens_out": 151,
+      "cost_usd": 0.007055,
+      "status": "success"
+    },
+    {
+      "model": "gemini-direct/gemini-3.5-flash",
+      "provider": "gemini",
+      "timestamp": "2026-06-04T18:10:00Z",
+      "tokens_in": 517,
+      "tokens_out": 11,
+      "cost_usd": 0.00055,
+      "status": "success"
+    },
+    {
+      "model": "dashscope/qwen3.6-max-preview",
+      "provider": "dashscop",
+      "timestamp": "2026-06-04T18:10:00Z",
+      "tokens_in": 529,
+      "tokens_out": 1511,
+      "cost_usd": 0.005062,
+      "status": "success"
+    },
+    {
+      "model": "aihubmix/qwen3.7-max",
+      "provider": "dashscop",
+      "timestamp": "2026-06-04T18:09:00Z",
+      "tokens_in": 529,
+      "tokens_out": 1018,
+      "cost_usd": 0.00438282,
+      "status": "success"
+    },
+    {
+      "model": "zhipu-direct/glm-4.5-air",
+      "provider": "zhipu",
+      "timestamp": "2026-06-04T18:09:00Z",
+      "tokens_in": 513,
+      "tokens_out": 256,
+      "cost_usd": 0.001281,
+      "status": "success"
+    },
+    {
+      "model": "minimax-direct/MiniMax-Text-01",
+      "provider": "minimax",
+      "timestamp": "2026-06-04T18:09:00Z",
+      "tokens_in": 510,
+      "tokens_out": 12,
+      "cost_usd": 0.000546,
+      "status": "success"
+    },
+    {
+      "model": "stepfun-direct/step-3.5-flash",
+      "provider": "stepfun",
+      "timestamp": "2026-06-04T18:09:00Z",
+      "tokens_in": 523,
+      "tokens_out": 95,
+      "cost_usd": 0.000808,
+      "status": "success"
+    },
+    {
+      "model": "comet/doubao-seed-2-0-pro-260215",
+      "provider": "comet",
+      "timestamp": "2026-06-04T18:09:00Z",
+      "tokens_in": 555,
+      "tokens_out": 634,
+      "cost_usd": 0.002457,
+      "status": "success"
+    },
+    {
+      "model": "dashscope/qwen3.7-max",
+      "provider": "dashscop",
+      "timestamp": "2026-06-04T18:09:00Z",
+      "tokens_in": 529,
+      "tokens_out": 959,
+      "cost_usd": 0.003406,
+      "status": "success"
+    },
+    {
+      "model": "aihubmix/ernie-5.0-thinking-preview",
+      "provider": "aihubmix",
+      "timestamp": "2026-06-04T18:09:00Z",
+      "tokens_in": 521,
+      "tokens_out": 288,
+      "cost_usd": 0.0,
+      "status": "success"
+    },
+    {
+      "model": "comet/hunyuan-t1-latest",
+      "provider": "comet",
+      "timestamp": "2026-06-04T18:09:00Z",
+      "tokens_in": 521,
+      "tokens_out": 300,
+      "cost_usd": 0.001421,
+      "status": "success"
+    },
+    {
+      "model": "moonshot-direct/kimi-k2.6",
+      "provider": "moonshot",
+      "timestamp": "2026-06-04T18:09:00Z",
+      "tokens_in": 508,
+      "tokens_out": 300,
+      "cost_usd": 0.00177092,
+      "status": "success"
+    },
+    {
+      "model": "zhipu-direct/glm-5.1",
+      "provider": "zhipu",
+      "timestamp": "2026-06-04T18:09:00Z",
+      "tokens_in": 512,
+      "tokens_out": 60,
+      "cost_usd": 0.000692,
+      "status": "success"
+    },
+    {
+      "model": "minimax-direct/minimax-m2.7",
+      "provider": "minimax",
+      "timestamp": "2026-06-04T18:09:00Z",
+      "tokens_in": 498,
+      "tokens_out": 45,
+      "cost_usd": 0.000633,
+      "status": "success"
+    },
+    {
+      "model": "openai-direct/gpt-5.5",
+      "provider": "openai",
+      "timestamp": "2026-06-04T18:09:00Z",
+      "tokens_in": 505,
+      "tokens_out": 82,
+      "cost_usd": 0.004985,
+      "status": "success"
+    },
+    {
+      "model": "gemini-direct/gemini-3.5-flash",
+      "provider": "gemini",
+      "timestamp": "2026-06-04T18:09:00Z",
+      "tokens_in": 517,
+      "tokens_out": 10,
+      "cost_usd": 0.000547,
+      "status": "success"
+    },
+    {
+      "model": "aihubmix/qwen3.7-max",
+      "provider": "dashscop",
+      "timestamp": "2026-06-04T18:08:00Z",
+      "tokens_in": 529,
+      "tokens_out": 1251,
+      "cost_usd": 0.00529152,
+      "status": "success"
+    },
+    {
+      "model": "dashscope/qwen3.6-max-preview",
+      "provider": "dashscop",
+      "timestamp": "2026-06-04T18:08:00Z",
+      "tokens_in": 529,
+      "tokens_out": 963,
+      "cost_usd": 0.003418,
+      "status": "success"
+    },
+    {
+      "model": "zhipu-direct/glm-4.5-air",
+      "provider": "zhipu",
+      "timestamp": "2026-06-04T18:08:00Z",
+      "tokens_in": 513,
+      "tokens_out": 129,
+      "cost_usd": 0.0009,
+      "status": "success"
+    },
+    {
+      "model": "stepfun-direct/step-3.5-flash",
+      "provider": "stepfun",
+      "timestamp": "2026-06-04T18:08:00Z",
+      "tokens_in": 523,
+      "tokens_out": 503,
+      "cost_usd": 0.002032,
+      "status": "success"
+    },
+    {
+      "model": "minimax-direct/MiniMax-Text-01",
+      "provider": "minimax",
+      "timestamp": "2026-06-04T18:08:00Z",
+      "tokens_in": 510,
+      "tokens_out": 4,
+      "cost_usd": 0.000522,
+      "status": "success"
+    },
+    {
+      "model": "zhipu-direct/glm-5.1",
+      "provider": "zhipu",
+      "timestamp": "2026-06-04T18:08:00Z",
+      "tokens_in": 512,
+      "tokens_out": 107,
+      "cost_usd": 0.000833,
+      "status": "success"
+    },
+    {
+      "model": "comet/doubao-seed-2-0-pro-260215",
+      "provider": "comet",
+      "timestamp": "2026-06-04T18:08:00Z",
+      "tokens_in": 555,
+      "tokens_out": 445,
+      "cost_usd": 0.00189,
+      "status": "success"
+    },
+    {
+      "model": "aihubmix/ernie-5.0-thinking-preview",
+      "provider": "aihubmix",
+      "timestamp": "2026-06-04T18:08:00Z",
+      "tokens_in": 521,
+      "tokens_out": 293,
+      "cost_usd": 0.0,
+      "status": "success"
+    },
+    {
+      "model": "dashscope/qwen3.7-max",
+      "provider": "dashscop",
+      "timestamp": "2026-06-04T18:08:00Z",
+      "tokens_in": 529,
+      "tokens_out": 534,
+      "cost_usd": 0.002131,
+      "status": "success"
+    },
+    {
+      "model": "minimax-direct/minimax-m2.7",
+      "provider": "minimax",
+      "timestamp": "2026-06-04T18:08:00Z",
+      "tokens_in": 498,
+      "tokens_out": 178,
+      "cost_usd": 0.001032,
+      "status": "success"
+    },
+    {
+      "model": "comet/hunyuan-t1-latest",
+      "provider": "comet",
+      "timestamp": "2026-06-04T18:08:00Z",
+      "tokens_in": 521,
+      "tokens_out": 300,
+      "cost_usd": 0.001421,
+      "status": "success"
+    },
+    {
+      "model": "moonshot-direct/kimi-k2.6",
+      "provider": "moonshot",
+      "timestamp": "2026-06-04T18:08:00Z",
+      "tokens_in": 508,
+      "tokens_out": 300,
+      "cost_usd": 0.00177092,
+      "status": "success"
+    },
+    {
+      "model": "openai-direct/gpt-5.5",
+      "provider": "openai",
+      "timestamp": "2026-06-04T18:07:00Z",
+      "tokens_in": 505,
+      "tokens_out": 70,
+      "cost_usd": 0.004625,
+      "status": "success"
+    },
+    {
+      "model": "gemini-direct/gemini-3.5-flash",
+      "provider": "gemini",
+      "timestamp": "2026-06-04T18:07:00Z",
+      "tokens_in": 517,
+      "tokens_out": 10,
+      "cost_usd": 0.000547,
+      "status": "success"
+    },
+    {
+      "model": "gemini-direct/gemini-3.5-flash",
+      "provider": "gemini",
+      "timestamp": "2026-06-04T17:56:00Z",
+      "tokens_in": 501,
+      "tokens_out": 4,
+      "cost_usd": 0.000513,
+      "status": "success"
+    },
+    {
+      "model": "gemini-direct/gemini-3.5-flash",
+      "provider": "gemini",
+      "timestamp": "2026-06-04T17:51:00Z",
+      "tokens_in": 501,
+      "tokens_out": 2,
+      "cost_usd": 0.000507,
+      "status": "success"
+    },
+    {
+      "model": "zhipu-direct/glm-5.1",
+      "provider": "zhipu",
+      "timestamp": "2026-06-04T17:43:00Z",
+      "tokens_in": 604,
+      "tokens_out": 333,
+      "cost_usd": 0.001603,
+      "status": "success"
+    },
+    {
+      "model": "moonshot-direct/kimi-k2.6",
+      "provider": "moonshot",
+      "timestamp": "2026-06-04T17:42:00Z",
+      "tokens_in": 609,
+      "tokens_out": 1435,
+      "cost_usd": 0.00712341,
+      "status": "success"
+    },
+    {
+      "model": "gemini-direct/gemini-3.5-flash",
+      "provider": "gemini",
+      "timestamp": "2026-06-04T17:42:00Z",
+      "tokens_in": 501,
+      "tokens_out": 2,
+      "cost_usd": 0.000507,
+      "status": "success"
+    },
+    {
+      "model": "dashscope/qwen3.7-max",
+      "provider": "dashscop",
+      "timestamp": "2026-06-04T17:37:00Z",
+      "tokens_in": 3519,
+      "tokens_out": 2070,
+      "cost_usd": 0.009729,
+      "status": "success"
+    },
+    {
+      "model": "zhipu-direct/glm-5.1",
+      "provider": "zhipu",
+      "timestamp": "2026-06-04T17:36:00Z",
+      "tokens_in": 3547,
+      "tokens_out": 400,
+      "cost_usd": 0.004747,
+      "status": "success"
+    },
+    {
+      "model": "aihubmix/ernie-5.1",
+      "provider": "aihubmix",
+      "timestamp": "2026-06-04T17:36:00Z",
+      "tokens_in": 4028,
+      "tokens_out": 400,
+      "cost_usd": 0.0,
+      "status": "success"
+    },
+    {
+      "model": "minimax-direct/minimax-m2.7",
+      "provider": "minimax",
+      "timestamp": "2026-06-04T17:36:00Z",
+      "tokens_in": 3289,
+      "tokens_out": 400,
+      "cost_usd": 0.004489,
+      "status": "success"
+    },
+    {
+      "model": "moonshot-direct/kimi-k2.6",
+      "provider": "moonshot",
+      "timestamp": "2026-06-04T17:36:00Z",
+      "tokens_in": 3653,
+      "tokens_out": 400,
+      "cost_usd": 0.00456322,
+      "status": "success"
+    },
+    {
+      "model": "comet/doubao-seed-2-0-pro-260215",
+      "provider": "comet",
+      "timestamp": "2026-06-04T17:36:00Z",
+      "tokens_in": 379,
+      "tokens_out": 2297,
+      "cost_usd": 0.00727,
+      "status": "success"
+    },
+    {
+      "model": "dashscope/qwen3.7-max",
+      "provider": "dashscop",
+      "timestamp": "2026-06-04T17:36:00Z",
+      "tokens_in": 336,
+      "tokens_out": 2067,
+      "cost_usd": 0.006537,
+      "status": "success"
+    },
+    {
+      "model": "zhipu-direct/glm-5.1",
+      "provider": "zhipu",
+      "timestamp": "2026-06-04T17:35:00Z",
+      "tokens_in": 339,
+      "tokens_out": 400,
+      "cost_usd": 0.001539,
+      "status": "success"
+    },
+    {
+      "model": "minimax-direct/minimax-m2.7",
+      "provider": "minimax",
+      "timestamp": "2026-06-04T17:35:00Z",
+      "tokens_in": 330,
+      "tokens_out": 400,
+      "cost_usd": 0.00153,
+      "status": "success"
+    },
+    {
+      "model": "aihubmix/ernie-5.1",
+      "provider": "aihubmix",
+      "timestamp": "2026-06-04T17:35:00Z",
+      "tokens_in": 379,
+      "tokens_out": 399,
+      "cost_usd": 0.0,
+      "status": "success"
+    },
+    {
+      "model": "moonshot-direct/kimi-k2.6",
+      "provider": "moonshot",
+      "timestamp": "2026-06-04T17:35:00Z",
+      "tokens_in": 366,
+      "tokens_out": 400,
+      "cost_usd": 0.00213084,
+      "status": "success"
+    },
+    {
+      "model": "xiaomi-direct/mimo-v2.5-pro",
+      "provider": "xiaomi",
+      "timestamp": "2026-06-04T17:35:00Z",
+      "tokens_in": 356,
+      "tokens_out": 400,
+      "cost_usd": 0.001556,
+      "status": "success"
+    },
+    {
+      "model": "gemini-direct/gemini-3.5-flash",
+      "provider": "gemini",
+      "timestamp": "2026-06-04T17:32:00Z",
+      "tokens_in": 501,
+      "tokens_out": 2,
+      "cost_usd": 0.000507,
+      "status": "success"
+    },
+    {
+      "model": "gemini-direct/gemini-3.5-flash",
+      "provider": "gemini",
+      "timestamp": "2026-06-04T17:26:00Z",
+      "tokens_in": 501,
+      "tokens_out": 3,
+      "cost_usd": 0.00051,
+      "status": "success"
+    },
+    {
+      "model": "mistral-direct/mistral-large-latest",
+      "provider": "mistral",
+      "timestamp": "2026-06-04T17:25:00Z",
+      "tokens_in": 509,
+      "tokens_out": 5,
+      "cost_usd": 0.000524,
+      "status": "success"
+    },
+    {
+      "model": "aihubmix/aihubmix/qwen3-235b-a22b-thinking-2507",
+      "provider": "aihubmix",
+      "timestamp": "2026-06-04T17:24:00Z",
+      "tokens_in": 510,
+      "tokens_out": 355,
+      "cost_usd": 0.0,
+      "status": "success"
+    },
+    {
+      "model": "xiaomi-direct/mimo-v2.5-pro",
+      "provider": "xiaomi",
+      "timestamp": "2026-06-04T17:24:00Z",
+      "tokens_in": 508,
+      "tokens_out": 5,
+      "cost_usd": 0.000523,
+      "status": "success"
+    },
+    {
+      "model": "aihubmix/aihubmix/ernie-5.0-thinking-preview",
+      "provider": "aihubmix",
+      "timestamp": "2026-06-04T17:24:00Z",
+      "tokens_in": 501,
+      "tokens_out": 4,
+      "cost_usd": 0.0,
+      "status": "success"
+    },
+    {
+      "model": "comet/doubao-seed-2-0-pro-260215",
+      "provider": "comet",
+      "timestamp": "2026-06-04T17:24:00Z",
+      "tokens_in": 536,
+      "tokens_out": 905,
+      "cost_usd": 0.003251,
+      "status": "success"
+    },
+    {
+      "model": "xiaomi-direct/mimo-v2.5-pro",
+      "provider": "xiaomi",
+      "timestamp": "2026-06-04T17:24:00Z",
+      "tokens_in": 508,
+      "tokens_out": 5,
+      "cost_usd": 0.000523,
+      "status": "success"
+    },
+    {
+      "model": "stepfun-direct/step-3.5-flash",
+      "provider": "stepfun",
+      "timestamp": "2026-06-04T17:23:00Z",
+      "tokens_in": 504,
+      "tokens_out": 5,
+      "cost_usd": 0.000519,
+      "status": "success"
+    },
+    {
+      "model": "comet/hunyuan-t1-latest",
+      "provider": "comet",
+      "timestamp": "2026-06-04T17:23:00Z",
+      "tokens_in": 501,
+      "tokens_out": 5,
+      "cost_usd": 0.000516,
+      "status": "success"
+    },
+    {
+      "model": "dashscope/qwen-turbo",
+      "provider": "dashscop",
+      "timestamp": "2026-06-04T17:23:00Z",
+      "tokens_in": 514,
+      "tokens_out": 5,
+      "cost_usd": 0.000529,
+      "status": "success"
+    },
+    {
+      "model": "minimax-direct/MiniMax-M2.7",
+      "provider": "minimax",
+      "timestamp": "2026-06-04T17:23:00Z",
+      "tokens_in": 480,
+      "tokens_out": 5,
+      "cost_usd": 0.000495,
+      "status": "success"
+    },
+    {
+      "model": "zhipu-direct/glm-4.7",
+      "provider": "zhipu",
+      "timestamp": "2026-06-04T17:23:00Z",
+      "tokens_in": 492,
+      "tokens_out": 857,
+      "cost_usd": 0.003063,
+      "status": "success"
+    },
+    {
+      "model": "moonshot-direct/kimi-k2.6",
+      "provider": "moonshot",
+      "timestamp": "2026-06-04T17:23:00Z",
+      "tokens_in": 488,
+      "tokens_out": 5,
+      "cost_usd": 0.00038437,
+      "status": "success"
+    },
+    {
+      "model": "gemini-direct/gemini-3.5-flash",
+      "provider": "gemini",
+      "timestamp": "2026-06-04T17:20:00Z",
+      "tokens_in": 501,
+      "tokens_out": 2,
+      "cost_usd": 0.000507,
+      "status": "success"
+    },
+    {
+      "model": "gemini-direct/gemini-3.5-flash",
+      "provider": "gemini",
+      "timestamp": "2026-06-04T17:11:00Z",
+      "tokens_in": 501,
+      "tokens_out": 4,
+      "cost_usd": 0.000513,
+      "status": "success"
+    },
+    {
+      "model": "gemini-direct/gemini-3.5-flash",
+      "provider": "gemini",
+      "timestamp": "2026-06-04T17:06:00Z",
+      "tokens_in": 501,
+      "tokens_out": 2,
+      "cost_usd": 0.000507,
+      "status": "success"
+    },
+    {
+      "model": "gemini-direct/gemini-3.5-flash",
+      "provider": "gemini",
+      "timestamp": "2026-06-04T17:01:00Z",
+      "tokens_in": 501,
+      "tokens_out": 4,
+      "cost_usd": 0.000513,
+      "status": "success"
+    },
+    {
+      "model": "gemini-direct/gemini-3.5-flash",
+      "provider": "gemini",
+      "timestamp": "2026-06-04T16:56:00Z",
+      "tokens_in": 501,
+      "tokens_out": 4,
+      "cost_usd": 0.000513,
+      "status": "success"
+    },
+    {
+      "model": "gemini-direct/gemini-3.5-flash",
+      "provider": "gemini",
+      "timestamp": "2026-06-04T16:52:00Z",
+      "tokens_in": 501,
+      "tokens_out": 4,
+      "cost_usd": 0.000513,
+      "status": "success"
+    },
+    {
+      "model": "gemini-direct/gemini-3.5-flash",
+      "provider": "gemini",
+      "timestamp": "2026-06-04T16:47:00Z",
+      "tokens_in": 501,
+      "tokens_out": 3,
+      "cost_usd": 0.00051,
       "status": "success"
     }
   ]
