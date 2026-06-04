@@ -1,26 +1,26 @@
 {
   "_meta": {
-    "generated": "2026-05-25T14:24:52.305632Z",
+    "generated": "2026-06-04T06:29:08.453002Z",
     "owner": "djibril",
     "period_days": 30,
     "schema_version": "1.1",
     "data_source": "fathom_api + analyzer_inferred + outcomes_overrides.json manual",
-    "calls_tracked": 12,
+    "calls_tracked": 18,
     "overrides_file": "/Users/pardin/agence-ia/manager/calls_intelligence/outcomes_overrides.json"
   },
   "kpi": {
-    "calls_total": 12,
-    "calls_qualified": 11,
-    "calls_qualified_pct": 0.917,
+    "calls_total": 18,
+    "calls_qualified": 17,
+    "calls_qualified_pct": 0.944,
     "noshow_count": 0,
     "noshow_pct": 0.0,
-    "closed_count": 2,
-    "closed_lost_count": 2,
-    "closing_pct_qualified": 0.182,
-    "closing_pct_total": 0.167,
+    "closed_count": 5,
+    "closed_lost_count": 3,
+    "closing_pct_qualified": 0.294,
+    "closing_pct_total": 0.278,
     "revenue_total_eur": 0,
     "avg_deal_eur": 0.0,
-    "calls_per_week_avg": 2.8,
+    "calls_per_week_avg": 4.2,
     "ttf_close_days_avg": null
   },
   "delta_vs_prev_period": {
@@ -78,16 +78,44 @@
       "qualified": 2,
       "closed": 1,
       "noshow": 0
+    },
+    {
+      "date": "2026-05-28",
+      "calls": 2,
+      "qualified": 2,
+      "closed": 0,
+      "noshow": 0
+    },
+    {
+      "date": "2026-05-29",
+      "calls": 2,
+      "qualified": 2,
+      "closed": 2,
+      "noshow": 0
+    },
+    {
+      "date": "2026-06-01",
+      "calls": 1,
+      "qualified": 1,
+      "closed": 1,
+      "noshow": 0
+    },
+    {
+      "date": "2026-06-03",
+      "calls": 1,
+      "qualified": 1,
+      "closed": 0,
+      "noshow": 0
     }
   ],
   "by_source": [
     {
       "source": "Instagram organique",
-      "calls": 12,
-      "qualified": 11,
-      "closed": 2,
+      "calls": 18,
+      "qualified": 17,
+      "closed": 5,
       "noshow": 0,
-      "closing_pct_qualified": 0.182,
+      "closing_pct_qualified": 0.294,
       "revenue_eur": 0
     }
   ],
@@ -103,13 +131,25 @@
       "count": 1,
       "closed_anyway": 0,
       "best_counter": "—"
+    },
+    {
+      "objection": "Question défensive sur conneries",
+      "count": 1,
+      "closed_anyway": 0,
+      "best_counter": "—"
+    },
+    {
+      "objection": "Défense argumentative sur le contrat ('je ne suis pas obligé')",
+      "count": 1,
+      "closed_anyway": 0,
+      "best_counter": "—"
     }
   ],
   "outcomes_breakdown": {
-    "closed_won": 2,
-    "closed_lost": 2,
+    "closed_won": 5,
+    "closed_lost": 3,
     "noshow": 0,
-    "followup_pending": 8,
+    "followup_pending": 10,
     "disqualified": 0
   }
 }
