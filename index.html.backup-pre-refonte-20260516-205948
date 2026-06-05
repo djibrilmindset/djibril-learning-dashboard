@@ -383,13 +383,6 @@ async function loadJSON(filename) {
 
 // ── NAVIGATION ──
 const NAV = [
-  { section: '📊 Performance' },
-  { id: 'perf-cockpit', label: 'Cockpit Calls', icon: '◎' },
-  { id: 'ads-funnel', label: 'Ads Funnel', icon: '⟁' },
-  { id: 'ads-links', label: 'Ads Link Lab', icon: '⇆' },
-  { id: 'video-lab', label: 'Video Pattern Lab', icon: '✦' },
-  { id: 'calls-intel', label: 'Calls Intelligence', icon: '⚯' },
-  { id: 'library', label: 'Bibliothèque', icon: '⌬' },
   { section: 'Infrastructure' },
   { id: 'dashboard', label: 'Dashboard', icon: '◈' },
   { id: 'agents', label: 'Agent Health', icon: '⬢', count: '…', countClass: 'ok' },
@@ -397,8 +390,6 @@ const NAV = [
   { id: 'pipeline', label: 'Pipeline Stéphane', icon: '⟿' },
   { id: 'tokens', label: 'Token Economy', icon: '◐' },
   { id: 'alerts', label: 'Alerts Feed', icon: '◆', count: '…', countClass: 'crit' },
-  { section: 'Acquisition' },
-  { id: 'djibrilscraping', label: 'DjibrilScraping', icon: '⟜', ext: true },
   { section: 'Croissance' },
   { id: 'ig', label: 'Instagram Metrics', icon: '✦' },
   { id: 'competitors', label: 'Veille Concurrents', icon: '⚐' },
@@ -421,13 +412,6 @@ function buildSidebar() {
   const nav = document.getElementById('sidebar-nav');
   nav.innerHTML = NAV.map(item => {
     if (item.section) return `<div class="dock__section">${item.section}</div>`;
-    if (item.ext) {
-      return `<a href="http://localhost:3000" target="_blank" rel="noopener noreferrer" class="dock__item ${item.id === state.activePage ? 'is-active' : ''}">
-        <span class="dock__icon">${item.icon}</span>
-        <span class="dock__label">${item.label}</span>
-        <span class="text-[8px] text-accent ml-auto">↗</span>
-      </a>`;
-    }
     return `<div class="dock__item ${item.id === state.activePage ? 'is-active' : ''}" onclick="navigate('${item.id}')">
       <span class="dock__icon">${item.icon}</span>
       <span class="dock__label">${item.label}</span>
@@ -453,7 +437,7 @@ window.addEventListener('hashchange', () => {
 function renderPage(pageId) {
   const container = document.getElementById('main-content');
   const pageTitle = NAV.find(n => n.id === pageId)?.label || pageId;
-
+  
   let html = `<div class="topbar">
     <div>
       <h1 class="topbar__h1">${pageTitle}</h1>
@@ -465,10 +449,10 @@ function renderPage(pageId) {
       <span class="mono" id="page-clock">--:--:--</span>
     </div>
   </div>`;
-
+  
   container.innerHTML = html;
   updateClock();
-
+  
   // Render page content
   setTimeout(() => renderPageContent(pageId, container), 10);
 }
@@ -476,14 +460,8 @@ function renderPage(pageId) {
 function renderPageContent(pageId, container) {
   const contentDiv = document.createElement('div');
   contentDiv.className = 'page is-active fade-up';
-
+  
   switch (pageId) {
-    case 'perf-cockpit': renderPerfCockpit(contentDiv); break;
-    case 'ads-funnel': renderAdsFunnel(contentDiv); break;
-    case 'ads-links': renderAdsLinks(contentDiv); break;
-    case 'video-lab': renderVideoLab(contentDiv); break;
-    case 'calls-intel': renderCallsIntel(contentDiv); break;
-    case 'library': renderLibrary(contentDiv); break;
     case 'dashboard': renderDashboard(contentDiv); break;
     case 'agents': renderAgents(contentDiv); break;
     case 'agents-detail': renderAgentsDetailed(contentDiv); break;
@@ -503,17 +481,11 @@ function renderPageContent(pageId, container) {
     case 'models': renderModels(contentDiv); break;
     case 'simulator': renderSimulator(contentDiv); break;
   }
-
+  
   container.appendChild(contentDiv);
-
+  
   // Update subtitle
   const subMap = {
-    'perf-cockpit': 'Calls perso 30j · résultats / no-show / closing / qualif · % + chiffres',
-    'ads-funnel': 'Meta Ads · spend → bookings directs vs nurturés · CPA · ROAS',
-    'ads-links': 'UTM + tunnel · par URL · drop-off précis + diagnostic',
-    'video-lab': 'IG Reels + TikTok · timeline par seconde · patterns détectés · hook→loop',
-    'calls-intel': 'Fathom transcripts · scoring 6 dims · moments + / − · patterns succès/échec · clients cold calls',
-    'library': 'Bibliothèque scannée Qwen Turbo · concepts · glossaire · citations · cross-link vers calls',
     dashboard: 'Synthèse temps réel — agents, marché, IG, coûts LLM',
     agents: 'Grille 24 agents · ping toutes les 30s · healthy/stale/dead',
     'agents-detail': 'Fiches détaillées 24 agents · tâches, inputs/outputs, coûts, modèles',
@@ -636,26 +608,26 @@ async function loadDashboardData() {
     const llm = kpis.llm || {};
     const infra = kpis.infra || {};
     const alerts = kpis.alerts || {};
-
+    
     document.getElementById('dash-agents').textContent = `${agents.healthy || 0}/${agents.total || 0}`;
     document.getElementById('dash-msg').textContent = '—';
     document.getElementById('dash-videos').textContent = '—';
     document.getElementById('dash-cost').textContent = formatUSD(llm.total_24h || 0);
-
+    
     const services = infra.services || [];
-    document.getElementById('dash-infra').innerHTML = services.map(s =>
+    document.getElementById('dash-infra').innerHTML = services.map(s => 
       `<div style="display:flex;align-items:center;gap:8px;padding:6px 0;border-bottom:1px solid var(--line);font-size:13px">
         <span class="dot dot--${s.status==='online'?'ok':'crit'}"></span>
         <span style="color:var(--text-2);flex:1">${s.name}</span>
         <span class="mono" style="color:var(--text-3);font-size:11px">${s.note || s.latency_ms+'ms' || '✓'}</span>
       </div>`
     ).join('');
-
+    
     const latestAlerts = (alerts.alerts || []).slice(0, 3);
-    document.getElementById('dash-brief').innerHTML = latestAlerts.length
+    document.getElementById('dash-brief').innerHTML = latestAlerts.length 
       ? `<p style="color:var(--text-2);font-size:13px">${latestAlerts.map(a => `• [${a.severity}] ${a.agent}: ${a.message}`).join('<br>')}</p>`
       : '<p style="color:var(--text-3)">Aucune alerte active. Système nominal.</p>';
-
+    
     const latestRuns = (kpis.runs?.latest || []).slice(0, 8);
     if (latestRuns.length) {
       document.getElementById('dash-runs').innerHTML = `<table><thead><tr><th>AGENT</th><th>STATUS</th><th>DÉMARRÉ</th><th>MÉTRIQUES</th></tr></thead><tbody>${latestRuns.map(r => `<tr><td class="mono-cell" style="color:var(--violet)">${r.agent || r.name || '—'}</td><td>${badge(r.status||'ok', r.status==='running'?'info':'ok')}</td><td class="mono-cell">${timeAgo(r.timestamp)}</td><td class="mono-cell" style="font-size:11px;color:var(--text-3)">${r.output_file ? r.output_file.slice(-30) : '—'}</td></tr>`).join('')}</tbody></table>`;
@@ -793,7 +765,7 @@ function renderAgentGrid(agents) {
   const filtered = window._agentFilter === 'all' ? agents : agents.filter(a => a.status === window._agentFilter);
   const grid = document.getElementById('agent-grid');
   if (!grid) return;
-
+  
   grid.innerHTML = filtered.map((a, i) => {
     const isDead = a.status === 'dead';
     const info = AGENT_NAMES.find(n => n.name === (a.agent_name || a.name)) || {};
@@ -812,7 +784,7 @@ function renderAgentGrid(agents) {
       ${gauge(isDead ? 0.95 : a.status === 'stale' ? 0.75 : 0.15, a.status === 'dead' ? 'CRITICAL' : a.status === 'stale' ? 'STALE' : 'HEALTHY')}
     </div>`;
   }).join('');
-
+  
   // Update sidebar count
   updateSidebarCount('agents', `${agents.filter(a => a.status === 'healthy').length}/${agents.length}`, 'ok');
 }
@@ -991,7 +963,7 @@ async function renderPipeline(el) {
         </div>
       </div>
     `).join('');
-
+    
     const healthy = models.filter(m => m.status === 'healthy').length;
     const degraded = models.filter(m => m.status === 'degraded').length;
     document.getElementById('pipeline-info').innerHTML = `
@@ -1037,7 +1009,7 @@ async function renderTokens(el) {
     document.getElementById('tk-7d').textContent = formatUSD(total * 7);
     document.getElementById('tk-30d').textContent = formatUSD(total * 30);
     document.getElementById('tk-gauge').innerHTML = gauge(total/80, `${Math.round((total/80)*100)}% du budget · ${formatUSD(total)} / $80.00`);
-
+    
     const models = data.models || [];
     if (models.length) {
       document.getElementById('tk-table').innerHTML = `<table><thead><tr><th>MODÈLE</th><th>CALLS</th><th>COÛT</th><th>SOURCE</th></tr></thead><tbody>${models.map(m => `<tr><td class="mono-cell" style="color:var(--violet)">${m.model}</td><td class="mono-cell">${m.calls || 0}</td><td class="mono-cell" style="color:var(--amber)">${formatUSD(m.cost_usd)}</td><td class="mono-cell" style="font-size:10px;color:var(--text-4)">${data.source || 'unknown'}</td></tr>`).join('')}</tbody></table>`;
@@ -1092,7 +1064,7 @@ async function renderAlerts(el) {
     updateAlertsCounts(alerts);
     renderAlertsFeed(alerts);
     if (data.note) {
-      document.getElementById('alerts-feed-console').insertAdjacentHTML('beforeend',
+      document.getElementById('alerts-feed-console').insertAdjacentHTML('beforeend', 
         `<div style="padding:8px 20px;font-size:10px;color:var(--amber);border-top:1px solid var(--line)">${data.note}</div>`);
     }
   } catch (e) {
@@ -1400,7 +1372,7 @@ function renderFormats(el) {
       ${renderF(activeNet)}
     </div>
   `;
-
+  
   window.__formatsActive = activeNet;
   window.__formatData = FORMATS;
   window.__formatColors = netColors;
@@ -1499,7 +1471,7 @@ function renderModels(el) {
   el.innerHTML = `<div class="card"><div class="eyebrow">MODÈLES LLM · STATUS + PERFORMANCES</div><div class="grid grid-3" id="models-grid" style="margin-top:12px"><div class="skeleton skeleton-card" style="height:100px"></div><div class="skeleton skeleton-card" style="height:100px"></div><div class="skeleton skeleton-card" style="height:100px"></div></div>
   <div class="card" style="margin-top:var(--gap)"><div class="eyebrow" style="margin-bottom:8px">PIPELINE STÉPHANE V8.1 · TIER 1 SWAP</div>
   <div class="table-wrap"><table><thead><tr><th>MODÈLE</th><th>PROVIDER</th><th>CALLS</th><th>SUCCÈS</th><th>ERREURS</th><th>STATUS</th><th>COÛT</th></tr></thead><tbody id="models-tbody"><tr><td colspan="7" style="text-align:center;color:var(--text-3)">Chargement des données LLM...</td></tr></tbody></table></div></div></div>`;
-
+  
   loadJSON('llm-spend.json').then(d => {
     if (d && d.by_model) {
       const models = d.by_model.sort((a,b) => (b.calls||0) - (a.calls||0)).slice(0, 18);
@@ -1513,7 +1485,7 @@ function renderModels(el) {
           </div>
         </div>
       `).join('');
-
+      
       // Table detail
       document.getElementById('models-tbody').innerHTML = models.map(m => `<tr>
         <td class="mono-cell" style="color:var(--violet);max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${m.model}">${(m.model||'').replace(/^.*?\//,'')}</td>
@@ -1526,7 +1498,7 @@ function renderModels(el) {
       </tr>`).join('');
     }
     if (d && d._meta) {
-      document.getElementById('models-grid').insertAdjacentHTML('beforebegin',
+      document.getElementById('models-grid').insertAdjacentHTML('beforebegin', 
         `<div class="grid grid-3" style="margin-bottom:var(--gap)">
           <div class="card"><div class="eyebrow">TOTAL CALLS 24H</div><div class="stat-num stat-num--cosmos">${formatNum(d._meta.total_calls||0)}</div></div>
           <div class="card"><div class="eyebrow">COÛT TOTAL 24H</div><div class="stat-num stat-num--neon">${formatUSD(d._meta.total_cost_usd)}</div></div>
@@ -1544,485 +1516,6 @@ function renderSimulator(el) {
       <p style="color:var(--text-3);padding:20px">Module de simulation en cours de développement. Scénarios : croissance followers, coûts LLM, conversion leads, pipeline contenu.</p>
     </div>
   `;
-}
-
-// ══════════════════════════════════════════════════════════════
-// ── PERFORMANCE COCKPIT (calls perso) ──
-// ══════════════════════════════════════════════════════════════
-function pct(v, d=1) { return v == null ? '—' : (v*100).toFixed(d) + '%'; }
-function pctBadge(v) { if (v == null) return ''; const sign = v >= 0 ? '+' : ''; const cls = v >= 0 ? 'ok' : 'crit'; return `<span class="badge badge--${cls}" style="font-size:9px">${sign}${(v*100).toFixed(1)}%</span>`; }
-function miniBar(value, max, color = 'var(--violet)') {
-  const w = Math.max(2, Math.min(100, (value/max)*100));
-  return `<div style="background:rgba(255,255,255,0.04);height:6px;border-radius:3px;overflow:hidden"><div style="width:${w}%;height:100%;background:${color}"></div></div>`;
-}
-function sparkline(points, w=200, h=40, color='var(--cyan)') {
-  if (!points?.length) return '';
-  const max = Math.max(...points, 1);
-  const step = w / (points.length - 1 || 1);
-  const path = points.map((v, i) => `${i===0?'M':'L'}${(i*step).toFixed(1)},${(h - (v/max)*h).toFixed(1)}`).join(' ');
-  return `<svg width="${w}" height="${h}" style="display:block"><path d="${path}" fill="none" stroke="${color}" stroke-width="1.5"/></svg>`;
-}
-
-function renderPerfCockpit(el) {
-  el.innerHTML = `<div class="grid grid-4" style="margin-bottom:var(--gap)" id="perf-kpi"></div>
-    <div class="grid grid-2" style="margin-bottom:var(--gap)">
-      <div class="card"><div class="eyebrow" style="margin-bottom:12px">TENDANCE 30 JOURS · CALLS / QUALIF / CLOSED</div><div id="perf-trend"><p style="color:var(--text-3);padding:12px">Chargement...</p></div></div>
-      <div class="card"><div class="eyebrow" style="margin-bottom:12px">BREAKDOWN PAR SOURCE</div><div id="perf-bysource"></div></div>
-    </div>
-    <div class="grid grid-2">
-      <div class="card"><div class="eyebrow" style="margin-bottom:12px">OBJECTIONS TOP & COUNTERS</div><div id="perf-objections"></div></div>
-      <div class="card"><div class="eyebrow" style="margin-bottom:12px">OUTCOMES BREAKDOWN</div><div id="perf-outcomes"></div></div>
-    </div>`;
-  loadJSON('performance-calls.json').then(d => {
-    if (!d) return;
-    const k = d.kpi, dv = d.delta_vs_prev_period || {};
-    document.getElementById('perf-kpi').innerHTML = [
-      metricCard('CALLS TOTAL · 30j', `<span class="stat-num stat-num--cosmos">${k.calls_total}</span> ${pctBadge(dv.calls_total)}`, 'ok', `${k.calls_per_week_avg}/sem moy.`),
-      metricCard('QUALIFIÉS', `<span class="stat-num stat-num--aurora">${pct(k.calls_qualified_pct,1)}</span>`, 'ok', `${k.calls_qualified}/${k.calls_total}`),
-      metricCard('NO-SHOW', `<span class="stat-num" style="color:${k.noshow_pct > 0.15 ? 'var(--red)' : 'var(--amber)'}">${pct(k.noshow_pct,1)}</span> ${pctBadge(dv.noshow_pct)}`, k.noshow_pct > 0.15 ? 'crit' : 'warn', `${k.noshow_count} no-show`),
-      metricCard('CLOSING / QUALIF', `<span class="stat-num stat-num--neon">${pct(k.closing_pct_qualified,1)}</span> ${pctBadge(dv.closing_pct_qualified)}`, 'ok', `${k.closed_count} closed · ${formatNum(k.revenue_total_eur)}€`)
-    ].join('');
-    // Trend
-    const trend = d.trend_30d || [];
-    const callsArr = trend.map(t => t.calls);
-    const qualArr = trend.map(t => t.qualified);
-    const closedArr = trend.map(t => t.closed);
-    document.getElementById('perf-trend').innerHTML = `
-      <div style="display:flex;flex-direction:column;gap:10px">
-        <div><div style="display:flex;justify-content:space-between;font-size:10px;color:var(--text-4);margin-bottom:4px"><span>CALLS</span><span class="mono">${callsArr.reduce((a,b)=>a+b,0)}</span></div>${sparkline(callsArr, 360, 28, 'var(--violet)')}</div>
-        <div><div style="display:flex;justify-content:space-between;font-size:10px;color:var(--text-4);margin-bottom:4px"><span>QUALIFIÉS</span><span class="mono">${qualArr.reduce((a,b)=>a+b,0)}</span></div>${sparkline(qualArr, 360, 28, 'var(--cyan)')}</div>
-        <div><div style="display:flex;justify-content:space-between;font-size:10px;color:var(--text-4);margin-bottom:4px"><span>CLOSED</span><span class="mono">${closedArr.reduce((a,b)=>a+b,0)}</span></div>${sparkline(closedArr, 360, 28, 'var(--green)')}</div>
-      </div>`;
-    // By source
-    const maxRev = Math.max(...d.by_source.map(s=>s.revenue_eur), 1);
-    document.getElementById('perf-bysource').innerHTML = `<table><thead><tr><th>SOURCE</th><th>CALLS</th><th>QUALIF</th><th>CLOSING</th><th>REVENUE €</th></tr></thead><tbody>${d.by_source.map(s => `<tr><td style="color:var(--text)">${s.source}</td><td class="mono-cell">${s.calls}</td><td class="mono-cell">${s.qualified} <span style="color:var(--text-4);font-size:10px">(${pct(s.qualified/s.calls,0)})</span></td><td class="mono-cell" style="color:${s.closing_pct_qualified > 0.3 ? 'var(--green)' : s.closing_pct_qualified > 0.2 ? 'var(--amber)' : 'var(--text-3)'}">${pct(s.closing_pct_qualified,1)}</td><td class="mono-cell">${formatNum(s.revenue_eur)}<div style="margin-top:3px">${miniBar(s.revenue_eur, maxRev, 'var(--neon)')}</div></td></tr>`).join('')}</tbody></table>`;
-    // Objections
-    document.getElementById('perf-objections').innerHTML = d.objections_top.map(o => `
-      <div style="padding:10px;border-bottom:1px solid var(--line)">
-        <div style="display:flex;justify-content:space-between;margin-bottom:4px">
-          <strong style="color:var(--text)">${o.objection}</strong>
-          <span class="mono" style="font-size:11px;color:var(--text-3)">${o.count}× · closed ${o.closed_anyway}</span>
-        </div>
-        <div style="font-size:11px;color:var(--text-3)">↳ ${o.best_counter}</div>
-      </div>`).join('');
-    // Outcomes pie-as-bars
-    const ob = d.outcomes_breakdown;
-    const total = Object.values(ob).reduce((a,b)=>a+b,0);
-    const colors = { closed_won: 'var(--green)', closed_lost: 'var(--red)', noshow: 'var(--amber)', followup_pending: 'var(--cyan)', disqualified: 'var(--text-4)' };
-    document.getElementById('perf-outcomes').innerHTML = Object.entries(ob).map(([k,v]) => `
-      <div style="margin-bottom:10px">
-        <div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:3px"><span style="color:var(--text-2);text-transform:uppercase;letter-spacing:0.5px">${k.replace(/_/g,' ')}</span><span class="mono"><strong style="color:var(--text)">${v}</strong> <span style="color:var(--text-4)">${pct(v/total,0)}</span></span></div>
-        ${miniBar(v, total, colors[k] || 'var(--violet)')}
-      </div>`).join('');
-  });
-}
-
-// ══════════════════════════════════════════════════════════════
-// ── ADS FUNNEL ──
-// ══════════════════════════════════════════════════════════════
-function renderAdsFunnel(el) {
-  el.innerHTML = `<div class="grid grid-4" style="margin-bottom:var(--gap)" id="ads-kpi"></div>
-    <div class="grid grid-2" style="margin-bottom:var(--gap)">
-      <div class="card"><div class="eyebrow" style="margin-bottom:12px">CAMPAGNES ACTIVES</div><div id="ads-campaigns"></div></div>
-      <div class="card"><div class="eyebrow" style="margin-bottom:12px">NURTURE FLOW · NON-BOOKÉ → BOOKÉ</div><div id="ads-nurture"></div></div>
-    </div>
-    <div class="card"><div class="eyebrow" style="margin-bottom:12px">CREATIVE PERFORMANCE · SCORE 0-100</div><div id="ads-creatives"></div></div>`;
-  loadJSON('ads-funnel.json').then(d => {
-    if (!d) return;
-    const k = d.kpi, dv = d.delta_vs_prev || {};
-    document.getElementById('ads-kpi').innerHTML = [
-      metricCard('SPEND 30j', `<span class="stat-num">${formatNum(k.spend_eur)}€</span> ${pctBadge(dv.spend_eur)}`, 'info', `CPC ${k.cpc_eur}€ · CTR ${pct(k.ctr,2)}`),
-      metricCard('BOOKINGS DIRECT', `<span class="stat-num stat-num--cosmos">${k.bookings_direct}</span>`, 'ok', `${pct(k.conversion_clicks_to_book_direct, 2)} clicks→book`),
-      metricCard('BOOKINGS NURTURED', `<span class="stat-num stat-num--aurora">${k.bookings_post_nurture}</span>`, 'ok', `${pct(k.conversion_no_book_to_book_nurtured, 3)} non-booké→booké`),
-      metricCard('CPA · ROAS', `<span class="stat-num stat-num--neon">${k.cpa_book_eur.toFixed(0)}€</span> ${pctBadge(dv.cpa_book_eur)}`, 'ok', `ROAS ${k.roas}× · ${k.bookings_total} total`)
-    ].join('');
-    // Campaigns
-    document.getElementById('ads-campaigns').innerHTML = `<table><thead><tr><th>CAMPAGNE</th><th>SPEND</th><th>CTR</th><th>BOOK</th><th>CPA</th></tr></thead><tbody>${d.by_campaign.map(c => `<tr><td><div style="color:var(--text)">${c.name}</div><div style="font-size:10px;color:var(--text-4)">${c.objective} · ${badge(c.status, c.status==='active'?'ok':'info')}</div></td><td class="mono-cell">${formatNum(c.spend)}€</td><td class="mono-cell">${pct(c.ctr,2)}</td><td class="mono-cell"><strong style="color:var(--green)">${c.book_direct}</strong> + <span style="color:var(--cyan)">${c.book_nurtured}</span></td><td class="mono-cell" style="color:${c.cpa < 100 ? 'var(--green)' : c.cpa < 150 ? 'var(--amber)' : 'var(--red)'}">${c.cpa.toFixed(0)}€</td></tr>`).join('')}</tbody></table>`;
-    // Nurture flow funnel
-    const stages = d.nurture_flow.stages;
-    const maxN = stages[0].users;
-    document.getElementById('ads-nurture').innerHTML = `<div style="font-size:11px;color:var(--text-3);margin-bottom:12px">${d.nurture_flow.label}</div>` + stages.map((s, i) => {
-      const w = (s.users / maxN) * 100;
-      const dropColor = s.drop_pct > 0.5 ? 'var(--red)' : s.drop_pct > 0.3 ? 'var(--amber)' : 'var(--text-3)';
-      return `<div style="margin-bottom:8px"><div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:3px"><span style="color:var(--text-2)">${s.stage}</span><span class="mono"><strong style="color:var(--text)">${formatNum(s.users)}</strong>${i>0?` <span style="color:${dropColor}">−${pct(s.drop_pct,0)}</span>`:''}</span></div><div style="background:rgba(255,255,255,0.03);height:8px;border-radius:4px;overflow:hidden"><div style="width:${w}%;height:100%;background:linear-gradient(90deg,var(--violet),var(--cyan))"></div></div></div>`;
-    }).join('');
-    // Creative perf
-    document.getElementById('ads-creatives').innerHTML = `<div class="grid grid-2">${d.creative_performance.map(c => {
-      const sc = c.score;
-      const scColor = sc >= 80 ? 'var(--green)' : sc >= 60 ? 'var(--amber)' : 'var(--red)';
-      return `<div style="padding:14px;border:1px solid var(--line);border-radius:10px;background:var(--surface)"><div style="display:flex;justify-content:space-between;margin-bottom:8px"><strong style="color:var(--text);font-family:var(--font-mono);font-size:12px">${c.name}</strong><span style="font-size:18px;font-weight:700;color:${scColor}">${sc}</span></div><div style="display:flex;gap:14px;font-size:11px;color:var(--text-3)"><span>${formatNum(c.spend_eur)}€</span><span>CTR ${pct(c.ctr,2)}</span><span>CPA ${c.cpa}€</span></div></div>`;
-    }).join('')}</div>`;
-  });
-}
-
-// ══════════════════════════════════════════════════════════════
-// ── ADS LINK LAB (UTM/tunnel) ──
-// ══════════════════════════════════════════════════════════════
-function renderAdsLinks(el) {
-  el.innerHTML = `<div class="grid grid-4" style="margin-bottom:var(--gap)" id="lnk-kpi"></div>
-    <div class="card" style="margin-bottom:var(--gap)"><div class="eyebrow" style="margin-bottom:12px">LINKS TRACKÉS · PAR SLUG</div><div id="lnk-table"></div></div>
-    <div class="grid grid-2">
-      <div class="card"><div class="eyebrow" style="margin-bottom:12px">TUNNEL UNIVERSEL · TOUS LINKS AGRÉGÉS</div><div id="lnk-funnel"></div></div>
-      <div class="card"><div class="eyebrow" style="margin-bottom:12px">DIAGNOSTICS TOP · POINTS DE FUITE</div><div id="lnk-diag"></div></div>
-    </div>`;
-  loadJSON('ads-links.json').then(d => {
-    if (!d) return;
-    const s = d.summary;
-    document.getElementById('lnk-kpi').innerHTML = [
-      metricCard('LINKS TRACKÉS', `<span class="stat-num stat-num--cosmos">${s.total_links_tracked}</span>`, 'ok', `${formatNum(s.total_clicks)} clicks`),
-      metricCard('VISITEURS UNIQUES', `<span class="stat-num">${formatNum(s.total_unique_visitors)}</span>`, 'info', `${pct(s.total_unique_visitors/s.total_clicks,0)} unique rate`),
-      metricCard('BEST CONVERT', `<span style="font-family:var(--font-mono);font-size:14px;color:var(--green)">${s.best_converting_slug}</span>`, 'ok', 'TOP slug'),
-      metricCard('TEMPS MOYEN LP', `<span class="stat-num stat-num--neon">${s.median_time_on_lp_s}s</span>`, 'info', 'médiane sur LP')
-    ].join('');
-    // Links table
-    document.getElementById('lnk-table').innerHTML = `<table><thead><tr><th>SLUG / TUNNEL</th><th>CLICKS</th><th>BOUNCE</th><th>VSL→FORM→SUBMIT</th><th>DROP-OFF</th><th>SCORE</th></tr></thead><tbody>${d.links.map(l => { const ns = l.next_step_pct; const scColor = l.score >= 75 ? 'var(--green)' : l.score >= 55 ? 'var(--amber)' : 'var(--red)'; return `<tr><td><div style="font-family:var(--font-mono);color:var(--cyan)">/${l.slug}</div><div style="font-size:10px;color:var(--text-4)">${l.tunnel_label}</div></td><td class="mono-cell">${formatNum(l.clicks)}<br><span style="font-size:10px;color:var(--text-4)">${formatNum(l.unique_visitors)} uniq</span></td><td class="mono-cell" style="color:${l.bounce_pct > 0.3 ? 'var(--red)' : 'var(--text-2)'}">${pct(l.bounce_pct,0)}</td><td class="mono-cell" style="font-size:11px">${pct(ns.to_vsl_play,0)} → ${pct(ns.to_form_open,0)} → <strong style="color:var(--green)">${pct(ns.to_form_submit,0)}</strong></td><td style="font-size:11px"><div style="color:var(--amber)">${l.main_drop_off.stage}</div><div style="color:var(--text-4);font-size:10px">${l.main_drop_off.diagnostic}</div></td><td><span style="font-size:18px;font-weight:700;color:${scColor}">${l.score}</span></td></tr>`; }).join('')}</tbody></table>`;
-    // Universal funnel
-    const stages = d.tunnel_universal_stages;
-    const maxN = stages[0].users;
-    document.getElementById('lnk-funnel').innerHTML = stages.map((s, i) => {
-      const w = (s.users / maxN) * 100;
-      const dropColor = s.drop_pct > 0.5 ? 'var(--red)' : s.drop_pct > 0.3 ? 'var(--amber)' : 'var(--text-3)';
-      return `<div style="margin-bottom:8px"><div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:3px"><span style="color:var(--text-2)">${s.stage}</span><span class="mono"><strong style="color:var(--text)">${formatNum(s.users)}</strong>${i>0?` <span style="color:${dropColor}">−${pct(s.drop_pct,0)}</span>`:''}</span></div><div style="background:rgba(255,255,255,0.03);height:8px;border-radius:4px;overflow:hidden"><div style="width:${w}%;height:100%;background:linear-gradient(90deg,var(--violet),var(--cyan))"></div></div></div>`;
-    }).join('');
-    // Diagnostics
-    document.getElementById('lnk-diag').innerHTML = d.diagnostics_top.map(diag => `
-      <div style="padding:12px;border-left:3px solid ${diag.impact_pct > 0.5 ? 'var(--red)' : 'var(--amber)'};background:rgba(255,255,255,0.02);margin-bottom:10px;border-radius:0 8px 8px 0">
-        <div style="display:flex;justify-content:space-between;margin-bottom:4px"><strong style="color:var(--text)">${diag.issue}</strong><span class="mono" style="color:${diag.impact_pct > 0.5 ? 'var(--red)' : 'var(--amber)'}">−${pct(diag.impact_pct,0)}</span></div>
-        <div style="font-size:11px;color:var(--text-3);margin-bottom:3px">${diag.affected_links.map(l => `<code style="background:rgba(255,255,255,0.04);padding:1px 5px;border-radius:3px;font-size:10px">/${l}</code>`).join(' ')}</div>
-        <div style="font-size:11px;color:var(--green)">→ ${diag.fix}</div>
-      </div>`).join('');
-  });
-}
-
-// ══════════════════════════════════════════════════════════════
-// ── VIDEO PATTERN LAB ──
-// ══════════════════════════════════════════════════════════════
-function renderVideoLab(el) {
-  el.innerHTML = `<div class="grid grid-4" style="margin-bottom:var(--gap)" id="vid-kpi"></div>
-    <div class="card" style="margin-bottom:var(--gap)"><div class="eyebrow" style="margin-bottom:12px">VIDÉOS · TIMELINE PAR SECONDE · PATTERNS DÉTECTÉS</div><div id="vid-list"></div></div>
-    <div class="grid grid-2" style="margin-bottom:var(--gap)">
-      <div class="card"><div class="eyebrow" style="margin-bottom:12px">PATTERNS WINNERS · À RÉPLIQUER</div><div id="vid-win"></div></div>
-      <div class="card"><div class="eyebrow" style="margin-bottom:12px">PATTERNS LOSERS · À ÉVITER</div><div id="vid-lose"></div></div>
-    </div>
-    <div class="card"><div class="eyebrow" style="margin-bottom:12px">RECOMMANDATIONS</div><div id="vid-reco"></div></div>`;
-  loadJSON('video-patterns.json').then(d => {
-    if (!d) return;
-    const s = d.summary;
-    document.getElementById('vid-kpi').innerHTML = [
-      metricCard('VIDÉOS TRACKÉES', `<span class="stat-num stat-num--cosmos">${s.videos_tracked}</span>`, 'ok', '30j IG + TikTok'),
-      metricCard('VIEWS 30j', `<span class="stat-num">${formatNum(s.total_views_30d)}</span>`, 'info', `${pct(s.avg_engagement_pct,1)} engag. moy.`),
-      metricCard('RETENTION 3s', `<span class="stat-num stat-num--aurora">${pct(s.best_retention_t3s,0)}</span>`, 'ok', `best · worst ${pct(s.worst_retention_t3s,0)}`),
-      metricCard('TOP PATTERN', `<span style="font-family:var(--font-mono);font-size:13px;color:var(--green)">${s.top_pattern.replace(/_/g,' ')}</span>`, 'ok', 'pattern dominant')
-    ].join('');
-    // Videos with timeline
-    document.getElementById('vid-list').innerHTML = d.videos.map(v => {
-      const platBadge = v.platform === 'tiktok' ? '◐ TikTok' : '✦ IG Reels';
-      const platColor = v.platform === 'tiktok' ? 'var(--cyan)' : 'var(--violet)';
-      const scColor = v.score >= 75 ? 'var(--green)' : v.score >= 55 ? 'var(--amber)' : 'var(--red)';
-      const verdictColor = v.verdict.startsWith('TOP') ? 'var(--green)' : v.verdict.startsWith('FLOP') ? 'var(--red)' : 'var(--amber)';
-      // Timeline retention curve
-      const timelineSVG = (() => {
-        const w = 600, h = 60;
-        const dur = v.duration_s;
-        const pts = v.timeline.map(t => ({ x: (t.t/dur)*w, y: h - t.retention_pct*h, label: t.pattern, t: t.t, ret: t.retention_pct, event: t.event }));
-        const path = pts.map((p,i) => `${i===0?'M':'L'}${p.x.toFixed(1)},${p.y.toFixed(1)}`).join(' ');
-        const area = path + ` L${w},${h} L0,${h} Z`;
-        const dots = pts.map(p => `<circle cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="4" fill="var(--cyan)" stroke="var(--void)" stroke-width="2"><title>t=${p.t}s · ${pct(p.ret,0)} · ${p.event}</title></circle>`).join('');
-        return `<svg width="100%" viewBox="0 0 ${w} ${h+10}" style="display:block"><path d="${area}" fill="url(#vidgrad)" opacity="0.25"/><path d="${path}" fill="none" stroke="var(--cyan)" stroke-width="1.5"/><defs><linearGradient id="vidgrad" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="var(--cyan)"/><stop offset="1" stop-color="transparent"/></linearGradient></defs>${dots}</svg>`;
-      })();
-      const timelineRows = v.timeline.map(t => `<tr><td class="mono-cell" style="color:var(--cyan);font-size:11px;width:40px">t+${t.t}s</td><td style="font-size:11px;color:var(--text-2)">${t.event}</td><td><span class="badge badge--violet" style="font-size:9px">${t.pattern.replace(/_/g,' ')}</span></td><td class="mono-cell" style="font-size:11px;color:${t.retention_pct > 0.7 ? 'var(--green)' : t.retention_pct > 0.4 ? 'var(--amber)' : 'var(--red)'}">${pct(t.retention_pct,0)}</td></tr>`).join('');
-      return `<div style="padding:16px;border:1px solid var(--line);border-radius:12px;margin-bottom:14px;background:var(--surface)">
-        <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:10px">
-          <div>
-            <div style="display:flex;gap:8px;align-items:center;margin-bottom:4px"><span style="color:${platColor};font-family:var(--font-mono);font-size:11px">${platBadge}</span><span style="color:var(--text-4);font-size:10px">${v.duration_s}s</span><span style="color:var(--text-4);font-size:10px">${new Date(v.posted).toLocaleDateString('fr-FR')}</span></div>
-            <div style="color:var(--text);font-weight:600">${v.title}</div>
-          </div>
-          <div style="text-align:right"><div style="font-size:24px;font-weight:700;color:${scColor}">${v.score}</div><div style="font-size:10px;color:${verdictColor};text-transform:uppercase">${v.verdict.split('—')[0]}</div></div>
-        </div>
-        <div class="grid grid-4" style="margin-bottom:10px;gap:8px">
-          <div style="font-size:11px;color:var(--text-3)">Views <strong style="color:var(--text)">${formatNum(v.stats.views)}</strong></div>
-          <div style="font-size:11px;color:var(--text-3)">Engag. <strong style="color:var(--text)">${pct(v.stats.engagement_pct,1)}</strong></div>
-          <div style="font-size:11px;color:var(--text-3)">Completion <strong style="color:var(--text)">${pct(v.stats.completion_pct,0)}</strong></div>
-          <div style="font-size:11px;color:var(--text-3)">Loop <strong style="color:var(--text)">${pct(v.stats.loop_pct,0)}</strong></div>
-        </div>
-        <div style="margin:12px 0;padding:8px;background:rgba(0,0,0,0.2);border-radius:8px">${timelineSVG}</div>
-        <details><summary style="cursor:pointer;color:var(--text-3);font-size:11px;padding:6px 0">Détail timeline par seconde · ${v.timeline.length} events</summary><table style="margin-top:6px"><tbody>${timelineRows}</tbody></table></details>
-        <div style="font-size:11px;color:var(--text-3);margin-top:10px"><strong>Verdict:</strong> ${v.verdict}</div>
-        <div style="margin-top:8px;display:flex;gap:6px;flex-wrap:wrap">${v.patterns_detected.map(p => `<span class="badge badge--violet" style="font-size:9px">${p.replace(/_/g,' ')}</span>`).join('')}</div>
-      </div>`;
-    }).join('');
-    // Winners / losers
-    document.getElementById('vid-win').innerHTML = d.patterns_winners.map(w => `<div style="padding:10px;border-bottom:1px solid var(--line)"><div style="display:flex;justify-content:space-between;margin-bottom:4px"><strong style="color:var(--green)">${w.pattern}</strong><span class="mono" style="font-size:11px;color:var(--text-3)">${w.uses}×</span></div><div style="font-size:11px;color:var(--text-3)">${w.avg_retention_t3 ? 'rétention 3s '+pct(w.avg_retention_t3,0)+' · ' : ''}${w.avg_loop_pct ? 'loop '+pct(w.avg_loop_pct,0)+' · ' : ''}${w.avg_dm_inbound ? 'DM '+w.avg_dm_inbound+'/post · ' : ''}score ${w.avg_score}</div></div>`).join('');
-    document.getElementById('vid-lose').innerHTML = d.patterns_losers.map(w => `<div style="padding:10px;border-bottom:1px solid var(--line)"><div style="display:flex;justify-content:space-between;margin-bottom:4px"><strong style="color:var(--red)">${w.pattern}</strong><span class="mono" style="font-size:11px;color:var(--text-3)">${w.uses}×</span></div><div style="font-size:11px;color:var(--text-3)">score moy. ${w.avg_score}</div></div>`).join('');
-    // Recommendations
-    document.getElementById('vid-reco').innerHTML = '<ol style="margin:0;padding-left:20px;color:var(--text-2);line-height:1.7">' + d.recommendations.map(r => `<li style="margin-bottom:6px">${r}</li>`).join('') + '</ol>';
-  });
-}
-
-// ══════════════════════════════════════════════════════════════
-// ── CALLS INTELLIGENCE (Fathom) ──
-// ══════════════════════════════════════════════════════════════
-// ══════════════════════════════════════════════════════════════
-// ── LIBRARY (Bibliothèque scannée Qwen Turbo) ──
-// ══════════════════════════════════════════════════════════════
-function renderLibrary(el) {
-  el.innerHTML = `<div class="grid grid-4" style="margin-bottom:var(--gap)" id="lib-kpi"></div>
-    <div class="card" style="margin-bottom:var(--gap)">
-      <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
-        <input id="lib-search" type="text" placeholder="🔍 Rechercher concept/terme/livre..." style="flex:1;min-width:240px"/>
-        <div id="lib-cat-pills" style="display:flex;gap:6px;flex-wrap:wrap"></div>
-      </div>
-    </div>
-    <div class="grid grid-2" style="margin-bottom:var(--gap)">
-      <div class="card"><div class="eyebrow" style="margin-bottom:12px;color:var(--violet)">📚 LIVRES SCANNÉS</div><div id="lib-books"></div></div>
-      <div class="card"><div class="eyebrow" style="margin-bottom:12px;color:var(--cyan)">📖 GLOSSAIRE TERMES SPÉCIAUX</div><div id="lib-glossary" style="max-height:600px;overflow-y:auto"></div></div>
-    </div>
-    <div class="card"><div class="eyebrow" style="margin-bottom:12px;color:var(--neon)">🧬 CONCEPTS PAR CATÉGORIE — accordion</div><div id="lib-concepts"></div></div>`;
-  loadJSON('library.json').then(d => {
-    if (!d) {
-      el.querySelector('#lib-books').innerHTML = '<p style="color:var(--text-3);padding:20px">Bibliothèque pas encore scannée. Lance: <code>python3 ~/agence-ia/manager/calls_intelligence/book_scanner.py --all</code></p>';
-      return;
-    }
-    const s = d.summary;
-    document.getElementById('lib-kpi').innerHTML = [
-      metricCard('LIVRES', `<span class="stat-num stat-num--cosmos">${s.books_count}</span>`, 'ok', 'scannés Qwen Turbo'),
-      metricCard('CONCEPTS', `<span class="stat-num stat-num--aurora">${s.concepts_count}</span>`, 'ok', `${s.categories.length} catégories`),
-      metricCard('TERMES SPÉCIAUX', `<span class="stat-num stat-num--neon">${s.terms_count}</span>`, 'ok', 'glossaire révisable'),
-      metricCard('SCANNER', `<span style="font-family:var(--font-mono);font-size:11px;color:var(--cyan);line-height:1.3">qwen-turbo</span>`, 'info', 'DashScope · $0.05/M')
-    ].join('');
-
-    // Books list
-    document.getElementById('lib-books').innerHTML = (d.books || []).map(b => `
-      <details style="margin-bottom:8px;border:1px solid var(--line);border-radius:8px;padding:10px 12px;background:var(--surface)">
-        <summary style="cursor:pointer;display:flex;justify-content:space-between;align-items:center">
-          <span><strong style="color:var(--text)">${b.title}</strong> <span style="font-size:10px;color:var(--text-4);margin-left:6px">${b.category}</span></span>
-          <span class="mono" style="font-size:11px;color:var(--text-3)">${b.stats?.concepts_count || 0} concepts · ${b.stats?.terms_count || 0} termes</span>
-        </summary>
-        ${(b.concepts_top || []).length ? `<div style="margin-top:10px"><div class="eyebrow" style="font-size:9px;margin-bottom:6px;color:var(--violet)">TOP CONCEPTS</div>${(b.concepts_top || []).map(c => `
-          <div style="padding:6px 8px;margin-bottom:4px;background:rgba(168,85,247,0.05);border-radius:6px;font-size:11px;line-height:1.4">
-            <strong style="color:var(--text)">${c.name}</strong> <span style="color:var(--text-4);font-size:10px">· ${c.category || ''}</span>
-            <div style="color:var(--text-3);margin-top:2px">${(c.definition || '').slice(0, 200)}</div>
-            ${c.actionable_for_calls ? `<div style="color:var(--green);margin-top:3px;font-size:10px">→ <em>Call:</em> ${c.actionable_for_calls.slice(0, 160)}</div>` : ''}
-          </div>`).join('')}</div>` : ''}
-        ${(b.quotes_top || []).length ? `<div style="margin-top:8px"><div class="eyebrow" style="font-size:9px;margin-bottom:6px;color:var(--cyan)">CITATIONS</div>${(b.quotes_top || []).map(q => `
-          <blockquote style="margin:4px 0;padding:6px 10px;border-left:2px solid var(--cyan);background:rgba(0,229,255,0.04);font-size:10px;font-style:italic;color:var(--text-2)">« ${q.quote} » <span style="color:var(--text-4);font-style:normal">— ${q.theme || ''}</span></blockquote>`).join('')}</div>` : ''}
-      </details>`).join('');
-
-    // Glossary
-    document.getElementById('lib-glossary').innerHTML = (d.glossary || []).map(g => `
-      <div style="padding:10px;border-bottom:1px solid var(--line)">
-        <div style="display:flex;justify-content:space-between;margin-bottom:4px">
-          <strong style="color:var(--cyan);font-size:13px;text-transform:capitalize">${g.term}</strong>
-          <span class="mono" style="font-size:9px;color:var(--text-4)">${g.sources_count}× livre${g.sources_count > 1 ? 's' : ''}</span>
-        </div>
-        <div style="font-size:11px;color:var(--text-2);line-height:1.4;margin-bottom:4px">${g.definition_short}</div>
-        ${g.definition_long ? `<details style="margin-top:4px"><summary style="cursor:pointer;font-size:10px;color:var(--text-3)">Définition détaillée + synonymes</summary>
-          <div style="margin-top:6px;font-size:11px;color:var(--text-3);line-height:1.5">${g.definition_long}</div>
-          ${g.synonyms ? `<div style="margin-top:4px;font-size:10px;color:var(--text-4)"><em>Synonymes :</em> ${g.synonyms}</div>` : ''}
-          ${g.source_book ? `<div style="margin-top:4px;font-size:10px;color:var(--violet)"><em>Source :</em> ${g.source_book}</div>` : ''}
-        </details>` : ''}
-      </div>`).join('');
-
-    // Concepts by category
-    const cats = Object.keys(d.concepts_by_category || {});
-    document.getElementById('lib-cat-pills').innerHTML = ['all', ...cats].map(c =>
-      `<button class="filter-pill ${c==='all'?'is-active':''}" data-cat="${c}" onclick="filterLibCat('${c}',this)">${c}</button>`).join('');
-    window._libConcepts = d.concepts_by_category || {};
-    window._libAllConcepts = Object.entries(d.concepts_by_category || {}).flatMap(([cat, items]) => items.map(c => ({...c, category: cat})));
-    renderLibConcepts('all');
-
-    // Search wire
-    document.getElementById('lib-search').addEventListener('input', e => filterLibSearch(e.target.value));
-  });
-}
-
-function renderLibConcepts(cat) {
-  const items = cat === 'all' ? window._libAllConcepts : (window._libConcepts[cat] || []);
-  const html = items.slice(0, 60).map(c => `
-    <div style="padding:12px;border:1px solid var(--line);border-radius:8px;background:var(--surface);margin-bottom:8px">
-      <div style="display:flex;justify-content:space-between;margin-bottom:6px">
-        <strong style="color:var(--text);font-size:13px">${c.name}</strong>
-        <span style="font-family:var(--font-mono);font-size:9px;color:var(--text-4)">${c.category || ''} · ${(c.books_using||[]).length}× livre${(c.books_using||[]).length > 1 ? 's' : ''}</span>
-      </div>
-      <div style="font-size:11px;color:var(--text-2);line-height:1.4;margin-bottom:6px">${(c.definition || '').slice(0, 280)}</div>
-      ${c.actionable_for_calls ? `<div style="font-size:10px;color:var(--green);line-height:1.4">→ <strong>Call:</strong> ${c.actionable_for_calls.slice(0, 200)}</div>` : ''}
-    </div>`).join('');
-  document.getElementById('lib-concepts').innerHTML = html || '<p style="color:var(--text-3)">Aucun concept dans cette catégorie.</p>';
-}
-
-function filterLibCat(cat, btn) {
-  btn.parentElement.querySelectorAll('.filter-pill').forEach(p => p.classList.remove('is-active'));
-  btn.classList.add('is-active');
-  renderLibConcepts(cat);
-}
-
-function filterLibSearch(q) {
-  if (!q || q.length < 2) { renderLibConcepts('all'); return; }
-  const ql = q.toLowerCase();
-  const items = (window._libAllConcepts || []).filter(c =>
-    (c.name||'').toLowerCase().includes(ql) ||
-    (c.definition||'').toLowerCase().includes(ql) ||
-    (c.actionable_for_calls||'').toLowerCase().includes(ql));
-  document.getElementById('lib-concepts').innerHTML = items.length
-    ? items.slice(0, 30).map(c => `<div style="padding:12px;border:1px solid var(--line);border-radius:8px;background:var(--surface);margin-bottom:8px"><strong>${c.name}</strong> · ${c.category||''}<br><span style="font-size:11px;color:var(--text-3)">${(c.definition||'').slice(0,280)}</span></div>`).join('')
-    : '<p style="color:var(--text-3)">Aucun résultat.</p>';
-}
-
-function renderCallsIntel(el) {
-  el.innerHTML = `<div class="grid grid-4" style="margin-bottom:var(--gap)" id="ci-kpi"></div>
-    <div class="card" style="margin-bottom:var(--gap);border:2px solid rgba(168,85,247,0.4);background:linear-gradient(135deg,rgba(168,85,247,0.04),rgba(0,229,255,0.04))">
-      <div class="eyebrow" style="margin-bottom:12px;color:var(--violet);font-size:11px">🎯 80/20 · LEVIERS PRIORITAIRES AGRÉGÉS · 30j</div>
-      <div id="ci-8020-aggregate"></div>
-    </div>
-    <div class="card" style="margin-bottom:var(--gap);border:2px solid rgba(0,229,255,0.4);background:linear-gradient(135deg,rgba(0,229,255,0.04),rgba(34,238,136,0.04))">
-      <div class="eyebrow" style="margin-bottom:12px;color:var(--cyan);font-size:11px">🔄 CROSS-CHANNEL · ACTIONS PAR CANAL · AGRÉGÉ</div>
-      <div id="ci-crosschannel"></div>
-    </div>
-    <div class="card" style="margin-bottom:var(--gap)"><div class="eyebrow" style="margin-bottom:12px">CALLS PERSO · DERNIERS ANALYSÉS · 80/20 + CROSS-CHANNEL</div><div id="ci-calls"></div></div>
-    <div class="grid grid-2" style="margin-bottom:var(--gap)">
-      <div class="card"><div class="eyebrow" style="margin-bottom:12px">PATTERNS · SUCCÈS</div><div id="ci-win"></div></div>
-      <div class="card"><div class="eyebrow" style="margin-bottom:12px">PATTERNS · ÉCHEC</div><div id="ci-fail"></div></div>
-    </div>
-    <div class="card"><div class="eyebrow" style="margin-bottom:12px">COLD CALLS · CLIENTS COACHÉS</div><div id="ci-clients"></div></div>`;
-  loadJSON('calls-intel.json').then(d => {
-    if (!d) return;
-    const s = d.summary;
-    const dColor = s.delta_score_30d >= 0 ? 'var(--green)' : 'var(--red)';
-    document.getElementById('ci-kpi').innerHTML = [
-      metricCard('CALLS ANALYSÉS', `<span class="stat-num stat-num--cosmos">${s.calls_total}</span>`, 'ok', `${d._meta.owner_calls_tracked} perso + ${d._meta.client_cold_calls_tracked} clients`),
-      metricCard('SCORE GLOBAL MOY.', `<span class="stat-num stat-num--aurora">${s.avg_score_global}</span> <span style="color:${dColor};font-size:11px">${s.delta_score_30d>=0?'+':''}${s.delta_score_30d}</span>`, 'ok', 'sur 100 · 30j'),
-      metricCard('TOP STRENGTH', `<span style="font-family:var(--font-mono);font-size:12px;color:var(--green);line-height:1.3">${s.top_strength}</span>`, 'ok', 'force #1'),
-      metricCard('TOP WEAKNESS', `<span style="font-family:var(--font-mono);font-size:12px;color:var(--red);line-height:1.3">${s.top_weakness}</span>`, 'warn', `win rate top pattern: ${pct(s.win_rate_top_pattern,0)}`)
-    ].join('');
-    // 80/20 agrégé · top leviers par rank
-    const allLev = (d.top_leviers_8020_aggregated || []).slice().sort((a,b) => (b.impact||0) - (a.impact||0));
-    document.getElementById('ci-8020-aggregate').innerHTML = allLev.length
-      ? `<div class="grid grid-2">${allLev.slice(0, 8).map(l => `
-          <div style="padding:12px;border-left:3px solid var(--violet);background:rgba(168,85,247,0.05);border-radius:0 8px 8px 0;margin-bottom:8px">
-            <div style="display:flex;justify-content:space-between;margin-bottom:6px">
-              <span class="mono" style="font-size:10px;color:var(--cyan)">[${l.timestamp_ref || '—'}] ${l.from_call}</span>
-              <span style="font-weight:700;color:var(--violet);font-size:13px">+${l.impact || '?'} pts</span>
-            </div>
-            <div style="font-size:11px;color:var(--text-2);line-height:1.4">${(l.levier || '').slice(0, 200)}</div>
-          </div>`).join('')}</div>`
-      : '<p style="color:var(--text-3)">Pas encore de leviers — analyse en cours...</p>';
-    // Cross-channel agrégé · par canal
-    const cci = d.cross_channel_insights || {};
-    const cciLabels = {
-      to_instagram_reels:    {label: '📱 Instagram Reels',    color: 'var(--neon)'},
-      to_meta_ads:           {label: '📢 Meta Ads',           color: 'var(--amber)'},
-      to_basile_dm:          {label: '💬 Basile DM IG',       color: 'var(--cyan)'},
-      to_lp_vsl:             {label: '🌐 LP / VSL',           color: 'var(--violet)'},
-      to_mariam_email:       {label: '📧 Mariam Email',       color: 'var(--green)'},
-      to_cold_calls_clients: {label: '📞 Cold calls clients', color: 'var(--indigo)'},
-    };
-    document.getElementById('ci-crosschannel').innerHTML = Object.keys(cciLabels).map(k => {
-      const items = cci[k] || [];
-      const meta = cciLabels[k];
-      return `<details style="margin-bottom:8px;border:1px solid var(--line);border-radius:8px;padding:10px 12px;background:var(--surface)">
-        <summary style="cursor:pointer;display:flex;justify-content:space-between;align-items:center">
-          <span style="font-weight:600;color:${meta.color}">${meta.label}</span>
-          <span class="mono" style="font-size:11px;color:var(--text-3)">${items.length} insights</span>
-        </summary>
-        ${items.length ? `<div style="margin-top:10px;display:flex;flex-direction:column;gap:8px">${items.map(it => `
-          <div style="padding:8px;background:rgba(255,255,255,0.02);border-radius:6px;font-size:11px;line-height:1.5">
-            <div style="color:var(--text-4);font-size:10px;margin-bottom:3px">${it.from_call} · ${(it.date||'').slice(0,10)} · score ${it.score}</div>
-            <div style="color:var(--text-2)">${it.insight}</div>
-          </div>`).join('')}</div>` : '<p style="color:var(--text-3);margin-top:8px">Aucun insight pour ce canal.</p>'}
-      </details>`;
-    }).join('');
-    // Calls perso list
-    document.getElementById('ci-calls').innerHTML = d.calls_perso.map(c => {
-      const scColor = c.score_global >= 75 ? 'var(--green)' : c.score_global >= 55 ? 'var(--amber)' : 'var(--red)';
-      const outcomeBadge = { closed_won: ['ok','✓ WON'], closed_lost: ['crit','✕ LOST'], booked_followup: ['info','→ FOLLOWUP'], noshow: ['warn','— NO-SHOW'] }[c.outcome] || ['info', c.outcome];
-      const scoreBars = d.scoring_dimensions.map(dim => {
-        const v = c.scores[dim.id] || 0;
-        const dc = v >= 75 ? 'var(--green)' : v >= 55 ? 'var(--amber)' : 'var(--red)';
-        return `<div style="margin-bottom:5px"><div style="display:flex;justify-content:space-between;font-size:10px;color:var(--text-3);margin-bottom:2px"><span>${dim.label}</span><span class="mono" style="color:${dc}">${v}</span></div><div style="background:rgba(255,255,255,0.04);height:4px;border-radius:2px;overflow:hidden"><div style="width:${v}%;height:100%;background:${dc}"></div></div></div>`;
-      }).join('');
-      const positifs = (c.moments_positifs || []).map(m => `<li style="color:var(--green);font-size:11px;margin-bottom:3px"><span class="mono" style="color:var(--text-4);font-size:10px">${m.t_min}min</span> ${m.label}</li>`).join('');
-      const negatifs = (c.moments_negatifs || []).map(m => `<li style="color:var(--red);font-size:11px;margin-bottom:3px"><span class="mono" style="color:var(--text-4);font-size:10px">${m.t_min}min</span> ${m.label}</li>`).join('');
-      // 80/20 levers per call (doctrine v2)
-      const lev8020 = (c.top_2_leviers_8020 || []).map(l => `
-        <div style="padding:10px;background:rgba(168,85,247,0.06);border-left:3px solid var(--violet);border-radius:0 6px 6px 0;margin-bottom:6px">
-          <div style="display:flex;justify-content:space-between;margin-bottom:4px;font-size:10px">
-            <span class="mono" style="color:var(--cyan)">[${l.timestamp_ref || '—'}] #${l.rank}</span>
-            <span style="font-weight:700;color:var(--violet)">+${l.impact_attendu_points || '?'} pts</span>
-          </div>
-          <div style="font-size:11px;color:var(--text);line-height:1.4;margin-bottom:4px"><strong>${l.levier || ''}</strong></div>
-          <div style="font-size:10px;color:var(--text-3);font-style:italic">→ ${l.fix_concret || ''}</div>
-        </div>`).join('');
-      // Cross-channel per call (compact: 2-3 top channels)
-      const cciCall = c.cross_channel_implications || {};
-      const cciItems = Object.entries(cciCall)
-        .filter(([k,v]) => v && !String(v).toLowerCase().startsWith('n/a') && !String(v).toLowerCase().startsWith('aucun'))
-        .slice(0, 6)
-        .map(([k,v]) => {
-          const meta = cciLabels[k] || {label: k, color: 'var(--text-3)'};
-          return `<div style="padding:6px 8px;background:rgba(255,255,255,0.02);border-radius:6px;font-size:11px;line-height:1.4">
-            <span style="color:${meta.color};font-weight:600">${meta.label}</span> <span style="color:var(--text-2)">${String(v).slice(0, 200)}</span>
-          </div>`;
-        }).join('');
-      return `<div style="padding:16px;border:1px solid var(--line);border-radius:12px;margin-bottom:14px;background:var(--surface)">
-        <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:12px">
-          <div>
-            <div style="color:var(--text);font-weight:600;margin-bottom:3px">${c.prospect}</div>
-            <div style="font-size:11px;color:var(--text-4)">${new Date(c.date).toLocaleDateString('fr-FR')} · ${c.duration_min}min · ${c.type} ${c.fathom_share_url ? `· <a href="${c.fathom_share_url}" target="_blank" style="color:var(--cyan)">▶ replay</a>` : ''}</div>
-          </div>
-          <div style="text-align:right"><div style="font-size:28px;font-weight:700;color:${scColor}">${c.score_global}</div><span class="badge badge--${outcomeBadge[0]}" style="font-size:9px">${outcomeBadge[1]}</span></div>
-        </div>
-        ${lev8020 ? `<div style="margin-bottom:14px"><div class="eyebrow" style="font-size:10px;margin-bottom:8px;color:var(--violet)">🎯 80/20 · 2 LEVIERS PRIORITAIRES</div>${lev8020}</div>` : ''}
-        ${cciItems ? `<div style="margin-bottom:14px"><div class="eyebrow" style="font-size:10px;margin-bottom:8px;color:var(--cyan)">🔄 CROSS-CHANNEL · 6 CANAUX</div><div style="display:flex;flex-direction:column;gap:6px">${cciItems}</div></div>` : ''}
-        ${(c.frameworks_used_well && c.frameworks_used_well.length) ? `<div style="margin-bottom:12px"><div class="eyebrow" style="font-size:10px;margin-bottom:6px;color:var(--green)">📚 FRAMEWORKS BIEN UTILISÉS (avec preuve)</div>${(c.frameworks_used_well || []).slice(0,4).map(f => typeof f === 'object' ? `
-          <div style="padding:8px;background:rgba(34,238,136,0.05);border-left:2px solid var(--green);border-radius:0 6px 6px 0;margin-bottom:6px;font-size:11px">
-            <div style="display:flex;justify-content:space-between"><strong style="color:var(--green)">${f.concept || ''}</strong><span class="mono" style="color:var(--cyan);font-size:10px">[${f.evidence_timestamp || ''}]</span></div>
-            <div style="color:var(--text-3);font-size:10px;margin:2px 0">_${f.book_source || ''}_</div>
-            ${f.evidence_quote ? `<div style="color:var(--text-2);font-style:italic;font-size:11px;margin-top:4px">« ${f.evidence_quote} »</div>` : ''}
-          </div>` : `<div style="font-size:11px;color:var(--text-3)">✓ ${f}</div>`).join('')}</div>` : ''}
-        ${(c.frameworks_missed && c.frameworks_missed.length) ? `<div style="margin-bottom:12px"><div class="eyebrow" style="font-size:10px;margin-bottom:6px;color:var(--amber)">📚 FRAMEWORKS À ACTIVER (révise + phrase exacte)</div>${(c.frameworks_missed || []).slice(0,4).map(f => typeof f === 'object' ? `
-          <div style="padding:8px;background:rgba(255,176,32,0.05);border-left:2px solid var(--amber);border-radius:0 6px 6px 0;margin-bottom:6px;font-size:11px">
-            <div style="display:flex;justify-content:space-between"><strong style="color:var(--amber)">${f.concept || ''}</strong><span class="mono" style="color:var(--cyan);font-size:10px">[${f.where_to_apply || ''}]</span></div>
-            <div style="color:var(--text-3);font-size:10px;margin:2px 0">_${f.book_source || ''}_</div>
-            ${f.definition_quick ? `<div style="color:var(--text-2);font-size:10px;margin-top:4px">📖 ${f.definition_quick}</div>` : ''}
-            ${f.fix_phrase ? `<div style="color:var(--violet);font-size:11px;font-style:italic;margin-top:4px">→ Phrase exacte: « ${f.fix_phrase} »</div>` : ''}
-          </div>` : `<div style="font-size:11px;color:var(--text-3)">→ ${f}</div>`).join('')}</div>` : ''}
-        ${(c.glossary_terms && c.glossary_terms.length) ? `<div style="margin-bottom:12px;padding:10px;background:rgba(0,229,255,0.04);border-radius:8px"><div class="eyebrow" style="font-size:10px;margin-bottom:6px;color:var(--cyan)">📖 GLOSSAIRE — termes spéciaux à réviser</div>${(c.glossary_terms || []).slice(0,6).map(g => `
-          <div style="padding:6px 8px;border-bottom:1px solid var(--line);font-size:11px">
-            <span style="font-weight:600;color:var(--cyan);text-transform:capitalize">${g.term || ''}</span> · <span style="color:var(--text-2)">${g.definition || ''}</span>
-            ${g.source_book ? `<div style="color:var(--text-4);font-size:10px;margin-top:2px">— ${g.source_book}</div>` : ''}
-          </div>`).join('')}</div>` : ''}
-        <div class="grid grid-2">
-          <div><div class="eyebrow" style="font-size:9px;margin-bottom:8px">SCORES 6 DIMENSIONS</div>${scoreBars}</div>
-          <div>
-            ${positifs ? `<div class="eyebrow" style="font-size:9px;margin-bottom:6px;color:var(--green)">MOMENTS POSITIFS</div><ul style="margin:0;padding-left:18px;margin-bottom:10px">${positifs}</ul>` : ''}
-            ${negatifs ? `<div class="eyebrow" style="font-size:9px;margin-bottom:6px;color:var(--red)">MOMENTS NÉGATIFS</div><ul style="margin:0;padding-left:18px">${negatifs}</ul>` : '<div style="font-size:11px;color:var(--green);font-style:italic">✓ Aucun moment négatif détecté</div>'}
-          </div>
-        </div>
-        <div style="margin-top:12px;padding-top:10px;border-top:1px solid var(--line);font-size:11px;color:var(--text-3)"><strong style="color:var(--text-2)">Verdict:</strong> ${c.verdict || c.next_action}</div>
-      </div>`;
-    }).join('');
-    // Patterns success
-    document.getElementById('ci-win').innerHTML = d.patterns_success.map(p => `<div style="padding:10px;border-bottom:1px solid var(--line)"><div style="display:flex;justify-content:space-between;margin-bottom:4px"><strong style="color:var(--green);font-size:13px">${p.pattern}</strong><span class="mono" style="font-size:11px;color:var(--green)">win ${pct(p.win_rate,0)}</span></div><div style="font-size:11px;color:var(--text-3)">${p.samples} cas observés</div></div>`).join('');
-    document.getElementById('ci-fail').innerHTML = d.patterns_failure.map(p => `<div style="padding:10px;border-bottom:1px solid var(--line)"><div style="display:flex;justify-content:space-between;margin-bottom:4px"><strong style="color:var(--red);font-size:13px">${p.pattern}</strong><span class="mono" style="font-size:11px;color:var(--red)">loss ${pct(p.loss_rate,0)}</span></div><div style="font-size:11px;color:var(--text-3)">${p.samples} cas observés</div></div>`).join('');
-    // Client cold calls
-    document.getElementById('ci-clients').innerHTML = '<div class="grid grid-2">' + d.client_cold_calls.map(cl => {
-      const trendColor = cl.delta_30d >= 0 ? 'var(--green)' : 'var(--red)';
-      return `<div style="padding:14px;border:1px solid var(--line);border-radius:10px;background:var(--surface)">
-        <div style="display:flex;justify-content:space-between;margin-bottom:8px">
-          <strong style="color:var(--text)">${cl.client}</strong>
-          <span style="color:${trendColor};font-family:var(--font-mono);font-size:12px">${cl.trend} ${cl.delta_30d >= 0 ? '+' : ''}${cl.delta_30d}</span>
-        </div>
-        <div style="display:flex;gap:14px;font-size:11px;color:var(--text-3);margin-bottom:10px">
-          <span><strong style="color:var(--text)">${cl.calls_analyzed}</strong> calls</span>
-          <span>score moy. <strong style="color:var(--text)">${cl.avg_score_global}</strong></span>
-          <span>last: ${cl.last_call.score}</span>
-        </div>
-        <div style="font-size:11px;margin-bottom:4px"><strong style="color:var(--green)">+</strong> ${cl.top_strength}</div>
-        <div style="font-size:11px;margin-bottom:8px"><strong style="color:var(--red)">−</strong> ${cl.top_weakness}</div>
-        <div style="font-size:11px;color:var(--text-3);padding:8px;background:rgba(168,85,247,0.06);border-radius:6px;border-left:2px solid var(--violet)"><strong style="color:var(--text-2)">Coaching next:</strong> ${cl.next_coaching}</div>
-      </div>`;
-    }).join('') + '</div>';
-  });
 }
 
 // ── SIDEBAR COUNTS ──
@@ -2047,16 +1540,16 @@ function updateSidebarCount(id, count, cls) {
 function init() {
   loadTweaks();
   buildSidebar();
-
+  
   // Parse initial hash
   const hash = location.hash.slice(1) || 'dashboard';
   state.activePage = hash;
   buildSidebar();
   renderPage(hash);
-
+  
   // Clock
   setInterval(updateClock, 1000);
-
+  
   // Hide loading overlay
   setTimeout(() => {
     document.getElementById('loading-overlay').classList.add('fade-out');
@@ -2065,7 +1558,7 @@ function init() {
       if (overlay) overlay.remove();
     }, 500);
   }, 600);
-
+  
   state.initialized = true;
 }
 

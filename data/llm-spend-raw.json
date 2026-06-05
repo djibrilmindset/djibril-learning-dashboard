@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated_at": "2026-06-04T22:12:33.201890Z",
+    "generated_at": "2026-06-05T04:05:30.743041Z",
     "window_hours": 24,
-    "total_calls": 132,
-    "total_cost_usd": 0.191139,
+    "total_calls": 201,
+    "total_cost_usd": 0.282287,
     "models_count": 22,
     "providers_count": 11,
     "errors_count": 0,
@@ -13,21 +13,713 @@
   "entries": [
     {
       "model": "gemini-direct/gemini-3.5-flash",
-      "provider": "gemini",
+      "provider": "gemini-direct",
+      "timestamp": "2026-06-05T05:26:00Z",
+      "tokens_in": 501,
+      "tokens_out": 4,
+      "cost_usd": 0.000513,
+      "status": "success",
+      "call_type": "chinese"
+    },
+    {
+      "model": "gemini-direct/gemini-3.5-flash",
+      "provider": "gemini-direct",
+      "timestamp": "2026-06-05T04:45:00Z",
+      "tokens_in": 501,
+      "tokens_out": 3,
+      "cost_usd": 0.00051,
+      "status": "success",
+      "call_type": "chinese"
+    },
+    {
+      "model": "gemini-direct/gemini-3.5-flash",
+      "provider": "gemini-direct",
+      "timestamp": "2026-06-05T04:40:00Z",
+      "tokens_in": 501,
+      "tokens_out": 3,
+      "cost_usd": 0.00051,
+      "status": "success",
+      "call_type": "chinese"
+    },
+    {
+      "model": "gemini-direct/gemini-3.5-flash",
+      "provider": "gemini-direct",
+      "timestamp": "2026-06-05T04:26:00Z",
+      "tokens_in": 501,
+      "tokens_out": 1,
+      "cost_usd": 0.000504,
+      "status": "success",
+      "call_type": "chinese"
+    },
+    {
+      "model": "gemini-direct/gemini-3.5-flash",
+      "provider": "gemini-direct",
+      "timestamp": "2026-06-05T04:15:00Z",
+      "tokens_in": 501,
+      "tokens_out": 1,
+      "cost_usd": 0.000504,
+      "status": "success",
+      "call_type": "chinese"
+    },
+    {
+      "model": "mistral-direct/mistral-large-latest",
+      "provider": "mistral-direct",
+      "timestamp": "2026-06-05T04:15:00Z",
+      "tokens_in": 509,
+      "tokens_out": 5,
+      "cost_usd": 0.000524,
+      "status": "success",
+      "call_type": "chinese"
+    },
+    {
+      "model": "aihubmix/aihubmix/qwen3-235b-a22b-thinking-2507",
+      "provider": "aihubmix",
+      "timestamp": "2026-06-05T04:14:00Z",
+      "tokens_in": 510,
+      "tokens_out": 447,
+      "cost_usd": 0.0,
+      "status": "success",
+      "call_type": "chinese"
+    },
+    {
+      "model": "xiaomi-direct/mimo-v2.5-pro",
+      "provider": "xiaomi-direct",
+      "timestamp": "2026-06-05T04:14:00Z",
+      "tokens_in": 508,
+      "tokens_out": 5,
+      "cost_usd": 0.000523,
+      "status": "success",
+      "call_type": "chinese"
+    },
+    {
+      "model": "aihubmix/aihubmix/ernie-5.0-thinking-preview",
+      "provider": "aihubmix",
+      "timestamp": "2026-06-05T04:14:00Z",
+      "tokens_in": 501,
+      "tokens_out": 4,
+      "cost_usd": 0.0,
+      "status": "success",
+      "call_type": "chinese"
+    },
+    {
+      "model": "comet/doubao-seed-2-0-pro-260215",
+      "provider": "comet",
+      "timestamp": "2026-06-05T04:14:00Z",
+      "tokens_in": 536,
+      "tokens_out": 887,
+      "cost_usd": 0.003197,
+      "status": "success",
+      "call_type": "chinese"
+    },
+    {
+      "model": "xiaomi-direct/mimo-v2.5-pro",
+      "provider": "xiaomi-direct",
+      "timestamp": "2026-06-05T04:14:00Z",
+      "tokens_in": 508,
+      "tokens_out": 5,
+      "cost_usd": 0.000523,
+      "status": "success",
+      "call_type": "chinese"
+    },
+    {
+      "model": "stepfun-direct/step-3.5-flash",
+      "provider": "stepfun-direct",
+      "timestamp": "2026-06-05T04:13:00Z",
+      "tokens_in": 504,
+      "tokens_out": 5,
+      "cost_usd": 0.000519,
+      "status": "success",
+      "call_type": "chinese"
+    },
+    {
+      "model": "comet/hunyuan-t1-latest",
+      "provider": "comet",
+      "timestamp": "2026-06-05T04:13:00Z",
+      "tokens_in": 501,
+      "tokens_out": 5,
+      "cost_usd": 0.000516,
+      "status": "success",
+      "call_type": "chinese"
+    },
+    {
+      "model": "dashscope/qwen-turbo",
+      "provider": "dashscope",
+      "timestamp": "2026-06-05T04:13:00Z",
+      "tokens_in": 514,
+      "tokens_out": 5,
+      "cost_usd": 0.000529,
+      "status": "success",
+      "call_type": "chinese"
+    },
+    {
+      "model": "minimax-direct/MiniMax-M2.7",
+      "provider": "minimax-direct",
+      "timestamp": "2026-06-05T04:13:00Z",
+      "tokens_in": 480,
+      "tokens_out": 5,
+      "cost_usd": 0.000495,
+      "status": "success",
+      "call_type": "chinese"
+    },
+    {
+      "model": "zhipu-direct/glm-4.7",
+      "provider": "zhipu-direct",
+      "timestamp": "2026-06-05T04:13:00Z",
+      "tokens_in": 492,
+      "tokens_out": 989,
+      "cost_usd": 0.003459,
+      "status": "success",
+      "call_type": "chinese"
+    },
+    {
+      "model": "moonshot-direct/kimi-k2.6",
+      "provider": "moonshot-direct",
+      "timestamp": "2026-06-05T04:13:00Z",
+      "tokens_in": 488,
+      "tokens_out": 5,
+      "cost_usd": 0.00038437,
+      "status": "success",
+      "call_type": "chinese"
+    },
+    {
+      "model": "gemini-direct/gemini-3.5-flash",
+      "provider": "gemini-direct",
+      "timestamp": "2026-06-05T04:11:00Z",
+      "tokens_in": 501,
+      "tokens_out": 3,
+      "cost_usd": 0.00051,
+      "status": "success",
+      "call_type": "chinese"
+    },
+    {
+      "model": "gemini-direct/gemini-3.5-flash",
+      "provider": "gemini-direct",
+      "timestamp": "2026-06-05T04:04:00Z",
+      "tokens_in": 501,
+      "tokens_out": 1,
+      "cost_usd": 0.000504,
+      "status": "success",
+      "call_type": "chinese"
+    },
+    {
+      "model": "gemini-direct/gemini-3.5-flash",
+      "provider": "gemini-direct",
+      "timestamp": "2026-06-05T03:52:00Z",
+      "tokens_in": 501,
+      "tokens_out": 4,
+      "cost_usd": 0.000513,
+      "status": "success",
+      "call_type": "chinese"
+    },
+    {
+      "model": "gemini-direct/gemini-3.5-flash",
+      "provider": "gemini-direct",
+      "timestamp": "2026-06-05T03:25:00Z",
+      "tokens_in": 501,
+      "tokens_out": 4,
+      "cost_usd": 0.000513,
+      "status": "success",
+      "call_type": "chinese"
+    },
+    {
+      "model": "mistral-direct/mistral-large-latest",
+      "provider": "mistral-direct",
+      "timestamp": "2026-06-05T02:57:00Z",
+      "tokens_in": 509,
+      "tokens_out": 5,
+      "cost_usd": 0.000524,
+      "status": "success",
+      "call_type": "chinese"
+    },
+    {
+      "model": "aihubmix/aihubmix/qwen3-235b-a22b-thinking-2507",
+      "provider": "aihubmix",
+      "timestamp": "2026-06-05T02:57:00Z",
+      "tokens_in": 510,
+      "tokens_out": 490,
+      "cost_usd": 0.0,
+      "status": "success",
+      "call_type": "chinese"
+    },
+    {
+      "model": "xiaomi-direct/mimo-v2.5-pro",
+      "provider": "xiaomi-direct",
+      "timestamp": "2026-06-05T02:57:00Z",
+      "tokens_in": 508,
+      "tokens_out": 5,
+      "cost_usd": 0.000523,
+      "status": "success",
+      "call_type": "chinese"
+    },
+    {
+      "model": "aihubmix/aihubmix/ernie-5.0-thinking-preview",
+      "provider": "aihubmix",
+      "timestamp": "2026-06-05T02:57:00Z",
+      "tokens_in": 501,
+      "tokens_out": 4,
+      "cost_usd": 0.0,
+      "status": "success",
+      "call_type": "chinese"
+    },
+    {
+      "model": "comet/doubao-seed-2-0-pro-260215",
+      "provider": "comet",
+      "timestamp": "2026-06-05T02:57:00Z",
+      "tokens_in": 536,
+      "tokens_out": 474,
+      "cost_usd": 0.001958,
+      "status": "success",
+      "call_type": "chinese"
+    },
+    {
+      "model": "xiaomi-direct/mimo-v2.5-pro",
+      "provider": "xiaomi-direct",
+      "timestamp": "2026-06-05T02:56:00Z",
+      "tokens_in": 508,
+      "tokens_out": 5,
+      "cost_usd": 0.000523,
+      "status": "success",
+      "call_type": "chinese"
+    },
+    {
+      "model": "stepfun-direct/step-3.5-flash",
+      "provider": "stepfun-direct",
+      "timestamp": "2026-06-05T02:56:00Z",
+      "tokens_in": 504,
+      "tokens_out": 5,
+      "cost_usd": 0.000519,
+      "status": "success",
+      "call_type": "chinese"
+    },
+    {
+      "model": "comet/hunyuan-t1-latest",
+      "provider": "comet",
+      "timestamp": "2026-06-05T02:56:00Z",
+      "tokens_in": 501,
+      "tokens_out": 5,
+      "cost_usd": 0.000516,
+      "status": "success",
+      "call_type": "chinese"
+    },
+    {
+      "model": "dashscope/qwen-turbo",
+      "provider": "dashscope",
+      "timestamp": "2026-06-05T02:56:00Z",
+      "tokens_in": 514,
+      "tokens_out": 5,
+      "cost_usd": 0.000529,
+      "status": "success",
+      "call_type": "chinese"
+    },
+    {
+      "model": "minimax-direct/MiniMax-M2.7",
+      "provider": "minimax-direct",
+      "timestamp": "2026-06-05T02:56:00Z",
+      "tokens_in": 480,
+      "tokens_out": 5,
+      "cost_usd": 0.000495,
+      "status": "success",
+      "call_type": "chinese"
+    },
+    {
+      "model": "zhipu-direct/glm-4.7",
+      "provider": "zhipu-direct",
+      "timestamp": "2026-06-05T02:56:00Z",
+      "tokens_in": 492,
+      "tokens_out": 1147,
+      "cost_usd": 0.003933,
+      "status": "success",
+      "call_type": "chinese"
+    },
+    {
+      "model": "moonshot-direct/kimi-k2.6",
+      "provider": "moonshot-direct",
+      "timestamp": "2026-06-05T02:56:00Z",
+      "tokens_in": 488,
+      "tokens_out": 5,
+      "cost_usd": 0.00038437,
+      "status": "success",
+      "call_type": "chinese"
+    },
+    {
+      "model": "gemini-direct/gemini-3.5-flash",
+      "provider": "gemini-direct",
+      "timestamp": "2026-06-05T02:55:00Z",
+      "tokens_in": 501,
+      "tokens_out": 2,
+      "cost_usd": 0.000507,
+      "status": "success",
+      "call_type": "chinese"
+    },
+    {
+      "model": "gemini-direct/gemini-3.5-flash",
+      "provider": "gemini-direct",
+      "timestamp": "2026-06-05T02:48:00Z",
+      "tokens_in": 501,
+      "tokens_out": 1,
+      "cost_usd": 0.000504,
+      "status": "success",
+      "call_type": "chinese"
+    },
+    {
+      "model": "gemini-direct/gemini-3.5-flash",
+      "provider": "gemini-direct",
+      "timestamp": "2026-06-05T02:40:00Z",
+      "tokens_in": 501,
+      "tokens_out": 4,
+      "cost_usd": 0.000513,
+      "status": "success",
+      "call_type": "chinese"
+    },
+    {
+      "model": "gemini-direct/gemini-3.5-flash",
+      "provider": "gemini-direct",
+      "timestamp": "2026-06-05T02:36:00Z",
+      "tokens_in": 501,
+      "tokens_out": 1,
+      "cost_usd": 0.000504,
+      "status": "success",
+      "call_type": "chinese"
+    },
+    {
+      "model": "gemini-direct/gemini-3.5-flash",
+      "provider": "gemini-direct",
+      "timestamp": "2026-06-05T02:31:00Z",
+      "tokens_in": 501,
+      "tokens_out": 2,
+      "cost_usd": 0.000507,
+      "status": "success",
+      "call_type": "chinese"
+    },
+    {
+      "model": "gemini-direct/gemini-3.5-flash",
+      "provider": "gemini-direct",
+      "timestamp": "2026-06-05T02:27:00Z",
+      "tokens_in": 501,
+      "tokens_out": 4,
+      "cost_usd": 0.000513,
+      "status": "success",
+      "call_type": "chinese"
+    },
+    {
+      "model": "dashscope/qwen3.6-max-preview",
+      "provider": "dashscope",
+      "timestamp": "2026-06-05T00:15:00Z",
+      "tokens_in": 529,
+      "tokens_out": 1015,
+      "cost_usd": 0.003574,
+      "status": "success",
+      "call_type": "chinese"
+    },
+    {
+      "model": "aihubmix/qwen3.7-max",
+      "provider": "aihubmix",
+      "timestamp": "2026-06-05T00:15:00Z",
+      "tokens_in": 529,
+      "tokens_out": 863,
+      "cost_usd": 0.00377832,
+      "status": "success",
+      "call_type": "chinese"
+    },
+    {
+      "model": "stepfun-direct/step-3.5-flash",
+      "provider": "stepfun-direct",
+      "timestamp": "2026-06-05T00:15:00Z",
+      "tokens_in": 523,
+      "tokens_out": 1321,
+      "cost_usd": 0.004486,
+      "status": "success",
+      "call_type": "chinese"
+    },
+    {
+      "model": "zhipu-direct/glm-4.5-air",
+      "provider": "zhipu-direct",
+      "timestamp": "2026-06-05T00:15:00Z",
+      "tokens_in": 513,
+      "tokens_out": 240,
+      "cost_usd": 0.001233,
+      "status": "success",
+      "call_type": "chinese"
+    },
+    {
+      "model": "minimax-direct/MiniMax-Text-01",
+      "provider": "minimax-direct",
+      "timestamp": "2026-06-05T00:14:00Z",
+      "tokens_in": 510,
+      "tokens_out": 12,
+      "cost_usd": 0.000546,
+      "status": "success",
+      "call_type": "chinese"
+    },
+    {
+      "model": "dashscope/qwen3.7-max",
+      "provider": "dashscope",
+      "timestamp": "2026-06-05T00:14:00Z",
+      "tokens_in": 529,
+      "tokens_out": 956,
+      "cost_usd": 0.003397,
+      "status": "success",
+      "call_type": "chinese"
+    },
+    {
+      "model": "comet/doubao-seed-2-0-pro-260215",
+      "provider": "comet",
+      "timestamp": "2026-06-05T00:14:00Z",
+      "tokens_in": 555,
+      "tokens_out": 420,
+      "cost_usd": 0.001815,
+      "status": "success",
+      "call_type": "chinese"
+    },
+    {
+      "model": "aihubmix/ernie-5.0-thinking-preview",
+      "provider": "aihubmix",
+      "timestamp": "2026-06-05T00:14:00Z",
+      "tokens_in": 521,
+      "tokens_out": 293,
+      "cost_usd": 0.0,
+      "status": "success",
+      "call_type": "chinese"
+    },
+    {
+      "model": "comet/hunyuan-t1-latest",
+      "provider": "comet",
+      "timestamp": "2026-06-05T00:14:00Z",
+      "tokens_in": 521,
+      "tokens_out": 300,
+      "cost_usd": 0.001421,
+      "status": "success",
+      "call_type": "chinese"
+    },
+    {
+      "model": "minimax-direct/minimax-m2.7",
+      "provider": "minimax-direct",
+      "timestamp": "2026-06-05T00:14:00Z",
+      "tokens_in": 498,
+      "tokens_out": 272,
+      "cost_usd": 0.001314,
+      "status": "success",
+      "call_type": "chinese"
+    },
+    {
+      "model": "zhipu-direct/glm-5.1",
+      "provider": "zhipu-direct",
+      "timestamp": "2026-06-05T00:14:00Z",
+      "tokens_in": 512,
+      "tokens_out": 88,
+      "cost_usd": 0.000776,
+      "status": "success",
+      "call_type": "chinese"
+    },
+    {
+      "model": "moonshot-direct/kimi-k2.6",
+      "provider": "moonshot-direct",
+      "timestamp": "2026-06-05T00:14:00Z",
+      "tokens_in": 508,
+      "tokens_out": 300,
+      "cost_usd": 0.00177092,
+      "status": "success",
+      "call_type": "chinese"
+    },
+    {
+      "model": "openai-direct/gpt-5.5",
+      "provider": "openai-direct",
+      "timestamp": "2026-06-05T00:14:00Z",
+      "tokens_in": 505,
+      "tokens_out": 207,
+      "cost_usd": 0.008735,
+      "status": "success",
+      "call_type": "chinese"
+    },
+    {
+      "model": "gemini-direct/gemini-3.5-flash",
+      "provider": "gemini-direct",
+      "timestamp": "2026-06-05T00:14:00Z",
+      "tokens_in": 517,
+      "tokens_out": 12,
+      "cost_usd": 0.000553,
+      "status": "success",
+      "call_type": "chinese"
+    },
+    {
+      "model": "dashscope/qwen3.6-max-preview",
+      "provider": "dashscope",
+      "timestamp": "2026-06-05T00:14:00Z",
+      "tokens_in": 529,
+      "tokens_out": 1245,
+      "cost_usd": 0.004264,
+      "status": "success",
+      "call_type": "chinese"
+    },
+    {
+      "model": "aihubmix/qwen3.7-max",
+      "provider": "aihubmix",
+      "timestamp": "2026-06-05T00:14:00Z",
+      "tokens_in": 529,
+      "tokens_out": 768,
+      "cost_usd": 0.00340782,
+      "status": "success",
+      "call_type": "chinese"
+    },
+    {
+      "model": "zhipu-direct/glm-4.5-air",
+      "provider": "zhipu-direct",
+      "timestamp": "2026-06-05T00:13:00Z",
+      "tokens_in": 513,
+      "tokens_out": 196,
+      "cost_usd": 0.001101,
+      "status": "success",
+      "call_type": "chinese"
+    },
+    {
+      "model": "stepfun-direct/step-3.5-flash",
+      "provider": "stepfun-direct",
+      "timestamp": "2026-06-05T00:13:00Z",
+      "tokens_in": 523,
+      "tokens_out": 456,
+      "cost_usd": 0.001891,
+      "status": "success",
+      "call_type": "chinese"
+    },
+    {
+      "model": "minimax-direct/MiniMax-Text-01",
+      "provider": "minimax-direct",
+      "timestamp": "2026-06-05T00:13:00Z",
+      "tokens_in": 510,
+      "tokens_out": 4,
+      "cost_usd": 0.000522,
+      "status": "success",
+      "call_type": "chinese"
+    },
+    {
+      "model": "comet/doubao-seed-2-0-pro-260215",
+      "provider": "comet",
+      "timestamp": "2026-06-05T00:13:00Z",
+      "tokens_in": 555,
+      "tokens_out": 396,
+      "cost_usd": 0.001743,
+      "status": "success",
+      "call_type": "chinese"
+    },
+    {
+      "model": "dashscope/qwen3.7-max",
+      "provider": "dashscope",
+      "timestamp": "2026-06-05T00:13:00Z",
+      "tokens_in": 529,
+      "tokens_out": 821,
+      "cost_usd": 0.002992,
+      "status": "success",
+      "call_type": "chinese"
+    },
+    {
+      "model": "aihubmix/ernie-5.0-thinking-preview",
+      "provider": "aihubmix",
+      "timestamp": "2026-06-05T00:13:00Z",
+      "tokens_in": 521,
+      "tokens_out": 289,
+      "cost_usd": 0.0,
+      "status": "success",
+      "call_type": "chinese"
+    },
+    {
+      "model": "zhipu-direct/glm-5.1",
+      "provider": "zhipu-direct",
+      "timestamp": "2026-06-05T00:13:00Z",
+      "tokens_in": 512,
+      "tokens_out": 209,
+      "cost_usd": 0.001139,
+      "status": "success",
+      "call_type": "chinese"
+    },
+    {
+      "model": "comet/hunyuan-t1-latest",
+      "provider": "comet",
+      "timestamp": "2026-06-05T00:13:00Z",
+      "tokens_in": 521,
+      "tokens_out": 300,
+      "cost_usd": 0.001421,
+      "status": "success",
+      "call_type": "chinese"
+    },
+    {
+      "model": "moonshot-direct/kimi-k2.6",
+      "provider": "moonshot-direct",
+      "timestamp": "2026-06-05T00:13:00Z",
+      "tokens_in": 508,
+      "tokens_out": 300,
+      "cost_usd": 0.00177092,
+      "status": "success",
+      "call_type": "chinese"
+    },
+    {
+      "model": "minimax-direct/minimax-m2.7",
+      "provider": "minimax-direct",
+      "timestamp": "2026-06-05T00:13:00Z",
+      "tokens_in": 498,
+      "tokens_out": 47,
+      "cost_usd": 0.000639,
+      "status": "success",
+      "call_type": "chinese"
+    },
+    {
+      "model": "openai-direct/gpt-5.5",
+      "provider": "openai-direct",
+      "timestamp": "2026-06-05T00:13:00Z",
+      "tokens_in": 505,
+      "tokens_out": 151,
+      "cost_usd": 0.007055,
+      "status": "success",
+      "call_type": "chinese"
+    },
+    {
+      "model": "gemini-direct/gemini-3.5-flash",
+      "provider": "gemini-direct",
+      "timestamp": "2026-06-05T00:13:00Z",
+      "tokens_in": 517,
+      "tokens_out": 10,
+      "cost_usd": 0.000547,
+      "status": "success",
+      "call_type": "chinese"
+    },
+    {
+      "model": "gemini-direct/gemini-3.5-flash",
+      "provider": "gemini-direct",
+      "timestamp": "2026-06-05T00:13:00Z",
+      "tokens_in": 501,
+      "tokens_out": 3,
+      "cost_usd": 0.00051,
+      "status": "success",
+      "call_type": "chinese"
+    },
+    {
+      "model": "gemini-direct/gemini-3.5-flash",
+      "provider": "gemini-direct",
+      "timestamp": "2026-06-05T00:13:00Z",
+      "tokens_in": 507,
+      "tokens_out": 12,
+      "cost_usd": 0.000543,
+      "status": "success",
+      "call_type": "chinese"
+    },
+    {
+      "model": "gemini-direct/gemini-3.5-flash",
+      "provider": "gemini-direct",
       "timestamp": "2026-06-04T22:35:00Z",
       "tokens_in": 501,
       "tokens_out": 3,
       "cost_usd": 0.00051,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "mistral-direct/mistral-large-latest",
-      "provider": "mistral",
+      "provider": "mistral-direct",
       "timestamp": "2026-06-04T22:33:00Z",
       "tokens_in": 509,
       "tokens_out": 5,
       "cost_usd": 0.000524,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "aihubmix/aihubmix/qwen3-235b-a22b-thinking-2507",
@@ -36,16 +728,18 @@
       "tokens_in": 510,
       "tokens_out": 441,
       "cost_usd": 0.0,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "xiaomi-direct/mimo-v2.5-pro",
-      "provider": "xiaomi",
+      "provider": "xiaomi-direct",
       "timestamp": "2026-06-04T22:33:00Z",
       "tokens_in": 508,
       "tokens_out": 5,
       "cost_usd": 0.000523,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "aihubmix/aihubmix/ernie-5.0-thinking-preview",
@@ -54,7 +748,8 @@
       "tokens_in": 501,
       "tokens_out": 4,
       "cost_usd": 0.0,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "comet/doubao-seed-2-0-pro-260215",
@@ -63,16 +758,18 @@
       "tokens_in": 536,
       "tokens_out": 920,
       "cost_usd": 0.003296,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "stepfun-direct/step-3.5-flash",
-      "provider": "stepfun",
+      "provider": "stepfun-direct",
       "timestamp": "2026-06-04T22:32:00Z",
       "tokens_in": 504,
       "tokens_out": 5,
       "cost_usd": 0.000519,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "comet/hunyuan-t1-latest",
@@ -81,115 +778,128 @@
       "tokens_in": 501,
       "tokens_out": 5,
       "cost_usd": 0.000516,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "dashscope/qwen-turbo",
-      "provider": "dashscop",
+      "provider": "dashscope",
       "timestamp": "2026-06-04T22:32:00Z",
       "tokens_in": 514,
       "tokens_out": 5,
       "cost_usd": 0.000529,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "minimax-direct/MiniMax-M2.7",
-      "provider": "minimax",
+      "provider": "minimax-direct",
       "timestamp": "2026-06-04T22:32:00Z",
       "tokens_in": 480,
       "tokens_out": 5,
       "cost_usd": 0.000495,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "zhipu-direct/glm-4.7",
-      "provider": "zhipu",
+      "provider": "zhipu-direct",
       "timestamp": "2026-06-04T22:32:00Z",
       "tokens_in": 492,
       "tokens_out": 175,
       "cost_usd": 0.001017,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "moonshot-direct/kimi-k2.6",
-      "provider": "moonshot",
+      "provider": "moonshot-direct",
       "timestamp": "2026-06-04T22:32:00Z",
       "tokens_in": 488,
       "tokens_out": 5,
       "cost_usd": 0.00038437,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "gemini-direct/gemini-3.5-flash",
-      "provider": "gemini",
+      "provider": "gemini-direct",
       "timestamp": "2026-06-04T22:30:00Z",
       "tokens_in": 501,
       "tokens_out": 1,
       "cost_usd": 0.000504,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "gemini-direct/gemini-3.5-flash",
-      "provider": "gemini",
+      "provider": "gemini-direct",
       "timestamp": "2026-06-04T22:26:00Z",
       "tokens_in": 501,
       "tokens_out": 3,
       "cost_usd": 0.00051,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "gemini-direct/gemini-3.5-flash",
-      "provider": "gemini",
+      "provider": "gemini-direct",
       "timestamp": "2026-06-04T22:18:00Z",
       "tokens_in": 501,
       "tokens_out": 3,
       "cost_usd": 0.00051,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "gemini-direct/gemini-3.5-flash",
-      "provider": "gemini",
+      "provider": "gemini-direct",
       "timestamp": "2026-06-04T21:56:00Z",
       "tokens_in": 501,
       "tokens_out": 2,
       "cost_usd": 0.000507,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "gemini-direct/gemini-3.5-flash",
-      "provider": "gemini",
+      "provider": "gemini-direct",
       "timestamp": "2026-06-04T21:51:00Z",
       "tokens_in": 501,
       "tokens_out": 1,
       "cost_usd": 0.000504,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "gemini-direct/gemini-3.5-flash",
-      "provider": "gemini",
+      "provider": "gemini-direct",
       "timestamp": "2026-06-04T21:46:00Z",
       "tokens_in": 501,
       "tokens_out": 2,
       "cost_usd": 0.000507,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "gemini-direct/gemini-3.5-flash",
-      "provider": "gemini",
+      "provider": "gemini-direct",
       "timestamp": "2026-06-04T21:41:00Z",
       "tokens_in": 501,
       "tokens_out": 3,
       "cost_usd": 0.00051,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "gemini-direct/gemini-3.5-flash",
-      "provider": "gemini",
+      "provider": "gemini-direct",
       "timestamp": "2026-06-04T21:36:00Z",
       "tokens_in": 501,
       "tokens_out": 4,
       "cost_usd": 0.000513,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "aihubmix/aihubmix/qwen3-235b-a22b-thinking-2507",
@@ -198,16 +908,18 @@
       "tokens_in": 510,
       "tokens_out": 517,
       "cost_usd": 0.0,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "xiaomi-direct/mimo-v2.5-pro",
-      "provider": "xiaomi",
+      "provider": "xiaomi-direct",
       "timestamp": "2026-06-04T21:30:00Z",
       "tokens_in": 508,
       "tokens_out": 5,
       "cost_usd": 0.000523,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "aihubmix/aihubmix/ernie-5.0-thinking-preview",
@@ -216,7 +928,8 @@
       "tokens_in": 501,
       "tokens_out": 4,
       "cost_usd": 0.0,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "comet/doubao-seed-2-0-pro-260215",
@@ -225,25 +938,28 @@
       "tokens_in": 536,
       "tokens_out": 656,
       "cost_usd": 0.002504,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "xiaomi-direct/mimo-v2.5-pro",
-      "provider": "xiaomi",
+      "provider": "xiaomi-direct",
       "timestamp": "2026-06-04T21:30:00Z",
       "tokens_in": 508,
       "tokens_out": 5,
       "cost_usd": 0.000523,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "stepfun-direct/step-3.5-flash",
-      "provider": "stepfun",
+      "provider": "stepfun-direct",
       "timestamp": "2026-06-04T21:30:00Z",
       "tokens_in": 504,
       "tokens_out": 5,
       "cost_usd": 0.000519,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "comet/hunyuan-t1-latest",
@@ -252,106 +968,118 @@
       "tokens_in": 501,
       "tokens_out": 5,
       "cost_usd": 0.000516,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "dashscope/qwen-turbo",
-      "provider": "dashscop",
+      "provider": "dashscope",
       "timestamp": "2026-06-04T21:30:00Z",
       "tokens_in": 514,
       "tokens_out": 5,
       "cost_usd": 0.000529,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "minimax-direct/MiniMax-M2.7",
-      "provider": "minimax",
+      "provider": "minimax-direct",
       "timestamp": "2026-06-04T21:30:00Z",
       "tokens_in": 480,
       "tokens_out": 5,
       "cost_usd": 0.000495,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "zhipu-direct/glm-4.7",
-      "provider": "zhipu",
+      "provider": "zhipu-direct",
       "timestamp": "2026-06-04T21:30:00Z",
       "tokens_in": 492,
       "tokens_out": 1194,
       "cost_usd": 0.004074,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "moonshot-direct/kimi-k2.6",
-      "provider": "moonshot",
+      "provider": "moonshot-direct",
       "timestamp": "2026-06-04T21:29:00Z",
       "tokens_in": 488,
       "tokens_out": 5,
       "cost_usd": 0.00038437,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "gemini-direct/gemini-3.5-flash",
-      "provider": "gemini",
+      "provider": "gemini-direct",
       "timestamp": "2026-06-04T19:11:00Z",
       "tokens_in": 501,
       "tokens_out": 2,
       "cost_usd": 0.000507,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "gemini-direct/gemini-3.5-flash",
-      "provider": "gemini",
+      "provider": "gemini-direct",
       "timestamp": "2026-06-04T19:06:00Z",
       "tokens_in": 501,
       "tokens_out": 4,
       "cost_usd": 0.000513,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "gemini-direct/gemini-3.5-flash",
-      "provider": "gemini",
+      "provider": "gemini-direct",
       "timestamp": "2026-06-04T18:55:00Z",
       "tokens_in": 501,
       "tokens_out": 1,
       "cost_usd": 0.000504,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "gemini-direct/gemini-3.5-flash",
-      "provider": "gemini",
+      "provider": "gemini-direct",
       "timestamp": "2026-06-04T18:50:00Z",
       "tokens_in": 501,
       "tokens_out": 3,
       "cost_usd": 0.00051,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "gemini-direct/gemini-3.5-flash",
-      "provider": "gemini",
+      "provider": "gemini-direct",
       "timestamp": "2026-06-04T18:45:00Z",
       "tokens_in": 501,
       "tokens_out": 3,
       "cost_usd": 0.00051,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "gemini-direct/gemini-3.5-flash",
-      "provider": "gemini",
+      "provider": "gemini-direct",
       "timestamp": "2026-06-04T18:40:00Z",
       "tokens_in": 501,
       "tokens_out": 4,
       "cost_usd": 0.000513,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "mistral-direct/mistral-large-latest",
-      "provider": "mistral",
+      "provider": "mistral-direct",
       "timestamp": "2026-06-04T18:27:00Z",
       "tokens_in": 509,
       "tokens_out": 5,
       "cost_usd": 0.000524,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "aihubmix/aihubmix/qwen3-235b-a22b-thinking-2507",
@@ -360,7 +1088,8 @@
       "tokens_in": 510,
       "tokens_out": 617,
       "cost_usd": 0.0,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "aihubmix/aihubmix/ernie-5.0-thinking-preview",
@@ -369,7 +1098,8 @@
       "tokens_in": 501,
       "tokens_out": 4,
       "cost_usd": 0.0,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "comet/doubao-seed-2-0-pro-260215",
@@ -378,34 +1108,38 @@
       "tokens_in": 536,
       "tokens_out": 826,
       "cost_usd": 0.003014,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "gemini-direct/gemini-3.5-flash",
-      "provider": "gemini",
+      "provider": "gemini-direct",
       "timestamp": "2026-06-04T18:26:00Z",
       "tokens_in": 501,
       "tokens_out": 3,
       "cost_usd": 0.00051,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "xiaomi-direct/mimo-v2.5-pro",
-      "provider": "xiaomi",
+      "provider": "xiaomi-direct",
       "timestamp": "2026-06-04T18:26:00Z",
       "tokens_in": 508,
       "tokens_out": 5,
       "cost_usd": 0.000523,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "stepfun-direct/step-3.5-flash",
-      "provider": "stepfun",
+      "provider": "stepfun-direct",
       "timestamp": "2026-06-04T18:26:00Z",
       "tokens_in": 504,
       "tokens_out": 5,
       "cost_usd": 0.000519,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "comet/hunyuan-t1-latest",
@@ -414,115 +1148,128 @@
       "tokens_in": 501,
       "tokens_out": 5,
       "cost_usd": 0.000516,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "dashscope/qwen-turbo",
-      "provider": "dashscop",
+      "provider": "dashscope",
       "timestamp": "2026-06-04T18:26:00Z",
       "tokens_in": 514,
       "tokens_out": 5,
       "cost_usd": 0.000529,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "minimax-direct/MiniMax-M2.7",
-      "provider": "minimax",
+      "provider": "minimax-direct",
       "timestamp": "2026-06-04T18:26:00Z",
       "tokens_in": 480,
       "tokens_out": 5,
       "cost_usd": 0.000495,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "zhipu-direct/glm-4.7",
-      "provider": "zhipu",
+      "provider": "zhipu-direct",
       "timestamp": "2026-06-04T18:26:00Z",
       "tokens_in": 492,
       "tokens_out": 1040,
       "cost_usd": 0.003612,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "moonshot-direct/kimi-k2.6",
-      "provider": "moonshot",
+      "provider": "moonshot-direct",
       "timestamp": "2026-06-04T18:25:00Z",
       "tokens_in": 488,
       "tokens_out": 5,
       "cost_usd": 0.00038437,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "gemini-direct/gemini-3.5-flash",
-      "provider": "gemini",
+      "provider": "gemini-direct",
       "timestamp": "2026-06-04T18:21:00Z",
       "tokens_in": 501,
       "tokens_out": 3,
       "cost_usd": 0.00051,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "gemini-direct/gemini-3.5-flash",
-      "provider": "gemini",
+      "provider": "gemini-direct",
       "timestamp": "2026-06-04T18:16:00Z",
       "tokens_in": 501,
       "tokens_out": 1,
       "cost_usd": 0.000504,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "dashscope/qwen3.6-max-preview",
-      "provider": "dashscop",
+      "provider": "dashscope",
       "timestamp": "2026-06-04T18:10:00Z",
       "tokens_in": 529,
       "tokens_out": 1028,
       "cost_usd": 0.003613,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "aihubmix/qwen3.7-max",
-      "provider": "dashscop",
+      "provider": "aihubmix",
       "timestamp": "2026-06-04T18:10:00Z",
       "tokens_in": 529,
       "tokens_out": 1052,
       "cost_usd": 0.00451542,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "zhipu-direct/glm-4.5-air",
-      "provider": "zhipu",
+      "provider": "zhipu-direct",
       "timestamp": "2026-06-04T18:10:00Z",
       "tokens_in": 513,
       "tokens_out": 334,
       "cost_usd": 0.001515,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "stepfun-direct/step-3.5-flash",
-      "provider": "stepfun",
+      "provider": "stepfun-direct",
       "timestamp": "2026-06-04T18:10:00Z",
       "tokens_in": 523,
       "tokens_out": 359,
       "cost_usd": 0.0016,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "minimax-direct/MiniMax-Text-01",
-      "provider": "minimax",
+      "provider": "minimax-direct",
       "timestamp": "2026-06-04T18:10:00Z",
       "tokens_in": 510,
       "tokens_out": 12,
       "cost_usd": 0.000546,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "dashscope/qwen3.7-max",
-      "provider": "dashscop",
+      "provider": "dashscope",
       "timestamp": "2026-06-04T18:10:00Z",
       "tokens_in": 529,
       "tokens_out": 1079,
       "cost_usd": 0.003766,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "comet/doubao-seed-2-0-pro-260215",
@@ -531,7 +1278,8 @@
       "tokens_in": 555,
       "tokens_out": 370,
       "cost_usd": 0.001665,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "aihubmix/ernie-5.0-thinking-preview",
@@ -540,16 +1288,18 @@
       "tokens_in": 521,
       "tokens_out": 291,
       "cost_usd": 0.0,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "minimax-direct/minimax-m2.7",
-      "provider": "minimax",
+      "provider": "minimax-direct",
       "timestamp": "2026-06-04T18:10:00Z",
       "tokens_in": 498,
       "tokens_out": 163,
       "cost_usd": 0.000987,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "comet/hunyuan-t1-latest",
@@ -558,97 +1308,108 @@
       "tokens_in": 521,
       "tokens_out": 300,
       "cost_usd": 0.001421,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "moonshot-direct/kimi-k2.6",
-      "provider": "moonshot",
+      "provider": "moonshot-direct",
       "timestamp": "2026-06-04T18:10:00Z",
       "tokens_in": 508,
       "tokens_out": 300,
       "cost_usd": 0.00177092,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "zhipu-direct/glm-5.1",
-      "provider": "zhipu",
+      "provider": "zhipu-direct",
       "timestamp": "2026-06-04T18:10:00Z",
       "tokens_in": 512,
       "tokens_out": 58,
       "cost_usd": 0.000686,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "xiaomi-direct/mimo-v2.5-pro",
-      "provider": "xiaomi",
+      "provider": "xiaomi-direct",
       "timestamp": "2026-06-04T18:10:00Z",
       "tokens_in": 528,
       "tokens_out": 36,
       "cost_usd": 0.000636,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "openai-direct/gpt-5.5",
-      "provider": "openai",
+      "provider": "openai-direct",
       "timestamp": "2026-06-04T18:10:00Z",
       "tokens_in": 505,
       "tokens_out": 151,
       "cost_usd": 0.007055,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "gemini-direct/gemini-3.5-flash",
-      "provider": "gemini",
+      "provider": "gemini-direct",
       "timestamp": "2026-06-04T18:10:00Z",
       "tokens_in": 517,
       "tokens_out": 11,
       "cost_usd": 0.00055,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "dashscope/qwen3.6-max-preview",
-      "provider": "dashscop",
+      "provider": "dashscope",
       "timestamp": "2026-06-04T18:10:00Z",
       "tokens_in": 529,
       "tokens_out": 1511,
       "cost_usd": 0.005062,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "aihubmix/qwen3.7-max",
-      "provider": "dashscop",
+      "provider": "aihubmix",
       "timestamp": "2026-06-04T18:09:00Z",
       "tokens_in": 529,
       "tokens_out": 1018,
       "cost_usd": 0.00438282,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "zhipu-direct/glm-4.5-air",
-      "provider": "zhipu",
+      "provider": "zhipu-direct",
       "timestamp": "2026-06-04T18:09:00Z",
       "tokens_in": 513,
       "tokens_out": 256,
       "cost_usd": 0.001281,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "minimax-direct/MiniMax-Text-01",
-      "provider": "minimax",
+      "provider": "minimax-direct",
       "timestamp": "2026-06-04T18:09:00Z",
       "tokens_in": 510,
       "tokens_out": 12,
       "cost_usd": 0.000546,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "stepfun-direct/step-3.5-flash",
-      "provider": "stepfun",
+      "provider": "stepfun-direct",
       "timestamp": "2026-06-04T18:09:00Z",
       "tokens_in": 523,
       "tokens_out": 95,
       "cost_usd": 0.000808,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "comet/doubao-seed-2-0-pro-260215",
@@ -657,16 +1418,18 @@
       "tokens_in": 555,
       "tokens_out": 634,
       "cost_usd": 0.002457,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "dashscope/qwen3.7-max",
-      "provider": "dashscop",
+      "provider": "dashscope",
       "timestamp": "2026-06-04T18:09:00Z",
       "tokens_in": 529,
       "tokens_out": 959,
       "cost_usd": 0.003406,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "aihubmix/ernie-5.0-thinking-preview",
@@ -675,7 +1438,8 @@
       "tokens_in": 521,
       "tokens_out": 288,
       "cost_usd": 0.0,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "comet/hunyuan-t1-latest",
@@ -684,106 +1448,118 @@
       "tokens_in": 521,
       "tokens_out": 300,
       "cost_usd": 0.001421,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "moonshot-direct/kimi-k2.6",
-      "provider": "moonshot",
+      "provider": "moonshot-direct",
       "timestamp": "2026-06-04T18:09:00Z",
       "tokens_in": 508,
       "tokens_out": 300,
       "cost_usd": 0.00177092,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "zhipu-direct/glm-5.1",
-      "provider": "zhipu",
+      "provider": "zhipu-direct",
       "timestamp": "2026-06-04T18:09:00Z",
       "tokens_in": 512,
       "tokens_out": 60,
       "cost_usd": 0.000692,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "minimax-direct/minimax-m2.7",
-      "provider": "minimax",
+      "provider": "minimax-direct",
       "timestamp": "2026-06-04T18:09:00Z",
       "tokens_in": 498,
       "tokens_out": 45,
       "cost_usd": 0.000633,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "openai-direct/gpt-5.5",
-      "provider": "openai",
+      "provider": "openai-direct",
       "timestamp": "2026-06-04T18:09:00Z",
       "tokens_in": 505,
       "tokens_out": 82,
       "cost_usd": 0.004985,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "gemini-direct/gemini-3.5-flash",
-      "provider": "gemini",
+      "provider": "gemini-direct",
       "timestamp": "2026-06-04T18:09:00Z",
       "tokens_in": 517,
       "tokens_out": 10,
       "cost_usd": 0.000547,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "aihubmix/qwen3.7-max",
-      "provider": "dashscop",
+      "provider": "aihubmix",
       "timestamp": "2026-06-04T18:08:00Z",
       "tokens_in": 529,
       "tokens_out": 1251,
       "cost_usd": 0.00529152,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "dashscope/qwen3.6-max-preview",
-      "provider": "dashscop",
+      "provider": "dashscope",
       "timestamp": "2026-06-04T18:08:00Z",
       "tokens_in": 529,
       "tokens_out": 963,
       "cost_usd": 0.003418,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "zhipu-direct/glm-4.5-air",
-      "provider": "zhipu",
+      "provider": "zhipu-direct",
       "timestamp": "2026-06-04T18:08:00Z",
       "tokens_in": 513,
       "tokens_out": 129,
       "cost_usd": 0.0009,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "stepfun-direct/step-3.5-flash",
-      "provider": "stepfun",
+      "provider": "stepfun-direct",
       "timestamp": "2026-06-04T18:08:00Z",
       "tokens_in": 523,
       "tokens_out": 503,
       "cost_usd": 0.002032,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "minimax-direct/MiniMax-Text-01",
-      "provider": "minimax",
+      "provider": "minimax-direct",
       "timestamp": "2026-06-04T18:08:00Z",
       "tokens_in": 510,
       "tokens_out": 4,
       "cost_usd": 0.000522,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "zhipu-direct/glm-5.1",
-      "provider": "zhipu",
+      "provider": "zhipu-direct",
       "timestamp": "2026-06-04T18:08:00Z",
       "tokens_in": 512,
       "tokens_out": 107,
       "cost_usd": 0.000833,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "comet/doubao-seed-2-0-pro-260215",
@@ -792,7 +1568,8 @@
       "tokens_in": 555,
       "tokens_out": 445,
       "cost_usd": 0.00189,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "aihubmix/ernie-5.0-thinking-preview",
@@ -801,25 +1578,28 @@
       "tokens_in": 521,
       "tokens_out": 293,
       "cost_usd": 0.0,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "dashscope/qwen3.7-max",
-      "provider": "dashscop",
+      "provider": "dashscope",
       "timestamp": "2026-06-04T18:08:00Z",
       "tokens_in": 529,
       "tokens_out": 534,
       "cost_usd": 0.002131,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "minimax-direct/minimax-m2.7",
-      "provider": "minimax",
+      "provider": "minimax-direct",
       "timestamp": "2026-06-04T18:08:00Z",
       "tokens_in": 498,
       "tokens_out": 178,
       "cost_usd": 0.001032,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "comet/hunyuan-t1-latest",
@@ -828,97 +1608,108 @@
       "tokens_in": 521,
       "tokens_out": 300,
       "cost_usd": 0.001421,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "moonshot-direct/kimi-k2.6",
-      "provider": "moonshot",
+      "provider": "moonshot-direct",
       "timestamp": "2026-06-04T18:08:00Z",
       "tokens_in": 508,
       "tokens_out": 300,
       "cost_usd": 0.00177092,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "openai-direct/gpt-5.5",
-      "provider": "openai",
+      "provider": "openai-direct",
       "timestamp": "2026-06-04T18:07:00Z",
       "tokens_in": 505,
       "tokens_out": 70,
       "cost_usd": 0.004625,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "gemini-direct/gemini-3.5-flash",
-      "provider": "gemini",
+      "provider": "gemini-direct",
       "timestamp": "2026-06-04T18:07:00Z",
       "tokens_in": 517,
       "tokens_out": 10,
       "cost_usd": 0.000547,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "gemini-direct/gemini-3.5-flash",
-      "provider": "gemini",
+      "provider": "gemini-direct",
       "timestamp": "2026-06-04T17:56:00Z",
       "tokens_in": 501,
       "tokens_out": 4,
       "cost_usd": 0.000513,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "gemini-direct/gemini-3.5-flash",
-      "provider": "gemini",
+      "provider": "gemini-direct",
       "timestamp": "2026-06-04T17:51:00Z",
       "tokens_in": 501,
       "tokens_out": 2,
       "cost_usd": 0.000507,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "zhipu-direct/glm-5.1",
-      "provider": "zhipu",
+      "provider": "zhipu-direct",
       "timestamp": "2026-06-04T17:43:00Z",
       "tokens_in": 604,
       "tokens_out": 333,
       "cost_usd": 0.001603,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "moonshot-direct/kimi-k2.6",
-      "provider": "moonshot",
+      "provider": "moonshot-direct",
       "timestamp": "2026-06-04T17:42:00Z",
       "tokens_in": 609,
       "tokens_out": 1435,
       "cost_usd": 0.00712341,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "gemini-direct/gemini-3.5-flash",
-      "provider": "gemini",
+      "provider": "gemini-direct",
       "timestamp": "2026-06-04T17:42:00Z",
       "tokens_in": 501,
       "tokens_out": 2,
       "cost_usd": 0.000507,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "dashscope/qwen3.7-max",
-      "provider": "dashscop",
+      "provider": "dashscope",
       "timestamp": "2026-06-04T17:37:00Z",
       "tokens_in": 3519,
       "tokens_out": 2070,
       "cost_usd": 0.009729,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "zhipu-direct/glm-5.1",
-      "provider": "zhipu",
+      "provider": "zhipu-direct",
       "timestamp": "2026-06-04T17:36:00Z",
       "tokens_in": 3547,
       "tokens_out": 400,
       "cost_usd": 0.004747,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "aihubmix/ernie-5.1",
@@ -927,25 +1718,28 @@
       "tokens_in": 4028,
       "tokens_out": 400,
       "cost_usd": 0.0,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "minimax-direct/minimax-m2.7",
-      "provider": "minimax",
+      "provider": "minimax-direct",
       "timestamp": "2026-06-04T17:36:00Z",
       "tokens_in": 3289,
       "tokens_out": 400,
       "cost_usd": 0.004489,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "moonshot-direct/kimi-k2.6",
-      "provider": "moonshot",
+      "provider": "moonshot-direct",
       "timestamp": "2026-06-04T17:36:00Z",
       "tokens_in": 3653,
       "tokens_out": 400,
       "cost_usd": 0.00456322,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "comet/doubao-seed-2-0-pro-260215",
@@ -954,34 +1748,38 @@
       "tokens_in": 379,
       "tokens_out": 2297,
       "cost_usd": 0.00727,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "dashscope/qwen3.7-max",
-      "provider": "dashscop",
+      "provider": "dashscope",
       "timestamp": "2026-06-04T17:36:00Z",
       "tokens_in": 336,
       "tokens_out": 2067,
       "cost_usd": 0.006537,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "zhipu-direct/glm-5.1",
-      "provider": "zhipu",
+      "provider": "zhipu-direct",
       "timestamp": "2026-06-04T17:35:00Z",
       "tokens_in": 339,
       "tokens_out": 400,
       "cost_usd": 0.001539,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "minimax-direct/minimax-m2.7",
-      "provider": "minimax",
+      "provider": "minimax-direct",
       "timestamp": "2026-06-04T17:35:00Z",
       "tokens_in": 330,
       "tokens_out": 400,
       "cost_usd": 0.00153,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "aihubmix/ernie-5.1",
@@ -990,52 +1788,58 @@
       "tokens_in": 379,
       "tokens_out": 399,
       "cost_usd": 0.0,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "moonshot-direct/kimi-k2.6",
-      "provider": "moonshot",
+      "provider": "moonshot-direct",
       "timestamp": "2026-06-04T17:35:00Z",
       "tokens_in": 366,
       "tokens_out": 400,
       "cost_usd": 0.00213084,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "xiaomi-direct/mimo-v2.5-pro",
-      "provider": "xiaomi",
+      "provider": "xiaomi-direct",
       "timestamp": "2026-06-04T17:35:00Z",
       "tokens_in": 356,
       "tokens_out": 400,
       "cost_usd": 0.001556,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "gemini-direct/gemini-3.5-flash",
-      "provider": "gemini",
+      "provider": "gemini-direct",
       "timestamp": "2026-06-04T17:32:00Z",
       "tokens_in": 501,
       "tokens_out": 2,
       "cost_usd": 0.000507,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "gemini-direct/gemini-3.5-flash",
-      "provider": "gemini",
+      "provider": "gemini-direct",
       "timestamp": "2026-06-04T17:26:00Z",
       "tokens_in": 501,
       "tokens_out": 3,
       "cost_usd": 0.00051,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "mistral-direct/mistral-large-latest",
-      "provider": "mistral",
+      "provider": "mistral-direct",
       "timestamp": "2026-06-04T17:25:00Z",
       "tokens_in": 509,
       "tokens_out": 5,
       "cost_usd": 0.000524,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "aihubmix/aihubmix/qwen3-235b-a22b-thinking-2507",
@@ -1044,16 +1848,18 @@
       "tokens_in": 510,
       "tokens_out": 355,
       "cost_usd": 0.0,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "xiaomi-direct/mimo-v2.5-pro",
-      "provider": "xiaomi",
+      "provider": "xiaomi-direct",
       "timestamp": "2026-06-04T17:24:00Z",
       "tokens_in": 508,
       "tokens_out": 5,
       "cost_usd": 0.000523,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "aihubmix/aihubmix/ernie-5.0-thinking-preview",
@@ -1062,7 +1868,8 @@
       "tokens_in": 501,
       "tokens_out": 4,
       "cost_usd": 0.0,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "comet/doubao-seed-2-0-pro-260215",
@@ -1071,25 +1878,28 @@
       "tokens_in": 536,
       "tokens_out": 905,
       "cost_usd": 0.003251,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "xiaomi-direct/mimo-v2.5-pro",
-      "provider": "xiaomi",
+      "provider": "xiaomi-direct",
       "timestamp": "2026-06-04T17:24:00Z",
       "tokens_in": 508,
       "tokens_out": 5,
       "cost_usd": 0.000523,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "stepfun-direct/step-3.5-flash",
-      "provider": "stepfun",
+      "provider": "stepfun-direct",
       "timestamp": "2026-06-04T17:23:00Z",
       "tokens_in": 504,
       "tokens_out": 5,
       "cost_usd": 0.000519,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "comet/hunyuan-t1-latest",
@@ -1098,106 +1908,118 @@
       "tokens_in": 501,
       "tokens_out": 5,
       "cost_usd": 0.000516,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "dashscope/qwen-turbo",
-      "provider": "dashscop",
+      "provider": "dashscope",
       "timestamp": "2026-06-04T17:23:00Z",
       "tokens_in": 514,
       "tokens_out": 5,
       "cost_usd": 0.000529,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "minimax-direct/MiniMax-M2.7",
-      "provider": "minimax",
+      "provider": "minimax-direct",
       "timestamp": "2026-06-04T17:23:00Z",
       "tokens_in": 480,
       "tokens_out": 5,
       "cost_usd": 0.000495,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "zhipu-direct/glm-4.7",
-      "provider": "zhipu",
+      "provider": "zhipu-direct",
       "timestamp": "2026-06-04T17:23:00Z",
       "tokens_in": 492,
       "tokens_out": 857,
       "cost_usd": 0.003063,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "moonshot-direct/kimi-k2.6",
-      "provider": "moonshot",
+      "provider": "moonshot-direct",
       "timestamp": "2026-06-04T17:23:00Z",
       "tokens_in": 488,
       "tokens_out": 5,
       "cost_usd": 0.00038437,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "gemini-direct/gemini-3.5-flash",
-      "provider": "gemini",
+      "provider": "gemini-direct",
       "timestamp": "2026-06-04T17:20:00Z",
       "tokens_in": 501,
       "tokens_out": 2,
       "cost_usd": 0.000507,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "gemini-direct/gemini-3.5-flash",
-      "provider": "gemini",
+      "provider": "gemini-direct",
       "timestamp": "2026-06-04T17:11:00Z",
       "tokens_in": 501,
       "tokens_out": 4,
       "cost_usd": 0.000513,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "gemini-direct/gemini-3.5-flash",
-      "provider": "gemini",
+      "provider": "gemini-direct",
       "timestamp": "2026-06-04T17:06:00Z",
       "tokens_in": 501,
       "tokens_out": 2,
       "cost_usd": 0.000507,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "gemini-direct/gemini-3.5-flash",
-      "provider": "gemini",
+      "provider": "gemini-direct",
       "timestamp": "2026-06-04T17:01:00Z",
       "tokens_in": 501,
       "tokens_out": 4,
       "cost_usd": 0.000513,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "gemini-direct/gemini-3.5-flash",
-      "provider": "gemini",
+      "provider": "gemini-direct",
       "timestamp": "2026-06-04T16:56:00Z",
       "tokens_in": 501,
       "tokens_out": 4,
       "cost_usd": 0.000513,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "gemini-direct/gemini-3.5-flash",
-      "provider": "gemini",
+      "provider": "gemini-direct",
       "timestamp": "2026-06-04T16:52:00Z",
       "tokens_in": 501,
       "tokens_out": 4,
       "cost_usd": 0.000513,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     },
     {
       "model": "gemini-direct/gemini-3.5-flash",
-      "provider": "gemini",
+      "provider": "gemini-direct",
       "timestamp": "2026-06-04T16:47:00Z",
       "tokens_in": 501,
       "tokens_out": 3,
       "cost_usd": 0.00051,
-      "status": "success"
+      "status": "success",
+      "call_type": "chinese"
     }
   ]
 }
