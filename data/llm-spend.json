@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated_at": "2026-06-05T18:02:49Z",
+    "generated_at": "2026-06-05T22:17:41Z",
     "window_hours": 24,
-    "total_calls": 719,
-    "total_cost_usd": 0.7621,
+    "total_calls": 727,
+    "total_cost_usd": 0.7668,
     "models_count": 58,
     "providers_count": 11,
     "errors_count": 9,
@@ -677,12 +677,12 @@
     {
       "model": "aihubmix/qwen3-235b-a22b-thinking-2507",
       "provider": "aihubmix",
-      "calls": 210,
-      "successes": 210,
+      "calls": 214,
+      "successes": 214,
       "errors": 0,
-      "cost_usd": 0.213582,
-      "tokens_in": 106438,
-      "tokens_out": 106909,
+      "cost_usd": 0.217212,
+      "tokens_in": 108478,
+      "tokens_out": 108649,
       "status": "healthy",
       "price_in_per_1k": 0.0005,
       "price_out_per_1k": 0.0015
@@ -690,12 +690,12 @@
     {
       "model": "aihubmix/ernie-5.0-thinking-preview",
       "provider": "aihubmix",
-      "calls": 322,
-      "successes": 322,
+      "calls": 326,
+      "successes": 326,
       "errors": 0,
-      "cost_usd": 0.268201,
-      "tokens_in": 186200,
-      "tokens_out": 116734,
+      "cost_usd": 0.269227,
+      "tokens_in": 188204,
+      "tokens_out": 116750,
       "status": "healthy",
       "price_in_per_1k": 0.0005,
       "price_out_per_1k": 0.0015
@@ -768,7 +768,7 @@
   ],
   "errors": [
     {
-      "ts": "2026-06-05T18:02:49.421390+00:00",
+      "ts": "2026-06-05T22:17:41.830102+00:00",
       "model": "moonshotai/kimi-k2.6",
       "category": "api_error",
       "detail": "[Errno 54] Connection reset by peer",
@@ -776,7 +776,7 @@
       "source_log": "cron_djemaly_niche.out.log"
     },
     {
-      "ts": "2026-06-05T18:02:49.421390+00:00",
+      "ts": "2026-06-05T22:17:41.830102+00:00",
       "model": "aihubmix/qwen/qwen3-max",
       "category": "api_error",
       "detail": "[Errno 54] Connection reset by peer",
@@ -784,7 +784,7 @@
       "source_log": "cron_djemaly_niche.out.log"
     },
     {
-      "ts": "2026-06-05T18:02:49.421390+00:00",
+      "ts": "2026-06-05T22:17:41.830102+00:00",
       "model": "deepseek/deepseek-v4-pro",
       "category": "api_error",
       "detail": "The read operation timed out",
@@ -792,7 +792,7 @@
       "source_log": "cron_djemaly_niche.out.log"
     },
     {
-      "ts": "2026-06-05T18:02:49.421390+00:00",
+      "ts": "2026-06-05T22:17:41.830102+00:00",
       "model": "zhipu/glm-5.1",
       "category": "api_error",
       "detail": "The read operation timed out",
@@ -800,7 +800,7 @@
       "source_log": "cron_djemaly_niche.out.log"
     },
     {
-      "ts": "2026-06-05T18:02:49.421390+00:00",
+      "ts": "2026-06-05T22:17:41.830102+00:00",
       "model": "moonshotai/kimi-k2.6",
       "category": "api_error",
       "detail": "HTTP Error 400: Bad Request",
@@ -808,7 +808,7 @@
       "source_log": "cron_djemaly_niche.out.log"
     },
     {
-      "ts": "2026-06-05T18:02:49.421390+00:00",
+      "ts": "2026-06-05T22:17:41.830102+00:00",
       "model": "aihubmix/qwen/qwen3-max",
       "category": "api_error",
       "detail": "HTTP Error 400: Bad Request",
@@ -816,7 +816,7 @@
       "source_log": "cron_djemaly_niche.out.log"
     },
     {
-      "ts": "2026-06-05T18:02:49.421390+00:00",
+      "ts": "2026-06-05T22:17:41.830102+00:00",
       "model": "deepseek/deepseek-v4-pro",
       "category": "api_error",
       "detail": "HTTP Error 400: Bad Request",
@@ -824,7 +824,7 @@
       "source_log": "cron_djemaly_niche.out.log"
     },
     {
-      "ts": "2026-06-05T18:02:49.421390+00:00",
+      "ts": "2026-06-05T22:17:41.830102+00:00",
       "model": "zhipu/glm-5.1",
       "category": "api_error",
       "detail": "HTTP Error 400: Bad Request",
@@ -832,7 +832,7 @@
       "source_log": "cron_djemaly_niche.out.log"
     },
     {
-      "ts": "2026-06-05T18:02:49.421390+00:00",
+      "ts": "2026-06-05T22:17:41.830102+00:00",
       "model": "minimax/MiniMax-M2.7",
       "category": "api_error",
       "detail": "HTTP Error 400: Bad Request",
@@ -842,8 +842,8 @@
   ],
   "by_provider": {
     "aihubmix": {
-      "calls": 592,
-      "cost_usd": 0.5205,
+      "calls": 600,
+      "cost_usd": 0.5251,
       "models": [
         "aihubmix/coding-glm-5.1",
         "aihubmix/ernie-4.5-turbo",
