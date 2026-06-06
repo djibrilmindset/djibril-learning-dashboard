@@ -1,26 +1,26 @@
 {
   "_meta": {
-    "generated": "2026-06-06T14:14:12.821285Z",
+    "generated": "2026-06-06T18:06:17.030071Z",
     "owner": "djibril",
     "period_days": 30,
     "schema_version": "1.1",
     "data_source": "fathom_api + analyzer_inferred + outcomes_overrides.json manual",
-    "calls_tracked": 22,
+    "calls_tracked": 25,
     "overrides_file": "/Users/pardin/agence-ia/manager/calls_intelligence/outcomes_overrides.json"
   },
   "kpi": {
-    "calls_total": 22,
-    "calls_qualified": 21,
-    "calls_qualified_pct": 0.955,
+    "calls_total": 25,
+    "calls_qualified": 24,
+    "calls_qualified_pct": 0.96,
     "noshow_count": 0,
     "noshow_pct": 0.0,
-    "closed_count": 5,
+    "closed_count": 7,
     "closed_lost_count": 3,
-    "closing_pct_qualified": 0.238,
-    "closing_pct_total": 0.227,
+    "closing_pct_qualified": 0.292,
+    "closing_pct_total": 0.28,
     "revenue_total_eur": 0,
     "avg_deal_eur": 0.0,
-    "calls_per_week_avg": 5.1,
+    "calls_per_week_avg": 5.8,
     "ttf_close_days_avg": null
   },
   "delta_vs_prev_period": {
@@ -123,27 +123,27 @@
     },
     {
       "date": "2026-06-05",
-      "calls": 1,
-      "qualified": 1,
-      "closed": 0,
+      "calls": 2,
+      "qualified": 2,
+      "closed": 1,
       "noshow": 0
     },
     {
       "date": "2026-06-06",
-      "calls": 1,
-      "qualified": 1,
-      "closed": 0,
+      "calls": 3,
+      "qualified": 3,
+      "closed": 1,
       "noshow": 0
     }
   ],
   "by_source": [
     {
       "source": "Instagram organique",
-      "calls": 22,
-      "qualified": 21,
-      "closed": 5,
+      "calls": 25,
+      "qualified": 24,
+      "closed": 7,
       "noshow": 0,
-      "closing_pct_qualified": 0.238,
+      "closing_pct_qualified": 0.292,
       "revenue_eur": 0
     }
   ],
@@ -180,10 +180,10 @@
     }
   ],
   "outcomes_breakdown": {
-    "closed_won": 5,
+    "closed_won": 7,
     "closed_lost": 3,
     "noshow": 0,
-    "followup_pending": 14,
+    "followup_pending": 15,
     "disqualified": 0
   }
 }
