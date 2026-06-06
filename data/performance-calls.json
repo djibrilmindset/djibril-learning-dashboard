@@ -1,26 +1,26 @@
 {
   "_meta": {
-    "generated": "2026-06-06T07:17:05.517435Z",
+    "generated": "2026-06-06T14:14:12.821285Z",
     "owner": "djibril",
     "period_days": 30,
     "schema_version": "1.1",
     "data_source": "fathom_api + analyzer_inferred + outcomes_overrides.json manual",
-    "calls_tracked": 18,
+    "calls_tracked": 22,
     "overrides_file": "/Users/pardin/agence-ia/manager/calls_intelligence/outcomes_overrides.json"
   },
   "kpi": {
-    "calls_total": 18,
-    "calls_qualified": 17,
-    "calls_qualified_pct": 0.944,
+    "calls_total": 22,
+    "calls_qualified": 21,
+    "calls_qualified_pct": 0.955,
     "noshow_count": 0,
     "noshow_pct": 0.0,
     "closed_count": 5,
     "closed_lost_count": 3,
-    "closing_pct_qualified": 0.294,
-    "closing_pct_total": 0.278,
+    "closing_pct_qualified": 0.238,
+    "closing_pct_total": 0.227,
     "revenue_total_eur": 0,
     "avg_deal_eur": 0.0,
-    "calls_per_week_avg": 4.2,
+    "calls_per_week_avg": 5.1,
     "ttf_close_days_avg": null
   },
   "delta_vs_prev_period": {
@@ -101,7 +101,35 @@
       "noshow": 0
     },
     {
+      "date": "2026-06-02",
+      "calls": 1,
+      "qualified": 1,
+      "closed": 0,
+      "noshow": 0
+    },
+    {
       "date": "2026-06-03",
+      "calls": 1,
+      "qualified": 1,
+      "closed": 0,
+      "noshow": 0
+    },
+    {
+      "date": "2026-06-04",
+      "calls": 1,
+      "qualified": 1,
+      "closed": 0,
+      "noshow": 0
+    },
+    {
+      "date": "2026-06-05",
+      "calls": 1,
+      "qualified": 1,
+      "closed": 0,
+      "noshow": 0
+    },
+    {
+      "date": "2026-06-06",
       "calls": 1,
       "qualified": 1,
       "closed": 0,
@@ -111,11 +139,11 @@
   "by_source": [
     {
       "source": "Instagram organique",
-      "calls": 18,
-      "qualified": 17,
+      "calls": 22,
+      "qualified": 21,
       "closed": 5,
       "noshow": 0,
-      "closing_pct_qualified": 0.294,
+      "closing_pct_qualified": 0.238,
       "revenue_eur": 0
     }
   ],
@@ -143,13 +171,19 @@
       "count": 1,
       "closed_anyway": 0,
       "best_counter": "—"
+    },
+    {
+      "objection": "Objection prix/conviction non traitée avec mirroring",
+      "count": 1,
+      "closed_anyway": 0,
+      "best_counter": "—"
     }
   ],
   "outcomes_breakdown": {
     "closed_won": 5,
     "closed_lost": 3,
     "noshow": 0,
-    "followup_pending": 10,
+    "followup_pending": 14,
     "disqualified": 0
   }
 }
