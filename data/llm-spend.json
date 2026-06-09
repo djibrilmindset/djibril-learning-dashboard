@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated_at": "2026-06-09T18:05:08Z",
+    "generated_at": "2026-06-09T20:01:41Z",
     "window_hours": 24,
-    "total_calls": 1144,
-    "total_cost_usd": 4.0638,
+    "total_calls": 1150,
+    "total_cost_usd": 3.9236,
     "models_count": 20,
     "providers_count": 9,
     "errors_count": 0,
@@ -12,43 +12,43 @@
   },
   "by_model": [
     {
-      "model": "moonshot-direct/kimi-k2.6",
-      "provider": "moonshot-direct",
-      "calls": 86,
-      "successes": 86,
-      "errors": 0,
-      "cost_usd": 0.768015,
-      "tokens_in": 570200,
-      "tokens_out": 74423,
-      "status": "healthy",
-      "price_in_per_1k": 0.001347,
-      "price_out_per_1k": 0.01032
-    },
-    {
       "model": "comet/qwen3.7-max",
       "provider": "comet",
-      "calls": 55,
-      "successes": 55,
+      "calls": 54,
+      "successes": 54,
       "errors": 0,
-      "cost_usd": 0.707242,
-      "tokens_in": 320827,
-      "tokens_out": 128805,
+      "cost_usd": 0.682234,
+      "tokens_in": 305749,
+      "tokens_out": 125495,
       "status": "healthy",
-      "price_in_per_1k": 0.002204,
-      "price_out_per_1k": 0.005491
+      "price_in_per_1k": 0.002231,
+      "price_out_per_1k": 0.005436
+    },
+    {
+      "model": "moonshot-direct/kimi-k2.6",
+      "provider": "moonshot-direct",
+      "calls": 83,
+      "successes": 83,
+      "errors": 0,
+      "cost_usd": 0.675544,
+      "tokens_in": 549456,
+      "tokens_out": 57838,
+      "status": "healthy",
+      "price_in_per_1k": 0.001229,
+      "price_out_per_1k": 0.01168
     },
     {
       "model": "minimax-direct/minimax-m3",
       "provider": "minimax-direct",
-      "calls": 66,
-      "successes": 66,
+      "calls": 67,
+      "successes": 67,
       "errors": 0,
-      "cost_usd": 0.607557,
-      "tokens_in": 469392,
-      "tokens_out": 46055,
+      "cost_usd": 0.608208,
+      "tokens_in": 470028,
+      "tokens_out": 46060,
       "status": "healthy",
       "price_in_per_1k": 0.001294,
-      "price_out_per_1k": 0.013192
+      "price_out_per_1k": 0.013205
     },
     {
       "model": "comet/doubao-seed-2-0-pro-260215",
@@ -56,12 +56,12 @@
       "calls": 55,
       "successes": 55,
       "errors": 0,
-      "cost_usd": 0.450982,
+      "cost_usd": 0.451147,
       "tokens_in": 280552,
-      "tokens_out": 56810,
+      "tokens_out": 56865,
       "status": "healthy",
-      "price_in_per_1k": 0.001607,
-      "price_out_per_1k": 0.007938
+      "price_in_per_1k": 0.001608,
+      "price_out_per_1k": 0.007934
     },
     {
       "model": "zhipu-direct/glm-5.1",
@@ -69,12 +69,12 @@
       "calls": 55,
       "successes": 55,
       "errors": 0,
-      "cost_usd": 0.41975,
-      "tokens_in": 337799,
-      "tokens_out": 27317,
+      "cost_usd": 0.399086,
+      "tokens_in": 323060,
+      "tokens_out": 25342,
       "status": "healthy",
-      "price_in_per_1k": 0.001243,
-      "price_out_per_1k": 0.015366
+      "price_in_per_1k": 0.001235,
+      "price_out_per_1k": 0.015748
     },
     {
       "model": "xiaomi-direct/mimo-v2.5-pro",
@@ -105,15 +105,15 @@
     {
       "model": "gemini-direct/gemini-pro-latest",
       "provider": "gemini-direct",
-      "calls": 153,
-      "successes": 153,
+      "calls": 156,
+      "successes": 156,
       "errors": 0,
-      "cost_usd": 0.138359,
-      "tokens_in": 124835,
-      "tokens_out": 4508,
+      "cost_usd": 0.135368,
+      "tokens_in": 124532,
+      "tokens_out": 3612,
       "status": "healthy",
-      "price_in_per_1k": 0.001108,
-      "price_out_per_1k": 0.030692
+      "price_in_per_1k": 0.001087,
+      "price_out_per_1k": 0.037477
     },
     {
       "model": "zhipu-direct/glm-4.7",
@@ -121,25 +121,25 @@
       "calls": 22,
       "successes": 22,
       "errors": 0,
-      "cost_usd": 0.091296,
+      "cost_usd": 0.090696,
       "tokens_in": 10824,
-      "tokens_out": 26824,
+      "tokens_out": 26624,
       "status": "healthy",
-      "price_in_per_1k": 0.008435,
-      "price_out_per_1k": 0.003404
+      "price_in_per_1k": 0.008379,
+      "price_out_per_1k": 0.003407
     },
     {
       "model": "gemini-direct/gemini-3.5-flash",
       "provider": "gemini-direct",
-      "calls": 141,
-      "successes": 141,
+      "calls": 147,
+      "successes": 147,
       "errors": 0,
-      "cost_usd": 0.077912,
-      "tokens_in": 76598,
-      "tokens_out": 438,
+      "cost_usd": 0.080946,
+      "tokens_in": 79602,
+      "tokens_out": 448,
       "status": "healthy",
       "price_in_per_1k": 0.001017,
-      "price_out_per_1k": 0.177881
+      "price_out_per_1k": 0.180683
     },
     {
       "model": "minimax-direct/MiniMax-M3",
@@ -183,15 +183,15 @@
     {
       "model": "dashscope/qwen-turbo",
       "provider": "dashscope",
-      "calls": 3,
-      "successes": 3,
+      "calls": 2,
+      "successes": 2,
       "errors": 0,
-      "cost_usd": 0.006222,
-      "tokens_in": 1551,
-      "tokens_out": 1557,
+      "cost_usd": 0.003963,
+      "tokens_in": 1041,
+      "tokens_out": 974,
       "status": "healthy",
-      "price_in_per_1k": 0.004012,
-      "price_out_per_1k": 0.003996
+      "price_in_per_1k": 0.003807,
+      "price_out_per_1k": 0.004069
     },
     {
       "model": "minimax-direct/minimax-m2.7",
@@ -233,19 +233,6 @@
       "price_out_per_1k": 0.007248
     },
     {
-      "model": "aihubmix/ernie-5.1",
-      "provider": "aihubmix",
-      "calls": 298,
-      "successes": 298,
-      "errors": 0,
-      "cost_usd": 0.0,
-      "tokens_in": 672198,
-      "tokens_out": 300697,
-      "status": "healthy",
-      "price_in_per_1k": 0.0,
-      "price_out_per_1k": 0.0
-    },
-    {
       "model": "aihubmix/gpt-5.5-pro",
       "provider": "aihubmix",
       "calls": 5,
@@ -254,6 +241,19 @@
       "cost_usd": 0.0,
       "tokens_in": 3505,
       "tokens_out": 3105,
+      "status": "healthy",
+      "price_in_per_1k": 0.0,
+      "price_out_per_1k": 0.0
+    },
+    {
+      "model": "aihubmix/ernie-5.1",
+      "provider": "aihubmix",
+      "calls": 299,
+      "successes": 299,
+      "errors": 0,
+      "cost_usd": 0.0,
+      "tokens_in": 674196,
+      "tokens_out": 306574,
       "status": "healthy",
       "price_in_per_1k": 0.0,
       "price_out_per_1k": 0.0
