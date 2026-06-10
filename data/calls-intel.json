@@ -1,31 +1,31 @@
 {
   "_meta": {
-    "generated": "2026-06-10T07:00:02.822920Z",
+    "generated": "2026-06-10T18:04:37.918306Z",
     "source": "fathom_api + moonshot_kimi_k2.5_analyzer + frameworks_corpus_v1",
-    "owner_calls_tracked": 25,
+    "owner_calls_tracked": 27,
     "client_cold_calls_tracked": 0,
     "schema_version": "1.1",
     "frameworks_corpus": "~/agence-ia/manager/calls_intelligence/frameworks_corpus.json",
     "reports_path": "/Users/pardin/agence-ia/manager/calls_intelligence/reports"
   },
   "summary": {
-    "calls_total": 25,
-    "avg_score_global": 54.5,
+    "calls_total": 27,
+    "avg_score_global": 54.1,
     "delta_score_30d": 0,
     "top_strength": "Rapport / présence",
     "top_weakness": "Tentative closing",
-    "win_rate_top_pattern": 0.07,
+    "win_rate_top_pattern": 0.12,
     "best_call": {
-      "id": "fathom-152848749",
-      "score": 54
+      "id": "fathom-153663599",
+      "score": 48
     },
     "dim_averages": {
-      "rapport_presence": 71.6,
+      "rapport_presence": 71.8,
       "discovery_spin": 50.3,
-      "pain_amplification": 52.8,
-      "offer_clarity": 49.2,
-      "objection_handling": 58.8,
-      "closing_attempt": 44.6
+      "pain_amplification": 51.9,
+      "offer_clarity": 49.6,
+      "objection_handling": 58.1,
+      "closing_attempt": 43.4
     }
   },
   "scoring_dimensions": [
@@ -55,6 +55,446 @@
     }
   ],
   "calls_perso": [
+    {
+      "id": "fathom-153663599",
+      "owner": "djibril",
+      "recording_id": 153663599,
+      "fathom_share_url": "https://fathom.video/share/CS3SrCBuZsg_guTpk456KRJ15gdQ3u1P",
+      "prospect": "Mohamed Id belgdif",
+      "title": "Mohamed + associé / djibril",
+      "date": "2026-06-09T19:34:38Z",
+      "duration_min": 48,
+      "outcome": "booked_followup",
+      "score_global": 48,
+      "scores": {
+        "rapport_presence": 72,
+        "discovery_spin": 38,
+        "pain_amplification": 35,
+        "offer_clarity": 52,
+        "objection_handling": 48,
+        "closing_attempt": 42
+      },
+      "spin_breakdown": {
+        "situation_pct": 45,
+        "problem_pct": 20,
+        "implication_pct": 5,
+        "needpayoff_pct": 10,
+        "ratio_prospect_djibril_speaking": 0.35
+      },
+      "top_2_leviers_8020": [
+        {
+          "rank": 1,
+          "levier": "Ajouter Accusation Audit + Question No-Oriented avant énoncé prix",
+          "impact_attendu_points": 22,
+          "fix_concret": "Dire : 'Tu vas sûrement penser que je te prends 3000€ pour faire fortune sur toi, que c'est cher pour une formation, et que tu préfèrerais me payer à la commission. Est-ce que c'est une mauvaise idée de sécuriser ton avenir en maîtrisant une compétence qui ne dépend pas d'un seul business ?' attendre 'non' puis annoncer le prix",
+          "timestamp_ref": "00:21:30"
+        },
+        {
+          "rank": 2,
+          "levier": "Couper Phase S à 3min et injecter 3 chaînes Implication consécutives",
+          "impact_attendu_points": 18,
+          "fix_concret": "À min 02:50, stopper l'historique horloger et demander : 'Si dans 6 mois vous êtes toujours à ce stade embryon sans acquisition client, combien d'argent vous avez perdu en opportunité ? Et comment ça impacte votre relation avec vos associés ?'",
+          "timestamp_ref": "00:02:50"
+        }
+      ],
+      "cross_channel_implications": {
+        "to_instagram_reels": "Tourner reel 22s 'Pourquoi payer 3000€ pour apprendre l'acquisition quand on peut payer une agence ?' Réponse en hook : 'Parce que sans levier, tu crames 5000€ en 3 mois avec une agence sans comprendre ce qui marche. Voici le test des 90 jours...'",
+        "to_meta_ads": "Refondre creative 'Location auto vs Acquisition' avec hook 'Tu veux louer des voitures ou acquérir des clients ?' pour qualifier les prospects qui ont déjà un business vs ceux en phase embryon (éviter les calls non qualifiés)",
+        "to_basile_dm": "Durcir script Basile avec question obligatoire : 'As-tu déjà un business qui génère du CA ou es-tu en phase de lancement total ?' Si réponse 'lancement', router vers nurture sequence 30j avant call",
+        "to_lp_vsl": "Ajouter section 'Garantie 5000€ en 90j ou remboursé' en hero section avec compteur visuel, car prospect confus sur le ROI à min 22:00",
+        "to_mariam_email": "Activer email J-1 'Préparation appel' avec PJ contrat et rappel des 3 clauses de la garantie pour réduire no-show (prospect a dit 'on va se concerter' = risque ghosting élevé)",
+        "to_cold_calls_clients": "Coaching Mael/Yacine : Si prospect dit 'pourquoi pas payer à la commission ?', utiliser Accusation Audit ('Vous pensez sûrement que je veux vous avoir') puis question No-oriented ('Est-ce que c'est une mauvaise idée de maîtriser le processus toi-même ?')"
+      },
+      "moments_positifs": [
+        {
+          "t_min": 0,
+          "label": "Smalltalk Ramadan/café authentique",
+          "framework": "carnegie_interet_sincere"
+        },
+        {
+          "t_min": 20,
+          "label": "Garantie explicite 5000€/90j",
+          "framework": "hormozi_garantie_creative"
+        },
+        {
+          "t_min": 33,
+          "label": "Accusation implicite sur concurrence",
+          "framework": "voss_accusation_audit_light"
+        }
+      ],
+      "moments_negatifs": [
+        {
+          "t_min": 0,
+          "label": "Phase S trop longue sur passé horloger",
+          "anti_pattern": "discovery_too_long"
+        },
+        {
+          "t_min": 14,
+          "label": "Feature dumping modules/lives",
+          "anti_pattern": "feature_dumping"
+        },
+        {
+          "t_min": 23,
+          "label": "Défensive sur objection prix/commission",
+          "anti_pattern": "defensive_objection"
+        }
+      ],
+      "patterns_detected": [
+        "risk_reversal_explicit"
+      ],
+      "anti_patterns_detected": [
+        "discovery_too_long",
+        "feature_dumping",
+        "no_case_study",
+        "defensive_objection",
+        "soft_close_pattern",
+        "pricing_no_anchor",
+        "monologue_djibril"
+      ],
+      "frameworks_used_well": [
+        {
+          "concept": "Profit Mutuel",
+          "book_source": "The Secret of Selling Anything - Harry Browne",
+          "evidence_timestamp": "00:02:00",
+          "evidence_quote": "c'est une démarche qui pourrait te permettre aujourd'hui de combler ce truc"
+        },
+        {
+          "concept": "Garantie créative",
+          "book_source": "100M Offers - Alex Hormozi",
+          "evidence_timestamp": "00:20:51",
+          "evidence_quote": "si tu n'atteins pas 5000€ en 90 jours, tu es remboursé intégralement et tu as même le droit de me demander un dédommagement"
+        }
+      ],
+      "frameworks_missed": [
+        {
+          "concept": "Accusation Audit",
+          "book_source": "Never Split The Difference - Chris Voss",
+          "definition_quick": "Dire à l'avance tous les négatifs que le prospect pourrait penser pour désarmer l'objection avant qu'elle n'arrive",
+          "where_to_apply": "00:21:30",
+          "fix_phrase": "Tu vas sûrement penser que 3000€ c'est cher, que tu préfèrerais payer à la commission, et que je veux juste te prendre ton argent..."
+        },
+        {
+          "concept": "Mirroring",
+          "book_source": "Never Split The Difference - Chris Voss",
+          "definition_quick": "Répéter les 1-3 derniers mots avec intonation interrogative pour forcer le prospect à approfondir",
+          "where_to_apply": "00:23:12",
+          "fix_phrase": "Prospect: 'Pourquoi pas un pourcentage ?' → Djibril: 'Un pourcentage ?'"
+        },
+        {
+          "concept": "Need-Payoff Questions",
+          "book_source": "SPIN Selling - Rackham",
+          "definition_quick": "Questions qui font formuler par le prospect lui-même la valeur de résoudre le problème",
+          "where_to_apply": "00:19:00",
+          "fix_phrase": "Si tu résolvais ton acquisition client en 60j, ça changerait quoi pour votre projet auto ?"
+        },
+        {
+          "concept": "That's Right",
+          "book_source": "Never Split The Difference - Chris Voss",
+          "definition_quick": "Reformuler le résumé du prospect jusqu'à obtenir 'C'est ça !' (pas 'T'as raison')",
+          "where_to_apply": "00:05:00",
+          "fix_phrase": "Donc vous êtes en phase embryon, pas encore de rente, et vous cherchez un moyen d'acquérir sans cramer votre budget. C'est ça ?"
+        }
+      ],
+      "glossary_terms": [
+        {
+          "term": "Accusation Audit",
+          "definition": "Technique Voss consistant à énoncer toutes les accusations négatives possibles avant que le prospect ne les formule, créant une désarmorçage total",
+          "source_book": "Never Split The Difference - Chris Voss"
+        },
+        {
+          "term": "Need-Payoff",
+          "definition": "Phase SPIN où le vendeur pose des questions pour que le prospect calcule lui-même la valeur bénéfice de la solution (pas le vendeur qui le dit)",
+          "source_book": "SPIN Selling - Rackham"
+        },
+        {
+          "term": "Feature Dumping",
+          "definition": "Erreur consistant à lister les caractéristiques du produit (modules, lives, outils) sans lier aux bénéfices spécifiques au pain du prospect",
+          "source_book": "SPIN Selling - Rackham"
+        },
+        {
+          "term": "No-Oriented Question",
+          "definition": "Question formulée pour obtenir un 'non' rassurant (ex: 'Est-ce une mauvaise idée de...') donnant au prospect sentiment de contrôle",
+          "source_book": "Never Split The Difference - Chris Voss"
+        },
+        {
+          "term": "Risk Reversal",
+          "definition": "Inversion du risque où le vendeur prend la garantie complète (remboursement + pénalité) pour éliminer la friction d'achat",
+          "source_book": "100M Offers - Alex Hormozi"
+        }
+      ],
+      "next_actions": [
+        "Envoyer contrat par email dans les 2h avec mention 'Clause garantie 5000€ page 2' pour ancrage valeur",
+        "Créer reel Instagram 'Agence vs Formation' d'ici mercredi pour adorer objection 'pourquoi pas %'",
+        "Modifier script Basile chatbot pour filtre 'CA actuel > 0' avant booking"
+      ],
+      "next_action": "Envoyer contrat par email dans les 2h avec mention 'Clause garantie 5000€ page 2' pour ancrage valeur · Créer reel Instagram 'Agence vs Formation' d'ici mercredi pour adorer objection 'pourquoi pas %'",
+      "key_quotes": [
+        {
+          "speaker": "Djibril",
+          "t": "00:20:51",
+          "quote": "si tu n'atteins pas 5000€ en 90 jours, tu es remboursé intégralement et tu as même le droit de me demander un dédommagement",
+          "analysis": "Risk reversal explicite mais énoncé sans stack de valeur préalable ni question no-oriented"
+        },
+        {
+          "speaker": "Prospect",
+          "t": "00:23:12",
+          "quote": "So why don't you just negotiate a percentage? Because if you have a guarantee that you get a percentage you know a percentage of benefits, it's correct",
+          "analysis": "Objection prix masquée en proposition logique, manque de mirroring et accusation audit"
+        },
+        {
+          "speaker": "Djibril",
+          "t": "00:02:37",
+          "quote": "on est encore à l'étape de construction du business. On n'a pas vraiment de rente",
+          "analysis": "Pain point identifié mais pas amplifié avec implications financières ou émotionnelles"
+        },
+        {
+          "speaker": "Prospect",
+          "t": "00:43:32",
+          "quote": "on va se concerter, obligatoire, et ensuite on s'appelle demain",
+          "analysis": "Soft close pattern évité, manque de date/heure fixée immédiatement (anti-pattern no_next_step partiel)"
+        },
+        {
+          "speaker": "Djibril",
+          "t": "00:14:03",
+          "quote": "Il y a base théorique, voilà, 1% du truc. Une base théorique où 99,9% de ce qu'on donne, c'est 89,9% du chiffre",
+          "analysis": "Feature dumping sur le contenu pédagogique sans lien au pain spécifique du prospect"
+        }
+      ],
+      "verdict": "FLOP — Discovery trop long (45% du temps en S) et absence totale de chaînes Implication/Need-payoff font que le prospect ne ressent pas l'urgence d'acheter malgré une bonne garantie ; le levier #1 (Accusation Audit sur le prix) aurait évité la négociation défensive sur la commission.",
+      "type": "discovery"
+    },
+    {
+      "id": "fathom-152890133",
+      "owner": "djibril",
+      "recording_id": 152890133,
+      "fathom_share_url": "https://fathom.video/share/2t5_8xwxxVXvdDEsPsuZA_-p8s7hX7Z9",
+      "prospect": "Emery Gb",
+      "title": "emery ",
+      "date": "2026-06-07T16:02:49Z",
+      "duration_min": 59,
+      "outcome": "pending",
+      "score_global": 51,
+      "scores": {
+        "rapport_presence": 78,
+        "discovery_spin": 62,
+        "pain_amplification": 45,
+        "offer_clarity": 58,
+        "objection_handling": 50,
+        "closing_attempt": 15
+      },
+      "spin_breakdown": {
+        "situation_pct": 25,
+        "problem_pct": 35,
+        "implication_pct": 5,
+        "needpayoff_pct": 20,
+        "ratio_prospect_djibril_speaking": 0.42
+      },
+      "top_2_leviers_8020": [
+        {
+          "rank": 1,
+          "levier": "Ajoute 3 questions Implication (SPIN) après la révélation des revenus 400€/mois et du contexte familial toxique pour créer l'urgence émotionnelle et le coût du statu quo",
+          "impact_attendu_points": 22,
+          "fix_concret": "À min 07:15 après '400€ par mois', demande : 'Si dans 18 mois tu es toujours à 400€/mois pendant que tes parents continuent de se battre pour l'argent devant ton petit frère, comment est-ce que tu te sentiras toi-même ?' Puis : 'Quel âge aura ton frère à ce moment-là ?' Puis : 'Est-ce que tu te vois encore passer 6h par jour sur TikTok à ce moment-là ?'",
+          "timestamp_ref": "00:07:15"
+        },
+        {
+          "rank": 2,
+          "levier": "Injecte une question à 'non' et un next step daté en fin de call pour éviter le ghosting WhatsApp",
+          "impact_attendu_points": 18,
+          "fix_concret": "À min 58:00 avant la coupure, dis : 'Est-ce que c'est une mauvaise idée de bloquer ta place maintenant pour qu'on démarre avant ton départ à Ibiza et que tu reviennes avec déjà ton premier rendez-vous qualifié ?' Puis : 'On se voit demain à 20h pour la première session, je t'envoie le lien d'inscription d'ici 5 minutes.'",
+          "timestamp_ref": "00:58:00"
+        }
+      ],
+      "cross_channel_implications": {
+        "to_instagram_reels": "Tourner un reel 22s cette semaine : '16 ans, 400€/mois, parents qui se disputent pour l'argent : comment j'ai doublé mes revenus en 30 jours pour sortir mes parents de cette merde' — hook exact du pain Emery pour capter les jeunes barbiers de banlieue en situation familiale tendue",
+        "to_meta_ads": "Tester une creative 'Tes parents se disputent pour l'argent ? Génère 5000€/mois à 16 ans pour les aider' avec un VSL 45s qui adresse directement l'objection 'mes parents pensent que c'est une arnaque'",
+        "to_basile_dm": "Durcir le script Basile avec les questions : 'Quel âge as-tu exactement ?' + 'As-tu besoin de l'accord de tes parents pour investir ?' + 'Quel est ton revenu mensuel actuel ?' — pour qualifier le profil 'mineur autonome mais besoin d'approbation parentale' comme Emery",
+        "to_lp_vsl": "Refondre la section 'Témoignages' pour ajouter un bloc 'Comment convaincre tes parents quand ils ont peur des arnaques' avec une vidéo d'un parent de client (Mael) qui explique pourquoi il a accepté que son fils investisse",
+        "to_mariam_email": "Activer la séquence email 'Parent Approval' pour prospects <18 ans : Email 1 (J-1) '3 arguments pour convaincre tes parents que ce n'est pas une arnaque' + Email 2 (J+1) 'Comment j'ai expliqué mon investissement à mes parents (témoignage client)'",
+        "to_cold_calls_clients": "Coaching Mael/Yacine : focus spécifique sur la gestion des objections parentales pour prospects mineurs — utiliser l'Accusation Audit ('Tu vas penser que c'est une arnaque comme ta mère a dit...') et exiger la présence d'un parent sur le closing call si le prospect a <18 ans"
+      },
+      "moments_positifs": [
+        {
+          "t_min": 0,
+          "label": "Smalltalk authentique sur la coupe Edgar",
+          "framework": "carnegie_sincere_interest"
+        },
+        {
+          "t_min": 8,
+          "label": "Deep dive sur la séparation des parents et la maturité",
+          "framework": "voss_labeling_emotional"
+        },
+        {
+          "t_min": 21,
+          "label": "Découverte du problème temps d'écran (6-7h/jour)",
+          "framework": "SPIN_problem"
+        },
+        {
+          "t_min": 29,
+          "label": "Question Need-payoff sur la valeur de l'écosystème",
+          "framework": "SPIN_needpayoff"
+        },
+        {
+          "t_min": 43,
+          "label": "Validation de la compréhension du SMMA (acheteur/vendeur/lien)",
+          "framework": "thats_right_validation"
+        }
+      ],
+      "moments_negatifs": [
+        {
+          "t_min": 5,
+          "label": "Monologue 60s+ sur la structure de l'appel sans interaction",
+          "anti_pattern": "monologue_djibril"
+        },
+        {
+          "t_min": 48,
+          "label": "Feature dumping sur la plateforme School (modules, lives, etc.)",
+          "anti_pattern": "feature_dumping"
+        },
+        {
+          "t_min": 59,
+          "label": "Fin sur 'on parle sur WhatsApp' sans date/heure concrète",
+          "anti_pattern": "soft_close_pattern"
+        },
+        {
+          "t_min": 59,
+          "label": "Absence de next step daté avant la fin de l'appel",
+          "anti_pattern": "no_next_step"
+        }
+      ],
+      "patterns_detected": [
+        "spin_chain_full"
+      ],
+      "anti_patterns_detected": [
+        "feature_dumping",
+        "no_case_study",
+        "monologue_djibril",
+        "soft_close_pattern",
+        "no_next_step"
+      ],
+      "frameworks_used_well": [
+        {
+          "concept": "Questions Calibrées (What/How)",
+          "book_source": "Never Split The Difference - Chris Voss",
+          "evidence_timestamp": "00:21:43",
+          "evidence_quote": "Qu'est-ce qui te limite aujourd'hui, quelles sont les problématiques qui t'empêchent d'aller plus loin ?"
+        },
+        {
+          "concept": "Intérêt Sincère / Point de Vue Client",
+          "book_source": "Comment se faire des amis - Dale Carnegie",
+          "evidence_timestamp": "00:08:26",
+          "evidence_quote": "C'est qui qui t'a branché à vouloir entreprendre... il y a quelque chose derrière"
+        },
+        {
+          "concept": "Need-Payoff Questions",
+          "book_source": "SPIN Selling - Rackham",
+          "evidence_timestamp": "00:29:14",
+          "evidence_quote": "Qu'est-ce que ça t'apporterait d'avoir un écosystème avec des mentors qui t'accompagnent ?"
+        }
+      ],
+      "frameworks_missed": [
+        {
+          "concept": "Accusation Audit",
+          "book_source": "Never Split The Difference - Chris Voss",
+          "definition_quick": "Dévoiler à l'avance toutes les accusations négatives que le prospect pourrait avoir pour désamorcer l'objection avant qu'elle n'arrive",
+          "where_to_apply": "00:46:52",
+          "fix_phrase": "Tu vas sans doute penser que c'est encore un gourou qui veut t'arnaquer comme ton pote, que tes parents vont flipper vu qu'ils ont déjà perdu 250k dans une arnaque, et que mettre de l'argent à 16 ans c'est de la folie..."
+        },
+        {
+          "concept": "Implication Questions (SPIN)",
+          "book_source": "SPIN Selling - Rackham",
+          "definition_quick": "Questions qui amplifient les conséquences du problème pour créer l'urgence (coût du statu quo)",
+          "where_to_apply": "00:07:15",
+          "fix_phrase": "Si tu restes à 400€/mois pendant encore 2 ans pendant que tes parents continuent de se disputer pour l'argent, quel impact ça aura sur ta relation avec ton petit frère ?"
+        },
+        {
+          "concept": "No-Oriented Questions",
+          "book_source": "Never Split The Difference - Chris Voss",
+          "definition_quick": "Poser des questions où la réponse 'non' rassure le prospect et lui donne le contrôle, ouvrant le dialogue vers le closing",
+          "where_to_apply": "00:58:00",
+          "fix_phrase": "Est-ce que c'est une mauvaise idée de sécuriser ta place maintenant pour qu'on puisse démarrer avant ton départ à Ibiza ?"
+        },
+        {
+          "concept": "Value Stack avant Prix",
+          "book_source": "100M Offers - Alex Hormozi",
+          "definition_quick": "Énumérer la valeur totale de l'offre (modules, coaching, accès 24/7, communauté) avec un prix anchor élevé avant d'annoncer le prix réel",
+          "where_to_apply": "00:57:30",
+          "fix_phrase": "Si on additionne les modules à 2000€, le coaching quotidien à 3000€, l'accès WhatsApp illimité à 1000€, on est à 6000€, mais aujourd'hui ce n'est pas le prix que tu vas payer..."
+        }
+      ],
+      "glossary_terms": [
+        {
+          "term": "Accusation Audit",
+          "definition": "Technique de Chris Voss consistant à lister proactivement tous les négatifs/accusations que le prospect pourrait formuler pour désamorcer les objections avant qu'elles ne surgissent",
+          "source_book": "Never Split The Difference"
+        },
+        {
+          "term": "Implication Questions",
+          "definition": "Phase I du SPIN Selling : questions qui font réfléchir le prospect sur les conséquences à long terme de ses problèmes actuels pour créer l'urgence d'agir",
+          "source_book": "SPIN Selling - Rackham"
+        },
+        {
+          "term": "No-Oriented Questions",
+          "definition": "Questions formulées pour obtenir un 'non' rassurant (ex: 'Est-ce une mauvaise idée de...') qui donne l'illusion du contrôle au prospect et facilite le closing",
+          "source_book": "Never Split The Difference"
+        },
+        {
+          "term": "Value Stack",
+          "definition": "Méthode Hormozi consistant à additionner la valeur monétaire de chaque composante de l'offre avant d'annoncer le prix, créant un ancrage élevé qui rend le prix final acceptable",
+          "source_book": "100M Offers"
+        },
+        {
+          "term": "Feature Dumping",
+          "definition": "Erreur consistant à lister les caractéristiques techniques du produit sans relier aux bénéfices spécifiques au pain du prospect",
+          "source_book": "SPIN Selling - Rackham"
+        },
+        {
+          "term": "Soft Close Pattern",
+          "definition": "Fermeture faible sans engagement concret (ex: 'je te recontacte') laissant le prospect dans le flou et favorisant le ghosting",
+          "source_book": "The Ultimate Sales Machine - Chet Holmes"
+        }
+      ],
+      "next_actions": [
+        "Relancer Emery sur WhatsApp dans les 2h avec un message vocal de 45s utilisant l'Accusation Audit sur la peur de l'arnaque parentale",
+        "Programmer un call de 15 min avec la mère d'Emery pour désamorcer l'objection 'arnaque' en utilisant le témoignage d'un autre parent",
+        "Ajouter dans le CRM un tag 'mineur_autonome' pour déclencher la séquence email parentale de Mariam"
+      ],
+      "next_action": "Relancer Emery sur WhatsApp dans les 2h avec un message vocal de 45s utilisant l'Accusation Audit sur la peur de l'arnaque parentale · Programmer un call de 15 min avec la mère d'Emery pour désamorcer l'objection 'arnaque' en utilisant le témoignage d'un autre parent",
+      "key_quotes": [
+        {
+          "speaker": "Djibril",
+          "t": "00:05:13",
+          "quote": "Le but de cet appel, c'est de découvrir un maximum sur toi... savoir si toi tu as un profil intéressant et si je peux t'accompagner",
+          "analysis": "Monologue de cadrage trop long (>30s) sans interaction, casse le momentum initial"
+        },
+        {
+          "speaker": "Emery",
+          "t": "00:08:41",
+          "quote": "Le fait de dépendre de personne, financièrement... C'est surtout à base des parents. Quand je vois mes parents qui sont séparés... des partages d'argent qui doivent revenir",
+          "analysis": "Pain émotionnel profond révélé (divorce + argent) — levier d'amplification manqué par la suite"
+        },
+        {
+          "speaker": "Emery",
+          "t": "00:22:11",
+          "quote": "6-7 heures de temps d'écran, même en cours quoi",
+          "analysis": "Problem clé identifié (distraction) mais pas amplifié en implication sur ses revenus futurs"
+        },
+        {
+          "speaker": "Emery",
+          "t": "00:46:52",
+          "quote": "C'est sûr que moi ce que je sais qui va être problématique c'est d'expliquer à ma mère... elle a dit que je connais quelqu'un qui s'est fait arnaquer, on lui a volé 250 000 euros",
+          "analysis": "Objection majeure (peur parentale de l'arnaque) — nécessite un Accusation Audit immédiat"
+        },
+        {
+          "speaker": "Djibril",
+          "t": "00:59:38",
+          "quote": "on va parler sur WhatsApp parce que ça va couper",
+          "analysis": "Soft close pattern fatal — aucune date/heure concrète, pipeline en danger de ghosting"
+        }
+      ],
+      "verdict": "MOYEN — Call de qualification profonde et bonne connexion émotionnelle (78/100) mais saboté par l'absence totale d'amplification du pain (Implication SPIN) et un closing inexistant (15/100) = prospect chaud laissé refroidir sur WhatsApp",
+      "type": "discovery"
+    },
     {
       "id": "fathom-152848749",
       "owner": "djibril",
@@ -5901,17 +6341,17 @@
   ],
   "patterns_success": [
     {
+      "pattern": "Risk reversal explicit",
+      "win_rate": 0.12,
+      "samples": 16
+    },
+    {
       "pattern": "Voss mirror used",
       "win_rate": 0.07,
       "samples": 15
     },
     {
       "pattern": "Thats right validation",
-      "win_rate": 0.13,
-      "samples": 15
-    },
-    {
-      "pattern": "Risk reversal explicit",
       "win_rate": 0.13,
       "samples": 15
     },
@@ -5932,8 +6372,8 @@
     },
     {
       "pattern": "Spin chain full",
-      "win_rate": 0.25,
-      "samples": 4
+      "win_rate": 0.2,
+      "samples": 5
     },
     {
       "pattern": "No oriented question",
@@ -5945,48 +6385,60 @@
     {
       "pattern": "Monologue djibril",
       "loss_rate": 0.96,
-      "samples": 23
+      "samples": 25
     },
     {
       "pattern": "Soft close pattern",
       "loss_rate": 1.0,
-      "samples": 18
+      "samples": 20
     },
     {
       "pattern": "No case study",
-      "loss_rate": 0.88,
-      "samples": 17
+      "loss_rate": 0.89,
+      "samples": 19
     },
     {
       "pattern": "Discovery too long",
       "loss_rate": 0.94,
-      "samples": 16
+      "samples": 17
     },
     {
       "pattern": "Pricing no anchor",
+      "loss_rate": 0.93,
+      "samples": 15
+    },
+    {
+      "pattern": "Feature dumping",
       "loss_rate": 0.93,
       "samples": 14
     },
     {
       "pattern": "No next step",
       "loss_rate": 1.0,
-      "samples": 12
-    },
-    {
-      "pattern": "Feature dumping",
-      "loss_rate": 0.92,
-      "samples": 12
+      "samples": 13
     },
     {
       "pattern": "Defensive objection",
       "loss_rate": 1.0,
-      "samples": 4
+      "samples": 5
     }
   ],
   "client_cold_calls": [],
   "queue_to_analyze": [],
   "cross_channel_insights": {
     "to_instagram_reels": [
+      {
+        "from_call": "Mohamed Id belgdif",
+        "score": 48,
+        "date": "2026-06-09T19:34:38Z",
+        "insight": "Tourner reel 22s 'Pourquoi payer 3000€ pour apprendre l'acquisition quand on peut payer une agence ?' Réponse en hook : 'Parce que sans levier, tu crames 5000€ en 3 mois avec une agence sans comprendre ce qui marche. Voici le test des 90 jours...'"
+      },
+      {
+        "from_call": "Emery Gb",
+        "score": 51,
+        "date": "2026-06-07T16:02:49Z",
+        "insight": "Tourner un reel 22s cette semaine : '16 ans, 400€/mois, parents qui se disputent pour l'argent : comment j'ai doublé mes revenus en 30 jours pour sortir mes parents de cette merde' — hook exact du pain Emery pour capter les jeunes barbiers de banlieue en situation familiale tendue"
+      },
       {
         "from_call": "Chahine Sainte",
         "score": 54,
@@ -6140,6 +6592,18 @@
     ],
     "to_meta_ads": [
       {
+        "from_call": "Mohamed Id belgdif",
+        "score": 48,
+        "date": "2026-06-09T19:34:38Z",
+        "insight": "Refondre creative 'Location auto vs Acquisition' avec hook 'Tu veux louer des voitures ou acquérir des clients ?' pour qualifier les prospects qui ont déjà un business vs ceux en phase embryon (éviter les calls non qualifiés)"
+      },
+      {
+        "from_call": "Emery Gb",
+        "score": 51,
+        "date": "2026-06-07T16:02:49Z",
+        "insight": "Tester une creative 'Tes parents se disputent pour l'argent ? Génère 5000€/mois à 16 ans pour les aider' avec un VSL 45s qui adresse directement l'objection 'mes parents pensent que c'est une arnaque'"
+      },
+      {
         "from_call": "Chahine Sainte",
         "score": 54,
         "date": "2026-06-06T13:06:05Z",
@@ -6291,6 +6755,18 @@
       }
     ],
     "to_basile_dm": [
+      {
+        "from_call": "Mohamed Id belgdif",
+        "score": 48,
+        "date": "2026-06-09T19:34:38Z",
+        "insight": "Durcir script Basile avec question obligatoire : 'As-tu déjà un business qui génère du CA ou es-tu en phase de lancement total ?' Si réponse 'lancement', router vers nurture sequence 30j avant call"
+      },
+      {
+        "from_call": "Emery Gb",
+        "score": 51,
+        "date": "2026-06-07T16:02:49Z",
+        "insight": "Durcir le script Basile avec les questions : 'Quel âge as-tu exactement ?' + 'As-tu besoin de l'accord de tes parents pour investir ?' + 'Quel est ton revenu mensuel actuel ?' — pour qualifier le profil 'mineur autonome mais besoin d'approbation parentale' comme Emery"
+      },
       {
         "from_call": "Chahine Sainte",
         "score": 54,
@@ -6444,6 +6920,18 @@
     ],
     "to_lp_vsl": [
       {
+        "from_call": "Mohamed Id belgdif",
+        "score": 48,
+        "date": "2026-06-09T19:34:38Z",
+        "insight": "Ajouter section 'Garantie 5000€ en 90j ou remboursé' en hero section avec compteur visuel, car prospect confus sur le ROI à min 22:00"
+      },
+      {
+        "from_call": "Emery Gb",
+        "score": 51,
+        "date": "2026-06-07T16:02:49Z",
+        "insight": "Refondre la section 'Témoignages' pour ajouter un bloc 'Comment convaincre tes parents quand ils ont peur des arnaques' avec une vidéo d'un parent de client (Mael) qui explique pourquoi il a accepté que son fils investisse"
+      },
+      {
         "from_call": "Chahine Sainte",
         "score": 54,
         "date": "2026-06-06T13:06:05Z",
@@ -6595,6 +7083,18 @@
       }
     ],
     "to_mariam_email": [
+      {
+        "from_call": "Mohamed Id belgdif",
+        "score": 48,
+        "date": "2026-06-09T19:34:38Z",
+        "insight": "Activer email J-1 'Préparation appel' avec PJ contrat et rappel des 3 clauses de la garantie pour réduire no-show (prospect a dit 'on va se concerter' = risque ghosting élevé)"
+      },
+      {
+        "from_call": "Emery Gb",
+        "score": 51,
+        "date": "2026-06-07T16:02:49Z",
+        "insight": "Activer la séquence email 'Parent Approval' pour prospects <18 ans : Email 1 (J-1) '3 arguments pour convaincre tes parents que ce n'est pas une arnaque' + Email 2 (J+1) 'Comment j'ai expliqué mon investissement à mes parents (témoignage client)'"
+      },
       {
         "from_call": "Chahine Sainte",
         "score": 54,
@@ -6748,6 +7248,18 @@
     ],
     "to_cold_calls_clients": [
       {
+        "from_call": "Mohamed Id belgdif",
+        "score": 48,
+        "date": "2026-06-09T19:34:38Z",
+        "insight": "Coaching Mael/Yacine : Si prospect dit 'pourquoi pas payer à la commission ?', utiliser Accusation Audit ('Vous pensez sûrement que je veux vous avoir') puis question No-oriented ('Est-ce que c'est une mauvaise idée de maîtriser le processus toi-même ?')"
+      },
+      {
+        "from_call": "Emery Gb",
+        "score": 51,
+        "date": "2026-06-07T16:02:49Z",
+        "insight": "Coaching Mael/Yacine : focus spécifique sur la gestion des objections parentales pour prospects mineurs — utiliser l'Accusation Audit ('Tu vas penser que c'est une arnaque comme ta mère a dit...') et exiger la présence d'un parent sur le closing call si le prospect a <18 ans"
+      },
+      {
         "from_call": "Chahine Sainte",
         "score": 54,
         "date": "2026-06-06T13:06:05Z",
@@ -6900,6 +7412,38 @@
     ]
   },
   "top_leviers_8020_aggregated": [
+    {
+      "rank": 1,
+      "levier": "Ajouter Accusation Audit + Question No-Oriented avant énoncé prix",
+      "impact": 22,
+      "from_call": "Mohamed Id belgdif",
+      "timestamp_ref": "00:21:30",
+      "score_call": 48
+    },
+    {
+      "rank": 2,
+      "levier": "Couper Phase S à 3min et injecter 3 chaînes Implication consécutives",
+      "impact": 18,
+      "from_call": "Mohamed Id belgdif",
+      "timestamp_ref": "00:02:50",
+      "score_call": 48
+    },
+    {
+      "rank": 1,
+      "levier": "Ajoute 3 questions Implication (SPIN) après la révélation des revenus 400€/mois et du contexte familial toxique pour créer l'urgence émotionnelle et le coût du statu quo",
+      "impact": 22,
+      "from_call": "Emery Gb",
+      "timestamp_ref": "00:07:15",
+      "score_call": 51
+    },
+    {
+      "rank": 2,
+      "levier": "Injecte une question à 'non' et un next step daté en fin de call pour éviter le ghosting WhatsApp",
+      "impact": 18,
+      "from_call": "Emery Gb",
+      "timestamp_ref": "00:58:00",
+      "score_call": 51
+    },
     {
       "rank": 1,
       "levier": "Injecter un cas client concret nommé (Mael 14/14 ou autre) avec chiffres précis avant le monologue offre",
