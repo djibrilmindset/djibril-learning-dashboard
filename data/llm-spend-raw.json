@@ -1,14 +1,14 @@
 {
   "_meta": {
-    "generated_at": "2026-06-09T22:31:29.977291+00:00",
+    "generated_at": "2026-06-10T06:35:16.122741Z",
     "window_hours": 24,
-    "total_calls": 10948,
-    "total_cost_usd": 49.444076,
+    "total_calls": 10967,
+    "total_cost_usd": 49.463057,
     "models_count": 48,
     "providers_count": 14,
     "errors_count": 0,
-    "healthy_count": 9262,
-    "error_count": 1686
+    "healthy_count": 10967,
+    "error_count": 0
   },
   "entries": [
     {
@@ -120435,6 +120435,215 @@
       "tier": 2,
       "tokens_in": 1403,
       "tokens_out": 946,
+      "cost_usd": 0.0,
+      "task_type": "chinese",
+      "result_summary": ""
+    },
+    {
+      "ts": "2026-06-09T23:06:45Z",
+      "agent": "HERMES_CALL_GEMINI",
+      "model": "gemini-direct/gemini-3.5-flash",
+      "tier": 0,
+      "tokens_in": 517,
+      "tokens_out": 12,
+      "cost_usd": 0.000553,
+      "task_type": "chinese",
+      "result_summary": ""
+    },
+    {
+      "ts": "2026-06-09T23:06:46Z",
+      "agent": "HERMES_CALL_GEMINI",
+      "model": "gemini-direct/gemini-pro-latest",
+      "tier": 0,
+      "tokens_in": 517,
+      "tokens_out": 8,
+      "cost_usd": 0.000541,
+      "task_type": "chinese",
+      "result_summary": ""
+    },
+    {
+      "ts": "2026-06-09T23:10:11Z",
+      "agent": "HERMES_CALL_MINIMAX",
+      "model": "minimax-direct/minimax-m2.7",
+      "tier": 2,
+      "tokens_in": 498,
+      "tokens_out": 91,
+      "cost_usd": 0.000771,
+      "task_type": "chinese",
+      "result_summary": ""
+    },
+    {
+      "ts": "2026-06-09T23:10:11Z",
+      "agent": "HERMES_CALL_XIAOMI",
+      "model": "xiaomi-direct/mimo-v2.5-pro",
+      "tier": 2,
+      "tokens_in": 528,
+      "tokens_out": 90,
+      "cost_usd": 0.000798,
+      "task_type": "chinese",
+      "result_summary": ""
+    },
+    {
+      "ts": "2026-06-09T23:10:11Z",
+      "agent": "HERMES_CALL_ZHIPU",
+      "model": "zhipu-direct/glm-5.1",
+      "tier": 2,
+      "tokens_in": 512,
+      "tokens_out": 98,
+      "cost_usd": 0.000806,
+      "task_type": "chinese",
+      "result_summary": ""
+    },
+    {
+      "ts": "2026-06-09T23:10:12Z",
+      "agent": "HERMES_CALL_COMET",
+      "model": "comet/hunyuan-t1-latest",
+      "tier": 2,
+      "tokens_in": 521,
+      "tokens_out": 300,
+      "cost_usd": 0.001421,
+      "task_type": "chinese",
+      "result_summary": ""
+    },
+    {
+      "ts": "2026-06-09T23:10:16Z",
+      "agent": "HERMES_CALL_AIHUBMIX",
+      "model": "aihubmix/ernie-5.0-thinking-preview",
+      "tier": 2,
+      "tokens_in": 521,
+      "tokens_out": 293,
+      "cost_usd": 0.0,
+      "task_type": "chinese",
+      "result_summary": ""
+    },
+    {
+      "ts": "2026-06-09T23:10:20Z",
+      "agent": "HERMES_CALL_MOONSHOT",
+      "model": "moonshot-direct/kimi-k2.6",
+      "tier": 2,
+      "tokens_in": 508,
+      "tokens_out": 300,
+      "cost_usd": 0.00177092,
+      "task_type": "chinese",
+      "result_summary": ""
+    },
+    {
+      "ts": "2026-06-09T23:10:22Z",
+      "agent": "HERMES_CALL_COMET",
+      "model": "comet/doubao-seed-2-0-pro-260215",
+      "tier": 2,
+      "tokens_in": 555,
+      "tokens_out": 490,
+      "cost_usd": 0.002025,
+      "task_type": "chinese",
+      "result_summary": ""
+    },
+    {
+      "ts": "2026-06-09T23:10:28Z",
+      "agent": "HERMES_CALL_COMET",
+      "model": "comet/qwen3.7-max",
+      "tier": 2,
+      "tokens_in": 529,
+      "tokens_out": 980,
+      "cost_usd": 0.003469,
+      "task_type": "chinese",
+      "result_summary": ""
+    },
+    {
+      "ts": "2026-06-09T23:10:31Z",
+      "agent": "HERMES_CALL_MINIMAX",
+      "model": "minimax-direct/MiniMax-Text-01",
+      "tier": 2,
+      "tokens_in": 510,
+      "tokens_out": 4,
+      "cost_usd": 0.000522,
+      "task_type": "chinese",
+      "result_summary": ""
+    },
+    {
+      "ts": "2026-06-09T23:10:31Z",
+      "agent": "HERMES_CALL_XIAOMI",
+      "model": "xiaomi-direct/mimo-v2.5-pro",
+      "tier": 2,
+      "tokens_in": 528,
+      "tokens_out": 63,
+      "cost_usd": 0.000717,
+      "task_type": "chinese",
+      "result_summary": ""
+    },
+    {
+      "ts": "2026-06-09T23:10:31Z",
+      "agent": "HERMES_CALL_MINIMAX",
+      "model": "minimax-direct/minimax-m3",
+      "tier": 2,
+      "tokens_in": 654,
+      "tokens_out": 14,
+      "cost_usd": 0.000696,
+      "task_type": "chinese",
+      "result_summary": ""
+    },
+    {
+      "ts": "2026-06-09T23:10:31Z",
+      "agent": "HERMES_CALL_DASHSCOPE",
+      "model": "dashscope/qwen3-max-preview",
+      "tier": 2,
+      "tokens_in": 530,
+      "tokens_out": 10,
+      "cost_usd": 0.00056,
+      "task_type": "chinese",
+      "result_summary": ""
+    },
+    {
+      "ts": "2026-06-09T23:10:33Z",
+      "agent": "HERMES_CALL_MINIMAX",
+      "model": "minimax-direct/minimax-m3",
+      "tier": 2,
+      "tokens_in": 654,
+      "tokens_out": 39,
+      "cost_usd": 0.000771,
+      "task_type": "chinese",
+      "result_summary": ""
+    },
+    {
+      "ts": "2026-06-09T23:10:33Z",
+      "agent": "HERMES_CALL_MINIMAX",
+      "model": "minimax-direct/minimax-m3",
+      "tier": 2,
+      "tokens_in": 654,
+      "tokens_out": 24,
+      "cost_usd": 0.000726,
+      "task_type": "chinese",
+      "result_summary": ""
+    },
+    {
+      "ts": "2026-06-09T23:10:34Z",
+      "agent": "HERMES_CALL_ZHIPU",
+      "model": "zhipu-direct/glm-5.1",
+      "tier": 2,
+      "tokens_in": 512,
+      "tokens_out": 137,
+      "cost_usd": 0.000923,
+      "task_type": "chinese",
+      "result_summary": ""
+    },
+    {
+      "ts": "2026-06-09T23:10:43Z",
+      "agent": "HERMES_CALL_COMET",
+      "model": "comet/doubao-seed-2-0-pro-260215",
+      "tier": 2,
+      "tokens_in": 555,
+      "tokens_out": 452,
+      "cost_usd": 0.001911,
+      "task_type": "chinese",
+      "result_summary": ""
+    },
+    {
+      "ts": "2026-06-09T23:10:50Z",
+      "agent": "HERMES_CALL_AIHUBMIX",
+      "model": "aihubmix/ernie-5.1",
+      "tier": 2,
+      "tokens_in": 1466,
+      "tokens_out": 911,
       "cost_usd": 0.0,
       "task_type": "chinese",
       "result_summary": ""
