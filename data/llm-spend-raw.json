@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "generated_at": "2026-06-16T10:20:02.879429Z",
+    "generated_at": "2026-06-16T12:11:06.052512Z",
     "window_hours": 24,
-    "total_calls": 5,
+    "total_calls": 6,
     "total_cost_usd": 0.0,
     "models_count": 1,
     "providers_count": 1,
@@ -62,6 +62,17 @@
       "tier": 0,
       "tokens_in": 15,
       "tokens_out": 26,
+      "cost_usd": 0,
+      "task_type": "opus_max",
+      "result_summary": ""
+    },
+    {
+      "ts": "2026-06-16T10:20:17Z",
+      "agent": "CLAUDE_MAX",
+      "model": "claude-opus-4-8",
+      "tier": 0,
+      "tokens_in": 15,
+      "tokens_out": 9,
       "cost_usd": 0,
       "task_type": "opus_max",
       "result_summary": ""
