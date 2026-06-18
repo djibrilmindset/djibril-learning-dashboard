@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "generated_at": "2026-06-18T10:31:48.660104Z",
+    "generated_at": "2026-06-18T14:00:17.038168Z",
     "window_hours": 24,
-    "total_calls": 4,
+    "total_calls": 5,
     "total_cost_usd": 0.0,
     "models_count": 2,
     "providers_count": 2,
@@ -53,6 +53,17 @@
       "tokens_out": 9,
       "cost_usd": 0,
       "task_type": "opus_max",
+      "result_summary": ""
+    },
+    {
+      "ts": "2026-06-18T13:26:55Z",
+      "agent": "HERMES_CALL_GEMINI",
+      "model": "gemini-direct/gemini-3.5-flash",
+      "tier": 0,
+      "tokens_in": 0,
+      "tokens_out": 0,
+      "cost_usd": 0,
+      "task_type": "chinese",
       "result_summary": ""
     }
   ]
