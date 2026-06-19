@@ -1,13 +1,13 @@
 {
   "_meta": {
-    "generated_at": "2026-06-19T08:00:27.967688Z",
+    "generated_at": "2026-06-19T10:06:37.923337Z",
     "window_hours": 24,
-    "total_calls": 1,
+    "total_calls": 2,
     "total_cost_usd": 0.0,
-    "models_count": 1,
-    "providers_count": 1,
+    "models_count": 2,
+    "providers_count": 2,
     "errors_count": 0,
-    "healthy_count": 1,
+    "healthy_count": 2,
     "error_count": 0
   },
   "entries": [
@@ -20,6 +20,17 @@
       "tokens_out": 0,
       "cost_usd": 0,
       "task_type": "chinese",
+      "result_summary": ""
+    },
+    {
+      "ts": "2026-06-19T10:04:24Z",
+      "agent": "CLAUDE_MAX",
+      "model": "claude-opus-4-8",
+      "tier": 0,
+      "tokens_in": 15,
+      "tokens_out": 10,
+      "cost_usd": 0,
+      "task_type": "opus_max",
       "result_summary": ""
     }
   ]
