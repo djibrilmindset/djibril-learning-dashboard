@@ -1,13 +1,13 @@
 {
   "_meta": {
-    "generated_at": "2026-06-21T06:35:39.781334Z",
+    "generated_at": "2026-06-21T08:00:57.349036Z",
     "window_hours": 24,
-    "total_calls": 3,
+    "total_calls": 4,
     "total_cost_usd": 0.0,
-    "models_count": 2,
+    "models_count": 3,
     "providers_count": 2,
     "errors_count": 0,
-    "healthy_count": 2,
+    "healthy_count": 3,
     "error_count": 0
   },
   "by_model": [
@@ -23,6 +23,16 @@
     },
     {
       "model": "gemini-direct/gemini-3.5-flash",
+      "provider": "gemini-direct",
+      "calls": 1,
+      "successes": 1,
+      "errors": 0,
+      "tokens_in": 0,
+      "tokens_out": 0,
+      "cost_usd": 0.0
+    },
+    {
+      "model": "gemini-direct/gemini-pro-latest",
       "provider": "gemini-direct",
       "calls": 1,
       "successes": 1,
