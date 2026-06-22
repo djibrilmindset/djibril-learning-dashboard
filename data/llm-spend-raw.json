@@ -1,13 +1,13 @@
 {
   "_meta": {
-    "generated_at": "2026-06-22T12:09:09.227834Z",
+    "generated_at": "2026-06-22T16:00:47.442762Z",
     "window_hours": 24,
-    "total_calls": 3,
+    "total_calls": 5,
     "total_cost_usd": 0.0,
-    "models_count": 2,
+    "models_count": 3,
     "providers_count": 2,
     "errors_count": 0,
-    "healthy_count": 2,
+    "healthy_count": 3,
     "error_count": 0
   },
   "entries": [
@@ -42,6 +42,28 @@
       "tokens_out": 9,
       "cost_usd": 0,
       "task_type": "opus_max",
+      "result_summary": ""
+    },
+    {
+      "ts": "2026-06-22T14:24:54Z",
+      "agent": "CLAUDE_MAX",
+      "model": "claude-opus-4-8",
+      "tier": 0,
+      "tokens_in": 15,
+      "tokens_out": 9,
+      "cost_usd": 0,
+      "task_type": "opus_max",
+      "result_summary": ""
+    },
+    {
+      "ts": "2026-06-22T14:25:48Z",
+      "agent": "HERMES_CALL_GEMINI",
+      "model": "gemini-direct/gemini-pro-latest",
+      "tier": 0,
+      "tokens_in": 0,
+      "tokens_out": 0,
+      "cost_usd": 0,
+      "task_type": "chinese",
       "result_summary": ""
     }
   ]
