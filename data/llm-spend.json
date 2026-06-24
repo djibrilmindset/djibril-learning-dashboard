@@ -1,34 +1,24 @@
 {
   "_meta": {
-    "generated_at": "2026-06-23T22:00:46.837203Z",
+    "generated_at": "2026-06-24T08:00:50.624051Z",
     "window_hours": 24,
-    "total_calls": 5,
+    "total_calls": 3,
     "total_cost_usd": 0.0,
-    "models_count": 3,
-    "providers_count": 3,
+    "models_count": 2,
+    "providers_count": 2,
     "errors_count": 0,
-    "healthy_count": 3,
+    "healthy_count": 2,
     "error_count": 0
   },
   "by_model": [
     {
       "model": "claude-opus-4-8",
       "provider": "direct",
-      "calls": 3,
-      "successes": 3,
+      "calls": 2,
+      "successes": 2,
       "errors": 0,
-      "tokens_in": 7268,
-      "tokens_out": 960,
-      "cost_usd": 0.0
-    },
-    {
-      "model": "gemini-direct/gemini-3.5-flash",
-      "provider": "gemini-direct",
-      "calls": 1,
-      "successes": 1,
-      "errors": 0,
-      "tokens_in": 0,
-      "tokens_out": 0,
+      "tokens_in": 7253,
+      "tokens_out": 847,
       "cost_usd": 0.0
     },
     {

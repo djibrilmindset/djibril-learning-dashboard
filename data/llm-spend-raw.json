@@ -1,38 +1,16 @@
 {
   "_meta": {
-    "generated_at": "2026-06-23T22:00:46.837203Z",
+    "generated_at": "2026-06-24T08:00:50.624051Z",
     "window_hours": 24,
-    "total_calls": 5,
+    "total_calls": 3,
     "total_cost_usd": 0.0,
-    "models_count": 3,
-    "providers_count": 3,
+    "models_count": 2,
+    "providers_count": 2,
     "errors_count": 0,
-    "healthy_count": 3,
+    "healthy_count": 2,
     "error_count": 0
   },
   "entries": [
-    {
-      "ts": "2026-06-22T22:01:10Z",
-      "agent": "CLAUDE_MAX",
-      "model": "claude-opus-4-8",
-      "tier": 0,
-      "tokens_in": 15,
-      "tokens_out": 113,
-      "cost_usd": 0,
-      "task_type": "opus_max",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-06-22T23:13:00Z",
-      "agent": "HERMES_CALL_GEMINI",
-      "model": "gemini-direct/gemini-3.5-flash",
-      "tier": 0,
-      "tokens_in": 0,
-      "tokens_out": 0,
-      "cost_usd": 0,
-      "task_type": "chinese",
-      "result_summary": ""
-    },
     {
       "ts": "2026-06-23T08:03:36Z",
       "agent": "CLAUDE_MAX",
