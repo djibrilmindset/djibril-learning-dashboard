@@ -1,51 +1,21 @@
 {
   "_meta": {
-    "generated_at": "2026-06-26T10:00:43.873864Z",
+    "generated_at": "2026-06-26T12:00:04.592372Z",
     "window_hours": 24,
-    "total_calls": 18,
+    "total_calls": 2,
     "total_cost_usd": 0.0,
-    "models_count": 4,
-    "providers_count": 3,
+    "models_count": 1,
+    "providers_count": 1,
     "errors_count": 0,
-    "healthy_count": 4,
+    "healthy_count": 1,
     "error_count": 0
   },
   "by_model": [
     {
-      "model": "claude-opus-4-8",
-      "provider": "direct",
-      "calls": 11,
-      "successes": 11,
-      "errors": 0,
-      "tokens_in": 7388,
-      "tokens_out": 1033,
-      "cost_usd": 0.0
-    },
-    {
-      "model": "gemini-direct/gemini-3.5-flash",
-      "provider": "gemini-direct",
-      "calls": 4,
-      "successes": 4,
-      "errors": 0,
-      "tokens_in": 0,
-      "tokens_out": 0,
-      "cost_usd": 0.0
-    },
-    {
-      "model": "gemini-direct/gemini-pro-latest",
+      "model": "gemini-direct/gemini-flash-latest",
       "provider": "gemini-direct",
       "calls": 2,
       "successes": 2,
-      "errors": 0,
-      "tokens_in": 0,
-      "tokens_out": 0,
-      "cost_usd": 0.0
-    },
-    {
-      "model": "xiaomi-direct/mimo-v2.5-pro",
-      "provider": "xiaomi-direct",
-      "calls": 1,
-      "successes": 1,
       "errors": 0,
       "tokens_in": 0,
       "tokens_out": 0,
