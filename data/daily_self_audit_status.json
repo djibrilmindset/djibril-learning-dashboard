@@ -1,0 +1,62 @@
+{
+  "ts": "2026-06-27T18:42:33Z",
+  "overall": "warn",
+  "auto_apply": false,
+  "counts": {
+    "ok": 6,
+    "warn": 1,
+    "fail": 0
+  },
+  "checks": [
+    {
+      "name": "rois_princes",
+      "status": "warn",
+      "bucket": "infra",
+      "detail": "RÉSUMÉ : 11 ALIVE | 1 PHANTOM | 1 DEAD  (sur 13) (exit 1)"
+    },
+    {
+      "name": "tokens_24h",
+      "status": "ok",
+      "bucket": "infra",
+      "detail": "conso 24h: $0.0608"
+    },
+    {
+      "name": "emails_tracking",
+      "status": "ok",
+      "bucket": "infra",
+      "detail": "daily_tracking_email DRY_RUN OK (logique saine)"
+    },
+    {
+      "name": "basile_audit",
+      "status": "ok",
+      "bucket": "basile",
+      "detail": "audit Basile frais (daily audit Basile : dernier run 2026-06-27 12:35 (il y a 8h)   dernier rapport : basile_daily_audit_20260627_1200.md )"
+    },
+    {
+      "name": "amine_guard",
+      "status": "ok",
+      "bucket": "infra",
+      "detail": "outil anti-régression présent + parse OK (régression vérifiée dans le pipeline Amine)"
+    },
+    {
+      "name": "launchd_plists",
+      "status": "ok",
+      "bucket": "infra",
+      "detail": "35 plists Djibril/Hermes chargés"
+    },
+    {
+      "name": "kais_copy",
+      "status": "ok",
+      "bucket": "basile",
+      "detail": "pas de test exit-code (copy=créatif) → audité sur demande, jamais auto-édité (doctrine H1)"
+    }
+  ],
+  "problems": [
+    {
+      "name": "rois_princes",
+      "status": "warn",
+      "bucket": "infra",
+      "detail": "RÉSUMÉ : 11 ALIVE | 1 PHANTOM | 1 DEAD  (sur 13) (exit 1)"
+    }
+  ]
+}
