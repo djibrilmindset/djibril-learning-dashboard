@@ -1,75 +1,105 @@
 {
   "_meta": {
-    "generated_at": "2026-06-28T08:00:14.157084Z",
+    "generated_at": "2026-06-28T10:04:03.123139Z",
     "window_hours": 24,
-    "total_calls": 42,
-    "total_cost_usd": 0.079665,
-    "models_count": 14,
+    "total_calls": 144,
+    "total_cost_usd": 0.288758,
+    "models_count": 21,
     "providers_count": 10,
     "errors_count": 0,
-    "healthy_count": 14,
+    "healthy_count": 21,
     "error_count": 0
   },
   "by_model": [
     {
-      "model": "dashscope/qwen3.7-max",
-      "provider": "dashscope",
-      "calls": 1,
-      "successes": 1,
+      "model": "minimax-direct/minimax-m3",
+      "provider": "minimax-direct",
+      "calls": 27,
+      "successes": 27,
       "errors": 0,
-      "tokens_in": 510,
-      "tokens_out": 1755,
-      "cost_usd": 0.020331
+      "tokens_in": 31014,
+      "tokens_out": 35268,
+      "cost_usd": 0.0596538
     },
     {
       "model": "zhipu-direct/glm-5.2",
       "provider": "zhipu-direct",
-      "calls": 4,
-      "successes": 4,
+      "calls": 15,
+      "successes": 15,
       "errors": 0,
-      "tokens_in": 3830,
-      "tokens_out": 4050,
-      "cost_usd": 0.020030000000000003
+      "tokens_in": 12204,
+      "tokens_out": 8941,
+      "cost_usd": 0.047968000000000004
     },
     {
-      "model": "minimax-direct/minimax-m3",
-      "provider": "minimax-direct",
-      "calls": 6,
-      "successes": 6,
-      "errors": 0,
-      "tokens_in": 8591,
-      "tokens_out": 12398,
-      "cost_usd": 0.0188901
-    },
-    {
-      "model": "deepseek-direct/deepseek-v4-pro",
-      "provider": "deepseek-direct",
-      "calls": 4,
-      "successes": 4,
-      "errors": 0,
-      "tokens_in": 2820,
-      "tokens_out": 6846,
-      "cost_usd": 0.007669408
-    },
-    {
-      "model": "comet/doubao-seed-2-0-pro-260215",
+      "model": "comet/qwen3.7-max",
       "provider": "comet",
-      "calls": 2,
-      "successes": 2,
+      "calls": 3,
+      "successes": 3,
       "errors": 0,
-      "tokens_in": 1075,
-      "tokens_out": 1890,
-      "cost_usd": 0.003454
+      "tokens_in": 1569,
+      "tokens_out": 3570,
+      "cost_usd": 0.042792300000000005
+    },
+    {
+      "model": "dashscope/qwen3.7-max",
+      "provider": "dashscope",
+      "calls": 4,
+      "successes": 4,
+      "errors": 0,
+      "tokens_in": 2055,
+      "tokens_out": 2923,
+      "cost_usd": 0.0371169
+    },
+    {
+      "model": "moonshot-direct/kimi-k2.6",
+      "provider": "moonshot-direct",
+      "calls": 17,
+      "successes": 17,
+      "errors": 0,
+      "tokens_in": 9093,
+      "tokens_out": 4370,
+      "cost_usd": 0.027049319999999995
     },
     {
       "model": "xiaomi-direct/mimo-v2.5-pro",
       "provider": "xiaomi-direct",
-      "calls": 5,
-      "successes": 5,
+      "calls": 14,
+      "successes": 14,
       "errors": 0,
-      "tokens_in": 2542,
-      "tokens_out": 120,
-      "cost_usd": 0.0022735999999999998
+      "tokens_in": 10559,
+      "tokens_out": 7907,
+      "cost_usd": 0.0242612
+    },
+    {
+      "model": "deepseek-direct/deepseek-v4-pro",
+      "provider": "deepseek-direct",
+      "calls": 17,
+      "successes": 17,
+      "errors": 0,
+      "tokens_in": 20276,
+      "tokens_out": 20123,
+      "cost_usd": 0.023251675999999995
+    },
+    {
+      "model": "comet/doubao-seed-2-0-pro-260215",
+      "provider": "comet",
+      "calls": 6,
+      "successes": 6,
+      "errors": 0,
+      "tokens_in": 3249,
+      "tokens_out": 4476,
+      "cost_usd": 0.0084612
+    },
+    {
+      "model": "stepfun-direct/step-3.5-flash",
+      "provider": "stepfun-direct",
+      "calls": 4,
+      "successes": 4,
+      "errors": 0,
+      "tokens_in": 2064,
+      "tokens_out": 3279,
+      "cost_usd": 0.0061569
     },
     {
       "model": "mistral-direct/mistral-large-latest",
@@ -82,14 +112,24 @@
       "cost_usd": 0.002096
     },
     {
-      "model": "moonshot-direct/kimi-k2.6",
-      "provider": "moonshot-direct",
-      "calls": 4,
-      "successes": 4,
+      "model": "zhipu-direct/glm-4.5-air",
+      "provider": "zhipu-direct",
+      "calls": 2,
+      "successes": 2,
       "errors": 0,
-      "tokens_in": 1954,
-      "tokens_out": 115,
-      "cost_usd": 0.00198071
+      "tokens_in": 1026,
+      "tokens_out": 286,
+      "cost_usd": 0.001884
+    },
+    {
+      "model": "minimax-direct/minimax-m2.7",
+      "provider": "minimax-direct",
+      "calls": 2,
+      "successes": 2,
+      "errors": 0,
+      "tokens_in": 996,
+      "tokens_out": 363,
+      "cost_usd": 0.0012231
     },
     {
       "model": "minimax-direct/MiniMax-M3",
@@ -100,6 +140,46 @@
       "tokens_in": 1272,
       "tokens_out": 10,
       "cost_usd": 0.0011538
+    },
+    {
+      "model": "zhipu-direct/glm-5.1",
+      "provider": "zhipu-direct",
+      "calls": 2,
+      "successes": 2,
+      "errors": 0,
+      "tokens_in": 1024,
+      "tokens_out": 26,
+      "cost_usd": 0.001128
+    },
+    {
+      "model": "dashscope/qwen3-max-preview",
+      "provider": "dashscope",
+      "calls": 2,
+      "successes": 2,
+      "errors": 0,
+      "tokens_in": 1060,
+      "tokens_out": 20,
+      "cost_usd": 0.00112
+    },
+    {
+      "model": "gemini-direct/gemini-pro-latest",
+      "provider": "gemini-direct",
+      "calls": 12,
+      "successes": 12,
+      "errors": 0,
+      "tokens_in": 6040,
+      "tokens_out": 61,
+      "cost_usd": 0.0009426
+    },
+    {
+      "model": "minimax-direct/MiniMax-Text-01",
+      "provider": "minimax-direct",
+      "calls": 2,
+      "successes": 2,
+      "errors": 0,
+      "tokens_in": 1020,
+      "tokens_out": 8,
+      "cost_usd": 0.0009252
     },
     {
       "model": "zhipu-direct/glm-4.7",
@@ -122,34 +202,24 @@
       "cost_usd": 0.0006198
     },
     {
-      "model": "gemini-direct/gemini-pro-latest",
-      "provider": "gemini-direct",
+      "model": "dashscope/qwen-turbo",
+      "provider": "dashscope",
       "calls": 4,
       "successes": 4,
       "errors": 0,
-      "tokens_in": 2004,
-      "tokens_out": 9,
-      "cost_usd": 0.00030599999999999996
-    },
-    {
-      "model": "dashscope/qwen-turbo",
-      "provider": "dashscope",
-      "calls": 2,
-      "successes": 2,
-      "errors": 0,
-      "tokens_in": 1028,
-      "tokens_out": 10,
-      "cost_usd": 5.29e-05
+      "tokens_in": 2066,
+      "tokens_out": 12,
+      "cost_usd": 0.0001051
     },
     {
       "model": "gemini-direct/gemini-flash-latest",
       "provider": "gemini-direct",
-      "calls": 2,
-      "successes": 2,
+      "calls": 3,
+      "successes": 3,
       "errors": 0,
-      "tokens_in": 0,
-      "tokens_out": 0,
-      "cost_usd": 0.0
+      "tokens_in": 517,
+      "tokens_out": 12,
+      "cost_usd": 4.2375e-05
     }
   ]
 }
