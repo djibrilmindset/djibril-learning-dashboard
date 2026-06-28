@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "generated_at": "2026-06-27T22:00:38.183488Z",
+    "generated_at": "2026-06-28T00:01:01.012062Z",
     "window_hours": 24,
-    "total_calls": 17,
+    "total_calls": 16,
     "total_cost_usd": 0.0,
     "models_count": 5,
     "providers_count": 3,
@@ -12,16 +12,6 @@
   },
   "by_model": [
     {
-      "model": "claude-opus-4-8",
-      "provider": "direct",
-      "calls": 8,
-      "successes": 8,
-      "errors": 0,
-      "tokens_in": 7343,
-      "tokens_out": 1004,
-      "cost_usd": 0.0
-    },
-    {
       "model": "gemini-direct/gemini-pro-latest",
       "provider": "gemini-direct",
       "calls": 4,
@@ -29,6 +19,16 @@
       "errors": 0,
       "tokens_in": 0,
       "tokens_out": 0,
+      "cost_usd": 0.0
+    },
+    {
+      "model": "claude-opus-4-8",
+      "provider": "direct",
+      "calls": 7,
+      "successes": 7,
+      "errors": 0,
+      "tokens_in": 7328,
+      "tokens_out": 995,
       "cost_usd": 0.0
     },
     {
