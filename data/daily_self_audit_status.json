@@ -1,11 +1,11 @@
 {
-  "ts": "2026-06-27T18:42:33Z",
-  "overall": "warn",
+  "ts": "2026-06-28T05:45:00Z",
+  "overall": "fail",
   "auto_apply": false,
   "counts": {
-    "ok": 6,
+    "ok": 7,
     "warn": 1,
-    "fail": 0
+    "fail": 1
   },
   "checks": [
     {
@@ -18,19 +18,19 @@
       "name": "tokens_24h",
       "status": "ok",
       "bucket": "infra",
-      "detail": "conso 24h: $0.0608"
+      "detail": "conso 24h: $0.0887"
     },
     {
       "name": "emails_tracking",
-      "status": "ok",
+      "status": "fail",
       "bucket": "infra",
-      "detail": "daily_tracking_email DRY_RUN OK (logique saine)"
+      "detail": "daily_tracking_email DRY_RUN ÉCHOUE (logique cassée AVANT envoi réel)"
     },
     {
       "name": "basile_audit",
       "status": "ok",
       "bucket": "basile",
-      "detail": "audit Basile frais (daily audit Basile : dernier run 2026-06-27 12:35 (il y a 8h)   dernier rapport : basile_daily_audit_20260627_1200.md )"
+      "detail": "audit Basile frais (daily audit Basile : dernier run 2026-06-27 12:35 (il y a 19h)   dernier rapport : basile_daily_audit_20260627_1200.md )"
     },
     {
       "name": "amine_guard",
@@ -45,6 +45,18 @@
       "detail": "35 plists Djibril/Hermes chargés"
     },
     {
+      "name": "cost_throttle",
+      "status": "ok",
+      "bucket": "infra",
+      "detail": "pas de throttle (conso sous seuils)"
+    },
+    {
+      "name": "v10_daemon",
+      "status": "ok",
+      "bucket": "infra",
+      "detail": "v10_active_daemon : 45 action(s) / 76 ticks récents"
+    },
+    {
       "name": "kais_copy",
       "status": "ok",
       "bucket": "basile",
@@ -57,6 +69,12 @@
       "status": "warn",
       "bucket": "infra",
       "detail": "RÉSUMÉ : 11 ALIVE | 1 PHANTOM | 1 DEAD  (sur 13) (exit 1)"
+    },
+    {
+      "name": "emails_tracking",
+      "status": "fail",
+      "bucket": "infra",
+      "detail": "daily_tracking_email DRY_RUN ÉCHOUE (logique cassée AVANT envoi réel)"
     }
   ]
 }
