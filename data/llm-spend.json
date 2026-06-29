@@ -1,105 +1,95 @@
 {
   "_meta": {
-    "generated_at": "2026-06-29T06:19:17.624199Z",
+    "generated_at": "2026-06-29T08:00:15.997930Z",
     "window_hours": 24,
-    "total_calls": 492,
-    "total_cost_usd": 1.132864,
-    "models_count": 23,
-    "providers_count": 10,
+    "total_calls": 564,
+    "total_cost_usd": 1.725482,
+    "models_count": 20,
+    "providers_count": 9,
     "errors_count": 0,
-    "healthy_count": 23,
+    "healthy_count": 20,
     "error_count": 0
   },
   "by_model": [
     {
       "model": "comet/qwen3.7-max",
       "provider": "comet",
-      "calls": 18,
-      "successes": 18,
+      "calls": 39,
+      "successes": 39,
       "errors": 0,
-      "tokens_in": 10826,
-      "tokens_out": 25598,
-      "cost_usd": 0.3056886
-    },
-    {
-      "model": "minimax-direct/minimax-m3",
-      "provider": "minimax-direct",
-      "calls": 95,
-      "successes": 95,
-      "errors": 0,
-      "tokens_in": 150554,
-      "tokens_out": 68343,
-      "cost_usd": 0.1970073
-    },
-    {
-      "model": "zhipu-direct/glm-5.2",
-      "provider": "zhipu-direct",
-      "calls": 71,
-      "successes": 71,
-      "errors": 0,
-      "tokens_in": 79758,
-      "tokens_out": 27715,
-      "cost_usd": 0.19061800000000023
+      "tokens_in": 26050,
+      "tokens_out": 62981,
+      "cost_usd": 0.7505298
     },
     {
       "model": "moonshot-direct/kimi-k2.6",
       "provider": "moonshot-direct",
-      "calls": 72,
-      "successes": 72,
+      "calls": 97,
+      "successes": 97,
       "errors": 0,
-      "tokens_in": 81081,
-      "tokens_out": 27275,
-      "cost_usd": 0.18682869
+      "tokens_in": 91483,
+      "tokens_out": 43197,
+      "cost_usd": 0.26856346999999986
+    },
+    {
+      "model": "zhipu-direct/glm-5.2",
+      "provider": "zhipu-direct",
+      "calls": 91,
+      "successes": 91,
+      "errors": 0,
+      "tokens_in": 94840,
+      "tokens_out": 40836,
+      "cost_usd": 0.25818400000000025
+    },
+    {
+      "model": "minimax-direct/minimax-m3",
+      "provider": "minimax-direct",
+      "calls": 120,
+      "successes": 120,
+      "errors": 0,
+      "tokens_in": 167299,
+      "tokens_out": 89446,
+      "cost_usd": 0.23107050000000007
     },
     {
       "model": "deepseek-direct/deepseek-v4-pro",
       "provider": "deepseek-direct",
-      "calls": 69,
-      "successes": 69,
+      "calls": 65,
+      "successes": 65,
       "errors": 0,
-      "tokens_in": 122865,
-      "tokens_out": 121056,
-      "cost_usd": 0.15031159800000002
-    },
-    {
-      "model": "dashscope/qwen3.7-max",
-      "provider": "dashscope",
-      "calls": 4,
-      "successes": 4,
-      "errors": 0,
-      "tokens_in": 2055,
-      "tokens_out": 2923,
-      "cost_usd": 0.0371169
+      "tokens_in": 120045,
+      "tokens_out": 114210,
+      "cost_usd": 0.14264219
     },
     {
       "model": "xiaomi-direct/mimo-v2.5-pro",
       "provider": "xiaomi-direct",
-      "calls": 15,
-      "successes": 15,
+      "calls": 10,
+      "successes": 10,
       "errors": 0,
-      "tokens_in": 11067,
-      "tokens_out": 7912,
-      "cost_usd": 0.0246776
+      "tokens_in": 8525,
+      "tokens_out": 7792,
+      "cost_usd": 0.022404
     },
     {
-      "model": "comet/doubao-seed-2-0-pro-260215",
-      "provider": "comet",
-      "calls": 7,
-      "successes": 7,
+      "model": "dashscope/qwen3.7-max",
+      "provider": "dashscope",
+      "calls": 3,
+      "successes": 3,
       "errors": 0,
-      "tokens_in": 3785,
-      "tokens_out": 5191,
-      "cost_usd": 0.009819600000000001
+      "tokens_in": 1545,
+      "tokens_out": 1168,
+      "cost_usd": 0.0167859
     },
     {
       "model": "gemini-direct/gemini-pro-latest",
       "provider": "gemini-direct",
-      "calls": 87,
-      "successes": 87,
+      "calls": 90,
+      "successes": 90,
       "errors": 0,
-      "tokens_in": 55505,
-      "tokens_out": 411,
-      "cost_usd": 0.008572350000000005
+      "tokens_in": 74045,
+      "tokens_out": 560,
+      "cost_usd": 0.011442750000000007
     },
     {
       "model": "stepfun-direct/step-3.5-flash",
@@ -112,24 +102,24 @@
       "cost_usd": 0.0064668
     },
     {
-      "model": "minimax-direct/MiniMax-M3",
-      "provider": "minimax-direct",
-      "calls": 6,
-      "successes": 6,
+      "model": "comet/doubao-seed-2-0-pro-260215",
+      "provider": "comet",
+      "calls": 5,
+      "successes": 5,
       "errors": 0,
-      "tokens_in": 3816,
-      "tokens_out": 30,
-      "cost_usd": 0.0034614
+      "tokens_in": 2710,
+      "tokens_out": 3301,
+      "cost_usd": 0.006365600000000001
     },
     {
-      "model": "mistral-direct/mistral-large-latest",
-      "provider": "mistral-direct",
-      "calls": 2,
-      "successes": 2,
+      "model": "minimax-direct/MiniMax-M3",
+      "provider": "minimax-direct",
+      "calls": 4,
+      "successes": 4,
       "errors": 0,
-      "tokens_in": 1018,
-      "tokens_out": 10,
-      "cost_usd": 0.002096
+      "tokens_in": 2544,
+      "tokens_out": 20,
+      "cost_usd": 0.0023076
     },
     {
       "model": "zhipu-direct/glm-4.5-air",
@@ -192,26 +182,6 @@
       "cost_usd": 0.0008470500000000001
     },
     {
-      "model": "zhipu-direct/glm-4.7",
-      "provider": "zhipu-direct",
-      "calls": 2,
-      "successes": 2,
-      "errors": 0,
-      "tokens_in": 984,
-      "tokens_out": 10,
-      "cost_usd": 0.0008072
-    },
-    {
-      "model": "stepfun-direct/step-3.7-flash",
-      "provider": "stepfun-direct",
-      "calls": 2,
-      "successes": 2,
-      "errors": 0,
-      "tokens_in": 1008,
-      "tokens_out": 10,
-      "cost_usd": 0.0006198
-    },
-    {
       "model": "moonshot-direct/kimi-k2.7-code",
       "provider": "moonshot-direct",
       "calls": 1,
@@ -234,12 +204,12 @@
     {
       "model": "dashscope/qwen-turbo",
       "provider": "dashscope",
-      "calls": 5,
-      "successes": 5,
+      "calls": 3,
+      "successes": 3,
       "errors": 0,
-      "tokens_in": 2580,
-      "tokens_out": 17,
-      "cost_usd": 0.00013155
+      "tokens_in": 1552,
+      "tokens_out": 7,
+      "cost_usd": 7.865e-05
     }
   ]
 }
