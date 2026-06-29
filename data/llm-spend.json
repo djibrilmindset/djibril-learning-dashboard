@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated_at": "2026-06-29T00:13:13.319975Z",
+    "generated_at": "2026-06-29T02:15:22.270785Z",
     "window_hours": 24,
-    "total_calls": 467,
-    "total_cost_usd": 1.077102,
+    "total_calls": 478,
+    "total_cost_usd": 1.106079,
     "models_count": 23,
     "providers_count": 10,
     "errors_count": 0,
@@ -14,52 +14,52 @@
     {
       "model": "comet/qwen3.7-max",
       "provider": "comet",
-      "calls": 16,
-      "successes": 16,
+      "calls": 17,
+      "successes": 17,
       "errors": 0,
-      "tokens_in": 10546,
-      "tokens_out": 23119,
-      "cost_usd": 0.2781594
+      "tokens_in": 10686,
+      "tokens_out": 24513,
+      "cost_usd": 0.2935926
     },
     {
       "model": "minimax-direct/minimax-m3",
       "provider": "minimax-direct",
-      "calls": 90,
-      "successes": 90,
+      "calls": 91,
+      "successes": 91,
       "errors": 0,
-      "tokens_in": 148410,
-      "tokens_out": 67072,
-      "cost_usd": 0.1939338
+      "tokens_in": 148698,
+      "tokens_out": 67506,
+      "cost_usd": 0.1945836
     },
     {
       "model": "zhipu-direct/glm-5.2",
       "provider": "zhipu-direct",
-      "calls": 66,
-      "successes": 66,
+      "calls": 68,
+      "successes": 68,
       "errors": 0,
-      "tokens_in": 78360,
-      "tokens_out": 27126,
-      "cost_usd": 0.18686400000000022
+      "tokens_in": 78991,
+      "tokens_out": 27361,
+      "cost_usd": 0.18843500000000024
     },
     {
       "model": "moonshot-direct/kimi-k2.6",
       "provider": "moonshot-direct",
-      "calls": 66,
-      "successes": 66,
+      "calls": 68,
+      "successes": 68,
       "errors": 0,
-      "tokens_in": 79134,
-      "tokens_out": 25518,
-      "cost_usd": 0.17721786
+      "tokens_in": 79782,
+      "tokens_out": 26068,
+      "cost_usd": 0.18025488
     },
     {
       "model": "deepseek-direct/deepseek-v4-pro",
       "provider": "deepseek-direct",
-      "calls": 61,
-      "successes": 61,
+      "calls": 66,
+      "successes": 66,
       "errors": 0,
-      "tokens_in": 114812,
-      "tokens_out": 110832,
-      "cost_usd": 0.13859482400000003
+      "tokens_in": 120915,
+      "tokens_out": 117969,
+      "cost_usd": 0.14688091800000003
     },
     {
       "model": "dashscope/qwen3.7-max",
