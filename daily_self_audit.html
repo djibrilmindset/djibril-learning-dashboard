@@ -21,23 +21,23 @@ tr:last-child td{border-bottom:none}
 .foot{color:#64748b;font-size:11px;margin-top:16px;text-align:center}
 </style></head><body><div class="wrap">
 <h1>🤖 SELF-AUDIT QUOTIDIEN — santé de l'infra</h1>
-<div class="sub">machine qui re-audite tout chaque jour en cascade · auto-rafraîchi 2 min · dernier run 2026-06-28T05:45:00Z</div>
-<div class="hero" style="background:#ef444418">
-  <div class="dot" style="background:#ef444433">🔴</div>
-  <div><div class="st" style="color:#ef4444">fail</div>
-  <div class="pills"><span style="background:#22c55e22;color:#22c55e">✅ 7 ok</span>
+<div class="sub">machine qui re-audite tout chaque jour en cascade · auto-rafraîchi 2 min · dernier run 2026-06-30T05:45:01Z</div>
+<div class="hero" style="background:#f59e0b18">
+  <div class="dot" style="background:#f59e0b33">🟠</div>
+  <div><div class="st" style="color:#f59e0b">warn</div>
+  <div class="pills"><span style="background:#22c55e22;color:#22c55e">✅ 8 ok</span>
   <span style="background:#f59e0b22;color:#f59e0b">🟠 1 warn</span>
-  <span style="background:#ef444422;color:#ef4444">🔴 1 fail</span></div></div>
+  <span style="background:#ef444422;color:#ef4444">🔴 0 fail</span></div></div>
 </div>
 <table><thead><tr><th></th><th>sous-système</th><th>bucket</th><th>détail</th></tr></thead>
-<tbody><tr><td class="e">🟠</td><td class="n">rois_princes</td><td><span class="bk" style="background:#f59e0b22;color:#f59e0b">infra</span></td><td class="d">RÉSUMÉ : 11 ALIVE | 1 PHANTOM | 1 DEAD  (sur 13) (exit 1)</td></tr>
-<tr><td class="e">✅</td><td class="n">tokens_24h</td><td><span class="bk" style="background:#22c55e22;color:#22c55e">infra</span></td><td class="d">conso 24h: $0.0887</td></tr>
-<tr><td class="e">🔴</td><td class="n">emails_tracking</td><td><span class="bk" style="background:#ef444422;color:#ef4444">infra</span></td><td class="d">daily_tracking_email DRY_RUN ÉCHOUE (logique cassée AVANT envoi réel)</td></tr>
-<tr><td class="e">✅</td><td class="n">basile_audit</td><td><span class="bk" style="background:#22c55e22;color:#22c55e">basile</span></td><td class="d">audit Basile frais (daily audit Basile : dernier run 2026-06-27 12:35 (il y a 19h)   dernier rapport : basile_daily_audit_20260627_1200.md )</td></tr>
+<tbody><tr><td class="e">🟠</td><td class="n">rois_princes</td><td><span class="bk" style="background:#f59e0b22;color:#f59e0b">infra</span></td><td class="d">RÉSUMÉ : 0 ALIVE | 0 PHANTOM | 8 DEAD  (sur 8) (exit 1)</td></tr>
+<tr><td class="e">✅</td><td class="n">tokens_24h</td><td><span class="bk" style="background:#22c55e22;color:#22c55e">infra</span></td><td class="d">conso 24h: $7.3001</td></tr>
+<tr><td class="e">✅</td><td class="n">emails_tracking</td><td><span class="bk" style="background:#22c55e22;color:#22c55e">infra</span></td><td class="d">daily_tracking_email DRY_RUN OK (logique saine)</td></tr>
+<tr><td class="e">✅</td><td class="n">basile_audit</td><td><span class="bk" style="background:#22c55e22;color:#22c55e">basile</span></td><td class="d">audit Basile frais (daily audit Basile : dernier run 2026-06-29 19:14 (il y a 12h)   dernier rapport : basile_daily_audit_20260629_1200.md )</td></tr>
 <tr><td class="e">✅</td><td class="n">amine_guard</td><td><span class="bk" style="background:#22c55e22;color:#22c55e">infra</span></td><td class="d">outil anti-régression présent + parse OK (régression vérifiée dans le pipeline Amine)</td></tr>
-<tr><td class="e">✅</td><td class="n">launchd_plists</td><td><span class="bk" style="background:#22c55e22;color:#22c55e">infra</span></td><td class="d">35 plists Djibril/Hermes chargés</td></tr>
+<tr><td class="e">✅</td><td class="n">launchd_plists</td><td><span class="bk" style="background:#22c55e22;color:#22c55e">infra</span></td><td class="d">36 plists Djibril/Hermes chargés</td></tr>
 <tr><td class="e">✅</td><td class="n">cost_throttle</td><td><span class="bk" style="background:#22c55e22;color:#22c55e">infra</span></td><td class="d">pas de throttle (conso sous seuils)</td></tr>
-<tr><td class="e">✅</td><td class="n">v10_daemon</td><td><span class="bk" style="background:#22c55e22;color:#22c55e">infra</span></td><td class="d">v10_active_daemon : 45 action(s) / 76 ticks récents</td></tr>
+<tr><td class="e">✅</td><td class="n">v10_daemon</td><td><span class="bk" style="background:#22c55e22;color:#22c55e">infra</span></td><td class="d">v10_active_daemon : 69 action(s) / 69 ticks récents</td></tr>
 <tr><td class="e">✅</td><td class="n">kais_copy</td><td><span class="bk" style="background:#22c55e22;color:#22c55e">basile</span></td><td class="d">pas de test exit-code (copy=créatif) → audité sur demande, jamais auto-édité (doctrine H1)</td></tr>
 </tbody></table>
 <div class="foot">daily_self_audit.sh · alertes routées Telegram (Basile/brand/ads → Djaelys · infra → Djibril) · auto-apply: OFF (audit+propose)</div>

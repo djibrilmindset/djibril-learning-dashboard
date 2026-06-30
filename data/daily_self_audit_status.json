@@ -1,36 +1,36 @@
 {
-  "ts": "2026-06-28T05:45:00Z",
-  "overall": "fail",
+  "ts": "2026-06-30T05:45:01Z",
+  "overall": "warn",
   "auto_apply": false,
   "counts": {
-    "ok": 7,
+    "ok": 8,
     "warn": 1,
-    "fail": 1
+    "fail": 0
   },
   "checks": [
     {
       "name": "rois_princes",
       "status": "warn",
       "bucket": "infra",
-      "detail": "RÉSUMÉ : 11 ALIVE | 1 PHANTOM | 1 DEAD  (sur 13) (exit 1)"
+      "detail": "RÉSUMÉ : 0 ALIVE | 0 PHANTOM | 8 DEAD  (sur 8) (exit 1)"
     },
     {
       "name": "tokens_24h",
       "status": "ok",
       "bucket": "infra",
-      "detail": "conso 24h: $0.0887"
+      "detail": "conso 24h: $7.3001"
     },
     {
       "name": "emails_tracking",
-      "status": "fail",
+      "status": "ok",
       "bucket": "infra",
-      "detail": "daily_tracking_email DRY_RUN ÉCHOUE (logique cassée AVANT envoi réel)"
+      "detail": "daily_tracking_email DRY_RUN OK (logique saine)"
     },
     {
       "name": "basile_audit",
       "status": "ok",
       "bucket": "basile",
-      "detail": "audit Basile frais (daily audit Basile : dernier run 2026-06-27 12:35 (il y a 19h)   dernier rapport : basile_daily_audit_20260627_1200.md )"
+      "detail": "audit Basile frais (daily audit Basile : dernier run 2026-06-29 19:14 (il y a 12h)   dernier rapport : basile_daily_audit_20260629_1200.md )"
     },
     {
       "name": "amine_guard",
@@ -42,7 +42,7 @@
       "name": "launchd_plists",
       "status": "ok",
       "bucket": "infra",
-      "detail": "35 plists Djibril/Hermes chargés"
+      "detail": "36 plists Djibril/Hermes chargés"
     },
     {
       "name": "cost_throttle",
@@ -54,7 +54,7 @@
       "name": "v10_daemon",
       "status": "ok",
       "bucket": "infra",
-      "detail": "v10_active_daemon : 45 action(s) / 76 ticks récents"
+      "detail": "v10_active_daemon : 69 action(s) / 69 ticks récents"
     },
     {
       "name": "kais_copy",
@@ -68,13 +68,7 @@
       "name": "rois_princes",
       "status": "warn",
       "bucket": "infra",
-      "detail": "RÉSUMÉ : 11 ALIVE | 1 PHANTOM | 1 DEAD  (sur 13) (exit 1)"
-    },
-    {
-      "name": "emails_tracking",
-      "status": "fail",
-      "bucket": "infra",
-      "detail": "daily_tracking_email DRY_RUN ÉCHOUE (logique cassée AVANT envoi réel)"
+      "detail": "RÉSUMÉ : 0 ALIVE | 0 PHANTOM | 8 DEAD  (sur 8) (exit 1)"
     }
   ]
 }
