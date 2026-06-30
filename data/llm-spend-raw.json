@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated_at": "2026-06-30T02:00:34.489073Z",
+    "generated_at": "2026-06-30T04:00:53.472074Z",
     "window_hours": 24,
-    "total_calls": 920,
-    "total_cost_usd": 7.046397,
+    "total_calls": 913,
+    "total_cost_usd": 7.038953,
     "models_count": 9,
     "providers_count": 6,
     "errors_count": 0,
@@ -11,83 +11,6 @@
     "error_count": 0
   },
   "entries": [
-    {
-      "ts": "2026-06-29T02:15:28Z",
-      "agent": "HERMES_CALL_ZHIPU",
-      "model": "zhipu-direct/glm-5.2",
-      "tier": 2,
-      "tokens_in": 136,
-      "tokens_out": 123,
-      "cost_usd": 0.000628,
-      "task_type": "chinese",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-06-29T02:15:31Z",
-      "agent": "HERMES_CALL_MINIMAX",
-      "model": "minimax-direct/minimax-m3",
-      "tier": 2,
-      "tokens_in": 288,
-      "tokens_out": 279,
-      "cost_usd": 0.0005103,
-      "task_type": "chinese",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-06-29T02:15:35Z",
-      "agent": "HERMES_CALL_MOONSHOT",
-      "model": "moonshot-direct/kimi-k2.6",
-      "tier": 2,
-      "tokens_in": 158,
-      "tokens_out": 450,
-      "cost_usd": 0.00220942,
-      "task_type": "chinese",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-06-29T02:15:39Z",
-      "agent": "HERMES_CALL_MINIMAX",
-      "model": "minimax-direct/minimax-m3",
-      "tier": 2,
-      "tokens_in": 639,
-      "tokens_out": 100,
-      "cost_usd": 0.0006651,
-      "task_type": "chinese",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-06-29T02:15:41Z",
-      "agent": "HERMES_CALL_DEEPSEEK",
-      "model": "deepseek-direct/deepseek-v4-pro",
-      "tier": 1,
-      "tokens_in": 1684,
-      "tokens_out": 1638,
-      "cost_usd": 0.001830496,
-      "task_type": "chinese",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-06-29T02:15:43Z",
-      "agent": "HERMES_CALL_DEEPSEEK",
-      "model": "deepseek-direct/deepseek-v4-pro",
-      "tier": 1,
-      "tokens_in": 133,
-      "tokens_out": 1022,
-      "cost_usd": 0.001127342,
-      "task_type": "chinese",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-06-29T03:16:18Z",
-      "agent": "HERMES_CALL_DEEPSEEK",
-      "model": "deepseek-direct/deepseek-v4-pro",
-      "tier": 1,
-      "tokens_in": 133,
-      "tokens_out": 427,
-      "cost_usd": 0.000472842,
-      "task_type": "chinese",
-      "result_summary": ""
-    },
     {
       "ts": "2026-06-29T04:17:35Z",
       "agent": "HERMES_CALL_MOONSHOT",
