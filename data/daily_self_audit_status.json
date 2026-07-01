@@ -1,24 +1,24 @@
 {
-  "ts": "2026-06-30T05:45:01Z",
-  "overall": "warn",
+  "ts": "2026-07-01T05:45:00Z",
+  "overall": "ok",
   "auto_apply": false,
   "counts": {
-    "ok": 8,
-    "warn": 1,
+    "ok": 9,
+    "warn": 0,
     "fail": 0
   },
   "checks": [
     {
       "name": "rois_princes",
-      "status": "warn",
+      "status": "ok",
       "bucket": "infra",
-      "detail": "RÉSUMÉ : 0 ALIVE | 0 PHANTOM | 8 DEAD  (sur 8) (exit 1)"
+      "detail": "RÉSUMÉ : 8 ALIVE | 0 PHANTOM | 0 DEAD  (sur 8)"
     },
     {
       "name": "tokens_24h",
       "status": "ok",
       "bucket": "infra",
-      "detail": "conso 24h: $7.3001"
+      "detail": "conso 24h: $0.9071"
     },
     {
       "name": "emails_tracking",
@@ -30,7 +30,7 @@
       "name": "basile_audit",
       "status": "ok",
       "bucket": "basile",
-      "detail": "audit Basile frais (daily audit Basile : dernier run 2026-06-29 19:14 (il y a 12h)   dernier rapport : basile_daily_audit_20260629_1200.md )"
+      "detail": "audit Basile frais (daily audit Basile : dernier run 2026-06-30 12:23 (il y a 19h)   dernier rapport : basile_daily_audit_20260630_1200.md )"
     },
     {
       "name": "amine_guard",
@@ -54,7 +54,7 @@
       "name": "v10_daemon",
       "status": "ok",
       "bucket": "infra",
-      "detail": "v10_active_daemon : 69 action(s) / 69 ticks récents"
+      "detail": "v10_active_daemon : 72 action(s) / 72 ticks récents"
     },
     {
       "name": "kais_copy",
@@ -63,12 +63,5 @@
       "detail": "pas de test exit-code (copy=créatif) → audité sur demande, jamais auto-édité (doctrine H1)"
     }
   ],
-  "problems": [
-    {
-      "name": "rois_princes",
-      "status": "warn",
-      "bucket": "infra",
-      "detail": "RÉSUMÉ : 0 ALIVE | 0 PHANTOM | 8 DEAD  (sur 8) (exit 1)"
-    }
-  ]
+  "problems": []
 }
