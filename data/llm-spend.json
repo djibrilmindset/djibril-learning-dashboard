@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated_at": "2026-07-02T04:00:48.136264Z",
+    "generated_at": "2026-07-02T06:32:29.833553Z",
     "window_hours": 24,
-    "total_calls": 463,
-    "total_cost_usd": 0.794539,
+    "total_calls": 404,
+    "total_cost_usd": 0.761432,
     "models_count": 10,
     "providers_count": 6,
     "errors_count": 0,
@@ -14,92 +14,82 @@
     {
       "model": "comet/qwen3.7-max",
       "provider": "comet",
-      "calls": 19,
-      "successes": 19,
+      "calls": 16,
+      "successes": 16,
       "errors": 0,
-      "tokens_in": 15056,
-      "tokens_out": 30213,
-      "cost_usd": 0.3669516
+      "tokens_in": 13511,
+      "tokens_out": 29486,
+      "cost_usd": 0.3549285
     },
     {
       "model": "zhipu-direct/glm-5.2",
       "provider": "zhipu-direct",
-      "calls": 73,
-      "successes": 73,
+      "calls": 64,
+      "successes": 64,
       "errors": 0,
-      "tokens_in": 74673,
-      "tokens_out": 11908,
-      "cost_usd": 0.1223050000000001
+      "tokens_in": 70181,
+      "tokens_out": 11304,
+      "cost_usd": 0.11539700000000008
     },
     {
       "model": "moonshot-direct/kimi-k2.6",
       "provider": "moonshot-direct",
-      "calls": 61,
-      "successes": 61,
+      "calls": 54,
+      "successes": 54,
       "errors": 0,
-      "tokens_in": 80124,
-      "tokens_out": 12003,
-      "cost_usd": 0.11510570999999992
+      "tokens_in": 76721,
+      "tokens_out": 11650,
+      "cost_usd": 0.1109460399999999
     },
     {
       "model": "minimax-direct/minimax-m3",
       "provider": "minimax-direct",
-      "calls": 69,
-      "successes": 69,
+      "calls": 63,
+      "successes": 63,
       "errors": 0,
-      "tokens_in": 91062,
-      "tokens_out": 12368,
-      "cost_usd": 0.09308700000000006
+      "tokens_in": 87252,
+      "tokens_out": 11957,
+      "cost_usd": 0.08928810000000006
     },
     {
       "model": "deepseek-direct/deepseek-v4-pro",
       "provider": "deepseek-direct",
-      "calls": 47,
-      "successes": 47,
+      "calls": 41,
+      "successes": 41,
       "errors": 0,
-      "tokens_in": 87160,
-      "tokens_out": 54438,
-      "cost_usd": 0.07827042399999999
+      "tokens_in": 84173,
+      "tokens_out": 51857,
+      "cost_usd": 0.075214658
     },
     {
       "model": "gemini-direct/gemini-pro-latest",
       "provider": "gemini-direct",
-      "calls": 86,
-      "successes": 86,
+      "calls": 79,
+      "successes": 79,
       "errors": 0,
-      "tokens_in": 45307,
-      "tokens_out": 425,
-      "cost_usd": 0.007051050000000008
+      "tokens_in": 41778,
+      "tokens_out": 388,
+      "cost_usd": 0.006499500000000007
     },
     {
       "model": "minimax-direct/MiniMax-M3",
       "provider": "minimax-direct",
-      "calls": 7,
-      "successes": 7,
+      "calls": 6,
+      "successes": 6,
       "errors": 0,
-      "tokens_in": 4452,
-      "tokens_out": 35,
-      "cost_usd": 0.0040383
+      "tokens_in": 3816,
+      "tokens_out": 30,
+      "cost_usd": 0.0034614
     },
     {
       "model": "gemini-direct/gemini-flash-latest",
       "provider": "gemini-direct",
-      "calls": 94,
-      "successes": 94,
+      "calls": 76,
+      "successes": 76,
       "errors": 0,
-      "tokens_in": 47128,
-      "tokens_out": 278,
-      "cost_usd": 0.003958725000000003
-    },
-    {
-      "model": "moonshot-direct/kimi-k2.7-code",
-      "provider": "moonshot-direct",
-      "calls": 3,
-      "successes": 3,
-      "errors": 0,
-      "tokens_in": 1482,
-      "tokens_out": 172,
-      "cost_usd": 0.00189648
+      "tokens_in": 38096,
+      "tokens_out": 231,
+      "cost_usd": 0.0031910250000000023
     },
     {
       "model": "minimax-direct/MiniMax-Text-01",
@@ -110,6 +100,16 @@
       "tokens_in": 2040,
       "tokens_out": 43,
       "cost_usd": 0.0018747
+    },
+    {
+      "model": "moonshot-direct/kimi-k2.7-code",
+      "provider": "moonshot-direct",
+      "calls": 1,
+      "successes": 1,
+      "errors": 0,
+      "tokens_in": 494,
+      "tokens_out": 57,
+      "cost_usd": 0.00063061
     }
   ]
 }
