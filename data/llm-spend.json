@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated_at": "2026-07-03T04:23:29.845023Z",
+    "generated_at": "2026-07-03T06:04:21.209584Z",
     "window_hours": 24,
-    "total_calls": 305,
-    "total_cost_usd": 0.721319,
+    "total_calls": 315,
+    "total_cost_usd": 0.755532,
     "models_count": 11,
     "providers_count": 7,
     "errors_count": 0,
@@ -14,22 +14,22 @@
     {
       "model": "dashscope/qwen3.7-max",
       "provider": "dashscope",
-      "calls": 9,
-      "successes": 9,
+      "calls": 12,
+      "successes": 12,
       "errors": 0,
-      "tokens_in": 23835,
-      "tokens_out": 19361,
-      "cost_usd": 0.2734533
+      "tokens_in": 25408,
+      "tokens_out": 21888,
+      "cost_usd": 0.30499200000000004
     },
     {
       "model": "zhipu-direct/glm-5.2",
       "provider": "zhipu-direct",
-      "calls": 50,
-      "successes": 50,
+      "calls": 51,
+      "successes": 51,
       "errors": 0,
-      "tokens_in": 111145,
-      "tokens_out": 8345,
-      "cost_usd": 0.14452500000000018
+      "tokens_in": 111643,
+      "tokens_out": 8347,
+      "cost_usd": 0.1450310000000002
     },
     {
       "model": "comet/qwen3.7-max",
@@ -44,32 +44,32 @@
     {
       "model": "moonshot-direct/kimi-k2.6",
       "provider": "moonshot-direct",
-      "calls": 44,
-      "successes": 44,
+      "calls": 45,
+      "successes": 45,
       "errors": 0,
-      "tokens_in": 81456,
-      "tokens_out": 6047,
-      "cost_usd": 0.08839598999999991
+      "tokens_in": 81949,
+      "tokens_out": 6055,
+      "cost_usd": 0.08879800999999991
     },
     {
       "model": "deepseek-direct/deepseek-v4-pro",
       "provider": "deepseek-direct",
-      "calls": 22,
-      "successes": 22,
+      "calls": 25,
+      "successes": 25,
       "errors": 0,
-      "tokens_in": 144104,
-      "tokens_out": 23604,
-      "cost_usd": 0.05042179200000001
+      "tokens_in": 145621,
+      "tokens_out": 24044,
+      "cost_usd": 0.051020470000000005
     },
     {
       "model": "minimax-direct/minimax-m3",
       "provider": "minimax-direct",
-      "calls": 38,
-      "successes": 38,
+      "calls": 40,
+      "successes": 40,
       "errors": 0,
-      "tokens_in": 24438,
-      "tokens_out": 3184,
-      "cost_usd": 0.024859799999999987
+      "tokens_in": 25720,
+      "tokens_out": 3200,
+      "cost_usd": 0.02602799999999999
     },
     {
       "model": "gemini-direct/gemini-pro-latest",
