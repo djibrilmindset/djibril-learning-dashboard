@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated_at": "2026-07-03T14:00:08.625038Z",
+    "generated_at": "2026-07-03T16:00:23.002331Z",
     "window_hours": 24,
-    "total_calls": 287,
-    "total_cost_usd": 0.840375,
+    "total_calls": 266,
+    "total_cost_usd": 0.837362,
     "models_count": 10,
     "providers_count": 6,
     "errors_count": 0,
@@ -29,17 +29,17 @@
       "errors": 0,
       "tokens_in": 82063,
       "tokens_out": 15637,
-      "cost_usd": 0.13343867000000004
+      "cost_usd": 0.13343867000000006
     },
     {
       "model": "zhipu-direct/glm-5.2",
       "provider": "zhipu-direct",
-      "calls": 44,
-      "successes": 44,
+      "calls": 43,
+      "successes": 43,
       "errors": 0,
-      "tokens_in": 66644,
-      "tokens_out": 9680,
-      "cost_usd": 0.10536400000000004
+      "tokens_in": 66149,
+      "tokens_out": 9580,
+      "cost_usd": 0.10446900000000006
     },
     {
       "model": "deepseek-direct/deepseek-v4-pro",
@@ -54,22 +54,12 @@
     {
       "model": "minimax-direct/minimax-m3",
       "provider": "minimax-direct",
-      "calls": 45,
-      "successes": 45,
+      "calls": 44,
+      "successes": 44,
       "errors": 0,
-      "tokens_in": 76993,
-      "tokens_out": 9274,
-      "cost_usd": 0.07764030000000004
-    },
-    {
-      "model": "gemini-direct/gemini-pro-latest",
-      "provider": "gemini-direct",
-      "calls": 35,
-      "successes": 35,
-      "errors": 0,
-      "tokens_in": 21874,
-      "tokens_out": 201,
-      "cost_usd": 0.0034017000000000006
+      "tokens_in": 76354,
+      "tokens_out": 9174,
+      "cost_usd": 0.07697520000000005
     },
     {
       "model": "minimax-direct/MiniMax-M3",
@@ -90,6 +80,16 @@
       "tokens_in": 25559,
       "tokens_out": 128,
       "cost_usd": 0.002106225
+    },
+    {
+      "model": "gemini-direct/gemini-pro-latest",
+      "provider": "gemini-direct",
+      "calls": 16,
+      "successes": 16,
+      "errors": 0,
+      "tokens_in": 12355,
+      "tokens_out": 158,
+      "cost_usd": 0.00194805
     },
     {
       "model": "moonshot-direct/kimi-k2.7-code",
