@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated_at": "2026-07-06T02:00:26.037511Z",
+    "generated_at": "2026-07-06T04:13:49.283933Z",
     "window_hours": 24,
-    "total_calls": 337,
-    "total_cost_usd": 1.352698,
+    "total_calls": 341,
+    "total_cost_usd": 1.354491,
     "models_count": 10,
     "providers_count": 6,
     "errors_count": 0,
@@ -11,17 +11,6 @@
     "error_count": 0
   },
   "entries": [
-    {
-      "ts": "2026-07-05T03:12:41Z",
-      "agent": "HERMES_CALL_MINIMAX",
-      "model": "minimax-direct/minimax-m3",
-      "tier": 2,
-      "tokens_in": 639,
-      "tokens_out": 100,
-      "cost_usd": 0.0006651,
-      "task_type": "chinese",
-      "result_summary": ""
-    },
     {
       "ts": "2026-07-05T04:51:07Z",
       "agent": "HERMES_CALL_MOONSHOT",
@@ -3715,6 +3704,61 @@
       "tokens_in": 639,
       "tokens_out": 100,
       "cost_usd": 0.0006651,
+      "task_type": "chinese",
+      "result_summary": ""
+    },
+    {
+      "ts": "2026-07-06T02:13:55Z",
+      "agent": "HERMES_CALL_DEEPSEEK",
+      "model": "deepseek-direct/deepseek-v4-pro",
+      "tier": 1,
+      "tokens_in": 491,
+      "tokens_out": 794,
+      "cost_usd": 0.000907666,
+      "task_type": "chinese",
+      "result_summary": ""
+    },
+    {
+      "ts": "2026-07-06T02:13:57Z",
+      "agent": "HERMES_CALL_MOONSHOT",
+      "model": "moonshot-direct/kimi-k2.6",
+      "tier": 2,
+      "tokens_in": 488,
+      "tokens_out": 5,
+      "cost_usd": 0.00038437,
+      "task_type": "chinese",
+      "result_summary": ""
+    },
+    {
+      "ts": "2026-07-06T02:14:00Z",
+      "agent": "HERMES_CALL_ZHIPU",
+      "model": "zhipu-direct/glm-5.2",
+      "tier": 2,
+      "tokens_in": 493,
+      "tokens_out": 5,
+      "cost_usd": 0.000513,
+      "task_type": "chinese",
+      "result_summary": ""
+    },
+    {
+      "ts": "2026-07-06T02:14:02Z",
+      "agent": "HERMES_CALL_MINIMAX",
+      "model": "minimax-direct/MiniMax-M3",
+      "tier": 2,
+      "tokens_in": 636,
+      "tokens_out": 5,
+      "cost_usd": 0.0005769,
+      "task_type": "chinese",
+      "result_summary": ""
+    },
+    {
+      "ts": "2026-07-06T02:14:11Z",
+      "agent": "HERMES_CALL_GEMINI",
+      "model": "gemini-direct/gemini-flash-latest",
+      "tier": 0,
+      "tokens_in": 499,
+      "tokens_out": 1,
+      "cost_usd": 7.545e-05,
       "task_type": "chinese",
       "result_summary": ""
     }
