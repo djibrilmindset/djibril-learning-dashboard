@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated_at": "2026-07-06T10:00:11.597801Z",
+    "generated_at": "2026-07-06T12:00:46.744112Z",
     "window_hours": 24,
-    "total_calls": 357,
-    "total_cost_usd": 1.358407,
+    "total_calls": 398,
+    "total_cost_usd": 1.848549,
     "models_count": 10,
     "providers_count": 6,
     "errors_count": 0,
@@ -14,72 +14,82 @@
     {
       "model": "dashscope/qwen3.7-max",
       "provider": "dashscope",
-      "calls": 33,
-      "successes": 33,
+      "calls": 37,
+      "successes": 37,
       "errors": 0,
-      "tokens_in": 29654,
-      "tokens_out": 55806,
-      "cost_usd": 0.6827706
+      "tokens_in": 36271,
+      "tokens_out": 71114,
+      "cost_usd": 0.8659628999999996
     },
     {
       "model": "moonshot-direct/kimi-k2.6",
       "provider": "moonshot-direct",
-      "calls": 64,
-      "successes": 64,
+      "calls": 70,
+      "successes": 70,
       "errors": 0,
-      "tokens_in": 42750,
-      "tokens_out": 54566,
-      "cost_usd": 0.2853669
+      "tokens_in": 112800,
+      "tokens_out": 67703,
+      "cost_usd": 0.3982909499999999
     },
     {
       "model": "zhipu-direct/glm-5.2",
       "provider": "zhipu-direct",
-      "calls": 75,
-      "successes": 75,
+      "calls": 76,
+      "successes": 76,
       "errors": 0,
-      "tokens_in": 53027,
-      "tokens_out": 31948,
-      "cost_usd": 0.18081899999999995
+      "tokens_in": 104018,
+      "tokens_out": 35900,
+      "cost_usd": 0.247618
     },
     {
       "model": "deepseek-direct/deepseek-v4-pro",
       "provider": "deepseek-direct",
-      "calls": 82,
-      "successes": 82,
+      "calls": 97,
+      "successes": 97,
       "errors": 0,
-      "tokens_in": 95266,
-      "tokens_out": 94796,
-      "cost_usd": 0.12151050800000004
+      "tokens_in": 202858,
+      "tokens_out": 135533,
+      "cost_usd": 0.19383095200000008
     },
     {
       "model": "minimax-direct/minimax-m3",
       "provider": "minimax-direct",
-      "calls": 69,
-      "successes": 69,
+      "calls": 72,
+      "successes": 72,
       "errors": 0,
-      "tokens_in": 53141,
-      "tokens_out": 34685,
-      "cost_usd": 0.0790434
+      "tokens_in": 107666,
+      "tokens_out": 39970,
+      "cost_usd": 0.13287239999999997
     },
     {
-      "model": "minimax-direct/MiniMax-M3",
-      "provider": "minimax-direct",
-      "calls": 5,
-      "successes": 5,
-      "errors": 0,
-      "tokens_in": 3180,
-      "tokens_out": 25,
-      "cost_usd": 0.0028845
-    },
-    {
-      "model": "gemini-direct/gemini-flash-latest",
+      "model": "gemini-direct/gemini-pro-latest",
       "provider": "gemini-direct",
       "calls": 17,
       "successes": 17,
       "errors": 0,
-      "tokens_in": 16073,
-      "tokens_out": 82,
-      "cost_usd": 0.0020369249999999998
+      "tokens_in": 14968,
+      "tokens_out": 184,
+      "cost_usd": 0.0023556
+    },
+    {
+      "model": "minimax-direct/MiniMax-M3",
+      "provider": "minimax-direct",
+      "calls": 4,
+      "successes": 4,
+      "errors": 0,
+      "tokens_in": 2544,
+      "tokens_out": 20,
+      "cost_usd": 0.0023076
+    },
+    {
+      "model": "gemini-direct/gemini-flash-latest",
+      "provider": "gemini-direct",
+      "calls": 19,
+      "successes": 19,
+      "errors": 0,
+      "tokens_in": 18171,
+      "tokens_out": 95,
+      "cost_usd": 0.0021981749999999997
     },
     {
       "model": "minimax-direct/MiniMax-Text-01",
@@ -88,28 +98,18 @@
       "successes": 4,
       "errors": 0,
       "tokens_in": 2040,
-      "tokens_out": 54,
-      "cost_usd": 0.0018846
+      "tokens_out": 53,
+      "cost_usd": 0.0018836999999999999
     },
     {
       "model": "moonshot-direct/kimi-k2.7-code",
       "provider": "moonshot-direct",
-      "calls": 3,
-      "successes": 3,
+      "calls": 2,
+      "successes": 2,
       "errors": 0,
-      "tokens_in": 1482,
-      "tokens_out": 148,
-      "cost_usd": 0.00178488
-    },
-    {
-      "model": "gemini-direct/gemini-pro-latest",
-      "provider": "gemini-direct",
-      "calls": 5,
-      "successes": 5,
-      "errors": 0,
-      "tokens_in": 2004,
-      "tokens_out": 9,
-      "cost_usd": 0.000306
+      "tokens_in": 988,
+      "tokens_out": 107,
+      "cost_usd": 0.0012286699999999998
     }
   ]
 }
