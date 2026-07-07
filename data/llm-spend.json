@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated_at": "2026-07-07T16:09:20.415493Z",
+    "generated_at": "2026-07-07T18:00:03.255299Z",
     "window_hours": 24,
-    "total_calls": 363,
-    "total_cost_usd": 0.728737,
+    "total_calls": 364,
+    "total_cost_usd": 0.729366,
     "models_count": 10,
     "providers_count": 6,
     "errors_count": 0,
@@ -29,7 +29,7 @@
       "errors": 0,
       "tokens_in": 93123,
       "tokens_out": 15541,
-      "cost_usd": 0.1411766700000001
+      "cost_usd": 0.14117667000000012
     },
     {
       "model": "zhipu-direct/glm-5.2",
@@ -39,7 +39,7 @@
       "errors": 0,
       "tokens_in": 83998,
       "tokens_out": 13061,
-      "cost_usd": 0.13624200000000009
+      "cost_usd": 0.1362420000000001
     },
     {
       "model": "minimax-direct/minimax-m3",
@@ -49,7 +49,7 @@
       "errors": 0,
       "tokens_in": 90918,
       "tokens_out": 13595,
-      "cost_usd": 0.09406170000000001
+      "cost_usd": 0.09406170000000003
     },
     {
       "model": "deepseek-direct/deepseek-v4-pro",
@@ -58,28 +58,28 @@
       "successes": 38,
       "errors": 0,
       "tokens_in": 120960,
-      "tokens_out": 52830,
-      "cost_usd": 0.086741736
+      "tokens_out": 52780,
+      "cost_usd": 0.086686736
     },
     {
       "model": "gemini-direct/gemini-pro-latest",
       "provider": "gemini-direct",
-      "calls": 47,
-      "successes": 47,
+      "calls": 63,
+      "successes": 63,
       "errors": 0,
-      "tokens_in": 32626,
-      "tokens_out": 261,
-      "cost_usd": 0.005050500000000003
+      "tokens_in": 40642,
+      "tokens_out": 297,
+      "cost_usd": 0.006274500000000006
     },
     {
       "model": "gemini-direct/gemini-flash-latest",
       "provider": "gemini-direct",
-      "calls": 95,
-      "successes": 95,
+      "calls": 80,
+      "successes": 80,
       "errors": 0,
-      "tokens_in": 50172,
-      "tokens_out": 291,
-      "cost_usd": 0.004233150000000003
+      "tokens_in": 42657,
+      "tokens_out": 244,
+      "cost_usd": 0.003693300000000001
     },
     {
       "model": "minimax-direct/MiniMax-M3",
