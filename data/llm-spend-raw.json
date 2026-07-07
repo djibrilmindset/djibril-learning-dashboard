@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated_at": "2026-07-07T06:29:42.765464Z",
+    "generated_at": "2026-07-07T08:00:16.662150Z",
     "window_hours": 24,
-    "total_calls": 404,
-    "total_cost_usd": 0.865227,
+    "total_calls": 410,
+    "total_cost_usd": 0.873423,
     "models_count": 10,
     "providers_count": 6,
     "errors_count": 0,
@@ -4452,6 +4452,72 @@
       "tokens_in": 494,
       "tokens_out": 220,
       "cost_usd": 0.00138856,
+      "task_type": "chinese",
+      "result_summary": ""
+    },
+    {
+      "ts": "2026-07-07T06:29:50Z",
+      "agent": "HERMES_CALL_GEMINI",
+      "model": "gemini-direct/gemini-flash-latest",
+      "tier": 0,
+      "tokens_in": 501,
+      "tokens_out": 4,
+      "cost_usd": 3.8775e-05,
+      "task_type": "chinese",
+      "result_summary": ""
+    },
+    {
+      "ts": "2026-07-07T06:29:52Z",
+      "agent": "HERMES_CALL_MOONSHOT",
+      "model": "moonshot-direct/kimi-k2.6",
+      "tier": 2,
+      "tokens_in": 494,
+      "tokens_out": 197,
+      "cost_usd": 0.00128161,
+      "task_type": "chinese",
+      "result_summary": ""
+    },
+    {
+      "ts": "2026-07-07T06:29:54Z",
+      "agent": "HERMES_CALL_MOONSHOT",
+      "model": "moonshot-direct/kimi-k2.6",
+      "tier": 2,
+      "tokens_in": 490,
+      "tokens_out": 100,
+      "cost_usd": 0.0008276,
+      "task_type": "chinese",
+      "result_summary": ""
+    },
+    {
+      "ts": "2026-07-07T06:29:55Z",
+      "agent": "HERMES_CALL_MOONSHOT",
+      "model": "moonshot-direct/kimi-k2.7-code",
+      "tier": 2,
+      "tokens_in": 494,
+      "tokens_out": 50,
+      "cost_usd": 0.00059806,
+      "task_type": "chinese",
+      "result_summary": ""
+    },
+    {
+      "ts": "2026-07-07T06:30:05Z",
+      "agent": "HERMES_CALL_DASHSCOPE",
+      "model": "dashscope/qwen3.7-max",
+      "tier": 2,
+      "tokens_in": 515,
+      "tokens_out": 329,
+      "cost_usd": 0.0049437,
+      "task_type": "chinese",
+      "result_summary": ""
+    },
+    {
+      "ts": "2026-07-07T06:30:08Z",
+      "agent": "HERMES_CALL_ZHIPU",
+      "model": "zhipu-direct/glm-5.2",
+      "tier": 2,
+      "tokens_in": 498,
+      "tokens_out": 2,
+      "cost_usd": 0.000506,
       "task_type": "chinese",
       "result_summary": ""
     }
