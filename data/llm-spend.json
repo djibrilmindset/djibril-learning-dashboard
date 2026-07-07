@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated_at": "2026-07-07T10:00:47.069120Z",
+    "generated_at": "2026-07-07T12:00:05.362838Z",
     "window_hours": 24,
-    "total_calls": 395,
-    "total_cost_usd": 0.868302,
+    "total_calls": 404,
+    "total_cost_usd": 0.767963,
     "models_count": 10,
     "providers_count": 6,
     "errors_count": 0,
@@ -14,82 +14,82 @@
     {
       "model": "dashscope/qwen3.7-max",
       "provider": "dashscope",
-      "calls": 16,
-      "successes": 16,
+      "calls": 15,
+      "successes": 15,
       "errors": 0,
-      "tokens_in": 13463,
-      "tokens_out": 29657,
-      "cost_usd": 0.35664570000000007
+      "tokens_in": 11728,
+      "tokens_out": 22785,
+      "cost_usd": 0.2777436
     },
     {
       "model": "moonshot-direct/kimi-k2.6",
       "provider": "moonshot-direct",
-      "calls": 57,
-      "successes": 57,
+      "calls": 56,
+      "successes": 56,
       "errors": 0,
-      "tokens_in": 96005,
-      "tokens_out": 23436,
-      "cost_usd": 0.1800211000000003
+      "tokens_in": 95105,
+      "tokens_out": 16261,
+      "cost_usd": 0.14599135
     },
     {
       "model": "zhipu-direct/glm-5.2",
       "provider": "zhipu-direct",
-      "calls": 59,
-      "successes": 59,
+      "calls": 66,
+      "successes": 66,
       "errors": 0,
-      "tokens_in": 80607,
-      "tokens_out": 13409,
-      "cost_usd": 0.13424300000000017
+      "tokens_in": 88576,
+      "tokens_out": 13594,
+      "cost_usd": 0.14295200000000005
     },
     {
       "model": "minimax-direct/minimax-m3",
       "provider": "minimax-direct",
-      "calls": 59,
-      "successes": 59,
+      "calls": 57,
+      "successes": 57,
       "errors": 0,
-      "tokens_in": 91120,
-      "tokens_out": 13886,
-      "cost_usd": 0.09450540000000004
+      "tokens_in": 94829,
+      "tokens_out": 13948,
+      "cost_usd": 0.09789929999999998
     },
     {
       "model": "deepseek-direct/deepseek-v4-pro",
       "provider": "deepseek-direct",
-      "calls": 39,
-      "successes": 39,
+      "calls": 41,
+      "successes": 41,
       "errors": 0,
-      "tokens_in": 120305,
-      "tokens_out": 53205,
-      "cost_usd": 0.08727229800000001
+      "tokens_in": 122180,
+      "tokens_out": 52576,
+      "cost_usd": 0.08649682399999999
     },
     {
       "model": "gemini-direct/gemini-pro-latest",
       "provider": "gemini-direct",
-      "calls": 60,
-      "successes": 60,
+      "calls": 61,
+      "successes": 61,
       "errors": 0,
-      "tokens_in": 41031,
-      "tokens_out": 328,
-      "cost_usd": 0.006351450000000005
+      "tokens_in": 39640,
+      "tokens_out": 296,
+      "cost_usd": 0.006123600000000003
     },
     {
       "model": "gemini-direct/gemini-flash-latest",
       "provider": "gemini-direct",
-      "calls": 95,
-      "successes": 95,
+      "calls": 96,
+      "successes": 96,
       "errors": 0,
-      "tokens_in": 48200,
-      "tokens_out": 282,
-      "cost_usd": 0.003812775000000003
+      "tokens_in": 50172,
+      "tokens_out": 291,
+      "cost_usd": 0.004233150000000003
     },
     {
       "model": "minimax-direct/MiniMax-M3",
       "provider": "minimax-direct",
-      "calls": 4,
-      "successes": 4,
+      "calls": 5,
+      "successes": 5,
       "errors": 0,
-      "tokens_in": 2544,
-      "tokens_out": 20,
-      "cost_usd": 0.0023076
+      "tokens_in": 3180,
+      "tokens_out": 25,
+      "cost_usd": 0.0028845
     },
     {
       "model": "minimax-direct/MiniMax-Text-01",
@@ -98,18 +98,18 @@
       "successes": 4,
       "errors": 0,
       "tokens_in": 2040,
-      "tokens_out": 50,
-      "cost_usd": 0.001881
+      "tokens_out": 40,
+      "cost_usd": 0.001872
     },
     {
       "model": "moonshot-direct/kimi-k2.7-code",
       "provider": "moonshot-direct",
-      "calls": 2,
-      "successes": 2,
+      "calls": 3,
+      "successes": 3,
       "errors": 0,
-      "tokens_in": 988,
-      "tokens_out": 114,
-      "cost_usd": 0.00126122
+      "tokens_in": 1482,
+      "tokens_out": 144,
+      "cost_usd": 0.0017662799999999998
     }
   ]
 }
