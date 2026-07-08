@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated_at": "2026-07-08T12:00:18.940565Z",
+    "generated_at": "2026-07-08T14:00:43.894607Z",
     "window_hours": 24,
-    "total_calls": 845,
-    "total_cost_usd": 4.32575,
+    "total_calls": 924,
+    "total_cost_usd": 4.974158,
     "models_count": 10,
     "providers_count": 6,
     "errors_count": 0,
@@ -14,72 +14,82 @@
     {
       "model": "dashscope/qwen3.7-max",
       "provider": "dashscope",
-      "calls": 110,
-      "successes": 110,
+      "calls": 127,
+      "successes": 127,
       "errors": 0,
-      "tokens_in": 85047,
-      "tokens_out": 220685,
-      "cost_usd": 2.6130249
+      "tokens_in": 101812,
+      "tokens_out": 254634,
+      "cost_usd": 3.0249395999999997
     },
     {
       "model": "zhipu-direct/glm-5.2",
       "provider": "zhipu-direct",
-      "calls": 140,
-      "successes": 140,
+      "calls": 156,
+      "successes": 156,
       "errors": 0,
-      "tokens_in": 170360,
-      "tokens_out": 107566,
-      "cost_usd": 0.6006240000000003
+      "tokens_in": 186847,
+      "tokens_out": 126745,
+      "cost_usd": 0.6938269999999999
     },
     {
       "model": "deepseek-direct/deepseek-v4-pro",
       "provider": "deepseek-direct",
-      "calls": 212,
-      "successes": 212,
+      "calls": 234,
+      "successes": 234,
       "errors": 0,
-      "tokens_in": 324201,
-      "tokens_out": 348948,
-      "cost_usd": 0.44375364600000006
+      "tokens_in": 349096,
+      "tokens_out": 387562,
+      "cost_usd": 0.490558632
     },
     {
       "model": "moonshot-direct/kimi-k2.6",
       "provider": "moonshot-direct",
-      "calls": 101,
-      "successes": 101,
+      "calls": 110,
+      "successes": 110,
       "errors": 0,
-      "tokens_in": 133900,
-      "tokens_out": 50459,
-      "cost_usd": 0.3337203500000001
+      "tokens_in": 138146,
+      "tokens_out": 61926,
+      "cost_usd": 0.3901839400000002
     },
     {
       "model": "minimax-direct/minimax-m3",
       "provider": "minimax-direct",
-      "calls": 149,
-      "successes": 149,
+      "calls": 165,
+      "successes": 165,
       "errors": 0,
-      "tokens_in": 185122,
-      "tokens_out": 154574,
-      "cost_usd": 0.3057264000000001
+      "tokens_in": 202301,
+      "tokens_out": 178511,
+      "cost_usd": 0.3427308000000001
     },
     {
       "model": "gemini-direct/gemini-pro-latest",
       "provider": "gemini-direct",
-      "calls": 116,
-      "successes": 116,
+      "calls": 107,
+      "successes": 107,
       "errors": 0,
-      "tokens_in": 158687,
-      "tokens_out": 979,
-      "cost_usd": 0.024390450000000008
+      "tokens_in": 166553,
+      "tokens_out": 1370,
+      "cost_usd": 0.025804950000000007
     },
     {
       "model": "minimax-direct/MiniMax-M3",
       "provider": "minimax-direct",
-      "calls": 4,
-      "successes": 4,
+      "calls": 5,
+      "successes": 5,
       "errors": 0,
-      "tokens_in": 2544,
-      "tokens_out": 20,
-      "cost_usd": 0.0023076
+      "tokens_in": 3180,
+      "tokens_out": 25,
+      "cost_usd": 0.0028845
+    },
+    {
+      "model": "moonshot-direct/kimi-k2.7-code",
+      "provider": "moonshot-direct",
+      "calls": 2,
+      "successes": 2,
+      "errors": 0,
+      "tokens_in": 988,
+      "tokens_out": 160,
+      "cost_usd": 0.00147512
     },
     {
       "model": "minimax-direct/MiniMax-Text-01",
@@ -92,24 +102,14 @@
       "cost_usd": 0.0009396
     },
     {
-      "model": "moonshot-direct/kimi-k2.7-code",
-      "provider": "moonshot-direct",
-      "calls": 1,
-      "successes": 1,
-      "errors": 0,
-      "tokens_in": 494,
-      "tokens_out": 68,
-      "cost_usd": 0.00068176
-    },
-    {
       "model": "gemini-direct/gemini-flash-latest",
       "provider": "gemini-direct",
-      "calls": 10,
-      "successes": 10,
+      "calls": 16,
+      "successes": 16,
       "errors": 0,
-      "tokens_in": 5052,
-      "tokens_out": 44,
-      "cost_usd": 0.000581625
+      "tokens_in": 8058,
+      "tokens_out": 65,
+      "cost_usd": 0.0008133750000000001
     }
   ]
 }
