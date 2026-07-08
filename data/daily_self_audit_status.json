@@ -1,24 +1,24 @@
 {
-  "ts": "2026-07-07T05:47:59Z",
-  "overall": "warn",
+  "ts": "2026-07-08T12:00:01Z",
+  "overall": "ok",
   "auto_apply": false,
   "counts": {
-    "ok": 8,
-    "warn": 1,
+    "ok": 9,
+    "warn": 0,
     "fail": 0
   },
   "checks": [
     {
       "name": "rois_princes",
-      "status": "warn",
+      "status": "ok",
       "bucket": "infra",
-      "detail": "RÉSUMÉ : 6 ALIVE | 1 PHANTOM | 1 DEAD  (sur 8) (exit 1)"
+      "detail": "RÉSUMÉ : 8 ALIVE | 0 PHANTOM | 0 DEAD  (sur 8)"
     },
     {
       "name": "tokens_24h",
       "status": "ok",
       "bucket": "infra",
-      "detail": "conso 24h: $0.8725"
+      "detail": "conso 24h: $4.3474"
     },
     {
       "name": "emails_tracking",
@@ -30,7 +30,7 @@
       "name": "basile_audit",
       "status": "ok",
       "bucket": "basile",
-      "detail": "audit Basile frais (daily audit Basile : dernier run 2026-07-06 13:58 (il y a 18h)   dernier rapport : basile_daily_audit_20260706_1200.md )"
+      "detail": "audit Basile frais (daily audit Basile : dernier run 2026-07-08 12:22 (il y a 1h)   dernier rapport : basile_daily_audit_20260708_1200.md )"
     },
     {
       "name": "amine_guard",
@@ -42,7 +42,7 @@
       "name": "launchd_plists",
       "status": "ok",
       "bucket": "infra",
-      "detail": "39 plists Djibril/Hermes chargés"
+      "detail": "40 plists Djibril/Hermes chargés"
     },
     {
       "name": "cost_throttle",
@@ -63,12 +63,5 @@
       "detail": "pas de test exit-code (copy=créatif) → audité sur demande, jamais auto-édité (doctrine H1)"
     }
   ],
-  "problems": [
-    {
-      "name": "rois_princes",
-      "status": "warn",
-      "bucket": "infra",
-      "detail": "RÉSUMÉ : 6 ALIVE | 1 PHANTOM | 1 DEAD  (sur 8) (exit 1)"
-    }
-  ]
+  "problems": []
 }
