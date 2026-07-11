@@ -1,31 +1,31 @@
 {
   "_meta": {
-    "generated": "2026-07-11T07:07:11.014221Z",
+    "generated": "2026-07-11T10:02:54.286346Z",
     "source": "fathom_api + moonshot_kimi_k2.5_analyzer + frameworks_corpus_v1",
-    "owner_calls_tracked": 27,
+    "owner_calls_tracked": 28,
     "client_cold_calls_tracked": 0,
     "schema_version": "1.1",
     "frameworks_corpus": "~/agence-ia/manager/calls_intelligence/frameworks_corpus.json",
     "reports_path": "/Users/pardin/agence-ia/manager/calls_intelligence/reports"
   },
   "summary": {
-    "calls_total": 27,
-    "avg_score_global": 54.1,
+    "calls_total": 28,
+    "avg_score_global": 55.0,
     "delta_score_30d": 0,
     "top_strength": "Rapport / présence",
     "top_weakness": "Tentative closing",
-    "win_rate_top_pattern": 0.12,
+    "win_rate_top_pattern": 0.18,
     "best_call": {
-      "id": "fathom-153663599",
-      "score": 48
+      "id": "fathom-162687277",
+      "score": 78
     },
     "dim_averages": {
-      "rapport_presence": 71.8,
-      "discovery_spin": 50.3,
-      "pain_amplification": 51.9,
-      "offer_clarity": 49.6,
-      "objection_handling": 58.1,
-      "closing_attempt": 43.4
+      "rapport_presence": 72.3,
+      "discovery_spin": 51.2,
+      "pain_amplification": 52.9,
+      "offer_clarity": 50.4,
+      "objection_handling": 58.7,
+      "closing_attempt": 44.9
     }
   },
   "scoring_dimensions": [
@@ -55,6 +55,234 @@
     }
   ],
   "calls_perso": [
+    {
+      "id": "fathom-162687277",
+      "owner": "djibril",
+      "recording_id": 162687277,
+      "fathom_share_url": "https://fathom.video/share/-9Y2_M8xz19TpHbAz9AfEYosrA3HAHPU",
+      "prospect": "Ibrahim Diaby",
+      "title": "Ibrahim  avec djibril  @ 10 juil. 2026 - 17:00 - Europe/Paris (GMT+2)",
+      "date": "2026-07-10T15:02:57Z",
+      "duration_min": 60,
+      "outcome": "closed_won",
+      "score_global": 78,
+      "scores": {
+        "rapport_presence": 85,
+        "discovery_spin": 75,
+        "pain_amplification": 80,
+        "offer_clarity": 70,
+        "objection_handling": 75,
+        "closing_attempt": 85
+      },
+      "spin_breakdown": {
+        "situation_pct": 15,
+        "problem_pct": 25,
+        "implication_pct": 30,
+        "needpayoff_pct": 30,
+        "ratio_prospect_djibril_speaking": 0.4
+      },
+      "top_2_leviers_8020": [
+        {
+          "rank": 1,
+          "levier": "Ajouter une question à 'non' (No-oriented) avant de proposer le plan de paiement flexibilisé pour forcer l'engagement mental du prospect",
+          "impact_attendu_points": 15,
+          "fix_concret": "À min 40:00, avant de dire 'moi pour ta situation je peux faire 1500€', demander : 'Est-ce que ce serait une mauvaise idée de trouver un moyen de démarrer ensemble aujourd'hui même si ton budget est serré ?' Attendre le 'non' (c'est-à-dire 'non c'est pas une mauvaise idée') puis proposer le paiement échelonné",
+          "timestamp_ref": "00:40:00"
+        },
+        {
+          "rank": 2,
+          "levier": "Insérer un cas client concret chiffré (Iliès) avec preuve sociale entre la phase N (Need-payoff) et la présentation de l'offre pour ancrer la probabilité de succès avant le monologue offre",
+          "impact_attendu_points": 12,
+          "fix_concret": "À min 25:00, après que Ibrahim ait dit 'c'est être libre financièrement', dire : 'Tu sais, j'ai un pote Iliès, électricien comme toi, exactement dans ta situation y'a 6 mois - aujourd'hui il fait 13k€ par mois en bossant 2 semaines sur 4. Je te montre comment il a fait ?' Montrer screenshot puis transitionner vers l'offre",
+          "timestamp_ref": "00:25:00"
+        }
+      ],
+      "cross_channel_implications": {
+        "to_instagram_reels": "Tourner un reel 22s cette semaine : 'Le plombier de 45 ans qui fait 13k€/mois en 2 semaines (cas Iliès)' - hook visuel clé à 3s : 'Ton métier se meurt mais ton chiffre explose' - utiliser exactement la phrase d'Ibrahim 'le métier se meurt' comme hook audio texte",
+        "to_meta_ads": "Refondre creative 'BTP vs Digital' avec le pain exact d'Ibrahim : split test entre 'Arrête de courir après les fuites, commence à courir après les clients' et 'Tu réparais des siphons, eux regardent YouTube - change de règle du jeu' - ciblage : intérêt 'plomberie' + 'auto-entrepreneur' + 35-55 ans",
+        "to_basile_dm": "Durcir le script Basile avec qualification précoce sur la capacité à payer : ajouter une question 'Actuellement tu es plombier salarié ou à ton compte ? Si tu passes à ton compte demain, est-ce que trouver 1500€ pour démarrer c'est faisable ou bloquant ?' - filtrer les curieux des buyers",
+        "to_lp_vsl": "Ajouter une section 'De plombier salarié à entrepreneur digital' avec timeline visuelle 0-30-60-90 jours et screenshot des résultats Iliès - réduire la confusion sur 'comment je passe de mes outils à l'ordinateur'",
+        "to_mariam_email": "Activer email J-1 de confirmation avec objet : 'Ibrahim, prépare ta CB pour demain 17h' - corps : mentionner explicitement 'Porte d'entrée 1500€ + reste à la performance' pour ancrer le prix et réduire le no-show",
+        "to_cold_calls_clients": "Coaching Mael/Yacine : utiliser le mirroring 'Trop cher en ce moment ?' sur toute objection prix dans les 10 prochains calls - pattern à suivre : répéter les 3 derniers mots avec intonation montante puis silence 4 secondes"
+      },
+      "moments_positifs": [
+        {
+          "t_min": 1,
+          "label": "Définition claire du but de l'appel avec permission du prospect",
+          "framework": "belfort_straight_line_setup"
+        },
+        {
+          "t_min": 6,
+          "label": "Validation émotionnelle 'c'est un petit peu ça' - thats_right",
+          "framework": "voss_thats_right"
+        },
+        {
+          "t_min": 9,
+          "label": "Amplification pain famille/bled 'ça fait mal au coeur'",
+          "framework": "spin_implication"
+        },
+        {
+          "t_min": 12,
+          "label": "Mirroring sur objection prix implicite 'Trop cher en ce moment ?'",
+          "framework": "voss_mirror_used"
+        },
+        {
+          "t_min": 34,
+          "label": "Garantie remboursement 90j explicite et inconditionnelle",
+          "framework": "hormozi_risk_reversal"
+        }
+      ],
+      "moments_negatifs": [
+        {
+          "t_min": 30,
+          "label": "Monologue 5min+ sur l'offre sans interaction (feature dumping)",
+          "anti_pattern": "monologue_djibril"
+        },
+        {
+          "t_min": 43,
+          "label": "Prix proposé sans anchor haut ni value stack préalable",
+          "anti_pattern": "pricing_no_anchor"
+        }
+      ],
+      "patterns_detected": [
+        "frustration_positive_hook",
+        "spin_chain_full",
+        "voss_mirror_used",
+        "case_study_window",
+        "risk_reversal_explicit",
+        "direct_close_attempt",
+        "thats_right_validation"
+      ],
+      "anti_patterns_detected": [
+        "monologue_djibril",
+        "pricing_no_anchor"
+      ],
+      "frameworks_used_well": [
+        {
+          "concept": "Mirroring (Effet miroir)",
+          "book_source": "Never Split The Difference - Chris Voss",
+          "evidence_timestamp": "00:12:52",
+          "evidence_quote": "Djibril: 'Trop cher en ce moment ?' - répétition des derniers mots d'Ibrahim"
+        },
+        {
+          "concept": "SPIN Selling - Phase Implication",
+          "book_source": "SPIN Selling - Rackham",
+          "evidence_timestamp": "00:08:05",
+          "evidence_quote": "Djibril: 'Donc t'es frustré d'avoir des capacités et d'être limité parce que tu ne les mets pas à disposition de ton propre société'"
+        },
+        {
+          "concept": "Value Equation (Dream Outcome + Perceived Likelihood)",
+          "book_source": "100M Offers - Alex Hormozi",
+          "evidence_timestamp": "00:34:42",
+          "evidence_quote": "Djibril: 'Sur les 90 jours, si Allah ne t'a pas permis d'atteindre ses objectifs... tu seras remboursé intégralement'"
+        },
+        {
+          "concept": "That's Right (Validation totale)",
+          "book_source": "Never Split The Difference - Chris Voss",
+          "evidence_timestamp": "00:06:42",
+          "evidence_quote": "Ibrahim: 'Exactement, tout à fait' après reformulation Djibril sur la frustration"
+        }
+      ],
+      "frameworks_missed": [
+        {
+          "concept": "No-Oriented Questions (Questions à non)",
+          "book_source": "Never Split The Difference - Chris Voss",
+          "definition_quick": "Poser des questions où le prospect répond 'non' pour sécuriser son sentiment d'autonomie et d'engagement réel (ex: 'Est-ce que c'est une mauvaise idée de... ?')",
+          "where_to_apply": "00:40:00",
+          "fix_phrase": "Est-ce que ce serait une mauvaise idée de trouver un moyen de démarrer ensemble aujourd'hui même si ton budget est serré actuellement ?"
+        },
+        {
+          "concept": "Accusation Audit (Audit des accusations)",
+          "book_source": "Never Split The Difference - Chris Voss",
+          "definition_quick": "Énoncer à l'avance tous les négatifs que le prospect pourrait penser pour désarmer les objections avant qu'elles n'arrivent",
+          "where_to_apply": "00:28:40",
+          "fix_phrase": "Tu vas sûrement te dire que c'est encore un gourou sur internet, que 1500€ c'est beaucoup pour un plombier, et que t'as déjà essayé plein de trucs qui ont marché... et tu sais quoi ? T'as raison d'être méfiant."
+        },
+        {
+          "concept": "Value Stack (Empilement de valeur)",
+          "book_source": "Expert Secrets - Russell Brunson / 100M Offers - Hormozi",
+          "definition_quick": "Listes tous les éléments de valeur inclus dans l'offre avec leur valeur monétaire individuelle avant d'annoncer le prix final pour créer un ancrage haut",
+          "where_to_apply": "00:43:00",
+          "fix_phrase": "Donc on a l'accès à vie à la plateforme à 2000€, les lives du lundi au jeudi à 1000€/mois, le support WhatsApp 24/7 à 500€/mois, le scrapping IA des leads à 800€, soit un total de 4300€... mais aujourd'hui on ne va pas faire ça."
+        }
+      ],
+      "glossary_terms": [
+        {
+          "term": "Mirroring (Effet miroir)",
+          "definition": "Répéter les 1-3 derniers mots d'une phrase du prospect avec intonation interrogative pour l'inciter à approfondir sans pression directe. Force le prospect à se ré-engager verbalement.",
+          "source_book": "Never Split The Difference - Chris Voss"
+        },
+        {
+          "term": "Need-Payoff Questions",
+          "definition": "Questions SPIN phase N qui amènent le prospect à formuler lui-même la valeur et les bénéfices de la solution, créant ainsi un engagement auto-généré plutôt qu'imposé.",
+          "source_book": "SPIN Selling - Rackham"
+        },
+        {
+          "term": "That's Right",
+          "definition": "Validation émotionnelle totale où le prospect s'exclame 'C'est ça !' ou 'Exactement !' (vs 'Tu as raison' qui signifie 'Ferme-la'). Indique une connexion profonde et un accord réel.",
+          "source_book": "Never Split The Difference - Chris Voss"
+        },
+        {
+          "term": "Risk Reversal",
+          "definition": "Technique d'Hormozi consistant à prendre entièrement le risque sur soi (garantie remboursement inconditionnel) pour éliminer la friction d'achat et augmenter la probabilité perçue de succès.",
+          "source_book": "100M Offers - Alex Hormozi"
+        },
+        {
+          "term": "No-Oriented Question",
+          "definition": "Question calibrée pour obtenir un 'non' du prospect (ex: 'Est-ce une mauvaise idée ?'), donnant au prospect un sentiment de contrôle et sécurisant son engagement réel avant le closing.",
+          "source_book": "Never Split The Difference - Chris Voss"
+        },
+        {
+          "term": "Accusation Audit",
+          "definition": "Énoncer proactivement toutes les accusations ou objections négatives que le prospect pourrait avoir avant qu'il ne les formule, désarmant ainsi la résistance par transparence.",
+          "source_book": "Never Split The Difference - Chris Voss"
+        },
+        {
+          "term": "Value Stack",
+          "definition": "Technique de présentation où l'on empile la valeur de chaque composante de l'offre avec un prix individuel exagéré avant de révéler le prix réel, créant une ancre de valeur élevée.",
+          "source_book": "Expert Secrets - Russell Brunson"
+        }
+      ],
+      "next_actions": [
+        "Envoyer à Ibrahim le cas client Iliès par WhatsApp avec screenshot des 13k€ sous 2h pour renforcer la preuve sociale post-call",
+        "Mettre à jour le script Basile IG avec la question de qualification sur la capacité à investir 1500€ d'entrée",
+        "Tourner le reel Instagram 'Plombier 13k€' avant jeudi prochain en utilisant les mots exacts d'Ibrahim sur le métier qui se meurt"
+      ],
+      "next_action": "Envoyer à Ibrahim le cas client Iliès par WhatsApp avec screenshot des 13k€ sous 2h pour renforcer la preuve sociale post-call · Mettre à jour le script Basile IG avec la question de qualification sur la capacité à investir 1500€ d'entrée",
+      "key_quotes": [
+        {
+          "speaker": "Prospect",
+          "t": "00:03:57",
+          "quote": "Les gens ne sont pas prêts à faire des rénovations... la tendance elle a changé",
+          "analysis": "Pain point majeur sur la baisse d'activité BTP, à utiliser dans les hooks publicitaires"
+        },
+        {
+          "speaker": "Prospect",
+          "t": "00:08:05",
+          "quote": "Ça fait mal au coeur... j'ai la famille au bled, le nombre d'appels que je reçois",
+          "analysis": "Motivation émotionnelle profonde (famille, origine) utilisée comme levier d'implication"
+        },
+        {
+          "speaker": "Prospect",
+          "t": "00:11:42",
+          "quote": "Le métier se meurt... aujourd'hui c'est des trucs à cliquer, tu viens tu mets l'eau",
+          "analysis": "Expression parfaite de la dévalorisation du savoir-faire, excellent hook pour contenu"
+        },
+        {
+          "speaker": "Prospect",
+          "t": "00:19:36",
+          "quote": "Frère, c'est être libre financièrement... quand tu es libre financièrement, tu peux faire plus",
+          "analysis": "Need-payoff auto-généré par le prospect, idéal pour le qualifier comme buyer"
+        },
+        {
+          "speaker": "Djibril",
+          "t": "00:45:50",
+          "quote": "Close effectif avec réduction de prix justifiée par la valeur sociale future (témoignage)"
+        }
+      ],
+      "verdict": "TOP - Call efficace avec bonne connexion émotionnelle et close réussi, mais le LEVIER #1 (question à 'non' avant le prix) aurait sécurisé l'engagement à 100% et évité tout risque de désistement post-call.",
+      "type": "discovery"
+    },
     {
       "id": "fathom-153663599",
       "owner": "djibril",
@@ -6342,38 +6570,38 @@
   "patterns_success": [
     {
       "pattern": "Risk reversal explicit",
+      "win_rate": 0.18,
+      "samples": 17
+    },
+    {
+      "pattern": "Voss mirror used",
       "win_rate": 0.12,
       "samples": 16
     },
     {
-      "pattern": "Voss mirror used",
-      "win_rate": 0.07,
-      "samples": 15
-    },
-    {
       "pattern": "Thats right validation",
-      "win_rate": 0.13,
-      "samples": 15
+      "win_rate": 0.19,
+      "samples": 16
     },
     {
       "pattern": "Frustration positive hook",
-      "win_rate": 0.15,
-      "samples": 13
+      "win_rate": 0.21,
+      "samples": 14
     },
     {
       "pattern": "Direct close attempt",
-      "win_rate": 0.18,
-      "samples": 11
+      "win_rate": 0.25,
+      "samples": 12
     },
     {
       "pattern": "Case study window",
-      "win_rate": 0.0,
-      "samples": 7
+      "win_rate": 0.12,
+      "samples": 8
     },
     {
       "pattern": "Spin chain full",
-      "win_rate": 0.2,
-      "samples": 5
+      "win_rate": 0.33,
+      "samples": 6
     },
     {
       "pattern": "No oriented question",
@@ -6384,8 +6612,8 @@
   "patterns_failure": [
     {
       "pattern": "Monologue djibril",
-      "loss_rate": 0.96,
-      "samples": 25
+      "loss_rate": 0.92,
+      "samples": 26
     },
     {
       "pattern": "Soft close pattern",
@@ -6404,8 +6632,8 @@
     },
     {
       "pattern": "Pricing no anchor",
-      "loss_rate": 0.93,
-      "samples": 15
+      "loss_rate": 0.88,
+      "samples": 16
     },
     {
       "pattern": "Feature dumping",
@@ -6427,6 +6655,12 @@
   "queue_to_analyze": [],
   "cross_channel_insights": {
     "to_instagram_reels": [
+      {
+        "from_call": "Ibrahim Diaby",
+        "score": 78,
+        "date": "2026-07-10T15:02:57Z",
+        "insight": "Tourner un reel 22s cette semaine : 'Le plombier de 45 ans qui fait 13k€/mois en 2 semaines (cas Iliès)' - hook visuel clé à 3s : 'Ton métier se meurt mais ton chiffre explose' - utiliser exactement la phrase d'Ibrahim 'le métier se meurt' comme hook audio texte"
+      },
       {
         "from_call": "Mohamed Id belgdif",
         "score": 48,
@@ -6592,6 +6826,12 @@
     ],
     "to_meta_ads": [
       {
+        "from_call": "Ibrahim Diaby",
+        "score": 78,
+        "date": "2026-07-10T15:02:57Z",
+        "insight": "Refondre creative 'BTP vs Digital' avec le pain exact d'Ibrahim : split test entre 'Arrête de courir après les fuites, commence à courir après les clients' et 'Tu réparais des siphons, eux regardent YouTube - change de règle du jeu' - ciblage : intérêt 'plomberie' + 'auto-entrepreneur' + 35-55 ans"
+      },
+      {
         "from_call": "Mohamed Id belgdif",
         "score": 48,
         "date": "2026-06-09T19:34:38Z",
@@ -6755,6 +6995,12 @@
       }
     ],
     "to_basile_dm": [
+      {
+        "from_call": "Ibrahim Diaby",
+        "score": 78,
+        "date": "2026-07-10T15:02:57Z",
+        "insight": "Durcir le script Basile avec qualification précoce sur la capacité à payer : ajouter une question 'Actuellement tu es plombier salarié ou à ton compte ? Si tu passes à ton compte demain, est-ce que trouver 1500€ pour démarrer c'est faisable ou bloquant ?' - filtrer les curieux des buyers"
+      },
       {
         "from_call": "Mohamed Id belgdif",
         "score": 48,
@@ -6920,6 +7166,12 @@
     ],
     "to_lp_vsl": [
       {
+        "from_call": "Ibrahim Diaby",
+        "score": 78,
+        "date": "2026-07-10T15:02:57Z",
+        "insight": "Ajouter une section 'De plombier salarié à entrepreneur digital' avec timeline visuelle 0-30-60-90 jours et screenshot des résultats Iliès - réduire la confusion sur 'comment je passe de mes outils à l'ordinateur'"
+      },
+      {
         "from_call": "Mohamed Id belgdif",
         "score": 48,
         "date": "2026-06-09T19:34:38Z",
@@ -7083,6 +7335,12 @@
       }
     ],
     "to_mariam_email": [
+      {
+        "from_call": "Ibrahim Diaby",
+        "score": 78,
+        "date": "2026-07-10T15:02:57Z",
+        "insight": "Activer email J-1 de confirmation avec objet : 'Ibrahim, prépare ta CB pour demain 17h' - corps : mentionner explicitement 'Porte d'entrée 1500€ + reste à la performance' pour ancrer le prix et réduire le no-show"
+      },
       {
         "from_call": "Mohamed Id belgdif",
         "score": 48,
@@ -7248,6 +7506,12 @@
     ],
     "to_cold_calls_clients": [
       {
+        "from_call": "Ibrahim Diaby",
+        "score": 78,
+        "date": "2026-07-10T15:02:57Z",
+        "insight": "Coaching Mael/Yacine : utiliser le mirroring 'Trop cher en ce moment ?' sur toute objection prix dans les 10 prochains calls - pattern à suivre : répéter les 3 derniers mots avec intonation montante puis silence 4 secondes"
+      },
+      {
         "from_call": "Mohamed Id belgdif",
         "score": 48,
         "date": "2026-06-09T19:34:38Z",
@@ -7412,6 +7676,22 @@
     ]
   },
   "top_leviers_8020_aggregated": [
+    {
+      "rank": 1,
+      "levier": "Ajouter une question à 'non' (No-oriented) avant de proposer le plan de paiement flexibilisé pour forcer l'engagement mental du prospect",
+      "impact": 15,
+      "from_call": "Ibrahim Diaby",
+      "timestamp_ref": "00:40:00",
+      "score_call": 78
+    },
+    {
+      "rank": 2,
+      "levier": "Insérer un cas client concret chiffré (Iliès) avec preuve sociale entre la phase N (Need-payoff) et la présentation de l'offre pour ancrer la probabilité de succès avant le monologue offre",
+      "impact": 12,
+      "from_call": "Ibrahim Diaby",
+      "timestamp_ref": "00:25:00",
+      "score_call": 78
+    },
     {
       "rank": 1,
       "levier": "Ajouter Accusation Audit + Question No-Oriented avant énoncé prix",
