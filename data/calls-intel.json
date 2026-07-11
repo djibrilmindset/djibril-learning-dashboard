@@ -1,31 +1,31 @@
 {
   "_meta": {
-    "generated": "2026-07-11T10:02:54.286346Z",
+    "generated": "2026-07-11T18:01:55.208933Z",
     "source": "fathom_api + moonshot_kimi_k2.5_analyzer + frameworks_corpus_v1",
-    "owner_calls_tracked": 28,
+    "owner_calls_tracked": 29,
     "client_cold_calls_tracked": 0,
     "schema_version": "1.1",
     "frameworks_corpus": "~/agence-ia/manager/calls_intelligence/frameworks_corpus.json",
     "reports_path": "/Users/pardin/agence-ia/manager/calls_intelligence/reports"
   },
   "summary": {
-    "calls_total": 28,
-    "avg_score_global": 55.0,
+    "calls_total": 29,
+    "avg_score_global": 55.6,
     "delta_score_30d": 0,
     "top_strength": "Rapport / présence",
     "top_weakness": "Tentative closing",
-    "win_rate_top_pattern": 0.18,
+    "win_rate_top_pattern": 0.22,
     "best_call": {
-      "id": "fathom-162687277",
-      "score": 78
+      "id": "fathom-162880246",
+      "score": 71
     },
     "dim_averages": {
-      "rapport_presence": 72.3,
-      "discovery_spin": 51.2,
-      "pain_amplification": 52.9,
-      "offer_clarity": 50.4,
-      "objection_handling": 58.7,
-      "closing_attempt": 44.9
+      "rapport_presence": 72.5,
+      "discovery_spin": 51.4,
+      "pain_amplification": 53.5,
+      "offer_clarity": 50.9,
+      "objection_handling": 58.8,
+      "closing_attempt": 46.4
     }
   },
   "scoring_dimensions": [
@@ -55,6 +55,251 @@
     }
   ],
   "calls_perso": [
+    {
+      "id": "fathom-162880246",
+      "owner": "djibril",
+      "recording_id": 162880246,
+      "fathom_share_url": "https://fathom.video/share/Bx7GGEYn5iaSjfHdpxpMZvMATctovPHW",
+      "prospect": "Tahir muhamat",
+      "title": "Ali avec djibril  @ 11 juil. 2026 - 17:00 - Europe/Paris (GMT+2)",
+      "date": "2026-07-11T15:01:11Z",
+      "duration_min": 60,
+      "outcome": "closed_won",
+      "score_global": 71,
+      "scores": {
+        "rapport_presence": 78,
+        "discovery_spin": 58,
+        "pain_amplification": 72,
+        "offer_clarity": 65,
+        "objection_handling": 62,
+        "closing_attempt": 88
+      },
+      "spin_breakdown": {
+        "situation_pct": 42,
+        "problem_pct": 28,
+        "implication_pct": 18,
+        "needpayoff_pct": 12,
+        "ratio_prospect_djibril_speaking": 0.38
+      },
+      "top_2_leviers_8020": [
+        {
+          "rank": 1,
+          "levier": "Insérer le Case Study 'Mael 14/14' chiffré à min 20:00 avant l'explication technique du SMMA",
+          "impact_attendu_points": 14,
+          "fix_concret": "À min 20:00, dire : 'Ali, arrête-moi si je me trompe, mais j'ai un gars, Mael, il était agent d'accueil comme toi à La Défense, 1400€ net, il a signé un client restaurant le jour 14, 14 jours après avoir commencé, 2000€ de commission. Tu veux voir la preuve ?' Puis montrer screenshot.",
+          "timestamp_ref": "00:20:00"
+        },
+        {
+          "rank": 2,
+          "levier": "Ajouter une Accusation Audit (Voss) à min 41:00 sur la peur du démarchage",
+          "impact_attendu_points": 11,
+          "fix_concret": "À min 41:00, dire : 'Tu vas sans doute penser que c'est impossible pour toi d'appeler des inconnus, que tu n'as pas le carnet d'adresses, que tu vas te faire rejeter, et que finalement tu n'es pas fait pour le business...' puis laisser Ali confirmer.",
+          "timestamp_ref": "00:41:00"
+        }
+      ],
+      "cross_channel_implications": {
+        "to_instagram_reels": "Tourner reel 22s cette semaine : 'J'ai dépensé 1200€ en formations qui m'ont laissé en plan (texte à l'écran : FORMATION INCOMPLÈTE ?) → Voici pourquoi l'accompagnement 1:1 est différent' → CTA 'Lien en bio pour voir si t'es éligible'. Cible : prospects ayant subi le même trauma formation qu'Ali (mentionné à 00:06:57).",
+        "to_meta_ads": "Refondre creative 'Agent d'accueil vs Entrepreneur' : Split-screen gauche '1600€/mois - 8h/jour - patron qui crie' vs droite '5000€/mois - téléphone - chez toi'. Headline : 'Tu as un Master mais tu gagnes moins qu'un livreur ?'. Pain point : 'Prisonnier de moi-même' (00:11:03).",
+        "to_basile_dm": "Durcir le script Basile avec question calibrée : 'De 1 à 10, à quel point tu es prêt à quitter ton job d'agent d'accueil ?' Si <7, rediriger vers nurture. Si ≥7, demander : 'Qu'est-ce qui t'a empêché d'atteindre 5k€/mois jusqu'ici ?' (pré-qualifie le pain comme Ali l'a exprimé).",
+        "to_lp_vsl": "Refondre section 'Comment ça marche' : Ajouter une étape 0 'Case Study Mael' avant l'explication technique. Le prospect Ali était confus sur formation vs accompagnement (00:56:01). Rajouter un bandeau rouge : 'CE N'EST PAS UNE FORMATION VIDÉO - C'est un accompagnement avec appels directs avec Djibril'.",
+        "to_mariam_email": "Activer email Mariam J-1 avec sujet : 'Ali, ta stratégie pour passer à 5k€ est prête (lien confirmation)'. Body : Vidéo 60s de Djibril qui dit : 'Demain on verra exactement comment tu quittes ton job d'accueil. Pense à ta niche idéale avant le call.' Réduit no-show de prospects ayant peur (pattern 'je dois réfléchir' à 00:50:04).",
+        "to_cold_calls_clients": "Coaching à donner à Mael/Yacine : Pattern 'Je n'ai pas la force/pas le temps' détecté à 00:41:26. Technique à appliquer : Accusation Audit systématique sur cette objection spécifique. Phrase type : 'Tu vas penser que tu n'as pas l'énergie des autres, que tu es différent...' puis silence."
+      },
+      "moments_positifs": [
+        {
+          "t_min": 0,
+          "label": "Smalltalk authentique sur origine Tchad/Djibouti",
+          "framework": "carnegie_dale"
+        },
+        {
+          "t_min": 11,
+          "label": "Labeling émotionnel 'prisonnier de toi-même'",
+          "framework": "voss_labeling"
+        },
+        {
+          "t_min": 12,
+          "label": "Validation 'That's right' obtenue ('Exactement')",
+          "framework": "voss_thats_right"
+        },
+        {
+          "t_min": 46,
+          "label": "Risk reversal explicite avec garantie +1000€",
+          "framework": "hormozi_guarantee"
+        },
+        {
+          "t_min": 54,
+          "label": "Closing direct avec urgence artificielle 17h56",
+          "framework": "belfort_straight_line"
+        }
+      ],
+      "moments_negatifs": [
+        {
+          "t_min": 0,
+          "label": "Discovery S trop long (>10min sur formations passées)",
+          "anti_pattern": "discovery_too_long"
+        },
+        {
+          "t_min": 22,
+          "label": "Monologue technique SMMA >90s sans question",
+          "anti_pattern": "monologue_djibril"
+        },
+        {
+          "t_min": 35,
+          "label": "Recherche case study échouée 'Je ne trouve pas sur disque dur'",
+          "anti_pattern": "no_case_study"
+        },
+        {
+          "t_min": 47,
+          "label": "Prix annoncé sans anchor ni value stack préalable",
+          "anti_pattern": "pricing_no_anchor"
+        }
+      ],
+      "patterns_detected": [
+        "frustration_positive_hook",
+        "thats_right_validation",
+        "risk_reversal_explicit",
+        "direct_close_attempt"
+      ],
+      "anti_patterns_detected": [
+        "discovery_too_long",
+        "monologue_djibril",
+        "no_case_study",
+        "pricing_no_anchor"
+      ],
+      "frameworks_used_well": [
+        {
+          "concept": "Labeling émotionnel",
+          "book_source": "Never Split The Difference - Chris Voss",
+          "evidence_timestamp": "00:11:03",
+          "evidence_quote": "En gros, t'es un prisonnier, quoi."
+        },
+        {
+          "concept": "That's Right (Validation totale)",
+          "book_source": "Never Split The Difference - Chris Voss",
+          "evidence_timestamp": "00:12:34",
+          "evidence_quote": "Exactement. Tu as tout compris."
+        },
+        {
+          "concept": "Garantie créative (Risk Reversal)",
+          "book_source": "100M Offers - Alex Hormozi",
+          "evidence_timestamp": "00:46:22",
+          "evidence_quote": "Si tu n'as pas fait tes 5000€... je te rembourse et je te donne 1000€ de dédommagement."
+        },
+        {
+          "concept": "Urgence émotionnelle",
+          "book_source": "100M Offers - Alex Hormozi",
+          "evidence_timestamp": "00:53:21",
+          "evidence_quote": "À 17h56, mon offre, elle expire."
+        }
+      ],
+      "frameworks_missed": [
+        {
+          "concept": "Accusation Audit",
+          "book_source": "Never Split The Difference - Chris Voss",
+          "definition_quick": "Dire à l'avance tous les négatifs que le prospect pourrait penser pour désarmer l'objection avant qu'elle n'arrive.",
+          "where_to_apply": "00:41:26",
+          "fix_phrase": "Tu vas sans doute penser que tu n'as pas la force, que tu es différent des autres, que ça marche pour eux mais pas pour toi..."
+        },
+        {
+          "concept": "Value Stack (Stacking)",
+          "book_source": "100M Offers - Alex Hormozi / DotCom Secrets - Russell Brunson",
+          "definition_quick": "Lister la valeur de chaque composante avant d'annoncer le prix pour créer un ancnage élevé.",
+          "where_to_apply": "00:47:42",
+          "fix_phrase": "Les modules vidéo valent 2000€, l'accès WhatsApp 24/7 vaut 1500€, les lives quotidiens valent 1000€, la garantie résultat est inestimable... Tout ça vaut 10 000€. Mais aujourd'hui..."
+        },
+        {
+          "concept": "No-Oriented Question",
+          "book_source": "Never Split The Difference - Chris Voss",
+          "definition_quick": "Question fermée orientée vers le 'non' pour donner l'illusion de contrôle au prospect et éviter le faux oui.",
+          "where_to_apply": "00:52:38",
+          "fix_phrase": "Est-ce que c'est une mauvaise idée de commencer aujourd'hui avec 600€ pour sécuriser ta place ?"
+        },
+        {
+          "concept": "Case Study Window (Preuve sociale chiffrée)",
+          "book_source": "100M Offers - Alex Hormozi / Way of the Wolf - Jordan Belfort",
+          "definition_quick": "Présenter un cas client concret avec chiffres précis (nom, nombre de jours, montant gagné) pour créer la certitude logique.",
+          "where_to_apply": "00:20:00",
+          "fix_phrase": "Mael, agent d'accueil comme toi, a signé son premier client à 2000€ en 14 jours. Voici la preuve."
+        }
+      ],
+      "glossary_terms": [
+        {
+          "term": "Accusation Audit",
+          "definition": "Technique Voss consistant à verbaliser toutes les accusations/négativités que le prospect pourrait avoir en tête avant qu'il ne les exprime, créant ainsi un effet de désarmement.",
+          "source_book": "Never Split The Difference - Chris Voss"
+        },
+        {
+          "term": "Value Stack",
+          "definition": "Méthode Hormozi/Brunson consistant à additionner la valeur monétaire de chaque composante de l'offre avant de révéler le prix réel, créant un ancrage de valeur élevée.",
+          "source_book": "100M Offers - Alex Hormozi"
+        },
+        {
+          "term": "No-Oriented Question",
+          "definition": "Question calibrée pour obtenir un 'non' rassurant (ex: 'Est-ce que c'est une mauvaise idée ?') plutôt qu'un oui contraint, donnant le contrôle au prospect.",
+          "source_book": "Never Split The Difference - Chris Voss"
+        },
+        {
+          "term": "That's Right",
+          "definition": "Moment de validation émotionnelle où le prospect dit 'C'est ça' ou 'Exactement', prouvant qu'il se sent compris. Différent de 'Tu as raison' qui est poli.",
+          "source_book": "Never Split The Difference - Chris Voss"
+        },
+        {
+          "term": "Risk Reversal",
+          "definition": "Garantie forte qui inverse le risque du prospect vers le vendeur (ex: remboursement + indemnité), éliminant la friction d'achat.",
+          "source_book": "100M Offers - Alex Hormozi"
+        },
+        {
+          "term": "SPIN Selling",
+          "definition": "Méthode Rackham : Situation (facts) → Problem (difficultés) → Implication (conséquences) → Need-payoff (valeur solution). I est la phase la plus skippée mais cruciale.",
+          "source_book": "SPIN Selling - Neil Rackham"
+        },
+        {
+          "term": "Straight Line Closing",
+          "definition": "Technique Belfort : Maintenir le prospect sur la ligne droite entre rapport → logique → émotion → action, sans dévier, avec urgences contrôlées.",
+          "source_book": "Way of the Wolf - Jordan Belfort"
+        }
+      ],
+      "next_actions": [
+        "Envoyer à Ali le lien de paiement 600€ immédiatement (déjà fait à 00:58:08) avec recap vidéo 2min personnalisée mentionnant 'ta niche cuisine/installation'",
+        "Créer le reel Instagram 'Formation vs Accompagnement' d'ici mercredi pour qualifier les prochains prospects comme Ali",
+        "Mettre à jour le script Basile avec la question 'As-tu déjà investi dans des formations qui n'ont pas marché ?' pour taguer ces prospects prioritaires"
+      ],
+      "next_action": "Envoyer à Ali le lien de paiement 600€ immédiatement (déjà fait à 00:58:08) avec recap vidéo 2min personnalisée mentionnant 'ta niche cuisine/installation' · Créer le reel Instagram 'Formation vs Accompagnement' d'ici mercredi pour qualifier les prochains prospects comme Ali",
+      "key_quotes": [
+        {
+          "speaker": "Prospect",
+          "t": "00:06:57",
+          "quote": "J'ai déjà fait deux ou trois formations que j'ai déjà payé... c'était incomplet... ils n'étaient pas honnêtes",
+          "analysis": "Pain traumatique fort : le prospect a été brûlé. C'est le hook parfait pour l'accusation audit et la différenciation 'accompagnement vs formation'."
+        },
+        {
+          "speaker": "Prospect",
+          "t": "00:11:03",
+          "quote": "Je suis un prisonnier de moi-même... Parce que j'ai pas d'autres projets... Il faut que c'est moi qui fais l'accueil",
+          "analysis": "Labeling parfait par Djibril ('prisonnier') qui capture l'essence du pain émotionnel : l'auto-sabotage par manque de cadre."
+        },
+        {
+          "speaker": "Prospect",
+          "t": "00:41:26",
+          "quote": "Je ne sais pas, je n'ai pas cette force là pour aller demander aux gens, je leur propose des solutions, tout ça c'est comme impossible pour moi",
+          "analysis": "Objection fondamentale : peur du rejet/démarchage. Nécessitait un Accusation Audit et un recadrage sur le fait que c'est justement ce qu'il va apprendre."
+        },
+        {
+          "speaker": "Djibril",
+          "t": "00:46:22",
+          "quote": "Si tu n'as pas atteint 5000 euros... tu seras remboursé et je te donne 1000 euros de dédommagement",
+          "analysis": "Risk reversal maximal (Hormozi) qui élimine la dernière barrière logique. Point de bascule du closing."
+        },
+        {
+          "speaker": "Djibril",
+          "t": "00:53:21",
+          "quote": "À 17h56, mon offre, elle expire... c'est une offre que je fais à personne d'autre",
+          "analysis": "Urgence artificielle classique (Belfort) combinée à l'unicité. Efficace car le prospect avait déjà dit 'Vas-y c'est bon' juste avant."
+        }
+      ],
+      "verdict": "MOYEN — Call gagné grâce au closing agressif (levier 2) mais score limité par l'absence de Case Study Mael (levier 1) qui aurait réduit de 50% la résistance initiale et le temps de conversion.",
+      "type": "discovery"
+    },
     {
       "id": "fathom-162687277",
       "owner": "djibril",
@@ -6570,7 +6815,12 @@
   "patterns_success": [
     {
       "pattern": "Risk reversal explicit",
-      "win_rate": 0.18,
+      "win_rate": 0.22,
+      "samples": 18
+    },
+    {
+      "pattern": "Thats right validation",
+      "win_rate": 0.24,
       "samples": 17
     },
     {
@@ -6579,19 +6829,14 @@
       "samples": 16
     },
     {
-      "pattern": "Thats right validation",
-      "win_rate": 0.19,
-      "samples": 16
-    },
-    {
       "pattern": "Frustration positive hook",
-      "win_rate": 0.21,
-      "samples": 14
+      "win_rate": 0.27,
+      "samples": 15
     },
     {
       "pattern": "Direct close attempt",
-      "win_rate": 0.25,
-      "samples": 12
+      "win_rate": 0.31,
+      "samples": 13
     },
     {
       "pattern": "Case study window",
@@ -6612,8 +6857,13 @@
   "patterns_failure": [
     {
       "pattern": "Monologue djibril",
-      "loss_rate": 0.92,
-      "samples": 26
+      "loss_rate": 0.89,
+      "samples": 27
+    },
+    {
+      "pattern": "No case study",
+      "loss_rate": 0.85,
+      "samples": 20
     },
     {
       "pattern": "Soft close pattern",
@@ -6621,19 +6871,14 @@
       "samples": 20
     },
     {
-      "pattern": "No case study",
-      "loss_rate": 0.89,
-      "samples": 19
-    },
-    {
       "pattern": "Discovery too long",
-      "loss_rate": 0.94,
-      "samples": 17
+      "loss_rate": 0.89,
+      "samples": 18
     },
     {
       "pattern": "Pricing no anchor",
-      "loss_rate": 0.88,
-      "samples": 16
+      "loss_rate": 0.82,
+      "samples": 17
     },
     {
       "pattern": "Feature dumping",
@@ -6655,6 +6900,12 @@
   "queue_to_analyze": [],
   "cross_channel_insights": {
     "to_instagram_reels": [
+      {
+        "from_call": "Tahir muhamat",
+        "score": 71,
+        "date": "2026-07-11T15:01:11Z",
+        "insight": "Tourner reel 22s cette semaine : 'J'ai dépensé 1200€ en formations qui m'ont laissé en plan (texte à l'écran : FORMATION INCOMPLÈTE ?) → Voici pourquoi l'accompagnement 1:1 est différent' → CTA 'Lien en bio pour voir si t'es éligible'. Cible : prospects ayant subi le même trauma formation qu'Ali (mentionné à 00:06:57)."
+      },
       {
         "from_call": "Ibrahim Diaby",
         "score": 78,
@@ -6826,6 +7077,12 @@
     ],
     "to_meta_ads": [
       {
+        "from_call": "Tahir muhamat",
+        "score": 71,
+        "date": "2026-07-11T15:01:11Z",
+        "insight": "Refondre creative 'Agent d'accueil vs Entrepreneur' : Split-screen gauche '1600€/mois - 8h/jour - patron qui crie' vs droite '5000€/mois - téléphone - chez toi'. Headline : 'Tu as un Master mais tu gagnes moins qu'un livreur ?'. Pain point : 'Prisonnier de moi-même' (00:11:03)."
+      },
+      {
         "from_call": "Ibrahim Diaby",
         "score": 78,
         "date": "2026-07-10T15:02:57Z",
@@ -6995,6 +7252,12 @@
       }
     ],
     "to_basile_dm": [
+      {
+        "from_call": "Tahir muhamat",
+        "score": 71,
+        "date": "2026-07-11T15:01:11Z",
+        "insight": "Durcir le script Basile avec question calibrée : 'De 1 à 10, à quel point tu es prêt à quitter ton job d'agent d'accueil ?' Si <7, rediriger vers nurture. Si ≥7, demander : 'Qu'est-ce qui t'a empêché d'atteindre 5k€/mois jusqu'ici ?' (pré-qualifie le pain comme Ali l'a exprimé)."
+      },
       {
         "from_call": "Ibrahim Diaby",
         "score": 78,
@@ -7166,6 +7429,12 @@
     ],
     "to_lp_vsl": [
       {
+        "from_call": "Tahir muhamat",
+        "score": 71,
+        "date": "2026-07-11T15:01:11Z",
+        "insight": "Refondre section 'Comment ça marche' : Ajouter une étape 0 'Case Study Mael' avant l'explication technique. Le prospect Ali était confus sur formation vs accompagnement (00:56:01). Rajouter un bandeau rouge : 'CE N'EST PAS UNE FORMATION VIDÉO - C'est un accompagnement avec appels directs avec Djibril'."
+      },
+      {
         "from_call": "Ibrahim Diaby",
         "score": 78,
         "date": "2026-07-10T15:02:57Z",
@@ -7335,6 +7604,12 @@
       }
     ],
     "to_mariam_email": [
+      {
+        "from_call": "Tahir muhamat",
+        "score": 71,
+        "date": "2026-07-11T15:01:11Z",
+        "insight": "Activer email Mariam J-1 avec sujet : 'Ali, ta stratégie pour passer à 5k€ est prête (lien confirmation)'. Body : Vidéo 60s de Djibril qui dit : 'Demain on verra exactement comment tu quittes ton job d'accueil. Pense à ta niche idéale avant le call.' Réduit no-show de prospects ayant peur (pattern 'je dois réfléchir' à 00:50:04)."
+      },
       {
         "from_call": "Ibrahim Diaby",
         "score": 78,
@@ -7506,6 +7781,12 @@
     ],
     "to_cold_calls_clients": [
       {
+        "from_call": "Tahir muhamat",
+        "score": 71,
+        "date": "2026-07-11T15:01:11Z",
+        "insight": "Coaching à donner à Mael/Yacine : Pattern 'Je n'ai pas la force/pas le temps' détecté à 00:41:26. Technique à appliquer : Accusation Audit systématique sur cette objection spécifique. Phrase type : 'Tu vas penser que tu n'as pas l'énergie des autres, que tu es différent...' puis silence."
+      },
+      {
         "from_call": "Ibrahim Diaby",
         "score": 78,
         "date": "2026-07-10T15:02:57Z",
@@ -7676,6 +7957,22 @@
     ]
   },
   "top_leviers_8020_aggregated": [
+    {
+      "rank": 1,
+      "levier": "Insérer le Case Study 'Mael 14/14' chiffré à min 20:00 avant l'explication technique du SMMA",
+      "impact": 14,
+      "from_call": "Tahir muhamat",
+      "timestamp_ref": "00:20:00",
+      "score_call": 71
+    },
+    {
+      "rank": 2,
+      "levier": "Ajouter une Accusation Audit (Voss) à min 41:00 sur la peur du démarchage",
+      "impact": 11,
+      "from_call": "Tahir muhamat",
+      "timestamp_ref": "00:41:00",
+      "score_call": 71
+    },
     {
       "rank": 1,
       "levier": "Ajouter une question à 'non' (No-oriented) avant de proposer le plan de paiement flexibilisé pour forcer l'engagement mental du prospect",
