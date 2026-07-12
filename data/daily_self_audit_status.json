@@ -1,24 +1,24 @@
 {
-  "ts": "2026-07-11T12:00:00Z",
-  "overall": "ok",
+  "ts": "2026-07-12T12:00:00Z",
+  "overall": "warn",
   "auto_apply": false,
   "counts": {
-    "ok": 9,
-    "warn": 0,
+    "ok": 8,
+    "warn": 1,
     "fail": 0
   },
   "checks": [
     {
       "name": "rois_princes",
-      "status": "ok",
+      "status": "warn",
       "bucket": "infra",
-      "detail": "RÉSUMÉ : 8 ALIVE | 0 PHANTOM | 0 DEAD  (sur 8)"
+      "detail": "RÉSUMÉ : 7 ALIVE | 0 PHANTOM | 1 DEAD  (sur 8) (exit 1)"
     },
     {
       "name": "tokens_24h",
       "status": "ok",
       "bucket": "infra",
-      "detail": "conso 24h: $0.3167"
+      "detail": "conso 24h: $0.6815"
     },
     {
       "name": "emails_tracking",
@@ -30,7 +30,7 @@
       "name": "basile_audit",
       "status": "ok",
       "bucket": "basile",
-      "detail": "audit Basile frais (daily audit Basile : dernier run 2026-07-11 10:41 (il y a 3h)   dernier rapport : basile_daily_audit_20260710_1200.md )"
+      "detail": "audit Basile frais (daily audit Basile : dernier run 2026-07-12 12:22 (il y a 1h)   dernier rapport : basile_daily_audit_20260712_1200.md )"
     },
     {
       "name": "amine_guard",
@@ -63,5 +63,12 @@
       "detail": "pas de test exit-code (copy=créatif) → audité sur demande, jamais auto-édité (doctrine H1)"
     }
   ],
-  "problems": []
+  "problems": [
+    {
+      "name": "rois_princes",
+      "status": "warn",
+      "bucket": "infra",
+      "detail": "RÉSUMÉ : 7 ALIVE | 0 PHANTOM | 1 DEAD  (sur 8) (exit 1)"
+    }
+  ]
 }
