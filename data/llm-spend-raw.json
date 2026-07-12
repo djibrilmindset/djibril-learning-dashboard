@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated_at": "2026-07-12T00:47:45.891089Z",
+    "generated_at": "2026-07-12T02:26:14.935914Z",
     "window_hours": 24,
-    "total_calls": 293,
-    "total_cost_usd": 0.299254,
+    "total_calls": 294,
+    "total_cost_usd": 0.299599,
     "models_count": 10,
     "providers_count": 6,
     "errors_count": 0,
@@ -11,28 +11,6 @@
     "error_count": 0
   },
   "entries": [
-    {
-      "ts": "2026-07-11T01:01:30Z",
-      "agent": "HERMES_CALL_GEMINI",
-      "model": "gemini-direct/gemini-flash-latest",
-      "tier": 0,
-      "tokens_in": 501,
-      "tokens_out": 3,
-      "cost_usd": 3.8475e-05,
-      "task_type": "chinese",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-07-11T01:01:33Z",
-      "agent": "HERMES_CALL_MINIMAX",
-      "model": "minimax-direct/minimax-m3",
-      "tier": 2,
-      "tokens_in": 639,
-      "tokens_out": 100,
-      "cost_usd": 0.0006651,
-      "task_type": "chinese",
-      "result_summary": ""
-    },
     {
       "ts": "2026-07-11T02:43:09Z",
       "agent": "HERMES_CALL_MOONSHOT",
@@ -3231,6 +3209,39 @@
       "tokens_in": 4242,
       "tokens_out": 23,
       "cost_usd": 0.0006501,
+      "task_type": "chinese",
+      "result_summary": ""
+    },
+    {
+      "ts": "2026-07-12T00:47:54Z",
+      "agent": "HERMES_CALL_ZHIPU",
+      "model": "zhipu-direct/glm-5.2",
+      "tier": 2,
+      "tokens_in": 495,
+      "tokens_out": 100,
+      "cost_usd": 0.000895,
+      "task_type": "chinese",
+      "result_summary": ""
+    },
+    {
+      "ts": "2026-07-12T00:47:57Z",
+      "agent": "HERMES_CALL_GEMINI",
+      "model": "gemini-direct/gemini-pro-latest",
+      "tier": 0,
+      "tokens_in": 501,
+      "tokens_out": 3,
+      "cost_usd": 7.695e-05,
+      "task_type": "chinese",
+      "result_summary": ""
+    },
+    {
+      "ts": "2026-07-12T01:48:59Z",
+      "agent": "HERMES_CALL_GEMINI",
+      "model": "gemini-direct/gemini-pro-latest",
+      "tier": 0,
+      "tokens_in": 501,
+      "tokens_out": 3,
+      "cost_usd": 7.695e-05,
       "task_type": "chinese",
       "result_summary": ""
     }
