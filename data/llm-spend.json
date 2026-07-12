@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated_at": "2026-07-12T20:06:07.103800Z",
+    "generated_at": "2026-07-12T22:00:36.158434Z",
     "window_hours": 24,
-    "total_calls": 377,
-    "total_cost_usd": 0.656523,
+    "total_calls": 366,
+    "total_cost_usd": 0.654448,
     "models_count": 10,
     "providers_count": 6,
     "errors_count": 0,
@@ -14,22 +14,22 @@
     {
       "model": "zhipu-direct/glm-5.2",
       "provider": "zhipu-direct",
-      "calls": 64,
-      "successes": 64,
+      "calls": 63,
+      "successes": 63,
       "errors": 0,
-      "tokens_in": 86094,
-      "tokens_out": 19219,
-      "cost_usd": 0.16297000000000017
+      "tokens_in": 85599,
+      "tokens_out": 19119,
+      "cost_usd": 0.16207500000000022
     },
     {
       "model": "minimax-direct/minimax-m3",
       "provider": "minimax-direct",
-      "calls": 75,
-      "successes": 75,
+      "calls": 76,
+      "successes": 76,
       "errors": 0,
-      "tokens_in": 116420,
-      "tokens_out": 45772,
-      "cost_usd": 0.14597280000000004
+      "tokens_in": 117059,
+      "tokens_out": 45872,
+      "cost_usd": 0.14663790000000004
     },
     {
       "model": "moonshot-direct/kimi-k2.6",
@@ -48,8 +48,8 @@
       "successes": 52,
       "errors": 0,
       "tokens_in": 185785,
-      "tokens_out": 74425,
-      "cost_usd": 0.12491879400000003
+      "tokens_out": 73655,
+      "cost_usd": 0.12407179400000003
     },
     {
       "model": "dashscope/qwen3.7-max",
@@ -64,12 +64,12 @@
     {
       "model": "gemini-direct/gemini-pro-latest",
       "provider": "gemini-direct",
-      "calls": 85,
-      "successes": 85,
+      "calls": 70,
+      "successes": 70,
       "errors": 0,
-      "tokens_in": 56404,
-      "tokens_out": 396,
-      "cost_usd": 0.008698199999999996
+      "tokens_in": 48889,
+      "tokens_out": 357,
+      "cost_usd": 0.007547550000000006
     },
     {
       "model": "minimax-direct/MiniMax-M3",
@@ -104,12 +104,12 @@
     {
       "model": "gemini-direct/gemini-flash-latest",
       "provider": "gemini-direct",
-      "calls": 31,
-      "successes": 31,
+      "calls": 35,
+      "successes": 35,
       "errors": 0,
-      "tokens_in": 15539,
-      "tokens_out": 84,
-      "cost_usd": 0.0013415250000000007
+      "tokens_in": 17543,
+      "tokens_out": 92,
+      "cost_usd": 0.0014942250000000005
     }
   ]
 }
