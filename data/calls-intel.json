@@ -1,31 +1,31 @@
 {
   "_meta": {
-    "generated": "2026-07-13T10:03:10.802093Z",
+    "generated": "2026-07-13T14:04:21.475788Z",
     "source": "fathom_api + moonshot_kimi_k2.5_analyzer + frameworks_corpus_v1",
-    "owner_calls_tracked": 29,
+    "owner_calls_tracked": 31,
     "client_cold_calls_tracked": 0,
     "schema_version": "1.1",
     "frameworks_corpus": "~/agence-ia/manager/calls_intelligence/frameworks_corpus.json",
     "reports_path": "/Users/pardin/agence-ia/manager/calls_intelligence/reports"
   },
   "summary": {
-    "calls_total": 29,
-    "avg_score_global": 55.6,
+    "calls_total": 31,
+    "avg_score_global": 56.1,
     "delta_score_30d": 0,
     "top_strength": "Rapport / présence",
     "top_weakness": "Tentative closing",
-    "win_rate_top_pattern": 0.22,
+    "win_rate_top_pattern": 0.21,
     "best_call": {
-      "id": "fathom-162880246",
-      "score": 71
+      "id": "fathom-163024585",
+      "score": 61
     },
     "dim_averages": {
-      "rapport_presence": 72.5,
-      "discovery_spin": 51.4,
-      "pain_amplification": 53.5,
-      "offer_clarity": 50.9,
-      "objection_handling": 58.8,
-      "closing_attempt": 46.4
+      "rapport_presence": 72.6,
+      "discovery_spin": 52.3,
+      "pain_amplification": 55.4,
+      "offer_clarity": 51.0,
+      "objection_handling": 59.4,
+      "closing_attempt": 45.9
     }
   },
   "scoring_dimensions": [
@@ -55,6 +55,504 @@
     }
   ],
   "calls_perso": [
+    {
+      "id": "fathom-163024585",
+      "owner": "djibril",
+      "recording_id": 163024585,
+      "fathom_share_url": "https://fathom.video/share/goNJ4nhrXCV3ffcxsY4jx54_V8ymqVdX",
+      "prospect": "Helmi De Oliveira",
+      "title": "Helmi avec djibril  @ 13 juil. 2026 - 13:00 - Europe/Paris (GMT+2)",
+      "date": "2026-07-13T11:02:28Z",
+      "duration_min": 60,
+      "outcome": "booked_followup",
+      "score_global": 61,
+      "scores": {
+        "rapport_presence": 72,
+        "discovery_spin": 58,
+        "pain_amplification": 78,
+        "offer_clarity": 55,
+        "objection_handling": 68,
+        "closing_attempt": 35
+      },
+      "spin_breakdown": {
+        "situation_pct": 35,
+        "problem_pct": 25,
+        "implication_pct": 20,
+        "needpayoff_pct": 20,
+        "ratio_prospect_djibril_speaking": 0.52
+      },
+      "top_2_leviers_8020": [
+        {
+          "rank": 1,
+          "levier": "Ajouter une question Need-Payoff (N) après la validation des épaules/capacité à min 27:36 pour forcer la projection sur la solution par le prospect lui-même",
+          "impact_attendu_points": 14,
+          "fix_concret": "Dire exactement : 'Si on y arrive ensemble et que dans 90 jours tu as tes 5000€ net et tes 4h de musique par jour, décris-moi concrètement à quoi ressemble ta journée type dans 6 mois ?' puis se taire 5 secondes",
+          "timestamp_ref": "00:27:36"
+        },
+        {
+          "rank": 2,
+          "levier": "Remplacer le bloc témoignages vidéo de 7 minutes par 1 cas concret chiffré de 90 secondes avec mécanisme précis à min 41:22",
+          "impact_attendu_points": 12,
+          "fix_concret": "Dire : 'Stop, je te montre pas 10 témoignages. Je te montre Mael, barbier à Montreuil, 14 jours pour 14 clients, 4200€. Voici le script exact qu'on a utilisé pour sa première pub' puis partager écran script + résultats",
+          "timestamp_ref": "00:41:22"
+        }
+      ],
+      "cross_channel_implications": {
+        "to_instagram_reels": "Tourner REEL CETTE SEMAINE : Hook 'J'ai raté ma licence STAPS, 24 ans, 900€/mois, alternance épuisante' → Twist '3 mois plus tard j'ai signé mes premiers clients sans CV' → CTA 'Lien en bio pour voir si tu peux faire pareil'. Basé sur pain exact d'Helmi (survie, temps pour musique, rejet du salariat)",
+        "to_meta_ads": "Refondre creative 'Stop de postuler' avec headline exacte : 'Arrête d'envoyer des CV dans des boîtes qui ne te respectent pas' ciblant 22-26 ans intérêts 'STAPS', 'BPJEPS', 'Sport études', 'Musique' zone Bordeaux/IDF. Pain : 'Tu mérites mieux que de survivre à 900€/mois'",
+        "to_basile_dm": "Durcir script Basile ligne 3 : Ajouter question obligatoire 'As-tu déjà investi dans une formation ou coaching qui n'a pas marché ? Si oui, pourquoi ça a foiré selon toi ?' pour qualifier la méfiance/objection arnaque entendue à 21:02",
+        "to_lp_vsl": "Refondre section 'Comment ça marche concrètement' à min 52:09 car Helmi confus sur 'scripts' vs 'copywriting' vs 'publicité'. Ajouter schéma visuel : Étape 1 = On écrit ton script de démarchage (pas de pub), Étape 2 = Tu appelles 10 prospects, Étape 3 = On lance ta pub avec ton cash",
+        "to_mariam_email": "Activer séquence Mariam J-1 pour ce type de prospect (jeune, dispersé, TDAH) avec sujet 'Prépare tes 3 questions sur ton projet musique pour demain' + rappel personnel sur sa passion (basket/musique) pour ancrer émotionnellement et réduire no-show",
+        "to_cold_calls_clients": "Coaching Mael/Yacine : INTERDICTION de lancer une vidéo témoignage >2min en call. Remplacer par 'Case study écrit chiffré en 60 secondes max' ou 'Screen partagé du tableau de bord client'. Pattern détecté : monologue passif tuant l'engagement"
+      },
+      "moments_positifs": [
+        {
+          "t_min": 1,
+          "label": "Smalltalk authentique basket/pliométrie",
+          "framework": "carnegie_dale"
+        },
+        {
+          "t_min": 5,
+          "label": "Reformulation pain temps vs argent validée",
+          "framework": "voss_thats_right"
+        },
+        {
+          "t_min": 20,
+          "label": "Labeling 'tourner en rond' amplifie pain",
+          "framework": "voss_labeling"
+        },
+        {
+          "t_min": 27,
+          "label": "Validation maturité 'j'ai les épaules'",
+          "framework": "belfort_trust_certainty"
+        },
+        {
+          "t_min": 52,
+          "label": "Clarification pédagogique fondamentaux vs forme",
+          "framework": "hormozi_value_equation"
+        }
+      ],
+      "moments_negatifs": [
+        {
+          "t_min": 0,
+          "label": "Monologue d'ouverture 60s sur cadre/procedure",
+          "anti_pattern": "monologue_djibril"
+        },
+        {
+          "t_min": 1,
+          "label": "Phase Situation trop longue 20+ min",
+          "anti_pattern": "discovery_too_long"
+        },
+        {
+          "t_min": 39,
+          "label": "Monologue contexte éco/digital 2min30 sans interaction",
+          "anti_pattern": "monologue_djibril"
+        },
+        {
+          "t_min": 41,
+          "label": "Lecture passive témoignages 7min tuant dynamique",
+          "anti_pattern": "no_case_study"
+        }
+      ],
+      "patterns_detected": [
+        "frustration_positive_hook",
+        "voss_mirror_used",
+        "thats_right_validation"
+      ],
+      "anti_patterns_detected": [
+        "discovery_too_long",
+        "monologue_djibril",
+        "soft_close_pattern",
+        "no_next_step"
+      ],
+      "frameworks_used_well": [
+        {
+          "concept": "Labeling émotionnel",
+          "book_source": "Never Split The Difference - Chris Voss",
+          "evidence_timestamp": "00:20:30",
+          "evidence_quote": "Djibril: 'Tu te restreins mais pour tourner en rond' - Helmi: 'Oui c'est ça qui m'énerve'"
+        },
+        {
+          "concept": "That's Right validation",
+          "book_source": "Never Split The Difference - Chris Voss",
+          "evidence_timestamp": "00:05:08",
+          "evidence_quote": "Djibril: 'Ce que tu cherches c'est d'avoir le temps' - Helmi: 'C'est ça, le temps'"
+        },
+        {
+          "concept": "Amplification du pain (Implication SPIN)",
+          "book_source": "SPIN Selling - Rackham",
+          "evidence_timestamp": "00:13:00",
+          "evidence_quote": "Helmi: 'Cette année c'était le mot c'était survivre' - Djibril pousse sur l'impact émotionnel famille/musique"
+        },
+        {
+          "concept": "Intérêt sincère",
+          "book_source": "Comment se faire des amis - Dale Carnegie",
+          "evidence_timestamp": "00:22:54",
+          "evidence_quote": "Djibril: 'J'aime bien, un profil intellectuel... c'est exactement les profils que je vise'"
+        }
+      ],
+      "frameworks_missed": [
+        {
+          "concept": "Question à 'non' (No-Oriented)",
+          "book_source": "Never Split The Difference - Chris Voss",
+          "definition_quick": "Question conçue pour obtenir un 'non' rassurant qui donne contrôle au prospect et ouvre le dialogue véritable",
+          "where_to_apply": "00:27:52",
+          "fix_phrase": "Est-ce que c'est une mauvaise idée qu'on se fixe un objectif de 5000€ pour tes 3 mois de travail ?"
+        },
+        {
+          "concept": "Need-Payoff Question (Phase N SPIN)",
+          "book_source": "SPIN Selling - Rackham",
+          "definition_quick": "Question faisant formuler par le prospect lui-même la valeur et l'importance de résoudre le problème",
+          "where_to_apply": "00:27:36",
+          "fix_phrase": "Si tu résolvais ça en 90 jours et que tu avais enfin ton temps pour ta musique, ça changerait quoi concrètement dans ta vie quotidienne ?"
+        },
+        {
+          "concept": "Accusation Audit",
+          "book_source": "Never Split The Difference - Chris Voss",
+          "definition_quick": "Déclarer à l'avance tous les négatifs que le prospect pourrait penser pour désarmer les objections",
+          "where_to_apply": "00:21:02",
+          "fix_phrase": "Tu vas sans doute penser que c'est encore un mec qui promet la lune, que t'as déjà essayé des trucs qui ont foiré, et que 5000€ en 90 jours c'est du pipo..."
+        },
+        {
+          "concept": "Value Stack avant prix",
+          "book_source": "100M$ Offers - Alex Hormozi",
+          "definition_quick": "Récapitulatif de la valeur totale accumulée avant d'énoncer le prix pour ancrer haut",
+          "where_to_apply": "00:58:00",
+          "fix_phrase": "Avant de te dire le prix, récapitulons : t'as la méthode pour 5k€ en 90j, les scripts qui convertissent, la garantie, et l'accès à vie... Le tout vaut normalement 15k€, mais aujourd'hui c'est..."
+        }
+      ],
+      "glossary_terms": [
+        {
+          "term": "Accusation Audit",
+          "definition": "Technique Voss consistant à lister proactivement toutes les objections négatives possibles avant que le prospect ne les souffle, créant ainsi un climat de transparence et désamorçant la méfiance",
+          "source_book": "Never Split The Difference - Chris Voss"
+        },
+        {
+          "term": "Need-Payoff Question",
+          "definition": "Question SPIN de phase N qui oblige le prospect à formuler lui-même les bénéfices de la solution, augmentant son engagement psychologique et la valeur perçue",
+          "source_book": "SPIN Selling - Rackham"
+        },
+        {
+          "term": "Labeling",
+          "definition": "Verbalisation de l'émotion ressentie par le prospect avec 'On dirait que...' ou 'Il semble que...' pour créer connexion et désamorcer la résistance",
+          "source_book": "Never Split The Difference - Chris Voss"
+        },
+        {
+          "term": "Value Stack",
+          "definition": "Méthode Hormozi consistant à lister chaque composante de l'offre avec sa valeur nominale avant de révéler le prix réel, créant un ancrage de valeur élevée",
+          "source_book": "100M$ Offers - Alex Hormozi"
+        },
+        {
+          "term": "Mirroring",
+          "definition": "Répétition des 2-3 derniers mots de la phrase du prospect avec intonation interrogative pour l'inciter à approfondir sans pression",
+          "source_book": "Never Split The Difference - Chris Voss"
+        },
+        {
+          "term": "Reverse Pain",
+          "definition": "Technique de recadrage des objections où l'on fait peser au prospect le coût de l'inaction plutôt que de défendre le prix/l'offre",
+          "source_book": "Way of the Wolf - Jordan Belfort"
+        },
+        {
+          "term": "Discovery 60/40",
+          "definition": "Ratio optimal où le prospect parle 60% du temps minimum pendant la phase de découverte pour garantir l'auto-conviction",
+          "source_book": "SPIN Selling - Rackham"
+        }
+      ],
+      "next_actions": [
+        "Envoyer à Helmi dans les 2h un voice note personnalisé de 45s résumant '3 mois pour ta musique' pour maintenir l'émotion chaude",
+        "Préparer pour le prochain call (si booked) un 'Case Study Mael' écrit chiffré sur 1 page max plutôt que vidéo",
+        "Mettre à jour le script Basile IG avec la question sur les formations échouées dès demain matin"
+      ],
+      "next_action": "Envoyer à Helmi dans les 2h un voice note personnalisé de 45s résumant '3 mois pour ta musique' pour maintenir l'émotion chaude · Préparer pour le prochain call (si booked) un 'Case Study Mael' écrit chiffré sur 1 page max plutôt que vidéo",
+      "key_quotes": [
+        {
+          "speaker": "Prospect",
+          "t": "00:05:08",
+          "quote": "C'est ça, le temps, le temps d'être avec ma famille, le temps de tout",
+          "analysis": "Validation émotionnelle forte du besoin fondamental (temps vs argent), levier de closing majeur sous-exploité"
+        },
+        {
+          "speaker": "Prospect",
+          "t": "00:13:00",
+          "quote": "Cette année, c'était le mot, c'était survivre",
+          "analysis": "Pain point ultime exprimé par le prospect lui-même, aurait dû être immédiatement suivi d'une question Implication SPIN"
+        },
+        {
+          "speaker": "Prospect",
+          "t": "00:19:07",
+          "quote": "J'ai l'impression d'être limité partout",
+          "analysis": "Expression du sentiment d'emprisonnement systémique, parfait pour amorcer la transition vers la solution"
+        },
+        {
+          "speaker": "Prospect",
+          "t": "00:21:02",
+          "quote": "T'es un parmi d'autres qui vendent des prestations miracles... j'ai un manque de confiance",
+          "analysis": "Objection majeure 'arnaçon/formation bullshit' non désamorcée par Accusation Audit, risque de blocage"
+        },
+        {
+          "speaker": "Prospect",
+          "t": "00:27:36",
+          "quote": "Je pense que j'ai les épaules pour pouvoir faire ce qu'il faut",
+          "analysis": "Moment de 'buying signal' et engagement émotionnel, manque la question Need-Payoff pour sceller la projection"
+        },
+        {
+          "speaker": "Djibril",
+          "t": "00:52:31",
+          "quote": "Je ne t'apprends pas forcément la forme, je vais te la donner... je descends les étages de compréhension",
+          "analysis": "Bonne pédagogie sur les fondamentaux vs tactiques, rassure l'intellectuel mais manque de concret immédiat"
+        }
+      ],
+      "verdict": "MOYEN — Excellent travail de rapport et d'amplification émotionnelle du pain (survie/temps) mais call tué par le monologue des 7min de témoignages vidéo et l'absence de Need-Payoff question à min 27:36 qui aurait scellé l'engagement. Le levier #1 (question N) manqué coûte 14 points de closing potentiel.",
+      "type": "discovery"
+    },
+    {
+      "id": "fathom-162920448",
+      "owner": "djibril",
+      "recording_id": 162920448,
+      "fathom_share_url": "https://fathom.video/share/Rgc448GMUUCBKMzQuRs4SQkWM1uPV1kj",
+      "prospect": "JEAN Dorsinvil",
+      "title": "Jean avec djibril  @ 12 juil. 2026 - 19:15 - Europe/Paris (GMT+2)",
+      "date": "2026-07-12T17:22:21Z",
+      "duration_min": 60,
+      "outcome": "booked_followup",
+      "score_global": 67,
+      "scores": {
+        "rapport_presence": 78,
+        "discovery_spin": 72,
+        "pain_amplification": 88,
+        "offer_clarity": 52,
+        "objection_handling": 68,
+        "closing_attempt": 42
+      },
+      "spin_breakdown": {
+        "situation_pct": 8,
+        "problem_pct": 18,
+        "implication_pct": 25,
+        "needpayoff_pct": 15,
+        "ratio_prospect_djibril_speaking": 0.65
+      },
+      "top_2_leviers_8020": [
+        {
+          "rank": 1,
+          "levier": "Ajouter une question 'no-oriented' Voss à min 57:00 pour forcer le closing au lieu de 'je te rappelle'",
+          "impact_attendu_points": 16,
+          "fix_concret": "Remplacer 'Je te rappelle directement tout de suite sur WhatsApp' par : 'Est-ce que ce serait une mauvaise idée qu'on bloque un créneau demain 18h pour finaliser l'entrée, ou tu préfères laisser passer ?'",
+          "timestamp_ref": "00:57:48"
+        },
+        {
+          "rank": 2,
+          "levier": "Clarifier le mécanisme unique 'Reset Ultra' avec anchor prix dès min 42:00 quand le prospect exprime la confusion",
+          "impact_attendu_points": 14,
+          "fix_concret": "À 00:42:07 dire : 'C'est simple. Tu paies 2k€, je t'installe un système Reset Ultra qui t'amène à 5k€/mois en 80 jours garantis ou remboursés. Ce système, c'est 3 phases : Mental béton, Call-call clients, Automation. Tu veux voir comment ça s'emboîte concrètement ?'",
+          "timestamp_ref": "00:42:07"
+        }
+      ],
+      "cross_channel_implications": {
+        "to_instagram_reels": "Tourner reel 22s cette semaine : '30 ans chez papa - la honte silencieuse' avec hook 'Si t'as 30 ans et que t'es encore chez tes parents, tu connais ce regard...' → reprend le pain exact de Jean (00:09:11) sur la honte familiale",
+        "to_meta_ads": "Refondre creative 'Rupture amoureuse & précarité' avec copy 'Elle est partie parce que tu galères ?' + témoignage Iliès (00:51:19) en social proof vidéo 15s",
+        "to_basile_dm": "Durcir script Basile avec question calibrée : 'Sur une échelle de 1 à 10, à quel point tu supportes plus de voir tes parents déçus ?' → qualif anticipation pain amplification (00:09:11)",
+        "to_lp_vsl": "Ajouter section 'Qu'est-ce que c'est exactement ?' à 00:38:00 de la VSL car confusion récurrente sur nature business vs développement personnel",
+        "to_mariam_email": "Activer séquence 'Post-call non-close' J+1 10h avec objet 'Le contrat que tu as failli signer' + rappel pain 30 ans (00:17:40) + témoignage Iliès",
+        "to_cold_calls_clients": "Coaching Mael/Yacine sur transition 'témoignages → closing' : montrer les vidéos (00:30:00) puis STACKER la valeur immédiatement avant prix, pas expliquer la méthodologie (00:38-00:41)"
+      },
+      "moments_positifs": [
+        {
+          "t_min": 6,
+          "label": "Labeling émotionnel profond sur frustration",
+          "framework": "voss_labeling"
+        },
+        {
+          "t_min": 9,
+          "label": "Amplification pain famille/sœurs",
+          "framework": "spin_implication"
+        },
+        {
+          "t_min": 30,
+          "label": "Case study vidéo témoignages clients",
+          "framework": "hormozi_proof"
+        },
+        {
+          "t_min": 49,
+          "label": "Accusation audit sur objection 'coach lambda'",
+          "framework": "voss_accusation_audit"
+        },
+        {
+          "t_min": 47,
+          "label": "Question calibrated sur différenciation",
+          "framework": "voss_calibrated_questions"
+        }
+      ],
+      "moments_negatifs": [
+        {
+          "t_min": 38,
+          "label": "Monologue méthodologie 3 minutes",
+          "anti_pattern": "monologue_djibril"
+        },
+        {
+          "t_min": 42,
+          "label": "Confusion offre : prospect ne comprend pas",
+          "anti_pattern": "feature_dumping"
+        },
+        {
+          "t_min": 57,
+          "label": "Soft close sans date/heure précise",
+          "anti_pattern": "soft_close_pattern"
+        }
+      ],
+      "patterns_detected": [
+        "frustration_positive_hook",
+        "spin_chain_full",
+        "case_study_window",
+        "direct_close_attempt",
+        "thats_right_validation"
+      ],
+      "anti_patterns_detected": [
+        "monologue_djibril",
+        "feature_dumping",
+        "soft_close_pattern",
+        "no_next_step",
+        "pricing_no_anchor"
+      ],
+      "frameworks_used_well": [
+        {
+          "concept": "Labeling émotionnel",
+          "book_source": "Never Split The Difference - Chris Voss",
+          "evidence_timestamp": "00:06:55",
+          "evidence_quote": "On dirait que t'es frustré d'avoir essayé plein de trucs sans résultat"
+        },
+        {
+          "concept": "Accusation Audit",
+          "book_source": "Never Split The Difference - Chris Voss",
+          "evidence_timestamp": "00:49:10",
+          "evidence_quote": "Tu vas sans doute penser que c'est encore un coach qui promet la lune..."
+        },
+        {
+          "concept": "SPIN Implication Questions",
+          "book_source": "SPIN Selling - Neil Rackham",
+          "evidence_timestamp": "00:09:11",
+          "evidence_quote": "Comment ça affecte ta famille / ton équipe / ta santé ?"
+        },
+        {
+          "concept": "Social Proof",
+          "book_source": "Influence - Robert Cialdini",
+          "evidence_timestamp": "00:30:00",
+          "evidence_quote": "Lecture témoignages vidéo clients multiples"
+        }
+      ],
+      "frameworks_missed": [
+        {
+          "concept": "No-Oriented Question",
+          "book_source": "Never Split The Difference - Chris Voss",
+          "definition_quick": "Question qui pousse au 'non' pour donner contrôle au prospect et débloquer l'engagement",
+          "where_to_apply": "00:57:48",
+          "fix_phrase": "Est-ce que c'est une mauvaise idée qu'on signe ça maintenant pour que tu atteignes tes 30 ans tranquille ?"
+        },
+        {
+          "concept": "Value Stack",
+          "book_source": "100M$ Offers - Alex Hormozi",
+          "definition_quick": "Listage séquentiel de la valeur avant d'énoncer le prix pour ancrer haut",
+          "where_to_apply": "00:44:04",
+          "fix_phrase": "Donc tu as : le système Reset Ultra (valeur 5k€), l'accompagnement 24/7 (valeur 3k€), les scripts call-call (valeur 2k€), la garantie 80 jours (valeur inestimable)... Tout ça vaut facilement 10k€. Aujourd'hui, ce n'est que..."
+        },
+        {
+          "concept": "Risk Reversal",
+          "book_source": "100M$ Offers - Alex Hormozi",
+          "definition_quick": "Garantie explicite qui inverse le risque sur le vendeur",
+          "where_to_apply": "00:42:07",
+          "fix_phrase": "Garantie 80 jours ou je te rembourse et je te paye 500€ pour ta perte de temps"
+        },
+        {
+          "concept": "Calibrated Questions (Comment/Quoi)",
+          "book_source": "Never Split The Difference - Chris Voss",
+          "definition_quick": "Questions 'comment' pour forcer le prospect à structurer sa solution",
+          "where_to_apply": "00:23:53",
+          "fix_phrase": "Comment est-ce qu'on pourrait s'assurer que tu atteignes les 5k€ sans tomber dans les mêmes travers ?"
+        }
+      ],
+      "glossary_terms": [
+        {
+          "term": "Accusation Audit",
+          "definition": "Technique Voss consistant à lister à l'avance tous les négatifs que le prospect pourrait penser pour désarmer les objections avant qu'elles n'arrivent",
+          "source_book": "Never Split The Difference - Chris Voss"
+        },
+        {
+          "term": "Need-Payoff",
+          "definition": "Phase SPIN où le prospect formule lui-même la valeur de résoudre son problème, créant auto-conviction",
+          "source_book": "SPIN Selling - Neil Rackham"
+        },
+        {
+          "term": "Value Stack",
+          "definition": "Méthode Hormozi consistant à empiler les composantes de valeur avant de révéler le prix pour ancrer la perception à un niveau élevé",
+          "source_book": "100M$ Offers - Alex Hormozi"
+        },
+        {
+          "term": "Labeling",
+          "definition": "Verbaliser l'émotion sous-jacente du prospect ('On dirait que...') pour créer connexion et désamorcer la tension",
+          "source_book": "Never Split The Difference - Chris Voss"
+        },
+        {
+          "term": "Implication Questions",
+          "definition": "Questions SPIN qui amplifient les conséquences du problème pour augmenter l'urgence perçue",
+          "source_book": "SPIN Selling - Neil Rackham"
+        },
+        {
+          "term": "No-Oriented Question",
+          "definition": "Question conçue pour recevoir un 'non' rassurant ('Est-ce que c'est mauvaise idée de...') donnant contrôle au prospect",
+          "source_book": "Never Split The Difference - Chris Voss"
+        },
+        {
+          "term": "Risk Reversal",
+          "definition": "Garantie forte qui transfère le risque financier du client vers le vendeur, éliminant la friction d'achat",
+          "source_book": "100M$ Offers - Alex Hormozi"
+        }
+      ],
+      "next_actions": [
+        "Envoyer email J+1 10h avec lien calendly et rappel pain '30 ans' (00:17:40)",
+        "Tourner reel Instagram 22s sur 'la honte des 30 ans chez papa' basé sur 00:09:11",
+        "Mettre à jour script Basile avec question qualif 'échelle déception parents'"
+      ],
+      "next_action": "Envoyer email J+1 10h avec lien calendly et rappel pain '30 ans' (00:17:40) · Tourner reel Instagram 22s sur 'la honte des 30 ans chez papa' basé sur 00:09:11",
+      "key_quotes": [
+        {
+          "speaker": "Prospect",
+          "t": "00:02:30",
+          "quote": "Je me suis toujours dit 30 ans, faut qu'il y ait quelque chose, faut que tu sois fier de toi",
+          "analysis": "Pain temporel fort, deadline émotionnelle majeure à exploiter en closing"
+        },
+        {
+          "speaker": "Prospect",
+          "t": "00:09:11",
+          "quote": "Je suis le premier, j'ai trois frères et sœurs... Je me dirais que mon frère il galère",
+          "analysis": "Implication sociale/familiale profonde, levier d'engagement puissant"
+        },
+        {
+          "speaker": "Djibril",
+          "t": "00:06:55",
+          "quote": "On dirait que t'es frustré d'avoir essayé plein de trucs sans résultat",
+          "analysis": "Labeling Voss parfait qui valide l'émotion et crée rapport"
+        },
+        {
+          "speaker": "Prospect",
+          "t": "00:12:23",
+          "quote": "Elle attendait plus de moi... Elle voulait se marier, un mariage que je n'ai pas pu lui donner",
+          "analysis": "Pain d'abandon lié à la précarité, implication financière/émotionnelle extrême"
+        },
+        {
+          "speaker": "Prospect",
+          "t": "00:47:15",
+          "quote": "Non, je ne suis pas convaincu... Qu'est-ce qu'il aurait de différent ?",
+          "analysis": "Objection compétition non traitée par stack valeur ou garantie concrète"
+        },
+        {
+          "speaker": "Djibril",
+          "t": "00:49:10",
+          "quote": "Tu vas sans doute penser que c'est encore un coach qui promet la lune...",
+          "analysis": "Accusation audit Voss, désarme les objections avant qu'elles n'émergent"
+        }
+      ],
+      "verdict": "MOYEN — Excellent pain amplification (88) mais saboté par un closing mou (42) et une confusion offre (52) ; le levier #1 (question no-oriented à min 57) aurait transformé ce call en close immédiat au lieu de follow-up flou",
+      "type": "discovery"
+    },
     {
       "id": "fathom-162880246",
       "owner": "djibril",
@@ -6814,39 +7312,39 @@
   ],
   "patterns_success": [
     {
+      "pattern": "Thats right validation",
+      "win_rate": 0.21,
+      "samples": 19
+    },
+    {
       "pattern": "Risk reversal explicit",
       "win_rate": 0.22,
       "samples": 18
     },
     {
-      "pattern": "Thats right validation",
+      "pattern": "Frustration positive hook",
       "win_rate": 0.24,
       "samples": 17
     },
     {
       "pattern": "Voss mirror used",
       "win_rate": 0.12,
-      "samples": 16
-    },
-    {
-      "pattern": "Frustration positive hook",
-      "win_rate": 0.27,
-      "samples": 15
+      "samples": 17
     },
     {
       "pattern": "Direct close attempt",
-      "win_rate": 0.31,
-      "samples": 13
+      "win_rate": 0.29,
+      "samples": 14
     },
     {
       "pattern": "Case study window",
-      "win_rate": 0.12,
-      "samples": 8
+      "win_rate": 0.11,
+      "samples": 9
     },
     {
       "pattern": "Spin chain full",
-      "win_rate": 0.33,
-      "samples": 6
+      "win_rate": 0.29,
+      "samples": 7
     },
     {
       "pattern": "No oriented question",
@@ -6857,8 +7355,13 @@
   "patterns_failure": [
     {
       "pattern": "Monologue djibril",
-      "loss_rate": 0.89,
-      "samples": 27
+      "loss_rate": 0.9,
+      "samples": 29
+    },
+    {
+      "pattern": "Soft close pattern",
+      "loss_rate": 1.0,
+      "samples": 22
     },
     {
       "pattern": "No case study",
@@ -6866,29 +7369,24 @@
       "samples": 20
     },
     {
-      "pattern": "Soft close pattern",
-      "loss_rate": 1.0,
-      "samples": 20
-    },
-    {
       "pattern": "Discovery too long",
       "loss_rate": 0.89,
-      "samples": 18
+      "samples": 19
     },
     {
       "pattern": "Pricing no anchor",
-      "loss_rate": 0.82,
-      "samples": 17
-    },
-    {
-      "pattern": "Feature dumping",
-      "loss_rate": 0.93,
-      "samples": 14
+      "loss_rate": 0.83,
+      "samples": 18
     },
     {
       "pattern": "No next step",
       "loss_rate": 1.0,
-      "samples": 13
+      "samples": 15
+    },
+    {
+      "pattern": "Feature dumping",
+      "loss_rate": 0.93,
+      "samples": 15
     },
     {
       "pattern": "Defensive objection",
@@ -6900,6 +7398,18 @@
   "queue_to_analyze": [],
   "cross_channel_insights": {
     "to_instagram_reels": [
+      {
+        "from_call": "Helmi De Oliveira",
+        "score": 61,
+        "date": "2026-07-13T11:02:28Z",
+        "insight": "Tourner REEL CETTE SEMAINE : Hook 'J'ai raté ma licence STAPS, 24 ans, 900€/mois, alternance épuisante' → Twist '3 mois plus tard j'ai signé mes premiers clients sans CV' → CTA 'Lien en bio pour voir si tu peux faire pareil'. Basé sur pain exact d'Helmi (survie, temps pour musique, rejet du salariat)"
+      },
+      {
+        "from_call": "JEAN Dorsinvil",
+        "score": 67,
+        "date": "2026-07-12T17:22:21Z",
+        "insight": "Tourner reel 22s cette semaine : '30 ans chez papa - la honte silencieuse' avec hook 'Si t'as 30 ans et que t'es encore chez tes parents, tu connais ce regard...' → reprend le pain exact de Jean (00:09:11) sur la honte familiale"
+      },
       {
         "from_call": "Tahir muhamat",
         "score": 71,
@@ -7077,6 +7587,18 @@
     ],
     "to_meta_ads": [
       {
+        "from_call": "Helmi De Oliveira",
+        "score": 61,
+        "date": "2026-07-13T11:02:28Z",
+        "insight": "Refondre creative 'Stop de postuler' avec headline exacte : 'Arrête d'envoyer des CV dans des boîtes qui ne te respectent pas' ciblant 22-26 ans intérêts 'STAPS', 'BPJEPS', 'Sport études', 'Musique' zone Bordeaux/IDF. Pain : 'Tu mérites mieux que de survivre à 900€/mois'"
+      },
+      {
+        "from_call": "JEAN Dorsinvil",
+        "score": 67,
+        "date": "2026-07-12T17:22:21Z",
+        "insight": "Refondre creative 'Rupture amoureuse & précarité' avec copy 'Elle est partie parce que tu galères ?' + témoignage Iliès (00:51:19) en social proof vidéo 15s"
+      },
+      {
         "from_call": "Tahir muhamat",
         "score": 71,
         "date": "2026-07-11T15:01:11Z",
@@ -7252,6 +7774,18 @@
       }
     ],
     "to_basile_dm": [
+      {
+        "from_call": "Helmi De Oliveira",
+        "score": 61,
+        "date": "2026-07-13T11:02:28Z",
+        "insight": "Durcir script Basile ligne 3 : Ajouter question obligatoire 'As-tu déjà investi dans une formation ou coaching qui n'a pas marché ? Si oui, pourquoi ça a foiré selon toi ?' pour qualifier la méfiance/objection arnaque entendue à 21:02"
+      },
+      {
+        "from_call": "JEAN Dorsinvil",
+        "score": 67,
+        "date": "2026-07-12T17:22:21Z",
+        "insight": "Durcir script Basile avec question calibrée : 'Sur une échelle de 1 à 10, à quel point tu supportes plus de voir tes parents déçus ?' → qualif anticipation pain amplification (00:09:11)"
+      },
       {
         "from_call": "Tahir muhamat",
         "score": 71,
@@ -7429,6 +7963,18 @@
     ],
     "to_lp_vsl": [
       {
+        "from_call": "Helmi De Oliveira",
+        "score": 61,
+        "date": "2026-07-13T11:02:28Z",
+        "insight": "Refondre section 'Comment ça marche concrètement' à min 52:09 car Helmi confus sur 'scripts' vs 'copywriting' vs 'publicité'. Ajouter schéma visuel : Étape 1 = On écrit ton script de démarchage (pas de pub), Étape 2 = Tu appelles 10 prospects, Étape 3 = On lance ta pub avec ton cash"
+      },
+      {
+        "from_call": "JEAN Dorsinvil",
+        "score": 67,
+        "date": "2026-07-12T17:22:21Z",
+        "insight": "Ajouter section 'Qu'est-ce que c'est exactement ?' à 00:38:00 de la VSL car confusion récurrente sur nature business vs développement personnel"
+      },
+      {
         "from_call": "Tahir muhamat",
         "score": 71,
         "date": "2026-07-11T15:01:11Z",
@@ -7604,6 +8150,18 @@
       }
     ],
     "to_mariam_email": [
+      {
+        "from_call": "Helmi De Oliveira",
+        "score": 61,
+        "date": "2026-07-13T11:02:28Z",
+        "insight": "Activer séquence Mariam J-1 pour ce type de prospect (jeune, dispersé, TDAH) avec sujet 'Prépare tes 3 questions sur ton projet musique pour demain' + rappel personnel sur sa passion (basket/musique) pour ancrer émotionnellement et réduire no-show"
+      },
+      {
+        "from_call": "JEAN Dorsinvil",
+        "score": 67,
+        "date": "2026-07-12T17:22:21Z",
+        "insight": "Activer séquence 'Post-call non-close' J+1 10h avec objet 'Le contrat que tu as failli signer' + rappel pain 30 ans (00:17:40) + témoignage Iliès"
+      },
       {
         "from_call": "Tahir muhamat",
         "score": 71,
@@ -7781,6 +8339,18 @@
     ],
     "to_cold_calls_clients": [
       {
+        "from_call": "Helmi De Oliveira",
+        "score": 61,
+        "date": "2026-07-13T11:02:28Z",
+        "insight": "Coaching Mael/Yacine : INTERDICTION de lancer une vidéo témoignage >2min en call. Remplacer par 'Case study écrit chiffré en 60 secondes max' ou 'Screen partagé du tableau de bord client'. Pattern détecté : monologue passif tuant l'engagement"
+      },
+      {
+        "from_call": "JEAN Dorsinvil",
+        "score": 67,
+        "date": "2026-07-12T17:22:21Z",
+        "insight": "Coaching Mael/Yacine sur transition 'témoignages → closing' : montrer les vidéos (00:30:00) puis STACKER la valeur immédiatement avant prix, pas expliquer la méthodologie (00:38-00:41)"
+      },
+      {
         "from_call": "Tahir muhamat",
         "score": 71,
         "date": "2026-07-11T15:01:11Z",
@@ -7957,6 +8527,38 @@
     ]
   },
   "top_leviers_8020_aggregated": [
+    {
+      "rank": 1,
+      "levier": "Ajouter une question Need-Payoff (N) après la validation des épaules/capacité à min 27:36 pour forcer la projection sur la solution par le prospect lui-même",
+      "impact": 14,
+      "from_call": "Helmi De Oliveira",
+      "timestamp_ref": "00:27:36",
+      "score_call": 61
+    },
+    {
+      "rank": 2,
+      "levier": "Remplacer le bloc témoignages vidéo de 7 minutes par 1 cas concret chiffré de 90 secondes avec mécanisme précis à min 41:22",
+      "impact": 12,
+      "from_call": "Helmi De Oliveira",
+      "timestamp_ref": "00:41:22",
+      "score_call": 61
+    },
+    {
+      "rank": 1,
+      "levier": "Ajouter une question 'no-oriented' Voss à min 57:00 pour forcer le closing au lieu de 'je te rappelle'",
+      "impact": 16,
+      "from_call": "JEAN Dorsinvil",
+      "timestamp_ref": "00:57:48",
+      "score_call": 67
+    },
+    {
+      "rank": 2,
+      "levier": "Clarifier le mécanisme unique 'Reset Ultra' avec anchor prix dès min 42:00 quand le prospect exprime la confusion",
+      "impact": 14,
+      "from_call": "JEAN Dorsinvil",
+      "timestamp_ref": "00:42:07",
+      "score_call": 67
+    },
     {
       "rank": 1,
       "levier": "Insérer le Case Study 'Mael 14/14' chiffré à min 20:00 avant l'explication technique du SMMA",

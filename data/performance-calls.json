@@ -1,26 +1,26 @@
 {
   "_meta": {
-    "generated": "2026-07-13T10:03:10.852211Z",
+    "generated": "2026-07-13T14:04:21.530901Z",
     "owner": "djibril",
     "period_days": 30,
     "schema_version": "1.1",
     "data_source": "fathom_api + analyzer_inferred + outcomes_overrides.json manual",
-    "calls_tracked": 29,
+    "calls_tracked": 31,
     "overrides_file": "/Users/pardin/agence-ia/manager/calls_intelligence/outcomes_overrides.json"
   },
   "kpi": {
-    "calls_total": 29,
-    "calls_qualified": 28,
-    "calls_qualified_pct": 0.966,
+    "calls_total": 31,
+    "calls_qualified": 30,
+    "calls_qualified_pct": 0.968,
     "noshow_count": 0,
     "noshow_pct": 0.0,
     "closed_count": 9,
     "closed_lost_count": 3,
-    "closing_pct_qualified": 0.321,
-    "closing_pct_total": 0.31,
+    "closing_pct_qualified": 0.3,
+    "closing_pct_total": 0.29,
     "revenue_total_eur": 0,
     "avg_deal_eur": 0.0,
-    "calls_per_week_avg": 6.7,
+    "calls_per_week_avg": 7.2,
     "ttf_close_days_avg": null
   },
   "delta_vs_prev_period": {
@@ -162,16 +162,30 @@
       "qualified": 1,
       "closed": 1,
       "noshow": 0
+    },
+    {
+      "date": "2026-07-12",
+      "calls": 1,
+      "qualified": 1,
+      "closed": 0,
+      "noshow": 0
+    },
+    {
+      "date": "2026-07-13",
+      "calls": 1,
+      "qualified": 1,
+      "closed": 0,
+      "noshow": 0
     }
   ],
   "by_source": [
     {
       "source": "Instagram organique",
-      "calls": 29,
-      "qualified": 28,
+      "calls": 31,
+      "qualified": 30,
       "closed": 9,
       "noshow": 0,
-      "closing_pct_qualified": 0.321,
+      "closing_pct_qualified": 0.3,
       "revenue_eur": 0
     }
   ],
@@ -211,7 +225,7 @@
     "closed_won": 9,
     "closed_lost": 3,
     "noshow": 0,
-    "followup_pending": 17,
+    "followup_pending": 19,
     "disqualified": 0
   }
 }
