@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated_at": "2026-07-13T12:00:15.743909Z",
+    "generated_at": "2026-07-13T14:00:13.945437Z",
     "window_hours": 24,
-    "total_calls": 296,
-    "total_cost_usd": 0.200775,
+    "total_calls": 299,
+    "total_cost_usd": 0.201379,
     "models_count": 9,
     "providers_count": 5,
     "errors_count": 0,
@@ -14,22 +14,22 @@
     {
       "model": "zhipu-direct/glm-5.2",
       "provider": "zhipu-direct",
-      "calls": 56,
-      "successes": 56,
+      "calls": 58,
+      "successes": 58,
       "errors": 0,
-      "tokens_in": 28670,
-      "tokens_out": 8203,
-      "cost_usd": 0.06148199999999999
+      "tokens_in": 29660,
+      "tokens_out": 8403,
+      "cost_usd": 0.063272
     },
     {
       "model": "moonshot-direct/kimi-k2.6",
       "provider": "moonshot-direct",
-      "calls": 45,
-      "successes": 45,
+      "calls": 44,
+      "successes": 44,
       "errors": 0,
-      "tokens_in": 22891,
-      "tokens_out": 9443,
-      "cost_usd": 0.060849289999999986
+      "tokens_in": 22397,
+      "tokens_out": 9223,
+      "cost_usd": 0.059460729999999976
     },
     {
       "model": "minimax-direct/minimax-m3",
@@ -38,8 +38,8 @@
       "successes": 53,
       "errors": 0,
       "tokens_in": 34567,
-      "tokens_out": 7988,
-      "cost_usd": 0.03829949999999999
+      "tokens_out": 7976,
+      "cost_usd": 0.038288699999999995
     },
     {
       "model": "deepseek-direct/deepseek-v4-pro",
@@ -54,12 +54,12 @@
     {
       "model": "gemini-direct/gemini-pro-latest",
       "provider": "gemini-direct",
-      "calls": 58,
-      "successes": 58,
+      "calls": 60,
+      "successes": 60,
       "errors": 0,
-      "tokens_in": 29112,
-      "tokens_out": 184,
-      "cost_usd": 0.004477200000000002
+      "tokens_in": 30114,
+      "tokens_out": 182,
+      "cost_usd": 0.004626300000000002
     },
     {
       "model": "minimax-direct/MiniMax-M3",
@@ -98,8 +98,8 @@
       "successes": 2,
       "errors": 0,
       "tokens_in": 988,
-      "tokens_out": 116,
-      "cost_usd": 0.0012705199999999998
+      "tokens_out": 130,
+      "cost_usd": 0.00133562
     }
   ]
 }
