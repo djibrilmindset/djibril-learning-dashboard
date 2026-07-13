@@ -1,31 +1,31 @@
 {
   "_meta": {
-    "generated": "2026-07-13T14:04:21.475788Z",
+    "generated": "2026-07-13T18:01:44.577682Z",
     "source": "fathom_api + moonshot_kimi_k2.5_analyzer + frameworks_corpus_v1",
-    "owner_calls_tracked": 31,
+    "owner_calls_tracked": 32,
     "client_cold_calls_tracked": 0,
     "schema_version": "1.1",
     "frameworks_corpus": "~/agence-ia/manager/calls_intelligence/frameworks_corpus.json",
     "reports_path": "/Users/pardin/agence-ia/manager/calls_intelligence/reports"
   },
   "summary": {
-    "calls_total": 31,
-    "avg_score_global": 56.1,
+    "calls_total": 32,
+    "avg_score_global": 55.9,
     "delta_score_30d": 0,
     "top_strength": "Rapport / présence",
     "top_weakness": "Tentative closing",
     "win_rate_top_pattern": 0.21,
     "best_call": {
-      "id": "fathom-163024585",
-      "score": 61
+      "id": "fathom-163134729",
+      "score": 50
     },
     "dim_averages": {
       "rapport_presence": 72.6,
-      "discovery_spin": 52.3,
-      "pain_amplification": 55.4,
-      "offer_clarity": 51.0,
-      "objection_handling": 59.4,
-      "closing_attempt": 45.9
+      "discovery_spin": 51.8,
+      "pain_amplification": 54.2,
+      "offer_clarity": 50.2,
+      "objection_handling": 60.2,
+      "closing_attempt": 46.5
     }
   },
   "scoring_dimensions": [
@@ -55,6 +55,215 @@
     }
   ],
   "calls_perso": [
+    {
+      "id": "fathom-163134729",
+      "owner": "djibril",
+      "recording_id": 163134729,
+      "fathom_share_url": "https://fathom.video/share/GXv8rVzX9Yk1aqAvyyxYV_CrNXBNv_6o",
+      "prospect": "Mouniymm MOHAMED HAMDANI",
+      "title": "Mouniymm avec djibril  @ 13 juil. 2026 - 17:00 - Europe/Paris (GMT+2)",
+      "date": "2026-07-13T15:02:49Z",
+      "duration_min": 11,
+      "outcome": "disqualified",
+      "score_global": 50,
+      "scores": {
+        "rapport_presence": 72,
+        "discovery_spin": 35,
+        "pain_amplification": 15,
+        "offer_clarity": 25,
+        "objection_handling": 85,
+        "closing_attempt": 65
+      },
+      "spin_breakdown": {
+        "situation_pct": 75,
+        "problem_pct": 20,
+        "implication_pct": 3,
+        "needpayoff_pct": 2,
+        "ratio_prospect_djibril_speaking": 0.65
+      },
+      "top_2_leviers_8020": [
+        {
+          "rank": 1,
+          "levier": "Ajouter Accusation Audit (Voss) à 00:01:40 pour disqualifier en 90s au lieu de 11min",
+          "impact_attendu_points": 25,
+          "fix_concret": "Dire immédiatement après l'accord sur la structure: 'Avant qu'on aille plus loin, je veux être transparent: tu vas probablement penser que c'est gratuit ou subventionné par la mission locale. Ce n'est pas le cas. C'est 1000€ minimum. Si tu n'as pas cette capacité financière actuellement, dis-le moi maintenant pour qu'on arrête là.'",
+          "timestamp_ref": "00:01:40"
+        },
+        {
+          "rank": 2,
+          "levier": "Durcir script Basile chatbot IG avec filtre budget obligatoire avant booking",
+          "impact_attendu_points": 20,
+          "fix_concret": "Rajouter dans le flow Basile après la question 'Quel est ton objectif de CA ?' : 'As-tu actuellement 1000€ disponibles pour investir dans ton business ? (Oui/Non/Ne sais pas)'. Si Non ou Ne sais pas → envoyer vers ressource gratuite au lieu de booking.",
+          "timestamp_ref": "00:00:00"
+        }
+      ],
+      "cross_channel_implications": {
+        "to_instagram_reels": "Tourner reel 22s cette semaine: 'Ce n'est PAS pour toi si... tu viens d'arriver en France sans titre de séjour, si ton compte est à découvert, si tu cherches un emploi salarié. Je ne vends pas des billets magiques, je vends une machine à cash pour entrepreneurs établis.' Hook: 'Si t'as pas 1000€, swipe.'",
+        "to_meta_ads": "Créer exclusion audience: exclure les intérêts 'étudiant récent', 'aide sociale', 'mission locale' et les comportements 'nouvel arrivant France'. Tester creative avec overlay texte: 'Investissement 1000€ requis - Ne clique pas si tu cherches un job'",
+        "to_basile_dm": "Modifier le script node 3: Ajouter question calibrée 'Sur une échelle de 1 à 10, à quel point tu as les moyens d'investir 1000€ maintenant ?' Si réponse <7 → redirect vers PDF gratuit 'Bien démarrer en France' au lieu de Calendly.",
+        "to_lp_vsl": "Ajouter section 'Prérequis absolus' au-dessus du bouton de réservation: 'Tu dois avoir un statut administratif régulier et minimum 1000€ de budget formation. Si ce n'est pas le cas, clique ici pour télécharger le guide gratuit.'",
+        "to_mariam_email": "N/A — prospect a show up mais était non qualifié; le problème est amont (filtre booking). Activer séquence Mariam J-1 uniquement pour prospects avec flag 'budget confirmé' dans Basile.",
+        "to_cold_calls_clients": "Coaching Mael/Yacine: Quand un prospect mentionne 'mission locale', 'titre de séjour', ou 'je viens d'arriver', déclencher immédiatement l'Accusation Audit au lieu de faire 10min de discovery. Le but: disqualifier en 2min max pour préserver le pipeline."
+      },
+      "moments_positifs": [
+        {
+          "t_min": 0,
+          "label": "Rapport origin/religion authentic",
+          "framework": "dale_carnegie_commonality"
+        },
+        {
+          "t_min": 7,
+          "label": "Voss mirror 'C'est quoi rien du tout'",
+          "framework": "voss_mirror_used"
+        },
+        {
+          "t_min": 10,
+          "label": "Disqualification ferme sans justification",
+          "framework": "hormozi_disqualification"
+        }
+      ],
+      "moments_negatifs": [
+        {
+          "t_min": 1,
+          "label": "Monologue structure call >30s sans question",
+          "anti_pattern": "monologue_djibril"
+        },
+        {
+          "t_min": 10,
+          "label": "Prospect confus sur offre (pense prêt/argent donné)",
+          "anti_pattern": "no_case_study"
+        }
+      ],
+      "patterns_detected": [
+        "frustration_positive_hook",
+        "voss_mirror_used",
+        "direct_close_attempt"
+      ],
+      "anti_patterns_detected": [
+        "no_case_study",
+        "monologue_djibril"
+      ],
+      "frameworks_used_well": [
+        {
+          "concept": "Mirroring",
+          "book_source": "Never Split The Difference - Chris Voss",
+          "evidence_timestamp": "00:07:07",
+          "evidence_quote": "Djibril: 'C'est quoi rien du tout pour toi ?' (répétition des derniers mots du prospect)"
+        },
+        {
+          "concept": "Intérêt sincère",
+          "book_source": "Comment se faire des amis - Dale Carnegie",
+          "evidence_timestamp": "00:01:55",
+          "evidence_quote": "Djibril: 'T'es de quelle origine ? ... Je suis Sénégalais, Martiniquais... Moi aussi [musulman].'"
+        },
+        {
+          "concept": "Profit Mutuel",
+          "book_source": "Le Secret pour Vendre - Harry Browne",
+          "evidence_timestamp": "00:10:20",
+          "evidence_quote": "Djibril: 'Je suis désolé, mon frère... ce ne sera pas possible' (reconnaissance qu'échange non profitable pour les deux)"
+        }
+      ],
+      "frameworks_missed": [
+        {
+          "concept": "Accusation Audit",
+          "book_source": "Never Split The Difference - Chris Voss",
+          "definition_quick": "Énoncer à l'avance tous les négatifs que le prospect pourrait penser pour désarmer les objections avant qu'elles n'arrivent.",
+          "where_to_apply": "00:01:40",
+          "fix_phrase": "Je vais être direct: tu vas peut-être penser que c'est une formation gratuite ou subventionnée, que je peux t'avancer l'argent, ou que c'est pour les gens sans revenus. Si c'est le cas, dis-le moi maintenant pour qu'on perde pas de temps."
+        },
+        {
+          "concept": "Pre-qualification budgétaire",
+          "book_source": "Ultimate Sales Machine - Chet Holmes",
+          "definition_quick": "Vérifier la capacité financière avant d'entrer en discovery pour éviter de passer 45min avec un non-acheteur.",
+          "where_to_apply": "00:02:22",
+          "fix_phrase": "Avant qu'on creuse ta situation, je pose une question cash: est-ce que tu as 1000€ de côté à investir dans ton business, ou est-ce que tu es en mode survie actuellement ?"
+        },
+        {
+          "concept": "Calibrated Questions",
+          "book_source": "Never Split The Difference - Chris Voss",
+          "definition_quick": "Questions 'Comment' ou 'Quoi' qui forcent le prospect à structurer sa pensée et trouver ses propres solutions.",
+          "where_to_apply": "00:08:24",
+          "fix_phrase": "Comment est-ce que tu comptes résoudre ce problème d'argent si tu ne trouves pas de solution dans les 30 prochains jours ?"
+        }
+      ],
+      "glossary_terms": [
+        {
+          "term": "Accusation Audit",
+          "definition": "Technique Voss consistant à lister proactivement tous les doutes/négatifs que le prospect pourrait avoir pour désamorcer les objections avant qu'elles ne soient formulées.",
+          "source_book": "Never Split The Difference - Chris Voss"
+        },
+        {
+          "term": "Mirroring",
+          "definition": "Répéter les 1-3 derniers mots ou l'idée clé de l'interlocuteur avec intonation interrogative pour l'inciter à approfondir sans pression.",
+          "source_book": "Never Split The Difference - Chris Voss"
+        },
+        {
+          "term": "Profit Mutuel",
+          "definition": "Principe selon lequel un échange n'est valable que si toutes les parties obtiennent plus de valeur qu'elles n'en donnent; implique de disqualifier quand ce n'est pas le cas.",
+          "source_book": "Le Secret pour Vendre - Harry Browne"
+        },
+        {
+          "term": "Disqualification",
+          "definition": "Action de fermer la vente en refusant de vendre quand le fit prospect/offre est négatif, préservant ainsi le temps et la crédibilité.",
+          "source_book": "Ultimate Sales Machine - Chet Holmes"
+        },
+        {
+          "term": "Need-Payoff",
+          "definition": "Phase SPIN où on fait formuler par le prospect lui-même la valeur et les bénéfices de résoudre son problème, créant l'auto-conviction.",
+          "source_book": "SPIN Selling - Neil Rackham"
+        },
+        {
+          "term": "Pre-qualification",
+          "definition": "Processus de filtrage amont (chatbot, questionnaire) pour s'assurer que seuls les prospects avec budget, besoin et décision passent en appel.",
+          "source_book": "Ultimate Sales Machine - Chet Holmes"
+        },
+        {
+          "term": "Calibrated Questions",
+          "definition": "Questions ouvertes commençant par 'Comment' ou 'Quoi' (éviter 'Pourquoi') qui calibrent la pensée du prospect vers la solution sans défensive.",
+          "source_book": "Never Split The Difference - Chris Voss"
+        }
+      ],
+      "next_actions": [
+        "Modifier script Basile IG avant mercredi: ajouter node 'budget 1000€ oui/non' avant lien Calendly",
+        "Tourner reel Instagram 22s 'Ce n'est pas pour toi si...' avant vendredi pour pré-filter les leads",
+        "Brief équipe Mael/Yacine: Accusation Audit obligatoire dès mention 'mission locale' ou 'titre de séjour'"
+      ],
+      "next_action": "Modifier script Basile IG avant mercredi: ajouter node 'budget 1000€ oui/non' avant lien Calendly · Tourner reel Instagram 22s 'Ce n'est pas pour toi si...' avant vendredi pour pré-filter les leads",
+      "key_quotes": [
+        {
+          "speaker": "Prospect",
+          "t": "00:02:35",
+          "quote": "Je suis dans une situation où c'est compliqué pour moi du côté financier et du côté administratif, parce que je viens d'arriver.",
+          "analysis": "Pain point immédiat révélé dès ouverture discovery; aurait déclenché disqualification immédiate avec bon script."
+        },
+        {
+          "speaker": "Prospect",
+          "t": "00:07:07",
+          "quote": "mon compte bancaire, il est en solde négatif... moins de 2600€... Par Allah, je ne jure pas.",
+          "analysis": "Confirmation définitive de non-qualification budgétaire; Djibril gère bien en ne vendant pas."
+        },
+        {
+          "speaker": "Djibril",
+          "t": "00:07:07",
+          "quote": "C'est quoi rien du tout pour toi ?",
+          "analysis": "Voss mirror parfait pour forcer le prospect à quantifier son pain financier."
+        },
+        {
+          "speaker": "Prospect",
+          "t": "00:10:01",
+          "quote": "J'ai vu dans l'annonce-là qu'il y avait une offre de 1 000 €. Je crois que c'était un investissement que vous donnez et après on se débrouille.",
+          "analysis": "Confusion massive sur le mécanisme de l'offre; révèle défaut de clarté dans le funnel amont (LP ou Basile)."
+        },
+        {
+          "speaker": "Djibril",
+          "t": "00:10:20",
+          "quote": "Je suis désolé, en réalité, Mouniym, mais ce ne sera pas possible cette après. Je suis désolé, mon frère.",
+          "analysis": "Disqualification ferme et respectueuse; respecte le principe du Profit Mutuel (Harry Browne)."
+        }
+      ],
+      "verdict": "FLOP — Call n'aurait jamais dû être booké; ajouter filtre budget 1000€ obligatoire dans Basile chatbot avant Calendly pour éliminer 80% des pertes de temps similaires.",
+      "type": "discovery"
+    },
     {
       "id": "fathom-163024585",
       "owner": "djibril",
@@ -7317,24 +7526,24 @@
       "samples": 19
     },
     {
+      "pattern": "Frustration positive hook",
+      "win_rate": 0.22,
+      "samples": 18
+    },
+    {
+      "pattern": "Voss mirror used",
+      "win_rate": 0.11,
+      "samples": 18
+    },
+    {
       "pattern": "Risk reversal explicit",
       "win_rate": 0.22,
       "samples": 18
     },
     {
-      "pattern": "Frustration positive hook",
-      "win_rate": 0.24,
-      "samples": 17
-    },
-    {
-      "pattern": "Voss mirror used",
-      "win_rate": 0.12,
-      "samples": 17
-    },
-    {
       "pattern": "Direct close attempt",
-      "win_rate": 0.29,
-      "samples": 14
+      "win_rate": 0.27,
+      "samples": 15
     },
     {
       "pattern": "Case study window",
@@ -7356,7 +7565,7 @@
     {
       "pattern": "Monologue djibril",
       "loss_rate": 0.9,
-      "samples": 29
+      "samples": 30
     },
     {
       "pattern": "Soft close pattern",
@@ -7365,8 +7574,8 @@
     },
     {
       "pattern": "No case study",
-      "loss_rate": 0.85,
-      "samples": 20
+      "loss_rate": 0.86,
+      "samples": 21
     },
     {
       "pattern": "Discovery too long",
@@ -7398,6 +7607,12 @@
   "queue_to_analyze": [],
   "cross_channel_insights": {
     "to_instagram_reels": [
+      {
+        "from_call": "Mouniymm MOHAMED HAMDANI",
+        "score": 50,
+        "date": "2026-07-13T15:02:49Z",
+        "insight": "Tourner reel 22s cette semaine: 'Ce n'est PAS pour toi si... tu viens d'arriver en France sans titre de séjour, si ton compte est à découvert, si tu cherches un emploi salarié. Je ne vends pas des billets magiques, je vends une machine à cash pour entrepreneurs établis.' Hook: 'Si t'as pas 1000€, swipe.'"
+      },
       {
         "from_call": "Helmi De Oliveira",
         "score": 61,
@@ -7587,6 +7802,12 @@
     ],
     "to_meta_ads": [
       {
+        "from_call": "Mouniymm MOHAMED HAMDANI",
+        "score": 50,
+        "date": "2026-07-13T15:02:49Z",
+        "insight": "Créer exclusion audience: exclure les intérêts 'étudiant récent', 'aide sociale', 'mission locale' et les comportements 'nouvel arrivant France'. Tester creative avec overlay texte: 'Investissement 1000€ requis - Ne clique pas si tu cherches un job'"
+      },
+      {
         "from_call": "Helmi De Oliveira",
         "score": 61,
         "date": "2026-07-13T11:02:28Z",
@@ -7775,6 +7996,12 @@
     ],
     "to_basile_dm": [
       {
+        "from_call": "Mouniymm MOHAMED HAMDANI",
+        "score": 50,
+        "date": "2026-07-13T15:02:49Z",
+        "insight": "Modifier le script node 3: Ajouter question calibrée 'Sur une échelle de 1 à 10, à quel point tu as les moyens d'investir 1000€ maintenant ?' Si réponse <7 → redirect vers PDF gratuit 'Bien démarrer en France' au lieu de Calendly."
+      },
+      {
         "from_call": "Helmi De Oliveira",
         "score": 61,
         "date": "2026-07-13T11:02:28Z",
@@ -7962,6 +8189,12 @@
       }
     ],
     "to_lp_vsl": [
+      {
+        "from_call": "Mouniymm MOHAMED HAMDANI",
+        "score": 50,
+        "date": "2026-07-13T15:02:49Z",
+        "insight": "Ajouter section 'Prérequis absolus' au-dessus du bouton de réservation: 'Tu dois avoir un statut administratif régulier et minimum 1000€ de budget formation. Si ce n'est pas le cas, clique ici pour télécharger le guide gratuit.'"
+      },
       {
         "from_call": "Helmi De Oliveira",
         "score": 61,
@@ -8339,6 +8572,12 @@
     ],
     "to_cold_calls_clients": [
       {
+        "from_call": "Mouniymm MOHAMED HAMDANI",
+        "score": 50,
+        "date": "2026-07-13T15:02:49Z",
+        "insight": "Coaching Mael/Yacine: Quand un prospect mentionne 'mission locale', 'titre de séjour', ou 'je viens d'arriver', déclencher immédiatement l'Accusation Audit au lieu de faire 10min de discovery. Le but: disqualifier en 2min max pour préserver le pipeline."
+      },
+      {
         "from_call": "Helmi De Oliveira",
         "score": 61,
         "date": "2026-07-13T11:02:28Z",
@@ -8527,6 +8766,22 @@
     ]
   },
   "top_leviers_8020_aggregated": [
+    {
+      "rank": 1,
+      "levier": "Ajouter Accusation Audit (Voss) à 00:01:40 pour disqualifier en 90s au lieu de 11min",
+      "impact": 25,
+      "from_call": "Mouniymm MOHAMED HAMDANI",
+      "timestamp_ref": "00:01:40",
+      "score_call": 50
+    },
+    {
+      "rank": 2,
+      "levier": "Durcir script Basile chatbot IG avec filtre budget obligatoire avant booking",
+      "impact": 20,
+      "from_call": "Mouniymm MOHAMED HAMDANI",
+      "timestamp_ref": "00:00:00",
+      "score_call": 50
+    },
     {
       "rank": 1,
       "levier": "Ajouter une question Need-Payoff (N) après la validation des épaules/capacité à min 27:36 pour forcer la projection sur la solution par le prospect lui-même",
