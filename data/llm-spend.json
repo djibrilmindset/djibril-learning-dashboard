@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated_at": "2026-07-13T20:00:20.561113Z",
+    "generated_at": "2026-07-13T22:00:31.760652Z",
     "window_hours": 24,
-    "total_calls": 254,
-    "total_cost_usd": 0.188467,
+    "total_calls": 252,
+    "total_cost_usd": 0.189954,
     "models_count": 9,
     "providers_count": 5,
     "errors_count": 0,
@@ -19,27 +19,27 @@
       "errors": 0,
       "tokens_in": 20963,
       "tokens_out": 9323,
-      "cost_usd": 0.05886456999999999
+      "cost_usd": 0.05886456999999998
     },
     {
       "model": "zhipu-direct/glm-5.2",
       "provider": "zhipu-direct",
-      "calls": 51,
-      "successes": 51,
+      "calls": 52,
+      "successes": 52,
       "errors": 0,
-      "tokens_in": 26171,
-      "tokens_out": 7710,
-      "cost_usd": 0.05701099999999999
+      "tokens_in": 26666,
+      "tokens_out": 7810,
+      "cost_usd": 0.057906
     },
     {
       "model": "minimax-direct/minimax-m3",
       "provider": "minimax-direct",
-      "calls": 51,
-      "successes": 51,
+      "calls": 52,
+      "successes": 52,
       "errors": 0,
-      "tokens_in": 33304,
-      "tokens_out": 7943,
-      "cost_usd": 0.03712229999999998
+      "tokens_in": 33943,
+      "tokens_out": 8043,
+      "cost_usd": 0.03778739999999999
     },
     {
       "model": "deepseek-direct/deepseek-v4-pro",
@@ -48,8 +48,8 @@
       "successes": 27,
       "errors": 0,
       "tokens_in": 19436,
-      "tokens_out": 19942,
-      "cost_usd": 0.024595248
+      "tokens_out": 20048,
+      "cost_usd": 0.024711847999999998
     },
     {
       "model": "gemini-direct/gemini-pro-latest",
@@ -94,12 +94,12 @@
     {
       "model": "gemini-direct/gemini-flash-latest",
       "provider": "gemini-direct",
-      "calls": 25,
-      "successes": 25,
+      "calls": 21,
+      "successes": 21,
       "errors": 0,
-      "tokens_in": 12567,
-      "tokens_out": 80,
-      "cost_usd": 0.0010796999999999996
+      "tokens_in": 10565,
+      "tokens_out": 74,
+      "cost_usd": 0.0008900250000000002
     }
   ]
 }
