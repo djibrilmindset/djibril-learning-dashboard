@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated_at": "2026-07-15T06:00:38.400543Z",
+    "generated_at": "2026-07-15T08:08:47.394298Z",
     "window_hours": 24,
-    "total_calls": 300,
-    "total_cost_usd": 0.22502,
+    "total_calls": 294,
+    "total_cost_usd": 0.224397,
     "models_count": 9,
     "providers_count": 5,
     "errors_count": 0,
@@ -11,105 +11,6 @@
     "error_count": 0
   },
   "entries": [
-    {
-      "ts": "2026-07-14T06:19:01Z",
-      "agent": "HERMES_CALL_GEMINI",
-      "model": "gemini-direct/gemini-pro-latest",
-      "tier": 0,
-      "tokens_in": 501,
-      "tokens_out": 4,
-      "cost_usd": 7.755e-05,
-      "task_type": "chinese",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-07-14T06:19:02Z",
-      "agent": "HERMES_CALL_DEEPSEEK",
-      "model": "deepseek-direct/deepseek-v4-pro",
-      "tier": 1,
-      "tokens_in": 510,
-      "tokens_out": 98,
-      "cost_usd": 0.000147196,
-      "task_type": "chinese",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-07-14T06:19:03Z",
-      "agent": "HERMES_CALL_DEEPSEEK",
-      "model": "deepseek-direct/deepseek-v4-pro",
-      "tier": 1,
-      "tokens_in": 510,
-      "tokens_out": 176,
-      "cost_usd": 0.000232996,
-      "task_type": "chinese",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-07-14T06:19:03Z",
-      "agent": "HERMES_CALL_DEEPSEEK",
-      "model": "deepseek-direct/deepseek-v4-pro",
-      "tier": 1,
-      "tokens_in": 510,
-      "tokens_out": 199,
-      "cost_usd": 0.000258296,
-      "task_type": "chinese",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-07-14T06:19:04Z",
-      "agent": "HERMES_CALL_DEEPSEEK",
-      "model": "deepseek-direct/deepseek-v4-pro",
-      "tier": 1,
-      "tokens_in": 497,
-      "tokens_out": 35,
-      "cost_usd": 7.4386e-05,
-      "task_type": "chinese",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-07-14T06:19:04Z",
-      "agent": "HERMES_CALL_DEEPSEEK",
-      "model": "deepseek-direct/deepseek-v4-pro",
-      "tier": 1,
-      "tokens_in": 510,
-      "tokens_out": 264,
-      "cost_usd": 0.000329796,
-      "task_type": "chinese",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-07-14T06:19:05Z",
-      "agent": "HERMES_CALL_DEEPSEEK",
-      "model": "deepseek-direct/deepseek-v4-pro",
-      "tier": 1,
-      "tokens_in": 510,
-      "tokens_out": 366,
-      "cost_usd": 0.000441996,
-      "task_type": "chinese",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-07-14T06:35:13Z",
-      "agent": "HERMES_CALL_DEEPSEEK",
-      "model": "deepseek-direct/deepseek-v4-pro",
-      "tier": 1,
-      "tokens_in": 497,
-      "tokens_out": 36,
-      "cost_usd": 7.5486e-05,
-      "task_type": "chinese",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-07-14T07:01:02Z",
-      "agent": "HERMES_CALL_MINIMAX",
-      "model": "minimax-direct/minimax-m3",
-      "tier": 2,
-      "tokens_in": 641,
-      "tokens_out": 8,
-      "cost_usd": 0.0005841,
-      "task_type": "chinese",
-      "result_summary": ""
-    },
     {
       "ts": "2026-07-14T08:53:02Z",
       "agent": "HERMES_CALL_MINIMAX",
@@ -3308,6 +3209,39 @@
       "tokens_in": 641,
       "tokens_out": 91,
       "cost_usd": 0.0006588,
+      "task_type": "chinese",
+      "result_summary": ""
+    },
+    {
+      "ts": "2026-07-15T07:35:21Z",
+      "agent": "HERMES_CALL_GEMINI",
+      "model": "gemini-direct/gemini-flash-latest",
+      "tier": 0,
+      "tokens_in": 501,
+      "tokens_out": 4,
+      "cost_usd": 3.8775e-05,
+      "task_type": "chinese",
+      "result_summary": ""
+    },
+    {
+      "ts": "2026-07-15T07:35:28Z",
+      "agent": "HERMES_CALL_ZHIPU",
+      "model": "zhipu-direct/glm-5.2",
+      "tier": 2,
+      "tokens_in": 495,
+      "tokens_out": 100,
+      "cost_usd": 0.000895,
+      "task_type": "chinese",
+      "result_summary": ""
+    },
+    {
+      "ts": "2026-07-15T07:54:11Z",
+      "agent": "HERMES_CALL_MINIMAX",
+      "model": "minimax-direct/minimax-m3",
+      "tier": 2,
+      "tokens_in": 639,
+      "tokens_out": 100,
+      "cost_usd": 0.0006651,
       "task_type": "chinese",
       "result_summary": ""
     }
