@@ -1,10 +1,10 @@
 {
-  "ts": "2026-07-15T05:45:08Z",
+  "ts": "2026-07-16T12:00:00Z",
   "overall": "warn",
   "auto_apply": false,
   "counts": {
-    "ok": 8,
-    "warn": 1,
+    "ok": 6,
+    "warn": 2,
     "fail": 0
   },
   "checks": [
@@ -18,7 +18,7 @@
       "name": "tokens_24h",
       "status": "ok",
       "bucket": "infra",
-      "detail": "conso 24h: $0.2238"
+      "detail": "conso 24h: $0.1822"
     },
     {
       "name": "emails_tracking",
@@ -28,9 +28,9 @@
     },
     {
       "name": "basile_audit",
-      "status": "ok",
+      "status": "warn",
       "bucket": "basile",
-      "detail": "audit Basile frais (daily audit Basile : dernier run 2026-07-14 11:01 (il y a 20h)   dernier rapport : basile_daily_audit_20260712_1200.md )"
+      "detail": "dernier audit Basile il y a 50h (>25h) → cron en retard ?"
     },
     {
       "name": "amine_guard",
@@ -51,12 +51,6 @@
       "detail": "pas de throttle (conso sous seuils)"
     },
     {
-      "name": "v10_daemon",
-      "status": "ok",
-      "bucket": "infra",
-      "detail": "v10_active_daemon : 72 action(s) / 72 ticks récents"
-    },
-    {
       "name": "kais_copy",
       "status": "ok",
       "bucket": "basile",
@@ -69,6 +63,12 @@
       "status": "warn",
       "bucket": "infra",
       "detail": "RÉSUMÉ : 7 ALIVE | 0 PHANTOM | 1 DEAD  (sur 8) (exit 1)"
+    },
+    {
+      "name": "basile_audit",
+      "status": "warn",
+      "bucket": "basile",
+      "detail": "dernier audit Basile il y a 50h (>25h) → cron en retard ?"
     }
   ]
 }
