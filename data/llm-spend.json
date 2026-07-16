@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated_at": "2026-07-16T14:00:39.132374Z",
+    "generated_at": "2026-07-16T16:00:59.930902Z",
     "window_hours": 24,
-    "total_calls": 267,
-    "total_cost_usd": 0.178801,
+    "total_calls": 290,
+    "total_cost_usd": 0.180788,
     "models_count": 9,
     "providers_count": 5,
     "errors_count": 0,
@@ -14,22 +14,22 @@
     {
       "model": "moonshot-direct/kimi-k2.6",
       "provider": "moonshot-direct",
-      "calls": 42,
-      "successes": 42,
+      "calls": 41,
+      "successes": 41,
       "errors": 0,
-      "tokens_in": 21403,
-      "tokens_out": 9221,
-      "cost_usd": 0.05871586999999998
+      "tokens_in": 20913,
+      "tokens_out": 9121,
+      "cost_usd": 0.05788826999999997
     },
     {
       "model": "zhipu-direct/glm-5.2",
       "provider": "zhipu-direct",
-      "calls": 52,
-      "successes": 52,
+      "calls": 53,
+      "successes": 53,
       "errors": 0,
-      "tokens_in": 26629,
-      "tokens_out": 6517,
-      "cost_usd": 0.05269700000000001
+      "tokens_in": 27124,
+      "tokens_out": 6617,
+      "cost_usd": 0.053591999999999994
     },
     {
       "model": "minimax-direct/minimax-m3",
@@ -48,18 +48,18 @@
       "successes": 29,
       "errors": 0,
       "tokens_in": 15689,
-      "tokens_out": 16700,
-      "cost_usd": 0.019755214
+      "tokens_out": 16913,
+      "cost_usd": 0.019989514000000003
     },
     {
       "model": "gemini-direct/gemini-pro-latest",
       "provider": "gemini-direct",
-      "calls": 81,
-      "successes": 81,
+      "calls": 103,
+      "successes": 103,
       "errors": 0,
-      "tokens_in": 44587,
-      "tokens_out": 225,
-      "cost_usd": 0.006823050000000005
+      "tokens_in": 55609,
+      "tokens_out": 279,
+      "cost_usd": 0.00850875
     },
     {
       "model": "minimax-direct/MiniMax-M3",
@@ -94,8 +94,8 @@
     {
       "model": "gemini-direct/gemini-flash-latest",
       "provider": "gemini-direct",
-      "calls": 5,
-      "successes": 5,
+      "calls": 6,
+      "successes": 6,
       "errors": 0,
       "tokens_in": 2034,
       "tokens_out": 28,
