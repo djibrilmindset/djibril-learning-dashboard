@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated_at": "2026-07-17T04:12:32.828630Z",
+    "generated_at": "2026-07-17T06:00:43.690641Z",
     "window_hours": 24,
-    "total_calls": 266,
-    "total_cost_usd": 0.177345,
+    "total_calls": 291,
+    "total_cost_usd": 0.192003,
     "models_count": 9,
     "providers_count": 5,
     "errors_count": 0,
@@ -14,52 +14,52 @@
     {
       "model": "zhipu-direct/glm-5.2",
       "provider": "zhipu-direct",
-      "calls": 54,
-      "successes": 54,
+      "calls": 61,
+      "successes": 61,
       "errors": 0,
-      "tokens_in": 27668,
-      "tokens_out": 7071,
-      "cost_usd": 0.055952
+      "tokens_in": 31244,
+      "tokens_out": 7358,
+      "cost_usd": 0.060676
     },
     {
       "model": "moonshot-direct/kimi-k2.6",
       "provider": "moonshot-direct",
-      "calls": 45,
-      "successes": 45,
+      "calls": 48,
+      "successes": 48,
       "errors": 0,
-      "tokens_in": 21861,
-      "tokens_out": 6175,
-      "cost_usd": 0.04489088999999998
+      "tokens_in": 23353,
+      "tokens_out": 6760,
+      "cost_usd": 0.04871522
     },
     {
       "model": "minimax-direct/minimax-m3",
       "provider": "minimax-direct",
-      "calls": 52,
-      "successes": 52,
+      "calls": 57,
+      "successes": 57,
       "errors": 0,
-      "tokens_in": 37186,
-      "tokens_out": 7319,
-      "cost_usd": 0.04005449999999998
+      "tokens_in": 40456,
+      "tokens_out": 7545,
+      "cost_usd": 0.04320089999999998
     },
     {
       "model": "deepseek-direct/deepseek-v4-pro",
       "provider": "deepseek-direct",
-      "calls": 30,
-      "successes": 30,
+      "calls": 33,
+      "successes": 33,
       "errors": 0,
-      "tokens_in": 17190,
-      "tokens_out": 21429,
-      "cost_usd": 0.024969168000000003
+      "tokens_in": 18706,
+      "tokens_out": 22705,
+      "cost_usd": 0.026487176
     },
     {
       "model": "gemini-direct/gemini-pro-latest",
       "provider": "gemini-direct",
-      "calls": 51,
-      "successes": 51,
+      "calls": 56,
+      "successes": 56,
       "errors": 0,
-      "tokens_in": 25589,
-      "tokens_out": 137,
-      "cost_usd": 0.003920550000000001
+      "tokens_in": 28113,
+      "tokens_out": 165,
+      "cost_usd": 0.004315950000000001
     },
     {
       "model": "minimax-direct/MiniMax-M3",
@@ -74,22 +74,22 @@
     {
       "model": "minimax-direct/MiniMax-Text-01",
       "provider": "minimax-direct",
-      "calls": 4,
-      "successes": 4,
+      "calls": 5,
+      "successes": 5,
       "errors": 0,
-      "tokens_in": 2040,
-      "tokens_out": 27,
-      "cost_usd": 0.0018603
+      "tokens_in": 2550,
+      "tokens_out": 50,
+      "cost_usd": 0.00234
     },
     {
       "model": "moonshot-direct/kimi-k2.7-code",
       "provider": "moonshot-direct",
-      "calls": 2,
-      "successes": 2,
+      "calls": 3,
+      "successes": 3,
       "errors": 0,
-      "tokens_in": 988,
-      "tokens_out": 132,
-      "cost_usd": 0.00134492
+      "tokens_in": 1482,
+      "tokens_out": 176,
+      "cost_usd": 0.00191508
     },
     {
       "model": "gemini-direct/gemini-flash-latest",
@@ -98,8 +98,8 @@
       "successes": 22,
       "errors": 0,
       "tokens_in": 10062,
-      "tokens_out": 78,
-      "cost_usd": 0.000891225
+      "tokens_out": 77,
+      "cost_usd": 0.0008909250000000001
     }
   ]
 }
