@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated_at": "2026-07-19T18:00:24.735011Z",
+    "generated_at": "2026-07-19T20:00:44.123062Z",
     "window_hours": 24,
-    "total_calls": 142,
-    "total_cost_usd": 0.174616,
+    "total_calls": 134,
+    "total_cost_usd": 0.164157,
     "models_count": 9,
     "providers_count": 5,
     "errors_count": 0,
@@ -14,12 +14,12 @@
     {
       "model": "zhipu-direct/glm-5.2",
       "provider": "zhipu-direct",
-      "calls": 40,
-      "successes": 40,
+      "calls": 37,
+      "successes": 37,
       "errors": 0,
-      "tokens_in": 20125,
-      "tokens_out": 6581,
-      "cost_usd": 0.05713139999999999
+      "tokens_in": 18640,
+      "tokens_out": 6281,
+      "cost_usd": 0.053732399999999986
     },
     {
       "model": "comet/qwen3.7-max",
@@ -32,34 +32,34 @@
       "cost_usd": 0.04037
     },
     {
-      "model": "moonshot-direct/kimi-k3",
-      "provider": "moonshot-direct",
-      "calls": 9,
-      "successes": 9,
-      "errors": 0,
-      "tokens_in": 5183,
-      "tokens_out": 900,
-      "cost_usd": 0.029049
-    },
-    {
       "model": "deepseek-direct/deepseek-v4-pro",
       "provider": "deepseek-direct",
-      "calls": 36,
-      "successes": 36,
+      "calls": 37,
+      "successes": 37,
       "errors": 0,
-      "tokens_in": 18551,
-      "tokens_out": 22308,
-      "cost_usd": 0.026008626
+      "tokens_in": 23814,
+      "tokens_out": 24333,
+      "cost_usd": 0.029558832
+    },
+    {
+      "model": "moonshot-direct/kimi-k3",
+      "provider": "moonshot-direct",
+      "calls": 6,
+      "successes": 6,
+      "errors": 0,
+      "tokens_in": 3458,
+      "tokens_out": 600,
+      "cost_usd": 0.019374
     },
     {
       "model": "minimax-direct/minimax-m3",
       "provider": "minimax-direct",
-      "calls": 30,
-      "successes": 30,
+      "calls": 27,
+      "successes": 27,
       "errors": 0,
-      "tokens_in": 20556,
-      "tokens_out": 3052,
-      "cost_usd": 0.0098292
+      "tokens_in": 18639,
+      "tokens_out": 2752,
+      "cost_usd": 0.0088941
     },
     {
       "model": "moonshot-direct/kimi-k2.6",
