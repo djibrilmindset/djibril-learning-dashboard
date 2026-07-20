@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated_at": "2026-07-20T06:12:04.659004Z",
+    "generated_at": "2026-07-20T08:00:52.642002Z",
     "window_hours": 24,
-    "total_calls": 153,
-    "total_cost_usd": 0.248865,
+    "total_calls": 157,
+    "total_cost_usd": 0.251294,
     "models_count": 9,
     "providers_count": 5,
     "errors_count": 0,
@@ -24,12 +24,12 @@
     {
       "model": "zhipu-direct/glm-5.2",
       "provider": "zhipu-direct",
-      "calls": 41,
-      "successes": 41,
+      "calls": 43,
+      "successes": 43,
       "errors": 0,
-      "tokens_in": 21515,
-      "tokens_out": 9017,
-      "cost_usd": 0.06979579999999999
+      "tokens_in": 22503,
+      "tokens_out": 9122,
+      "cost_usd": 0.07164099999999998
     },
     {
       "model": "moonshot-direct/kimi-k3",
@@ -47,9 +47,9 @@
       "calls": 33,
       "successes": 33,
       "errors": 0,
-      "tokens_in": 29293,
-      "tokens_out": 28795,
-      "cost_usd": 0.03614296999999999
+      "tokens_in": 29651,
+      "tokens_out": 28769,
+      "cost_usd": 0.03614549399999999
     },
     {
       "model": "minimax-direct/minimax-m3",
@@ -59,17 +59,17 @@
       "errors": 0,
       "tokens_in": 27856,
       "tokens_out": 6520,
-      "cost_usd": 0.016180799999999995
+      "cost_usd": 0.016180800000000002
     },
     {
       "model": "moonshot-direct/kimi-k2.6",
       "provider": "moonshot-direct",
-      "calls": 11,
-      "successes": 11,
+      "calls": 12,
+      "successes": 12,
       "errors": 0,
-      "tokens_in": 5465,
-      "tokens_out": 1668,
-      "cost_usd": 0.011800300000000001
+      "tokens_in": 5953,
+      "tokens_out": 1673,
+      "cost_usd": 0.012184670000000002
     },
     {
       "model": "moonshot-direct/kimi-k2.7-code",
@@ -82,6 +82,16 @@
       "cost_usd": 0.0014100200000000001
     },
     {
+      "model": "minimax-direct/MiniMax-M3",
+      "provider": "minimax-direct",
+      "calls": 5,
+      "successes": 5,
+      "errors": 0,
+      "tokens_in": 3180,
+      "tokens_out": 25,
+      "cost_usd": 0.000984
+    },
+    {
       "model": "minimax-direct/MiniMax-Text-01",
       "provider": "minimax-direct",
       "calls": 5,
@@ -90,16 +100,6 @@
       "tokens_in": 2550,
       "tokens_out": 55,
       "cost_usd": 0.000831
-    },
-    {
-      "model": "minimax-direct/MiniMax-M3",
-      "provider": "minimax-direct",
-      "calls": 4,
-      "successes": 4,
-      "errors": 0,
-      "tokens_in": 2544,
-      "tokens_out": 20,
-      "cost_usd": 0.0007872
     }
   ]
 }
