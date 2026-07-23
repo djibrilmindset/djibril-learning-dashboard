@@ -1,35 +1,35 @@
 {
   "_meta": {
-    "generated_at": "2026-07-23T20:00:12.888392Z",
+    "generated_at": "2026-07-23T22:00:03.358549Z",
     "window_hours": 24,
-    "total_calls": 191,
-    "total_cost_usd": 0.323387,
-    "models_count": 10,
-    "providers_count": 6,
+    "total_calls": 186,
+    "total_cost_usd": 0.315582,
+    "models_count": 9,
+    "providers_count": 5,
     "errors_count": 0,
-    "healthy_count": 10,
+    "healthy_count": 9,
     "error_count": 0
   },
   "by_model": [
     {
       "model": "moonshot-direct/kimi-k3",
       "provider": "moonshot-direct",
-      "calls": 30,
-      "successes": 30,
+      "calls": 28,
+      "successes": 28,
       "errors": 0,
-      "tokens_in": 17931,
-      "tokens_out": 6471,
-      "cost_usd": 0.1508580000000001
+      "tokens_in": 16781,
+      "tokens_out": 6271,
+      "cost_usd": 0.1444080000000001
     },
     {
       "model": "zhipu-direct/glm-5.2",
       "provider": "zhipu-direct",
-      "calls": 48,
-      "successes": 48,
+      "calls": 47,
+      "successes": 47,
       "errors": 0,
-      "tokens_in": 23652,
-      "tokens_out": 3343,
-      "cost_usd": 0.047822
+      "tokens_in": 23157,
+      "tokens_out": 3243,
+      "cost_usd": 0.04668900000000001
     },
     {
       "model": "comet/qwen3.7-max",
@@ -48,18 +48,18 @@
       "successes": 34,
       "errors": 0,
       "tokens_in": 30510,
-      "tokens_out": 36851,
-      "cost_usd": 0.04480887200000001
+      "tokens_out": 36933,
+      "cost_usd": 0.044899072000000005
     },
     {
       "model": "minimax-direct/minimax-m3",
       "provider": "minimax-direct",
-      "calls": 47,
-      "successes": 47,
+      "calls": 46,
+      "successes": 46,
       "errors": 0,
-      "tokens_in": 33060,
-      "tokens_out": 4669,
-      "cost_usd": 0.015520799999999996
+      "tokens_in": 32421,
+      "tokens_out": 4569,
+      "cost_usd": 0.015209099999999994
     },
     {
       "model": "moonshot-direct/kimi-k2.6",
@@ -100,16 +100,6 @@
       "tokens_in": 2040,
       "tokens_out": 48,
       "cost_usd": 0.0006696
-    },
-    {
-      "model": "gemini-direct/gemini-flash-latest",
-      "provider": "gemini-direct",
-      "calls": 1,
-      "successes": 1,
-      "errors": 0,
-      "tokens_in": 0,
-      "tokens_out": 0,
-      "cost_usd": 0.0
     }
   ]
 }
