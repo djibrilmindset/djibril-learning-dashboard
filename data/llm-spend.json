@@ -1,95 +1,85 @@
 {
   "_meta": {
-    "generated_at": "2026-07-24T10:00:28.953419Z",
+    "generated_at": "2026-07-24T12:48:19.656368Z",
     "window_hours": 24,
-    "total_calls": 237,
-    "total_cost_usd": 0.415237,
-    "models_count": 13,
+    "total_calls": 212,
+    "total_cost_usd": 0.357828,
+    "models_count": 12,
     "providers_count": 7,
     "errors_count": 0,
-    "healthy_count": 13,
+    "healthy_count": 12,
     "error_count": 0
   },
   "by_model": [
     {
       "model": "comet/qwen3.7-max",
       "provider": "comet",
-      "calls": 12,
-      "successes": 12,
+      "calls": 11,
+      "successes": 11,
       "errors": 0,
-      "tokens_in": 7244,
-      "tokens_out": 16028,
-      "cost_usd": 0.13832
-    },
-    {
-      "model": "moonshot-direct/kimi-k3",
-      "provider": "moonshot-direct",
-      "calls": 30,
-      "successes": 30,
-      "errors": 0,
-      "tokens_in": 16963,
-      "tokens_out": 3631,
-      "cost_usd": 0.10535400000000006
+      "tokens_in": 6729,
+      "tokens_out": 15015,
+      "cost_usd": 0.12943499999999997
     },
     {
       "model": "zhipu-direct/glm-5.2",
       "provider": "zhipu-direct",
-      "calls": 66,
-      "successes": 66,
+      "calls": 62,
+      "successes": 62,
       "errors": 0,
-      "tokens_in": 34367,
-      "tokens_out": 7420,
-      "cost_usd": 0.08076179999999994
+      "tokens_in": 32398,
+      "tokens_out": 7995,
+      "cost_usd": 0.08053519999999996
+    },
+    {
+      "model": "moonshot-direct/kimi-k3",
+      "provider": "moonshot-direct",
+      "calls": 22,
+      "successes": 22,
+      "errors": 0,
+      "tokens_in": 12355,
+      "tokens_out": 2749,
+      "cost_usd": 0.07830000000000002
     },
     {
       "model": "deepseek-direct/deepseek-v4-pro",
       "provider": "deepseek-direct",
-      "calls": 41,
-      "successes": 41,
+      "calls": 40,
+      "successes": 40,
       "errors": 0,
-      "tokens_in": 37939,
-      "tokens_out": 43388,
-      "cost_usd": 0.053972633999999985
+      "tokens_in": 32536,
+      "tokens_out": 32404,
+      "cost_usd": 0.040529728
     },
     {
       "model": "minimax-direct/minimax-m3",
       "provider": "minimax-direct",
-      "calls": 60,
-      "successes": 60,
+      "calls": 55,
+      "successes": 55,
       "errors": 0,
-      "tokens_in": 39465,
-      "tokens_out": 8417,
-      "cost_usd": 0.021939900000000023
+      "tokens_in": 36253,
+      "tokens_out": 8045,
+      "cost_usd": 0.020529900000000018
     },
     {
       "model": "moonshot-direct/kimi-k2.6",
       "provider": "moonshot-direct",
-      "calls": 11,
-      "successes": 11,
+      "calls": 7,
+      "successes": 7,
       "errors": 0,
-      "tokens_in": 5460,
-      "tokens_out": 1635,
-      "cost_usd": 0.011643150000000003
-    },
-    {
-      "model": "moonshot-direct/kimi-k2.7-code",
-      "provider": "moonshot-direct",
-      "calls": 2,
-      "successes": 2,
-      "errors": 0,
-      "tokens_in": 988,
-      "tokens_out": 147,
-      "cost_usd": 0.00141467
+      "tokens_in": 3476,
+      "tokens_out": 920,
+      "cost_usd": 0.0068502400000000005
     },
     {
       "model": "minimax-direct/MiniMax-M3",
       "provider": "minimax-direct",
-      "calls": 6,
-      "successes": 6,
+      "calls": 5,
+      "successes": 5,
       "errors": 0,
-      "tokens_in": 3816,
-      "tokens_out": 30,
-      "cost_usd": 0.0011808
+      "tokens_in": 3180,
+      "tokens_out": 25,
+      "cost_usd": 0.000984
     },
     {
       "model": "minimax-direct/MiniMax-Text-01",
@@ -98,8 +88,8 @@
       "successes": 4,
       "errors": 0,
       "tokens_in": 2040,
-      "tokens_out": 32,
-      "cost_usd": 0.0006504
+      "tokens_out": 43,
+      "cost_usd": 0.0006636
     },
     {
       "model": "claude-opus-4-8",
@@ -134,11 +124,11 @@
     {
       "model": "claude-sonnet-5",
       "provider": "direct",
-      "calls": 2,
-      "successes": 2,
+      "calls": 3,
+      "successes": 3,
       "errors": 0,
-      "tokens_in": 17,
-      "tokens_out": 6,
+      "tokens_in": 32,
+      "tokens_out": 11,
       "cost_usd": 0.0
     }
   ]
