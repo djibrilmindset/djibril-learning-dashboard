@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated_at": "2026-07-24T12:48:19.656368Z",
+    "generated_at": "2026-07-24T14:00:22.691550Z",
     "window_hours": 24,
-    "total_calls": 212,
-    "total_cost_usd": 0.357828,
+    "total_calls": 210,
+    "total_cost_usd": 0.35347,
     "models_count": 12,
     "providers_count": 7,
     "errors_count": 0,
@@ -11,39 +11,6 @@
     "error_count": 0
   },
   "entries": [
-    {
-      "ts": "2026-07-23T12:55:28Z",
-      "agent": "HERMES_CALL_MOONSHOT",
-      "model": "moonshot-direct/kimi-k3",
-      "tier": 2,
-      "tokens_in": 575,
-      "tokens_out": 100,
-      "cost_usd": 0.003225,
-      "task_type": "chinese",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-07-23T13:00:29Z",
-      "agent": "HERMES_CALL_ZHIPU",
-      "model": "zhipu-direct/glm-5.2",
-      "tier": 2,
-      "tokens_in": 495,
-      "tokens_out": 100,
-      "cost_usd": 0.001133,
-      "task_type": "chinese",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-07-23T13:55:40Z",
-      "agent": "HERMES_CALL_MINIMAX",
-      "model": "minimax-direct/minimax-m3",
-      "tier": 2,
-      "tokens_in": 639,
-      "tokens_out": 100,
-      "cost_usd": 0.0003117,
-      "task_type": "chinese",
-      "result_summary": ""
-    },
     {
       "ts": "2026-07-23T14:05:42Z",
       "agent": "HERMES_CALL_MOONSHOT",
@@ -2334,6 +2301,17 @@
     },
     {
       "ts": "2026-07-24T11:25:43Z",
+      "agent": "HERMES_CALL_MINIMAX",
+      "model": "minimax-direct/minimax-m3",
+      "tier": 2,
+      "tokens_in": 639,
+      "tokens_out": 100,
+      "cost_usd": 0.0003117,
+      "task_type": "chinese",
+      "result_summary": ""
+    },
+    {
+      "ts": "2026-07-24T13:50:33Z",
       "agent": "HERMES_CALL_MINIMAX",
       "model": "minimax-direct/minimax-m3",
       "tier": 2,
