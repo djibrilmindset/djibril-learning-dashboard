@@ -1,16 +1,26 @@
 {
   "_meta": {
-    "generated_at": "2026-07-25T14:00:08.685172Z",
+    "generated_at": "2026-07-25T16:00:12.486844Z",
     "window_hours": 24,
-    "total_calls": 514,
-    "total_cost_usd": 1.92363,
-    "models_count": 17,
-    "providers_count": 9,
+    "total_calls": 546,
+    "total_cost_usd": 2.092961,
+    "models_count": 18,
+    "providers_count": 10,
     "errors_count": 0,
-    "healthy_count": 17,
+    "healthy_count": 18,
     "error_count": 0
   },
   "by_model": [
+    {
+      "model": "aihubmix/qwen3.8-max-preview",
+      "provider": "aihubmix",
+      "calls": 33,
+      "successes": 33,
+      "errors": 0,
+      "tokens_in": 18152,
+      "tokens_out": 219252,
+      "cost_usd": 0.6759080000000001
+    },
     {
       "model": "moonshot-direct/kimi-k3",
       "provider": "moonshot-direct",
@@ -20,16 +30,6 @@
       "tokens_in": 50326,
       "tokens_out": 30413,
       "cost_usd": 0.6071730000000002
-    },
-    {
-      "model": "aihubmix/qwen3.8-max-preview",
-      "provider": "aihubmix",
-      "calls": 26,
-      "successes": 26,
-      "errors": 0,
-      "tokens_in": 14302,
-      "tokens_out": 179453,
-      "cost_usd": 0.5526610000000001
     },
     {
       "model": "comet/qwen3.7-max",
@@ -44,32 +44,32 @@
     {
       "model": "deepseek-direct/deepseek-v4-pro",
       "provider": "deepseek-direct",
-      "calls": 84,
-      "successes": 84,
+      "calls": 99,
+      "successes": 99,
       "errors": 0,
-      "tokens_in": 58348,
-      "tokens_out": 72914,
-      "cost_usd": 0.08760351999999998
-    },
-    {
-      "model": "zhipu-direct/glm-5.2",
-      "provider": "zhipu-direct",
-      "calls": 70,
-      "successes": 70,
-      "errors": 0,
-      "tokens_in": 39281,
-      "tokens_out": 7265,
-      "cost_usd": 0.0869594
+      "tokens_in": 65764,
+      "tokens_out": 98297,
+      "cost_usd": 0.11605257999999999
     },
     {
       "model": "openai-direct/gpt-5.6-sol",
       "provider": "openai-direct",
-      "calls": 70,
-      "successes": 70,
+      "calls": 87,
+      "successes": 87,
       "errors": 0,
-      "tokens_in": 34894,
-      "tokens_out": 12753,
-      "cost_usd": 0.073153
+      "tokens_in": 43207,
+      "tokens_out": 17608,
+      "cost_usd": 0.096031
+    },
+    {
+      "model": "zhipu-direct/glm-5.2",
+      "provider": "zhipu-direct",
+      "calls": 66,
+      "successes": 66,
+      "errors": 0,
+      "tokens_in": 37303,
+      "tokens_out": 6960,
+      "cost_usd": 0.08284820000000001
     },
     {
       "model": "openai-direct/gpt-5.6-luna",
@@ -84,12 +84,12 @@
     {
       "model": "minimax-direct/minimax-m3",
       "provider": "minimax-direct",
-      "calls": 68,
-      "successes": 68,
+      "calls": 65,
+      "successes": 65,
       "errors": 0,
-      "tokens_in": 48340,
-      "tokens_out": 11917,
-      "cost_usd": 0.028802400000000002
+      "tokens_in": 46423,
+      "tokens_out": 11617,
+      "cost_usd": 0.0278673
     },
     {
       "model": "openai-direct/gpt-5.6-terra",
@@ -124,12 +124,12 @@
     {
       "model": "minimax-direct/MiniMax-M3",
       "provider": "minimax-direct",
-      "calls": 8,
-      "successes": 8,
+      "calls": 7,
+      "successes": 7,
       "errors": 0,
-      "tokens_in": 5088,
-      "tokens_out": 40,
-      "cost_usd": 0.0015744
+      "tokens_in": 4452,
+      "tokens_out": 35,
+      "cost_usd": 0.0013776
     },
     {
       "model": "minimax-direct/MiniMax-Text-01",
@@ -179,6 +179,16 @@
       "errors": 0,
       "tokens_in": 4,
       "tokens_out": 1,
+      "cost_usd": 0.0
+    },
+    {
+      "model": "claude-max/claude-opus-5",
+      "provider": "claude-max",
+      "calls": 1,
+      "successes": 1,
+      "errors": 0,
+      "tokens_in": 0,
+      "tokens_out": 14,
       "cost_usd": 0.0
     }
   ]
