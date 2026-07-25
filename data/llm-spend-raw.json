@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated_at": "2026-07-25T18:00:06.891946Z",
+    "generated_at": "2026-07-25T20:00:15.696602Z",
     "window_hours": 24,
-    "total_calls": 522,
-    "total_cost_usd": 2.071516,
+    "total_calls": 516,
+    "total_cost_usd": 2.066132,
     "models_count": 18,
     "providers_count": 10,
     "errors_count": 0,
@@ -11,72 +11,6 @@
     "error_count": 0
   },
   "entries": [
-    {
-      "ts": "2026-07-24T18:46:35Z",
-      "agent": "HERMES_CALL_DEEPSEEK",
-      "model": "deepseek-direct/deepseek-v4-pro",
-      "tier": 1,
-      "tokens_in": 491,
-      "tokens_out": 193,
-      "cost_usd": 0.000246566,
-      "task_type": "chinese",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-07-24T18:47:26Z",
-      "agent": "HERMES_CALL_DEEPSEEK",
-      "model": "deepseek-direct/deepseek-v4-pro",
-      "tier": 1,
-      "tokens_in": 491,
-      "tokens_out": 2500,
-      "cost_usd": 0.002784266,
-      "task_type": "chinese",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-07-24T18:47:28Z",
-      "agent": "HERMES_CALL_ZHIPU",
-      "model": "zhipu-direct/glm-5.2",
-      "tier": 2,
-      "tokens_in": 493,
-      "tokens_out": 5,
-      "cost_usd": 0.0007122,
-      "task_type": "chinese",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-07-24T18:47:30Z",
-      "agent": "HERMES_CALL_MINIMAX",
-      "model": "minimax-direct/MiniMax-M3",
-      "tier": 2,
-      "tokens_in": 636,
-      "tokens_out": 5,
-      "cost_usd": 0.0001968,
-      "task_type": "chinese",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-07-24T19:21:09Z",
-      "agent": "HERMES_CALL_ZHIPU",
-      "model": "zhipu-direct/glm-5.2",
-      "tier": 2,
-      "tokens_in": 495,
-      "tokens_out": 100,
-      "cost_usd": 0.001133,
-      "task_type": "chinese",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-07-24T19:31:05Z",
-      "agent": "HERMES_CALL_MINIMAX",
-      "model": "minimax-direct/minimax-m3",
-      "tier": 2,
-      "tokens_in": 639,
-      "tokens_out": 100,
-      "cost_usd": 0.0003117,
-      "task_type": "chinese",
-      "result_summary": ""
-    },
     {
       "ts": "2026-07-24T20:06:07Z",
       "agent": "HERMES_CALL_ZHIPU",
