@@ -1,35 +1,45 @@
 {
   "_meta": {
-    "generated_at": "2026-07-26T16:00:04.551942Z",
+    "generated_at": "2026-07-26T18:00:06.038355Z",
     "window_hours": 24,
-    "total_calls": 29,
-    "total_cost_usd": 0.034822,
-    "models_count": 8,
+    "total_calls": 72,
+    "total_cost_usd": 0.110479,
+    "models_count": 9,
     "providers_count": 6,
     "errors_count": 0,
-    "healthy_count": 8,
+    "healthy_count": 9,
     "error_count": 0
   },
   "by_model": [
     {
       "model": "comet/qwen3.7-max",
       "provider": "comet",
-      "calls": 3,
-      "successes": 3,
+      "calls": 6,
+      "successes": 6,
       "errors": 0,
-      "tokens_in": 1535,
-      "tokens_out": 3600,
-      "cost_usd": 0.030837499999999997
+      "tokens_in": 4569,
+      "tokens_out": 11778,
+      "cost_usd": 0.0997575
     },
     {
       "model": "deepseek-direct/deepseek-v4-pro",
       "provider": "deepseek-direct",
-      "calls": 5,
-      "successes": 5,
+      "calls": 9,
+      "successes": 9,
       "errors": 0,
-      "tokens_in": 3861,
-      "tokens_out": 2570,
-      "cost_usd": 0.0033779500000000002
+      "tokens_in": 8171,
+      "tokens_out": 4024,
+      "cost_usd": 0.005747834
+    },
+    {
+      "model": "minimax-direct/minimax-m3",
+      "provider": "minimax-direct",
+      "calls": 9,
+      "successes": 9,
+      "errors": 0,
+      "tokens_in": 9292,
+      "tokens_out": 1362,
+      "cost_usd": 0.004422000000000001
     },
     {
       "model": "minimax-direct/MiniMax-M3",
@@ -42,14 +52,14 @@
       "cost_usd": 0.0003936
     },
     {
-      "model": "minimax-direct/minimax-m3",
+      "model": "minimax-direct/MiniMax-Text-01",
       "provider": "minimax-direct",
       "calls": 1,
       "successes": 1,
       "errors": 0,
-      "tokens_in": 641,
-      "tokens_out": 17,
-      "cost_usd": 0.0002127
+      "tokens_in": 510,
+      "tokens_out": 4,
+      "cost_usd": 0.0001578
     },
     {
       "model": "claude-sonnet-5",
@@ -84,11 +94,11 @@
     {
       "model": "hermes-agent/gpt-5.6-terra",
       "provider": "hermes-agent",
-      "calls": 14,
-      "successes": 14,
+      "calls": 41,
+      "successes": 41,
       "errors": 0,
-      "tokens_in": 2887,
-      "tokens_out": 3472,
+      "tokens_in": 6983,
+      "tokens_out": 10359,
       "cost_usd": 0.0
     }
   ]
