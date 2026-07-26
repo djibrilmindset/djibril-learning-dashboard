@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated_at": "2026-07-25T22:00:18.138111Z",
+    "generated_at": "2026-07-26T00:00:24.323283Z",
     "window_hours": 24,
-    "total_calls": 491,
-    "total_cost_usd": 2.030426,
+    "total_calls": 471,
+    "total_cost_usd": 1.950304,
     "models_count": 18,
     "providers_count": 10,
     "errors_count": 0,
@@ -34,22 +34,12 @@
     {
       "model": "comet/qwen3.7-max",
       "provider": "comet",
-      "calls": 30,
-      "successes": 30,
+      "calls": 27,
+      "successes": 27,
       "errors": 0,
-      "tokens_in": 17329,
-      "tokens_out": 43770,
-      "cost_usd": 0.3715975
-    },
-    {
-      "model": "deepseek-direct/deepseek-v4-pro",
-      "provider": "deepseek-direct",
-      "calls": 87,
-      "successes": 87,
-      "errors": 0,
-      "tokens_in": 60512,
-      "tokens_out": 87353,
-      "cost_usd": 0.103644716
+      "tokens_in": 15175,
+      "tokens_out": 37313,
+      "cost_usd": 0.31778500000000004
     },
     {
       "model": "openai-direct/gpt-5.6-sol",
@@ -62,14 +52,24 @@
       "cost_usd": 0.096031
     },
     {
+      "model": "deepseek-direct/deepseek-v4-pro",
+      "provider": "deepseek-direct",
+      "calls": 82,
+      "successes": 82,
+      "errors": 0,
+      "tokens_in": 52338,
+      "tokens_out": 81414,
+      "cost_usd": 0.09546189200000002
+    },
+    {
       "model": "zhipu-direct/glm-5.2",
       "provider": "zhipu-direct",
-      "calls": 51,
-      "successes": 51,
+      "calls": 43,
+      "successes": 43,
       "errors": 0,
-      "tokens_in": 30207,
-      "tokens_out": 5858,
-      "cost_usd": 0.06806499999999997
+      "tokens_in": 25162,
+      "tokens_out": 4126,
+      "cost_usd": 0.0533812
     },
     {
       "model": "openai-direct/gpt-5.6-luna",
@@ -92,16 +92,6 @@
       "cost_usd": 0.023957999999999993
     },
     {
-      "model": "minimax-direct/minimax-m3",
-      "provider": "minimax-direct",
-      "calls": 46,
-      "successes": 46,
-      "errors": 0,
-      "tokens_in": 34498,
-      "tokens_out": 9281,
-      "cost_usd": 0.021486599999999998
-    },
-    {
       "model": "moonshot-direct/kimi-k2.7-code",
       "provider": "moonshot-direct",
       "calls": 11,
@@ -110,6 +100,16 @@
       "tokens_in": 6041,
       "tokens_out": 3130,
       "cost_usd": 0.01902484
+    },
+    {
+      "model": "minimax-direct/minimax-m3",
+      "provider": "minimax-direct",
+      "calls": 41,
+      "successes": 41,
+      "errors": 0,
+      "tokens_in": 30388,
+      "tokens_out": 7571,
+      "cost_usd": 0.0182016
     },
     {
       "model": "moonshot-direct/kimi-k2.6",
@@ -134,21 +134,21 @@
     {
       "model": "minimax-direct/MiniMax-Text-01",
       "provider": "minimax-direct",
-      "calls": 3,
-      "successes": 3,
+      "calls": 2,
+      "successes": 2,
       "errors": 0,
-      "tokens_in": 1530,
-      "tokens_out": 23,
-      "cost_usd": 0.00048659999999999996
+      "tokens_in": 1020,
+      "tokens_out": 19,
+      "cost_usd": 0.00032879999999999997
     },
     {
       "model": "claude-sonnet-5",
       "provider": "direct",
-      "calls": 4,
-      "successes": 4,
+      "calls": 5,
+      "successes": 5,
       "errors": 0,
-      "tokens_in": 32,
-      "tokens_out": 14,
+      "tokens_in": 36,
+      "tokens_out": 15,
       "cost_usd": 0.0
     },
     {
@@ -184,11 +184,11 @@
     {
       "model": "claude-max/claude-opus-5",
       "provider": "claude-max",
-      "calls": 1,
-      "successes": 1,
+      "calls": 2,
+      "successes": 2,
       "errors": 0,
       "tokens_in": 0,
-      "tokens_out": 14,
+      "tokens_out": 15,
       "cost_usd": 0.0
     }
   ]
