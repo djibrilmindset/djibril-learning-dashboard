@@ -1,192 +1,16 @@
 {
   "_meta": {
-    "generated_at": "2026-07-26T07:39:45.952567Z",
+    "generated_at": "2026-07-26T08:00:29.530521Z",
     "window_hours": 24,
-    "total_calls": 419,
-    "total_cost_usd": 1.84171,
-    "models_count": 18,
-    "providers_count": 10,
+    "total_calls": 404,
+    "total_cost_usd": 1.803037,
+    "models_count": 16,
+    "providers_count": 9,
     "errors_count": 0,
-    "healthy_count": 18,
+    "healthy_count": 16,
     "error_count": 0
   },
   "entries": [
-    {
-      "ts": "2026-07-25T07:42:46Z",
-      "agent": "HERMES_CALL_LOCAL",
-      "model": "local-lms/routeur",
-      "tier": 4,
-      "tokens_in": 530,
-      "tokens_out": 42,
-      "cost_usd": 0,
-      "task_type": "chinese",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-07-25T07:43:30Z",
-      "agent": "CLAUDE_MAX",
-      "model": "claude-sonnet-5",
-      "tier": 0,
-      "tokens_in": 1,
-      "tokens_out": 1,
-      "cost_usd": 0,
-      "task_type": "sonnet_max",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-07-25T07:45:18Z",
-      "agent": "CLAUDE_MAX",
-      "model": "claude-opus-4-8",
-      "tier": 0,
-      "tokens_in": 324,
-      "tokens_out": 332,
-      "cost_usd": 0,
-      "task_type": "opus_max",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-07-25T07:45:32Z",
-      "agent": "HERMES_CALL_MOONSHOT",
-      "model": "moonshot-direct/kimi-k3",
-      "tier": 2,
-      "tokens_in": 996,
-      "tokens_out": 300,
-      "cost_usd": 0.007488,
-      "task_type": "chinese",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-07-25T07:46:08Z",
-      "agent": "CLAUDE_MAX",
-      "model": "claude-sonnet-5",
-      "tier": 0,
-      "tokens_in": 1,
-      "tokens_out": 1,
-      "cost_usd": 0,
-      "task_type": "sonnet_max",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-07-25T07:46:22Z",
-      "agent": "HERMES_CALL_DEEPSEEK",
-      "model": "deepseek-direct/deepseek-v4-pro",
-      "tier": 1,
-      "tokens_in": 492,
-      "tokens_out": 751,
-      "cost_usd": 0.000860636,
-      "task_type": "chinese",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-07-25T07:46:50Z",
-      "agent": "CLAUDE_MAX",
-      "model": "claude-opus-4-8",
-      "tier": 0,
-      "tokens_in": 8,
-      "tokens_out": 3,
-      "cost_usd": 0,
-      "task_type": "opus_max",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-07-25T07:47:48Z",
-      "agent": "CLAUDE_MAX",
-      "model": "claude-opus-4-8",
-      "tier": 0,
-      "tokens_in": 257,
-      "tokens_out": 241,
-      "cost_usd": 0,
-      "task_type": "opus_max",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-07-25T07:49:46Z",
-      "agent": "CLAUDE_MAX",
-      "model": "claude-opus-4-8",
-      "tier": 0,
-      "tokens_in": 257,
-      "tokens_out": 188,
-      "cost_usd": 0,
-      "task_type": "opus_max",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-07-25T07:49:51Z",
-      "agent": "HERMES_CALL_DEEPSEEK",
-      "model": "deepseek-direct/deepseek-v4-pro",
-      "tier": 1,
-      "tokens_in": 839,
-      "tokens_out": 1655,
-      "cost_usd": 0.001948726,
-      "task_type": "chinese",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-07-25T07:49:59Z",
-      "agent": "HERMES_CALL_MOONSHOT",
-      "model": "moonshot-direct/kimi-k3",
-      "tier": 2,
-      "tokens_in": 932,
-      "tokens_out": 300,
-      "cost_usd": 0.007296,
-      "task_type": "chinese",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-07-25T07:50:38Z",
-      "agent": "HERMES_CALL_DEEPSEEK",
-      "model": "deepseek-direct/deepseek-v4-pro",
-      "tier": 1,
-      "tokens_in": 491,
-      "tokens_out": 1157,
-      "cost_usd": 0.001306966,
-      "task_type": "chinese",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-07-25T07:50:41Z",
-      "agent": "HERMES_CALL_MOONSHOT",
-      "model": "moonshot-direct/kimi-k3",
-      "tier": 2,
-      "tokens_in": 573,
-      "tokens_out": 5,
-      "cost_usd": 0.001794,
-      "task_type": "chinese",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-07-25T07:50:46Z",
-      "agent": "HERMES_CALL_ZHIPU",
-      "model": "zhipu-direct/glm-5.2",
-      "tier": 2,
-      "tokens_in": 493,
-      "tokens_out": 5,
-      "cost_usd": 0.0007122,
-      "task_type": "chinese",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-07-25T07:50:49Z",
-      "agent": "HERMES_CALL_MINIMAX",
-      "model": "minimax-direct/MiniMax-M3",
-      "tier": 2,
-      "tokens_in": 636,
-      "tokens_out": 5,
-      "cost_usd": 0.0001968,
-      "task_type": "chinese",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-07-25T07:51:31Z",
-      "agent": "HERMES_CALL_COMET",
-      "model": "comet/qwen3.7-max",
-      "tier": 2,
-      "tokens_in": 510,
-      "tokens_out": 2106,
-      "cost_usd": 0.01707,
-      "task_type": "chinese",
-      "result_summary": ""
-    },
     {
       "ts": "2026-07-25T08:03:22Z",
       "agent": "HERMES_CALL_OPENAI",
@@ -4618,6 +4442,17 @@
       "tokens_out": 1,
       "cost_usd": 0,
       "task_type": "chinese",
+      "result_summary": ""
+    },
+    {
+      "ts": "2026-07-26T07:40:37Z",
+      "agent": "CLAUDE_MAX",
+      "model": "claude-sonnet-5",
+      "tier": 0,
+      "tokens_in": 486,
+      "tokens_out": 747,
+      "cost_usd": 0,
+      "task_type": "sonnet_max",
       "result_summary": ""
     }
   ]
