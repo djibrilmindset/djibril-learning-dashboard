@@ -1,45 +1,45 @@
 {
   "_meta": {
-    "generated_at": "2026-07-26T22:00:18.313656Z",
+    "generated_at": "2026-07-27T00:00:12.199660Z",
     "window_hours": 24,
-    "total_calls": 96,
-    "total_cost_usd": 0.149793,
-    "models_count": 9,
+    "total_calls": 124,
+    "total_cost_usd": 0.249999,
+    "models_count": 8,
     "providers_count": 6,
     "errors_count": 0,
-    "healthy_count": 9,
+    "healthy_count": 8,
     "error_count": 0
   },
   "by_model": [
     {
       "model": "comet/qwen3.7-max",
       "provider": "comet",
-      "calls": 8,
-      "successes": 8,
+      "calls": 13,
+      "successes": 13,
       "errors": 0,
-      "tokens_in": 5589,
-      "tokens_out": 16355,
-      "cost_usd": 0.136635
+      "tokens_in": 7233,
+      "tokens_out": 25141,
+      "cost_usd": 0.20664000000000002
     },
     {
       "model": "deepseek-direct/deepseek-v4-pro",
       "provider": "deepseek-direct",
-      "calls": 12,
-      "successes": 12,
+      "calls": 31,
+      "successes": 31,
       "errors": 0,
-      "tokens_in": 14344,
-      "tokens_out": 4634,
-      "cost_usd": 0.0077906320000000005
+      "tokens_in": 36939,
+      "tokens_out": 23315,
+      "cost_usd": 0.032900286
     },
     {
       "model": "minimax-direct/minimax-m3",
       "provider": "minimax-direct",
-      "calls": 9,
-      "successes": 9,
+      "calls": 14,
+      "successes": 14,
       "errors": 0,
-      "tokens_in": 9292,
-      "tokens_out": 1362,
-      "cost_usd": 0.004422000000000001
+      "tokens_in": 12911,
+      "tokens_out": 4561,
+      "cost_usd": 0.0093465
     },
     {
       "model": "minimax-direct/MiniMax-M3",
@@ -54,31 +54,21 @@
     {
       "model": "minimax-direct/MiniMax-Text-01",
       "provider": "minimax-direct",
-      "calls": 1,
-      "successes": 1,
+      "calls": 2,
+      "successes": 2,
       "errors": 0,
-      "tokens_in": 510,
-      "tokens_out": 4,
-      "cost_usd": 0.0001578
+      "tokens_in": 1020,
+      "tokens_out": 16,
+      "cost_usd": 0.0003252
     },
     {
       "model": "claude-sonnet-5",
       "provider": "direct",
-      "calls": 2,
-      "successes": 2,
-      "errors": 0,
-      "tokens_in": 490,
-      "tokens_out": 748,
-      "cost_usd": 0.0
-    },
-    {
-      "model": "claude-max/claude-opus-5",
-      "provider": "claude-max",
       "calls": 1,
       "successes": 1,
       "errors": 0,
-      "tokens_in": 0,
-      "tokens_out": 1,
+      "tokens_in": 486,
+      "tokens_out": 747,
       "cost_usd": 0.0
     },
     {
