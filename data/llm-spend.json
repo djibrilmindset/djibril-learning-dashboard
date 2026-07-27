@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated_at": "2026-07-27T10:00:18.704236Z",
+    "generated_at": "2026-07-27T12:00:38.562781Z",
     "window_hours": 24,
-    "total_calls": 157,
-    "total_cost_usd": 0.321243,
+    "total_calls": 165,
+    "total_cost_usd": 0.346139,
     "models_count": 6,
     "providers_count": 4,
     "errors_count": 0,
@@ -14,52 +14,52 @@
     {
       "model": "comet/qwen3.7-max",
       "provider": "comet",
-      "calls": 20,
-      "successes": 20,
+      "calls": 21,
+      "successes": 21,
       "errors": 0,
-      "tokens_in": 10837,
-      "tokens_out": 31775,
-      "cost_usd": 0.26540500000000006
+      "tokens_in": 11361,
+      "tokens_out": 34999,
+      "cost_usd": 0.29089500000000007
     },
     {
       "model": "deepseek-direct/deepseek-v4-pro",
       "provider": "deepseek-direct",
-      "calls": 48,
-      "successes": 48,
+      "calls": 49,
+      "successes": 49,
       "errors": 0,
-      "tokens_in": 55162,
-      "tokens_out": 29249,
-      "cost_usd": 0.042676728000000004
+      "tokens_in": 54304,
+      "tokens_out": 27594,
+      "cost_usd": 0.04052626400000001
     },
     {
       "model": "minimax-direct/minimax-m3",
       "provider": "minimax-direct",
-      "calls": 21,
-      "successes": 21,
+      "calls": 25,
+      "successes": 25,
       "errors": 0,
-      "tokens_in": 17450,
-      "tokens_out": 5047,
-      "cost_usd": 0.011291400000000002
+      "tokens_in": 20079,
+      "tokens_out": 5383,
+      "cost_usd": 0.012483300000000001
     },
     {
       "model": "minimax-direct/MiniMax-M3",
       "provider": "minimax-direct",
-      "calls": 7,
-      "successes": 7,
+      "calls": 8,
+      "successes": 8,
       "errors": 0,
-      "tokens_in": 4452,
-      "tokens_out": 35,
-      "cost_usd": 0.0013776
+      "tokens_in": 5088,
+      "tokens_out": 40,
+      "cost_usd": 0.0015744
     },
     {
       "model": "minimax-direct/MiniMax-Text-01",
       "provider": "minimax-direct",
-      "calls": 3,
-      "successes": 3,
+      "calls": 4,
+      "successes": 4,
       "errors": 0,
-      "tokens_in": 1530,
-      "tokens_out": 28,
-      "cost_usd": 0.0004925999999999999
+      "tokens_in": 2040,
+      "tokens_out": 40,
+      "cost_usd": 0.00066
     },
     {
       "model": "hermes-agent/gpt-5.6-terra",
