@@ -1,35 +1,35 @@
 {
   "_meta": {
-    "generated_at": "2026-07-27T06:00:03.110505Z",
+    "generated_at": "2026-07-27T08:00:00.842471Z",
     "window_hours": 24,
-    "total_calls": 156,
-    "total_cost_usd": 0.310642,
-    "models_count": 8,
-    "providers_count": 6,
+    "total_calls": 158,
+    "total_cost_usd": 0.321243,
+    "models_count": 7,
+    "providers_count": 5,
     "errors_count": 0,
-    "healthy_count": 8,
+    "healthy_count": 7,
     "error_count": 0
   },
   "by_model": [
     {
       "model": "comet/qwen3.7-max",
       "provider": "comet",
-      "calls": 19,
-      "successes": 19,
+      "calls": 20,
+      "successes": 20,
       "errors": 0,
-      "tokens_in": 10327,
-      "tokens_out": 30563,
-      "cost_usd": 0.25504000000000004
+      "tokens_in": 10837,
+      "tokens_out": 31775,
+      "cost_usd": 0.26540500000000006
     },
     {
       "model": "deepseek-direct/deepseek-v4-pro",
       "provider": "deepseek-direct",
-      "calls": 47,
-      "successes": 47,
+      "calls": 48,
+      "successes": 48,
       "errors": 0,
-      "tokens_in": 54671,
-      "tokens_out": 29244,
-      "cost_usd": 0.04263696200000001
+      "tokens_in": 55162,
+      "tokens_out": 29249,
+      "cost_usd": 0.042676728000000004
     },
     {
       "model": "minimax-direct/minimax-m3",
@@ -44,12 +44,12 @@
     {
       "model": "minimax-direct/MiniMax-M3",
       "provider": "minimax-direct",
-      "calls": 6,
-      "successes": 6,
+      "calls": 7,
+      "successes": 7,
       "errors": 0,
-      "tokens_in": 3816,
-      "tokens_out": 30,
-      "cost_usd": 0.0011808
+      "tokens_in": 4452,
+      "tokens_out": 35,
+      "cost_usd": 0.0013776
     },
     {
       "model": "minimax-direct/MiniMax-Text-01",
@@ -60,16 +60,6 @@
       "tokens_in": 1530,
       "tokens_out": 28,
       "cost_usd": 0.0004925999999999999
-    },
-    {
-      "model": "claude-sonnet-5",
-      "provider": "direct",
-      "calls": 1,
-      "successes": 1,
-      "errors": 0,
-      "tokens_in": 486,
-      "tokens_out": 747,
-      "cost_usd": 0.0
     },
     {
       "model": "claude-max/claude-sonnet-5",
