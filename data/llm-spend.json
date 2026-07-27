@@ -1,13 +1,13 @@
 {
   "_meta": {
-    "generated_at": "2026-07-27T08:00:00.842471Z",
+    "generated_at": "2026-07-27T10:00:18.704236Z",
     "window_hours": 24,
-    "total_calls": 158,
+    "total_calls": 157,
     "total_cost_usd": 0.321243,
-    "models_count": 7,
-    "providers_count": 5,
+    "models_count": 6,
+    "providers_count": 4,
     "errors_count": 0,
-    "healthy_count": 7,
+    "healthy_count": 6,
     "error_count": 0
   },
   "by_model": [
@@ -60,16 +60,6 @@
       "tokens_in": 1530,
       "tokens_out": 28,
       "cost_usd": 0.0004925999999999999
-    },
-    {
-      "model": "claude-max/claude-sonnet-5",
-      "provider": "claude-max",
-      "calls": 1,
-      "successes": 1,
-      "errors": 0,
-      "tokens_in": 0,
-      "tokens_out": 1,
-      "cost_usd": 0.0
     },
     {
       "model": "hermes-agent/gpt-5.6-terra",
