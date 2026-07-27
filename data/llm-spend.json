@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated_at": "2026-07-27T16:00:16.269728Z",
+    "generated_at": "2026-07-27T18:00:35.856363Z",
     "window_hours": 24,
-    "total_calls": 144,
-    "total_cost_usd": 0.330236,
+    "total_calls": 117,
+    "total_cost_usd": 0.281249,
     "models_count": 6,
     "providers_count": 4,
     "errors_count": 0,
@@ -14,42 +14,42 @@
     {
       "model": "comet/qwen3.7-max",
       "provider": "comet",
-      "calls": 20,
-      "successes": 20,
+      "calls": 19,
+      "successes": 19,
       "errors": 0,
-      "tokens_in": 10851,
-      "tokens_out": 33263,
-      "cost_usd": 0.2766
+      "tokens_in": 8856,
+      "tokens_out": 27792,
+      "cost_usd": 0.23057999999999998
     },
     {
       "model": "deepseek-direct/deepseek-v4-pro",
       "provider": "deepseek-direct",
-      "calls": 46,
-      "successes": 46,
+      "calls": 49,
+      "successes": 49,
       "errors": 0,
-      "tokens_in": 52793,
-      "tokens_out": 27071,
-      "cost_usd": 0.039837906
+      "tokens_in": 52034,
+      "tokens_out": 27120,
+      "cost_usd": 0.039391964
     },
     {
       "model": "minimax-direct/minimax-m3",
       "provider": "minimax-direct",
-      "calls": 23,
-      "successes": 23,
+      "calls": 20,
+      "successes": 20,
       "errors": 0,
-      "tokens_in": 18771,
-      "tokens_out": 5108,
-      "cost_usd": 0.0117609
+      "tokens_in": 13390,
+      "tokens_out": 4188,
+      "cost_usd": 0.0090426
     },
     {
       "model": "minimax-direct/MiniMax-M3",
       "provider": "minimax-direct",
-      "calls": 7,
-      "successes": 7,
+      "calls": 8,
+      "successes": 8,
       "errors": 0,
-      "tokens_in": 4452,
-      "tokens_out": 35,
-      "cost_usd": 0.0013776
+      "tokens_in": 5088,
+      "tokens_out": 40,
+      "cost_usd": 0.0015744
     },
     {
       "model": "minimax-direct/MiniMax-Text-01",
@@ -64,11 +64,11 @@
     {
       "model": "hermes-agent/gpt-5.6-terra",
       "provider": "hermes-agent",
-      "calls": 44,
-      "successes": 44,
+      "calls": 17,
+      "successes": 17,
       "errors": 0,
-      "tokens_in": 9064,
-      "tokens_out": 13176,
+      "tokens_in": 4968,
+      "tokens_out": 6289,
       "cost_usd": 0.0
     }
   ]
