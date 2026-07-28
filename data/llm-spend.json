@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated_at": "2026-07-28T02:18:27.962607Z",
+    "generated_at": "2026-07-28T04:20:28.527533Z",
     "window_hours": 24,
-    "total_calls": 88,
-    "total_cost_usd": 0.183858,
+    "total_calls": 72,
+    "total_cost_usd": 0.150183,
     "models_count": 5,
     "providers_count": 3,
     "errors_count": 0,
@@ -14,52 +14,52 @@
     {
       "model": "comet/qwen3.7-max",
       "provider": "comet",
-      "calls": 14,
-      "successes": 14,
+      "calls": 12,
+      "successes": 12,
       "errors": 0,
-      "tokens_in": 6861,
-      "tokens_out": 17150,
-      "cost_usd": 0.1457775
+      "tokens_in": 5822,
+      "tokens_out": 14311,
+      "cost_usd": 0.12188750000000002
     },
     {
       "model": "deepseek-direct/deepseek-v4-pro",
       "provider": "deepseek-direct",
-      "calls": 40,
-      "successes": 40,
+      "calls": 32,
+      "successes": 32,
       "errors": 0,
-      "tokens_in": 36637,
-      "tokens_out": 18067,
-      "cost_usd": 0.024326201999999998
+      "tokens_in": 23283,
+      "tokens_out": 13138,
+      "cost_usd": 0.016085154
     },
     {
       "model": "minimax-direct/minimax-m3",
       "provider": "minimax-direct",
-      "calls": 24,
-      "successes": 24,
+      "calls": 20,
+      "successes": 20,
       "errors": 0,
-      "tokens_in": 16582,
-      "tokens_out": 5779,
-      "cost_usd": 0.0119094
+      "tokens_in": 13966,
+      "tokens_out": 5450,
+      "cost_usd": 0.010729800000000001
     },
     {
       "model": "minimax-direct/MiniMax-M3",
       "provider": "minimax-direct",
-      "calls": 6,
-      "successes": 6,
+      "calls": 5,
+      "successes": 5,
       "errors": 0,
-      "tokens_in": 3816,
-      "tokens_out": 30,
-      "cost_usd": 0.0011808
+      "tokens_in": 3180,
+      "tokens_out": 25,
+      "cost_usd": 0.000984
     },
     {
       "model": "minimax-direct/MiniMax-Text-01",
       "provider": "minimax-direct",
-      "calls": 4,
-      "successes": 4,
+      "calls": 3,
+      "successes": 3,
       "errors": 0,
-      "tokens_in": 2040,
-      "tokens_out": 43,
-      "cost_usd": 0.0006636
+      "tokens_in": 1530,
+      "tokens_out": 31,
+      "cost_usd": 0.0004962
     }
   ]
 }
