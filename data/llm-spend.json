@@ -1,35 +1,35 @@
 {
   "_meta": {
-    "generated_at": "2026-07-30T08:01:05.012490Z",
+    "generated_at": "2026-07-30T10:00:02.273188Z",
     "window_hours": 24,
-    "total_calls": 113,
-    "total_cost_usd": 0.190205,
-    "models_count": 6,
-    "providers_count": 4,
+    "total_calls": 140,
+    "total_cost_usd": 0.229065,
+    "models_count": 7,
+    "providers_count": 5,
     "errors_count": 0,
-    "healthy_count": 6,
+    "healthy_count": 7,
     "error_count": 0
   },
   "by_model": [
     {
       "model": "comet/qwen3.7-max",
       "provider": "comet",
-      "calls": 14,
-      "successes": 14,
+      "calls": 18,
+      "successes": 18,
       "errors": 0,
-      "tokens_in": 7495,
-      "tokens_out": 17725,
-      "cost_usd": 0.151675
+      "tokens_in": 9549,
+      "tokens_out": 21650,
+      "cost_usd": 0.1862475
     },
     {
       "model": "minimax-direct/minimax-m3",
       "provider": "minimax-direct",
-      "calls": 73,
-      "successes": 73,
+      "calls": 86,
+      "successes": 86,
       "errors": 0,
-      "tokens_in": 51693,
-      "tokens_out": 16159,
-      "cost_usd": 0.03489869999999999
+      "tokens_in": 59813,
+      "tokens_out": 17538,
+      "cost_usd": 0.038989499999999976
     },
     {
       "model": "deepseek-direct/deepseek-v4-pro",
@@ -44,12 +44,12 @@
     {
       "model": "minimax-direct/MiniMax-M3",
       "provider": "minimax-direct",
-      "calls": 5,
-      "successes": 5,
+      "calls": 6,
+      "successes": 6,
       "errors": 0,
-      "tokens_in": 3180,
-      "tokens_out": 25,
-      "cost_usd": 0.000984
+      "tokens_in": 3816,
+      "tokens_out": 30,
+      "cost_usd": 0.0011808
     },
     {
       "model": "minimax-direct/MiniMax-Text-01",
@@ -64,11 +64,21 @@
     {
       "model": "hermes-agent/gpt-5.6-sol",
       "provider": "hermes-agent",
-      "calls": 11,
-      "successes": 11,
+      "calls": 18,
+      "successes": 18,
       "errors": 0,
-      "tokens_in": 2998,
-      "tokens_out": 8017,
+      "tokens_in": 5076,
+      "tokens_out": 13617,
+      "cost_usd": 0.0
+    },
+    {
+      "model": "claude-opus-5",
+      "provider": "direct",
+      "calls": 2,
+      "successes": 2,
+      "errors": 0,
+      "tokens_in": 21,
+      "tokens_out": 11,
       "cost_usd": 0.0
     }
   ]
