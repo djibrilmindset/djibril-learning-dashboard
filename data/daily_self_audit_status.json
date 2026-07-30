@@ -1,24 +1,24 @@
 {
-  "ts": "2026-07-29T05:45:00Z",
-  "overall": "warn",
+  "ts": "2026-07-30T12:00:00Z",
+  "overall": "ok",
   "auto_apply": false,
   "counts": {
-    "ok": 6,
-    "warn": 1,
+    "ok": 7,
+    "warn": 0,
     "fail": 0
   },
   "checks": [
     {
       "name": "rois_princes",
-      "status": "warn",
+      "status": "ok",
       "bucket": "infra",
-      "detail": "RÉSUMÉ : 2 ALIVE | 3 PHANTOM | 4 DEAD  (sur 9) (exit 1)"
+      "detail": "RÉSUMÉ : 4 ALIVE | 0 PHANTOM | 0 DEAD  (sur 4)"
     },
     {
       "name": "tokens_24h",
       "status": "ok",
       "bucket": "infra",
-      "detail": "conso 24h: $1.3272"
+      "detail": "conso 24h: $3.4204"
     },
     {
       "name": "emails_tracking",
@@ -36,7 +36,7 @@
       "name": "launchd_plists",
       "status": "ok",
       "bucket": "infra",
-      "detail": "44 plists Djibril/Hermes chargés"
+      "detail": "46 plists Djibril/Hermes chargés"
     },
     {
       "name": "cost_throttle",
@@ -51,12 +51,5 @@
       "detail": "pas de test exit-code (copy=créatif) → audité sur demande, jamais auto-édité (doctrine H1)"
     }
   ],
-  "problems": [
-    {
-      "name": "rois_princes",
-      "status": "warn",
-      "bucket": "infra",
-      "detail": "RÉSUMÉ : 2 ALIVE | 3 PHANTOM | 4 DEAD  (sur 9) (exit 1)"
-    }
-  ]
+  "problems": []
 }
