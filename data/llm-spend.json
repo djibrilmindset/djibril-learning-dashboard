@@ -1,35 +1,45 @@
 {
   "_meta": {
-    "generated_at": "2026-08-02T09:31:30.394519Z",
+    "generated_at": "2026-08-02T10:10:51.196166Z",
     "window_hours": 24,
-    "total_calls": 48,
-    "total_cost_usd": 0.066071,
-    "models_count": 5,
-    "providers_count": 4,
+    "total_calls": 87,
+    "total_cost_usd": 0.196793,
+    "models_count": 6,
+    "providers_count": 5,
     "errors_count": 0,
-    "healthy_count": 5,
+    "healthy_count": 6,
     "error_count": 0
   },
   "by_model": [
     {
       "model": "comet/qwen3.7-max",
       "provider": "comet",
-      "calls": 9,
-      "successes": 9,
+      "calls": 14,
+      "successes": 14,
       "errors": 0,
-      "tokens_in": 4625,
-      "tokens_out": 6602,
-      "cost_usd": 0.06107750000000001
+      "tokens_in": 8275,
+      "tokens_out": 14912,
+      "cost_usd": 0.13252750000000002
     },
     {
       "model": "minimax-direct/minimax-m3",
       "provider": "minimax-direct",
-      "calls": 17,
-      "successes": 17,
+      "calls": 28,
+      "successes": 28,
       "errors": 0,
-      "tokens_in": 10931,
-      "tokens_out": 842,
-      "cost_usd": 0.0042897
+      "tokens_in": 27062,
+      "tokens_out": 20791,
+      "cost_usd": 0.0330678
+    },
+    {
+      "model": "deepseek-direct/deepseek-v4-pro",
+      "provider": "deepseek-direct",
+      "calls": 24,
+      "successes": 24,
+      "errors": 0,
+      "tokens_in": 25641,
+      "tokens_out": 25344,
+      "cost_usd": 0.030803774
     },
     {
       "model": "minimax-direct/MiniMax-M3",
@@ -42,23 +52,23 @@
       "cost_usd": 0.0003936
     },
     {
-      "model": "deepseek-direct/deepseek-v4-pro",
-      "provider": "deepseek-direct",
-      "calls": 3,
-      "successes": 3,
-      "errors": 0,
-      "tokens_in": 1483,
-      "tokens_out": 186,
-      "cost_usd": 0.00031009799999999997
-    },
-    {
       "model": "hermes-agent/gpt-5.6-sol",
       "provider": "hermes-agent",
-      "calls": 17,
-      "successes": 17,
+      "calls": 18,
+      "successes": 18,
       "errors": 0,
-      "tokens_in": 6157,
-      "tokens_out": 14948,
+      "tokens_in": 6162,
+      "tokens_out": 14949,
+      "cost_usd": 0.0
+    },
+    {
+      "model": "claude-sonnet-5",
+      "provider": "direct",
+      "calls": 1,
+      "successes": 1,
+      "errors": 0,
+      "tokens_in": 1693,
+      "tokens_out": 1088,
       "cost_usd": 0.0
     }
   ]
