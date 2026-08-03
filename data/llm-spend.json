@@ -1,45 +1,45 @@
 {
   "_meta": {
-    "generated_at": "2026-08-03T08:24:16.098112Z",
+    "generated_at": "2026-08-03T10:00:06.449213Z",
     "window_hours": 24,
-    "total_calls": 130,
-    "total_cost_usd": 0.3596,
-    "models_count": 6,
-    "providers_count": 5,
+    "total_calls": 93,
+    "total_cost_usd": 0.228879,
+    "models_count": 5,
+    "providers_count": 4,
     "errors_count": 0,
-    "healthy_count": 6,
+    "healthy_count": 5,
     "error_count": 0
   },
   "by_model": [
     {
       "model": "comet/qwen3.7-max",
       "provider": "comet",
-      "calls": 24,
-      "successes": 24,
+      "calls": 19,
+      "successes": 19,
       "errors": 0,
-      "tokens_in": 14878,
-      "tokens_out": 31502,
-      "cost_usd": 0.2734600000000001
+      "tokens_in": 11228,
+      "tokens_out": 23192,
+      "cost_usd": 0.20201000000000005
     },
     {
       "model": "deepseek-direct/deepseek-v4-pro",
       "provider": "deepseek-direct",
-      "calls": 48,
-      "successes": 48,
+      "calls": 27,
+      "successes": 27,
       "errors": 0,
-      "tokens_in": 50011,
-      "tokens_out": 37040,
-      "cost_usd": 0.04775890599999999
+      "tokens_in": 25853,
+      "tokens_out": 11882,
+      "cost_usd": 0.01726523
     },
     {
       "model": "minimax-direct/minimax-m3",
       "provider": "minimax-direct",
-      "calls": 23,
-      "successes": 23,
+      "calls": 12,
+      "successes": 12,
       "errors": 0,
-      "tokens_in": 27682,
-      "tokens_out": 24244,
-      "cost_usd": 0.0373974
+      "tokens_in": 11551,
+      "tokens_out": 4295,
+      "cost_usd": 0.0086193
     },
     {
       "model": "minimax-direct/MiniMax-M3",
@@ -54,21 +54,11 @@
     {
       "model": "hermes-agent/gpt-5.6-sol",
       "provider": "hermes-agent",
-      "calls": 29,
-      "successes": 29,
+      "calls": 30,
+      "successes": 30,
       "errors": 0,
-      "tokens_in": 8675,
-      "tokens_out": 23976,
-      "cost_usd": 0.0
-    },
-    {
-      "model": "claude-sonnet-5",
-      "provider": "direct",
-      "calls": 1,
-      "successes": 1,
-      "errors": 0,
-      "tokens_in": 1693,
-      "tokens_out": 1088,
+      "tokens_in": 9374,
+      "tokens_out": 25060,
       "cost_usd": 0.0
     }
   ]
