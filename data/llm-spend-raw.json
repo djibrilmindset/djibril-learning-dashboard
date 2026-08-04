@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated_at": "2026-08-04T00:11:20.294356Z",
+    "generated_at": "2026-08-04T02:24:16.251273Z",
     "window_hours": 24,
-    "total_calls": 69,
-    "total_cost_usd": 0.138362,
+    "total_calls": 70,
+    "total_cost_usd": 0.139077,
     "models_count": 5,
     "providers_count": 4,
     "errors_count": 0,
@@ -767,6 +767,17 @@
       "tokens_in": 1581,
       "tokens_out": 2500,
       "cost_usd": 0.002783654,
+      "task_type": "chinese",
+      "result_summary": ""
+    },
+    {
+      "ts": "2026-08-04T00:11:21Z",
+      "agent": "HERMES_CALL_DEEPSEEK",
+      "model": "deepseek-direct/deepseek-v4-pro",
+      "tier": 1,
+      "tokens_in": 3846,
+      "tokens_out": 600,
+      "cost_usd": 0.00071538,
       "task_type": "chinese",
       "result_summary": ""
     }
