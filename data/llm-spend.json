@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated_at": "2026-08-05T08:16:25.684749Z",
+    "generated_at": "2026-08-05T17:11:34.755701Z",
     "window_hours": 24,
-    "total_calls": 75,
-    "total_cost_usd": 0.137602,
+    "total_calls": 49,
+    "total_cost_usd": 0.080366,
     "models_count": 5,
     "providers_count": 4,
     "errors_count": 0,
@@ -14,51 +14,51 @@
     {
       "model": "comet/qwen3.7-max",
       "provider": "comet",
-      "calls": 11,
-      "successes": 11,
+      "calls": 5,
+      "successes": 5,
       "errors": 0,
-      "tokens_in": 5687,
-      "tokens_out": 11247,
-      "cost_usd": 0.09856999999999999
-    },
-    {
-      "model": "deepseek-direct/deepseek-v4-pro",
-      "provider": "deepseek-direct",
-      "calls": 32,
-      "successes": 32,
-      "errors": 0,
-      "tokens_in": 27279,
-      "tokens_out": 13809,
-      "cost_usd": 0.019245662
+      "tokens_in": 2579,
+      "tokens_out": 5148,
+      "cost_usd": 0.0450575
     },
     {
       "model": "minimax-direct/minimax-m3",
       "provider": "minimax-direct",
-      "calls": 19,
-      "successes": 19,
+      "calls": 15,
+      "successes": 15,
       "errors": 0,
-      "tokens_in": 14928,
-      "tokens_out": 12101,
-      "cost_usd": 0.018999600000000005
+      "tokens_in": 12338,
+      "tokens_out": 11935,
+      "cost_usd": 0.018023400000000002
+    },
+    {
+      "model": "deepseek-direct/deepseek-v4-pro",
+      "provider": "deepseek-direct",
+      "calls": 22,
+      "successes": 22,
+      "errors": 0,
+      "tokens_in": 22245,
+      "tokens_out": 12011,
+      "cost_usd": 0.016891722
     },
     {
       "model": "minimax-direct/MiniMax-M3",
       "provider": "minimax-direct",
-      "calls": 4,
-      "successes": 4,
+      "calls": 2,
+      "successes": 2,
       "errors": 0,
-      "tokens_in": 2544,
-      "tokens_out": 20,
-      "cost_usd": 0.0007872
+      "tokens_in": 1272,
+      "tokens_out": 10,
+      "cost_usd": 0.0003936
     },
     {
       "model": "hermes-agent/gpt-5.6-sol",
       "provider": "hermes-agent",
-      "calls": 9,
-      "successes": 9,
+      "calls": 5,
+      "successes": 5,
       "errors": 0,
-      "tokens_in": 3421,
-      "tokens_out": 7463,
+      "tokens_in": 1572,
+      "tokens_out": 3673,
       "cost_usd": 0.0
     }
   ]
