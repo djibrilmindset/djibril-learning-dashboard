@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated_at": "2026-08-05T17:11:34.755701Z",
+    "generated_at": "2026-08-05T18:00:33.561095Z",
     "window_hours": 24,
-    "total_calls": 49,
-    "total_cost_usd": 0.080366,
+    "total_calls": 55,
+    "total_cost_usd": 0.077073,
     "models_count": 5,
     "providers_count": 4,
     "errors_count": 0,
@@ -17,48 +17,48 @@
       "calls": 5,
       "successes": 5,
       "errors": 0,
-      "tokens_in": 2579,
-      "tokens_out": 5148,
-      "cost_usd": 0.0450575
+      "tokens_in": 2598,
+      "tokens_out": 4550,
+      "cost_usd": 0.04062
     },
     {
       "model": "minimax-direct/minimax-m3",
       "provider": "minimax-direct",
-      "calls": 15,
-      "successes": 15,
+      "calls": 16,
+      "successes": 16,
       "errors": 0,
-      "tokens_in": 12338,
-      "tokens_out": 11935,
-      "cost_usd": 0.018023400000000002
+      "tokens_in": 12992,
+      "tokens_out": 11999,
+      "cost_usd": 0.0182964
     },
     {
       "model": "deepseek-direct/deepseek-v4-pro",
       "provider": "deepseek-direct",
-      "calls": 22,
-      "successes": 22,
+      "calls": 24,
+      "successes": 24,
       "errors": 0,
-      "tokens_in": 22245,
-      "tokens_out": 12011,
-      "cost_usd": 0.016891722
+      "tokens_in": 23284,
+      "tokens_out": 12906,
+      "cost_usd": 0.017960144000000004
     },
     {
       "model": "minimax-direct/MiniMax-M3",
       "provider": "minimax-direct",
-      "calls": 2,
-      "successes": 2,
+      "calls": 1,
+      "successes": 1,
       "errors": 0,
-      "tokens_in": 1272,
-      "tokens_out": 10,
-      "cost_usd": 0.0003936
+      "tokens_in": 636,
+      "tokens_out": 5,
+      "cost_usd": 0.0001968
     },
     {
       "model": "hermes-agent/gpt-5.6-sol",
       "provider": "hermes-agent",
-      "calls": 5,
-      "successes": 5,
+      "calls": 9,
+      "successes": 9,
       "errors": 0,
-      "tokens_in": 1572,
-      "tokens_out": 3673,
+      "tokens_in": 3267,
+      "tokens_out": 8134,
       "cost_usd": 0.0
     }
   ]
