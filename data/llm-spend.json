@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated_at": "2026-08-06T08:03:05.129465Z",
+    "generated_at": "2026-08-06T10:00:29.367995Z",
     "window_hours": 24,
-    "total_calls": 50,
-    "total_cost_usd": 0.100487,
+    "total_calls": 52,
+    "total_cost_usd": 0.102174,
     "models_count": 5,
     "providers_count": 4,
     "errors_count": 0,
@@ -24,12 +24,12 @@
     {
       "model": "deepseek-direct/deepseek-v4-pro",
       "provider": "deepseek-direct",
-      "calls": 24,
-      "successes": 24,
+      "calls": 25,
+      "successes": 25,
       "errors": 0,
-      "tokens_in": 21819,
-      "tokens_out": 15838,
-      "cost_usd": 0.01938077
+      "tokens_in": 23247,
+      "tokens_out": 17349,
+      "cost_usd": 0.021067982
     },
     {
       "model": "minimax-direct/minimax-m3",
@@ -54,11 +54,11 @@
     {
       "model": "hermes-agent/gpt-5.6-sol",
       "provider": "hermes-agent",
-      "calls": 9,
-      "successes": 9,
+      "calls": 10,
+      "successes": 10,
       "errors": 0,
-      "tokens_in": 3266,
-      "tokens_out": 8278,
+      "tokens_in": 3830,
+      "tokens_out": 8985,
       "cost_usd": 0.0
     }
   ]
