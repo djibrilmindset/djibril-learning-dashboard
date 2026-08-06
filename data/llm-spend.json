@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated_at": "2026-08-06T16:00:13.844899Z",
+    "generated_at": "2026-08-06T18:11:04.206424Z",
     "window_hours": 24,
-    "total_calls": 79,
-    "total_cost_usd": 0.166194,
+    "total_calls": 78,
+    "total_cost_usd": 0.180266,
     "models_count": 5,
     "providers_count": 4,
     "errors_count": 0,
@@ -14,12 +14,12 @@
     {
       "model": "comet/qwen3.7-max",
       "provider": "comet",
-      "calls": 12,
-      "successes": 12,
+      "calls": 13,
+      "successes": 13,
       "errors": 0,
-      "tokens_in": 5471,
-      "tokens_out": 15323,
-      "cost_usd": 0.12860000000000002
+      "tokens_in": 5981,
+      "tokens_out": 17068,
+      "cost_usd": 0.14296250000000002
     },
     {
       "model": "deepseek-direct/deepseek-v4-pro",
@@ -27,9 +27,9 @@
       "calls": 32,
       "successes": 32,
       "errors": 0,
-      "tokens_in": 26751,
-      "tokens_out": 18236,
-      "cost_usd": 0.022301634
+      "tokens_in": 26732,
+      "tokens_out": 17690,
+      "cost_usd": 0.021695904000000002
     },
     {
       "model": "minimax-direct/minimax-m3",
@@ -38,27 +38,27 @@
       "successes": 12,
       "errors": 0,
       "tokens_in": 8937,
-      "tokens_out": 10017,
-      "cost_usd": 0.014701500000000001
+      "tokens_out": 10116,
+      "cost_usd": 0.014820299999999998
     },
     {
       "model": "minimax-direct/MiniMax-M3",
       "provider": "minimax-direct",
-      "calls": 3,
-      "successes": 3,
+      "calls": 4,
+      "successes": 4,
       "errors": 0,
-      "tokens_in": 1908,
-      "tokens_out": 15,
-      "cost_usd": 0.0005904
+      "tokens_in": 2544,
+      "tokens_out": 20,
+      "cost_usd": 0.0007872
     },
     {
       "model": "hermes-agent/gpt-5.6-sol",
       "provider": "hermes-agent",
-      "calls": 20,
-      "successes": 20,
+      "calls": 17,
+      "successes": 17,
       "errors": 0,
-      "tokens_in": 7690,
-      "tokens_out": 17184,
+      "tokens_in": 6817,
+      "tokens_out": 13334,
       "cost_usd": 0.0
     }
   ]
