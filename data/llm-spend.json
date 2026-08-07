@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated_at": "2026-08-07T16:00:06.264927Z",
+    "generated_at": "2026-08-07T18:00:19.012012Z",
     "window_hours": 24,
-    "total_calls": 72,
-    "total_cost_usd": 0.182375,
+    "total_calls": 76,
+    "total_cost_usd": 0.183446,
     "models_count": 5,
     "providers_count": 4,
     "errors_count": 0,
@@ -18,18 +18,18 @@
       "successes": 14,
       "errors": 0,
       "tokens_in": 7852,
-      "tokens_out": 18345,
-      "cost_usd": 0.1572175
+      "tokens_out": 18421,
+      "cost_usd": 0.1577875
     },
     {
       "model": "deepseek-direct/deepseek-v4-pro",
       "provider": "deepseek-direct",
-      "calls": 26,
-      "successes": 26,
+      "calls": 27,
+      "successes": 27,
       "errors": 0,
-      "tokens_in": 19328,
-      "tokens_out": 12445,
-      "cost_usd": 0.01694198
+      "tokens_in": 19838,
+      "tokens_out": 12954,
+      "cost_usd": 0.017541276
     },
     {
       "model": "minimax-direct/minimax-m3",
@@ -38,8 +38,8 @@
       "successes": 9,
       "errors": 0,
       "tokens_in": 6312,
-      "tokens_out": 4448,
-      "cost_usd": 0.007231199999999999
+      "tokens_out": 4366,
+      "cost_usd": 0.0071328
     },
     {
       "model": "minimax-direct/MiniMax-M3",
@@ -54,11 +54,11 @@
     {
       "model": "hermes-agent/gpt-5.6-sol",
       "provider": "hermes-agent",
-      "calls": 18,
-      "successes": 18,
+      "calls": 21,
+      "successes": 21,
       "errors": 0,
-      "tokens_in": 6569,
-      "tokens_out": 13332,
+      "tokens_in": 8319,
+      "tokens_out": 15839,
       "cost_usd": 0.0
     }
   ]
