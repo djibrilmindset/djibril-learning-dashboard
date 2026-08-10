@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated_at": "2026-08-10T21:36:00.553824Z",
+    "generated_at": "2026-08-10T22:00:55.808655Z",
     "window_hours": 24,
-    "total_calls": 70,
-    "total_cost_usd": 0.142673,
+    "total_calls": 66,
+    "total_cost_usd": 0.139087,
     "models_count": 4,
     "providers_count": 3,
     "errors_count": 0,
@@ -11,94 +11,6 @@
     "error_count": 0
   },
   "entries": [
-    {
-      "ts": "2026-08-09T22:00:27Z",
-      "agent": "HERMES_CALL_MINIMAX",
-      "model": "minimax-direct/minimax-m3",
-      "tier": 2,
-      "tokens_in": 654,
-      "tokens_out": 80,
-      "cost_usd": 0.0002922,
-      "task_type": "chinese",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-08-09T22:00:28Z",
-      "agent": "HERMES_CALL_MINIMAX",
-      "model": "minimax-direct/minimax-m3",
-      "tier": 2,
-      "tokens_in": 654,
-      "tokens_out": 115,
-      "cost_usd": 0.0003342,
-      "task_type": "chinese",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-08-09T22:00:29Z",
-      "agent": "HERMES_CALL_MINIMAX",
-      "model": "minimax-direct/minimax-m3",
-      "tier": 2,
-      "tokens_in": 654,
-      "tokens_out": 21,
-      "cost_usd": 0.0002214,
-      "task_type": "chinese",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-08-09T22:00:30Z",
-      "agent": "HERMES_CALL_MINIMAX",
-      "model": "minimax-direct/minimax-m3",
-      "tier": 2,
-      "tokens_in": 654,
-      "tokens_out": 71,
-      "cost_usd": 0.0002814,
-      "task_type": "chinese",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-08-09T22:00:31Z",
-      "agent": "HERMES_CALL_MINIMAX",
-      "model": "minimax-direct/minimax-m3",
-      "tier": 2,
-      "tokens_in": 288,
-      "tokens_out": 450,
-      "cost_usd": 0.0006264,
-      "task_type": "chinese",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-08-09T22:00:32Z",
-      "agent": "HERMES_CALL_MINIMAX",
-      "model": "minimax-direct/minimax-m3",
-      "tier": 2,
-      "tokens_in": 288,
-      "tokens_out": 450,
-      "cost_usd": 0.0006264,
-      "task_type": "chinese",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-08-09T22:00:33Z",
-      "agent": "HERMES_CALL_MINIMAX",
-      "model": "minimax-direct/minimax-m3",
-      "tier": 2,
-      "tokens_in": 288,
-      "tokens_out": 450,
-      "cost_usd": 0.0006264,
-      "task_type": "chinese",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-08-09T22:00:34Z",
-      "agent": "HERMES_CALL_MINIMAX",
-      "model": "minimax-direct/minimax-m3",
-      "tier": 2,
-      "tokens_in": 288,
-      "tokens_out": 409,
-      "cost_usd": 0.0005772,
-      "task_type": "chinese",
-      "result_summary": ""
-    },
     {
       "ts": "2026-08-09T22:01:01Z",
       "agent": "HERMES_CALL_COMET",
@@ -777,6 +689,50 @@
       "tier": 0,
       "tokens_in": 268,
       "tokens_out": 1523,
+      "cost_usd": 0.0,
+      "task_type": "forfait",
+      "result_summary": ""
+    },
+    {
+      "ts": "2026-08-10T21:45:56Z",
+      "agent": "HERMES_AGENT",
+      "model": "hermes-agent/gpt-5.6-sol",
+      "tier": 0,
+      "tokens_in": 312,
+      "tokens_out": 631,
+      "cost_usd": 0.0,
+      "task_type": "forfait",
+      "result_summary": ""
+    },
+    {
+      "ts": "2026-08-10T21:45:56Z",
+      "agent": "HERMES_AGENT",
+      "model": "hermes-agent/gpt-5.6-sol",
+      "tier": 0,
+      "tokens_in": 260,
+      "tokens_out": 646,
+      "cost_usd": 0.0,
+      "task_type": "forfait",
+      "result_summary": ""
+    },
+    {
+      "ts": "2026-08-10T21:47:01Z",
+      "agent": "HERMES_AGENT",
+      "model": "hermes-agent/gpt-5.6-sol",
+      "tier": 0,
+      "tokens_in": 1203,
+      "tokens_out": 1529,
+      "cost_usd": 0.0,
+      "task_type": "forfait",
+      "result_summary": ""
+    },
+    {
+      "ts": "2026-08-10T21:47:01Z",
+      "agent": "HERMES_AGENT",
+      "model": "hermes-agent/gpt-5.6-sol",
+      "tier": 0,
+      "tokens_in": 260,
+      "tokens_out": 1540,
       "cost_usd": 0.0,
       "task_type": "forfait",
       "result_summary": ""
