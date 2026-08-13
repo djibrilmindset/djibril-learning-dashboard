@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated_at": "2026-08-13T10:00:43.395511Z",
+    "generated_at": "2026-08-13T12:00:20.911809Z",
     "window_hours": 24,
-    "total_calls": 118,
-    "total_cost_usd": 0.223842,
+    "total_calls": 122,
+    "total_cost_usd": 0.213544,
     "models_count": 4,
     "providers_count": 3,
     "errors_count": 0,
@@ -14,41 +14,41 @@
     {
       "model": "comet/qwen3.7-max",
       "provider": "comet",
-      "calls": 17,
-      "successes": 17,
+      "calls": 16,
+      "successes": 16,
       "errors": 0,
-      "tokens_in": 9054,
-      "tokens_out": 23545,
-      "cost_usd": 0.19922249999999997
+      "tokens_in": 8544,
+      "tokens_out": 22261,
+      "cost_usd": 0.18831749999999997
     },
     {
       "model": "minimax-direct/minimax-m3",
       "provider": "minimax-direct",
-      "calls": 37,
-      "successes": 37,
+      "calls": 39,
+      "successes": 39,
       "errors": 0,
-      "tokens_in": 29817,
-      "tokens_out": 11750,
-      "cost_usd": 0.0230451
+      "tokens_in": 31143,
+      "tokens_out": 12088,
+      "cost_usd": 0.0238485
     },
     {
       "model": "minimax-direct/MiniMax-M3",
       "provider": "minimax-direct",
-      "calls": 8,
-      "successes": 8,
+      "calls": 7,
+      "successes": 7,
       "errors": 0,
-      "tokens_in": 5088,
-      "tokens_out": 40,
-      "cost_usd": 0.0015744
+      "tokens_in": 4452,
+      "tokens_out": 35,
+      "cost_usd": 0.0013776
     },
     {
       "model": "hermes-agent/gpt-5.6-sol",
       "provider": "hermes-agent",
-      "calls": 56,
-      "successes": 56,
+      "calls": 60,
+      "successes": 60,
       "errors": 0,
-      "tokens_in": 83662,
-      "tokens_out": 110800,
+      "tokens_in": 85910,
+      "tokens_out": 115418,
       "cost_usd": 0.0
     }
   ]
