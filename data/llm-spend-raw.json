@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated_at": "2026-08-18T00:00:15.002297Z",
+    "generated_at": "2026-08-18T02:00:25.071388Z",
     "window_hours": 24,
     "total_calls": 138,
-    "total_cost_usd": 0.235271,
+    "total_cost_usd": 0.243191,
     "models_count": 4,
     "providers_count": 3,
     "errors_count": 0,
@@ -11,39 +11,6 @@
     "error_count": 0
   },
   "entries": [
-    {
-      "ts": "2026-08-17T00:53:06Z",
-      "agent": "HERMES_CALL_MINIMAX",
-      "model": "minimax-direct/minimax-m3",
-      "tier": 2,
-      "tokens_in": 636,
-      "tokens_out": 5,
-      "cost_usd": 0.0001968,
-      "task_type": "chinese",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-08-17T00:53:08Z",
-      "agent": "HERMES_CALL_MINIMAX",
-      "model": "minimax-direct/MiniMax-M3",
-      "tier": 2,
-      "tokens_in": 636,
-      "tokens_out": 5,
-      "cost_usd": 0.0001968,
-      "task_type": "chinese",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-08-17T00:53:47Z",
-      "agent": "HERMES_CALL_COMET",
-      "model": "comet/qwen3.7-max",
-      "tier": 2,
-      "tokens_in": 510,
-      "tokens_out": 1392,
-      "cost_usd": 0.011715,
-      "task_type": "chinese",
-      "result_summary": ""
-    },
     {
       "ts": "2026-08-17T03:00:22Z",
       "agent": "HERMES_CALL_MINIMAX",
@@ -1526,6 +1493,39 @@
       "tokens_in": 4196,
       "tokens_out": 600,
       "cost_usd": 0.0019788,
+      "task_type": "chinese",
+      "result_summary": ""
+    },
+    {
+      "ts": "2026-08-18T00:21:20Z",
+      "agent": "HERMES_CALL_MINIMAX",
+      "model": "minimax-direct/minimax-m3",
+      "tier": 2,
+      "tokens_in": 636,
+      "tokens_out": 5,
+      "cost_usd": 0.0001968,
+      "task_type": "chinese",
+      "result_summary": ""
+    },
+    {
+      "ts": "2026-08-18T00:21:22Z",
+      "agent": "HERMES_CALL_MINIMAX",
+      "model": "minimax-direct/MiniMax-M3",
+      "tier": 2,
+      "tokens_in": 636,
+      "tokens_out": 5,
+      "cost_usd": 0.0001968,
+      "task_type": "chinese",
+      "result_summary": ""
+    },
+    {
+      "ts": "2026-08-18T00:22:01Z",
+      "agent": "HERMES_CALL_COMET",
+      "model": "comet/qwen3.7-max",
+      "tier": 2,
+      "tokens_in": 510,
+      "tokens_out": 2448,
+      "cost_usd": 0.019635,
       "task_type": "chinese",
       "result_summary": ""
     }
