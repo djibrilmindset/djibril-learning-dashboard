@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated_at": "2026-08-19T16:00:02.643368Z",
+    "generated_at": "2026-08-19T18:00:23.802400Z",
     "window_hours": 24,
-    "total_calls": 51,
-    "total_cost_usd": 0.153398,
+    "total_calls": 52,
+    "total_cost_usd": 0.144284,
     "models_count": 3,
     "providers_count": 2,
     "errors_count": 0,
@@ -14,32 +14,32 @@
     {
       "model": "comet/qwen3.7-max",
       "provider": "comet",
-      "calls": 11,
-      "successes": 11,
+      "calls": 10,
+      "successes": 10,
       "errors": 0,
-      "tokens_in": 6360,
-      "tokens_out": 13884,
-      "cost_usd": 0.12003000000000001
+      "tokens_in": 5831,
+      "tokens_out": 12810,
+      "cost_usd": 0.1106525
     },
     {
       "model": "minimax-direct/minimax-m3",
       "provider": "minimax-direct",
-      "calls": 36,
-      "successes": 36,
+      "calls": 37,
+      "successes": 37,
       "errors": 0,
-      "tokens_in": 29675,
-      "tokens_out": 19732,
-      "cost_usd": 0.03258089999999999
+      "tokens_in": 30293,
+      "tokens_out": 19633,
+      "cost_usd": 0.032647499999999996
     },
     {
       "model": "minimax-direct/MiniMax-M3",
       "provider": "minimax-direct",
-      "calls": 4,
-      "successes": 4,
+      "calls": 5,
+      "successes": 5,
       "errors": 0,
-      "tokens_in": 2544,
-      "tokens_out": 20,
-      "cost_usd": 0.0007872
+      "tokens_in": 3180,
+      "tokens_out": 25,
+      "cost_usd": 0.000984
     }
   ]
 }
