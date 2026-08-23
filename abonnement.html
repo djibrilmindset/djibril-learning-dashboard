@@ -18,7 +18,29 @@
   .sub{color:var(--mut);font-size:12px;margin-top:2px}
   .sub b{color:var(--acc);font-weight:700}
 
-  .hero{background:linear-gradient(135deg,#101828,#13233a);border:1px solid var(--line);border-radius:16px;padding:18px;margin:16px 0}
+  .top{display:grid;grid-template-columns:1fr;gap:14px;margin:16px 0}
+  @media(min-width:720px){.top{grid-template-columns:1fr 1fr}}
+  @media(max-width:719px){.quota{order:-1}}
+  .hero{background:linear-gradient(135deg,#101828,#13233a);border:1px solid var(--line);border-radius:16px;padding:18px}
+
+  .quota{background:linear-gradient(135deg,#0f1a2e,#151f36);border:1px solid #2b3a55;border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:13px}
+  .quota .hd{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+  .quota .hd .t{font-size:14px;font-weight:800}
+  .quota .hd .t small{display:block;color:var(--mut);font-weight:600;font-size:10px;letter-spacing:.9px;text-transform:uppercase;margin-top:3px}
+  .badge{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.7px;border:1px solid var(--line);border-radius:99px;padding:3px 9px;color:var(--mut);white-space:nowrap}
+  .badge.on{color:var(--ok);border-color:#1e4d36}
+  .badge.old{color:var(--warn);border-color:#4d3c11}
+  .badge.ko{color:#fca5a5;border-color:#7f1d1d}
+  .q .l{display:flex;align-items:baseline;justify-content:space-between;gap:8px;font-size:12px;color:var(--mut)}
+  .q .l b{font-size:21px;font-weight:850;letter-spacing:-.6px;font-variant-numeric:tabular-nums}
+  .q .bar2{height:9px;background:#0a0f1a;border:1px solid var(--line);border-radius:99px;overflow:hidden;margin:6px 0 5px}
+  .q .bar2 i{display:block;height:100%;border-radius:99px;transition:width .6s ease}
+  .q .r{font-size:11.5px;color:var(--mut);font-variant-numeric:tabular-nums}
+  .q .r b{color:var(--txt);font-weight:750}
+  .tzwarn{font-size:11px;line-height:1.55;color:var(--mut);background:#111a2b;border:1px solid var(--line);border-left:3px solid var(--warn);border-radius:9px;padding:8px 10px}
+  .tzwarn b{color:var(--warn)}
+  .qact{display:flex;flex-wrap:wrap;gap:7px 15px;font-size:10.5px;color:var(--mut)}
+  .qact b{color:var(--txt);font-variant-numeric:tabular-nums}
   .hero .label{font-size:11px;text-transform:uppercase;letter-spacing:1.2px;color:var(--mut)}
   .hero .big{font-size:38px;font-weight:850;letter-spacing:-1px;color:var(--acc);margin:4px 0 2px}
   .hero .row{display:flex;gap:18px;flex-wrap:wrap;margin-top:10px}
@@ -59,6 +81,7 @@
 
   <div id="err" class="err" style="display:none"></div>
 
+  <div class="top">
   <div class="hero">
     <div class="label">Ce que l'abonnement t'a fait économiser (équivalent tarif API)</div>
     <div class="big" id="eco_sem">— €</div>
@@ -69,13 +92,33 @@
     </div>
   </div>
 
+  <div class="quota">
+    <div class="hd">
+      <div class="t">Quota réel z.ai <small>compteur officiel · heure de Paris</small></div>
+      <span class="badge" id="q_badge">…</span>
+    </div>
+    <div class="q">
+      <div class="l"><span>Fenêtre 5 h</span><b id="q5_pct">—</b></div>
+      <div class="bar2"><i id="q5_bar" style="width:0"></i></div>
+      <div class="r"><span id="q5_cred">—</span> · repart à <b id="q5_h">—</b> <span id="q5_in"></span></div>
+    </div>
+    <div class="q">
+      <div class="l"><span>Semaine</span><b id="qw_pct">—</b></div>
+      <div class="bar2"><i id="qw_bar" style="width:0"></i></div>
+      <div class="r"><span id="qw_cred">—</span> · repart <b id="qw_h">—</b> <span id="qw_in"></span></div>
+    </div>
+    <div class="tzwarn" id="q_tz"></div>
+    <div class="qact" id="q_act"></div>
+  </div>
+  </div>
+
   <div class="grid">
     <div class="card" id="card-glm">
       <h2><span class="dot" style="background:var(--glm)"></span>GLM 5.3 <span style="color:var(--mut);font-weight:600;font-size:12px">· mesuré</span></h2>
       <div class="via">z.ai Coding Plan · dernier appel <b id="glm_last">—</b></div>
       <div class="sect">Fenêtre 5 h (consommation locale)</div>
       <div class="nums">
-        <div class="num"><div class="k">appels 5 h</div><div class="v" id="glm_h5_appels" style="color:var(--glm)">—</div><div class="s">crédits z.ai rechargés 5 h après consommation</div></div>
+        <div class="num"><div class="k">appels 5 h</div><div class="v" id="glm_h5_appels" style="color:var(--glm)">—</div><div class="s">appels lancés en local · le crédit réel est en haut à droite</div></div>
         <div class="num"><div class="k">tokens 5 h</div><div class="v" id="glm_h5_tok">—</div><div class="s" id="glm_h5_equiv">—</div></div>
       </div>
       <div class="sect">Semaine en cours (lundi →)</div>
@@ -124,8 +167,10 @@
   <div class="foot" style="margin-top:16px">
     <b>Tarifs API retenus</b> : GLM-5.3 $1,40 / $4,40 le M (docs.z.ai) · Grok-4.6 $2 / $6 le M (docs.x.ai) ·
     changeur <span id="taux">—</span>.<br>
-    z.ai et x.ai n'exposent pas leur compteur de crédits : la fenêtre 5 h montre <b>ta consommation locale
-    mesurée</b> (appels lancés), pas le crédit restant — à lire comme un compte-tours, pas une jauge de réservoir.
+<b>z.ai expose bien son compteur</b> — c'est la carte « Quota réel » en haut à droite, lue toutes les 5 min sur
+    l'endpoint de la console (<code>/monitor/usage/quota/limit</code>) avec la clé de l'abonnement : ça, c'est la jauge
+    de réservoir. Les fenêtres 5 h des deux cartes ci-dessous sont autre chose : <b>ta consommation locale mesurée</b>
+    (appels lancés), un compte-tours. Pour Grok c'est la seule source disponible, x.ai n'expose aucun compteur.
     <span id="qualite"></span>
   </div>
 </div>
@@ -136,8 +181,62 @@ const fmt=n=>n==null?"—":n.toLocaleString("fr-FR");
 const M=n=>n==null?"—":n>=1e6?(n/1e6).toFixed(1)+" M":n>=1e3?(n/1e3).toFixed(0)+" k":""+n;
 const ilYA=iso=>{if(!iso)return"—";const s=(Date.now()-new Date(iso))/1e3;
   if(s<90)return"à l'instant";if(s<3600)return Math.round(s/60)+" min";if(s<86400)return Math.round(s/3600)+" h";return Math.round(s/86400)+" j"};
-const usd=(i,o,p)=>i/1e6*p.in+o/1e6*p.out;
-let genAt=null;
+const usd=(i,o,p)=>i/1e6*(p.in_usd_M??p.in)+o/1e6*(p.out_usd_M??p.out);
+let genAt=null, RESETS={};
+
+// ── Quota réel z.ai ──────────────────────────────────────────────────────────
+// On ne reçoit du serveur que l'epoch brut (reset_ms) : l'heure lisible est calculée
+// ici, FORCÉE en Europe/Paris. Raison : la console z.ai formate tout en Asia/Shanghai
+// en dur, sans écrire le fuseau — son « 04:10 » est 22:10 à Paris. Six heures d'attente
+// inventées par un décalage muet ; on ne reproduit pas le piège.
+const hFR=(ms,tz)=>new Intl.DateTimeFormat("fr-FR",{timeZone:tz||"Europe/Paris",hour:"2-digit",minute:"2-digit"}).format(new Date(ms));
+const jFR=(ms,tz)=>new Intl.DateTimeFormat("fr-FR",{timeZone:tz||"Europe/Paris",weekday:"short",day:"numeric",month:"short",hour:"2-digit",minute:"2-digit"}).format(new Date(ms));
+const teinte=p=>p>=95?"#f87171":p>=75?"#fbbf24":p>=50?"#7cc5ff":"#4ade80";
+function restant(ms){
+  const s=(ms-Date.now())/1000;
+  if(s<=0)return "· <b>réinitialisé</b>";
+  const j=Math.floor(s/86400),h=Math.floor(s%86400/3600),m=Math.floor(s%3600/60);
+  return "· dans <b>"+(j?j+" j "+h+" h":h?h+" h "+String(m).padStart(2,"0"):Math.max(1,m)+" min")+"</b>";
+}
+function tickResets(){
+  for(const k in RESETS){const el=$(k+"_in"); if(el)el.innerHTML=restant(RESETS[k]);}
+}
+function quota(z){
+  const b=$("q_badge");
+  if(!z||!z.ok){
+    b.className="badge ko"; b.textContent="indisponible";
+    $("q_tz").textContent=z&&z.erreur?("Lecture du compteur z.ai impossible : "+z.erreur):"Compteur z.ai non lu par le générateur.";
+    return;
+  }
+  b.className="badge "+(z.perime?"old":"on");
+  b.textContent=(z.perime?"figé · ":"")+(z.niveau||"plan");
+  const rend=(pfx,q,longue)=>{
+    if(!q)return;
+    $(pfx+"_pct").textContent=q.pct+" %";
+    $(pfx+"_pct").style.color=teinte(q.pct);
+    $(pfx+"_bar").style.width=Math.min(100,q.pct)+"%";
+    $(pfx+"_bar").style.background=teinte(q.pct);
+    $(pfx+"_cred").textContent=fmt(q.utilise)+" / "+fmt(q.plafond)+" crédits";
+    if(q.reset_ms){
+      $(pfx+"_h").textContent=longue?jFR(q.reset_ms):hFR(q.reset_ms);
+      RESETS[pfx]=q.reset_ms;
+    }
+  };
+  rend("q5",z.fenetre_5h,false);
+  rend("qw",z.hebdo,true);
+  tickResets();
+  const r=z.fenetre_5h&&z.fenetre_5h.reset_ms;
+  $("q_tz").innerHTML=r
+    ? "Leur console affiche <b>"+hFR(r,"Asia/Shanghai")+"</b> pour ce reset : elle rend tout en heure de Pékin (+8 h) sans jamais l'écrire. Chez toi c'est <b>"+hFR(r)+"</b>."
+    : "Heures converties en Europe/Paris depuis l'horodatage brut de l'API.";
+  const a=z.activite;
+  $("q_act").innerHTML=a?[
+    "cumul 90 j <b>"+M(a.tokens_90j)+"</b> tokens",
+    "pic <b>"+M(a.pic_jour)+"</b> le "+new Date(a.pic_date+"T12:00").toLocaleDateString("fr-FR",{day:"numeric",month:"short"}),
+    "temps d'usage <b>"+Math.round(a.duree_ms/36e5)+" h</b>",
+    "série <b>"+a.streak+" j</b>"
+  ].join(" · "):"";
+}
 
 function spark(el,jours,couleur,val){ // val: fonction j→nombre
   const max=Math.max(1,...jours.map(val));
@@ -154,6 +253,7 @@ async function charge(){
     genAt=new Date(d.generated_at);$("gen").textContent="généré à "+genAt.toLocaleTimeString("fr-FR");
     $("taux").textContent="1 $ = "+d.usd_eur.toFixed(2)+" €";
     const P={glm:d.prix_api.glm_5_3,grok:d.prix_api.grok_4_6};
+    quota(d.zai_reel);
 
     $("eco_sem").textContent=fmt(d.economie.semaine_eur)+" €";
     $("eco_sem_usd").textContent="("+d.economie.semaine_usd+" $)";
@@ -199,7 +299,7 @@ async function charge(){
     $("err").textContent="Impossible de lire data/abonnement.json ("+e.message+") — le générateur tourne toutes les 5 min sur le Mac.";
   }
 }
-setInterval(()=>{ if(genAt){const s=(Date.now()-genAt)/1e3;
+setInterval(()=>{ tickResets(); if(genAt){const s=(Date.now()-genAt)/1e3;
   $("age").textContent=s<90?"à l'instant":s<3600?Math.round(s/60)+" min":Math.round(s/3600)+" h";} },1000);
 charge();setInterval(charge,30000);
 </script>
