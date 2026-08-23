@@ -39,6 +39,14 @@
   .q .r b{color:var(--txt);font-weight:750}
   .tzwarn{font-size:11px;line-height:1.55;color:var(--mut);background:#111a2b;border:1px solid var(--line);border-left:3px solid var(--warn);border-radius:9px;padding:8px 10px}
   .tzwarn b{color:var(--warn)}
+  .trio{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:12px 0 11px}
+  .trio .p{background:var(--card2);border:1px solid var(--line);border-radius:11px;padding:10px 9px}
+  .trio .k{font-size:9.5px;text-transform:uppercase;letter-spacing:.7px;color:var(--mut);line-height:1.3;min-height:24px}
+  .trio .v{font-size:19px;font-weight:850;margin-top:3px;letter-spacing:-.6px;font-variant-numeric:tabular-nums}
+  .trio .e{font-size:12px;color:var(--acc);font-weight:750;margin-top:1px;font-variant-numeric:tabular-nums}
+  .trio .n{font-size:9.5px;color:var(--mut);margin-top:3px;line-height:1.3}
+  .reset{font-size:11.5px;color:var(--mut);border-top:1px dashed var(--line);padding-top:9px;line-height:1.75}
+  .reset b{color:var(--txt);font-weight:750}
   .qact{display:flex;flex-wrap:wrap;gap:7px 15px;font-size:10.5px;color:var(--mut)}
   .qact b{color:var(--txt);font-variant-numeric:tabular-nums}
   .hero .label{font-size:11px;text-transform:uppercase;letter-spacing:1.2px;color:var(--mut)}
@@ -123,65 +131,42 @@
 
   <div class="grid">
     <div class="card" id="card-glm">
-      <h2><span class="dot" style="background:var(--glm)"></span>GLM 5.3 <span style="color:var(--ok);font-weight:600;font-size:12px">· mesuré</span></h2>
+      <h2><span class="dot" style="background:var(--glm)"></span>GLM 5.3 <span style="color:var(--ok);font-weight:600;font-size:12px">· tokens réels z.ai</span></h2>
       <div class="via">z.ai Coding Plan · dernier appel <b id="glm_last">—</b></div>
-      <div class="sect">Fenêtre 5 h (consommation locale)</div>
-      <div class="nums">
-        <div class="num"><div class="k">appels 5 h</div><div class="v" id="glm_h5_appels" style="color:var(--glm)">—</div><div class="s">appels lancés en local · le crédit réel est en haut à droite</div></div>
-        <div class="num"><div class="k">tokens 5 h</div><div class="v" id="glm_h5_tok">—</div><div class="s" id="glm_h5_equiv">—</div></div>
+      <div class="trio">
+        <div class="p"><div class="k">Aujourd'hui</div><div class="v" style="color:var(--glm)" id="glm_j">—</div><div class="e" id="glm_j_eur">—</div></div>
+        <div class="p"><div class="k">Cette semaine</div><div class="v" id="glm_s">—</div><div class="e" id="glm_s_eur">—</div></div>
+        <div class="p"><div class="k">Semaine dernière</div><div class="v" id="glm_p">—</div><div class="e" id="glm_p_eur">—</div><div class="n" id="glm_p_note"></div></div>
       </div>
-      <div class="sect">Semaine en cours (lundi →)</div>
-      <div class="nums">
-        <div class="num"><div class="k">appels</div><div class="v" id="glm_sem_appels">—</div></div>
-        <div class="num"><div class="k">tokens in / out</div><div class="v" style="font-size:13px" id="glm_sem_tok">—</div><div class="s" id="glm_sem_cache">—</div></div>
-        <div class="num"><div class="k">si payé API</div><div class="v" id="glm_sem_eur">—</div><div class="s" id="glm_sem_usd">—</div></div>
-      </div>
-      <div class="sect">Total depuis toujours</div>
-      <div class="nums">
-        <div class="num"><div class="k">appels</div><div class="v" id="glm_tot_appels">—</div></div>
-        <div class="num"><div class="k">tokens in / out</div><div class="v" style="font-size:13px" id="glm_tot_tok">—</div><div class="s" id="glm_tot_cache">—</div></div>
-        <div class="num"><div class="k">si payé API</div><div class="v" id="glm_tot_eur">—</div><div class="s" id="glm_tot_usd">—</div></div>
-      </div>
-      <div class="sect">14 derniers jours</div>
-      <div class="spark" id="glm_spark"></div>
-      <div class="foot" style="margin-top:8px" id="glm_variantes"></div>
-      <details><summary>🔎 Les 8 plus gros appels</summary><div id="glm_top"></div></details>
+      <div class="reset" id="glm_reset">—</div>
+      <details><summary>🔎 Les 8 plus gros appels vus en local</summary><div id="glm_top"></div></details>
     </div>
 
     <div class="card" id="card-grok">
-      <h2><span class="dot" style="background:var(--grok)"></span>Grok 4.6 <span style="color:var(--ok);font-weight:600;font-size:12px" id="grok_mode">· compteurs exacts</span></h2>
+      <h2><span class="dot" style="background:var(--grok)"></span>Grok 4.6 <span style="color:var(--ok);font-weight:600;font-size:12px">· compteurs exacts CLI</span></h2>
       <div class="via">SuperGrok · dernière activité <b id="grok_last">—</b></div>
-      <div class="sect">Fenêtre 5 h (consommation locale)</div>
-      <div class="nums">
-        <div class="num"><div class="k">tours 5 h</div><div class="v" style="color:var(--grok)" id="grok_h5_tours">—</div><div class="s">un tour = un aller-retour modèle</div></div>
-        <div class="num"><div class="k">tokens 5 h</div><div class="v" id="grok_h5_tok">—</div><div class="s" id="grok_h5_equiv">—</div></div>
+      <div class="trio">
+        <div class="p"><div class="k">Aujourd'hui</div><div class="v" style="color:var(--grok)" id="grok_j">—</div><div class="e" id="grok_j_eur">—</div></div>
+        <div class="p"><div class="k">Cette semaine</div><div class="v" id="grok_s">—</div><div class="e" id="grok_s_eur">—</div></div>
+        <div class="p"><div class="k">Semaine dernière</div><div class="v" id="grok_p">—</div><div class="e" id="grok_p_eur">—</div><div class="n" id="grok_p_note"></div></div>
       </div>
-      <div class="sect">Semaine en cours (lundi →)</div>
-      <div class="nums">
-        <div class="num"><div class="k">tours</div><div class="v" id="grok_sem_tours">—</div></div>
-        <div class="num"><div class="k">tokens in / out</div><div class="v" style="font-size:13px" id="grok_sem_tok">—</div><div class="s" id="grok_sem_cache">—</div></div>
-        <div class="num"><div class="k">si payé API</div><div class="v" id="grok_sem_eur">—</div><div class="s" id="grok_sem_usd">—</div></div>
-      </div>
-      <div class="sect">Total depuis toujours</div>
-      <div class="nums">
-        <div class="num"><div class="k">tours</div><div class="v" id="grok_tot_tours">—</div></div>
-        <div class="num"><div class="k">tokens in / out</div><div class="v" style="font-size:13px" id="grok_tot_tok">—</div><div class="s" id="grok_tot_cache">—</div></div>
-        <div class="num"><div class="k">si payé API</div><div class="v" id="grok_tot_eur">—</div><div class="s" id="grok_tot_usd">—</div></div>
-      </div>
-      <div class="sect">14 derniers jours</div>
-      <div class="spark" id="grok_spark"></div>
-      <div class="foot" style="margin-top:8px">Compteurs exacts lus dans le journal de la CLI (<code>unified.jsonl</code>) : prompt / cache / completion par tour.</div>
+      <div class="reset" id="grok_reset">—</div>
       <details><summary>🔎 Les 8 sessions qui ont coûté le plus</summary><div id="grok_top"></div></details>
     </div>
   </div>
 
   <div class="foot" style="margin-top:16px">
-    <b>Tarifs API retenus</b> : GLM-5.3 $1,40 / $0,26 caché / $4,40 le M (docs.z.ai) · Grok-4.6 $2 / $0,50 caché / $6 le M (docs.x.ai) ·
-    changeur <span id="taux">—</span>. « Réel » = cache déduit au tarif cache (c'est ce que l'API facturerait avec le même usage).<br>
-<b>z.ai expose bien son compteur</b> — c'est la carte « Quota réel » en haut à droite, lue toutes les 5 min sur
-    l'endpoint de la console (<code>/monitor/usage/quota/limit</code>) avec la clé de l'abonnement : ça, c'est la jauge
-    de réservoir. Les fenêtres 5 h des deux cartes ci-dessous sont autre chose : <b>ta consommation locale mesurée</b>
-    (appels lancés), un compte-tours. Pour Grok c'est la seule source disponible, x.ai n'expose aucun compteur.
+    <b>D'où viennent les chiffres.</b> GLM : les <b>tokens réels de z.ai</b> (leur API donne des seaux
+    horaires datés à Pékin, re-répartis ici en journées de Paris) — nos journaux locaux n'en voyaient
+    que 15 %, ils ne servent plus qu'au détail dépliable. Grok : les <b>compteurs exacts</b> de la CLI
+    (<code>unified.jsonl</code>), seule source existante, x.ai n'expose rien.<br>
+    <b>Les euros</b> sont l'équivalent au tarif API si tu payais à l'appel : GLM-5.3 $1,40 / $0,26 caché /
+    $4,40 le M, Grok-4.6 $2 / $0,50 caché / $6 le M, changeur <span id="taux">—</span>. z.ai ne dit pas
+    quelle part de ses tokens est en entrée, en cache ou en sortie : on applique le mélange <b>mesuré sur
+    la part locale</b>, donc l'euro GLM est un ordre de grandeur, pas une facture.<br>
+    <b>Les réinitialisations</b> : celles de GLM sont les vraies (compteur z.ai) ; celles de Grok sont des
+    repères locaux — sa fenêtre 5 h est glissante, l'heure donnée est celle où ton plus ancien tour encore
+    compté en sort.
     <span id="qualite"></span>
   </div>
 </div>
@@ -214,6 +199,43 @@ function restant(ms){
 function tickResets(){
   for(const k in RESETS){const el=$(k+"_in"); if(el)el.innerHTML=restant(RESETS[k]);}
 }
+// Trois chiffres par carte : aujourd'hui, cette semaine, la semaine dernière —
+// chacun en tokens et en euros au tarif API. « Semaine dernière » ne s'affiche que si
+// l'historique remonte réellement plus haut : sinon c'est « — », jamais un zéro qui
+// laisserait croire qu'on n'a rien consommé.
+function lundiIci(){const n=new Date(),l=new Date(n);l.setHours(0,0,0,0);l.setDate(l.getDate()-((n.getDay()+6)%7));return l;}
+function trio(pfx,p){
+  const eur=v=>v==null?"—":v.toFixed(2).replace(".",",")+" €";
+  const pose=(suf,tok,e,vide)=>{
+    $(pfx+suf).textContent=vide?"—":M(tok);
+    $(pfx+suf+"_eur").textContent=vide?"":eur(e);
+  };
+  pose("_j",p.aujourd_hui,p.aujourd_hui_eur,false);
+  pose("_s",p.semaine,p.semaine_eur,false);
+  const dep=p.depuis?new Date(p.depuis):null;
+  const trou=!!dep&&dep>new Date(lundiIci()-7*864e5);
+  pose("_p",p.semaine_derniere,p.semaine_derniere_eur,trou);
+  const n=$(pfx+"_p_note");
+  if(n)n.textContent=trou?("historique depuis le "+dep.toLocaleDateString("fr-FR",{day:"numeric",month:"short"})):"";
+}
+
+// Réinitialisations. GLM : les vraies, celles de z.ai. Grok : des repères locaux,
+// dits comme tels — x.ai n'expose aucun compteur, la fenêtre 5 h est glissante.
+function reinit(d){
+  const z=d.zai_reel||{}, L=d.resets_locaux||{};
+  const a=z.fenetre_5h&&z.fenetre_5h.reset_ms, b=z.hebdo&&z.hebdo.reset_ms;
+  $("glm_reset").innerHTML = (z.ok&&a&&b)
+    ? "réinit. <b>réelle z.ai</b><br>fenêtre 5 h → <b>"+hFR(a)+"</b> <span id=\"r1_in\"></span><br>semaine → <b>"+jFR(b)+"</b> <span id=\"r2_in\"></span>"
+    : "réinit. z.ai indisponible";
+  if(z.ok&&a){RESETS.r1=a;} if(z.ok&&b){RESETS.r2=b;}
+  const c=L.grok_5h_ms, e=L.semaine_ms;
+  $("grok_reset").innerHTML = "réinit. <b>repères locaux</b> (x.ai n'expose rien)<br>fenêtre 5 h glissante → "
+    +(c?"<b>"+hFR(c)+"</b> <span id=\"r3_in\"></span>":"—")
+    +"<br>semaine → <b>"+(e?jFR(e):"—")+"</b> <span id=\"r4_in\"></span>";
+  if(c)RESETS.r3=c; if(e)RESETS.r4=e;
+  tickResets();
+}
+
 function quota(z){
   const b=$("q_badge");
   if(!z||!z.ok){
@@ -284,42 +306,13 @@ async function charge(){
     $("eco_tot").textContent=fmt(d.economie.total_eur)+" €  ·  "+d.economie.total_usd+" $";
     $("eco_plein").textContent=fmt(d.economie.total_eur_plein)+" € plein tarif";
 
-    const g=d.glm;
+    const g=d.glm, k=d.grok;
     $("glm_last").textContent=ilYA(g.dernier_appel);
-    $("glm_h5_appels").textContent=fmt(g.fenetre_5h.appels);
-    $("glm_h5_tok").textContent=M(g.fenetre_5h.tin+g.fenetre_5h.tout);
-    $("glm_h5_equiv").textContent="≈ "+usdR(g.fenetre_5h.tin,g.fenetre_5h.tcache,g.fenetre_5h.tout,P.glm).toFixed(2)+" $ API réel";
-    $("glm_sem_appels").textContent=fmt(g.semaine.appels);
-    $("glm_sem_tok").textContent=M(g.semaine.tin)+" / "+M(g.semaine.tout);
-    $("glm_sem_cache").textContent=g.semaine.tcache?("dont "+M(g.semaine.tcache)+" en cache"):"cache non rapporté";
-    $("glm_sem_eur").textContent=(usdR(g.semaine.tin,g.semaine.tcache,g.semaine.tout,P.glm)*d.usd_eur).toFixed(1)+" €";
-    $("glm_sem_usd").textContent=usdR(g.semaine.tin,g.semaine.tcache,g.semaine.tout,P.glm).toFixed(2)+" $ réel · "+usdP(g.semaine.tin,g.semaine.tout,P.glm).toFixed(2)+" $ plein";
-    $("glm_tot_appels").textContent=fmt(g.total.appels);
-    $("glm_tot_tok").textContent=M(g.total.tin)+" / "+M(g.total.tout);
-    $("glm_tot_cache").textContent=g.total.tcache?("dont "+M(g.total.tcache)+" en cache"):"";
-    $("glm_tot_eur").textContent=(usdR(g.total.tin,g.total.tcache,g.total.tout,P.glm)*d.usd_eur).toFixed(0)+" €";
-    $("glm_tot_usd").textContent=usdR(g.total.tin,g.total.tcache,g.total.tout,P.glm).toFixed(2)+" $ réel · "+usdP(g.total.tin,g.total.tout,P.glm).toFixed(2)+" $ plein";
-    spark($("glm_spark"),g.par_jour,"var(--glm)",j=>j.tin+j.tout);
-    $("glm_variantes").innerHTML=(g.par_variante||[]).map(v=>`<span class="pill">${v.nom.replace(/.*\//,"")} ×${fmt(v.appels)}</span>`).join("");
-    tblGlm(g.top_appels||[],d.usd_eur,P.glm);
-
-    const k=d.grok;
-    $("grok_mode").textContent=k.total&&k.total.estime?"· exacts + 1 session estimée":"· compteurs exacts";
     $("grok_last").textContent=ilYA(k.derniere_session);
-    $("grok_h5_tours").textContent=fmt(k.fenetre_5h.tours);
-    $("grok_h5_tok").textContent=M(k.fenetre_5h.tin+k.fenetre_5h.tout);
-    $("grok_h5_equiv").textContent="≈ "+usdR(k.fenetre_5h.tin,k.fenetre_5h.tcache,k.fenetre_5h.tout,P.grok).toFixed(2)+" $ API réel";
-    $("grok_sem_tours").textContent=fmt(k.semaine.tours);
-    $("grok_sem_tok").textContent=M(k.semaine.tin)+" / "+M(k.semaine.tout);
-    $("grok_sem_cache").textContent="dont "+M(k.semaine.tcache)+" en cache";
-    $("grok_sem_eur").textContent=(usdR(k.semaine.tin,k.semaine.tcache,k.semaine.tout,P.grok)*d.usd_eur).toFixed(1)+" €";
-    $("grok_sem_usd").textContent=usdR(k.semaine.tin,k.semaine.tcache,k.semaine.tout,P.grok).toFixed(2)+" $ réel · "+usdP(k.semaine.tin,k.semaine.tout,P.grok).toFixed(2)+" $ plein";
-    $("grok_tot_tours").textContent=fmt(k.total.tours);
-    $("grok_tot_tok").textContent=M(k.total.tin)+" / "+M(k.total.tout);
-    $("grok_tot_cache").textContent="dont "+M(k.total.tcache)+" en cache";
-    $("grok_tot_eur").textContent=(usdR(k.total.tin,k.total.tcache,k.total.tout,P.grok)*d.usd_eur).toFixed(0)+" €";
-    $("grok_tot_usd").textContent=usdR(k.total.tin,k.total.tcache,k.total.tout,P.grok).toFixed(2)+" $ réel · "+usdP(k.total.tin,k.total.tout,P.grok).toFixed(2)+" $ plein";
-    spark($("grok_spark"),k.par_jour,"var(--grok)",j=>j.tin+j.tout);
+    trio("glm", g.reel||{});
+    trio("grok", k.periodes||{});
+    reinit(d);
+    tblGlm(g.top_appels||[],d.usd_eur,P.glm);
     tblGrok(k.top_sessions||[],d.usd_eur);
     $("qualite").textContent=d._qualite&&d._qualite.lignes_glm_sans_date?" · "+d._qualite.lignes_glm_sans_date+" lignes sans date (exclues des fenêtres)":"";
     $("err").style.display="none";
