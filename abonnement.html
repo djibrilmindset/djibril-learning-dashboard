@@ -3,292 +3,183 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Abonnements — conso instantanée</title>
+<title>Abonnements — ce qu'il me reste</title>
 <style>
   :root{
     --bg:#0b0e14; --card:#141925; --card2:#1a2130; --line:#232c3f;
     --txt:#e8edf7; --mut:#8b96ab; --acc:#5eead4; --glm:#7cc5ff; --grok:#ff9d6b;
-    --ok:#4ade80; --warn:#fbbf24;
+    --ok:#4ade80; --warn:#fbbf24; --ko:#f87171;
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  body{background:var(--bg);color:var(--txt);font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;padding:18px 14px 60px}
-  .wrap{max-width:880px;margin:0 auto}
+  body{background:var(--bg);color:var(--txt);font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;padding:16px 14px 48px}
+  .wrap{max-width:900px;margin:0 auto}
   h1{font-size:19px;font-weight:800;letter-spacing:-.2px}
-  h1 small{color:var(--mut);font-weight:600;font-size:12px}
-  .sub{color:var(--mut);font-size:12px;margin-top:2px}
-  .sub b{color:var(--acc);font-weight:700}
+  .sub{color:var(--mut);font-size:12px;margin:2px 0 16px}
+  .err{background:#3b1216;border:1px solid #7f1d1d;color:#fecaca;border-radius:12px;padding:12px;font-size:13px;margin-bottom:14px}
 
-  .top{display:grid;grid-template-columns:1fr;gap:14px;margin:16px 0}
-  @media(min-width:720px){.top{grid-template-columns:1fr 1fr}}
-  @media(max-width:719px){.quota{order:-1}}
-  .hero{background:linear-gradient(135deg,#101828,#13233a);border:1px solid var(--line);border-radius:16px;padding:18px}
-
-  .quota{background:linear-gradient(135deg,#0f1a2e,#151f36);border:1px solid #2b3a55;border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:13px}
-  .quota .hd{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
-  .quota .hd .t{font-size:14px;font-weight:800}
-  .quota .hd .t small{display:block;color:var(--mut);font-weight:600;font-size:10px;letter-spacing:.9px;text-transform:uppercase;margin-top:3px}
-  .badge{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.7px;border:1px solid var(--line);border-radius:99px;padding:3px 9px;color:var(--mut);white-space:nowrap}
-  .badge.on{color:var(--ok);border-color:#1e4d36}
-  .badge.old{color:var(--warn);border-color:#4d3c11}
-  .badge.ko{color:#fca5a5;border-color:#7f1d1d}
-  .q .l{display:flex;align-items:baseline;justify-content:space-between;gap:8px;font-size:12px;color:var(--mut)}
-  .q .l b{font-size:21px;font-weight:850;letter-spacing:-.6px;font-variant-numeric:tabular-nums}
-  .q .bar2{height:9px;background:#0a0f1a;border:1px solid var(--line);border-radius:99px;overflow:hidden;margin:6px 0 5px}
-  .q .bar2 i{display:block;height:100%;border-radius:99px;transition:width .6s ease}
-  .q .r{font-size:11.5px;color:var(--mut);font-variant-numeric:tabular-nums}
-  .q .r b{color:var(--txt);font-weight:750}
-  .tzwarn{font-size:11px;line-height:1.55;color:var(--mut);background:#111a2b;border:1px solid var(--line);border-left:3px solid var(--warn);border-radius:9px;padding:8px 10px}
-  .tzwarn b{color:var(--warn)}
-  .trio{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:12px 0 11px}
-  .trio .p{background:var(--card2);border:1px solid var(--line);border-radius:11px;padding:10px 9px}
-  .trio .k{font-size:9.5px;text-transform:uppercase;letter-spacing:.7px;color:var(--mut);line-height:1.3;min-height:24px}
-  .trio .v{font-size:19px;font-weight:850;margin-top:3px;letter-spacing:-.6px;font-variant-numeric:tabular-nums}
-  .trio .e{font-size:12px;color:var(--acc);font-weight:750;margin-top:1px;font-variant-numeric:tabular-nums}
-  .trio .n{font-size:9.5px;color:var(--mut);margin-top:3px;line-height:1.3}
-  .reset{font-size:11.5px;color:var(--mut);border-top:1px dashed var(--line);padding-top:9px;line-height:1.75}
-  .reset b{color:var(--txt);font-weight:750}
-  .qact{display:flex;flex-wrap:wrap;gap:7px 15px;font-size:10.5px;color:var(--mut)}
-  .qact b{color:var(--txt);font-variant-numeric:tabular-nums}
-  .hero .label{font-size:11px;text-transform:uppercase;letter-spacing:1.2px;color:var(--mut)}
-  .hero .big{font-size:38px;font-weight:850;letter-spacing:-1px;color:var(--acc);margin:4px 0 2px}
-  .hero .row{display:flex;gap:18px;flex-wrap:wrap;margin-top:10px}
-  .hero .cell .k{font-size:11px;color:var(--mut)}
-  .hero .cell .v{font-size:17px;font-weight:750}
-
-  .grid{display:grid;grid-template-columns:1fr;gap:14px}
-  @media(min-width:720px){.grid{grid-template-columns:1fr 1fr}}
+  .duo{display:grid;grid-template-columns:1fr;gap:14px}
+  @media(min-width:760px){.duo{grid-template-columns:1fr 1fr}}
   .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px}
   .card h2{font-size:15px;font-weight:800;display:flex;align-items:center;gap:8px}
-  .dot{width:9px;height:9px;border-radius:50%;display:inline-block}
-  .card .via{color:var(--mut);font-size:11.5px;margin-top:1px}
-  .nums{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:13px 0}
-  .num{background:var(--card2);border:1px solid var(--line);border-radius:11px;padding:9px 10px}
-  .num .k{font-size:10px;text-transform:uppercase;letter-spacing:.8px;color:var(--mut)}
-  .num .v{font-size:16.5px;font-weight:800;margin-top:2px;font-variant-numeric:tabular-nums}
-  .num .s{font-size:10.5px;color:var(--mut)}
-  .bar{height:7px;background:var(--card2);border-radius:99px;overflow:hidden;margin:5px 0 3px}
-  .bar i{display:block;height:100%;border-radius:99px}
-  .foot{font-size:11px;color:var(--mut)}
-  .foot b{color:var(--txt)}
-  .sect{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--mut);margin:14px 0 6px}
-  .spark{display:flex;align-items:flex-end;gap:3px;height:44px;margin-top:4px}
-  .spark .c{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:2px}
-  .spark .c i{width:100%;border-radius:3px 3px 0 0;min-height:2px;display:block}
-  .spark .c span{font-size:8.5px;color:var(--mut);white-space:nowrap}
-  .pill{display:inline-block;font-size:10.5px;padding:2px 8px;border-radius:99px;border:1px solid var(--line);color:var(--mut);margin:2px 4px 0 0}
-  .live{position:fixed;top:12px;right:14px;font-size:11px;color:var(--mut);background:var(--card);border:1px solid var(--line);border-radius:99px;padding:4px 11px}
+  .card h2 .dot{width:9px;height:9px;border-radius:50%}
+  .card h2 .plan{margin-left:auto;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.7px;color:var(--mut);border:1px solid var(--line);border-radius:99px;padding:3px 8px}
+
+  .jauge{margin-top:14px}
+  .jauge .t{display:flex;align-items:baseline;justify-content:space-between;gap:8px}
+  .jauge .t span{font-size:10.5px;text-transform:uppercase;letter-spacing:1px;color:var(--mut)}
+  .jauge .t b{font-size:22px;font-weight:850;letter-spacing:-.7px;font-variant-numeric:tabular-nums}
+  .jauge .bar{height:9px;background:#0a0f1a;border:1px solid var(--line);border-radius:99px;overflow:hidden;margin:6px 0 5px}
+  .jauge .bar i{display:block;height:100%;border-radius:99px;transition:width .6s ease}
+  .jauge .d{font-size:11.5px;color:var(--mut);font-variant-numeric:tabular-nums}
+  .jauge .d b{color:var(--txt);font-weight:750}
+
+  table.conso{width:100%;border-collapse:collapse;margin-top:15px;border-top:1px dashed var(--line)}
+  table.conso td{padding:8px 0;border-bottom:1px solid #1b2231;font-variant-numeric:tabular-nums}
+  table.conso td:first-child{color:var(--mut);font-size:12px}
+  table.conso td:nth-child(2){text-align:right;font-weight:800;font-size:15px}
+  table.conso td:last-child{text-align:right;color:var(--acc);font-weight:750;font-size:12.5px;width:74px}
+  table.conso tr:last-child td{border-bottom:0}
+  table.conso .vide{color:var(--mut);font-weight:600;font-size:12px}
+
+  .part{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:13px 15px;margin-top:14px}
+  .part .k{font-size:10.5px;text-transform:uppercase;letter-spacing:1px;color:var(--mut)}
+  .part .b{display:flex;height:10px;border-radius:99px;overflow:hidden;margin:8px 0 7px;background:#0a0f1a}
+  .part .b i{display:block;height:100%}
+  .part .l{font-size:12px;color:var(--mut)}
+  .part .l b{color:var(--txt)}
+
+  .bilan{background:linear-gradient(135deg,#101828,#13233a);border:1px solid var(--line);border-radius:14px;padding:15px;margin-top:14px;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+  .bilan .n{font-size:30px;font-weight:850;color:var(--acc);letter-spacing:-1px}
+  .bilan .x{font-size:12.5px;color:var(--mut);flex:1;min-width:200px}
+
+  details{margin-top:12px;font-size:12px}
+  summary{cursor:pointer;color:var(--mut);font-size:11.5px}
+  details table{width:100%;border-collapse:collapse;margin-top:8px;font-size:11px}
+  details td{padding:5px 4px;border-bottom:1px solid #1b2231;color:var(--mut);font-variant-numeric:tabular-nums}
+  details td:first-child{color:var(--txt)}
+  details td.n{text-align:right}
+
+  .note{font-size:11px;line-height:1.65;color:var(--mut);margin-top:16px}
+  .note b{color:var(--txt)}
+  .live{position:fixed;top:10px;right:12px;font-size:11px;color:var(--mut);background:var(--card);border:1px solid var(--line);border-radius:99px;padding:4px 10px}
   .live b{color:var(--ok)}
-  .err{background:#3b1216;border:1px solid #7f1d1d;color:#fecaca;border-radius:12px;padding:12px;font-size:13px}
-  details{margin-top:10px;background:var(--card2);border:1px solid var(--line);border-radius:11px;padding:0}
-  details summary{cursor:pointer;font-size:11.5px;font-weight:700;padding:9px 12px;color:var(--mut);list-style:none}
-  details summary:hover{color:var(--txt)}
-  details[open] summary{border-bottom:1px solid var(--line)}
-  .tbl{width:100%;border-collapse:collapse;font-size:11px}
-  .tbl th{text-align:left;color:var(--mut);font-weight:600;padding:6px 10px 3px;text-transform:uppercase;letter-spacing:.5px;font-size:9.5px}
-  .tbl td{padding:5px 10px;border-top:1px solid var(--line);font-variant-numeric:tabular-nums;vertical-align:top}
-  .tbl td.mut{color:var(--mut)}
-  .tbl tr:hover td{background:#1f2937}
 </style>
 </head>
 <body>
-<div class="live">● <b>direct</b> · MAJ <span id="age">—</span></div>
+<div class="live">● <b>direct</b> · <span id="age">—</span></div>
 <div class="wrap">
-  <h1>Abonnements IA <small>conso instantanée</small></h1>
-  <div class="sub">GLM 5.3 (z.ai Coding) + Grok 4.6 (SuperGrok) — actualisation auto toutes les 30 s · <span id="gen">…</span></div>
-
+  <h1>Abonnements IA</h1>
+  <div class="sub">Ce qu'il te reste, et ce que tu as consommé · <span id="gen">…</span></div>
   <div id="err" class="err" style="display:none"></div>
 
-  <div class="top">
-  <div class="hero">
-    <div class="label">Ce que l'abonnement t'a fait économiser (équivalent tarif API)</div>
-    <div class="big" id="eco_sem">— €</div>
-    <div class="row">
-      <div class="cell"><div class="k">cette semaine (réel, cache déduit)</div><div class="v" id="eco_sem_usd">—</div></div>
-      <div class="cell"><div class="k">depuis toujours</div><div class="v" id="eco_tot">— €</div></div>
-      <div class="cell"><div class="k">à plein tarif (sans cache)</div><div class="v" id="eco_plein" style="color:var(--mut)">—</div></div>
-    </div>
-  </div>
+  <div class="duo">
+    <div class="card">
+      <h2><span class="dot" style="background:var(--glm)"></span>GLM 5.3<span class="plan" id="glm_plan">z.ai</span></h2>
 
-  <div class="quota">
-    <div class="hd">
-      <div class="t">Quota réel z.ai <small>compteur officiel · heure de Paris</small></div>
-      <span class="badge" id="q_badge">…</span>
-    </div>
-    <div class="q">
-      <div class="l"><span>Fenêtre 5 h</span><b id="q5_pct">—</b></div>
-      <div class="bar2"><i id="q5_bar" style="width:0"></i></div>
-      <div class="r"><span id="q5_cred">—</span> · repart à <b id="q5_h">—</b> <span id="q5_in"></span></div>
-    </div>
-    <div class="q">
-      <div class="l"><span>Semaine</span><b id="qw_pct">—</b></div>
-      <div class="bar2"><i id="qw_bar" style="width:0"></i></div>
-      <div class="r"><span id="qw_cred">—</span> · repart <b id="qw_h">—</b> <span id="qw_in"></span></div>
-    </div>
-    <div class="tzwarn" id="q_tz"></div>
-    <div class="qact" id="q_act"></div>
-  </div>
-  </div>
-
-  <div class="grid">
-    <div class="card" id="card-glm">
-      <h2><span class="dot" style="background:var(--glm)"></span>GLM 5.3 <span style="color:var(--ok);font-weight:600;font-size:12px">· tokens réels z.ai</span></h2>
-      <div class="via">z.ai Coding Plan · dernier appel <b id="glm_last">—</b></div>
-      <div class="trio">
-        <div class="p"><div class="k">Aujourd'hui</div><div class="v" style="color:var(--glm)" id="glm_j">—</div><div class="e" id="glm_j_eur">—</div></div>
-        <div class="p"><div class="k">Cette semaine</div><div class="v" id="glm_s">—</div><div class="e" id="glm_s_eur">—</div></div>
-        <div class="p"><div class="k">Semaine dernière</div><div class="v" id="glm_p">—</div><div class="e" id="glm_p_eur">—</div><div class="n" id="glm_p_note"></div></div>
+      <div class="jauge">
+        <div class="t"><span>Fenêtre 5 h</span><b id="g5_pct">—</b></div>
+        <div class="bar"><i id="g5_bar" style="width:0;background:var(--glm)"></i></div>
+        <div class="d"><span id="g5_num">—</span> · repart à <b id="g5_h">—</b> <span id="g5_in"></span></div>
       </div>
-      <div class="reset" id="glm_reset">—</div>
-      <details><summary>🔎 Les 8 plus gros appels vus en local</summary><div id="glm_top"></div></details>
-    </div>
-
-    <div class="card" id="card-grok">
-      <h2><span class="dot" style="background:var(--grok)"></span>Grok 4.6 <span style="color:var(--ok);font-weight:600;font-size:12px">· compteurs exacts CLI</span></h2>
-      <div class="via">SuperGrok · dernière activité <b id="grok_last">—</b></div>
-      <div class="trio">
-        <div class="p"><div class="k">Aujourd'hui</div><div class="v" style="color:var(--grok)" id="grok_j">—</div><div class="e" id="grok_j_eur">—</div></div>
-        <div class="p"><div class="k">Cette semaine</div><div class="v" id="grok_s">—</div><div class="e" id="grok_s_eur">—</div></div>
-        <div class="p"><div class="k">Semaine dernière</div><div class="v" id="grok_p">—</div><div class="e" id="grok_p_eur">—</div><div class="n" id="grok_p_note"></div></div>
+      <div class="jauge">
+        <div class="t"><span>Semaine</span><b id="gw_pct">—</b></div>
+        <div class="bar"><i id="gw_bar" style="width:0;background:var(--glm)"></i></div>
+        <div class="d"><span id="gw_num">—</span> · repart <b id="gw_h">—</b> <span id="gw_in"></span></div>
       </div>
-      <div class="reset" id="grok_reset">—</div>
-      <details><summary>🔎 Les 8 sessions qui ont coûté le plus</summary><div id="grok_top"></div></details>
+
+      <table class="conso">
+        <tr><td>Aujourd'hui</td><td id="glm_j">—</td><td id="glm_j_e"></td></tr>
+        <tr><td>Cette semaine</td><td id="glm_s">—</td><td id="glm_s_e"></td></tr>
+        <tr><td>Semaine dernière</td><td id="glm_p">—</td><td id="glm_p_e"></td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <h2><span class="dot" style="background:var(--grok)"></span>Grok 4.6<span class="plan">SuperGrok</span></h2>
+
+      <div class="jauge">
+        <div class="t"><span>Fenêtre 5 h</span><b id="k5_tok" style="color:var(--grok)">—</b></div>
+        <div class="bar"><i id="k5_bar" style="width:0;background:var(--grok)"></i></div>
+        <div class="d"><span id="k5_num">—</span> · le plus vieux tour sort à <b id="k5_h">—</b> <span id="k5_in"></span></div>
+      </div>
+      <div class="jauge">
+        <div class="t"><span>Semaine</span><b id="kw_tok" style="color:var(--grok)">—</b></div>
+        <div class="bar"><i id="kw_bar" style="width:0;background:var(--grok)"></i></div>
+        <div class="d"><span id="kw_num">—</span> · repart <b id="kw_h">—</b> <span id="kw_in"></span></div>
+      </div>
+
+      <table class="conso">
+        <tr><td>Aujourd'hui</td><td id="grok_j">—</td><td id="grok_j_e"></td></tr>
+        <tr><td>Cette semaine</td><td id="grok_s">—</td><td id="grok_s_e"></td></tr>
+        <tr><td>Semaine dernière</td><td id="grok_p">—</td><td id="grok_p_e"></td></tr>
+      </table>
     </div>
   </div>
 
-  <div class="foot" style="margin-top:16px">
-    <b>D'où viennent les chiffres.</b> GLM : les <b>tokens réels de z.ai</b> (leur API donne des seaux
-    horaires datés à Pékin, re-répartis ici en journées de Paris) — nos journaux locaux n'en voyaient
-    que 15 %, ils ne servent plus qu'au détail dépliable. Grok : les <b>compteurs exacts</b> de la CLI
-    (<code>unified.jsonl</code>), seule source existante, x.ai n'expose rien.<br>
-    <b>Les euros</b> sont l'équivalent au tarif API si tu payais à l'appel : GLM-5.3 $1,40 / $0,26 caché /
-    $4,40 le M, Grok-4.6 $2 / $0,50 caché / $6 le M, changeur <span id="taux">—</span>. z.ai ne dit pas
-    quelle part de ses tokens est en entrée, en cache ou en sortie : on applique le mélange <b>mesuré sur
-    la part locale</b>, donc l'euro GLM est un ordre de grandeur, pas une facture.<br>
-    <b>Les réinitialisations</b> : celles de GLM sont les vraies (compteur z.ai) ; celles de Grok sont des
-    repères locaux — sa fenêtre 5 h est glissante, l'heure donnée est celle où ton plus ancien tour encore
-    compté en sort.
-    <span id="qualite"></span>
+  <div class="part">
+    <div class="k">Qui consomme, aujourd'hui</div>
+    <div class="b"><i id="pt_glm" style="background:var(--glm)"></i><i id="pt_grok" style="background:var(--grok)"></i></div>
+    <div class="l" id="pt_txt">—</div>
   </div>
+
+  <div class="bilan">
+    <div class="n" id="eco">— €</div>
+    <div class="x" id="eco_x">—</div>
+  </div>
+
+  <details>
+    <summary>🔎 Détail Grok — les sessions qui consomment le plus</summary>
+    <div id="grok_top"></div>
+  </details>
+
+  <div class="note" id="note"></div>
 </div>
 
 <script>
 const $=id=>document.getElementById(id);
 const fmt=n=>n==null?"—":n.toLocaleString("fr-FR");
-const M=n=>n==null?"—":n>=1e6?(n/1e6).toFixed(1)+" M":n>=1e3?(n/1e3).toFixed(0)+" k":""+n;
+const M=n=>n==null?"—":n>=1e6?(n/1e6).toFixed(1).replace(".",",")+" M":n>=1e3?Math.round(n/1e3)+" k":""+n;
+const EUR=v=>v==null?"":v.toFixed(v<10?2:0).replace(".",",")+" €";
 const ilYA=iso=>{if(!iso)return"—";const s=(Date.now()-new Date(iso))/1e3;
   if(s<90)return"à l'instant";if(s<3600)return Math.round(s/60)+" min";if(s<86400)return Math.round(s/3600)+" h";return Math.round(s/86400)+" j"};
-// plein tarif (cache ignoré) et réel (cache au tarif cache)
-const usdP=(i,o,p)=>i/1e6*(p.in_usd_M??p.in)+o/1e6*(p.out_usd_M??p.out);
-const usdR=(i,c,o,p)=>(i-c)/1e6*(p.in_usd_M??p.in)+c/1e6*(p.cache_usd_M??0)+o/1e6*(p.out_usd_M??p.out);
-let genAt=null, RESETS={};
 
-// ── Quota réel z.ai ──────────────────────────────────────────────────────────
-// On ne reçoit du serveur que l'epoch brut (reset_ms) : l'heure lisible est calculée
-// ici, FORCÉE en Europe/Paris. Raison : la console z.ai formate tout en Asia/Shanghai
-// en dur, sans écrire le fuseau — son « 04:10 » est 22:10 à Paris. Six heures d'attente
-// inventées par un décalage muet ; on ne reproduit pas le piège.
+// Toutes les heures sont FORCÉES en Europe/Paris. La console z.ai, elle, formate en
+// Asia/Shanghai en dur sans jamais écrire le fuseau : son « 04:10 » est 22:10 chez toi.
 const hFR=(ms,tz)=>new Intl.DateTimeFormat("fr-FR",{timeZone:tz||"Europe/Paris",hour:"2-digit",minute:"2-digit"}).format(new Date(ms));
-const jFR=(ms,tz)=>new Intl.DateTimeFormat("fr-FR",{timeZone:tz||"Europe/Paris",weekday:"short",day:"numeric",month:"short",hour:"2-digit",minute:"2-digit"}).format(new Date(ms));
-const teinte=p=>p>=95?"#f87171":p>=75?"#fbbf24":p>=50?"#7cc5ff":"#4ade80";
+const jFR=ms=>new Intl.DateTimeFormat("fr-FR",{timeZone:"Europe/Paris",weekday:"short",day:"numeric",month:"short",hour:"2-digit",minute:"2-digit"}).format(new Date(ms));
+const teinte=p=>p>=95?"var(--ko)":p>=75?"var(--warn)":p>=50?"var(--glm)":"var(--ok)";
+
+let genAt=null, RESETS={};
 function restant(ms){
   const s=(ms-Date.now())/1000;
-  if(s<=0)return "· <b>réinitialisé</b>";
+  if(s<=0)return "· <b>maintenant</b>";
   const j=Math.floor(s/86400),h=Math.floor(s%86400/3600),m=Math.floor(s%3600/60);
   return "· dans <b>"+(j?j+" j "+h+" h":h?h+" h "+String(m).padStart(2,"0"):Math.max(1,m)+" min")+"</b>";
 }
-function tickResets(){
-  for(const k in RESETS){const el=$(k+"_in"); if(el)el.innerHTML=restant(RESETS[k]);}
-}
-// Trois chiffres par carte : aujourd'hui, cette semaine, la semaine dernière —
-// chacun en tokens et en euros au tarif API. « Semaine dernière » ne s'affiche que si
-// l'historique remonte réellement plus haut : sinon c'est « — », jamais un zéro qui
-// laisserait croire qu'on n'a rien consommé.
+function tick(){for(const k in RESETS){const e=$(k+"_in");if(e)e.innerHTML=restant(RESETS[k]);}}
+
+// Les trois lignes de conso d'une carte. « Semaine dernière » ne s'affiche que si
+// l'historique remonte réellement plus haut : sinon « — », jamais un zéro trompeur.
 function lundiIci(){const n=new Date(),l=new Date(n);l.setHours(0,0,0,0);l.setDate(l.getDate()-((n.getDay()+6)%7));return l;}
-function trio(pfx,p){
-  const eur=v=>v==null?"—":v.toFixed(2).replace(".",",")+" €";
-  const pose=(suf,tok,e,vide)=>{
-    $(pfx+suf).textContent=vide?"—":M(tok);
-    $(pfx+suf+"_eur").textContent=vide?"":eur(e);
-  };
-  pose("_j",p.aujourd_hui,p.aujourd_hui_eur,false);
-  pose("_s",p.semaine,p.semaine_eur,false);
+function conso(pfx,p){
+  $(pfx+"_j").textContent=M(p.aujourd_hui); $(pfx+"_j_e").textContent=EUR(p.aujourd_hui_eur);
+  $(pfx+"_s").textContent=M(p.semaine);     $(pfx+"_s_e").textContent=EUR(p.semaine_eur);
   const dep=p.depuis?new Date(p.depuis):null;
   const trou=!!dep&&dep>new Date(lundiIci()-7*864e5);
-  pose("_p",p.semaine_derniere,p.semaine_derniere_eur,trou);
-  const n=$(pfx+"_p_note");
-  if(n)n.textContent=trou?("historique depuis le "+dep.toLocaleDateString("fr-FR",{day:"numeric",month:"short"})):"";
-}
-
-// Réinitialisations. GLM : les vraies, celles de z.ai. Grok : des repères locaux,
-// dits comme tels — x.ai n'expose aucun compteur, la fenêtre 5 h est glissante.
-function reinit(d){
-  const z=d.zai_reel||{}, L=d.resets_locaux||{};
-  const a=z.fenetre_5h&&z.fenetre_5h.reset_ms, b=z.hebdo&&z.hebdo.reset_ms;
-  $("glm_reset").innerHTML = (z.ok&&a&&b)
-    ? "réinit. <b>réelle z.ai</b><br>fenêtre 5 h → <b>"+hFR(a)+"</b> <span id=\"r1_in\"></span><br>semaine → <b>"+jFR(b)+"</b> <span id=\"r2_in\"></span>"
-    : "réinit. z.ai indisponible";
-  if(z.ok&&a){RESETS.r1=a;} if(z.ok&&b){RESETS.r2=b;}
-  const c=L.grok_5h_ms, e=L.semaine_ms;
-  $("grok_reset").innerHTML = "réinit. <b>repères locaux</b> (x.ai n'expose rien)<br>fenêtre 5 h glissante → "
-    +(c?"<b>"+hFR(c)+"</b> <span id=\"r3_in\"></span>":"—")
-    +"<br>semaine → <b>"+(e?jFR(e):"—")+"</b> <span id=\"r4_in\"></span>";
-  if(c)RESETS.r3=c; if(e)RESETS.r4=e;
-  tickResets();
-}
-
-function quota(z){
-  const b=$("q_badge");
-  if(!z||!z.ok){
-    b.className="badge ko"; b.textContent="indisponible";
-    $("q_tz").textContent=z&&z.erreur?("Lecture du compteur z.ai impossible : "+z.erreur):"Compteur z.ai non lu par le générateur.";
-    return;
+  if(trou){
+    $(pfx+"_p").innerHTML='<span class="vide">rien avant le '+dep.toLocaleDateString("fr-FR",{day:"numeric",month:"short"})+'</span>';
+    $(pfx+"_p_e").textContent="";
+  }else{
+    $(pfx+"_p").textContent=M(p.semaine_derniere); $(pfx+"_p_e").textContent=EUR(p.semaine_derniere_eur);
   }
-  b.className="badge "+(z.perime?"old":"on");
-  b.textContent=(z.perime?"figé · ":"")+(z.niveau||"plan");
-  const rend=(pfx,q,longue)=>{
-    if(!q)return;
-    $(pfx+"_pct").textContent=q.pct+" %";
-    $(pfx+"_pct").style.color=teinte(q.pct);
-    $(pfx+"_bar").style.width=Math.min(100,q.pct)+"%";
-    $(pfx+"_bar").style.background=teinte(q.pct);
-    $(pfx+"_cred").textContent=fmt(q.utilise)+" / "+fmt(q.plafond)+" crédits";
-    if(q.reset_ms){
-      $(pfx+"_h").textContent=longue?jFR(q.reset_ms):hFR(q.reset_ms);
-      RESETS[pfx]=q.reset_ms;
-    }
-  };
-  rend("q5",z.fenetre_5h,false);
-  rend("qw",z.hebdo,true);
-  tickResets();
-  const r=z.fenetre_5h&&z.fenetre_5h.reset_ms;
-  $("q_tz").innerHTML=r
-    ? "Leur console affiche <b>"+hFR(r,"Asia/Shanghai")+"</b> pour ce reset : elle rend tout en heure de Pékin (+8 h) sans jamais l'écrire. Chez toi c'est <b>"+hFR(r)+"</b>."
-    : "Heures converties en Europe/Paris depuis l'horodatage brut de l'API.";
-  const a=z.activite;
-  $("q_act").innerHTML=a?[
-    "cumul 90 j <b>"+M(a.tokens_90j)+"</b> tokens",
-    "pic <b>"+M(a.pic_jour)+"</b> le "+new Date(a.pic_date+"T12:00").toLocaleDateString("fr-FR",{day:"numeric",month:"short"}),
-    "temps d'usage <b>"+Math.round(a.duree_ms/36e5)+" h</b>",
-    "série <b>"+a.streak+" j</b>"
-  ].join(" · "):"";
 }
 
-function spark(el,jours,couleur,val){ // val: fonction j→nombre
-  const max=Math.max(1,...jours.map(val));
-  el.innerHTML=jours.map(j=>{const h=Math.max(3,val(j)/max*40);
-    const d=new Date(j.jour+"T12:00");
-    return `<div class="c" title="${d.toLocaleDateString("fr-FR",{day:"2-digit",month:"short"})} : ${fmt(val(j))}"><i style="height:${h}px;background:${couleur};opacity:.85"></i><span>${d.getDate()}</span></div>`}).join("");
-}
-
-// tableaux de forrage
-const heure=iso=>iso?new Date(iso).toLocaleString("fr-FR",{day:"2-digit",month:"short",hour:"2-digit",minute:"2-digit"}):"—";
-function tblGrok(ss,taux){
-  $("grok_top").innerHTML=`<table class="tbl"><tr><th>quand</th><th>dossier</th><th>tours</th><th>in (dont cache)</th><th>out</th><th>≈ $ API</th></tr>`+
-    ss.map(s=>`<tr><td class="mut">${heure(s.quand)}</td><td>${s.dossier}${s.est?" <span class='pill'>estim.</span>":""}</td><td>${fmt(s.tours)}</td><td>${M(s.tin)} <span class="mut">(${M(s.tcache)})</span></td><td>${M(s.tout)}</td><td class="mut">${(usdR(s.tin,s.tcache,s.tout,{in_usd_M:2,cache_usd_M:0.5,out_usd_M:6})).toFixed(2)}</td></tr>`).join("")+`</table>`;
-}
-function tblGlm(as,taux,P){
-  $("glm_top").innerHTML=`<table class="tbl"><tr><th>quand</th><th>voie</th><th>in</th><th>out</th></tr>`+
-    as.map(a=>`<tr><td class="mut">${heure(a.quand)}</td><td>${a.variante.replace(/.*\//,"")}</td><td>${M(a.tin)}</td><td>${M(a.tout)}</td></tr>`).join("")+`</table>`;
+function tableauGrok(top,taux){
+  if(!top||!top.length){$("grok_top").textContent="—";return;}
+  $("grok_top").innerHTML="<table>"+top.map(s=>
+    "<tr><td>"+(s.dossier||"?")+"</td><td class='n'>"+s.tours+" tours</td><td class='n'>"+
+    M(s.tin+s.tout)+"</td><td class='n'>"+(s.tcache?Math.round(s.tcache/s.tin*100)+" % cache":"")+"</td><td class='n'>"+
+    hFR(new Date(s.quand).getTime())+"</td></tr>").join("")+"</table>";
 }
 
 async function charge(){
@@ -296,33 +187,65 @@ async function charge(){
     const r=await fetch(`data/abonnement.json?t=${Date.now()}`,{cache:"no-store"});
     if(!r.ok)throw new Error("HTTP "+r.status);
     const d=await r.json();
-    genAt=new Date(d.generated_at);$("gen").textContent="généré à "+genAt.toLocaleTimeString("fr-FR");
-    $("taux").textContent="1 $ = "+d.usd_eur.toFixed(2)+" €";
-    const P={glm:d.prix_api.glm_5_3,grok:d.prix_api.grok_4_6};
-    quota(d.zai_reel);
+    genAt=new Date(d.generated_at);
+    $("gen").textContent="mesuré à "+genAt.toLocaleTimeString("fr-FR",{hour:"2-digit",minute:"2-digit"});
 
-    $("eco_sem").textContent=fmt(d.economie.semaine_eur)+" €";
-    $("eco_sem_usd").textContent="("+d.economie.semaine_usd+" $ réel)";
-    $("eco_tot").textContent=fmt(d.economie.total_eur)+" €  ·  "+d.economie.total_usd+" $";
-    $("eco_plein").textContent=fmt(d.economie.total_eur_plein)+" € plein tarif";
+    // ── GLM : les vraies jauges de z.ai
+    const z=d.zai_reel||{};
+    if(z.ok){
+      $("glm_plan").textContent="z.ai "+(z.niveau||"")+(z.perime?" · figé":"");
+      const j=(pfx,q,longue)=>{
+        if(!q)return;
+        $(pfx+"_pct").textContent=q.pct+" %"; $(pfx+"_pct").style.color=teinte(q.pct);
+        $(pfx+"_bar").style.width=Math.min(100,q.pct)+"%"; $(pfx+"_bar").style.background=teinte(q.pct);
+        $(pfx+"_num").textContent=fmt(q.utilise)+" / "+fmt(q.plafond)+" crédits";
+        if(q.reset_ms){$(pfx+"_h").textContent=longue?jFR(q.reset_ms):hFR(q.reset_ms);RESETS[pfx]=q.reset_ms;}
+      };
+      j("g5",z.fenetre_5h,false); j("gw",z.hebdo,true);
+    }else{ $("g5_num").textContent="compteur z.ai indisponible"; }
+    conso("glm",d.glm.reel||{});
 
-    const g=d.glm, k=d.grok;
-    $("glm_last").textContent=ilYA(g.dernier_appel);
-    $("grok_last").textContent=ilYA(k.derniere_session);
-    trio("glm", g.reel||{});
-    trio("grok", k.periodes||{});
-    reinit(d);
-    tblGlm(g.top_appels||[],d.usd_eur,P.glm);
-    tblGrok(k.top_sessions||[],d.usd_eur);
-    $("qualite").textContent=d._qualite&&d._qualite.lignes_glm_sans_date?" · "+d._qualite.lignes_glm_sans_date+" lignes sans date (exclues des fenêtres)":"";
-    $("err").style.display="none";
+    // ── Grok : pas de plafond publié par x.ai, donc pas de %. On montre le volume,
+    // et la barre se lit en relatif : la fenêtre 5 h comparée à la semaine.
+    const k=d.grok, L=d.resets_locaux||{};
+    const k5=(k.fenetre_5h.tin||0)+(k.fenetre_5h.tout||0), kw=(k.semaine.tin||0)+(k.semaine.tout||0);
+    $("k5_tok").textContent=M(k5); $("kw_tok").textContent=M(kw);
+    $("k5_bar").style.width=(kw?Math.min(100,k5/kw*100):0)+"%"; $("kw_bar").style.width="100%";
+    $("k5_num").textContent=fmt(k.fenetre_5h.tours)+" tours · pas de plafond publié";
+    $("kw_num").textContent=fmt(k.semaine.tours)+" tours depuis lundi";
+    if(L.grok_5h_ms){$("k5_h").textContent=hFR(L.grok_5h_ms);RESETS.k5=L.grok_5h_ms;}
+    if(L.semaine_ms){$("kw_h").textContent=jFR(L.semaine_ms);RESETS.kw=L.semaine_ms;}
+    conso("grok",k.periodes||{});
+    tableauGrok(k.top_sessions,d.usd_eur);
+
+    // ── qui consomme quoi, aujourd'hui
+    const aG=(d.glm.reel||{}).aujourd_hui||0, aK=(k.periodes||{}).aujourd_hui||0, tot=aG+aK;
+    $("pt_glm").style.width=(tot?aG/tot*100:50)+"%"; $("pt_grok").style.width=(tot?aK/tot*100:50)+"%";
+    $("pt_txt").innerHTML=tot
+      ? "GLM <b>"+M(aG)+"</b> ("+Math.round(aG/tot*100)+" %) · Grok <b>"+M(aK)+"</b> ("+Math.round(aK/tot*100)+" %)"
+        +(aK&&aG/aK>2?" — GLM en avale <b>"+Math.round(aG/aK)+"×</b> plus que Grok":"")
+      : "rien consommé aujourd'hui";
+
+    // ── bilan
+    const e=d.economie||{};
+    $("eco").textContent=fmt(Math.round(e.total_eur))+" €";
+    $("eco_x").innerHTML="c'est ce que cette conso aurait coûté <b>au tarif API</b>, cache déduit ("
+      +fmt(Math.round(e.total_eur_plein))+" € sans cache). Tu paies deux abonnements à la place. 1 $ = "+d.usd_eur.toFixed(2)+" €";
+
+    const rz=z.ok&&z.fenetre_5h&&z.fenetre_5h.reset_ms;
+    $("note").innerHTML=
+      "<b>GLM</b> : chiffres du compteur officiel z.ai, tokens réels, journées de Paris. "
+      +(rz?"Attention, leur propre console affiche <b>"+hFR(rz,"Asia/Shanghai")+"</b> pour ce reset — elle rend tout en heure de Pékin (+8 h) sans l'écrire ; ici c'est <b>"+hFR(rz)+"</b>. ":"")
+      +"L'euro GLM est un ordre de grandeur : z.ai ne dit pas la part entrée / cache / sortie, on applique le mélange mesuré en local.<br>"
+      +"<b>Grok</b> : x.ai n'expose aucun compteur, ces chiffres sont les tokens exacts lus dans le journal de la CLI. Pas de plafond connu, donc pas de pourcentage — la fenêtre 5 h est glissante, l'heure donnée est celle où ton plus ancien tour encore compté en sort.";
+    $("err").style.display="none"; tick();
   }catch(e){
     $("err").style.display="block";
     $("err").textContent="Impossible de lire data/abonnement.json ("+e.message+") — le générateur tourne toutes les 5 min sur le Mac.";
   }
 }
-setInterval(()=>{ tickResets(); if(genAt){const s=(Date.now()-genAt)/1e3;
-  $("age").textContent=s<90?"à l'instant":s<3600?Math.round(s/60)+" min":Math.round(s/3600)+" h";} },1000);
+setInterval(()=>{tick(); if(genAt){const s=(Date.now()-genAt)/1e3;
+  $("age").textContent=s<90?"à l'instant":s<3600?Math.round(s/60)+" min":Math.round(s/3600)+" h";}},1000);
 charge();setInterval(charge,30000);
 </script>
 </body>
