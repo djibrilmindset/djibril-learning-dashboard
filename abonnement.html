@@ -8,7 +8,7 @@
   :root{
     --bg:#0b0e14; --card:#141925; --card2:#1a2130; --line:#232c3f;
     --txt:#e8edf7; --mut:#8b96ab; --acc:#5eead4;
-    --glm:#7cc5ff; --grok:#ff9d6b;
+    --glm:#7cc5ff; --grok:#ff9d6b; --claude:#c9a6ff;
     --ok:#4ade80; --warn:#fbbf24; --ko:#f87171;
   }
   *{box-sizing:border-box;margin:0;padding:0}
@@ -34,13 +34,13 @@
   .argent .p b{color:var(--txt)}
 
   /* ── une carte par moteur ──────────────────────────────────── */
-  .duocard{display:grid;grid-template-columns:1fr;gap:14px;margin-top:14px}
-  @media(min-width:780px){.duocard{grid-template-columns:1fr 1fr}}
+  .duocard{display:grid;grid-template-columns:repeat(auto-fit,minmax(265px,1fr));gap:14px;margin-top:14px}
   .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:15px 16px;border-left:4px solid var(--line)}
   .card.glm{border-left-color:var(--glm)}
   .card.grok{border-left-color:var(--grok)}
+  .card.claude{border-left-color:var(--claude)}
   .card h2{font-size:16px;font-weight:800;display:flex;align-items:center;gap:8px}
-  .card.glm h2{color:var(--glm)} .card.grok h2{color:var(--grok)}
+  .card.glm h2{color:var(--glm)} .card.grok h2{color:var(--grok)} .card.claude h2{color:var(--claude)}
   .card h2 .plan{margin-left:auto;font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--mut);border:1px solid var(--line);border-radius:99px;padding:3px 8px}
   .card .quoi{font-size:11px;color:var(--mut);margin-top:3px}
 
@@ -61,6 +61,7 @@
   table.conso tr:last-child td{border-bottom:0}
   .card.glm table.conso td:last-child{color:var(--glm)}
   .card.grok table.conso td:last-child{color:var(--grok)}
+  .card.claude table.conso td:last-child{color:var(--claude)}
   .vide{color:var(--mut);font-weight:600;font-size:12px}
 
   details{margin-top:13px;font-size:12px}
@@ -86,11 +87,13 @@
   <div class="argent">
     <div class="k">Ce que ta consommation vaudrait au tarif API</div>
     <div class="duo">
-      <div><div class="n" id="e_sem">— €</div><div class="l">cette semaine</div></div>
       <div><div class="n" id="e_tot">— €</div><div class="l">depuis le début</div></div>
+      <div><div class="n" style="font-size:22px" id="e_prec">— €</div><div class="l">la semaine dernière</div></div>
+      <div><div class="n" style="font-size:22px" id="e_sem">— €</div><div class="l">cette semaine</div></div>
     </div>
-    <div class="split"><i id="sp_glm" style="background:var(--glm)"></i><i id="sp_grok" style="background:var(--grok)"></i></div>
+    <div class="split"><i id="sp_claude" style="background:var(--claude)"></i><i id="sp_glm" style="background:var(--glm)"></i><i id="sp_grok" style="background:var(--grok)"></i></div>
     <div class="leg">
+      <span><i style="background:var(--claude)"></i>Claude <b id="l_claude">—</b></span>
       <span><i style="background:var(--glm)"></i>GLM 5.3 <b id="l_glm">—</b></span>
       <span><i style="background:var(--grok)"></i>Grok 4.6 <b id="l_grok">—</b></span>
     </div>
@@ -98,6 +101,26 @@
   </div>
 
   <div class="duocard">
+    <div class="card claude">
+      <h2><span>Claude</span><span class="plan" id="cl_plan">Max</span></h2>
+      <div class="quoi">compteurs des transcripts — aucun quota chiffré publié, pas de jauge</div>
+
+      <div class="bloc">
+        <div class="t"><span>Bloc 5 h en cours</span><b id="cl_bloc" style="color:var(--claude)">—</b></div>
+        <div class="d" id="cl_bloc_d">—</div>
+      </div>
+      <div class="bloc">
+        <div class="t"><span>Semaine</span><b id="cl_sem" style="color:var(--claude)">—</b></div>
+        <div class="d" id="cl_sem_d">—</div>
+      </div>
+
+      <table class="conso">
+        <tr><td>Aujourd'hui</td><td id="claude_j">—</td><td id="claude_j_e"></td></tr>
+        <tr><td>Cette semaine</td><td id="claude_s">—</td><td id="claude_s_e"></td></tr>
+        <tr><td>Semaine dernière</td><td id="claude_p">—</td><td id="claude_p_e"></td></tr>
+      </table>
+    </div>
+
     <div class="card glm">
       <h2><span>GLM 5.3</span><span class="plan" id="glm_plan">z.ai</span></h2>
       <div class="quoi">compteur officiel z.ai — vrai quota, vraies heures de Paris</div>
@@ -152,7 +175,7 @@
 <script>
 const $=id=>document.getElementById(id);
 const fmt=n=>n==null?"—":n.toLocaleString("fr-FR");
-const M=n=>n==null?"—":n>=1e6?(n/1e6).toFixed(1).replace(".",",")+" M":n>=1e3?Math.round(n/1e3)+" k":""+n;
+const M=n=>n==null?"—":n>=1e9?(n/1e9).toFixed(2).replace(".",",")+" Md":n>=1e6?(n/1e6).toFixed(1).replace(".",",")+" M":n>=1e3?Math.round(n/1e3)+" k":""+n;
 const EUR=v=>v==null?"":(v<10?v.toFixed(2):Math.round(v).toString()).replace(".",",")+" €";
 
 // Heures FORCÉES en Europe/Paris. La console z.ai, elle, formate en Asia/Shanghai en dur
@@ -161,7 +184,8 @@ const hFR=(ms,tz)=>new Intl.DateTimeFormat("fr-FR",{timeZone:tz||"Europe/Paris",
 const jFR=ms=>new Intl.DateTimeFormat("fr-FR",{timeZone:"Europe/Paris",weekday:"short",day:"numeric",month:"short",hour:"2-digit",minute:"2-digit"}).format(new Date(ms));
 const teinte=p=>p>=95?"var(--ko)":p>=75?"var(--warn)":p>=50?"var(--glm)":"var(--ok)";
 
-let genAt=null, RESETS={};
+let genAt=null, RESETS={}, DERNIER=null;
+const L0=()=>((DERNIER&&DERNIER.resets_locaux)||{});
 function restant(ms){
   const s=(ms-Date.now())/1000;
   if(s<=0)return "· <b>maintenant</b>";
@@ -189,21 +213,46 @@ async function charge(){
   try{
     const r=await fetch(`data/abonnement.json?t=${Date.now()}`,{cache:"no-store"});
     if(!r.ok)throw new Error("HTTP "+r.status);
-    const d=await r.json();
+    const d=await r.json(); DERNIER=d;
     genAt=new Date(d.generated_at);
     $("gen").textContent="mesuré à "+genAt.toLocaleTimeString("fr-FR",{hour:"2-digit",minute:"2-digit"});
 
     // ── l'argent en tête, réparti GLM (bleu) / Grok (orange)
-    const e=d.economie||{}, pm=d.par_moteur_eur||{};
+    const e=d.economie||{}, pm=d.par_moteur_eur||{}, cl=d.claude||{};
     $("e_sem").textContent=EUR(e.semaine_eur); $("e_tot").textContent=EUR(e.total_eur);
-    const a=pm.glm_total||0, b=pm.grok_total||0, t=a+b;
-    $("sp_glm").style.width=(t?a/t*100:50)+"%"; $("sp_grok").style.width=(t?b/t*100:50)+"%";
+    $("e_prec").textContent=EUR((cl.semaine_derniere_eur||0)+((d.glm.reel||{}).semaine_derniere_eur||0)+((d.grok.periodes||{}).semaine_derniere_eur||0));
+    const c=pm.claude_total||0, a=pm.glm_total||0, b=pm.grok_total||0, t=c+a+b;
+    $("sp_claude").style.width=(t?c/t*100:34)+"%";
+    $("sp_glm").style.width=(t?a/t*100:33)+"%"; $("sp_grok").style.width=(t?b/t*100:33)+"%";
+    $("l_claude").textContent=EUR(c)+(t?" · "+Math.round(c/t*100)+" %":"");
     $("l_glm").textContent=EUR(a)+(t?" · "+Math.round(a/t*100)+" %":"");
     $("l_grok").textContent=EUR(b)+(t?" · "+Math.round(b/t*100)+" %":"");
+
+    // ── Claude Max : aucun quota chiffré publié, donc aucune jauge. Le bloc de 5 h,
+    // lui, a une fin réelle : il démarre à l'heure pleine du premier message et dure
+    // 5 h (même règle que ccusage, recoupée le 24/08).
+    if(cl.ok){
+      $("cl_plan").textContent="Max · "+(cl.modeles||[]).length+" modèles";
+      const b5=cl.bloc_5h;
+      if(b5){
+        $("cl_bloc").textContent=M(b5.tokens);
+        $("cl_bloc_d").innerHTML="ouvert à <b>"+hFR(b5.debut_ms)+"</b> · se ferme à <b>"+hFR(b5.fin_ms)+"</b> <span id=\"cb_in\"></span>";
+        RESETS.cb=b5.fin_ms;
+      }else{
+        $("cl_bloc").textContent="—"; $("cl_bloc_d").textContent="aucun bloc ouvert : rien lancé depuis plus de 5 h";
+      }
+      $("cl_sem").textContent=M(cl.semaine);
+      $("cl_sem_d").innerHTML=fmt(cl.semaine_msg)+" messages depuis lundi · dont <b>"+M(cl.semaine_cache)
+        +"</b> de contexte déjà vu<br>notre semaine repart <b>"+(L0().semaine_ms?jFR(L0().semaine_ms):"—")+"</b>";
+      conso("claude",{aujourd_hui:cl.aujourd_hui,aujourd_hui_eur:cl.aujourd_hui_eur,
+                      semaine:cl.semaine,semaine_eur:cl.semaine_eur,
+                      semaine_derniere:cl.semaine_derniere,semaine_derniere_eur:cl.semaine_derniere_eur,
+                      depuis:cl.depuis});
+    }else{ $("cl_bloc_d").textContent="lecture des transcripts impossible"+(cl.erreur?" : "+cl.erreur:""); }
     const evite=(e.total_eur_plein||0)-(e.total_eur||0);
     $("e_cache").innerHTML="Sans le cache, la même conso coûterait <b>"+EUR(e.total_eur_plein)
       +"</b> : le contexte déjà vu, refacturé moins cher, t'en évite <b>"+EUR(evite)
-      +"</b>. Toi tu paies deux abonnements à prix fixe — ces montants disent ce que tu aurais payé à l'appel, pas ce que tu dépenses.";
+      +"</b>. Toi tu paies trois abonnements à prix fixe — ces montants disent ce que tu aurais payé à l'appel, pas ce que tu dépenses.";
 
     // ── GLM : les vraies jauges de z.ai
     const z=d.zai_reel||{};
@@ -245,7 +294,7 @@ async function charge(){
 
     const rz=z.ok&&z.fenetre_5h&&z.fenetre_5h.reset_ms;
     $("note").innerHTML=
-      "<b>Rien ici n'est estimé.</b> GLM : tokens et crédits du compteur officiel z.ai, seaux horaires de Pékin re-répartis en journées de Paris. "
+      "<b>Rien ici n'est estimé.</b> Claude : les blocs <code>usage</code> écrits par l'API dans les transcripts de Claude Code, dédoublonnés par identifiant de message et de requête, recoupés contre ccusage (écart de quelques %, dû aux autres CLI que ccusage agrège et qu'on compte séparément ici). GLM : tokens et crédits du compteur officiel z.ai, seaux horaires de Pékin re-répartis en journées de Paris. "
       +"Grok : <code>prompt_tokens</code> / <code>cached_prompt_tokens</code> / <code>completion_tokens</code> que l'API renvoie à chaque tour, lus dans le journal de la CLI. "
       +"Les euros sont les tarifs API publiés — GLM-5.3 $1,40 / $0,26 déjà vu / $4,40 le M, Grok-4.6 $2 / $0,50 / $6 le M — appliqués à ces tokens, changeur <span id=\"tx\"></span>. "
       +"Seule approximation, écrite : z.ai ne dit pas la part entrée / déjà vu / sortie de ses tokens, on applique le mélange mesuré sur la part locale.<br>"
