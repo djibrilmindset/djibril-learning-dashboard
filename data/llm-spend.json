@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated_at": "2026-08-23T10:00:11.520986Z",
+    "generated_at": "2026-08-23T12:00:11.391589Z",
     "window_hours": 24,
-    "total_calls": 193,
-    "total_cost_usd": 0.097996,
+    "total_calls": 196,
+    "total_cost_usd": 0.121822,
     "models_count": 9,
     "providers_count": 8,
     "errors_count": 0,
@@ -14,22 +14,22 @@
     {
       "model": "comet/qwen3.7-max",
       "provider": "comet",
-      "calls": 5,
-      "successes": 5,
+      "calls": 6,
+      "successes": 6,
       "errors": 0,
-      "tokens_in": 2550,
-      "tokens_out": 9172,
-      "cost_usd": 0.07516500000000001
+      "tokens_in": 3060,
+      "tokens_out": 10659,
+      "cost_usd": 0.0875925
     },
     {
       "model": "minimax-direct/minimax-m3",
       "provider": "minimax-direct",
-      "calls": 14,
-      "successes": 14,
+      "calls": 17,
+      "successes": 17,
       "errors": 0,
-      "tokens_in": 10782,
-      "tokens_out": 6832,
-      "cost_usd": 0.011432999999999999
+      "tokens_in": 19841,
+      "tokens_out": 14074,
+      "cost_usd": 0.022841099999999996
     },
     {
       "model": "aihubmix/qwen3.8-max",
@@ -38,8 +38,8 @@
       "successes": 6,
       "errors": 0,
       "tokens_in": 3792,
-      "tokens_out": 2076,
-      "cost_usd": 0.01002
+      "tokens_out": 2073,
+      "cost_usd": 0.010011
     },
     {
       "model": "minimax-direct/MiniMax-M3",
@@ -52,20 +52,10 @@
       "cost_usd": 0.0013776
     },
     {
-      "model": "glm-direct/glm-5.3",
-      "provider": "glm-direct",
-      "calls": 83,
-      "successes": 83,
-      "errors": 0,
-      "tokens_in": 136013,
-      "tokens_out": 92646,
-      "cost_usd": 0.0
-    },
-    {
       "model": "glm-opencode/glm-5.3",
       "provider": "glm-opencode",
-      "calls": 31,
-      "successes": 31,
+      "calls": 30,
+      "successes": 30,
       "errors": 0,
       "tokens_in": 0,
       "tokens_out": 0,
@@ -74,11 +64,21 @@
     {
       "model": "hermes-agent/glm-5.3",
       "provider": "hermes-agent",
-      "calls": 28,
-      "successes": 28,
+      "calls": 32,
+      "successes": 32,
       "errors": 0,
-      "tokens_in": 26059,
-      "tokens_out": 9590,
+      "tokens_in": 29539,
+      "tokens_out": 11040,
+      "cost_usd": 0.0
+    },
+    {
+      "model": "glm-direct/glm-5.3",
+      "provider": "glm-direct",
+      "calls": 79,
+      "successes": 79,
+      "errors": 0,
+      "tokens_in": 137828,
+      "tokens_out": 99492,
       "cost_usd": 0.0
     },
     {
