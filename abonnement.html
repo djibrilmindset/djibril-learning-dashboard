@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Abonnements — conso instantanée</title>
+<style>
+  :root{
+    --bg:#0b0e14; --card:#141925; --card2:#1a2130; --line:#232c3f;
+    --txt:#e8edf7; --mut:#8b96ab; --acc:#5eead4; --glm:#7cc5ff; --grok:#ff9d6b;
+    --ok:#4ade80; --warn:#fbbf24;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--txt);font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;padding:18px 14px 60px}
+  .wrap{max-width:880px;margin:0 auto}
+  h1{font-size:19px;font-weight:800;letter-spacing:-.2px}
+  h1 small{color:var(--mut);font-weight:600;font-size:12px}
+  .sub{color:var(--mut);font-size:12px;margin-top:2px}
+  .sub b{color:var(--acc);font-weight:700}
+
+  .hero{background:linear-gradient(135deg,#101828,#13233a);border:1px solid var(--line);border-radius:16px;padding:18px;margin:16px 0}
+  .hero .label{font-size:11px;text-transform:uppercase;letter-spacing:1.2px;color:var(--mut)}
+  .hero .big{font-size:38px;font-weight:850;letter-spacing:-1px;color:var(--acc);margin:4px 0 2px}
+  .hero .row{display:flex;gap:18px;flex-wrap:wrap;margin-top:10px}
+  .hero .cell .k{font-size:11px;color:var(--mut)}
+  .hero .cell .v{font-size:17px;font-weight:750}
+
+  .grid{display:grid;grid-template-columns:1fr;gap:14px}
+  @media(min-width:720px){.grid{grid-template-columns:1fr 1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px}
+  .card h2{font-size:15px;font-weight:800;display:flex;align-items:center;gap:8px}
+  .dot{width:9px;height:9px;border-radius:50%;display:inline-block}
+  .card .via{color:var(--mut);font-size:11.5px;margin-top:1px}
+  .nums{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:13px 0}
+  .num{background:var(--card2);border:1px solid var(--line);border-radius:11px;padding:9px 10px}
+  .num .k{font-size:10px;text-transform:uppercase;letter-spacing:.8px;color:var(--mut)}
+  .num .v{font-size:16.5px;font-weight:800;margin-top:2px;font-variant-numeric:tabular-nums}
+  .num .s{font-size:10.5px;color:var(--mut)}
+  .bar{height:7px;background:var(--card2);border-radius:99px;overflow:hidden;margin:5px 0 3px}
+  .bar i{display:block;height:100%;border-radius:99px}
+  .foot{font-size:11px;color:var(--mut)}
+  .foot b{color:var(--txt)}
+  .sect{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--mut);margin:14px 0 6px}
+  .spark{display:flex;align-items:flex-end;gap:3px;height:44px;margin-top:4px}
+  .spark .c{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:2px}
+  .spark .c i{width:100%;border-radius:3px 3px 0 0;min-height:2px;display:block}
+  .spark .c span{font-size:8.5px;color:var(--mut);white-space:nowrap}
+  .pill{display:inline-block;font-size:10.5px;padding:2px 8px;border-radius:99px;border:1px solid var(--line);color:var(--mut);margin:2px 4px 0 0}
+  .live{position:fixed;top:12px;right:14px;font-size:11px;color:var(--mut);background:var(--card);border:1px solid var(--line);border-radius:99px;padding:4px 11px}
+  .live b{color:var(--ok)}
+  .err{background:#3b1216;border:1px solid #7f1d1d;color:#fecaca;border-radius:12px;padding:12px;font-size:13px}
+</style>
+</head>
+<body>
+<div class="live">● <b>direct</b> · MAJ <span id="age">—</span></div>
+<div class="wrap">
+  <h1>Abonnements IA <small>conso instantanée</small></h1>
+  <div class="sub">GLM 5.3 (z.ai Coding) + Grok 4.6 (SuperGrok) — actualisation auto toutes les 30 s · <span id="gen">…</span></div>
+
+  <div id="err" class="err" style="display:none"></div>
+
+  <div class="hero">
+    <div class="label">Ce que l'abonnement t'a fait économiser (équivalent tarif API)</div>
+    <div class="big" id="eco_sem">— €</div>
+    <div class="row">
+      <div class="cell"><div class="k">cette semaine</div><div class="v" id="eco_sem_usd">—</div></div>
+      <div class="cell"><div class="k">depuis toujours</div><div class="v" id="eco_tot">— €</div></div>
+      <div class="cell"><div class="k">total abonné ≈</div><div class="v" style="color:var(--mut);font-size:13px">coût fixe, 0 €/appel</div></div>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="card" id="card-glm">
+      <h2><span class="dot" style="background:var(--glm)"></span>GLM 5.3 <span style="color:var(--mut);font-weight:600;font-size:12px">· mesuré</span></h2>
+      <div class="via">z.ai Coding Plan · dernier appel <b id="glm_last">—</b></div>
+      <div class="sect">Fenêtre 5 h (consommation locale)</div>
+      <div class="nums">
+        <div class="num"><div class="k">appels 5 h</div><div class="v" id="glm_h5_appels" style="color:var(--glm)">—</div><div class="s">crédits z.ai rechargés 5 h après consommation</div></div>
+        <div class="num"><div class="k">tokens 5 h</div><div class="v" id="glm_h5_tok">—</div><div class="s" id="glm_h5_equiv">—</div></div>
+      </div>
+      <div class="sect">Semaine en cours (lundi →)</div>
+      <div class="nums">
+        <div class="num"><div class="k">appels</div><div class="v" id="glm_sem_appels">—</div></div>
+        <div class="num"><div class="k">tokens in / out</div><div class="v" style="font-size:13px" id="glm_sem_tok">—</div></div>
+        <div class="num"><div class="k">si payé API</div><div class="v" id="glm_sem_eur">—</div><div class="s" id="glm_sem_usd">—</div></div>
+      </div>
+      <div class="sect">Total depuis toujours</div>
+      <div class="nums">
+        <div class="num"><div class="k">appels</div><div class="v" id="glm_tot_appels">—</div></div>
+        <div class="num"><div class="k">tokens in / out</div><div class="v" style="font-size:13px" id="glm_tot_tok">—</div></div>
+        <div class="num"><div class="k">si payé API</div><div class="v" id="glm_tot_eur">—</div><div class="s" id="glm_tot_usd">—</div></div>
+      </div>
+      <div class="sect">14 derniers jours</div>
+      <div class="spark" id="glm_spark"></div>
+      <div class="foot" style="margin-top:8px" id="glm_variantes"></div>
+    </div>
+
+    <div class="card" id="card-grok">
+      <h2><span class="dot" style="background:var(--grok)"></span>Grok 4.6 <span style="color:var(--warn);font-weight:600;font-size:12px">· tokens estimés ≈</span></h2>
+      <div class="via">SuperGrok · dernière session <b id="grok_last">—</b></div>
+      <div class="sect">Fenêtre 5 h (consommation locale)</div>
+      <div class="nums">
+        <div class="num"><div class="k">sessions 5 h</div><div class="v" style="color:var(--grok)" id="grok_h5_sess">—</div><div class="s" id="grok_h5_prompts">—</div></div>
+        <div class="num"><div class="k">tokens 5 h ≈</div><div class="v" id="grok_h5_tok">—</div><div class="s" id="grok_h5_equiv">—</div></div>
+      </div>
+      <div class="sect">Semaine en cours (lundi →)</div>
+      <div class="nums">
+        <div class="num"><div class="k">sessions</div><div class="v" id="grok_sem_sess">—</div><div class="s" id="grok_sem_prompts">—</div></div>
+        <div class="num"><div class="k">tokens ≈ in / out</div><div class="v" style="font-size:13px" id="grok_sem_tok">—</div></div>
+        <div class="num"><div class="k">si payé API</div><div class="v" id="grok_sem_eur">—</div><div class="s" id="grok_sem_usd">—</div></div>
+      </div>
+      <div class="sect">Total depuis toujours</div>
+      <div class="nums">
+        <div class="num"><div class="k">sessions</div><div class="v" id="grok_tot_sess">—</div><div class="s" id="grok_tot_prompts">—</div></div>
+        <div class="num"><div class="k">tokens ≈ in / out</div><div class="v" style="font-size:13px" id="grok_tot_tok">—</div></div>
+        <div class="num"><div class="k">si payé API</div><div class="v" id="grok_tot_eur">—</div><div class="s" id="grok_tot_usd">—</div></div>
+      </div>
+      <div class="sect">14 derniers jours</div>
+      <div class="spark" id="grok_spark"></div>
+      <div class="foot" style="margin-top:8px">Estimation BASSE depuis les transcripts partiels (~3,5 chars/token) — la CLI Grok n'expose aucun compteur.</div>
+    </div>
+  </div>
+
+  <div class="foot" style="margin-top:16px">
+    <b>Tarifs API retenus</b> : GLM-5.3 $1,40 / $4,40 le M (docs.z.ai) · Grok-4.6 $2 / $6 le M (docs.x.ai) ·
+    changeur <span id="taux">—</span>.<br>
+    z.ai et x.ai n'exposent pas leur compteur de crédits : la fenêtre 5 h montre <b>ta consommation locale
+    mesurée</b> (appels lancés), pas le crédit restant — à lire comme un compte-tours, pas une jauge de réservoir.
+    <span id="qualite"></span>
+  </div>
+</div>
+
+<script>
+const $=id=>document.getElementById(id);
+const fmt=n=>n==null?"—":n.toLocaleString("fr-FR");
+const M=n=>n==null?"—":n>=1e6?(n/1e6).toFixed(1)+" M":n>=1e3?(n/1e3).toFixed(0)+" k":""+n;
+const ilYA=iso=>{if(!iso)return"—";const s=(Date.now()-new Date(iso))/1e3;
+  if(s<90)return"à l'instant";if(s<3600)return Math.round(s/60)+" min";if(s<86400)return Math.round(s/3600)+" h";return Math.round(s/86400)+" j"};
+const usd=(i,o,p)=>i/1e6*p.in+o/1e6*p.out;
+let genAt=null;
+
+function spark(el,jours,couleur,val){ // val: fonction j→nombre
+  const max=Math.max(1,...jours.map(val));
+  el.innerHTML=jours.map(j=>{const h=Math.max(3,val(j)/max*40);
+    const d=new Date(j.jour+"T12:00");
+    return `<div class="c" title="${d.toLocaleDateString("fr-FR",{day:"2-digit",month:"short"})} : ${fmt(val(j))}"><i style="height:${h}px;background:${couleur};opacity:.85"></i><span>${d.getDate()}</span></div>`}).join("");
+}
+
+async function charge(){
+  try{
+    const r=await fetch(`data/abonnement.json?t=${Date.now()}`,{cache:"no-store"});
+    if(!r.ok)throw new Error("HTTP "+r.status);
+    const d=await r.json();
+    genAt=new Date(d.generated_at);$("gen").textContent="généré à "+genAt.toLocaleTimeString("fr-FR");
+    $("taux").textContent="1 $ = "+d.usd_eur.toFixed(2)+" €";
+    const P={glm:d.prix_api.glm_5_3,grok:d.prix_api.grok_4_6};
+
+    $("eco_sem").textContent=fmt(d.economie.semaine_eur)+" €";
+    $("eco_sem_usd").textContent="("+d.economie.semaine_usd+" $)";
+    $("eco_tot").textContent=fmt(d.economie.total_eur)+" €  ·  "+d.economie.total_usd+" $";
+
+    const g=d.glm;
+    $("glm_last").textContent=ilYA(g.dernier_appel);
+    $("glm_h5_appels").textContent=fmt(g.fenetre_5h.appels);
+    $("glm_h5_tok").textContent=M(g.fenetre_5h.tin+g.fenetre_5h.tout);
+    $("glm_h5_equiv").textContent="≈ "+usd(g.fenetre_5h.tin,g.fenetre_5h.tout,P.glm).toFixed(2)+" $ API";
+    $("glm_sem_appels").textContent=fmt(g.semaine.appels);
+    $("glm_sem_tok").textContent=M(g.semaine.tin)+" / "+M(g.semaine.tout);
+    $("glm_sem_eur").textContent=(usd(g.semaine.tin,g.semaine.tout,P.glm)*d.usd_eur).toFixed(1)+" €";
+    $("glm_sem_usd").textContent=usd(g.semaine.tin,g.semaine.tout,P.glm).toFixed(2)+" $";
+    $("glm_tot_appels").textContent=fmt(g.total.appels);
+    $("glm_tot_tok").textContent=M(g.total.tin)+" / "+M(g.total.tout);
+    $("glm_tot_eur").textContent=(usd(g.total.tin,g.total.tout,P.glm)*d.usd_eur).toFixed(0)+" €";
+    $("glm_tot_usd").textContent=usd(g.total.tin,g.total.tout,P.glm).toFixed(2)+" $";
+    spark($("glm_spark"),g.par_jour,"var(--glm)",j=>j.tin+j.tout);
+    $("glm_variantes").innerHTML=(g.noms_variantes||[]).map(v=>`<span class="pill">${v.replace(/.*\//,"")}</span>`).join("");
+
+    const k=d.grok;
+    $("grok_last").textContent=ilYA(k.derniere_session);
+    $("grok_h5_sess").textContent=fmt(k.fenetre_5h.sessions);
+    $("grok_h5_prompts").textContent=fmt(k.fenetre_5h.prompts)+" prompts";
+    $("grok_h5_tok").textContent=M(k.fenetre_5h.tin_est+k.fenetre_5h.tout_est);
+    $("grok_h5_equiv").textContent="≈ "+usd(k.fenetre_5h.tin_est,k.fenetre_5h.tout_est,P.grok).toFixed(2)+" $ API";
+    $("grok_sem_sess").textContent=fmt(k.semaine.sessions);
+    $("grok_sem_prompts").textContent=fmt(k.semaine.prompts)+" prompts";
+    $("grok_sem_tok").textContent=M(k.semaine.tin_est)+" / "+M(k.semaine.tout_est);
+    $("grok_sem_eur").textContent=(usd(k.semaine.tin_est,k.semaine.tout_est,P.grok)*d.usd_eur).toFixed(1)+" €";
+    $("grok_sem_usd").textContent=usd(k.semaine.tin_est,k.semaine.tout_est,P.grok).toFixed(2)+" $";
+    $("grok_tot_sess").textContent=fmt(k.total.sessions);
+    $("grok_tot_prompts").textContent=fmt(k.total.prompts)+" prompts";
+    $("grok_tot_tok").textContent=M(k.total.tin_est)+" / "+M(k.total.tout_est);
+    $("grok_tot_eur").textContent=(usd(k.total.tin_est,k.total.tout_est,P.grok)*d.usd_eur).toFixed(0)+" €";
+    $("grok_tot_usd").textContent=usd(k.total.tin_est,k.total.tout_est,P.grok).toFixed(2)+" $";
+    spark($("grok_spark"),k.par_jour,"var(--grok)",j=>j.tin_est+j.tout_est);
+    $("qualite").textContent=d._qualite&&d._qualite.lignes_glm_sans_date?" · "+d._qualite.lignes_glm_sans_date+" lignes sans date (exclues des fenêtres)":"";
+    $("err").style.display="none";
+  }catch(e){
+    $("err").style.display="block";
+    $("err").textContent="Impossible de lire data/abonnement.json ("+e.message+") — le générateur tourne toutes les 5 min sur le Mac.";
+  }
+}
+setInterval(()=>{ if(genAt){const s=(Date.now()-genAt)/1e3;
+  $("age").textContent=s<90?"à l'instant":s<3600?Math.round(s/60)+" min":Math.round(s/3600)+" h";} },1000);
+charge();setInterval(charge,30000);
+</script>
+</body>
+</html>
