@@ -71,6 +71,16 @@
   details td:first-child{color:var(--txt)}
   details td.n{text-align:right}
 
+  .svc{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:15px 16px;margin-top:14px}
+  .svc h3{font-size:13px;font-weight:800;letter-spacing:.2px}
+  .svc h3 small{display:block;color:var(--mut);font-weight:600;font-size:10px;letter-spacing:.9px;text-transform:uppercase;margin-top:3px}
+  .svc table{width:100%;border-collapse:collapse;margin-top:11px}
+  .svc td{padding:8px 0;border-bottom:1px solid #1b2231;font-size:12.5px;font-variant-numeric:tabular-nums;vertical-align:top}
+  .svc tr:last-child td{border-bottom:0}
+  .svc td.s{text-align:right;font-weight:800;white-space:nowrap}
+  .svc td.q{text-align:right;color:var(--mut);font-size:11.5px;white-space:nowrap}
+  .svc td small{display:block;color:var(--mut);font-weight:600;font-size:10.5px;margin-top:2px;white-space:normal}
+  .svc .dorm{font-size:10.5px;color:var(--mut);line-height:1.6;margin-top:11px;border-top:1px dashed var(--line);padding-top:9px}
   .note{font-size:11px;line-height:1.7;color:var(--mut);margin-top:16px}
   .note b{color:var(--txt)}
   .live{position:fixed;top:10px;right:12px;font-size:11px;color:var(--mut);background:var(--card);border:1px solid var(--line);border-radius:99px;padding:4px 10px}
@@ -169,6 +179,12 @@
     </div>
   </div>
 
+  <div class="svc">
+    <h3>Payé à l'usage <small>solde du fournisseur · dernier appel vérifié dans nos journaux</small></h3>
+    <table id="svc_tbl"></table>
+    <div class="dorm" id="svc_dorm"></div>
+  </div>
+
   <div class="note" id="note"></div>
 </div>
 
@@ -176,6 +192,9 @@
 const $=id=>document.getElementById(id);
 const fmt=n=>n==null?"—":n.toLocaleString("fr-FR");
 const M=n=>n==null?"—":n>=1e9?(n/1e9).toFixed(2).replace(".",",")+" Md":n>=1e6?(n/1e6).toFixed(1).replace(".",",")+" M":n>=1e3?Math.round(n/1e3)+" k":""+n;
+const ilYA=iso=>{if(!iso)return"—";const s=(Date.now()-new Date(iso))/1e3;
+  if(s<90)return"à l'instant";if(s<3600)return "il y a "+Math.round(s/60)+" min";
+  if(s<86400)return "il y a "+Math.round(s/3600)+" h";return "il y a "+Math.round(s/86400)+" j"};
 const EUR=v=>v==null?"":(v<10?v.toFixed(2):Math.round(v).toString()).replace(".",",")+" €";
 
 // Heures FORCÉES en Europe/Paris. La console z.ai, elle, formate en Asia/Shanghai en dur
@@ -292,9 +311,35 @@ async function charge(){
         +hFR(new Date(s.quand).getTime())+"</td></tr>").join("")+"</table>"
       : "—";
 
+    // ── payé à l'usage : le solde vient du fournisseur, les appels de nos journaux.
+    // Aucun solde inventé : MiniMax, CometAPI et aihubmix n'en exposent pas, la case reste vide.
+    const sv=d.services||{}, sol=sv.soldes||{};
+    const solTxt=k=>{
+      if(k==="gratuit")return ["gratuit","quota Google"];
+      const b=sol[k];
+      if(!b||!b.ok)return ["—",""];
+      if(k==="brightdata")return [b.usd.toFixed(2).replace(".",",")+" $",
+        b.en_attente>b.usd?"⚠ "+b.en_attente.toFixed(2).replace(".",",")+" $ déjà engagés, au-dessus du solde"
+                           :b.en_attente.toFixed(2).replace(".",",")+" $ engagés"];
+      return [b.usd.toFixed(2).replace(".",",")+" $", b.derniere_recharge
+        ? "rechargé le "+new Date(b.derniere_recharge.quand).toLocaleDateString("fr-FR",{day:"numeric",month:"short"})
+        : "suivi du solde démarré"];
+    };
+    $("svc_tbl").innerHTML=(sv.actifs||[]).map(e=>{
+      const r=solTxt(e.solde), montant=r[0], sous=r[1], alerte=sous.indexOf("⚠")===0;
+      return "<tr><td><b>"+e.nom+"</b><small>"+(e.modeles||[]).join(", ")+"</small></td>"
+        +"<td class='s'"+(alerte?" style='color:var(--warn)'":"")+">"+montant+"<small"+(alerte?" style='color:var(--warn)'":"")+">"+sous+"</small></td>"
+        +"<td class='q'>"+ilYA(e.dernier)+"<small>"+fmt(e.n7)+" appels · 7 j</small></td></tr>";
+    }).join("")||"<tr><td>—</td></tr>";
+    $("svc_dorm").innerHTML=(sv.dormants||[]).length
+      ? "<b>Endormis</b> — clé toujours en place, aucun appel depuis plus de 7 jours : "
+        +sv.dormants.map(e=>e.nom+" <span style='opacity:.7'>"+(e.dernier?new Date(e.dernier).toLocaleDateString("fr-FR",{day:"numeric",month:"short"}):"?")+"</span>").join(" · ")
+      : "";
+
     const rz=z.ok&&z.fenetre_5h&&z.fenetre_5h.reset_ms;
     $("note").innerHTML=
       "<b>Rien ici n'est estimé.</b> Claude : les blocs <code>usage</code> écrits par l'API dans les transcripts de Claude Code, dédoublonnés par identifiant de message et de requête, recoupés contre ccusage (écart de quelques %, dû aux autres CLI que ccusage agrège et qu'on compte séparément ici). GLM : tokens et crédits du compteur officiel z.ai, seaux horaires de Pékin re-répartis en journées de Paris. "
+      +"<b>Payé à l'usage</b> : les soldes viennent du fournisseur — DeepSeek et Bright Data sont les seuls à en exposer un, MiniMax, CometAPI et aihubmix refusent la clé sur leur endpoint de compte, la case reste donc vide. Les dates de dernier appel sortent de nos journaux, jamais reconstruites ; le coût y est calculé chez nous, ordre de grandeur, pas une facture.<br>"
       +"Grok : <code>prompt_tokens</code> / <code>cached_prompt_tokens</code> / <code>completion_tokens</code> que l'API renvoie à chaque tour, lus dans le journal de la CLI. "
       +"Les euros sont les tarifs API publiés — GLM-5.3 $1,40 / $0,26 déjà vu / $4,40 le M, Grok-4.6 $2 / $0,50 / $6 le M — appliqués à ces tokens, changeur <span id=\"tx\"></span>. "
       +"Seule approximation, écrite : z.ai ne dit pas la part entrée / déjà vu / sortie de ses tokens, on applique le mélange mesuré sur la part locale.<br>"
