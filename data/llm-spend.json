@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated_at": "2026-08-24T18:00:36.770308Z",
+    "generated_at": "2026-08-24T20:00:38.854967Z",
     "window_hours": 24,
-    "total_calls": 274,
-    "total_cost_usd": 0.321782,
+    "total_calls": 331,
+    "total_cost_usd": 0.415667,
     "models_count": 13,
     "providers_count": 9,
     "errors_count": 0,
@@ -14,32 +14,32 @@
     {
       "model": "deepseek-direct/deepseek-v4-pro",
       "provider": "deepseek-direct",
-      "calls": 99,
-      "successes": 99,
+      "calls": 122,
+      "successes": 122,
       "errors": 0,
-      "tokens_in": 236211,
-      "tokens_out": 126563,
-      "cost_usd": 0.190609966
+      "tokens_in": 302658,
+      "tokens_out": 160219,
+      "cost_usd": 0.24255760000000004
     },
     {
       "model": "comet/qwen3.7-max",
       "provider": "comet",
-      "calls": 5,
-      "successes": 5,
+      "calls": 6,
+      "successes": 6,
       "errors": 0,
-      "tokens_in": 2550,
-      "tokens_out": 8666,
-      "cost_usd": 0.07137
+      "tokens_in": 3060,
+      "tokens_out": 10252,
+      "cost_usd": 0.08454
     },
     {
       "model": "minimax-direct/minimax-m3",
       "provider": "minimax-direct",
-      "calls": 17,
-      "successes": 17,
+      "calls": 25,
+      "successes": 25,
       "errors": 0,
-      "tokens_in": 45605,
-      "tokens_out": 20943,
-      "cost_usd": 0.0388131
+      "tokens_in": 77952,
+      "tokens_out": 36665,
+      "cost_usd": 0.0673836
     },
     {
       "model": "aihubmix/qwen3.8-max",
@@ -52,6 +52,16 @@
       "cost_usd": 0.018444000000000002
     },
     {
+      "model": "minimax-direct/MiniMax-M3",
+      "provider": "minimax-direct",
+      "calls": 7,
+      "successes": 7,
+      "errors": 0,
+      "tokens_in": 4452,
+      "tokens_out": 35,
+      "cost_usd": 0.0013776
+    },
+    {
       "model": "openai-direct/gpt-5.6-luna",
       "provider": "openai-direct",
       "calls": 1,
@@ -62,43 +72,33 @@
       "cost_usd": 0.001364
     },
     {
-      "model": "minimax-direct/MiniMax-M3",
-      "provider": "minimax-direct",
-      "calls": 6,
-      "successes": 6,
-      "errors": 0,
-      "tokens_in": 3816,
-      "tokens_out": 30,
-      "cost_usd": 0.0011808
-    },
-    {
-      "model": "glm-opencode/glm-5.3",
-      "provider": "glm-opencode",
-      "calls": 8,
-      "successes": 8,
-      "errors": 0,
-      "tokens_in": 50,
-      "tokens_out": 47,
-      "cost_usd": 0.0
-    },
-    {
       "model": "glm-direct/glm-5.3",
       "provider": "glm-direct",
-      "calls": 24,
-      "successes": 24,
+      "calls": 23,
+      "successes": 23,
       "errors": 0,
-      "tokens_in": 37919,
-      "tokens_out": 38512,
+      "tokens_in": 30912,
+      "tokens_out": 34458,
       "cost_usd": 0.0
     },
     {
       "model": "hermes-agent/glm-5.3",
       "provider": "hermes-agent",
-      "calls": 76,
-      "successes": 76,
+      "calls": 97,
+      "successes": 97,
       "errors": 0,
-      "tokens_in": 109457,
-      "tokens_out": 27605,
+      "tokens_in": 137454,
+      "tokens_out": 36167,
+      "cost_usd": 0.0
+    },
+    {
+      "model": "glm-opencode/glm-5.3",
+      "provider": "glm-opencode",
+      "calls": 7,
+      "successes": 7,
+      "errors": 0,
+      "tokens_in": 50,
+      "tokens_out": 47,
       "cost_usd": 0.0
     },
     {
@@ -114,8 +114,8 @@
     {
       "model": "grok-4.6",
       "provider": "direct",
-      "calls": 12,
-      "successes": 12,
+      "calls": 14,
+      "successes": 14,
       "errors": 0,
       "tokens_in": 0,
       "tokens_out": 0,
@@ -134,11 +134,11 @@
     {
       "model": "glm-4.6v",
       "provider": "direct",
-      "calls": 8,
-      "successes": 8,
+      "calls": 11,
+      "successes": 11,
       "errors": 0,
-      "tokens_in": 18454,
-      "tokens_out": 553,
+      "tokens_in": 20249,
+      "tokens_out": 912,
       "cost_usd": 0.0
     }
   ]
