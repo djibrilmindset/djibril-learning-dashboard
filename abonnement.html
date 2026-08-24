@@ -62,6 +62,9 @@
   .card.glm table.conso td:last-child{color:var(--glm)}
   .card.grok table.conso td:last-child{color:var(--grok)}
   .card.claude table.conso td:last-child{color:var(--claude)}
+  .preuve{font-size:10.5px;line-height:1.6;color:var(--mut);margin-top:11px;border-top:1px dashed var(--line);padding-top:9px}
+  .preuve b{color:var(--txt);font-weight:750}
+  .preuve em{font-style:normal;opacity:.75}
   .vide{color:var(--mut);font-weight:600;font-size:12px}
 
   details{margin-top:13px;font-size:12px}
@@ -129,6 +132,7 @@
         <tr><td>Cette semaine</td><td id="claude_s">—</td><td id="claude_s_e"></td></tr>
         <tr><td>Semaine dernière</td><td id="claude_p">—</td><td id="claude_p_e"></td></tr>
       </table>
+      <div class="preuve" id="claude_preuve"></div>
     </div>
 
     <div class="card glm">
@@ -151,6 +155,7 @@
         <tr><td>Cette semaine</td><td id="glm_s">—</td><td id="glm_s_e"></td></tr>
         <tr><td>Semaine dernière</td><td id="glm_p">—</td><td id="glm_p_e"></td></tr>
       </table>
+      <div class="preuve" id="glm_preuve"></div>
     </div>
 
     <div class="card grok">
@@ -171,6 +176,7 @@
         <tr><td>Cette semaine</td><td id="grok_s">—</td><td id="grok_s_e"></td></tr>
         <tr><td>Semaine dernière</td><td id="grok_p">—</td><td id="grok_p_e"></td></tr>
       </table>
+      <div class="preuve" id="grok_preuve"></div>
 
       <details>
         <summary>🔎 D'où viennent ces tokens — les sessions les plus lourdes</summary>
@@ -335,6 +341,21 @@ async function charge(){
       ? "<b>Endormis</b> — clé toujours en place, aucun appel depuis plus de 7 jours : "
         +sv.dormants.map(e=>e.nom+" <span style='opacity:.7'>"+(e.dernier?new Date(e.dernier).toLocaleDateString("fr-FR",{day:"numeric",month:"short"}):"?")+"</span>").join(" · ")
       : "";
+
+    // ── la preuve d'usage, carte par carte : ce que le FOURNISSEUR compte, et
+    // la séparation explicite entre le brut qu'il rapporte et ce qu'on calcule ici.
+    const releve=genAt.toLocaleTimeString("fr-FR",{hour:"2-digit",minute:"2-digit"});
+    const gr=d.glm.reel||{};
+    $("glm_preuve").innerHTML="<b>"+fmt(gr.appels_aujourd_hui)+"</b> appels comptés par z.ai aujourd'hui, <b>"
+      +fmt(gr.appels_semaine_derniere)+"</b> la semaine dernière · dernière heure active <b>"
+      +(gr.derniere_heure_active?hFR(new Date(gr.derniere_heure_active).getTime()):"—")+"</b>"
+      +"<br><em>brut du fournisseur : crédits, tokens, appels (<code>/monitor/usage</code>, relevé à "+releve+"). Calculé ici : les euros.</em>";
+    $("grok_preuve").innerHTML="<b>"+fmt(p.tours_jour)+"</b> tours aujourd'hui, <b>"+fmt(p.tours_semaine_derniere)
+      +"</b> la semaine dernière, <b>"+fmt(p.tours_total)+"</b> au total · dernier "+ilYA(p.dernier)
+      +"<br><em>brut du fournisseur : les compteurs de tokens que l'API renvoie à chaque tour (journal de la CLI, relevé à "+releve+"). Calculé ici : les euros.</em>";
+    if(cl.ok) $("claude_preuve").innerHTML="<b>"+fmt(cl.aujourd_hui_msg)+"</b> messages aujourd'hui, <b>"
+      +fmt(cl.semaine_msg)+"</b> cette semaine · dernier "+ilYA(cl.dernier)
+      +"<br><em>brut du fournisseur : les blocs <code>usage</code> écrits par l'API dans les transcripts (relevé à "+releve+"). Calculé ici : les euros.</em>";
 
     const rz=z.ok&&z.fenetre_5h&&z.fenetre_5h.reset_ms;
     $("note").innerHTML=
