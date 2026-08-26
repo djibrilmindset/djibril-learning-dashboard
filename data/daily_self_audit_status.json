@@ -1,24 +1,24 @@
 {
-  "ts": "2026-08-25T05:45:00Z",
-  "overall": "ok",
+  "ts": "2026-08-26T05:45:01Z",
+  "overall": "warn",
   "auto_apply": false,
   "counts": {
-    "ok": 7,
-    "warn": 0,
+    "ok": 6,
+    "warn": 1,
     "fail": 0
   },
   "checks": [
     {
       "name": "rois_princes",
-      "status": "ok",
+      "status": "warn",
       "bucket": "infra",
-      "detail": "RÉSUMÉ : 4 ALIVE | 0 PHANTOM | 0 DEAD  (sur 4)"
+      "detail": "RÉSUMÉ : 3 ALIVE | 0 PHANTOM | 1 DEAD  (sur 4) (exit 1)"
     },
     {
       "name": "tokens_24h",
       "status": "ok",
       "bucket": "infra",
-      "detail": "conso 24h: $1.5804"
+      "detail": "conso 24h: $0.7164"
     },
     {
       "name": "emails_tracking",
@@ -51,5 +51,12 @@
       "detail": "pas de test exit-code (copy=créatif) → audité sur demande, jamais auto-édité (doctrine H1)"
     }
   ],
-  "problems": []
+  "problems": [
+    {
+      "name": "rois_princes",
+      "status": "warn",
+      "bucket": "infra",
+      "detail": "RÉSUMÉ : 3 ALIVE | 0 PHANTOM | 1 DEAD  (sur 4) (exit 1)"
+    }
+  ]
 }
