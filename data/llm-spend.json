@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated_at": "2026-08-26T12:00:20.317797Z",
+    "generated_at": "2026-08-26T14:00:37.105938Z",
     "window_hours": 24,
-    "total_calls": 155,
-    "total_cost_usd": 0.215365,
+    "total_calls": 141,
+    "total_cost_usd": 0.192392,
     "models_count": 10,
     "providers_count": 7,
     "errors_count": 0,
@@ -18,18 +18,18 @@
       "successes": 8,
       "errors": 0,
       "tokens_in": 4080,
-      "tokens_out": 12254,
-      "cost_usd": 0.10210500000000002
+      "tokens_out": 11644,
+      "cost_usd": 0.09752999999999999
     },
     {
       "model": "deepseek-direct/deepseek-v4-pro",
       "provider": "deepseek-direct",
-      "calls": 60,
-      "successes": 60,
+      "calls": 53,
+      "successes": 53,
       "errors": 0,
-      "tokens_in": 96601,
-      "tokens_out": 71764,
-      "cost_usd": 0.098337998
+      "tokens_in": 75881,
+      "tokens_out": 59469,
+      "cost_usd": 0.08013660199999999
     },
     {
       "model": "aihubmix/qwen3.8-max",
@@ -54,21 +54,21 @@
     {
       "model": "minimax-direct/MiniMax-M3",
       "provider": "minimax-direct",
-      "calls": 4,
-      "successes": 4,
+      "calls": 3,
+      "successes": 3,
       "errors": 0,
-      "tokens_in": 2544,
-      "tokens_out": 20,
-      "cost_usd": 0.0007872
+      "tokens_in": 1908,
+      "tokens_out": 15,
+      "cost_usd": 0.0005904
     },
     {
       "model": "hermes-agent/glm-5.3",
       "provider": "hermes-agent",
-      "calls": 25,
-      "successes": 25,
+      "calls": 18,
+      "successes": 18,
       "errors": 0,
-      "tokens_in": 28694,
-      "tokens_out": 14794,
+      "tokens_in": 19161,
+      "tokens_out": 12549,
       "cost_usd": 0.0
     },
     {
@@ -84,11 +84,11 @@
     {
       "model": "glm-5.3-dsh",
       "provider": "direct",
-      "calls": 1,
-      "successes": 1,
+      "calls": 2,
+      "successes": 2,
       "errors": 0,
-      "tokens_in": 147,
-      "tokens_out": 807,
+      "tokens_in": 273,
+      "tokens_out": 1984,
       "cost_usd": 0.0
     },
     {
