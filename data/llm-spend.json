@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated_at": "2026-08-26T08:00:09.916745Z",
+    "generated_at": "2026-08-26T10:00:25.032989Z",
     "window_hours": 24,
-    "total_calls": 160,
-    "total_cost_usd": 0.213756,
+    "total_calls": 153,
+    "total_cost_usd": 0.192205,
     "models_count": 10,
     "providers_count": 7,
     "errors_count": 0,
@@ -14,22 +14,22 @@
     {
       "model": "comet/qwen3.7-max",
       "provider": "comet",
-      "calls": 8,
-      "successes": 8,
+      "calls": 7,
+      "successes": 7,
       "errors": 0,
-      "tokens_in": 4080,
-      "tokens_out": 12751,
-      "cost_usd": 0.10583250000000001
+      "tokens_in": 3570,
+      "tokens_out": 10779,
+      "cost_usd": 0.08976750000000001
     },
     {
       "model": "deepseek-direct/deepseek-v4-pro",
       "provider": "deepseek-direct",
-      "calls": 57,
-      "successes": 57,
+      "calls": 54,
+      "successes": 54,
       "errors": 0,
-      "tokens_in": 108479,
-      "tokens_out": 65216,
-      "cost_usd": 0.09437502599999996
+      "tokens_in": 101852,
+      "tokens_out": 61677,
+      "cost_usd": 0.08908605199999999
     },
     {
       "model": "aihubmix/qwen3.8-max",
@@ -54,22 +54,12 @@
     {
       "model": "minimax-direct/MiniMax-M3",
       "provider": "minimax-direct",
-      "calls": 5,
-      "successes": 5,
+      "calls": 4,
+      "successes": 4,
       "errors": 0,
-      "tokens_in": 3180,
-      "tokens_out": 25,
-      "cost_usd": 0.000984
-    },
-    {
-      "model": "hermes-agent/glm-5.3",
-      "provider": "hermes-agent",
-      "calls": 31,
-      "successes": 31,
-      "errors": 0,
-      "tokens_in": 37162,
-      "tokens_out": 18020,
-      "cost_usd": 0.0
+      "tokens_in": 2544,
+      "tokens_out": 20,
+      "cost_usd": 0.0007872
     },
     {
       "model": "glm-direct/glm-5.3",
@@ -79,6 +69,16 @@
       "errors": 0,
       "tokens_in": 4656,
       "tokens_out": 1262,
+      "cost_usd": 0.0
+    },
+    {
+      "model": "hermes-agent/glm-5.3",
+      "provider": "hermes-agent",
+      "calls": 29,
+      "successes": 29,
+      "errors": 0,
+      "tokens_in": 34384,
+      "tokens_out": 17735,
       "cost_usd": 0.0
     },
     {
