@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated_at": "2026-08-27T10:00:16.895283Z",
+    "generated_at": "2026-08-27T12:00:19.690836Z",
     "window_hours": 24,
-    "total_calls": 79,
-    "total_cost_usd": 0.132436,
+    "total_calls": 73,
+    "total_cost_usd": 0.112704,
     "models_count": 9,
     "providers_count": 7,
     "errors_count": 0,
@@ -11,182 +11,6 @@
     "error_count": 0
   },
   "entries": [
-    {
-      "ts": "2026-08-26T10:00:32Z",
-      "agent": "HERMES_CALL_DEEPSEEK",
-      "model": "deepseek-direct/deepseek-v4-pro",
-      "tier": 1,
-      "tokens_in": 589,
-      "tokens_out": 300,
-      "cost_usd": 0.000357958,
-      "task_type": "chinese",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-08-26T10:00:32Z",
-      "agent": "HERMES_CALL_DEEPSEEK",
-      "model": "deepseek-direct/deepseek-v4-pro",
-      "tier": 1,
-      "tokens_in": 589,
-      "tokens_out": 300,
-      "cost_usd": 0.000357958,
-      "task_type": "chinese",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-08-26T10:00:42Z",
-      "agent": "HERMES_CALL_GLM",
-      "model": "glm-direct/glm-5.3",
-      "tier": 1,
-      "tokens_in": 519,
-      "tokens_out": 162,
-      "cost_usd": 0,
-      "task_type": "chinese",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-08-26T10:00:47Z",
-      "agent": "HERMES_CALL_GLM",
-      "model": "glm-direct/glm-5.3",
-      "tier": 1,
-      "tokens_in": 519,
-      "tokens_out": 46,
-      "cost_usd": 0,
-      "task_type": "chinese",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-08-26T10:27:55Z",
-      "agent": "HERMES_CALL_DEEPSEEK",
-      "model": "deepseek-direct/deepseek-v4-pro",
-      "tier": 1,
-      "tokens_in": 570,
-      "tokens_out": 5,
-      "cost_usd": 2.8328e-05,
-      "task_type": "chinese",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-08-26T10:28:08Z",
-      "agent": "HERMES_CALL_AIHUBMIX",
-      "model": "aihubmix/qwen3.8-max",
-      "tier": 2,
-      "tokens_in": 178,
-      "tokens_out": 464,
-      "cost_usd": 0.00157,
-      "task_type": "chinese",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-08-26T10:28:12Z",
-      "agent": "HERMES_CALL_DEEPSEEK",
-      "model": "deepseek-direct/deepseek-v4-pro",
-      "tier": 1,
-      "tokens_in": 212,
-      "tokens_out": 1132,
-      "cost_usd": 0.001269672,
-      "task_type": "chinese",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-08-26T10:28:13Z",
-      "agent": "HERMES_CALL_DEEPSEEK",
-      "model": "deepseek-direct/deepseek-v4-pro",
-      "tier": 1,
-      "tokens_in": 212,
-      "tokens_out": 1006,
-      "cost_usd": 0.001131072,
-      "task_type": "chinese",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-08-26T10:28:15Z",
-      "agent": "HERMES_CALL_DEEPSEEK",
-      "model": "deepseek-direct/deepseek-v4-pro",
-      "tier": 1,
-      "tokens_in": 212,
-      "tokens_out": 761,
-      "cost_usd": 0.000861572,
-      "task_type": "chinese",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-08-26T10:28:17Z",
-      "agent": "HERMES_CALL_DEEPSEEK",
-      "model": "deepseek-direct/deepseek-v4-pro",
-      "tier": 1,
-      "tokens_in": 212,
-      "tokens_out": 1151,
-      "cost_usd": 0.001290572,
-      "task_type": "chinese",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-08-26T10:28:26Z",
-      "agent": "HERMES_CALL_COMET",
-      "model": "comet/qwen3.7-max",
-      "tier": 2,
-      "tokens_in": 510,
-      "tokens_out": 1475,
-      "cost_usd": 0.0123375,
-      "task_type": "chinese",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-08-26T10:29:00Z",
-      "agent": "HERMES_CALL_DEEPSEEK",
-      "model": "deepseek-direct/deepseek-v4-pro",
-      "tier": 1,
-      "tokens_in": 1015,
-      "tokens_out": 2500,
-      "cost_usd": 0.002794674,
-      "task_type": "chinese",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-08-26T10:29:04Z",
-      "agent": "HERMES_CALL_DEEPSEEK",
-      "model": "deepseek-direct/deepseek-v4-pro",
-      "tier": 1,
-      "tokens_in": 1015,
-      "tokens_out": 2500,
-      "cost_usd": 0.00302405,
-      "task_type": "chinese",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-08-26T10:29:08Z",
-      "agent": "HERMES_CALL_DEEPSEEK",
-      "model": "deepseek-direct/deepseek-v4-pro",
-      "tier": 1,
-      "tokens_in": 1015,
-      "tokens_out": 2500,
-      "cost_usd": 0.002794674,
-      "task_type": "chinese",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-08-26T10:29:09Z",
-      "agent": "HERMES_CALL_DEEPSEEK",
-      "model": "deepseek-direct/deepseek-v4-pro",
-      "tier": 1,
-      "tokens_in": 1015,
-      "tokens_out": 2500,
-      "cost_usd": 0.002794674,
-      "task_type": "chinese",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-08-26T10:31:10Z",
-      "agent": "HERMES_CALL_DEEPSEEK",
-      "model": "deepseek-direct/deepseek-v4-pro",
-      "tier": 1,
-      "tokens_in": 3810,
-      "tokens_out": 3000,
-      "cost_usd": 0.0043287,
-      "task_type": "chinese",
-      "result_summary": ""
-    },
     {
       "ts": "2026-08-26T12:40:35Z",
       "agent": "ATELIER",
@@ -878,6 +702,116 @@
       "tokens_out": 1599,
       "cost_usd": 0.0132675,
       "task_type": "chinese",
+      "result_summary": ""
+    },
+    {
+      "ts": "2026-08-27T10:00:23Z",
+      "agent": "HERMES_CALL_GLM",
+      "model": "glm-direct/glm-5.3",
+      "tier": 1,
+      "tokens_in": 519,
+      "tokens_out": 58,
+      "cost_usd": 0,
+      "task_type": "chinese",
+      "result_summary": ""
+    },
+    {
+      "ts": "2026-08-27T10:00:25Z",
+      "agent": "HERMES_CALL_GLM",
+      "model": "glm-direct/glm-5.3",
+      "tier": 1,
+      "tokens_in": 519,
+      "tokens_out": 153,
+      "cost_usd": 0,
+      "task_type": "chinese",
+      "result_summary": ""
+    },
+    {
+      "ts": "2026-08-27T10:00:33Z",
+      "agent": "HERMES_CALL_GLM",
+      "model": "glm-direct/glm-5.3",
+      "tier": 1,
+      "tokens_in": 519,
+      "tokens_out": 169,
+      "cost_usd": 0,
+      "task_type": "chinese",
+      "result_summary": ""
+    },
+    {
+      "ts": "2026-08-27T10:00:42Z",
+      "agent": "HERMES_CALL_GLM",
+      "model": "glm-direct/glm-5.3",
+      "tier": 1,
+      "tokens_in": 519,
+      "tokens_out": 185,
+      "cost_usd": 0,
+      "task_type": "chinese",
+      "result_summary": ""
+    },
+    {
+      "ts": "2026-08-27T10:33:55Z",
+      "agent": "HERMES_CALL_GLM",
+      "model": "glm-direct/glm-5.3",
+      "tier": 1,
+      "tokens_in": 499,
+      "tokens_out": 496,
+      "cost_usd": 0,
+      "task_type": "chinese",
+      "result_summary": ""
+    },
+    {
+      "ts": "2026-08-27T10:34:34Z",
+      "agent": "HERMES_CALL_COMET",
+      "model": "comet/qwen3.7-max",
+      "tier": 2,
+      "tokens_in": 510,
+      "tokens_out": 1858,
+      "cost_usd": 0.01521,
+      "task_type": "chinese",
+      "result_summary": ""
+    },
+    {
+      "ts": "2026-08-27T11:33:21Z",
+      "agent": "VISION",
+      "model": "glm-4.6v",
+      "tier": 0,
+      "tokens_in": 0,
+      "tokens_out": 0,
+      "cost_usd": 0,
+      "task_type": "vision",
+      "result_summary": ""
+    },
+    {
+      "ts": "2026-08-27T11:33:21Z",
+      "agent": "VISION",
+      "model": "grok-4.6",
+      "tier": 0,
+      "tokens_in": 0,
+      "tokens_out": 0,
+      "cost_usd": 0,
+      "task_type": "vision",
+      "result_summary": ""
+    },
+    {
+      "ts": "2026-08-27T11:34:14Z",
+      "agent": "VISION",
+      "model": "glm-4.6v",
+      "tier": 0,
+      "tokens_in": 0,
+      "tokens_out": 0,
+      "cost_usd": 0,
+      "task_type": "vision",
+      "result_summary": ""
+    },
+    {
+      "ts": "2026-08-27T11:34:14Z",
+      "agent": "VISION",
+      "model": "grok-4.6",
+      "tier": 0,
+      "tokens_in": 0,
+      "tokens_out": 0,
+      "cost_usd": 0,
+      "task_type": "vision",
       "result_summary": ""
     }
   ]
