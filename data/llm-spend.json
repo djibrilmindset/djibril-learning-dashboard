@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated_at": "2026-08-27T20:00:15.279376Z",
+    "generated_at": "2026-08-27T22:00:29.045869Z",
     "window_hours": 24,
-    "total_calls": 86,
-    "total_cost_usd": 0.110177,
+    "total_calls": 73,
+    "total_cost_usd": 0.108679,
     "models_count": 8,
     "providers_count": 6,
     "errors_count": 0,
@@ -24,42 +24,12 @@
     {
       "model": "aihubmix/qwen3.8-max",
       "provider": "aihubmix",
-      "calls": 4,
-      "successes": 4,
+      "calls": 3,
+      "successes": 3,
       "errors": 0,
-      "tokens_in": 2551,
-      "tokens_out": 1673,
-      "cost_usd": 0.00757
-    },
-    {
-      "model": "glm-4.6v",
-      "provider": "direct",
-      "calls": 6,
-      "successes": 6,
-      "errors": 0,
-      "tokens_in": 5778,
-      "tokens_out": 800,
-      "cost_usd": 0.0
-    },
-    {
-      "model": "grok-4.6",
-      "provider": "direct",
-      "calls": 5,
-      "successes": 5,
-      "errors": 0,
-      "tokens_in": 0,
-      "tokens_out": 0,
-      "cost_usd": 0.0
-    },
-    {
-      "model": "glm-direct/glm-5.3",
-      "provider": "glm-direct",
-      "calls": 41,
-      "successes": 41,
-      "errors": 0,
-      "tokens_in": 29369,
-      "tokens_out": 22982,
-      "cost_usd": 0.0
+      "tokens_in": 2373,
+      "tokens_out": 1233,
+      "cost_usd": 0.006072
     },
     {
       "model": "glm-opencode/glm-5.3",
@@ -72,13 +42,43 @@
       "cost_usd": 0.0
     },
     {
+      "model": "glm-direct/glm-5.3",
+      "provider": "glm-direct",
+      "calls": 33,
+      "successes": 33,
+      "errors": 0,
+      "tokens_in": 26725,
+      "tokens_out": 19233,
+      "cost_usd": 0.0
+    },
+    {
       "model": "glm-5.3-dsh",
       "provider": "direct",
-      "calls": 8,
-      "successes": 8,
+      "calls": 9,
+      "successes": 9,
       "errors": 0,
-      "tokens_in": 662,
-      "tokens_out": 6573,
+      "tokens_in": 727,
+      "tokens_out": 6765,
+      "cost_usd": 0.0
+    },
+    {
+      "model": "glm-4.6v",
+      "provider": "direct",
+      "calls": 3,
+      "successes": 3,
+      "errors": 0,
+      "tokens_in": 0,
+      "tokens_out": 0,
+      "cost_usd": 0.0
+    },
+    {
+      "model": "grok-4.6",
+      "provider": "direct",
+      "calls": 3,
+      "successes": 3,
+      "errors": 0,
+      "tokens_in": 0,
+      "tokens_out": 0,
       "cost_usd": 0.0
     },
     {
