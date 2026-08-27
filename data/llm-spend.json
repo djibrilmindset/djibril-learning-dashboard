@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "generated_at": "2026-08-27T14:00:21.356925Z",
+    "generated_at": "2026-08-27T16:00:24.020078Z",
     "window_hours": 24,
-    "total_calls": 76,
+    "total_calls": 85,
     "total_cost_usd": 0.114438,
     "models_count": 9,
     "providers_count": 7,
@@ -44,18 +44,18 @@
     {
       "model": "glm-direct/glm-5.3",
       "provider": "glm-direct",
-      "calls": 30,
-      "successes": 30,
+      "calls": 32,
+      "successes": 32,
       "errors": 0,
-      "tokens_in": 20469,
-      "tokens_out": 12753,
+      "tokens_in": 22938,
+      "tokens_out": 14786,
       "cost_usd": 0.0
     },
     {
       "model": "glm-4.6v",
       "provider": "direct",
-      "calls": 10,
-      "successes": 10,
+      "calls": 11,
+      "successes": 11,
       "errors": 0,
       "tokens_in": 7212,
       "tokens_out": 1664,
@@ -64,8 +64,8 @@
     {
       "model": "grok-4.6",
       "provider": "direct",
-      "calls": 7,
-      "successes": 7,
+      "calls": 8,
+      "successes": 8,
       "errors": 0,
       "tokens_in": 0,
       "tokens_out": 0,
@@ -74,31 +74,31 @@
     {
       "model": "hermes-agent/glm-5.3",
       "provider": "hermes-agent",
-      "calls": 4,
-      "successes": 4,
+      "calls": 6,
+      "successes": 6,
       "errors": 0,
-      "tokens_in": 1660,
-      "tokens_out": 1068,
+      "tokens_in": 3010,
+      "tokens_out": 1652,
       "cost_usd": 0.0
     },
     {
       "model": "glm-opencode/glm-5.3",
       "provider": "glm-opencode",
-      "calls": 4,
-      "successes": 4,
+      "calls": 5,
+      "successes": 5,
       "errors": 0,
-      "tokens_in": 102388,
-      "tokens_out": 12303,
+      "tokens_in": 127707,
+      "tokens_out": 13720,
       "cost_usd": 0.0
     },
     {
       "model": "glm-5.3-dsh",
       "provider": "direct",
-      "calls": 3,
-      "successes": 3,
+      "calls": 5,
+      "successes": 5,
       "errors": 0,
-      "tokens_in": 253,
-      "tokens_out": 1409,
+      "tokens_in": 455,
+      "tokens_out": 3407,
       "cost_usd": 0.0
     }
   ]
