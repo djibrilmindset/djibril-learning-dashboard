@@ -185,6 +185,12 @@
     </div>
   </div>
 
+  <div style="margin-top:22px">
+    <h3 style="font-size:13px;font-weight:800;letter-spacing:.2px">À l'usage, tous les jours</h3>
+    <div style="color:var(--mut);font-weight:600;font-size:10px;letter-spacing:.9px;text-transform:uppercase;margin-top:3px">les API du quotidien — même représentation que les abonnements</div>
+  </div>
+  <div class="duocard" id="usage_cards"></div>
+
   <div class="svc">
     <h3>Payé à l'usage <small>solde du fournisseur · dernier appel vérifié dans nos journaux</small></h3>
     <table id="svc_tbl"></table>
@@ -345,13 +351,44 @@ async function charge(){
     // ── la preuve d'usage, carte par carte : ce que le FOURNISSEUR compte, et
     // la séparation explicite entre le brut qu'il rapporte et ce qu'on calcule ici.
     const releve=genAt.toLocaleTimeString("fr-FR",{hour:"2-digit",minute:"2-digit"});
+    const vi={g:(d.glm||{}).vision_api||null,k:(d.grok||{}).vision_api||null};
+
+    // ── à l'usage, tous les jours : les API du quotidien en CARTES, même
+    // représentation que les abonnements. Aucun de ces fournisseurs ne publie
+    // de plafond : pas de jauge, jamais un % inventé — des tokens mesurés et
+    // des appels comptés dans nos journaux, un coût calculé, étiqueté comme tel.
+    const COUL_USAGE={"DeepSeek":"#7dd3fc","MiniMax":"#ffd166","CometAPI":"#f472b6","aihubmix":"#a3e635","OpenAI":"#34d399","Gemini":"#93c5fd"};
+    const gros=p=>{if(!p)return"—";const t=p.tin+p.tout;return t?M(t):fmt(p.appels)};
+    $("usage_cards").innerHTML=(sv.actifs||[]).filter(e=>e.nom!=="Bright Data · scraping").map(e=>{
+      const coul=COUL_USAGE[e.nom]||"var(--acc)", p=e.periodes||{}, sol=solTxt(e.solde);
+      return "<div class=\"card\" style=\"border-left-color:"+coul+"\">"
+        +"<h2 style=\"color:"+coul+"\"><span>"+e.nom+"</span><span class=\"plan\">"+(e.solde==="gratuit"?"gratuit":"à l'usage")+"</span></h2>"
+        +"<div class=\"quoi\">"+((e.modeles||[]).join(", ")||"appels de l'infra")+" · aucun plafond publié : du réel mesuré, pas de jauge</div>"
+        +"<div class=\"bloc\"><div class=\"t\"><span>Fenêtre 5 h</span><b style=\"color:"+coul+"\">"+gros(p.h5)+"</b></div>"
+        +"<div class=\"d\">"+fmt((p.h5||{}).appels||0)+" appels dans les 5 dernières heures</div></div>"
+        +"<div class=\"bloc\"><div class=\"t\"><span>Semaine</span><b style=\"color:"+coul+"\">"+gros(p.sem)+"</b></div>"
+        +"<div class=\"d\">"+fmt((p.sem||{}).appels||0)+" appels depuis lundi</div></div>"
+        +"<table class=\"conso\">"
+        +"<tr><td>Aujourd'hui</td><td>"+gros(p.jour)+"</td><td style=\"color:"+coul+"\">"+EUR((p.jour||{}).eur)+"</td></tr>"
+        +"<tr><td>Cette semaine</td><td>"+gros(p.sem)+"</td><td style=\"color:"+coul+"\">"+EUR((p.sem||{}).eur)+"</td></tr>"
+        +"<tr><td>Semaine dernière</td><td>"+gros(p.sem_prec)+"</td><td style=\"color:"+coul+"\">"+EUR((p.sem_prec||{}).eur)+"</td></tr>"
+        +"</table>"
+        +"<div class=\"preuve\"><b>"+fmt(e.n7)+"</b> appels sur 7 j · ~"+(e.cout7||0).toFixed(2).replace(".",",")+" $"
+        +" · dernier "+ilYA(e.dernier)
+        +(e.solde==="gratuit"?" · gratuit, quota Google":(sol[0]!=="—"?" · solde "+sol[0]:""))
+        +"<br><em>brut de nos journaux : appels, tokens, coût calculé à l'appel (relevé à "+releve+"). Solde : fournisseur seulement.</em></div>"
+        +"</div>";
+    }).join("");
+
     const gr=d.glm.reel||{};
     $("glm_preuve").innerHTML="<b>"+fmt(gr.appels_aujourd_hui)+"</b> appels comptés par z.ai aujourd'hui, <b>"
       +fmt(gr.appels_semaine_derniere)+"</b> la semaine dernière · dernière heure active <b>"
       +(gr.derniere_heure_active?hFR(new Date(gr.derniere_heure_active).getTime()):"—")+"</b>"
+      +(vi.g?"<br>vision GLM-4.6V : <b>"+fmt(vi.g.n7)+"</b> appels sur 7 j ("+fmt(vi.g.ok7)+" OK) — l'œil image de vision.sh, comptés par z.ai":"")
       +"<br><em>brut du fournisseur : crédits, tokens, appels (<code>/monitor/usage</code>, relevé à "+releve+"). Calculé ici : les euros.</em>";
     $("grok_preuve").innerHTML="<b>"+fmt(p.tours_jour)+"</b> tours aujourd'hui, <b>"+fmt(p.tours_semaine_derniere)
       +"</b> la semaine dernière, <b>"+fmt(p.tours_total)+"</b> au total · dernier "+ilYA(p.dernier)
+      +(vi.k?"<br>vision (œil Grok) : <b>"+fmt(vi.k.n7)+"</b> appels API sur 7 j — facturés sur SuperGrok, la CLI ne les voit pas":"")
       +"<br><em>brut du fournisseur : les compteurs de tokens que l'API renvoie à chaque tour (journal de la CLI, relevé à "+releve+"). Calculé ici : les euros.</em>";
     if(cl.ok) $("claude_preuve").innerHTML="<b>"+fmt(cl.aujourd_hui_msg)+"</b> messages aujourd'hui, <b>"
       +fmt(cl.semaine_msg)+"</b> cette semaine · dernier "+ilYA(cl.dernier)
@@ -360,7 +397,8 @@ async function charge(){
     const rz=z.ok&&z.fenetre_5h&&z.fenetre_5h.reset_ms;
     $("note").innerHTML=
       "<b>Rien ici n'est estimé.</b> Claude : les blocs <code>usage</code> écrits par l'API dans les transcripts de Claude Code, dédoublonnés par identifiant de message et de requête, recoupés contre ccusage (écart de quelques %, dû aux autres CLI que ccusage agrège et qu'on compte séparément ici). GLM : tokens et crédits du compteur officiel z.ai, seaux horaires de Pékin re-répartis en journées de Paris. "
-      +"<b>Payé à l'usage</b> : les soldes viennent du fournisseur — DeepSeek et Bright Data sont les seuls à en exposer un, MiniMax, CometAPI et aihubmix refusent la clé sur leur endpoint de compte, la case reste donc vide. Les dates de dernier appel sortent de nos journaux, jamais reconstruites ; le coût y est calculé chez nous, ordre de grandeur, pas une facture.<br>"
+      +"<b>Payé à l'usage</b> : les soldes viennent du fournisseur — DeepSeek et Bright Data sont les seuls à en exposer un, MiniMax, CometAPI et aihubmix refusent la clé sur leur endpoint de compte, la case reste donc vide. Les dates de dernier appel sortent de nos journaux, jamais reconstruites ; le coût y est calculé chez nous, ordre de grandeur, pas une facture. "
+      +"Les cartes « à l'usage, tous les jours » suivent la même règle que les abonnements : aucun de ces fournisseurs ne publie de plafond, donc aucun % restant — des tokens et des appels mesurés, rien d'inventé. Gemini est gratuit (quota Google) : ses appels sont comptés, ses tokens ne sont pas rapportés par cette voix.<br>"
       +"Grok : <code>prompt_tokens</code> / <code>cached_prompt_tokens</code> / <code>completion_tokens</code> que l'API renvoie à chaque tour, lus dans le journal de la CLI. "
       +"Les euros sont les tarifs API publiés — GLM-5.3 $1,40 / $0,26 déjà vu / $4,40 le M, Grok-4.6 $2 / $0,50 / $6 le M — appliqués à ces tokens, changeur <span id=\"tx\"></span>. "
       +"Seule approximation, écrite : z.ai ne dit pas la part entrée / déjà vu / sortie de ses tokens, on applique le mélange mesuré sur la part locale.<br>"
