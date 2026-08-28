@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated_at": "2026-08-28T06:00:37.792959Z",
+    "generated_at": "2026-08-28T08:00:40.993290Z",
     "window_hours": 24,
     "total_calls": 81,
-    "total_cost_usd": 0.10704,
+    "total_cost_usd": 0.10746,
     "models_count": 8,
     "providers_count": 6,
     "errors_count": 0,
@@ -11,28 +11,6 @@
     "error_count": 0
   },
   "entries": [
-    {
-      "ts": "2026-08-27T07:33:01Z",
-      "agent": "HERMES_CALL_GLM",
-      "model": "glm-direct/glm-5.3",
-      "tier": 1,
-      "tokens_in": 499,
-      "tokens_out": 629,
-      "cost_usd": 0,
-      "task_type": "chinese",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-08-27T07:33:36Z",
-      "agent": "HERMES_CALL_COMET",
-      "model": "comet/qwen3.7-max",
-      "tier": 2,
-      "tokens_in": 510,
-      "tokens_out": 1599,
-      "cost_usd": 0.0132675,
-      "task_type": "chinese",
-      "result_summary": ""
-    },
     {
       "ts": "2026-08-27T10:00:23Z",
       "agent": "HERMES_CALL_GLM",
@@ -900,6 +878,28 @@
       "tokens_out": 827,
       "cost_usd": 0,
       "task_type": "atelier",
+      "result_summary": ""
+    },
+    {
+      "ts": "2026-08-28T07:39:30Z",
+      "agent": "HERMES_CALL_GLM",
+      "model": "glm-direct/glm-5.3",
+      "tier": 1,
+      "tokens_in": 499,
+      "tokens_out": 351,
+      "cost_usd": 0,
+      "task_type": "chinese",
+      "result_summary": ""
+    },
+    {
+      "ts": "2026-08-28T07:40:04Z",
+      "agent": "HERMES_CALL_COMET",
+      "model": "comet/qwen3.7-max",
+      "tier": 2,
+      "tokens_in": 510,
+      "tokens_out": 1655,
+      "cost_usd": 0.0136875,
+      "task_type": "chinese",
       "result_summary": ""
     }
   ]
