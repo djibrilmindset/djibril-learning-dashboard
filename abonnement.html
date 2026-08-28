@@ -358,7 +358,7 @@ async function charge(){
     const eurCell=q=>{q=q||{};return q.eur?EUR(q.eur):""};
     const ORDRE=["Bright Data · scraping","Gemini","OpenAI","DeepSeek"];
     const prk=e=>{const i=ORDRE.indexOf(e.nom);return i<0?ORDRE.length:i};
-    const RAISON={"OpenAI":"la clé n'a pas le scope <code>api.usage.read</code> (sonde 29/08) — une clé avec ce scope ouvrira le vrai solde","MiniMax":"aucun endpoint de compte (404, sonde 29/08)","CometAPI":"route facturation en panne côté serveur (500, sonde 29/08)","aihubmix":"solde réservé à la session web — la clé API reçoit 401 (sonde 29/08)"};
+    const RAISON={"OpenAI":"la clé n'a pas le scope <code>api.usage.read</code> (sonde 29/08) — une clé avec ce scope ouvrira le vrai solde","MiniMax":"aucun endpoint de compte (404, sonde 29/08)","CometAPI":"route facturation en panique côté serveur (500 ou 401 selon l'essai, sonde 29/08)","aihubmix":"solde réservé à la session web — la clé API reçoit 401 (sonde 29/08)"};
     $("usage_cards").innerHTML=(sv.actifs||[]).slice().sort((a,b)=>prk(a)-prk(b)||(b.n7||0)-(a.n7||0)).map(e=>{
       const coul=COUL_USAGE[e.nom]||"var(--acc)", p=e.periodes||{};
       const sb=(e.solde&&e.solde!=="gratuit")?(sol[e.solde]||null):null;
@@ -389,7 +389,7 @@ async function charge(){
           : "")
         +(e.solde==="gratuit"
           ? "<div class=\"bloc\"><div class=\"t\"><span>Crédits instantanés</span><b style=\"color:"+coul+"\">"+fmt((p.jour||{}).appels||0)+" <small>/ ~1000</small></b></div>"
-            +"<div class=\"d\">appels aujourd'hui sur le quota gratuit Google — remis à zéro chaque minuit · "+fmt(e.n7||0)+" appels sur 7 j · 0 € sous le quota</div></div>"
+            +"<div class=\"d\">appels aujourd'hui comptés dans nos journaux · quota gratuit Google ~1000/j, remis à zéro chaque minuit · "+fmt(e.n7||0)+" appels sur 7 j · 0 € : au-delà Google refuse (429), il ne facture pas</div></div>"
           : "")
         +"<table class=\"conso\">"
         +"<tr><td>Aujourd'hui</td><td>"+gros(p.jour)+"</td><td style=\"color:"+coul+"\">"+eurCell(p.jour)+"</td></tr>"
