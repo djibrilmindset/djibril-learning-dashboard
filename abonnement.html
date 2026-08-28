@@ -389,7 +389,7 @@ async function charge(){
           : "")
         +(e.solde==="gratuit"
           ? "<div class=\"bloc\"><div class=\"t\"><span>Crédits instantanés</span><b style=\"color:"+coul+"\">"+fmt((p.jour||{}).appels||0)+" <small>/ ~1000</small></b></div>"
-            +"<div class=\"d\">appels aujourd'hui sur le quota gratuit Google — remis à zéro chaque minuit · "+fmt((p.sem||{}).appels||0)+" appels sur 7 j · 0 € sous le quota</div></div>"
+            +"<div class=\"d\">appels aujourd'hui sur le quota gratuit Google — remis à zéro chaque minuit · "+fmt(e.n7||0)+" appels sur 7 j · 0 € sous le quota</div></div>"
           : "")
         +"<table class=\"conso\">"
         +"<tr><td>Aujourd'hui</td><td>"+gros(p.jour)+"</td><td style=\"color:"+coul+"\">"+eurCell(p.jour)+"</td></tr>"
