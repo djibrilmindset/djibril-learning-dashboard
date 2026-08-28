@@ -326,7 +326,7 @@ async function charge(){
     // ── payé à l'usage : le solde vient du fournisseur, les appels de nos journaux.
     // Aucun solde inventé : MiniMax, CometAPI et aihubmix n'en exposent pas, la case reste vide.
     const sv=d.services||{}, sol=sv.soldes||{};
-    const solTxt=k=>{
+    const _solTxt_morte=k=>{
       if(k==="gratuit")return ["gratuit","quota Google"];
       const b=sol[k];
       if(!b||!b.ok)return ["—",""];
@@ -389,7 +389,8 @@ async function charge(){
         +"<tr><td>Cette semaine</td><td>"+gros(p.sem)+"</td><td style=\"color:"+coul+"\">"+eurCell(p.sem)+"</td></tr>"
         +"<tr><td>Semaine dernière</td><td>"+gros(p.sem_prec)+"</td><td style=\"color:"+coul+"\">"+eurCell(p.sem_prec)+"</td></tr>"
         +"</table>"
-        +"<div class=\"preuve\"><b>"+fmt(e.n7)+"</b> appels sur 7 j · ~"+(e.cout7||0).toFixed(2).replace(".",",")+" $"
+        +"<div class=\"preuve\"><b>"+fmt(e.n7)+"</b> appels sur 7 j"
+        +((e.cout7||0)>0?" · ~"+e.cout7.toFixed(2).replace(".",",")+" $":" · coût non journalisé appel par appel")
         +" · dernier "+ilYA(e.dernier)
         +(e.solde==="gratuit"?" · gratuit, quota Google"
            :(sb?""
