@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated_at": "2026-08-27T22:00:29.045869Z",
+    "generated_at": "2026-08-28T00:00:30.891844Z",
     "window_hours": 24,
-    "total_calls": 73,
-    "total_cost_usd": 0.108679,
+    "total_calls": 83,
+    "total_cost_usd": 0.105027,
     "models_count": 8,
     "providers_count": 6,
     "errors_count": 0,
@@ -18,47 +18,37 @@
       "successes": 8,
       "errors": 0,
       "tokens_in": 4080,
-      "tokens_out": 12321,
-      "cost_usd": 0.10260749999999999
+      "tokens_out": 11676,
+      "cost_usd": 0.09777
     },
     {
       "model": "aihubmix/qwen3.8-max",
       "provider": "aihubmix",
-      "calls": 3,
-      "successes": 3,
+      "calls": 4,
+      "successes": 4,
       "errors": 0,
-      "tokens_in": 2373,
-      "tokens_out": 1233,
-      "cost_usd": 0.006072
+      "tokens_in": 2493,
+      "tokens_out": 1588,
+      "cost_usd": 0.0072569999999999996
     },
     {
-      "model": "glm-opencode/glm-5.3",
-      "provider": "glm-opencode",
-      "calls": 5,
-      "successes": 5,
+      "model": "glm-5.3-dsh",
+      "provider": "direct",
+      "calls": 10,
+      "successes": 10,
       "errors": 0,
-      "tokens_in": 127707,
-      "tokens_out": 13720,
+      "tokens_in": 792,
+      "tokens_out": 7556,
       "cost_usd": 0.0
     },
     {
       "model": "glm-direct/glm-5.3",
       "provider": "glm-direct",
-      "calls": 33,
-      "successes": 33,
+      "calls": 43,
+      "successes": 43,
       "errors": 0,
-      "tokens_in": 26725,
-      "tokens_out": 19233,
-      "cost_usd": 0.0
-    },
-    {
-      "model": "glm-5.3-dsh",
-      "provider": "direct",
-      "calls": 9,
-      "successes": 9,
-      "errors": 0,
-      "tokens_in": 727,
-      "tokens_out": 6765,
+      "tokens_in": 31537,
+      "tokens_out": 30825,
       "cost_usd": 0.0
     },
     {
@@ -89,6 +79,16 @@
       "errors": 0,
       "tokens_in": 2920,
       "tokens_out": 2789,
+      "cost_usd": 0.0
+    },
+    {
+      "model": "glm-opencode/glm-5.3",
+      "provider": "glm-opencode",
+      "calls": 3,
+      "successes": 3,
+      "errors": 0,
+      "tokens_in": 79589,
+      "tokens_out": 9548,
       "cost_usd": 0.0
     }
   ]
