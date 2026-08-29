@@ -358,7 +358,7 @@ async function charge(){
     const eurCell=q=>{q=q||{};return q.eur?EUR(q.eur):""};
     const ORDRE=["Bright Data · scraping","Gemini","OpenAI","DeepSeek"];
     const prk=e=>{const i=ORDRE.indexOf(e.nom);return i<0?ORDRE.length:i};
-    const RAISON={"OpenAI":"la clé n'a pas le scope <code>api.usage.read</code> (sonde 29/08) — une clé avec ce scope ouvrira le vrai solde","MiniMax":"aucun endpoint de compte (404, sonde 29/08)","CometAPI":"route facturation en panique côté serveur (500 ou 401 selon l'essai, sonde 29/08)","aihubmix":"solde réservé à la session web — la clé API reçoit 401 (sonde 29/08)"};
+    const RAISON={"OpenAI":"OpenAI n'attribue PAS le scope <code>api.usage.read</code> via l'UI des clés — presets Read only et All créés et testés le 29/08 : 403 aux deux, aucune catégorie Usage dans la liste Restricted — la dépense ne se lit que dans l'interface web (2,91 $/mois au 29/08)","MiniMax":"aucun endpoint de compte (404, sonde 29/08)","CometAPI":"route facturation en panique côté serveur (500 ou 401 selon l'essai, sonde 29/08)","aihubmix":"solde réservé à la session web — la clé API reçoit 401 (sonde 29/08)"};
     $("usage_cards").innerHTML=(sv.actifs||[]).slice().sort((a,b)=>prk(a)-prk(b)||(b.n7||0)-(a.n7||0)).map(e=>{
       const coul=COUL_USAGE[e.nom]||"var(--acc)", p=e.periodes||{};
       const sb=(e.solde&&e.solde!=="gratuit")?(sol[e.solde]||null):null;
