@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "generated_at": "2026-08-29T14:00:04.493051Z",
+    "generated_at": "2026-08-29T16:00:14.920890Z",
     "window_hours": 24,
     "total_calls": 120,
     "total_cost_usd": 0.129393,
@@ -11,17 +11,6 @@
     "error_count": 0
   },
   "entries": [
-    {
-      "ts": "2026-08-28T14:14:37Z",
-      "agent": "ATELIER",
-      "model": "glm-5.3-dsh",
-      "tier": 1,
-      "tokens_in": 125,
-      "tokens_out": 1066,
-      "cost_usd": 0,
-      "task_type": "atelier",
-      "result_summary": ""
-    },
     {
       "ts": "2026-08-28T16:00:22Z",
       "agent": "HERMES_CALL_GLM",
@@ -1329,6 +1318,17 @@
       "tokens_out": 146,
       "cost_usd": 0.000986,
       "task_type": "chinese",
+      "result_summary": ""
+    },
+    {
+      "ts": "2026-08-29T15:01:58Z",
+      "agent": "ATELIER",
+      "model": "glm-5.3-dsh",
+      "tier": 1,
+      "tokens_in": 46,
+      "tokens_out": 385,
+      "cost_usd": 0,
+      "task_type": "atelier",
       "result_summary": ""
     }
   ]
