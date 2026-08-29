@@ -8,7 +8,7 @@
   :root{
     --bg:#0b0e14; --card:#141925; --card2:#1a2130; --line:#232c3f;
     --txt:#e8edf7; --mut:#8b96ab; --acc:#5eead4;
-    --glm:#7cc5ff; --grok:#ff9d6b; --claude:#c9a6ff;
+    --glm:#7cc5ff; --grok:#ff9d6b; --claude:#c9a6ff; --qwen:#5fd4a8;
     --ok:#4ade80; --warn:#fbbf24; --ko:#f87171;
   }
   *{box-sizing:border-box;margin:0;padding:0}
@@ -39,8 +39,9 @@
   .card.glm{border-left-color:var(--glm)}
   .card.grok{border-left-color:var(--grok)}
   .card.claude{border-left-color:var(--claude)}
+  .card.qwen{border-left-color:var(--qwen)}
   .card h2{font-size:16px;font-weight:800;display:flex;align-items:center;gap:8px}
-  .card.glm h2{color:var(--glm)} .card.grok h2{color:var(--grok)} .card.claude h2{color:var(--claude)}
+  .card.glm h2{color:var(--glm)} .card.grok h2{color:var(--grok)} .card.claude h2{color:var(--claude)} .card.qwen h2{color:var(--qwen)}
   .card h2 .plan{margin-left:auto;font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--mut);border:1px solid var(--line);border-radius:99px;padding:3px 8px}
   .card .quoi{font-size:11px;color:var(--mut);margin-top:3px}
 
@@ -62,6 +63,7 @@
   .card.glm table.conso td:last-child{color:var(--glm)}
   .card.grok table.conso td:last-child{color:var(--grok)}
   .card.claude table.conso td:last-child{color:var(--claude)}
+  .card.qwen table.conso td:last-child{color:var(--qwen)}
   .preuve{font-size:10.5px;line-height:1.6;color:var(--mut);margin-top:11px;border-top:1px dashed var(--line);padding-top:9px}
   .preuve b{color:var(--txt);font-weight:750}
   .preuve em{font-style:normal;opacity:.75}
@@ -119,9 +121,9 @@
       <div><div class="n" style="font-size:22px" id="e_prec">— €</div><div class="l">la semaine dernière</div></div>
       <div><div class="n" style="font-size:22px" id="e_sem">— €</div><div class="l">cette semaine</div></div>
     </div>
-    <div class="split"><i id="sp_claude" style="background:var(--claude)"></i><i id="sp_glm" style="background:var(--glm)"></i><i id="sp_grok" style="background:var(--grok)"></i></div>
+    <div class="split"><i id="sp_qwen" style="background:var(--qwen)"></i><i id="sp_glm" style="background:var(--glm)"></i><i id="sp_grok" style="background:var(--grok)"></i></div>
     <div class="leg">
-      <span><i style="background:var(--claude)"></i>Claude <b id="l_claude">—</b></span>
+      <span><i style="background:var(--qwen)"></i>Qwen <b id="l_qwen">—</b></span>
       <span><i style="background:var(--glm)"></i>GLM 5.3 <b id="l_glm">—</b></span>
       <span><i style="background:var(--grok)"></i>Grok 4.6 <b id="l_grok">—</b></span>
     </div>
@@ -129,25 +131,29 @@
   </div>
 
   <div class="duocard">
-    <div class="card claude">
-      <h2><span>Claude</span><span class="plan" id="cl_plan">Max</span></h2>
-      <div class="quoi">compteurs des transcripts — aucun quota chiffré publié, pas de jauge</div>
+    <div class="card qwen">
+      <h2><span>Qwen</span><span class="plan" id="qw_plan">Alibaba · OpenRouter</span></h2>
+      <div class="quoi">compteur officiel OpenRouter — solde et dépenses réels en $ · tokens depuis notre helper local</div>
 
       <div class="bloc">
-        <div class="t"><span>Bloc 5 h en cours</span><b id="cl_bloc" style="color:var(--claude)">—</b></div>
-        <div class="d" id="cl_bloc_d">—</div>
+        <div class="t"><span>Solde réel du compte</span><b id="qw_solde" style="color:var(--qwen)">—</b></div>
+        <div class="d" id="qw_solde_d">—</div>
       </div>
       <div class="bloc">
-        <div class="t"><span>Semaine</span><b id="cl_sem" style="color:var(--claude)">—</b></div>
-        <div class="d" id="cl_sem_d">—</div>
+        <div class="t"><span>Fenêtre 5 h</span><b id="qw_tok" style="color:var(--qwen)">—</b></div>
+        <div class="d" id="qw_h5_d">—</div>
+      </div>
+      <div class="bloc">
+        <div class="t"><span>Dépense réelle — semaine</span><b id="qw_sem_usd" style="color:var(--qwen)">—</b></div>
+        <div class="d" id="qw_sem_d">—</div>
       </div>
 
       <table class="conso">
-        <tr><td>Aujourd'hui</td><td id="claude_j">—</td><td id="claude_j_e"></td></tr>
-        <tr><td>Cette semaine</td><td id="claude_s">—</td><td id="claude_s_e"></td></tr>
-        <tr><td>Semaine dernière</td><td id="claude_p">—</td><td id="claude_p_e"></td></tr>
+        <tr><td>Aujourd'hui</td><td id="qwen_j">—</td><td id="qwen_j_e"></td></tr>
+        <tr><td>Cette semaine</td><td id="qwen_s">—</td><td id="qwen_s_e"></td></tr>
+        <tr><td>Semaine dernière</td><td id="qwen_p">—</td><td id="qwen_p_e"></td></tr>
       </table>
-      <div class="preuve" id="claude_preuve"></div>
+      <div class="preuve" id="qwen_preuve"></div>
     </div>
 
     <div class="card glm">
@@ -200,43 +206,39 @@
     </div>
   </div>
 
-  <div class="svc" style="border-left:4px solid var(--glm)">
-    <h3 style="color:var(--glm)">GLM — quand et combien <small>tous les appels du Mac, clients confondus · tokens réels comptés par z.ai</small></h3>
-    <div class="tl">
-      <div class="t"><span>48 dernières heures, seau par seau</span><b id="tl48_max">—</b></div>
-      <div class="timeline" id="tl48"></div>
-      <div class="tl_leg" id="tl48_leg"></div>
-    </div>
-    <div class="tl">
-      <div class="t"><span>À quelle heure de la journée — Paris (7 j)</span><b id="tlh_max">—</b></div>
-      <div class="timeline petit" id="tlh"></div>
-      <div class="tl_leg" id="tlh_leg"></div>
-    </div>
-    <div class="tl">
-      <div class="t"><span>Jour par jour — heure de Paris</span><b id="tlj_max">—</b></div>
-      <div class="timeline petit" id="tlj"></div>
-      <div class="tl_leg" id="tlj_leg"></div>
-    </div>
-    <div class="tl">
-      <div class="t"><span>90 jours — journées découpées chez z.ai</span><b id="tl90_max">—</b></div>
-      <div class="timeline petit" id="tl90"></div>
-      <div class="tl_leg" id="tl90_leg"></div>
-    </div>
-    <div class="bloc" style="margin-top:13px">
-      <div class="t"><span>Soldes restants — compteur officiel z.ai</span><b id="tl_solde" style="color:var(--glm)">—</b></div>
-      <div class="d" id="tl_solde_d"></div>
-    </div>
-    <details style="margin-top:12px">
-      <summary>🔎 Par modèle z.ai, par client local, plus gros appels</summary>
-      <div id="glm_qui"></div>
-    </details>
-  </div>
+  <!-- « GLM — quand et combien » retiré à la demande du propriétaire (29/08).
+       Les données restent générées dans abonnement.json (glm.reel) : rien n'est perdu. -->
 
   <div style="margin-top:22px">
     <h3 style="font-size:13px;font-weight:800;letter-spacing:.2px">À l'usage, tous les jours</h3>
     <div style="color:var(--mut);font-weight:600;font-size:10px;letter-spacing:.9px;text-transform:uppercase;margin-top:3px">les API du quotidien — même représentation que les abonnements</div>
   </div>
   <div class="duocard" id="usage_cards"></div>
+
+  <!-- Claude, descendu en bas à la demande du propriétaire (29/08) : l'abonnement est
+       coupé, la carte ne reflète plus que l'historique. Qwen occupe sa place en haut. -->
+  <div class="duocard" style="margin-top:18px">
+    <div class="card claude">
+      <h2><span>Claude</span><span class="plan" id="cl_plan">Max</span></h2>
+      <div class="quoi">abonnement coupé le 29/08 (Claude OFF) — compteurs historiques des transcripts, plus d'usage nouveau</div>
+
+      <div class="bloc">
+        <div class="t"><span>Bloc 5 h en cours</span><b id="cl_bloc" style="color:var(--claude)">—</b></div>
+        <div class="d" id="cl_bloc_d">—</div>
+      </div>
+      <div class="bloc">
+        <div class="t"><span>Semaine</span><b id="cl_sem" style="color:var(--claude)">—</b></div>
+        <div class="d" id="cl_sem_d">—</div>
+      </div>
+
+      <table class="conso">
+        <tr><td>Aujourd'hui</td><td id="claude_j">—</td><td id="claude_j_e"></td></tr>
+        <tr><td>Cette semaine</td><td id="claude_s">—</td><td id="claude_s_e"></td></tr>
+        <tr><td>Semaine dernière</td><td id="claude_p">—</td><td id="claude_p_e"></td></tr>
+      </table>
+      <div class="preuve" id="claude_preuve"></div>
+    </div>
+  </div>
 
   <div class="svc">
     <h3>Hors des cartes <small>clés en place, aucun appel depuis plus de 7 jours — réveillables à la demande</small></h3>
@@ -377,10 +379,10 @@ async function charge(){
     const e=d.economie||{}, pm=d.par_moteur_eur||{}, cl=d.claude||{};
     $("e_sem").textContent=EUR(e.semaine_eur); $("e_tot").textContent=EUR(e.total_eur);
     $("e_prec").textContent=EUR((cl.semaine_derniere_eur||0)+((d.glm.reel||{}).semaine_derniere_eur||0)+((d.grok.periodes||{}).semaine_derniere_eur||0));
-    const c=pm.claude_total||0, a=pm.glm_total||0, b=pm.grok_total||0, t=c+a+b;
-    $("sp_claude").style.width=(t?c/t*100:34)+"%";
+    const c=pm.qwen_total||0, a=pm.glm_total||0, b=pm.grok_total||0, t=c+a+b;
+    $("sp_qwen").style.width=(t?c/t*100:34)+"%";
     $("sp_glm").style.width=(t?a/t*100:33)+"%"; $("sp_grok").style.width=(t?b/t*100:33)+"%";
-    $("l_claude").textContent=EUR(c)+(t?" · "+Math.round(c/t*100)+" %":"");
+    $("l_qwen").textContent=EUR(c)+(t?" · "+Math.round(c/t*100)+" %":"");
     $("l_glm").textContent=EUR(a)+(t?" · "+Math.round(a/t*100)+" %":"");
     $("l_grok").textContent=EUR(b)+(t?" · "+Math.round(b/t*100)+" %":"");
 
@@ -405,6 +407,39 @@ async function charge(){
                       semaine_derniere:cl.semaine_derniere,semaine_derniere_eur:cl.semaine_derniere_eur,
                       depuis:cl.depuis});
     }else{ $("cl_bloc_d").textContent="lecture des transcripts impossible"+(cl.erreur?" : "+cl.erreur:""); }
+
+    // ── Qwen (Alibaba) via OpenRouter : solde et dépenses RÉELS (compteur officiel),
+    // tokens depuis notre journal local (helper openrouter_call.sh). Journal démarré
+    // le 29/08 : un historique vide est honnête, la page l'écrit plutôt que d'inventer.
+    const q=d.qwen||{}, qr=q.reel||{};
+    if(qr.ok){
+      const sd=(qr.usd!=null)?qr.usd:null;
+      $("qw_solde").textContent=sd==null?"—":sd.toFixed(2).replace(".",",")+" $";
+      $("qw_solde").style.color=(sd!=null&&sd<3)?"var(--warn)":"var(--qwen)";
+      $("qw_solde_d").innerHTML="crédits "+(qr.credits!=null?qr.credits.toFixed(2).replace(".",","):"—")
+        +" $ · dépense compte "+(qr.usage_total!=null?qr.usage_total.toFixed(2).replace(".",","):"—")
+        +" $ (toutes clés, depuis le début)"
+        +(sd!=null&&sd<3?"<br>⚠ <b>à recharger</b> — au-delà, les appels sont refusés (402)":"");
+      $("qw_plan").textContent="Alibaba · OpenRouter";
+    }else{
+      $("qw_solde").textContent="—";
+      $("qw_solde_d").textContent="compteur OpenRouter indisponible"+(qr.erreur?" : "+qr.erreur:"");
+    }
+    const qh5=q.h5||{}, qs=q.semaine||{}, qsp=q.semaine_derniere||{}, qj=q.aujourd_hui||{};
+    $("qw_tok").textContent=M((qh5.tin||0)+(qh5.tout||0));
+    $("qw_h5_d").innerHTML=fmt(qh5.appels||0)+" appels dans les 5 dernières heures"
+      +(q.journal_existe?"":"<br>journal local démarré le 29/08 — l'historique d'avant n'existe pas");
+    $("qw_sem_usd").textContent=((q.semaine_usd_reel!=null)?q.semaine_usd_reel.toFixed(2).replace(".",","):"—")+" $";
+    $("qw_sem_d").innerHTML=fmt(qs.appels||0)+" appels depuis lundi · mois calendaire : "
+      +((q.mois_usd_reel!=null)?q.mois_usd_reel.toFixed(2).replace(".",","):"—")+" $";
+    $("qwen_j").textContent=M((qj.tin||0)+(qj.tout||0));
+    $("qwen_j_e").textContent=(q.aujourd_hui_usd_reel!=null&&q.aujourd_hui_usd_reel>0)?q.aujourd_hui_usd_reel.toFixed(3).replace(".",",")+" $":"";
+    $("qwen_s").textContent=M((qs.tin||0)+(qs.tout||0));
+    $("qwen_s_e").textContent=(q.semaine_usd_reel!=null&&q.semaine_usd_reel>0)?q.semaine_usd_reel.toFixed(3).replace(".",",")+" $":"";
+    $("qwen_p").textContent=M((qsp.tin||0)+(qsp.tout||0));
+    $("qwen_p_e").textContent="";
+    $("qwen_preuve").innerHTML="source : "+(q.source||"openrouter_llm_calls.jsonl + api.openrouter.ai")
+      +(q.dernier?" · dernier appel "+hFR(new Date(q.dernier).getTime()):"");
     const evite=(e.total_eur_plein||0)-(e.total_eur||0);
     $("e_cache").innerHTML="Sans le cache, la même conso coûterait <b>"+EUR(e.total_eur_plein)
       +"</b> : le contexte déjà vu, refacturé moins cher, t'en évite <b>"+EUR(evite)
@@ -424,7 +459,7 @@ async function charge(){
       j("g5",z.fenetre_5h,false); j("gw",z.hebdo,true);
     }else{ $("g5_num").textContent="compteur z.ai indisponible"; }
     conso("glm",d.glm.reel||{});
-    try{ glmTemps(d); }catch(e2){ console.error("glmTemps", e2); } // la série ne doit jamais tuer la page
+    // série « quand et combien » retirée à la demande du propriétaire (29/08) — les données restent émises dans abonnement.json (glm.reel)
 
     // ── Grok : AUCUN plafond publié par x.ai. Donc aucune jauge, aucun pourcentage
     // inventé : uniquement les compteurs que l'API renvoie à chaque tour, et le
@@ -559,7 +594,7 @@ async function charge(){
       +"<b>Pourquoi des millions de tokens ?</b> À chaque aller-retour, tout l'historique de la conversation repart au modèle. "
       +"Un tour Grok pèse en moyenne <b>"+fmt(p.moyenne_par_tour)+"</b> tokens, dont les trois quarts sont du texte déjà envoyé. Ce n'est pas de la frappe, c'est de la relecture."
       +(rz?"<br><b>Piège z.ai</b> : leur propre console affiche <b>"+hFR(rz,"Asia/Shanghai")+"</b> pour la prochaine remise à zéro — elle rend tout en heure de Pékin (+8 h) sans l'écrire. Ici c'est <b>"+hFR(rz)+"</b>.":"")
-      +"<br><b>La série « quand et combien »</b> lit les mêmes compteurs que la console z.ai : seaux horaires de <code>/monitor/usage/model-usage</code> re-répartis à l'heure de Paris, série longue <code>/monitor/credit-usage/activity</code> gardée en dates brutes z.ai (heure de Pékin — un jour z.ai commence vers 18 h chez toi). Sonde du 29/08 : z.ai n'expose AUCUN solde pay-as-you-go (8 routes wallet/balance testées, toutes « route inexistante ») — le seul solde réel, c'est celui des fenêtres affichées ci-dessus.";
+      +"<br><b>Qwen (Alibaba)</b> : les dollars viennent du compteur officiel OpenRouter (<code>/api/v1/credits</code> + <code>/key</code> — la dépense réelle, pas une estimation), les tokens de notre journal local <code>openrouter_llm_calls.jsonl</code> (démarré le 29/08). Le détail par modèle d'OpenRouter exige une clé « management » (403 aux clés normales, sonde 29/08) : le découpage affiché est celui de nos propres appels. La section « quand et combien » a été retirée à ta demande le 29/08 — les données continuent d'être générées dans <code>abonnement.json</code>.";
     if($("tx"))$("tx").textContent="1 $ = "+d.usd_eur.toFixed(2)+" €";
     $("err").style.display="none"; tick();
   }catch(err){
