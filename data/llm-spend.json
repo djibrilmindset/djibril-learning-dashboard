@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated_at": "2026-08-29T12:00:53.395357Z",
+    "generated_at": "2026-08-29T14:00:04.493051Z",
     "window_hours": 24,
-    "total_calls": 129,
-    "total_cost_usd": 0.157621,
+    "total_calls": 120,
+    "total_cost_usd": 0.129393,
     "models_count": 8,
     "providers_count": 6,
     "errors_count": 0,
@@ -14,51 +14,51 @@
     {
       "model": "comet/qwen3.7-max",
       "provider": "comet",
-      "calls": 10,
-      "successes": 10,
+      "calls": 8,
+      "successes": 8,
       "errors": 0,
-      "tokens_in": 5100,
-      "tokens_out": 15862,
-      "cost_usd": 0.131715
+      "tokens_in": 4080,
+      "tokens_out": 12768,
+      "cost_usd": 0.10596
     },
     {
       "model": "aihubmix/qwen3.8-max",
       "provider": "aihubmix",
-      "calls": 15,
-      "successes": 15,
+      "calls": 13,
+      "successes": 13,
       "errors": 0,
-      "tokens_in": 9343,
-      "tokens_out": 5521,
-      "cost_usd": 0.025906000000000002
+      "tokens_in": 8247,
+      "tokens_out": 5062,
+      "cost_usd": 0.023433
+    },
+    {
+      "model": "glm-5.3-dsh",
+      "provider": "direct",
+      "calls": 11,
+      "successes": 11,
+      "errors": 0,
+      "tokens_in": 1388,
+      "tokens_out": 8971,
+      "cost_usd": 0.0
     },
     {
       "model": "glm-direct/glm-5.3",
       "provider": "glm-direct",
-      "calls": 61,
-      "successes": 61,
+      "calls": 56,
+      "successes": 56,
       "errors": 0,
-      "tokens_in": 49499,
-      "tokens_out": 59155,
+      "tokens_in": 49079,
+      "tokens_out": 59755,
       "cost_usd": 0.0
     },
     {
       "model": "hermes-agent/glm-5.3",
       "provider": "hermes-agent",
-      "calls": 20,
-      "successes": 20,
+      "calls": 19,
+      "successes": 19,
       "errors": 0,
-      "tokens_in": 7811,
-      "tokens_out": 7768,
-      "cost_usd": 0.0
-    },
-    {
-      "model": "glm-5.3-dsh",
-      "provider": "direct",
-      "calls": 10,
-      "successes": 10,
-      "errors": 0,
-      "tokens_in": 1300,
-      "tokens_out": 8794,
+      "tokens_in": 7673,
+      "tokens_out": 7373,
       "cost_usd": 0.0
     },
     {
