@@ -433,7 +433,6 @@ async function charge(){
       $("qw_plan").textContent="Alibaba · Token Plan";
     }
     $("qwen_preuve").innerHTML="source : "+(qc.source||"home.qwencloud.com — passerelle OneConsole (zelda)")+(qc.mesure_at?" · mesuré à "+hFR(new Date(qc.mesure_at).getTime()):"");
-      +(q.dernier?" · dernier appel "+hFR(new Date(q.dernier).getTime()):"");
     const evite=(e.total_eur_plein||0)-(e.total_eur||0);
     $("e_cache").innerHTML="Sans le cache, la même conso coûterait <b>"+EUR(e.total_eur_plein)
       +"</b> : le contexte déjà vu, refacturé moins cher, t'en évite <b>"+EUR(evite)
