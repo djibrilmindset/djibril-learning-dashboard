@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated_at": "2026-08-29T18:00:24.772278Z",
+    "generated_at": "2026-08-29T20:00:35.706774Z",
     "window_hours": 24,
-    "total_calls": 122,
-    "total_cost_usd": 0.12951,
+    "total_calls": 121,
+    "total_cost_usd": 0.137416,
     "models_count": 8,
     "providers_count": 6,
     "errors_count": 0,
@@ -18,8 +18,8 @@
       "successes": 8,
       "errors": 0,
       "tokens_in": 4080,
-      "tokens_out": 12814,
-      "cost_usd": 0.106305
+      "tokens_out": 13843,
+      "cost_usd": 0.1140225
     },
     {
       "model": "aihubmix/qwen3.8-max",
@@ -28,27 +28,17 @@
       "successes": 13,
       "errors": 0,
       "tokens_in": 8247,
-      "tokens_out": 4986,
-      "cost_usd": 0.023205
+      "tokens_out": 5049,
+      "cost_usd": 0.023394
     },
     {
       "model": "glm-5.3-dsh",
       "provider": "direct",
-      "calls": 11,
-      "successes": 11,
+      "calls": 10,
+      "successes": 10,
       "errors": 0,
-      "tokens_in": 1309,
-      "tokens_out": 8290,
-      "cost_usd": 0.0
-    },
-    {
-      "model": "glm-direct/glm-5.3",
-      "provider": "glm-direct",
-      "calls": 57,
-      "successes": 57,
-      "errors": 0,
-      "tokens_in": 50557,
-      "tokens_out": 64429,
+      "tokens_in": 1185,
+      "tokens_out": 7394,
       "cost_usd": 0.0
     },
     {
@@ -69,6 +59,16 @@
       "errors": 0,
       "tokens_in": 8221,
       "tokens_out": 7801,
+      "cost_usd": 0.0
+    },
+    {
+      "model": "glm-direct/glm-5.3",
+      "provider": "glm-direct",
+      "calls": 57,
+      "successes": 57,
+      "errors": 0,
+      "tokens_in": 50557,
+      "tokens_out": 65437,
       "cost_usd": 0.0
     },
     {
