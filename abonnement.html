@@ -84,6 +84,21 @@
   .svc td.q{text-align:right;color:var(--mut);font-size:11.5px;white-space:nowrap}
   .svc td small{display:block;color:var(--mut);font-weight:600;font-size:10.5px;margin-top:2px;white-space:normal}
   .svc .dorm{font-size:10.5px;color:var(--mut);line-height:1.6;margin-top:11px;border-top:1px dashed var(--line);padding-top:9px}
+  /* ── GLM : la série dans le temps ──────────────────────────── */
+  .tl{margin-top:11px}
+  .tl .t{display:flex;align-items:baseline;justify-content:space-between;gap:8px}
+  .tl .t span{font-size:10px;text-transform:uppercase;letter-spacing:1px;color:var(--mut)}
+  .tl .t b{font-size:12.5px;font-weight:800;color:var(--glm);font-variant-numeric:tabular-nums}
+  .timeline{display:flex;align-items:flex-end;gap:2px;height:74px;background:#0a0f1a;border:1px solid var(--line);border-radius:10px;padding:6px 6px 0;margin-top:5px}
+  .timeline i{flex:1;min-width:2px;background:var(--glm);border-radius:2px 2px 0 0;opacity:.9}
+  .timeline i.nul{background:#1a2333}
+  .timeline.petit{height:44px;gap:1px}
+  .tl_leg{display:flex;justify-content:space-between;font-size:9.5px;color:var(--mut);margin-top:3px;font-variant-numeric:tabular-nums}
+  .tl table{width:100%;border-collapse:collapse;margin-top:6px;font-size:11.5px}
+  .tl td{padding:5px 4px;border-bottom:1px solid #1b2231;color:var(--mut);font-variant-numeric:tabular-nums}
+  .tl td:first-child{color:var(--txt)}
+  .tl td.n{text-align:right}
+  .tl b{color:var(--txt)}
   .note{font-size:11px;line-height:1.7;color:var(--mut);margin-top:16px}
   .note b{color:var(--txt)}
   .live{position:fixed;top:10px;right:12px;font-size:11px;color:var(--mut);background:var(--card);border:1px solid var(--line);border-radius:99px;padding:4px 10px}
@@ -185,6 +200,38 @@
     </div>
   </div>
 
+  <div class="svc" style="border-left:4px solid var(--glm)">
+    <h3 style="color:var(--glm)">GLM — quand et combien <small>tous les appels du Mac, clients confondus · tokens réels comptés par z.ai</small></h3>
+    <div class="tl">
+      <div class="t"><span>48 dernières heures, seau par seau</span><b id="tl48_max">—</b></div>
+      <div class="timeline" id="tl48"></div>
+      <div class="tl_leg" id="tl48_leg"></div>
+    </div>
+    <div class="tl">
+      <div class="t"><span>À quelle heure de la journée — Paris (7 j)</span><b id="tlh_max">—</b></div>
+      <div class="timeline petit" id="tlh"></div>
+      <div class="tl_leg" id="tlh_leg"></div>
+    </div>
+    <div class="tl">
+      <div class="t"><span>Jour par jour — heure de Paris</span><b id="tlj_max">—</b></div>
+      <div class="timeline petit" id="tlj"></div>
+      <div class="tl_leg" id="tlj_leg"></div>
+    </div>
+    <div class="tl">
+      <div class="t"><span>90 jours — journées découpées chez z.ai</span><b id="tl90_max">—</b></div>
+      <div class="timeline petit" id="tl90"></div>
+      <div class="tl_leg" id="tl90_leg"></div>
+    </div>
+    <div class="bloc" style="margin-top:13px">
+      <div class="t"><span>Soldes restants — compteur officiel z.ai</span><b id="tl_solde" style="color:var(--glm)">—</b></div>
+      <div class="d" id="tl_solde_d"></div>
+    </div>
+    <details style="margin-top:12px">
+      <summary>🔎 Par modèle z.ai, par client local, plus gros appels</summary>
+      <div id="glm_qui"></div>
+    </details>
+  </div>
+
   <div style="margin-top:22px">
     <h3 style="font-size:13px;font-weight:800;letter-spacing:.2px">À l'usage, tous les jours</h3>
     <div style="color:var(--mut);font-weight:600;font-size:10px;letter-spacing:.9px;text-transform:uppercase;margin-top:3px">les API du quotidien — même représentation que les abonnements</div>
@@ -202,6 +249,10 @@
 
 <script>
 const $=id=>document.getElementById(id);
+// Leçon banc ATTAQUANT 29/08 : les chaînes du JSON viennent de l'API z.ai, pas de
+// l'utilisateur — elles finissent quand même dans title= et innerHTML, donc elles
+// s'échappent. Toujours.
+const esc=s=>String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#39;");
 const fmt=n=>n==null?"—":n.toLocaleString("fr-FR");
 const M=n=>n==null?"—":n>=1e9?(n/1e9).toFixed(2).replace(".",",")+" Md":n>=1e6?(n/1e6).toFixed(1).replace(".",",")+" M":n>=1e3?Math.round(n/1e3)+" k":""+n;
 const ilYA=iso=>{if(!iso)return"—";const s=(Date.now()-new Date(iso))/1e3;
@@ -225,6 +276,80 @@ function restant(ms){
 }
 function tick(){for(const k in RESETS){const e=$(k+"_in");if(e)e.innerHTML=restant(RESETS[k]);}}
 function lundiIci(){const n=new Date(),l=new Date(n);l.setHours(0,0,0,0);l.setDate(l.getDate()-((n.getDay()+6)%7));return l;}
+
+// ── GLM dans le temps (demande du 29/08 : « voir quand j'utilise l'API ») ─────
+// Un <i> par seau, hauteur ∝ tokens, tooltip = la mesure réelle. Un seau vide reste
+// affiché (base sombre) : un silence fait partie du graphe, on ne le gomme pas.
+function tlBarres(id,pts,legId,legHtml,maxId){
+  const mx=Math.max(1,...pts.map(p=>Number(p[1])||0));
+  $(id).innerHTML=pts.map(p=>{const v=Number(p[1])||0;
+    return "<i"+(v>0?"":" class='nul'")+" style='height:"+Math.max(v>0?4:0,Math.round(v/mx*100))+"%' title='"+esc(p[2])+"'></i>";}).join("");
+  if(maxId)$(maxId).textContent="pic "+M(mx);
+  $(legId).innerHTML=legHtml||"<span></span><span></span>";
+}
+function glmTemps(d){
+  const g=(d.glm||{}).reel||{}, z=d.zai_reel||{};
+  const jH=new Intl.DateTimeFormat("fr-FR",{timeZone:"Europe/Paris",weekday:"short",day:"numeric",hour:"2-digit"}).format;
+  const jJ=new Intl.DateTimeFormat("fr-FR",{timeZone:"Europe/Paris",weekday:"short",day:"numeric",month:"short"}).format;
+  const dJ=s=>{const t=new Date(String(s)+"T12:00:00+02:00");return isNaN(t)?null:jJ(t);};
+  // Leçon banc ATTAQUANT 29/08 : un crash au milieu du rendu avorte TOUT ce qui suit,
+  // en silence. Chaque bloc se noie seul : un seau pourri coûte un graphique, pas la page.
+  const bloc=f=>{try{f()}catch(e){console.error("glmTemps",e);}};
+  bloc(()=>{
+    const h48=g.heures||[];
+    if(h48.length){
+      tlBarres("tl48",h48.map(p=>[p[0],p[1],jH(p[0])+" — "+M(p[1])+" tokens · "+fmt(p[2])+" appels"]),
+        "tl48_leg","<span>"+jH(h48[0][0])+"</span><span>maintenant</span>","tl48_max");
+    }else $("tl48").innerHTML="<span class='vide' style='padding:8px'>série horaire indisponible</span>";
+  });
+  bloc(()=>{
+    const hj=g.heures_journee||[];
+    if(hj.length===24){
+      tlBarres("tlh",hj.map((v,h)=>[h,v,h+" h — "+M(v)+" tokens sur 7 j"]),
+        "tlh_leg","<span>0 h</span><span>6</span><span>12</span><span>18</span><span>23 h</span>","tlh_max");
+    }else $("tlh").innerHTML="<span class='vide' style='padding:8px'>indisponible</span>";
+  });
+  bloc(()=>{
+    const jrs=g.jours||[];
+    if(jrs.length){
+      tlBarres("tlj",jrs.map(j=>[j.jour,j.tokens,j.jour+" — "+M(j.tokens)+" tokens · "+fmt(j.appels)+" appels"+(j.partiel?" · partiel":"")]),
+        "tlj_leg","<span>"+(dJ(jrs[0].jour)||"—")+"</span><span>"+(dJ(jrs[jrs.length-1].jour)||"—")+"</span>","tlj_max");
+    }else $("tlj").innerHTML="<span class='vide' style='padding:8px'>indisponible</span>";
+  });
+  bloc(()=>{
+    const j90=((g.jours90||{}).jours)||[];
+    if(j90.length){
+      tlBarres("tl90",j90.map(j=>[j.date,j.tokens,j.date+" (jour z.ai) — "+M(j.tokens)+" tokens · "+j.credits+" crédits"]),
+        "tl90_leg","<span>"+esc(j90[0].date)+"</span><span>"+esc(j90[j90.length-1].date)+"</span>","tl90_max");
+    }else $("tl90").innerHTML="<span class='vide' style='padding:8px'>"+esc(g.jours90_erreur||"série indisponible")+"</span>";
+  });
+  bloc(()=>{
+    // Le seul solde que z.ai expose : les fenêtres du compteur officiel (sonde 29/08 :
+    // aucune route wallet/balance — on n'invente pas de solde pay-as-you-go).
+    if(z.ok){
+      const q5=z.fenetre_5h||{}, qw=z.hebdo||{};
+      $("tl_solde").textContent=M(q5.restant)+" / "+M(q5.plafond)+" · semaine "+M(qw.restant)+" / "+M(qw.plafond);
+      // garde banc ATTAQUANT : une fenêtre peut arriver sans reset_ms — jamais de
+      // hFR(undefined), qui tuait tout le bloc en silence.
+      $("tl_solde_d").innerHTML="crédits restants"
+        +(q5.reset_ms?": la fenêtre 5 h repart à <b>"+hFR(q5.reset_ms)+"</b>":"")
+        +(qw.reset_ms?", la semaine le <b>"+jFR(qw.reset_ms)+"</b>":"")
+        +" — z.ai n'expose pas d'autre solde.";
+    }else $("tl_solde").textContent="compteur z.ai indisponible";
+  });
+  bloc(()=>{
+    // qui consomme : modèles z.ai (réel), clients locaux et gros appels (journaux, indicatif)
+    const mods=g.modeles_semaine||[], vars=(d.glm||{}).par_variante||[], top=(d.glm||{}).top_appels||[];
+    $("glm_qui").innerHTML=
+      (mods.length?"<b>Par modèle — compteur z.ai, semaine en cours</b><table>"+mods.map(m=>
+        "<tr><td>"+esc(m.modele)+"</td><td class='n'>"+M(m.tokens)+" tokens</td></tr>").join("")+"</table>":"")
+      +(vars.length?"<b>Par client local — nos journaux, INDICATIF : dsh et OpenCode échappent en partie au comptage local</b><table>"+vars.slice(0,8).map(v=>
+        "<tr><td>"+esc(v.nom)+"</td><td class='n'>"+fmt(v.appels)+" appels</td><td class='n'>"+M((v.tin||0)+(v.tout||0))+"</td></tr>").join("")+"</table>":"")
+      +(top.length?"<b>Plus gros appels — journaux locaux</b><table>"+top.map(t=>
+        "<tr><td>"+(t.quand?new Date(t.quand).toLocaleString("fr-FR",{day:"2-digit",month:"2-digit",hour:"2-digit",minute:"2-digit"}):"?")+" · "+esc(t.variante)+"</td><td class='n'>"+M((t.tin||0)+(t.tout||0))+"</td></tr>").join("")+"</table>":"")
+      +(mods.length||vars.length||top.length?"":"—");
+  });
+}
 
 // « Semaine dernière » ne s'affiche que si l'historique remonte réellement plus haut :
 // sinon « — », jamais un zéro qui laisserait croire à une semaine sans conso.
@@ -299,6 +424,7 @@ async function charge(){
       j("g5",z.fenetre_5h,false); j("gw",z.hebdo,true);
     }else{ $("g5_num").textContent="compteur z.ai indisponible"; }
     conso("glm",d.glm.reel||{});
+    try{ glmTemps(d); }catch(e2){ console.error("glmTemps", e2); } // la série ne doit jamais tuer la page
 
     // ── Grok : AUCUN plafond publié par x.ai. Donc aucune jauge, aucun pourcentage
     // inventé : uniquement les compteurs que l'API renvoie à chaque tour, et le
@@ -432,7 +558,8 @@ async function charge(){
       +"Seule approximation, écrite : z.ai ne dit pas la part entrée / déjà vu / sortie de ses tokens, on applique le mélange mesuré sur la part locale.<br>"
       +"<b>Pourquoi des millions de tokens ?</b> À chaque aller-retour, tout l'historique de la conversation repart au modèle. "
       +"Un tour Grok pèse en moyenne <b>"+fmt(p.moyenne_par_tour)+"</b> tokens, dont les trois quarts sont du texte déjà envoyé. Ce n'est pas de la frappe, c'est de la relecture."
-      +(rz?"<br><b>Piège z.ai</b> : leur propre console affiche <b>"+hFR(rz,"Asia/Shanghai")+"</b> pour la prochaine remise à zéro — elle rend tout en heure de Pékin (+8 h) sans l'écrire. Ici c'est <b>"+hFR(rz)+"</b>.":"");
+      +(rz?"<br><b>Piège z.ai</b> : leur propre console affiche <b>"+hFR(rz,"Asia/Shanghai")+"</b> pour la prochaine remise à zéro — elle rend tout en heure de Pékin (+8 h) sans l'écrire. Ici c'est <b>"+hFR(rz)+"</b>.":"")
+      +"<br><b>La série « quand et combien »</b> lit les mêmes compteurs que la console z.ai : seaux horaires de <code>/monitor/usage/model-usage</code> re-répartis à l'heure de Paris, série longue <code>/monitor/credit-usage/activity</code> gardée en dates brutes z.ai (heure de Pékin — un jour z.ai commence vers 18 h chez toi). Sonde du 29/08 : z.ai n'expose AUCUN solde pay-as-you-go (8 routes wallet/balance testées, toutes « route inexistante ») — le seul solde réel, c'est celui des fenêtres affichées ci-dessus.";
     if($("tx"))$("tx").textContent="1 $ = "+d.usd_eur.toFixed(2)+" €";
     $("err").style.display="none"; tick();
   }catch(err){
