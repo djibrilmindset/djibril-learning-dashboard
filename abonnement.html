@@ -121,9 +121,9 @@
       <div><div class="n" style="font-size:22px" id="e_prec">— €</div><div class="l">la semaine dernière</div></div>
       <div><div class="n" style="font-size:22px" id="e_sem">— €</div><div class="l">cette semaine</div></div>
     </div>
-    <div class="split"><i id="sp_qwen" style="background:var(--qwen)"></i><i id="sp_glm" style="background:var(--glm)"></i><i id="sp_grok" style="background:var(--grok)"></i></div>
+    <div class="split"><i id="sp_claude" style="background:var(--claude)"></i><i id="sp_glm" style="background:var(--glm)"></i><i id="sp_grok" style="background:var(--grok)"></i></div>
     <div class="leg">
-      <span><i style="background:var(--qwen)"></i>Qwen <b id="l_qwen">—</b></span>
+      <span><i style="background:var(--claude)"></i>Claude <b id="l_claude">—</b></span>
       <span><i style="background:var(--glm)"></i>GLM 5.3 <b id="l_glm">—</b></span>
       <span><i style="background:var(--grok)"></i>Grok 4.6 <b id="l_grok">—</b></span>
     </div>
@@ -136,23 +136,19 @@
       <div class="quoi">compteur officiel OpenRouter — solde et dépenses réels en $ · tokens depuis notre helper local</div>
 
       <div class="bloc">
-        <div class="t"><span>Solde réel du compte</span><b id="qw_solde" style="color:var(--qwen)">—</b></div>
-        <div class="d" id="qw_solde_d">—</div>
+        <div class="t"><span>Plan 7 jours</span><b id="qw_sem_pct" style="color:var(--qwen)">—</b></div>
+        <div class="bar"><i id="qw_sem_bar" style="width:0"></i></div>
+        <div class="d" id="qw_sem_d">—</div>
       </div>
       <div class="bloc">
-        <div class="t"><span>Fenêtre 5 h</span><b id="qw_tok" style="color:var(--qwen)">—</b></div>
+        <div class="t"><span>Fenêtre 5 h</span><b id="qw_h5_pct" style="color:var(--qwen)">—</b></div>
+        <div class="bar"><i id="qw_h5_bar" style="width:0"></i></div>
         <div class="d" id="qw_h5_d">—</div>
       </div>
       <div class="bloc">
-        <div class="t"><span>Dépense réelle — semaine</span><b id="qw_sem_usd" style="color:var(--qwen)">—</b></div>
-        <div class="d" id="qw_sem_d">—</div>
+        <div class="t"><span>Abonnement</span><b id="qw_plan_lbl" style="color:var(--qwen)">—</b></div>
+        <div class="d" id="qw_plan_d">—</div>
       </div>
-
-      <table class="conso">
-        <tr><td>Aujourd'hui</td><td id="qwen_j">—</td><td id="qwen_j_e"></td></tr>
-        <tr><td>Cette semaine</td><td id="qwen_s">—</td><td id="qwen_s_e"></td></tr>
-        <tr><td>Semaine dernière</td><td id="qwen_p">—</td><td id="qwen_p_e"></td></tr>
-      </table>
       <div class="preuve" id="qwen_preuve"></div>
     </div>
 
@@ -379,10 +375,10 @@ async function charge(){
     const e=d.economie||{}, pm=d.par_moteur_eur||{}, cl=d.claude||{};
     $("e_sem").textContent=EUR(e.semaine_eur); $("e_tot").textContent=EUR(e.total_eur);
     $("e_prec").textContent=EUR((cl.semaine_derniere_eur||0)+((d.glm.reel||{}).semaine_derniere_eur||0)+((d.grok.periodes||{}).semaine_derniere_eur||0));
-    const c=pm.qwen_total||0, a=pm.glm_total||0, b=pm.grok_total||0, t=c+a+b;
-    $("sp_qwen").style.width=(t?c/t*100:34)+"%";
+    const c=pm.claude_total||0, a=pm.glm_total||0, b=pm.grok_total||0, t=c+a+b;
+    $("sp_claude").style.width=(t?c/t*100:34)+"%";
     $("sp_glm").style.width=(t?a/t*100:33)+"%"; $("sp_grok").style.width=(t?b/t*100:33)+"%";
-    $("l_qwen").textContent=EUR(c)+(t?" · "+Math.round(c/t*100)+" %":"");
+    $("l_claude").textContent=EUR(c)+(t?" · "+Math.round(c/t*100)+" %":"");
     $("l_glm").textContent=EUR(a)+(t?" · "+Math.round(a/t*100)+" %":"");
     $("l_grok").textContent=EUR(b)+(t?" · "+Math.round(b/t*100)+" %":"");
 
@@ -408,37 +404,35 @@ async function charge(){
                       depuis:cl.depuis});
     }else{ $("cl_bloc_d").textContent="lecture des transcripts impossible"+(cl.erreur?" : "+cl.erreur:""); }
 
-    // ── Qwen (Alibaba) via OpenRouter : solde et dépenses RÉELS (compteur officiel),
-    // tokens depuis notre journal local (helper openrouter_call.sh). Journal démarré
-    // le 29/08 : un historique vide est honnête, la page l'écrit plutôt que d'inventer.
-    const q=d.qwen||{}, qr=q.reel||{};
-    if(qr.ok){
-      const sd=(qr.usd!=null)?qr.usd:null;
-      $("qw_solde").textContent=sd==null?"—":sd.toFixed(2).replace(".",",")+" $";
-      $("qw_solde").style.color=(sd!=null&&sd<3)?"var(--warn)":"var(--qwen)";
-      $("qw_solde_d").innerHTML="crédits "+(qr.credits!=null?qr.credits.toFixed(2).replace(".",","):"—")
-        +" $ · dépense compte "+(qr.usage_total!=null?qr.usage_total.toFixed(2).replace(".",","):"—")
-        +" $ (toutes clés, depuis le début)"
-        +(sd!=null&&sd<3?"<br>⚠ <b>à recharger</b> — au-delà, les appels sont refusés (402)":"");
-      $("qw_plan").textContent="Alibaba · OpenRouter";
+    // ── Qwen (Alibaba) : compteur OFFICIEL du Token Plan QwenCloud (zelda) — les
+    // mêmes chiffres que la console. Session collée par le propriétaire (cURL du XHR),
+    // rejouée par le générateur ; sans session, la page le dit, rien n'est inventé.
+    const qc=d.qwen_cloud||{};
+    const teinteQ=p=>p==null?"var(--mut)":p>=80?"var(--ko)":p>=50?"var(--warn)":"var(--qwen)";
+    if(qc.ok){
+      $("qw_sem_pct").textContent=(qc.semaine_pct!=null?qc.semaine_pct.toFixed(qc.semaine_pct<1?3:1):"—")+" %";
+      $("qw_sem_bar").style.width=Math.min(100,qc.semaine_pct||0)+"%"; $("qw_sem_bar").style.background=teinteQ(qc.semaine_pct);
+      $("qw_sem_d").innerHTML="plafond "+fmt(qc.semaine_total)+" tokens · repart <b>"+(qc.semaine_reset_ms?jFR(qc.semaine_reset_ms):"—")+"</b>"+(qc.semaine_reset_ms?" <span id="qw_in"></span>":"");
+      if(qc.semaine_reset_ms)RESETS.qw_sem=qc.semaine_reset_ms;
+      $("qw_h5_pct").textContent=(qc.cinq_heures_pct!=null?qc.cinq_heures_pct.toFixed(qc.cinq_heures_pct<1?3:1):"—")+" %";
+      $("qw_h5_bar").style.width=Math.min(100,qc.cinq_heures_pct||0)+"%"; $("qw_h5_bar").style.background=teinteQ(qc.cinq_heures_pct);
+      $("qw_h5_d").innerHTML="plafond "+fmt(qc.cinq_heures_total)+" tokens · repart <b>"+(qc.cinq_heures_reset_ms?hFR(qc.cinq_heures_reset_ms):"—")+"</b>"+(qc.cinq_heures_reset_ms?" <span id="qw_h5_in"></span>":"");
+      if(qc.cinq_heures_reset_ms)RESETS.qw_h5=qc.cinq_heures_reset_ms;
+      $("qw_plan_lbl").textContent=(qc.plan||"—")+(qc.jours_restants!=null?" · "+qc.jours_restants+" j restants":"");
+      $("qw_plan_d").innerHTML="statut "+(qc.statut||"—")+" · expire <b>"+(qc.expire_ms?jFR(qc.expire_ms):"—")+"</b>"+(qc.perime?" · <b>mesure figée</b> ("+(qc.derniere_erreur||"erreur")+")":"");
+      $("qw_plan").textContent="Alibaba · Token Plan"+(qc.perime?" · figé":"");
+    }else if(qc.session){
+      $("qw_sem_pct").textContent="—"; $("qw_sem_d").innerHTML="<b>session expirée</b>"+(qc.erreur?" : "+qc.erreur:"");
+      $("qw_h5_pct").textContent="—"; $("qw_h5_d").textContent="recolle le cURL du XHR usage (DevTools → Network → Copy as cURL) dans ~/.qwencloud_usage_curl.txt";
+      $("qw_plan_lbl").textContent="—"; $("qw_plan_d").textContent=qc.perime?"dernière mesure figée":"";
+      $("qw_plan").textContent="Alibaba · Token Plan";
     }else{
-      $("qw_solde").textContent="—";
-      $("qw_solde_d").textContent="compteur OpenRouter indisponible"+(qr.erreur?" : "+qr.erreur:"");
+      $("qw_sem_pct").textContent="—"; $("qw_sem_d").innerHTML="<b>session absente</b> — colle le cURL du XHR « usage » (DevTools → Network → clic droit → Copy as cURL) dans <code>~/.qwencloud_usage_curl.txt</code>";
+      $("qw_h5_pct").textContent="—"; $("qw_h5_d").textContent="le compteur officiel du Token Plan se branchera dès que le fichier existe";
+      $("qw_plan_lbl").textContent="—"; $("qw_plan_d").textContent="";
+      $("qw_plan").textContent="Alibaba · Token Plan";
     }
-    const qh5=q.h5||{}, qs=q.semaine||{}, qsp=q.semaine_derniere||{}, qj=q.aujourd_hui||{};
-    $("qw_tok").textContent=M((qh5.tin||0)+(qh5.tout||0));
-    $("qw_h5_d").innerHTML=fmt(qh5.appels||0)+" appels dans les 5 dernières heures"
-      +(q.journal_existe?"":"<br>journal local démarré le 29/08 — l'historique d'avant n'existe pas");
-    $("qw_sem_usd").textContent=((q.semaine_usd_reel!=null)?q.semaine_usd_reel.toFixed(2).replace(".",","):"—")+" $";
-    $("qw_sem_d").innerHTML=fmt(qs.appels||0)+" appels depuis lundi · mois calendaire : "
-      +((q.mois_usd_reel!=null)?q.mois_usd_reel.toFixed(2).replace(".",","):"—")+" $";
-    $("qwen_j").textContent=M((qj.tin||0)+(qj.tout||0));
-    $("qwen_j_e").textContent=(q.aujourd_hui_usd_reel!=null&&q.aujourd_hui_usd_reel>0)?q.aujourd_hui_usd_reel.toFixed(3).replace(".",",")+" $":"";
-    $("qwen_s").textContent=M((qs.tin||0)+(qs.tout||0));
-    $("qwen_s_e").textContent=(q.semaine_usd_reel!=null&&q.semaine_usd_reel>0)?q.semaine_usd_reel.toFixed(3).replace(".",",")+" $":"";
-    $("qwen_p").textContent=M((qsp.tin||0)+(qsp.tout||0));
-    $("qwen_p_e").textContent="";
-    $("qwen_preuve").innerHTML="source : "+(q.source||"openrouter_llm_calls.jsonl + api.openrouter.ai")
+    $("qwen_preuve").innerHTML="source : "+(qc.source||"home.qwencloud.com — passerelle OneConsole (zelda)")+(qc.mesure_at?" · mesuré à "+hFR(new Date(qc.mesure_at).getTime()):"");
       +(q.dernier?" · dernier appel "+hFR(new Date(q.dernier).getTime()):"");
     const evite=(e.total_eur_plein||0)-(e.total_eur||0);
     $("e_cache").innerHTML="Sans le cache, la même conso coûterait <b>"+EUR(e.total_eur_plein)
@@ -594,7 +588,7 @@ async function charge(){
       +"<b>Pourquoi des millions de tokens ?</b> À chaque aller-retour, tout l'historique de la conversation repart au modèle. "
       +"Un tour Grok pèse en moyenne <b>"+fmt(p.moyenne_par_tour)+"</b> tokens, dont les trois quarts sont du texte déjà envoyé. Ce n'est pas de la frappe, c'est de la relecture."
       +(rz?"<br><b>Piège z.ai</b> : leur propre console affiche <b>"+hFR(rz,"Asia/Shanghai")+"</b> pour la prochaine remise à zéro — elle rend tout en heure de Pékin (+8 h) sans l'écrire. Ici c'est <b>"+hFR(rz)+"</b>.":"")
-      +"<br><b>Qwen (Alibaba)</b> : les dollars viennent du compteur officiel OpenRouter (<code>/api/v1/credits</code> + <code>/key</code> — la dépense réelle, pas une estimation), les tokens de notre journal local <code>openrouter_llm_calls.jsonl</code> (démarré le 29/08). Le détail par modèle d'OpenRouter exige une clé « management » (403 aux clés normales, sonde 29/08) : le découpage affiché est celui de nos propres appels. La section « quand et combien » a été retirée à ta demande le 29/08 — les données continuent d'être générées dans <code>abonnement.json</code>.";
+      +"<br><b>Qwen (Alibaba)</b> : la carte lit le compteur OFFICIEL du Token Plan QwenCloud (passerelle OneConsole « zelda », mêmes chiffres que la console — fenêtres 5 h et 7 jours, resets, plan). La session est le cURL du XHR « usage » collé par toi dans <code>~/.qwencloud_usage_curl.txt</code> et rejoué toutes les 5 min ; expirée, la carte l'annonce plutôt que d'inventer. La clé <code>sk-sp-</code> n'est jamais mise dans un script : son ToS réserve les appels modèles aux outils IA interactifs. Le solde OpenRouter (ancien canal, −0,20 $ au 29/08) reste suivi côté soldes + alerte Telegram. La section « quand et combien » a été retirée à ta demande le 29/08 — les données continuent d'être générées dans <code>abonnement.json</code>.";
     if($("tx"))$("tx").textContent="1 $ = "+d.usd_eur.toFixed(2)+" €";
     $("err").style.display="none"; tick();
   }catch(err){
