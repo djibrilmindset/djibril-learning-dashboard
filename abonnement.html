@@ -412,11 +412,11 @@ async function charge(){
     if(qc.ok){
       $("qw_sem_pct").textContent=(qc.semaine_pct!=null?qc.semaine_pct.toFixed(qc.semaine_pct<1?3:1):"—")+" %";
       $("qw_sem_bar").style.width=Math.min(100,qc.semaine_pct||0)+"%"; $("qw_sem_bar").style.background=teinteQ(qc.semaine_pct);
-      $("qw_sem_d").innerHTML="plafond "+fmt(qc.semaine_total)+" tokens · repart <b>"+(qc.semaine_reset_ms?jFR(qc.semaine_reset_ms):"—")+"</b>"+(qc.semaine_reset_ms?" <span id="qw_in"></span>":"");
+      $("qw_sem_d").innerHTML="plafond "+fmt(qc.semaine_total)+" tokens · repart <b>"+(qc.semaine_reset_ms?jFR(qc.semaine_reset_ms):"—")+"</b>"+(qc.semaine_reset_ms?" <span id='qw_in'></span>":"");
       if(qc.semaine_reset_ms)RESETS.qw_sem=qc.semaine_reset_ms;
       $("qw_h5_pct").textContent=(qc.cinq_heures_pct!=null?qc.cinq_heures_pct.toFixed(qc.cinq_heures_pct<1?3:1):"—")+" %";
       $("qw_h5_bar").style.width=Math.min(100,qc.cinq_heures_pct||0)+"%"; $("qw_h5_bar").style.background=teinteQ(qc.cinq_heures_pct);
-      $("qw_h5_d").innerHTML="plafond "+fmt(qc.cinq_heures_total)+" tokens · repart <b>"+(qc.cinq_heures_reset_ms?hFR(qc.cinq_heures_reset_ms):"—")+"</b>"+(qc.cinq_heures_reset_ms?" <span id="qw_h5_in"></span>":"");
+      $("qw_h5_d").innerHTML="plafond "+fmt(qc.cinq_heures_total)+" tokens · repart <b>"+(qc.cinq_heures_reset_ms?hFR(qc.cinq_heures_reset_ms):"—")+"</b>"+(qc.cinq_heures_reset_ms?" <span id='qw_h5_in'></span>":"");
       if(qc.cinq_heures_reset_ms)RESETS.qw_h5=qc.cinq_heures_reset_ms;
       $("qw_plan_lbl").textContent=(qc.plan||"—")+(qc.jours_restants!=null?" · "+qc.jours_restants+" j restants":"");
       $("qw_plan_d").innerHTML="statut "+(qc.statut||"—")+" · expire <b>"+(qc.expire_ms?jFR(qc.expire_ms):"—")+"</b>"+(qc.perime?" · <b>mesure figée</b> ("+(qc.derniere_erreur||"erreur")+")":"");
