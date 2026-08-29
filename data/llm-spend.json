@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated_at": "2026-08-29T16:00:14.920890Z",
+    "generated_at": "2026-08-29T18:00:24.772278Z",
     "window_hours": 24,
-    "total_calls": 120,
-    "total_cost_usd": 0.129393,
+    "total_calls": 122,
+    "total_cost_usd": 0.12951,
     "models_count": 8,
     "providers_count": 6,
     "errors_count": 0,
@@ -18,8 +18,8 @@
       "successes": 8,
       "errors": 0,
       "tokens_in": 4080,
-      "tokens_out": 12768,
-      "cost_usd": 0.10596
+      "tokens_out": 12814,
+      "cost_usd": 0.106305
     },
     {
       "model": "aihubmix/qwen3.8-max",
@@ -28,28 +28,8 @@
       "successes": 13,
       "errors": 0,
       "tokens_in": 8247,
-      "tokens_out": 5062,
-      "cost_usd": 0.023433
-    },
-    {
-      "model": "glm-direct/glm-5.3",
-      "provider": "glm-direct",
-      "calls": 56,
-      "successes": 56,
-      "errors": 0,
-      "tokens_in": 49079,
-      "tokens_out": 59755,
-      "cost_usd": 0.0
-    },
-    {
-      "model": "hermes-agent/glm-5.3",
-      "provider": "hermes-agent",
-      "calls": 19,
-      "successes": 19,
-      "errors": 0,
-      "tokens_in": 7673,
-      "tokens_out": 7373,
-      "cost_usd": 0.0
+      "tokens_out": 4986,
+      "cost_usd": 0.023205
     },
     {
       "model": "glm-5.3-dsh",
@@ -62,6 +42,16 @@
       "cost_usd": 0.0
     },
     {
+      "model": "glm-direct/glm-5.3",
+      "provider": "glm-direct",
+      "calls": 57,
+      "successes": 57,
+      "errors": 0,
+      "tokens_in": 50557,
+      "tokens_out": 64429,
+      "cost_usd": 0.0
+    },
+    {
       "model": "glm-opencode/glm-5.3",
       "provider": "glm-opencode",
       "calls": 7,
@@ -69,6 +59,16 @@
       "errors": 0,
       "tokens_in": 97288,
       "tokens_out": 23658,
+      "cost_usd": 0.0
+    },
+    {
+      "model": "hermes-agent/glm-5.3",
+      "provider": "hermes-agent",
+      "calls": 20,
+      "successes": 20,
+      "errors": 0,
+      "tokens_in": 8221,
+      "tokens_out": 7801,
       "cost_usd": 0.0
     },
     {
