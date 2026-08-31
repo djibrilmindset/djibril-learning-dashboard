@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "generated_at": "2026-08-30T22:00:41.818753Z",
+    "generated_at": "2026-08-31T07:12:14.968472Z",
     "window_hours": 24,
-    "total_calls": 100,
+    "total_calls": 38,
     "total_cost_usd": 0.0,
     "models_count": 4,
     "providers_count": 2,
@@ -12,33 +12,33 @@
   },
   "by_model": [
     {
+      "model": "hermes-agent/glm-5.3",
+      "provider": "hermes-agent",
+      "calls": 6,
+      "successes": 6,
+      "errors": 0,
+      "tokens_in": 5988,
+      "tokens_out": 132,
+      "cost_usd": 0.0
+    },
+    {
       "model": "glm-4.6v",
       "provider": "direct",
-      "calls": 65,
-      "successes": 65,
+      "calls": 21,
+      "successes": 21,
       "errors": 0,
-      "tokens_in": 107487,
-      "tokens_out": 30416,
+      "tokens_in": 30574,
+      "tokens_out": 2690,
       "cost_usd": 0.0
     },
     {
       "model": "grok-4.6",
       "provider": "direct",
-      "calls": 14,
-      "successes": 14,
+      "calls": 10,
+      "successes": 10,
       "errors": 0,
       "tokens_in": 0,
       "tokens_out": 0,
-      "cost_usd": 0.0
-    },
-    {
-      "model": "hermes-agent/glm-5.3",
-      "provider": "hermes-agent",
-      "calls": 20,
-      "successes": 20,
-      "errors": 0,
-      "tokens_in": 9650,
-      "tokens_out": 440,
       "cost_usd": 0.0
     },
     {
