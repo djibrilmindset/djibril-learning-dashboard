@@ -8,7 +8,7 @@
   :root{
     --bg:#0b0e14; --card:#141925; --card2:#1a2130; --line:#232c3f;
     --txt:#e8edf7; --mut:#8b96ab; --acc:#5eead4;
-    --glm:#7cc5ff; --grok:#ff9d6b; --claude:#c9a6ff; --qwen:#5fd4a8;
+    --glm:#7cc5ff; --grok:#ff9d6b; --claude:#c9a6ff; --qwen:#5fd4a8; --oro:#f0abfc;
     --ok:#4ade80; --warn:#fbbf24; --ko:#f87171;
   }
   *{box-sizing:border-box;margin:0;padding:0}
@@ -64,6 +64,9 @@
   .card.grok table.conso td:last-child{color:var(--grok)}
   .card.claude table.conso td:last-child{color:var(--claude)}
   .card.qwen table.conso td:last-child{color:var(--qwen)}
+  .card.oro{border-left-color:var(--oro)}
+  .card.oro h2{color:var(--oro)}
+  .card.oro table.conso td:last-child{color:var(--oro)}
   .preuve{font-size:10.5px;line-height:1.6;color:var(--mut);margin-top:11px;border-top:1px dashed var(--line);padding-top:9px}
   .preuve b{color:var(--txt);font-weight:750}
   .preuve em{font-style:normal;opacity:.75}
@@ -210,6 +213,40 @@
     <div style="color:var(--mut);font-weight:600;font-size:10px;letter-spacing:.9px;text-transform:uppercase;margin-top:3px">les API du quotidien — même représentation que les abonnements</div>
   </div>
   <div class="duocard" id="usage_cards"></div>
+
+  <div style="margin-top:22px">
+    <h3 style="font-size:13px;font-weight:800;letter-spacing:.2px">Crédits pay-as-you-go</h3>
+    <div style="color:var(--mut);font-weight:600;font-size:10px;letter-spacing:.9px;text-transform:uppercase;margin-top:3px">solde réel lu chez le fournisseur — rafraîchi toutes les 5 min avec la conso</div>
+  </div>
+  <div class="duocard" style="margin-top:14px">
+    <div class="card oro">
+      <h2><span>OpenRouter</span><span class="plan">pay-as-you-go</span></h2>
+      <div class="quoi">passerelle multi-modèles (Qwen 3.8-flash…) · compteur officiel /credits + /key</div>
+      <div class="bloc">
+        <div class="t"><span>Reste maintenant</span><b id="oro_reste" style="color:var(--oro)">—</b></div>
+        <div class="d" id="oro_reste_d">—</div>
+      </div>
+      <div class="bloc">
+        <div class="t"><span>Compte — crédits / usage cumulé</span><b id="oro_cu" style="color:var(--oro)">—</b></div>
+        <div class="d" id="oro_cu_d">—</div>
+      </div>
+      <div class="bloc">
+        <div class="t"><span>Clé courante — jour / semaine</span><b id="oro_cle" style="color:var(--oro)">—</b></div>
+        <div class="d" id="oro_cle_d">—</div>
+      </div>
+      <table class="conso">
+        <tr><td>Conso infra (journal local, 7 j)</td><td id="oro_appels">—</td><td id="oro_usd_sem"></td></tr>
+        <tr><td>Dernière recharge</td><td colspan="2" id="oro_recharge">—</td></tr>
+      </table>
+      <div class="preuve" id="oro_preuve"></div>
+    </div>
+    <div class="card" style="border-left-color:var(--line)">
+      <h2><span>Autres clés — soldes</span><span class="plan">lu chez le fournisseur</span></h2>
+      <div class="quoi">ce qui s'expose par API, et ce qui est prouvé absent</div>
+      <table class="conso" id="payg_tbl"></table>
+      <div class="preuve" id="payg_preuve"></div>
+    </div>
+  </div>
 
   <!-- Claude, descendu en bas à la demande du propriétaire (29/08) : l'abonnement est
        coupé, la carte ne reflète plus que l'historique. Qwen occupe sa place en haut. -->
@@ -503,6 +540,46 @@ async function charge(){
     const releve=genAt.toLocaleTimeString("fr-FR",{hour:"2-digit",minute:"2-digit"});
     const vi={g:(d.glm||{}).vision_api||null,k:(d.grok||{}).vision_api||null};
 
+    // ── Crédits pay-as-you-go : OpenRouter (compteur officiel) + l'état des autres clés.
+    const oro=(d.qwen||{}).reel||sol.openrouter||null;
+    const eurU=x=>(x==null)?"—":Number(x).toFixed(2).replace(".",",")+" $";
+    if(oro&&oro.ok){
+      const oroWarn=((oro.usd||0)<3)||(oro.jours_restants!=null&&oro.jours_restants<=2);
+      $("oro_reste").textContent=eurU(oro.usd);
+      $("oro_reste").style.color=oroWarn?"var(--warn)":"var(--oro)";
+      $("oro_reste_d").innerHTML=(oro.rythme_usd_jour!=null&&oro.rythme_usd_jour>0
+        ?"<b>"+oro.rythme_usd_jour.toFixed(2).replace(".",",")+" $/j</b> mesurés sur nos relevés"
+        :"rythme pas encore mesurable")
+        +(oro.jours_restants!=null?" · recharge dans <b>≈ "+String(oro.jours_restants).replace(".",",")+" j</b>":"");
+      $("oro_cu").textContent=eurU(oro.credits)+" · −"+eurU(oro.usage_total);
+      $("oro_cu_d").innerHTML="crédits totaux du compte · usage cumulé OpenRouter";
+      $("oro_cle").textContent=eurU(oro.usage_daily)+" / "+eurU(oro.usage_weekly);
+      $("oro_cle_d").innerHTML="dépense de la clé courante · mois : "+eurU(oro.usage_monthly);
+      const qsem=(d.qwen||{}).semaine||{};
+      $("oro_appels").textContent=fmt(qsem.appels||0)+" appels";
+      $("oro_usd_sem").textContent=qsem.usd?("≈ "+eurU(qsem.usd)):"—";
+      $("oro_recharge").innerHTML=oro.derniere_recharge
+        ? new Date(oro.derniere_recharge.quand).toLocaleString("fr-FR",{day:"numeric",month:"short",hour:"2-digit",minute:"2-digit"})+" — de "+eurU(oro.derniere_recharge.de)+" à "+eurU(oro.derniere_recharge.a)
+        : "aucune observée depuis le début du suivi";
+      $("oro_preuve").innerHTML="<em>compteur officiel : openrouter.ai /api/v1/credits + /key (relevé à "+releve+") · conso : notre journal <code>openrouter_llm_calls.jsonl</code></em>";
+    } else {
+      $("oro_reste").textContent="indisponible"; $("oro_reste").style.color="var(--mut)";
+      $("oro_reste_d").innerHTML=(oro&&oro.erreur)?("dernière erreur : "+oro.erreur):"compteur non mesuré — nouvelle tentative toutes les 5 min";
+    }
+    const ds=sol.deepseek||{}, bd=sol.brightdata||{};
+    const lignesPayg=[
+      ["DeepSeek", (ds&&ds.ok)?eurU(ds.usd):((ds&&ds.usd!=null)?eurU(ds.usd)+" <span style=\"opacity:.6\">(dernier bon relevé)</span>":"—"),
+        (ds&&ds.rythme_usd_jour)?(ds.rythme_usd_jour.toFixed(2).replace(".",",")+" $/j · recharge ≈ "+(ds.jours_restants!=null?String(ds.jours_restants).replace(".",","):"?")+" j"):"api.deepseek.com /user/balance"],
+      ["Bright Data", (bd&&bd.ok)?eurU(bd.usd):"—", (bd&&(bd.en_attente||0)>0)?(bd.en_attente.toFixed(2).replace(".",",")+" $ engagés"):"scrape /search — solde prépayé"],
+      ["OpenAI", "n/a", "clés sans scope <code>api.usage.read</code> (403 aux deux, re-testé 02/09) — une clé admin avec ce scope ouvrira la dépense réelle"],
+      ["Gemini (AI Studio)", "gratuit", "palier gratuit Google : pas de solde — quota ~1000 req/j remis à minuit, suivi sur sa carte"],
+      ["z.ai (GLM Coding)", "abonnement", "wallet PAYG prouvé absent (8 routes sondées 29/08) — fenêtres 5 h / semaine du compteur officiel sur la carte GLM"],
+      ["aihubmix", "n/a", "solde réservé à la session web (401 par clé API, sonde 29/08)"],
+      ["Mistral · MiniMax · Yi · StepFun · NVIDIA · Tavily", "n/a", "aucun endpoint de solde utilisable (404/405, sondes 29/08 + 02/09)"],
+    ];
+    $("payg_tbl").innerHTML=lignesPayg.map(r=>"<tr><td>"+r[0]+"</td><td>"+r[1]+"</td><td style=\"font-weight:500;font-size:11px;text-align:right;color:var(--mut)\">"+r[2]+"</td></tr>").join("");
+    $("payg_preuve").innerHTML="<em>chaque ligne vient de l'API du fournisseur ou d'une sonde documentée — jamais une estimation (relevé à "+releve+")</em>";
+
     // ── à l'usage, tous les jours : les API du quotidien en CARTES, même
     // représentation que les abonnements. Aucun de ces fournisseurs ne publie
     // de plafond : pas de jauge, jamais un % inventé — des tokens mesurés et
@@ -578,7 +655,7 @@ async function charge(){
     const rz=z.ok&&z.fenetre_5h&&z.fenetre_5h.reset_ms;
     $("note").innerHTML=
       "<b>Rien ici n'est estimé.</b> Claude : les blocs <code>usage</code> écrits par l'API dans les transcripts de Claude Code, dédoublonnés par identifiant de message et de requête, recoupés contre ccusage (écart de quelques %, dû aux autres CLI que ccusage agrège et qu'on compte séparément ici). GLM : tokens et crédits du compteur officiel z.ai, seaux horaires de Pékin re-répartis en journées de Paris. "
-      +"<b>Payé à l'usage</b> : les soldes viennent du fournisseur — DeepSeek et Bright Data sont les seuls à en exposer un. Re-sondé le 29/08 : OpenAI renvoie 403 (la clé n'a pas le scope <code>api.usage.read</code> — une clé dédiée avec ce scope ouvrira le vrai solde), MiniMax n'a aucun endpoint de compte, CometAPI a sa route facturation en panne, aihubmix garde le solde côté session web — la case reste vide plutôt qu'inventée. Les dates de dernier appel sortent de nos journaux, jamais reconstruites ; le coût y est calculé chez nous, ordre de grandeur, pas une facture. "
+      +"<b>Payé à l'usage</b> : les soldes viennent du fournisseur — DeepSeek, Bright Data et OpenRouter en exposent un, réunis dans la section « Crédits pay-as-you-go ». Sondes 29/08 + 02/09 : OpenAI renvoie 403 aux deux clés (scope <code>api.usage.read</code> absent — une clé admin avec ce scope ouvrira la dépense réelle), MiniMax n'a aucun endpoint de compte, CometAPI a sa route facturation en panne, aihubmix garde le solde côté session web, Mistral / Yi / StepFun / NVIDIA / Tavily n'exposent rien d'utilisable (404/405), et le wallet PAYG z.ai est prouvé absent (8 routes) — la case reste vide plutôt qu'inventée. Les dates de dernier appel sortent de nos journaux, jamais reconstruites ; le coût y est calculé chez nous, ordre de grandeur, pas une facture. "
       +"Les cartes « à l'usage, tous les jours » suivent la même règle que les abonnements : aucun de ces fournisseurs ne publie de plafond, donc aucun % restant — des tokens et des appels mesurés, rien d'inventé. Gemini est gratuit : ses crédits instantanés = appels aujourd'hui contre le quota Google ~1000/j (remis à zéro chaque minuit) ; ses appels sont comptés, ses tokens ne sont pas rapportés par cette voix. "
       +"Le bloc « Solde fournisseur » n'existe que là où le fournisseur expose le vrai montant (DeepSeek, Bright Data) ; le rythme $/jour est calculé sur nos propres relevés en ignorant les recharges, et l'échéance « recharge dans ≈ N j » n'est qu'une projection de ce rythme, pas une promesse. Quand aucun solde n'est exposé, la carte montre le rythme mesuré en €/7 j — à toi de comparer à ton dernier rechargement.<br>"
       +"Grok : <code>prompt_tokens</code> / <code>cached_prompt_tokens</code> / <code>completion_tokens</code> que l'API renvoie à chaque tour, lus dans le journal de la CLI. "
@@ -587,7 +664,7 @@ async function charge(){
       +"<b>Pourquoi des millions de tokens ?</b> À chaque aller-retour, tout l'historique de la conversation repart au modèle. "
       +"Un tour Grok pèse en moyenne <b>"+fmt(p.moyenne_par_tour)+"</b> tokens, dont les trois quarts sont du texte déjà envoyé. Ce n'est pas de la frappe, c'est de la relecture."
       +(rz?"<br><b>Piège z.ai</b> : leur propre console affiche <b>"+hFR(rz,"Asia/Shanghai")+"</b> pour la prochaine remise à zéro — elle rend tout en heure de Pékin (+8 h) sans l'écrire. Ici c'est <b>"+hFR(rz)+"</b>.":"")
-      +"<br><b>Qwen (Alibaba)</b> : la carte lit le compteur OFFICIEL du Token Plan QwenCloud (passerelle OneConsole « zelda », mêmes chiffres que la console — fenêtres 5 h et 7 jours, resets, plan). La session est le cURL du XHR « usage » collé par toi dans <code>~/.qwencloud_usage_curl.txt</code> et rejoué toutes les 5 min ; expirée, la carte l'annonce plutôt que d'inventer. La clé <code>sk-sp-</code> n'est jamais mise dans un script : son ToS réserve les appels modèles aux outils IA interactifs. Le solde OpenRouter (ancien canal, −0,20 $ au 29/08) reste suivi côté soldes + alerte Telegram. La section « quand et combien » a été retirée à ta demande le 29/08 — les données continuent d'être générées dans <code>abonnement.json</code>.";
+      +"<br><b>Qwen (Alibaba)</b> : la carte lit le compteur OFFICIEL du Token Plan QwenCloud (passerelle OneConsole « zelda », mêmes chiffres que la console — fenêtres 5 h et 7 jours, resets, plan). La session est le cURL du XHR « usage » collé par toi dans <code>~/.qwencloud_usage_curl.txt</code> et rejoué toutes les 5 min ; expirée, la carte l'annonce plutôt que d'inventer. La clé <code>sk-sp-</code> n'est jamais mise dans un script : son ToS réserve les appels modèles aux outils IA interactifs. Le solde OpenRouter a sa carte « Crédits pay-as-you-go » (recharge détectée le 01/09 soir) + alerte Telegram si le reste passe sous 3 $. La section « quand et combien » a été retirée à ta demande le 29/08 — les données continuent d'être générées dans <code>abonnement.json</code>.";
     if($("tx"))$("tx").textContent="1 $ = "+d.usd_eur.toFixed(2)+" €";
     $("err").style.display="none"; tick();
   }catch(err){
