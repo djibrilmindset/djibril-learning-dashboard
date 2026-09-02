@@ -542,7 +542,7 @@ async function charge(){
 
     // ── Crédits pay-as-you-go : OpenRouter (compteur officiel) + l'état des autres clés.
     const oro=(d.qwen||{}).reel||sol.openrouter||null;
-    const eurU=x=>(x==null)?"—":Number(x).toFixed(2).replace(".",",")+" $";
+    const eurU=x=>(x==null)?"—":(Number(x)===0?"0,00 $":(Math.abs(x)<0.01?Number(x).toFixed(4):Number(x).toFixed(2))).replace(".",",")+" $";
     if(oro&&oro.ok){
       const oroWarn=((oro.usd||0)<3)||(oro.jours_restants!=null&&oro.jours_restants<=2);
       $("oro_reste").textContent=eurU(oro.usd);
