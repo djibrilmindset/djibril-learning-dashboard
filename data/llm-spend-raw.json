@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "generated_at": "2026-09-02T18:00:37.657489Z",
+    "generated_at": "2026-09-02T20:00:20.357472Z",
     "window_hours": 24,
-    "total_calls": 92,
+    "total_calls": 82,
     "total_cost_usd": 0.0,
     "models_count": 4,
     "providers_count": 2,
@@ -11,127 +11,6 @@
     "error_count": 0
   },
   "entries": [
-    {
-      "ts": "2026-09-01T18:09:54Z",
-      "agent": "VISION-GLM46V",
-      "model": "glm-4.6v",
-      "tier": 0,
-      "tokens_in": 4072,
-      "tokens_out": 1500,
-      "cost_usd": 0,
-      "task_type": "vision",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-09-01T18:09:54Z",
-      "agent": "VISION",
-      "model": "glm-4.6v",
-      "tier": 0,
-      "tokens_in": 0,
-      "tokens_out": 0,
-      "cost_usd": 0,
-      "task_type": "vision",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-09-01T18:09:54Z",
-      "agent": "VISION",
-      "model": "grok-4.6",
-      "tier": 0,
-      "tokens_in": 0,
-      "tokens_out": 0,
-      "cost_usd": 0,
-      "task_type": "vision",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-09-01T18:42:55Z",
-      "agent": "VISION-GLM46V",
-      "model": "glm-4.6v",
-      "tier": 0,
-      "tokens_in": 520,
-      "tokens_out": 176,
-      "cost_usd": 0,
-      "task_type": "vision",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-09-01T18:43:15Z",
-      "agent": "VISION",
-      "model": "glm-4.6v",
-      "tier": 0,
-      "tokens_in": 0,
-      "tokens_out": 0,
-      "cost_usd": 0,
-      "task_type": "vision",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-09-01T18:43:15Z",
-      "agent": "VISION",
-      "model": "grok-4.6",
-      "tier": 0,
-      "tokens_in": 0,
-      "tokens_out": 0,
-      "cost_usd": 0,
-      "task_type": "vision",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-09-01T19:39:33Z",
-      "agent": "HERMES_AGENT",
-      "model": "hermes-agent/glm-5.3",
-      "tier": 0,
-      "tokens_in": 0,
-      "tokens_out": 434,
-      "cost_usd": 0.0,
-      "task_type": "forfait",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-09-01T19:40:10Z",
-      "agent": "HERMES_AGENT",
-      "model": "hermes-agent/glm-5.3",
-      "tier": 0,
-      "tokens_in": 0,
-      "tokens_out": 245,
-      "cost_usd": 0.0,
-      "task_type": "forfait",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-09-01T19:40:49Z",
-      "agent": "HERMES_AGENT",
-      "model": "hermes-agent/glm-5.3",
-      "tier": 0,
-      "tokens_in": 0,
-      "tokens_out": 260,
-      "cost_usd": 0.0,
-      "task_type": "forfait",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-09-01T19:41:40Z",
-      "agent": "HERMES_AGENT",
-      "model": "hermes-agent/glm-5.3",
-      "tier": 0,
-      "tokens_in": 0,
-      "tokens_out": 379,
-      "cost_usd": 0.0,
-      "task_type": "forfait",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-09-01T19:42:06Z",
-      "agent": "HERMES_AGENT",
-      "model": "hermes-agent/glm-5.3",
-      "tier": 0,
-      "tokens_in": 0,
-      "tokens_out": 184,
-      "cost_usd": 0.0,
-      "task_type": "forfait",
-      "result_summary": ""
-    },
     {
       "ts": "2026-09-01T22:01:19Z",
       "agent": "HERMES_AGENT",
@@ -1021,6 +900,17 @@
       "tokens_out": 358,
       "cost_usd": 0.0,
       "task_type": "forfait",
+      "result_summary": ""
+    },
+    {
+      "ts": "2026-09-02T19:41:48Z",
+      "agent": "ATELIER",
+      "model": "glm-5.3-dsh",
+      "tier": 1,
+      "tokens_in": 90,
+      "tokens_out": 697,
+      "cost_usd": 0,
+      "task_type": "atelier",
       "result_summary": ""
     }
   ]
