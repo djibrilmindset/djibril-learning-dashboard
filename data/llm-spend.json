@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated_at": "2026-09-04T10:00:19.719907Z",
+    "generated_at": "2026-09-04T12:00:32.806422Z",
     "window_hours": 24,
-    "total_calls": 142,
-    "total_cost_usd": 0.067781,
+    "total_calls": 155,
+    "total_cost_usd": 0.081697,
     "models_count": 7,
     "providers_count": 7,
     "errors_count": 0,
@@ -14,51 +14,51 @@
     {
       "model": "comet/qwen3.7-max",
       "provider": "comet",
-      "calls": 4,
-      "successes": 4,
+      "calls": 5,
+      "successes": 5,
       "errors": 0,
-      "tokens_in": 2040,
-      "tokens_out": 6799,
-      "cost_usd": 0.0560925
+      "tokens_in": 2550,
+      "tokens_out": 8387,
+      "cost_usd": 0.0692775
     },
     {
       "model": "aihubmix/qwen3.8-max",
       "provider": "aihubmix",
-      "calls": 7,
-      "successes": 7,
+      "calls": 8,
+      "successes": 8,
       "errors": 0,
-      "tokens_in": 4197,
-      "tokens_out": 2497,
-      "cost_usd": 0.011688
+      "tokens_in": 4745,
+      "tokens_out": 2558,
+      "cost_usd": 0.012419000000000001
     },
     {
       "model": "hermes-agent/glm-5.3",
       "provider": "hermes-agent",
-      "calls": 51,
-      "successes": 51,
+      "calls": 50,
+      "successes": 50,
       "errors": 0,
-      "tokens_in": 16499,
-      "tokens_out": 35279,
+      "tokens_in": 17092,
+      "tokens_out": 36210,
       "cost_usd": 0.0
     },
     {
       "model": "glm-5.3-dsh",
       "provider": "direct",
-      "calls": 19,
-      "successes": 19,
+      "calls": 20,
+      "successes": 20,
       "errors": 0,
-      "tokens_in": 2301,
-      "tokens_out": 11635,
+      "tokens_in": 2478,
+      "tokens_out": 12462,
       "cost_usd": 0.0
     },
     {
       "model": "glm-direct/glm-5.3",
       "provider": "glm-direct",
-      "calls": 57,
-      "successes": 57,
+      "calls": 68,
+      "successes": 68,
       "errors": 0,
-      "tokens_in": 44493,
-      "tokens_out": 87459,
+      "tokens_in": 52400,
+      "tokens_out": 106779,
       "cost_usd": 0.0
     },
     {
