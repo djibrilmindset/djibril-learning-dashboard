@@ -1,44 +1,44 @@
 {
   "_meta": {
-    "generated_at": "2026-09-04T04:31:34.505758Z",
+    "generated_at": "2026-09-04T06:00:47.975842Z",
     "window_hours": 24,
-    "total_calls": 133,
-    "total_cost_usd": 0.033149,
-    "models_count": 8,
-    "providers_count": 6,
+    "total_calls": 159,
+    "total_cost_usd": 0.049204,
+    "models_count": 9,
+    "providers_count": 7,
     "errors_count": 0,
-    "healthy_count": 8,
+    "healthy_count": 9,
     "error_count": 0
   },
   "by_model": [
     {
       "model": "comet/qwen3.7-max",
       "provider": "comet",
-      "calls": 2,
-      "successes": 2,
+      "calls": 3,
+      "successes": 3,
       "errors": 0,
-      "tokens_in": 1020,
-      "tokens_out": 2790,
-      "cost_usd": 0.023475
+      "tokens_in": 1530,
+      "tokens_out": 4616,
+      "cost_usd": 0.038445
     },
     {
       "model": "aihubmix/qwen3.8-max",
       "provider": "aihubmix",
-      "calls": 5,
-      "successes": 5,
+      "calls": 6,
+      "successes": 6,
       "errors": 0,
-      "tokens_in": 3101,
-      "tokens_out": 2191,
-      "cost_usd": 0.009674000000000002
+      "tokens_in": 3649,
+      "tokens_out": 2370,
+      "cost_usd": 0.010759000000000001
     },
     {
       "model": "hermes-agent/glm-5.3",
       "provider": "hermes-agent",
-      "calls": 71,
-      "successes": 71,
+      "calls": 73,
+      "successes": 73,
       "errors": 0,
-      "tokens_in": 33042,
-      "tokens_out": 65687,
+      "tokens_in": 34084,
+      "tokens_out": 66456,
       "cost_usd": 0.0
     },
     {
@@ -64,21 +64,21 @@
     {
       "model": "glm-5.3-dsh",
       "provider": "direct",
-      "calls": 12,
-      "successes": 12,
+      "calls": 17,
+      "successes": 17,
       "errors": 0,
-      "tokens_in": 1403,
-      "tokens_out": 6881,
+      "tokens_in": 2113,
+      "tokens_out": 10652,
       "cost_usd": 0.0
     },
     {
       "model": "glm-direct/glm-5.3",
       "provider": "glm-direct",
-      "calls": 38,
-      "successes": 38,
+      "calls": 53,
+      "successes": 53,
       "errors": 0,
-      "tokens_in": 32190,
-      "tokens_out": 66861,
+      "tokens_in": 41116,
+      "tokens_out": 80741,
       "cost_usd": 0.0
     },
     {
@@ -89,6 +89,16 @@
       "errors": 0,
       "tokens_in": 50646,
       "tokens_out": 6188,
+      "cost_usd": 0.0
+    },
+    {
+      "model": "banc-v32/grok/claude-sonnet",
+      "provider": "banc-v32",
+      "calls": 2,
+      "successes": 2,
+      "errors": 0,
+      "tokens_in": 0,
+      "tokens_out": 32,
       "cost_usd": 0.0
     }
   ]
