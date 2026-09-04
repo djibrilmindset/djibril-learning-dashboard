@@ -1,13 +1,13 @@
 {
   "_meta": {
-    "generated_at": "2026-09-04T12:00:32.806422Z",
+    "generated_at": "2026-09-04T14:00:47.349657Z",
     "window_hours": 24,
-    "total_calls": 155,
+    "total_calls": 173,
     "total_cost_usd": 0.081697,
-    "models_count": 7,
+    "models_count": 9,
     "providers_count": 7,
     "errors_count": 0,
-    "healthy_count": 7,
+    "healthy_count": 9,
     "error_count": 0
   },
   "by_model": [
@@ -34,31 +34,31 @@
     {
       "model": "hermes-agent/glm-5.3",
       "provider": "hermes-agent",
-      "calls": 50,
-      "successes": 50,
+      "calls": 53,
+      "successes": 53,
       "errors": 0,
-      "tokens_in": 17092,
-      "tokens_out": 36210,
-      "cost_usd": 0.0
-    },
-    {
-      "model": "glm-5.3-dsh",
-      "provider": "direct",
-      "calls": 20,
-      "successes": 20,
-      "errors": 0,
-      "tokens_in": 2478,
-      "tokens_out": 12462,
+      "tokens_in": 20324,
+      "tokens_out": 37641,
       "cost_usd": 0.0
     },
     {
       "model": "glm-direct/glm-5.3",
       "provider": "glm-direct",
-      "calls": 68,
-      "successes": 68,
+      "calls": 78,
+      "successes": 78,
       "errors": 0,
-      "tokens_in": 52400,
-      "tokens_out": 106779,
+      "tokens_in": 65960,
+      "tokens_out": 137893,
+      "cost_usd": 0.0
+    },
+    {
+      "model": "glm-5.3-dsh",
+      "provider": "direct",
+      "calls": 22,
+      "successes": 22,
+      "errors": 0,
+      "tokens_in": 2670,
+      "tokens_out": 13142,
       "cost_usd": 0.0
     },
     {
@@ -79,6 +79,26 @@
       "errors": 0,
       "tokens_in": 0,
       "tokens_out": 32,
+      "cost_usd": 0.0
+    },
+    {
+      "model": "glm-4.6v",
+      "provider": "direct",
+      "calls": 2,
+      "successes": 2,
+      "errors": 0,
+      "tokens_in": 1952,
+      "tokens_out": 1500,
+      "cost_usd": 0.0
+    },
+    {
+      "model": "grok-4.6",
+      "provider": "direct",
+      "calls": 1,
+      "successes": 1,
+      "errors": 0,
+      "tokens_in": 0,
+      "tokens_out": 0,
       "cost_usd": 0.0
     }
   ]
