@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated_at": "2026-09-06T08:00:30.592898Z",
+    "generated_at": "2026-09-06T10:00:46.119225Z",
     "window_hours": 24,
-    "total_calls": 450,
-    "total_cost_usd": 0.134406,
+    "total_calls": 445,
+    "total_cost_usd": 0.135681,
     "models_count": 12,
     "providers_count": 7,
     "errors_count": 0,
@@ -17,9 +17,9 @@
       "calls": 8,
       "successes": 8,
       "errors": 0,
-      "tokens_in": 4381,
-      "tokens_out": 14147,
-      "cost_usd": 0.117055
+      "tokens_in": 4428,
+      "tokens_out": 14181,
+      "cost_usd": 0.1174275
     },
     {
       "model": "aihubmix/qwen3.8-max",
@@ -27,9 +27,9 @@
       "calls": 11,
       "successes": 11,
       "errors": 0,
-      "tokens_in": 6783,
-      "tokens_out": 3451,
-      "cost_usd": 0.017136
+      "tokens_in": 6830,
+      "tokens_out": 3736,
+      "cost_usd": 0.018038000000000002
     },
     {
       "model": "deepseek-direct/deepseek-v4-pro",
@@ -44,11 +44,11 @@
     {
       "model": "glm-direct/glm-5.3",
       "provider": "glm-direct",
-      "calls": 94,
-      "successes": 94,
+      "calls": 91,
+      "successes": 91,
       "errors": 0,
-      "tokens_in": 93966,
-      "tokens_out": 137888,
+      "tokens_in": 91508,
+      "tokens_out": 131448,
       "cost_usd": 0.0
     },
     {
@@ -57,8 +57,8 @@
       "calls": 170,
       "successes": 170,
       "errors": 0,
-      "tokens_in": 166557,
-      "tokens_out": 64342,
+      "tokens_in": 171055,
+      "tokens_out": 69358,
       "cost_usd": 0.0
     },
     {
@@ -72,16 +72,6 @@
       "cost_usd": 0.0
     },
     {
-      "model": "hermes-agent/glm-5.3",
-      "provider": "hermes-agent",
-      "calls": 18,
-      "successes": 18,
-      "errors": 0,
-      "tokens_in": 5072,
-      "tokens_out": 5912,
-      "cost_usd": 0.0
-    },
-    {
       "model": "glm-5.3-dsh",
       "provider": "direct",
       "calls": 10,
@@ -89,6 +79,16 @@
       "errors": 0,
       "tokens_in": 878,
       "tokens_out": 7034,
+      "cost_usd": 0.0
+    },
+    {
+      "model": "hermes-agent/glm-5.3",
+      "provider": "hermes-agent",
+      "calls": 16,
+      "successes": 16,
+      "errors": 0,
+      "tokens_in": 4716,
+      "tokens_out": 5251,
       "cost_usd": 0.0
     },
     {
