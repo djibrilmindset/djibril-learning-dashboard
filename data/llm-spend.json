@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated_at": "2026-09-09T16:00:16.044626Z",
+    "generated_at": "2026-09-09T18:00:27.193335Z",
     "window_hours": 24,
-    "total_calls": 39,
-    "total_cost_usd": 0.049329,
+    "total_calls": 51,
+    "total_cost_usd": 0.061445,
     "models_count": 7,
     "providers_count": 6,
     "errors_count": 0,
@@ -14,22 +14,22 @@
     {
       "model": "comet/qwen3.7-max",
       "provider": "comet",
-      "calls": 3,
-      "successes": 3,
+      "calls": 4,
+      "successes": 4,
       "errors": 0,
-      "tokens_in": 1671,
-      "tokens_out": 5499,
-      "cost_usd": 0.04542
+      "tokens_in": 2228,
+      "tokens_out": 6803,
+      "cost_usd": 0.056592500000000004
     },
     {
       "model": "aihubmix/qwen3.8-max",
       "provider": "aihubmix",
-      "calls": 4,
-      "successes": 4,
+      "calls": 5,
+      "successes": 5,
       "errors": 0,
-      "tokens_in": 2385,
-      "tokens_out": 508,
-      "cost_usd": 0.003909
+      "tokens_in": 2980,
+      "tokens_out": 624,
+      "cost_usd": 0.004852
     },
     {
       "model": "glm-opencode/glm-5.3",
@@ -44,31 +44,31 @@
     {
       "model": "hermes-agent/glm-5.3",
       "provider": "hermes-agent",
-      "calls": 4,
-      "successes": 4,
+      "calls": 6,
+      "successes": 6,
       "errors": 0,
-      "tokens_in": 1292,
-      "tokens_out": 1576,
+      "tokens_in": 1914,
+      "tokens_out": 2191,
       "cost_usd": 0.0
     },
     {
       "model": "glm-direct/glm-5.3",
       "provider": "glm-direct",
-      "calls": 18,
-      "successes": 18,
+      "calls": 25,
+      "successes": 25,
       "errors": 0,
-      "tokens_in": 13073,
-      "tokens_out": 10226,
+      "tokens_in": 18580,
+      "tokens_out": 16643,
       "cost_usd": 0.0
     },
     {
       "model": "glm-direct/glm-5.3-flash",
       "provider": "glm-direct",
-      "calls": 5,
-      "successes": 5,
+      "calls": 6,
+      "successes": 6,
       "errors": 0,
-      "tokens_in": 3152,
-      "tokens_out": 7406,
+      "tokens_in": 3689,
+      "tokens_out": 7690,
       "cost_usd": 0.0
     },
     {
