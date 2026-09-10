@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "generated_at": "2026-09-10T18:00:36.569392Z",
+    "generated_at": "2026-09-10T20:28:39.618934Z",
     "window_hours": 24,
-    "total_calls": 137,
+    "total_calls": 173,
     "total_cost_usd": 0.15684,
     "models_count": 9,
     "providers_count": 6,
@@ -32,33 +32,33 @@
       "cost_usd": 0.024883000000000002
     },
     {
-      "model": "glm-5.3-dsh",
-      "provider": "direct",
-      "calls": 16,
-      "successes": 16,
-      "errors": 0,
-      "tokens_in": 2077,
-      "tokens_out": 11975,
-      "cost_usd": 0.0
-    },
-    {
       "model": "glm-direct/glm-5.3",
       "provider": "glm-direct",
-      "calls": 65,
-      "successes": 65,
+      "calls": 68,
+      "successes": 68,
       "errors": 0,
-      "tokens_in": 62250,
-      "tokens_out": 97871,
+      "tokens_in": 66598,
+      "tokens_out": 99062,
       "cost_usd": 0.0
     },
     {
       "model": "glm-direct/glm-5.3-flash",
       "provider": "glm-direct",
-      "calls": 9,
-      "successes": 9,
+      "calls": 40,
+      "successes": 40,
       "errors": 0,
-      "tokens_in": 4838,
-      "tokens_out": 3722,
+      "tokens_in": 29973,
+      "tokens_out": 35279,
+      "cost_usd": 0.0
+    },
+    {
+      "model": "glm-5.3-dsh",
+      "provider": "direct",
+      "calls": 18,
+      "successes": 18,
+      "errors": 0,
+      "tokens_in": 2261,
+      "tokens_out": 13579,
       "cost_usd": 0.0
     },
     {
