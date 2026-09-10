@@ -1,13 +1,13 @@
 {
   "_meta": {
-    "generated_at": "2026-09-10T10:00:34.594734Z",
+    "generated_at": "2026-09-10T12:00:50.991319Z",
     "window_hours": 24,
-    "total_calls": 111,
-    "total_cost_usd": 0.147657,
-    "models_count": 6,
+    "total_calls": 116,
+    "total_cost_usd": 0.147421,
+    "models_count": 8,
     "providers_count": 5,
     "errors_count": 0,
-    "healthy_count": 6,
+    "healthy_count": 8,
     "error_count": 0
   },
   "by_model": [
@@ -18,8 +18,8 @@
       "successes": 8,
       "errors": 0,
       "tokens_in": 4456,
-      "tokens_out": 14829,
-      "cost_usd": 0.12235750000000001
+      "tokens_out": 14809,
+      "cost_usd": 0.1222075
     },
     {
       "model": "aihubmix/qwen3.8-max",
@@ -28,17 +28,37 @@
       "successes": 12,
       "errors": 0,
       "tokens_in": 7444,
-      "tokens_out": 5952,
-      "cost_usd": 0.025300000000000003
+      "tokens_out": 5923,
+      "cost_usd": 0.025213000000000003
     },
     {
       "model": "glm-direct/glm-5.3",
       "provider": "glm-direct",
-      "calls": 59,
-      "successes": 59,
+      "calls": 57,
+      "successes": 57,
       "errors": 0,
-      "tokens_in": 51821,
-      "tokens_out": 78729,
+      "tokens_in": 51220,
+      "tokens_out": 78511,
+      "cost_usd": 0.0
+    },
+    {
+      "model": "glm-direct/glm-5.3-flash",
+      "provider": "glm-direct",
+      "calls": 9,
+      "successes": 9,
+      "errors": 0,
+      "tokens_in": 4838,
+      "tokens_out": 3397,
+      "cost_usd": 0.0
+    },
+    {
+      "model": "glm-5.3-dsh",
+      "provider": "direct",
+      "calls": 12,
+      "successes": 12,
+      "errors": 0,
+      "tokens_in": 1355,
+      "tokens_out": 8872,
       "cost_usd": 0.0
     },
     {
@@ -47,28 +67,28 @@
       "calls": 12,
       "successes": 12,
       "errors": 0,
-      "tokens_in": 3722,
-      "tokens_out": 4250,
+      "tokens_in": 4200,
+      "tokens_out": 4004,
       "cost_usd": 0.0
     },
     {
-      "model": "glm-direct/glm-5.3-flash",
-      "provider": "glm-direct",
-      "calls": 10,
-      "successes": 10,
-      "errors": 0,
-      "tokens_in": 5380,
-      "tokens_out": 3441,
-      "cost_usd": 0.0
-    },
-    {
-      "model": "glm-5.3-dsh",
+      "model": "glm-4.6v",
       "provider": "direct",
-      "calls": 10,
-      "successes": 10,
+      "calls": 4,
+      "successes": 4,
       "errors": 0,
-      "tokens_in": 936,
-      "tokens_out": 6874,
+      "tokens_in": 1551,
+      "tokens_out": 3000,
+      "cost_usd": 0.0
+    },
+    {
+      "model": "grok-4.6",
+      "provider": "direct",
+      "calls": 2,
+      "successes": 2,
+      "errors": 0,
+      "tokens_in": 0,
+      "tokens_out": 0,
       "cost_usd": 0.0
     }
   ]
