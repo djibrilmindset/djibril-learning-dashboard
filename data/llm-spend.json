@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated_at": "2026-09-10T14:00:07.744220Z",
+    "generated_at": "2026-09-10T16:00:20.281527Z",
     "window_hours": 24,
-    "total_calls": 116,
-    "total_cost_usd": 0.147421,
+    "total_calls": 129,
+    "total_cost_usd": 0.15194,
     "models_count": 8,
     "providers_count": 5,
     "errors_count": 0,
@@ -18,8 +18,8 @@
       "successes": 8,
       "errors": 0,
       "tokens_in": 4456,
-      "tokens_out": 14809,
-      "cost_usd": 0.1222075
+      "tokens_out": 15446,
+      "cost_usd": 0.12698500000000001
     },
     {
       "model": "aihubmix/qwen3.8-max",
@@ -28,17 +28,17 @@
       "successes": 12,
       "errors": 0,
       "tokens_in": 7444,
-      "tokens_out": 5923,
-      "cost_usd": 0.025213000000000003
+      "tokens_out": 5837,
+      "cost_usd": 0.024955
     },
     {
       "model": "glm-direct/glm-5.3",
       "provider": "glm-direct",
-      "calls": 57,
-      "successes": 57,
+      "calls": 63,
+      "successes": 63,
       "errors": 0,
-      "tokens_in": 51220,
-      "tokens_out": 78511,
+      "tokens_in": 59033,
+      "tokens_out": 91810,
       "cost_usd": 0.0
     },
     {
@@ -48,27 +48,27 @@
       "successes": 9,
       "errors": 0,
       "tokens_in": 4838,
-      "tokens_out": 3397,
-      "cost_usd": 0.0
-    },
-    {
-      "model": "glm-5.3-dsh",
-      "provider": "direct",
-      "calls": 12,
-      "successes": 12,
-      "errors": 0,
-      "tokens_in": 1355,
-      "tokens_out": 8872,
+      "tokens_out": 3377,
       "cost_usd": 0.0
     },
     {
       "model": "hermes-agent/glm-5.3",
       "provider": "hermes-agent",
-      "calls": 12,
-      "successes": 12,
+      "calls": 18,
+      "successes": 18,
       "errors": 0,
-      "tokens_in": 4200,
-      "tokens_out": 4004,
+      "tokens_in": 5800,
+      "tokens_out": 6074,
+      "cost_usd": 0.0
+    },
+    {
+      "model": "glm-5.3-dsh",
+      "provider": "direct",
+      "calls": 13,
+      "successes": 13,
+      "errors": 0,
+      "tokens_in": 1710,
+      "tokens_out": 10142,
       "cost_usd": 0.0
     },
     {
