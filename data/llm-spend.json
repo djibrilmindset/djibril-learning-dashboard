@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated_at": "2026-09-09T22:00:54.739062Z",
+    "generated_at": "2026-09-10T00:00:11.343645Z",
     "window_hours": 24,
-    "total_calls": 57,
-    "total_cost_usd": 0.077667,
+    "total_calls": 78,
+    "total_cost_usd": 0.103238,
     "models_count": 7,
     "providers_count": 6,
     "errors_count": 0,
@@ -14,22 +14,22 @@
     {
       "model": "comet/qwen3.7-max",
       "provider": "comet",
-      "calls": 5,
-      "successes": 5,
+      "calls": 6,
+      "successes": 6,
       "errors": 0,
-      "tokens_in": 2785,
-      "tokens_out": 8671,
-      "cost_usd": 0.071995
+      "tokens_in": 3342,
+      "tokens_out": 10865,
+      "cost_usd": 0.0898425
     },
     {
       "model": "aihubmix/qwen3.8-max",
       "provider": "aihubmix",
-      "calls": 6,
-      "successes": 6,
+      "calls": 9,
+      "successes": 9,
       "errors": 0,
-      "tokens_in": 3575,
-      "tokens_out": 699,
-      "cost_usd": 0.005672
+      "tokens_in": 5622,
+      "tokens_out": 2591,
+      "cost_usd": 0.013395
     },
     {
       "model": "glm-opencode/glm-5.3",
@@ -44,21 +44,21 @@
     {
       "model": "glm-direct/glm-5.3",
       "provider": "glm-direct",
-      "calls": 27,
-      "successes": 27,
+      "calls": 42,
+      "successes": 42,
       "errors": 0,
-      "tokens_in": 20147,
-      "tokens_out": 20520,
+      "tokens_in": 34048,
+      "tokens_out": 57477,
       "cost_usd": 0.0
     },
     {
       "model": "glm-direct/glm-5.3-flash",
       "provider": "glm-direct",
-      "calls": 7,
-      "successes": 7,
+      "calls": 8,
+      "successes": 8,
       "errors": 0,
-      "tokens_in": 4226,
-      "tokens_out": 8024,
+      "tokens_in": 4763,
+      "tokens_out": 8341,
       "cost_usd": 0.0
     },
     {
@@ -74,11 +74,11 @@
     {
       "model": "glm-5.3-dsh",
       "provider": "direct",
-      "calls": 4,
-      "successes": 4,
+      "calls": 5,
+      "successes": 5,
       "errors": 0,
-      "tokens_in": 363,
-      "tokens_out": 2161,
+      "tokens_in": 537,
+      "tokens_out": 3472,
       "cost_usd": 0.0
     }
   ]
