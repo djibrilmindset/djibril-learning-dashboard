@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated_at": "2026-09-11T20:00:16.233852Z",
+    "generated_at": "2026-09-11T22:00:35.237867Z",
     "window_hours": 24,
-    "total_calls": 1083,
-    "total_cost_usd": 2.902272,
+    "total_calls": 1089,
+    "total_cost_usd": 2.918181,
     "models_count": 10,
     "providers_count": 7,
     "errors_count": 0,
@@ -24,22 +24,22 @@
     {
       "model": "comet/qwen3.7-max",
       "provider": "comet",
-      "calls": 5,
-      "successes": 5,
+      "calls": 6,
+      "successes": 6,
       "errors": 0,
-      "tokens_in": 2785,
-      "tokens_out": 9719,
-      "cost_usd": 0.07985500000000001
+      "tokens_in": 3342,
+      "tokens_out": 11518,
+      "cost_usd": 0.09474
     },
     {
       "model": "aihubmix/qwen3.8-max",
       "provider": "aihubmix",
-      "calls": 8,
-      "successes": 8,
+      "calls": 9,
+      "successes": 9,
       "errors": 0,
-      "tokens_in": 4430,
-      "tokens_out": 2107,
-      "cost_usd": 0.010751
+      "tokens_in": 5025,
+      "tokens_out": 2250,
+      "cost_usd": 0.011775
     },
     {
       "model": "glm-opencode/glm-5.3",
@@ -54,21 +54,21 @@
     {
       "model": "glm-direct/glm-5.3",
       "provider": "glm-direct",
-      "calls": 530,
-      "successes": 530,
+      "calls": 532,
+      "successes": 532,
       "errors": 0,
-      "tokens_in": 1499453,
-      "tokens_out": 4343271,
+      "tokens_in": 1500527,
+      "tokens_out": 4344552,
       "cost_usd": 0.0
     },
     {
       "model": "glm-direct/glm-5.3-flash",
       "provider": "glm-direct",
-      "calls": 7,
-      "successes": 7,
+      "calls": 8,
+      "successes": 8,
       "errors": 0,
-      "tokens_in": 3765,
-      "tokens_out": 2859,
+      "tokens_in": 4302,
+      "tokens_out": 3466,
       "cost_usd": 0.0
     },
     {
@@ -94,11 +94,11 @@
     {
       "model": "glm-4.6v",
       "provider": "direct",
-      "calls": 97,
-      "successes": 97,
+      "calls": 98,
+      "successes": 98,
       "errors": 0,
-      "tokens_in": 316775,
-      "tokens_out": 98292,
+      "tokens_in": 327650,
+      "tokens_out": 100461,
       "cost_usd": 0.0
     },
     {
