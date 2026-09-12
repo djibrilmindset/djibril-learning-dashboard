@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated_at": "2026-09-12T12:00:53.814610Z",
+    "generated_at": "2026-09-12T16:00:24.095386Z",
     "window_hours": 24,
-    "total_calls": 842,
-    "total_cost_usd": 3.003866,
+    "total_calls": 541,
+    "total_cost_usd": 2.54162,
     "models_count": 10,
     "providers_count": 7,
     "errors_count": 0,
@@ -14,41 +14,71 @@
     {
       "model": "openai-direct/gpt-5.6-luna",
       "provider": "openai-direct",
-      "calls": 333,
-      "successes": 333,
+      "calls": 281,
+      "successes": 281,
       "errors": 0,
-      "tokens_in": 944166,
-      "tokens_out": 622500,
-      "cost_usd": 2.8116659999999976
+      "tokens_in": 777551,
+      "tokens_out": 528612,
+      "cost_usd": 2.3633869999999986
     },
     {
       "model": "comet/qwen3.7-max",
       "provider": "comet",
-      "calls": 11,
-      "successes": 11,
+      "calls": 10,
+      "successes": 10,
       "errors": 0,
-      "tokens_in": 6127,
-      "tokens_out": 20471,
-      "cost_usd": 0.16885
+      "tokens_in": 5570,
+      "tokens_out": 18953,
+      "cost_usd": 0.1560725
     },
     {
       "model": "aihubmix/qwen3.8-max",
       "provider": "aihubmix",
+      "calls": 12,
+      "successes": 12,
+      "errors": 0,
+      "tokens_in": 7494,
+      "tokens_out": 4889,
+      "cost_usd": 0.022161
+    },
+    {
+      "model": "glm-4.6v",
+      "provider": "direct",
+      "calls": 79,
+      "successes": 79,
+      "errors": 0,
+      "tokens_in": 252607,
+      "tokens_out": 71010,
+      "cost_usd": 0.0
+    },
+    {
+      "model": "grok-4.6",
+      "provider": "direct",
       "calls": 13,
       "successes": 13,
       "errors": 0,
-      "tokens_in": 8089,
-      "tokens_out": 5087,
-      "cost_usd": 0.02335
+      "tokens_in": 0,
+      "tokens_out": 0,
+      "cost_usd": 0.0
     },
     {
       "model": "glm-direct/glm-5.3",
       "provider": "glm-direct",
-      "calls": 249,
-      "successes": 249,
+      "calls": 76,
+      "successes": 76,
       "errors": 0,
-      "tokens_in": 611220,
-      "tokens_out": 1398064,
+      "tokens_in": 73269,
+      "tokens_out": 87622,
+      "cost_usd": 0.0
+    },
+    {
+      "model": "glm-opencode/glm-5.3",
+      "provider": "glm-opencode",
+      "calls": 28,
+      "successes": 28,
+      "errors": 0,
+      "tokens_in": 331465,
+      "tokens_out": 193964,
       "cost_usd": 0.0
     },
     {
@@ -57,58 +87,28 @@
       "calls": 16,
       "successes": 16,
       "errors": 0,
-      "tokens_in": 1494,
-      "tokens_out": 8794,
-      "cost_usd": 0.0
-    },
-    {
-      "model": "glm-direct/glm-5.3-flash",
-      "provider": "glm-direct",
-      "calls": 21,
-      "successes": 21,
-      "errors": 0,
-      "tokens_in": 61656,
-      "tokens_out": 18163,
-      "cost_usd": 0.0
-    },
-    {
-      "model": "glm-opencode/glm-5.3",
-      "provider": "glm-opencode",
-      "calls": 66,
-      "successes": 66,
-      "errors": 0,
-      "tokens_in": 675646,
-      "tokens_out": 470628,
-      "cost_usd": 0.0
-    },
-    {
-      "model": "glm-4.6v",
-      "provider": "direct",
-      "calls": 109,
-      "successes": 109,
-      "errors": 0,
-      "tokens_in": 359832,
-      "tokens_out": 105301,
-      "cost_usd": 0.0
-    },
-    {
-      "model": "grok-4.6",
-      "provider": "direct",
-      "calls": 20,
-      "successes": 20,
-      "errors": 0,
-      "tokens_in": 0,
-      "tokens_out": 0,
+      "tokens_in": 1645,
+      "tokens_out": 8882,
       "cost_usd": 0.0
     },
     {
       "model": "hermes-agent/glm-5.3",
       "provider": "hermes-agent",
-      "calls": 4,
-      "successes": 4,
+      "calls": 6,
+      "successes": 6,
       "errors": 0,
-      "tokens_in": 1298,
-      "tokens_out": 1762,
+      "tokens_in": 1794,
+      "tokens_out": 2382,
+      "cost_usd": 0.0
+    },
+    {
+      "model": "glm-direct/glm-5.3-flash",
+      "provider": "glm-direct",
+      "calls": 20,
+      "successes": 20,
+      "errors": 0,
+      "tokens_in": 61119,
+      "tokens_out": 17579,
       "cost_usd": 0.0
     }
   ]
