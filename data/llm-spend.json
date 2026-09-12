@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated_at": "2026-09-12T16:00:24.095386Z",
+    "generated_at": "2026-09-12T18:00:36.437767Z",
     "window_hours": 24,
-    "total_calls": 541,
-    "total_cost_usd": 2.54162,
+    "total_calls": 320,
+    "total_cost_usd": 1.64473,
     "models_count": 10,
     "providers_count": 7,
     "errors_count": 0,
@@ -14,12 +14,12 @@
     {
       "model": "openai-direct/gpt-5.6-luna",
       "provider": "openai-direct",
-      "calls": 281,
-      "successes": 281,
+      "calls": 169,
+      "successes": 169,
       "errors": 0,
-      "tokens_in": 777551,
-      "tokens_out": 528612,
-      "cost_usd": 2.3633869999999986
+      "tokens_in": 513460,
+      "tokens_out": 317679,
+      "cost_usd": 1.4664969999999995
     },
     {
       "model": "comet/qwen3.7-max",
@@ -44,18 +44,18 @@
     {
       "model": "glm-4.6v",
       "provider": "direct",
-      "calls": 79,
-      "successes": 79,
+      "calls": 15,
+      "successes": 15,
       "errors": 0,
-      "tokens_in": 252607,
-      "tokens_out": 71010,
+      "tokens_in": 46228,
+      "tokens_out": 8755,
       "cost_usd": 0.0
     },
     {
       "model": "grok-4.6",
       "provider": "direct",
-      "calls": 13,
-      "successes": 13,
+      "calls": 1,
+      "successes": 1,
       "errors": 0,
       "tokens_in": 0,
       "tokens_out": 0,
@@ -64,41 +64,11 @@
     {
       "model": "glm-direct/glm-5.3",
       "provider": "glm-direct",
-      "calls": 76,
-      "successes": 76,
+      "calls": 66,
+      "successes": 66,
       "errors": 0,
-      "tokens_in": 73269,
-      "tokens_out": 87622,
-      "cost_usd": 0.0
-    },
-    {
-      "model": "glm-opencode/glm-5.3",
-      "provider": "glm-opencode",
-      "calls": 28,
-      "successes": 28,
-      "errors": 0,
-      "tokens_in": 331465,
-      "tokens_out": 193964,
-      "cost_usd": 0.0
-    },
-    {
-      "model": "glm-5.3-dsh",
-      "provider": "direct",
-      "calls": 16,
-      "successes": 16,
-      "errors": 0,
-      "tokens_in": 1645,
-      "tokens_out": 8882,
-      "cost_usd": 0.0
-    },
-    {
-      "model": "hermes-agent/glm-5.3",
-      "provider": "hermes-agent",
-      "calls": 6,
-      "successes": 6,
-      "errors": 0,
-      "tokens_in": 1794,
-      "tokens_out": 2382,
+      "tokens_in": 63055,
+      "tokens_out": 67200,
       "cost_usd": 0.0
     },
     {
@@ -109,6 +79,36 @@
       "errors": 0,
       "tokens_in": 61119,
       "tokens_out": 17579,
+      "cost_usd": 0.0
+    },
+    {
+      "model": "glm-opencode/glm-5.3",
+      "provider": "glm-opencode",
+      "calls": 6,
+      "successes": 6,
+      "errors": 0,
+      "tokens_in": 122667,
+      "tokens_out": 24152,
+      "cost_usd": 0.0
+    },
+    {
+      "model": "glm-5.3-dsh",
+      "provider": "direct",
+      "calls": 15,
+      "successes": 15,
+      "errors": 0,
+      "tokens_in": 1519,
+      "tokens_out": 8368,
+      "cost_usd": 0.0
+    },
+    {
+      "model": "hermes-agent/glm-5.3",
+      "provider": "hermes-agent",
+      "calls": 6,
+      "successes": 6,
+      "errors": 0,
+      "tokens_in": 1794,
+      "tokens_out": 2442,
       "cost_usd": 0.0
     }
   ]
