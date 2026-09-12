@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated_at": "2026-09-12T00:00:54.901128Z",
+    "generated_at": "2026-09-12T02:00:15.090523Z",
     "window_hours": 24,
-    "total_calls": 1097,
-    "total_cost_usd": 2.920664,
+    "total_calls": 1104,
+    "total_cost_usd": 2.946162,
     "models_count": 10,
     "providers_count": 7,
     "errors_count": 0,
@@ -24,41 +24,41 @@
     {
       "model": "comet/qwen3.7-max",
       "provider": "comet",
-      "calls": 6,
-      "successes": 6,
+      "calls": 7,
+      "successes": 7,
       "errors": 0,
-      "tokens_in": 3342,
-      "tokens_out": 11518,
-      "cost_usd": 0.09474
+      "tokens_in": 3899,
+      "tokens_out": 14548,
+      "cost_usd": 0.1188575
     },
     {
       "model": "aihubmix/qwen3.8-max",
       "provider": "aihubmix",
-      "calls": 9,
-      "successes": 9,
+      "calls": 10,
+      "successes": 10,
       "errors": 0,
-      "tokens_in": 5672,
-      "tokens_out": 2862,
-      "cost_usd": 0.014258
+      "tokens_in": 6267,
+      "tokens_out": 3124,
+      "cost_usd": 0.015639
     },
     {
       "model": "glm-direct/glm-5.3",
       "provider": "glm-direct",
-      "calls": 534,
-      "successes": 534,
+      "calls": 536,
+      "successes": 536,
       "errors": 0,
-      "tokens_in": 1502311,
-      "tokens_out": 4337269,
+      "tokens_in": 1503385,
+      "tokens_out": 4338060,
       "cost_usd": 0.0
     },
     {
       "model": "glm-direct/glm-5.3-flash",
       "provider": "glm-direct",
-      "calls": 8,
-      "successes": 8,
+      "calls": 9,
+      "successes": 9,
       "errors": 0,
-      "tokens_in": 4302,
-      "tokens_out": 3466,
+      "tokens_in": 4839,
+      "tokens_out": 3641,
       "cost_usd": 0.0
     },
     {
@@ -74,11 +74,11 @@
     {
       "model": "glm-5.3-dsh",
       "provider": "direct",
-      "calls": 6,
-      "successes": 6,
+      "calls": 8,
+      "successes": 8,
       "errors": 0,
-      "tokens_in": 437,
-      "tokens_out": 2802,
+      "tokens_in": 588,
+      "tokens_out": 3942,
       "cost_usd": 0.0
     },
     {
