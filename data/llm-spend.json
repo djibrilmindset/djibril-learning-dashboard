@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated_at": "2026-09-13T12:00:59.030768Z",
+    "generated_at": "2026-09-13T14:00:15.214772Z",
     "window_hours": 24,
-    "total_calls": 124,
-    "total_cost_usd": 0.097438,
+    "total_calls": 126,
+    "total_cost_usd": 0.095582,
     "models_count": 9,
     "providers_count": 6,
     "errors_count": 0,
@@ -18,8 +18,8 @@
       "successes": 6,
       "errors": 0,
       "tokens_in": 3342,
-      "tokens_out": 9824,
-      "cost_usd": 0.082035
+      "tokens_out": 9585,
+      "cost_usd": 0.0802425
     },
     {
       "model": "aihubmix/qwen3.8-max",
@@ -28,8 +28,18 @@
       "successes": 10,
       "errors": 0,
       "tokens_in": 6208,
-      "tokens_out": 3065,
-      "cost_usd": 0.015402999999999997
+      "tokens_out": 3044,
+      "cost_usd": 0.01534
+    },
+    {
+      "model": "glm-5.3-dsh",
+      "provider": "direct",
+      "calls": 15,
+      "successes": 15,
+      "errors": 0,
+      "tokens_in": 1265,
+      "tokens_out": 9286,
+      "cost_usd": 0.0
     },
     {
       "model": "glm-direct/glm-5.3",
@@ -38,27 +48,7 @@
       "successes": 54,
       "errors": 0,
       "tokens_in": 48136,
-      "tokens_out": 64995,
-      "cost_usd": 0.0
-    },
-    {
-      "model": "glm-direct/glm-5.3-flash",
-      "provider": "glm-direct",
-      "calls": 12,
-      "successes": 12,
-      "errors": 0,
-      "tokens_in": 5938,
-      "tokens_out": 4173,
-      "cost_usd": 0.0
-    },
-    {
-      "model": "glm-5.3-dsh",
-      "provider": "direct",
-      "calls": 13,
-      "successes": 13,
-      "errors": 0,
-      "tokens_in": 1106,
-      "tokens_out": 7864,
+      "tokens_out": 64858,
       "cost_usd": 0.0
     },
     {
@@ -69,6 +59,16 @@
       "errors": 0,
       "tokens_in": 2966,
       "tokens_out": 4155,
+      "cost_usd": 0.0
+    },
+    {
+      "model": "glm-direct/glm-5.3-flash",
+      "provider": "glm-direct",
+      "calls": 12,
+      "successes": 12,
+      "errors": 0,
+      "tokens_in": 5938,
+      "tokens_out": 4297,
       "cost_usd": 0.0
     },
     {
