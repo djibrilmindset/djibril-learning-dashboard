@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated_at": "2026-09-14T20:07:34.136751Z",
+    "generated_at": "2026-09-14T22:00:29.898137Z",
     "window_hours": 24,
-    "total_calls": 173,
-    "total_cost_usd": 0.196986,
+    "total_calls": 176,
+    "total_cost_usd": 0.181575,
     "models_count": 10,
     "providers_count": 6,
     "errors_count": 0,
@@ -14,22 +14,22 @@
     {
       "model": "comet/qwen3.7-max",
       "provider": "comet",
-      "calls": 10,
-      "successes": 10,
+      "calls": 9,
+      "successes": 9,
       "errors": 0,
-      "tokens_in": 5570,
-      "tokens_out": 19648,
-      "cost_usd": 0.161285
+      "tokens_in": 5013,
+      "tokens_out": 17917,
+      "cost_usd": 0.14691
     },
     {
       "model": "aihubmix/qwen3.8-max",
       "provider": "aihubmix",
-      "calls": 16,
-      "successes": 16,
+      "calls": 15,
+      "successes": 15,
       "errors": 0,
-      "tokens_in": 10583,
-      "tokens_out": 8182,
-      "cost_usd": 0.035128999999999994
+      "tokens_in": 9988,
+      "tokens_out": 8035,
+      "cost_usd": 0.03409299999999999
     },
     {
       "model": "comet/qwen3-vl-235b-a22b",
@@ -44,21 +44,11 @@
     {
       "model": "glm-direct/glm-5.3",
       "provider": "glm-direct",
-      "calls": 76,
-      "successes": 76,
+      "calls": 78,
+      "successes": 78,
       "errors": 0,
-      "tokens_in": 87250,
-      "tokens_out": 105432,
-      "cost_usd": 0.0
-    },
-    {
-      "model": "glm-direct/glm-5.3-flash",
-      "provider": "glm-direct",
-      "calls": 10,
-      "successes": 10,
-      "errors": 0,
-      "tokens_in": 5375,
-      "tokens_out": 3422,
+      "tokens_in": 92867,
+      "tokens_out": 124672,
       "cost_usd": 0.0
     },
     {
@@ -84,11 +74,21 @@
     {
       "model": "hermes-agent/glm-5.3",
       "provider": "hermes-agent",
-      "calls": 25,
-      "successes": 25,
+      "calls": 29,
+      "successes": 29,
       "errors": 0,
-      "tokens_in": 10581,
-      "tokens_out": 10347,
+      "tokens_in": 12686,
+      "tokens_out": 12385,
+      "cost_usd": 0.0
+    },
+    {
+      "model": "glm-direct/glm-5.3-flash",
+      "provider": "glm-direct",
+      "calls": 9,
+      "successes": 9,
+      "errors": 0,
+      "tokens_in": 4838,
+      "tokens_out": 3003,
       "cost_usd": 0.0
     },
     {
