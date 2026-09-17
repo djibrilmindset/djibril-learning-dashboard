@@ -1,84 +1,74 @@
 {
   "_meta": {
-    "generated_at": "2026-09-17T08:00:26.215883Z",
+    "generated_at": "2026-09-17T10:00:44.206019Z",
     "window_hours": 24,
-    "total_calls": 77,
-    "total_cost_usd": 0.04137,
-    "models_count": 9,
-    "providers_count": 6,
+    "total_calls": 50,
+    "total_cost_usd": 0.024065,
+    "models_count": 8,
+    "providers_count": 5,
     "errors_count": 0,
-    "healthy_count": 9,
+    "healthy_count": 8,
     "error_count": 0
   },
   "by_model": [
     {
       "model": "comet/qwen3.7-max",
       "provider": "comet",
-      "calls": 3,
-      "successes": 3,
+      "calls": 2,
+      "successes": 2,
       "errors": 0,
-      "tokens_in": 1671,
-      "tokens_out": 4583,
-      "cost_usd": 0.03855
+      "tokens_in": 1114,
+      "tokens_out": 2593,
+      "cost_usd": 0.022232500000000002
     },
     {
       "model": "aihubmix/qwen3.8-max",
       "provider": "aihubmix",
-      "calls": 3,
-      "successes": 3,
+      "calls": 2,
+      "successes": 2,
       "errors": 0,
-      "tokens_in": 1785,
-      "tokens_out": 345,
-      "cost_usd": 0.00282
-    },
-    {
-      "model": "ollama/qwen3:14b",
-      "provider": "ollama",
-      "calls": 27,
-      "successes": 27,
-      "errors": 0,
-      "tokens_in": 180065,
-      "tokens_out": 7741,
-      "cost_usd": 0.0
+      "tokens_in": 1190,
+      "tokens_out": 214,
+      "cost_usd": 0.0018319999999999999
     },
     {
       "model": "glm-direct/glm-5.3",
       "provider": "glm-direct",
-      "calls": 20,
-      "successes": 20,
+      "calls": 14,
+      "successes": 14,
       "errors": 0,
-      "tokens_in": 18812,
-      "tokens_out": 38004,
-      "cost_usd": 0.0
-    },
-    {
-      "model": "glm-5.3-dsh",
-      "provider": "direct",
-      "calls": 3,
-      "successes": 3,
-      "errors": 0,
-      "tokens_in": 384,
-      "tokens_out": 1903,
+      "tokens_in": 13192,
+      "tokens_out": 28809,
       "cost_usd": 0.0
     },
     {
       "model": "hermes-agent/glm-5.3",
       "provider": "hermes-agent",
-      "calls": 16,
-      "successes": 16,
+      "calls": 27,
+      "successes": 27,
       "errors": 0,
-      "tokens_in": 5714,
-      "tokens_out": 3305,
+      "tokens_in": 12106,
+      "tokens_out": 12775,
       "cost_usd": 0.0
     },
     {
       "model": "glm-direct/glm-5.3-flash",
       "provider": "glm-direct",
-      "calls": 3,
-      "successes": 3,
+      "calls": 2,
+      "successes": 2,
       "errors": 0,
-      "tokens_in": 1616,
-      "tokens_out": 357,
+      "tokens_in": 1079,
+      "tokens_out": 217,
+      "cost_usd": 0.0
+    },
+    {
+      "model": "glm-5.3-dsh",
+      "provider": "direct",
+      "calls": 1,
+      "successes": 1,
+      "errors": 0,
+      "tokens_in": 65,
+      "tokens_out": 797,
       "cost_usd": 0.0
     },
     {
