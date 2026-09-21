@@ -1,13 +1,13 @@
 {
   "_meta": {
-    "generated_at": "2026-09-21T08:00:40.156179Z",
+    "generated_at": "2026-09-21T10:00:39.869649Z",
     "window_hours": 24,
-    "total_calls": 227,
+    "total_calls": 228,
     "total_cost_usd": 0.095366,
-    "models_count": 10,
+    "models_count": 12,
     "providers_count": 8,
     "errors_count": 0,
-    "healthy_count": 10,
+    "healthy_count": 12,
     "error_count": 0
   },
   "by_model": [
@@ -44,21 +44,21 @@
     {
       "model": "hermes-agent/glm-5.3-flash",
       "provider": "hermes-agent",
-      "calls": 33,
-      "successes": 33,
+      "calls": 20,
+      "successes": 20,
       "errors": 0,
-      "tokens_in": 50505,
-      "tokens_out": 62214,
+      "tokens_in": 3507,
+      "tokens_out": 10697,
       "cost_usd": 0.0
     },
     {
       "model": "glm-direct/glm-5.3-flash",
       "provider": "glm-direct",
-      "calls": 26,
-      "successes": 26,
+      "calls": 27,
+      "successes": 27,
       "errors": 0,
-      "tokens_in": 15826,
-      "tokens_out": 13144,
+      "tokens_in": 16363,
+      "tokens_out": 13376,
       "cost_usd": 0.0
     },
     {
@@ -74,11 +74,11 @@
     {
       "model": "glm-opencode/glm-5.3",
       "provider": "glm-opencode",
-      "calls": 17,
-      "successes": 17,
+      "calls": 18,
+      "successes": 18,
       "errors": 0,
-      "tokens_in": 203094,
-      "tokens_out": 27338,
+      "tokens_in": 237808,
+      "tokens_out": 31338,
       "cost_usd": 0.0
     },
     {
@@ -94,11 +94,11 @@
     {
       "model": "glm-direct/glm-5.3",
       "provider": "glm-direct",
-      "calls": 72,
-      "successes": 72,
+      "calls": 81,
+      "successes": 81,
       "errors": 0,
-      "tokens_in": 58554,
-      "tokens_out": 78024,
+      "tokens_in": 68899,
+      "tokens_out": 87110,
       "cost_usd": 0.0
     },
     {
@@ -109,6 +109,26 @@
       "errors": 0,
       "tokens_in": 3853,
       "tokens_out": 4533,
+      "cost_usd": 0.0
+    },
+    {
+      "model": "hermes-agent/deepseek/deepseek-v4-flash",
+      "provider": "hermes-agent",
+      "calls": 1,
+      "successes": 1,
+      "errors": 0,
+      "tokens_in": 165,
+      "tokens_out": 231,
+      "cost_usd": 0.0
+    },
+    {
+      "model": "hermes-agent/deepseek/deepseek-v4.1-flash",
+      "provider": "hermes-agent",
+      "calls": 2,
+      "successes": 2,
+      "errors": 0,
+      "tokens_in": 3012,
+      "tokens_out": 846,
       "cost_usd": 0.0
     }
   ]
