@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "generated_at": "2026-09-21T06:00:54.361624Z",
+    "generated_at": "2026-09-21T08:00:40.156179Z",
     "window_hours": 24,
-    "total_calls": 232,
+    "total_calls": 227,
     "total_cost_usd": 0.095366,
     "models_count": 10,
     "providers_count": 8,
@@ -44,31 +44,31 @@
     {
       "model": "hermes-agent/glm-5.3-flash",
       "provider": "hermes-agent",
-      "calls": 80,
-      "successes": 80,
+      "calls": 33,
+      "successes": 33,
       "errors": 0,
-      "tokens_in": 221186,
-      "tokens_out": 244729,
-      "cost_usd": 0.0
-    },
-    {
-      "model": "glm-5.3-dsh",
-      "provider": "direct",
-      "calls": 7,
-      "successes": 7,
-      "errors": 0,
-      "tokens_in": 659,
-      "tokens_out": 3771,
+      "tokens_in": 50505,
+      "tokens_out": 62214,
       "cost_usd": 0.0
     },
     {
       "model": "glm-direct/glm-5.3-flash",
       "provider": "glm-direct",
-      "calls": 25,
-      "successes": 25,
+      "calls": 26,
+      "successes": 26,
       "errors": 0,
-      "tokens_in": 15289,
-      "tokens_out": 12966,
+      "tokens_in": 15826,
+      "tokens_out": 13144,
+      "cost_usd": 0.0
+    },
+    {
+      "model": "glm-5.3-dsh",
+      "provider": "direct",
+      "calls": 5,
+      "successes": 5,
+      "errors": 0,
+      "tokens_in": 443,
+      "tokens_out": 3149,
       "cost_usd": 0.0
     },
     {
@@ -84,21 +84,21 @@
     {
       "model": "ollama/qwen3:14b",
       "provider": "ollama",
-      "calls": 7,
-      "successes": 7,
+      "calls": 47,
+      "successes": 47,
       "errors": 0,
-      "tokens_in": 4584,
-      "tokens_out": 2213,
+      "tokens_in": 270035,
+      "tokens_out": 13319,
       "cost_usd": 0.0
     },
     {
       "model": "glm-direct/glm-5.3",
       "provider": "glm-direct",
-      "calls": 69,
-      "successes": 69,
+      "calls": 72,
+      "successes": 72,
       "errors": 0,
-      "tokens_in": 56943,
-      "tokens_out": 76650,
+      "tokens_in": 58554,
+      "tokens_out": 78024,
       "cost_usd": 0.0
     },
     {
