@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "generated_at": "2026-09-22T20:00:25.246127Z",
+    "generated_at": "2026-09-22T22:00:27.663863Z",
     "window_hours": 24,
-    "total_calls": 82,
+    "total_calls": 84,
     "total_cost_usd": 0.0,
     "models_count": 2,
     "providers_count": 2,
@@ -909,6 +909,28 @@
       "tier": 2,
       "tokens_in": 6579,
       "tokens_out": 257,
+      "cost_usd": 0,
+      "task_type": "chinese",
+      "result_summary": ""
+    },
+    {
+      "ts": "2026-09-22T21:39:59Z",
+      "agent": "HERMES_CALL_MIMO",
+      "model": "openrouter/xiaomi/mimo-v2.6-pro",
+      "tier": 1,
+      "tokens_in": 559,
+      "tokens_out": 23,
+      "cost_usd": 0,
+      "task_type": "chinese",
+      "result_summary": ""
+    },
+    {
+      "ts": "2026-09-22T21:42:28Z",
+      "agent": "HERMES_CALL_MIMO",
+      "model": "openrouter/xiaomi/mimo-v2.6-pro",
+      "tier": 1,
+      "tokens_in": 554,
+      "tokens_out": 128,
       "cost_usd": 0,
       "task_type": "chinese",
       "result_summary": ""
