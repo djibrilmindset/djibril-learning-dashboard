@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated_at": "2026-09-22T16:00:24.097336Z",
+    "generated_at": "2026-09-22T18:00:24.317274Z",
     "window_hours": 24,
-    "total_calls": 128,
-    "total_cost_usd": 0.091272,
+    "total_calls": 100,
+    "total_cost_usd": 0.052427,
     "models_count": 3,
     "providers_count": 3,
     "errors_count": 0,
@@ -14,21 +14,21 @@
     {
       "model": "openai-direct/gpt-5.6-luna",
       "provider": "openai-direct",
-      "calls": 33,
-      "successes": 33,
+      "calls": 15,
+      "successes": 15,
       "errors": 0,
-      "tokens_in": 39519,
-      "tokens_out": 17251,
-      "cost_usd": 0.091272
+      "tokens_in": 20261,
+      "tokens_out": 10722,
+      "cost_usd": 0.052427
     },
     {
       "model": "hermes-agent/z-ai/glm-5.3-flash",
       "provider": "hermes-agent",
-      "calls": 18,
-      "successes": 18,
+      "calls": 8,
+      "successes": 8,
       "errors": 0,
-      "tokens_in": 7463,
-      "tokens_out": 4096,
+      "tokens_in": 4831,
+      "tokens_out": 2114,
       "cost_usd": 0.0
     },
     {
