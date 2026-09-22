@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "generated_at": "2026-09-22T06:00:08.388283Z",
+    "generated_at": "2026-09-22T08:00:07.877713Z",
     "window_hours": 24,
-    "total_calls": 206,
+    "total_calls": 202,
     "total_cost_usd": 0.191744,
     "models_count": 11,
     "providers_count": 6,
@@ -22,33 +22,13 @@
       "cost_usd": 0.19174400000000003
     },
     {
-      "model": "ollama/qwen3:14b",
-      "provider": "ollama",
-      "calls": 77,
-      "successes": 77,
-      "errors": 0,
-      "tokens_in": 510970,
-      "tokens_out": 21471,
-      "cost_usd": 0.0
-    },
-    {
       "model": "glm-direct/glm-5.3",
       "provider": "glm-direct",
-      "calls": 12,
-      "successes": 12,
+      "calls": 9,
+      "successes": 9,
       "errors": 0,
-      "tokens_in": 11956,
-      "tokens_out": 10460,
-      "cost_usd": 0.0
-    },
-    {
-      "model": "glm-direct/glm-5.3-flash",
-      "provider": "glm-direct",
-      "calls": 2,
-      "successes": 2,
-      "errors": 0,
-      "tokens_in": 1074,
-      "tokens_out": 410,
+      "tokens_in": 10345,
+      "tokens_out": 9086,
       "cost_usd": 0.0
     },
     {
@@ -79,6 +59,16 @@
       "errors": 0,
       "tokens_in": 34714,
       "tokens_out": 4000,
+      "cost_usd": 0.0
+    },
+    {
+      "model": "glm-direct/glm-5.3-flash",
+      "provider": "glm-direct",
+      "calls": 1,
+      "successes": 1,
+      "errors": 0,
+      "tokens_in": 537,
+      "tokens_out": 232,
       "cost_usd": 0.0
     },
     {
@@ -119,6 +109,16 @@
       "errors": 0,
       "tokens_in": 0,
       "tokens_out": 0,
+      "cost_usd": 0.0
+    },
+    {
+      "model": "ollama/qwen3:14b",
+      "provider": "ollama",
+      "calls": 77,
+      "successes": 77,
+      "errors": 0,
+      "tokens_in": 510946,
+      "tokens_out": 21783,
       "cost_usd": 0.0
     }
   ]
