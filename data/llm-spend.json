@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated_at": "2026-09-21T22:00:28.036552Z",
+    "generated_at": "2026-09-22T00:00:27.867867Z",
     "window_hours": 24,
-    "total_calls": 240,
-    "total_cost_usd": 0.200087,
+    "total_calls": 224,
+    "total_cost_usd": 0.191744,
     "models_count": 11,
     "providers_count": 6,
     "errors_count": 0,
@@ -14,51 +14,41 @@
     {
       "model": "openai-direct/gpt-5.6-luna",
       "provider": "openai-direct",
-      "calls": 78,
-      "successes": 78,
+      "calls": 75,
+      "successes": 75,
       "errors": 0,
-      "tokens_in": 89270,
-      "tokens_out": 36939,
-      "cost_usd": 0.20008700000000001
+      "tokens_in": 87203,
+      "tokens_out": 34847,
+      "cost_usd": 0.19174400000000003
     },
     {
       "model": "glm-direct/glm-5.3",
       "provider": "glm-direct",
-      "calls": 35,
-      "successes": 35,
+      "calls": 27,
+      "successes": 27,
       "errors": 0,
-      "tokens_in": 37165,
-      "tokens_out": 29074,
-      "cost_usd": 0.0
-    },
-    {
-      "model": "ollama/qwen3:14b",
-      "provider": "ollama",
-      "calls": 80,
-      "successes": 80,
-      "errors": 0,
-      "tokens_in": 513290,
-      "tokens_out": 23000,
+      "tokens_in": 30744,
+      "tokens_out": 16903,
       "cost_usd": 0.0
     },
     {
       "model": "glm-direct/glm-5.3-flash",
       "provider": "glm-direct",
-      "calls": 6,
-      "successes": 6,
+      "calls": 5,
+      "successes": 5,
       "errors": 0,
-      "tokens_in": 3233,
-      "tokens_out": 1694,
+      "tokens_in": 2690,
+      "tokens_out": 1666,
       "cost_usd": 0.0
     },
     {
-      "model": "glm-opencode/glm-5.3",
-      "provider": "glm-opencode",
-      "calls": 2,
-      "successes": 2,
+      "model": "ollama/qwen3:14b",
+      "provider": "ollama",
+      "calls": 77,
+      "successes": 77,
       "errors": 0,
-      "tokens_in": 65852,
-      "tokens_out": 7993,
+      "tokens_in": 510970,
+      "tokens_out": 21471,
       "cost_usd": 0.0
     },
     {
@@ -79,6 +69,16 @@
       "errors": 0,
       "tokens_in": 3012,
       "tokens_out": 846,
+      "cost_usd": 0.0
+    },
+    {
+      "model": "glm-opencode/glm-5.3",
+      "provider": "glm-opencode",
+      "calls": 1,
+      "successes": 1,
+      "errors": 0,
+      "tokens_in": 34714,
+      "tokens_out": 4000,
       "cost_usd": 0.0
     },
     {
