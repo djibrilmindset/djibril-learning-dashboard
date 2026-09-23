@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "generated_at": "2026-09-23T18:00:09.547119Z",
+    "generated_at": "2026-09-23T20:00:03.777809Z",
     "window_hours": 24,
-    "total_calls": 379,
+    "total_calls": 353,
     "total_cost_usd": 0.0,
     "models_count": 4,
     "providers_count": 3,
@@ -14,41 +14,41 @@
     {
       "model": "openrouter/xiaomi/mimo-v2.6-pro",
       "provider": "openrouter",
-      "calls": 183,
-      "successes": 183,
+      "calls": 186,
+      "successes": 186,
       "errors": 0,
-      "tokens_in": 137886,
-      "tokens_out": 84849,
-      "cost_usd": 0.0
-    },
-    {
-      "model": "ollama/qwen3:14b",
-      "provider": "ollama",
-      "calls": 79,
-      "successes": 79,
-      "errors": 0,
-      "tokens_in": 523585,
-      "tokens_out": 21773,
+      "tokens_in": 141198,
+      "tokens_out": 89495,
       "cost_usd": 0.0
     },
     {
       "model": "openrouter/xiaomi/mimo-v2.6-flash",
       "provider": "openrouter",
-      "calls": 66,
-      "successes": 66,
+      "calls": 71,
+      "successes": 71,
       "errors": 0,
-      "tokens_in": 80615,
-      "tokens_out": 25869,
+      "tokens_in": 86243,
+      "tokens_out": 27974,
       "cost_usd": 0.0
     },
     {
       "model": "hermes-agent/xiaomi/mimo-v2.6-pro",
       "provider": "hermes-agent",
-      "calls": 51,
-      "successes": 51,
+      "calls": 56,
+      "successes": 56,
       "errors": 0,
-      "tokens_in": 11758,
-      "tokens_out": 13848,
+      "tokens_in": 12279,
+      "tokens_out": 15057,
+      "cost_usd": 0.0
+    },
+    {
+      "model": "ollama/qwen3:14b",
+      "provider": "ollama",
+      "calls": 40,
+      "successes": 40,
+      "errors": 0,
+      "tokens_in": 265052,
+      "tokens_out": 10892,
       "cost_usd": 0.0
     }
   ]
