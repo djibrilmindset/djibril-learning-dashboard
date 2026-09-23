@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "generated_at": "2026-09-23T06:00:30.849070Z",
+    "generated_at": "2026-09-23T08:00:31.122289Z",
     "window_hours": 24,
-    "total_calls": 143,
+    "total_calls": 150,
     "total_cost_usd": 0.0,
     "models_count": 4,
     "providers_count": 3,
@@ -12,23 +12,23 @@
   },
   "by_model": [
     {
+      "model": "openrouter/xiaomi/mimo-v2.6-pro",
+      "provider": "openrouter",
+      "calls": 32,
+      "successes": 32,
+      "errors": 0,
+      "tokens_in": 20962,
+      "tokens_out": 8689,
+      "cost_usd": 0.0
+    },
+    {
       "model": "ollama/qwen3:14b",
       "provider": "ollama",
       "calls": 79,
       "successes": 79,
       "errors": 0,
-      "tokens_in": 523960,
-      "tokens_out": 22299,
-      "cost_usd": 0.0
-    },
-    {
-      "model": "openrouter/xiaomi/mimo-v2.6-pro",
-      "provider": "openrouter",
-      "calls": 25,
-      "successes": 25,
-      "errors": 0,
-      "tokens_in": 16862,
-      "tokens_out": 6457,
+      "tokens_in": 523585,
+      "tokens_out": 21773,
       "cost_usd": 0.0
     },
     {
