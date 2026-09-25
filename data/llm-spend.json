@@ -1,44 +1,54 @@
 {
   "_meta": {
-    "generated_at": "2026-09-25T00:00:43.855811Z",
+    "generated_at": "2026-09-25T02:00:45.601460Z",
     "window_hours": 24,
-    "total_calls": 401,
-    "total_cost_usd": 0.0,
-    "models_count": 8,
+    "total_calls": 495,
+    "total_cost_usd": 0.008635,
+    "models_count": 10,
     "providers_count": 6,
     "errors_count": 0,
-    "healthy_count": 8,
+    "healthy_count": 10,
     "error_count": 0
   },
   "by_model": [
     {
-      "model": "hermes-agent/xiaomi/mimo-v2.6-pro",
-      "provider": "hermes-agent",
-      "calls": 41,
-      "successes": 41,
+      "model": "openrouter/xiaomi/mimo-v2.6-pro",
+      "provider": "openrouter",
+      "calls": 185,
+      "successes": 185,
       "errors": 0,
-      "tokens_in": 7173,
-      "tokens_out": 13169,
-      "cost_usd": 0.0
+      "tokens_in": 154166,
+      "tokens_out": 114182,
+      "cost_usd": 0.0061335
     },
     {
       "model": "openrouter/xiaomi/mimo-v2.6-flash",
       "provider": "openrouter",
-      "calls": 67,
-      "successes": 67,
+      "calls": 71,
+      "successes": 71,
       "errors": 0,
-      "tokens_in": 75914,
-      "tokens_out": 31756,
-      "cost_usd": 0.0
+      "tokens_in": 82124,
+      "tokens_out": 36070,
+      "cost_usd": 0.0023212
     },
     {
-      "model": "openrouter/xiaomi/mimo-v2.6-pro",
+      "model": "openrouter/mimo-v2.6-flash",
       "provider": "openrouter",
-      "calls": 179,
-      "successes": 179,
+      "calls": 2,
+      "successes": 2,
       "errors": 0,
-      "tokens_in": 149950,
-      "tokens_out": 112168,
+      "tokens_in": 1204,
+      "tokens_out": 41,
+      "cost_usd": 0.00018004000000000002
+    },
+    {
+      "model": "hermes-agent/xiaomi/mimo-v2.6-pro",
+      "provider": "hermes-agent",
+      "calls": 40,
+      "successes": 40,
+      "errors": 0,
+      "tokens_in": 7163,
+      "tokens_out": 12913,
       "cost_usd": 0.0
     },
     {
@@ -64,31 +74,41 @@
     {
       "model": "glm-opencode-zai/glm-5.3",
       "provider": "glm-opencode-zai",
-      "calls": 22,
-      "successes": 22,
+      "calls": 91,
+      "successes": 91,
       "errors": 0,
-      "tokens_in": 68037,
-      "tokens_out": 141328,
+      "tokens_in": 321039,
+      "tokens_out": 414391,
       "cost_usd": 0.0
     },
     {
       "model": "hermes-agent/glm-5.3",
       "provider": "hermes-agent",
-      "calls": 38,
-      "successes": 38,
+      "calls": 44,
+      "successes": 44,
       "errors": 0,
-      "tokens_in": 8580,
-      "tokens_out": 12144,
+      "tokens_in": 10456,
+      "tokens_out": 14415,
       "cost_usd": 0.0
     },
     {
       "model": "glm-opencode-adapt/glm-5.3",
       "provider": "glm-opencode-adapt",
-      "calls": 24,
-      "successes": 24,
+      "calls": 31,
+      "successes": 31,
       "errors": 0,
-      "tokens_in": 29841,
-      "tokens_out": 42739,
+      "tokens_in": 38075,
+      "tokens_out": 53653,
+      "cost_usd": 0.0
+    },
+    {
+      "model": "claude-sonnet-5",
+      "provider": "direct",
+      "calls": 1,
+      "successes": 1,
+      "errors": 0,
+      "tokens_in": 8,
+      "tokens_out": 9,
       "cost_usd": 0.0
     }
   ]
