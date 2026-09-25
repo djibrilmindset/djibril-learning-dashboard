@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated_at": "2026-09-25T16:00:35.573207Z",
+    "generated_at": "2026-09-25T18:06:22.306675Z",
     "window_hours": 24,
-    "total_calls": 1901,
-    "total_cost_usd": 0.039158,
+    "total_calls": 1886,
+    "total_cost_usd": 0.040347,
     "models_count": 16,
     "providers_count": 8,
     "errors_count": 0,
@@ -14,12 +14,12 @@
     {
       "model": "openrouter/xiaomi/mimo-v2.6-pro",
       "provider": "openrouter",
-      "calls": 111,
-      "successes": 111,
+      "calls": 102,
+      "successes": 102,
       "errors": 0,
-      "tokens_in": 97512,
-      "tokens_out": 73695,
-      "cost_usd": 0.018206489999999995
+      "tokens_in": 86319,
+      "tokens_out": 64078,
+      "cost_usd": 0.01939577999999999
     },
     {
       "model": "hermes-task-xiaomi/mimo-v2.6-flash",
@@ -34,11 +34,11 @@
     {
       "model": "openrouter/xiaomi/mimo-v2.6-flash",
       "provider": "openrouter",
-      "calls": 43,
-      "successes": 43,
+      "calls": 39,
+      "successes": 39,
       "errors": 0,
-      "tokens_in": 53976,
-      "tokens_out": 23720,
+      "tokens_in": 50741,
+      "tokens_out": 22496,
       "cost_usd": 0.0038999799999999995
     },
     {
@@ -52,26 +52,6 @@
       "cost_usd": 0.00018004000000000002
     },
     {
-      "model": "glm-direct/glm-5.3",
-      "provider": "glm-direct",
-      "calls": 11,
-      "successes": 11,
-      "errors": 0,
-      "tokens_in": 10245,
-      "tokens_out": 18611,
-      "cost_usd": 0.0
-    },
-    {
-      "model": "hermes-agent/xiaomi/mimo-v2.6-pro",
-      "provider": "hermes-agent",
-      "calls": 7,
-      "successes": 7,
-      "errors": 0,
-      "tokens_in": 1654,
-      "tokens_out": 2054,
-      "cost_usd": 0.0
-    },
-    {
       "model": "glm-5.3-dsh",
       "provider": "direct",
       "calls": 13,
@@ -82,13 +62,33 @@
       "cost_usd": 0.0
     },
     {
+      "model": "hermes-agent/xiaomi/mimo-v2.6-pro",
+      "provider": "hermes-agent",
+      "calls": 4,
+      "successes": 4,
+      "errors": 0,
+      "tokens_in": 1498,
+      "tokens_out": 1158,
+      "cost_usd": 0.0
+    },
+    {
+      "model": "glm-direct/glm-5.3",
+      "provider": "glm-direct",
+      "calls": 5,
+      "successes": 5,
+      "errors": 0,
+      "tokens_in": 8007,
+      "tokens_out": 9527,
+      "cost_usd": 0.0
+    },
+    {
       "model": "glm-opencode-zai/glm-5.3",
       "provider": "glm-opencode-zai",
-      "calls": 1464,
-      "successes": 1464,
+      "calls": 1469,
+      "successes": 1469,
       "errors": 0,
-      "tokens_in": 1933186,
-      "tokens_out": 2041984,
+      "tokens_in": 1949678,
+      "tokens_out": 2060152,
       "cost_usd": 0.0
     },
     {
@@ -134,11 +134,11 @@
     {
       "model": "glm-opencode-zai/glm-5.3-flash",
       "provider": "glm-opencode-zai",
-      "calls": 52,
-      "successes": 52,
+      "calls": 54,
+      "successes": 54,
       "errors": 0,
-      "tokens_in": 52895,
-      "tokens_out": 41735,
+      "tokens_in": 54337,
+      "tokens_out": 41979,
       "cost_usd": 0.0
     },
     {
