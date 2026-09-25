@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated_at": "2026-09-25T12:00:31.413836Z",
+    "generated_at": "2026-09-25T14:00:13.174517Z",
     "window_hours": 24,
-    "total_calls": 1884,
-    "total_cost_usd": 0.037225,
+    "total_calls": 1894,
+    "total_cost_usd": 0.038164,
     "models_count": 16,
     "providers_count": 8,
     "errors_count": 0,
@@ -11,6 +11,16 @@
     "error_count": 0
   },
   "by_model": [
+    {
+      "model": "openrouter/xiaomi/mimo-v2.6-pro",
+      "provider": "openrouter",
+      "calls": 112,
+      "successes": 112,
+      "errors": 0,
+      "tokens_in": 99071,
+      "tokens_out": 74651,
+      "cost_usd": 0.017212514999999994
+    },
     {
       "model": "hermes-task-xiaomi/mimo-v2.6-flash",
       "provider": "hermes-task-xiaomi",
@@ -22,23 +32,13 @@
       "cost_usd": 0.016871237600000002
     },
     {
-      "model": "openrouter/xiaomi/mimo-v2.6-pro",
-      "provider": "openrouter",
-      "calls": 127,
-      "successes": 127,
-      "errors": 0,
-      "tokens_in": 110518,
-      "tokens_out": 82151,
-      "cost_usd": 0.01627335
-    },
-    {
       "model": "openrouter/xiaomi/mimo-v2.6-flash",
       "provider": "openrouter",
-      "calls": 50,
-      "successes": 50,
+      "calls": 44,
+      "successes": 44,
       "errors": 0,
-      "tokens_in": 61656,
-      "tokens_out": 26914,
+      "tokens_in": 54925,
+      "tokens_out": 24068,
       "cost_usd": 0.0038999799999999995
     },
     {
@@ -52,23 +52,23 @@
       "cost_usd": 0.00018004000000000002
     },
     {
-      "model": "hermes-agent/xiaomi/mimo-v2.6-pro",
-      "provider": "hermes-agent",
-      "calls": 18,
-      "successes": 18,
+      "model": "glm-direct/glm-5.3",
+      "provider": "glm-direct",
+      "calls": 15,
+      "successes": 15,
       "errors": 0,
-      "tokens_in": 3032,
-      "tokens_out": 5241,
+      "tokens_in": 12530,
+      "tokens_out": 21651,
       "cost_usd": 0.0
     },
     {
-      "model": "glm-direct/glm-5.3",
-      "provider": "glm-direct",
-      "calls": 20,
-      "successes": 20,
+      "model": "hermes-agent/xiaomi/mimo-v2.6-pro",
+      "provider": "hermes-agent",
+      "calls": 9,
+      "successes": 9,
       "errors": 0,
-      "tokens_in": 17045,
-      "tokens_out": 29614,
+      "tokens_in": 1674,
+      "tokens_out": 2645,
       "cost_usd": 0.0
     },
     {
@@ -84,31 +84,31 @@
     {
       "model": "glm-opencode-zai/glm-5.3",
       "provider": "glm-opencode-zai",
-      "calls": 1440,
-      "successes": 1440,
+      "calls": 1455,
+      "successes": 1455,
       "errors": 0,
-      "tokens_in": 1899683,
-      "tokens_out": 1929325,
+      "tokens_in": 1909957,
+      "tokens_out": 1953822,
       "cost_usd": 0.0
     },
     {
       "model": "hermes-agent/glm-5.3",
       "provider": "hermes-agent",
-      "calls": 67,
-      "successes": 67,
+      "calls": 78,
+      "successes": 78,
       "errors": 0,
-      "tokens_in": 19565,
-      "tokens_out": 22302,
+      "tokens_in": 21279,
+      "tokens_out": 26088,
       "cost_usd": 0.0
     },
     {
       "model": "glm-opencode-adapt/glm-5.3",
       "provider": "glm-opencode-adapt",
-      "calls": 79,
-      "successes": 79,
+      "calls": 87,
+      "successes": 87,
       "errors": 0,
-      "tokens_in": 72139,
-      "tokens_out": 95167,
+      "tokens_in": 84379,
+      "tokens_out": 108131,
       "cost_usd": 0.0
     },
     {
@@ -134,21 +134,21 @@
     {
       "model": "glm-opencode-zai/glm-5.3-flash",
       "provider": "glm-opencode-zai",
-      "calls": 40,
-      "successes": 40,
+      "calls": 50,
+      "successes": 50,
       "errors": 0,
-      "tokens_in": 39366,
-      "tokens_out": 27003,
+      "tokens_in": 50515,
+      "tokens_out": 37447,
       "cost_usd": 0.0
     },
     {
       "model": "qwen-token-plan/qwen3.8-max",
       "provider": "qwen-token-plan",
-      "calls": 17,
-      "successes": 17,
+      "calls": 18,
+      "successes": 18,
       "errors": 0,
-      "tokens_in": 67433,
-      "tokens_out": 14924,
+      "tokens_in": 67568,
+      "tokens_out": 15392,
       "cost_usd": 0.0
     },
     {
