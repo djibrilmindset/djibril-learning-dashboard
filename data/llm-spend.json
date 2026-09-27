@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated_at": "2026-09-27T06:00:17.295933Z",
+    "generated_at": "2026-09-27T08:00:17.259107Z",
     "window_hours": 24,
-    "total_calls": 502,
-    "total_cost_usd": 0.682581,
+    "total_calls": 495,
+    "total_cost_usd": 0.904221,
     "models_count": 15,
     "providers_count": 8,
     "errors_count": 0,
@@ -14,22 +14,22 @@
     {
       "model": "hermes-task-xiaomi/mimo-v2.6-pro",
       "provider": "hermes-task-xiaomi",
-      "calls": 6,
-      "successes": 6,
+      "calls": 7,
+      "successes": 7,
       "errors": 0,
-      "tokens_in": 586779,
-      "tokens_out": 197613,
-      "cost_usd": 0.4626036054
+      "tokens_in": 1003572,
+      "tokens_out": 238875,
+      "cost_usd": 0.6856017515999999
     },
     {
       "model": "openrouter/xiaomi/mimo-v2.6-pro",
       "provider": "openrouter",
-      "calls": 114,
-      "successes": 114,
+      "calls": 109,
+      "successes": 109,
       "errors": 0,
-      "tokens_in": 67512,
-      "tokens_out": 93538,
-      "cost_usd": 0.10798650959999996
+      "tokens_in": 67230,
+      "tokens_out": 92078,
+      "cost_usd": 0.10662815159999997
     },
     {
       "model": "hermes-task-minimax/minimax-m3",
@@ -72,23 +72,23 @@
       "cost_usd": 0.0039491199999999995
     },
     {
-      "model": "hermes-agent/xiaomi/mimo-v2.6-pro",
-      "provider": "hermes-agent",
-      "calls": 34,
-      "successes": 34,
+      "model": "qwen-token-plan/qwen3.8-max",
+      "provider": "qwen-token-plan",
+      "calls": 131,
+      "successes": 131,
       "errors": 0,
-      "tokens_in": 4550,
-      "tokens_out": 9239,
+      "tokens_in": 227762,
+      "tokens_out": 71002,
       "cost_usd": 0.0
     },
     {
-      "model": "qwen-token-plan/qwen3.8-max",
-      "provider": "qwen-token-plan",
-      "calls": 133,
-      "successes": 133,
+      "model": "hermes-agent/xiaomi/mimo-v2.6-pro",
+      "provider": "hermes-agent",
+      "calls": 33,
+      "successes": 33,
       "errors": 0,
-      "tokens_in": 311536,
-      "tokens_out": 128188,
+      "tokens_in": 4540,
+      "tokens_out": 8967,
       "cost_usd": 0.0
     },
     {
