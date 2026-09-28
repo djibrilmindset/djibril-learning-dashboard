@@ -1,13 +1,13 @@
 {
   "_meta": {
-    "generated_at": "2026-09-28T20:00:36.567531Z",
+    "generated_at": "2026-09-28T22:00:45.436995Z",
     "window_hours": 24,
-    "total_calls": 494,
-    "total_cost_usd": 1.909676,
-    "models_count": 4,
-    "providers_count": 3,
+    "total_calls": 471,
+    "total_cost_usd": 1.777059,
+    "models_count": 6,
+    "providers_count": 4,
     "errors_count": 0,
-    "healthy_count": 4,
+    "healthy_count": 6,
     "error_count": 0
   },
   "by_model": [
@@ -17,38 +17,58 @@
       "calls": 15,
       "successes": 15,
       "errors": 0,
-      "tokens_in": 2563785,
-      "tokens_out": 428226,
-      "cost_usd": 1.5926212134
+      "tokens_in": 2371287,
+      "tokens_out": 401868,
+      "cost_usd": 1.4795332578000002
     },
     {
       "model": "openrouter/xiaomi/mimo-v2.6-pro",
       "provider": "openrouter",
-      "calls": 202,
-      "successes": 202,
+      "calls": 198,
+      "successes": 198,
       "errors": 0,
-      "tokens_in": 328077,
-      "tokens_out": 170756,
-      "cost_usd": 0.28232635580000026
+      "tokens_in": 313697,
+      "tokens_out": 163249,
+      "cost_usd": 0.2695282044
     },
     {
       "model": "openrouter/xiaomi/mimo-v2.6-flash",
       "provider": "openrouter",
-      "calls": 179,
-      "successes": 179,
+      "calls": 102,
+      "successes": 102,
       "errors": 0,
-      "tokens_in": 204999,
-      "tokens_out": 61359,
-      "cost_usd": 0.03472844340000001
+      "tokens_in": 130544,
+      "tokens_out": 39887,
+      "cost_usd": 0.027997775800000006
     },
     {
       "model": "hermes-agent/xiaomi/mimo-v2.6-pro",
       "provider": "hermes-agent",
-      "calls": 98,
-      "successes": 98,
+      "calls": 88,
+      "successes": 88,
       "errors": 0,
-      "tokens_in": 60691,
-      "tokens_out": 31662,
+      "tokens_in": 58717,
+      "tokens_out": 27765,
+      "cost_usd": 0.0
+    },
+    {
+      "model": "glm-4.6v",
+      "provider": "direct",
+      "calls": 34,
+      "successes": 34,
+      "errors": 0,
+      "tokens_in": 0,
+      "tokens_out": 0,
+      "cost_usd": 0.0
+    },
+    {
+      "model": "attaque_task(qwen3.8-max>glm-5.3-flash@opencode>minimax-m3)",
+      "provider": "direct",
+      "calls": 34,
+      "successes": 34,
+      "errors": 0,
+      "tokens_in": 0,
+      "tokens_out": 0,
       "cost_usd": 0.0
     }
   ]
