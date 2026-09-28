@@ -3,20 +3,35 @@
 # ADELLE DASHBOARD PUSH · Collecte données → push GitHub Pages
 # Lancé par cron Hermes toutes les heures
 # ═══════════════════════════════════════════════════════════════════
+# SPEC — push_dashboard.sh (migration secrets ENV + fd, 28/09) ───────
+# CONTRAT : secrets lus en ENV uniquement (source ~/.env puis ~/agence-ia/.env,
+#   résolution APRÈS source) ; collecte JSONL coût LLM + 2 GET Supabase REST
+#   (agence_agent_health, agence_runs) + brief ; écrit data/*.json ; commit+push
+#   GitHub Pages sur master, sautés par --dry-run (rc 0).
+# EFFETS : écrit $DATA_DIR/{llm-spend,llm-spend-raw,agent-status,recent-runs,
+#   dashboard_brief_v2}.json ; git pull/add/commit/push dans $REPO_DIR ; HTTPS sortant.
+# SÉCURITÉ : SUPABASE_ANON et le token GitHub transitent par ENV + fd curl --config
+#   / credential.helper éphémère — JAMAIS dans l’argv d’un processus (ps -Ao args=
+#   les verrait), JAMAIS dans un log, JAMAIS dans .git/config.
+# ───────────────────────────────────────────────────────────────────
 set -euo pipefail
 
 REPO_DIR="$HOME/djibril-learning-dashboard"
 DATA_DIR="$REPO_DIR/data"
-SUPABASE_URL="https://nbnbsljqtolzzuqnkyae.supabase.co"
-SUPABASE_ANON="${SUPABASE_ANON:-${SUPABASE_ANON_KEY:-}}"
-BRIGHT_TOKEN="${BRIGHT_DATA_API_KEY:-}"
+DRY_RUN=false
+[ "${1:-}" = "--dry-run" ] && DRY_RUN=true
 
 log() { echo "[$(date '+%H:%M:%S')] $*"; }
 log "ADELLE PUSH · Démarrage"
 
-# Load env
+# Load env — AVANT toute résolution de secret (sinon .env lu trop tard = secret vide)
 [ -f ~/.env ] && source ~/.env 2>/dev/null || true
 [ -f ~/agence-ia/.env ] && source ~/agence-ia/.env 2>/dev/null || true
+
+# Secrets : ENV uniquement (jamais en dur, jamais en argv — transport par fd / helper)
+SUPABASE_URL="${SUPABASE_URL:-https://nbnbsljqtolzzuqnkyae.supabase.co}"
+SUPABASE_ANON="${SUPABASE_ANON:-${SUPABASE_ANON_KEY:-}}"
+BRIGHT_TOKEN="${BRIGHT_DATA_API_KEY:-}"
 
 # Ensure repo is up to date
 cd "$REPO_DIR"
@@ -70,8 +85,10 @@ fi
 # ── 2. Agent Status ──
 log "Collecting agent status..."
 if [ -n "$SUPABASE_ANON" ]; then
-  curl -s "${SUPABASE_URL}/rest/v1/agence_agent_health?select=*" \
-    -H "apikey: $SUPABASE_ANON" -H "Authorization: Bearer $SUPABASE_ANON" > "$DATA_DIR/agent-status.json" 2>/dev/null || log "  → using cached"
+  curl -s --config <(printf 'url = "%s"
+header = "apikey: %s"
+header = "Authorization: Bearer %s"
+' "$SUPABASE_URL/rest/v1/agence_agent_health?select=*" "$SUPABASE_ANON" "$SUPABASE_ANON") > "$DATA_DIR/agent-status.json" 2>/dev/null || log "  → using cached"
 fi
 
 # ── 3. Veille Messages (via Bright Data SERP) ──
@@ -84,8 +101,10 @@ fi
 # ── 4. Recent Runs ──
 log "Collecting recent runs..."
 if [ -n "$SUPABASE_ANON" ]; then
-  curl -s "${SUPABASE_URL}/rest/v1/agence_runs?select=*&order=started_at.desc&limit=10" \
-    -H "apikey: $SUPABASE_ANON" -H "Authorization: Bearer $SUPABASE_ANON" > "$DATA_DIR/recent-runs.json" 2>/dev/null || log "  → using cached"
+  curl -s --config <(printf 'url = "%s"
+header = "apikey: %s"
+header = "Authorization: Bearer %s"
+' "$SUPABASE_URL/rest/v1/agence_runs?select=*&order=started_at.desc&limit=10" "$SUPABASE_ANON" "$SUPABASE_ANON") > "$DATA_DIR/recent-runs.json" 2>/dev/null || log "  → using cached"
 fi
 
 # ── 5. Dashboard Brief ──
@@ -101,19 +120,24 @@ json.dump(brief, open('$DATA_DIR/dashboard_brief_v2.json','w'))
 " 2>/dev/null || true
 
 # ── 6. Commit & Push ──
+if $DRY_RUN; then
+  log "DRY RUN — skipping commit+push"
+  exit 0
+fi
+
 log "Committing changes..."
 git add data/ 2>/dev/null || true
 git commit -m "ADELLE dashboard refresh $(date '+%Y-%m-%d %H:%M')" 2>/dev/null || { log "  → nothing to commit"; exit 0; }
 
-# Push with token auth
+# Push with token auth — secret hors argv : credential.helper éphémère lit le token
+# depuis l’ENV (jamais dans argv de git, jamais dans .git/config ; l’ancienne forme
+# git remote set-url le fuyait 2 fois : argv ps + .git/config sur disque).
 GIT_TOKEN="${GITHUB_PAT_FINEGRAINED:-${GITHUB_TOKEN:-}}"
 if [ -n "$GIT_TOKEN" ]; then
-  ORIGIN_URL=$(git remote get-url origin)
-  git remote set-url origin "https://x-access-token:${GIT_TOKEN}@github.com/djibrilmindset/djibril-learning-dashboard.git"
+  export GIT_TOKEN
   git fetch origin master 2>/dev/null
   git rebase origin/master 2>/dev/null || true
-  git push origin master 2>/dev/null && log "✅ Dashboard live → https://djibrilmindset.github.io/djibril-learning-dashboard/" || log "❌ Push failed"
-  git remote set-url origin "$ORIGIN_URL" 2>/dev/null || true
+  git -c credential.helper= -c credential.helper='!f() { echo username=x-access-token; echo password="$GIT_TOKEN"; }; f' push origin master 2>/dev/null && log "✅ Dashboard live → https://djibrilmindset.github.io/djibril-learning-dashboard/" || log "❌ Push failed"
 else
   git push origin master 2>/dev/null && log "✅ Dashboard live → https://djibrilmindset.github.io/djibril-learning-dashboard/" || log "❌ Push failed (no token)"
 fi
