@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated_at": "2026-09-28T16:00:03.695080Z",
+    "generated_at": "2026-09-28T18:00:26.271204Z",
     "window_hours": 24,
-    "total_calls": 544,
-    "total_cost_usd": 2.195359,
+    "total_calls": 506,
+    "total_cost_usd": 1.906405,
     "models_count": 4,
     "providers_count": 3,
     "errors_count": 0,
@@ -14,41 +14,41 @@
     {
       "model": "hermes-task-xiaomi/mimo-v2.6-pro",
       "provider": "hermes-task-xiaomi",
-      "calls": 16,
-      "successes": 16,
+      "calls": 15,
+      "successes": 15,
       "errors": 0,
-      "tokens_in": 2433121,
-      "tokens_out": 380101,
-      "cost_usd": 1.4811798762000001
-    },
-    {
-      "model": "openrouter/xiaomi/mimo-v2.6-flash",
-      "provider": "openrouter",
-      "calls": 222,
-      "successes": 222,
-      "errors": 0,
-      "tokens_in": 2558664,
-      "tokens_out": 205389,
-      "cost_usd": 0.4041946272000002
+      "tokens_in": 2463463,
+      "tokens_out": 420438,
+      "cost_usd": 1.5387316122000003
     },
     {
       "model": "openrouter/xiaomi/mimo-v2.6-pro",
       "provider": "openrouter",
-      "calls": 216,
-      "successes": 216,
+      "calls": 208,
+      "successes": 208,
       "errors": 0,
-      "tokens_in": 363760,
-      "tokens_out": 184705,
-      "cost_usd": 0.30998460680000023
+      "tokens_in": 343943,
+      "tokens_out": 177157,
+      "cost_usd": 0.29479719580000024
+    },
+    {
+      "model": "openrouter/xiaomi/mimo-v2.6-flash",
+      "provider": "openrouter",
+      "calls": 185,
+      "successes": 185,
+      "errors": 0,
+      "tokens_in": 449620,
+      "tokens_out": 75289,
+      "cost_usd": 0.07287578339999995
     },
     {
       "model": "hermes-agent/xiaomi/mimo-v2.6-pro",
       "provider": "hermes-agent",
-      "calls": 90,
-      "successes": 90,
+      "calls": 98,
+      "successes": 98,
       "errors": 0,
-      "tokens_in": 56875,
-      "tokens_out": 30811,
+      "tokens_in": 60603,
+      "tokens_out": 31729,
       "cost_usd": 0.0
     }
   ]
