@@ -1,13 +1,13 @@
 {
   "_meta": {
-    "generated_at": "2026-09-29T20:07:05.475338Z",
+    "generated_at": "2026-09-29T22:00:42.983183Z",
     "window_hours": 24,
-    "total_calls": 283,
-    "total_cost_usd": 1.098764,
-    "models_count": 6,
-    "providers_count": 4,
+    "total_calls": 184,
+    "total_cost_usd": 1.099802,
+    "models_count": 4,
+    "providers_count": 3,
     "errors_count": 0,
-    "healthy_count": 6,
+    "healthy_count": 4,
     "error_count": 0
   },
   "by_model": [
@@ -17,58 +17,38 @@
       "calls": 11,
       "successes": 11,
       "errors": 0,
-      "tokens_in": 1628556,
-      "tokens_out": 286863,
-      "cost_usd": 0.9998617644000001
+      "tokens_in": 1666229,
+      "tokens_out": 288024,
+      "cost_usd": 1.0184235702
     },
     {
       "model": "openrouter/xiaomi/mimo-v2.6-pro",
       "provider": "openrouter",
-      "calls": 100,
-      "successes": 100,
+      "calls": 88,
+      "successes": 88,
       "errors": 0,
-      "tokens_in": 86232,
-      "tokens_out": 53741,
-      "cost_usd": 0.08149450499999993
+      "tokens_in": 73503,
+      "tokens_out": 46091,
+      "cost_usd": 0.06985868499999999
     },
     {
       "model": "openrouter/xiaomi/mimo-v2.6-flash",
       "provider": "openrouter",
-      "calls": 56,
-      "successes": 56,
+      "calls": 36,
+      "successes": 36,
       "errors": 0,
-      "tokens_in": 44588,
-      "tokens_out": 16443,
-      "cost_usd": 0.017407659400000008
-    },
-    {
-      "model": "glm-4.6v",
-      "provider": "direct",
-      "calls": 34,
-      "successes": 34,
-      "errors": 0,
-      "tokens_in": 0,
-      "tokens_out": 0,
-      "cost_usd": 0.0
-    },
-    {
-      "model": "attaque_task(qwen3.8-max>glm-5.3-flash@opencode>minimax-m3)",
-      "provider": "direct",
-      "calls": 34,
-      "successes": 34,
-      "errors": 0,
-      "tokens_in": 0,
-      "tokens_out": 0,
-      "cost_usd": 0.0
+      "tokens_in": 25394,
+      "tokens_out": 7887,
+      "cost_usd": 0.011519398000000002
     },
     {
       "model": "hermes-agent/xiaomi/mimo-v2.6-pro",
       "provider": "hermes-agent",
-      "calls": 48,
-      "successes": 48,
+      "calls": 49,
+      "successes": 49,
       "errors": 0,
-      "tokens_in": 18879,
-      "tokens_out": 10010,
+      "tokens_in": 20653,
+      "tokens_out": 10470,
       "cost_usd": 0.0
     }
   ]
