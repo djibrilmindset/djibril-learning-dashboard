@@ -1,13 +1,13 @@
 {
   "_meta": {
-    "generated_at": "2026-09-30T11:33:13.693453Z",
+    "generated_at": "2026-09-30T12:00:06.063043Z",
     "window_hours": 24,
-    "total_calls": 186,
-    "total_cost_usd": 0.901017,
-    "models_count": 6,
-    "providers_count": 3,
+    "total_calls": 217,
+    "total_cost_usd": 0.905182,
+    "models_count": 8,
+    "providers_count": 4,
     "errors_count": 0,
-    "healthy_count": 6,
+    "healthy_count": 8,
     "error_count": 0
   },
   "by_model": [
@@ -24,22 +24,22 @@
     {
       "model": "openrouter/xiaomi/mimo-v2.6-pro",
       "provider": "openrouter",
-      "calls": 78,
-      "successes": 78,
+      "calls": 86,
+      "successes": 86,
       "errors": 0,
-      "tokens_in": 73418,
-      "tokens_out": 34769,
-      "cost_usd": 0.0593104684
+      "tokens_in": 78001,
+      "tokens_out": 37036,
+      "cost_usd": 0.0627213034
     },
     {
       "model": "openrouter/xiaomi/mimo-v2.6-flash",
       "provider": "openrouter",
-      "calls": 36,
-      "successes": 36,
+      "calls": 41,
+      "successes": 41,
       "errors": 0,
-      "tokens_in": 25890,
-      "tokens_out": 5177,
-      "cost_usd": 0.006074223999999999
+      "tokens_in": 29550,
+      "tokens_out": 5953,
+      "cost_usd": 0.006828823999999999
     },
     {
       "model": "hermes-agent/xiaomi/mimo-v2.6-pro",
@@ -64,11 +64,31 @@
     {
       "model": "hermes-agent/deepseek/deepseek-v4.1-flash",
       "provider": "hermes-agent",
-      "calls": 26,
-      "successes": 26,
+      "calls": 32,
+      "successes": 32,
       "errors": 0,
-      "tokens_in": 4326,
-      "tokens_out": 5331,
+      "tokens_in": 5490,
+      "tokens_out": 6607,
+      "cost_usd": 0.0
+    },
+    {
+      "model": "glm-4.6v",
+      "provider": "direct",
+      "calls": 5,
+      "successes": 5,
+      "errors": 0,
+      "tokens_in": 0,
+      "tokens_out": 0,
+      "cost_usd": 0.0
+    },
+    {
+      "model": "attaque_task(qwen3.8-max>glm-5.3-flash@opencode>minimax-m3)",
+      "provider": "direct",
+      "calls": 7,
+      "successes": 7,
+      "errors": 0,
+      "tokens_in": 0,
+      "tokens_out": 0,
       "cost_usd": 0.0
     }
   ]
