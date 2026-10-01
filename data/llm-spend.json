@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated_at": "2026-09-30T22:00:38.624322Z",
+    "generated_at": "2026-10-01T00:00:38.664817Z",
     "window_hours": 24,
-    "total_calls": 240,
-    "total_cost_usd": 0.900037,
+    "total_calls": 250,
+    "total_cost_usd": 0.955151,
     "models_count": 9,
     "providers_count": 4,
     "errors_count": 0,
@@ -17,38 +17,38 @@
       "calls": 11,
       "successes": 11,
       "errors": 0,
-      "tokens_in": 1366661,
-      "tokens_out": 221043,
-      "cost_usd": 0.8324459754
+      "tokens_in": 1418131,
+      "tokens_out": 246022,
+      "cost_usd": 0.8865333378
     },
     {
       "model": "openrouter/xiaomi/mimo-v2.6-pro",
       "provider": "openrouter",
-      "calls": 82,
-      "successes": 82,
+      "calls": 87,
+      "successes": 87,
       "errors": 0,
-      "tokens_in": 75346,
-      "tokens_out": 37334,
-      "cost_usd": 0.0617840224
+      "tokens_in": 78449,
+      "tokens_out": 36674,
+      "cost_usd": 0.06269308914999999
     },
     {
       "model": "openrouter/xiaomi/mimo-v2.6-flash",
       "provider": "openrouter",
-      "calls": 43,
-      "successes": 43,
+      "calls": 44,
+      "successes": 44,
       "errors": 0,
-      "tokens_in": 30598,
-      "tokens_out": 5983,
-      "cost_usd": 0.005807284
+      "tokens_in": 31260,
+      "tokens_out": 6203,
+      "cost_usd": 0.00592431
     },
     {
       "model": "hermes-agent/xiaomi/mimo-v2.6-pro",
       "provider": "hermes-agent",
-      "calls": 10,
-      "successes": 10,
+      "calls": 8,
+      "successes": 8,
       "errors": 0,
-      "tokens_in": 402,
-      "tokens_out": 1844,
+      "tokens_in": 382,
+      "tokens_out": 1527,
       "cost_usd": 0.0
     },
     {
@@ -94,11 +94,11 @@
     {
       "model": "hermes-agent/deepseek/deepseek-v4.1-flash:floor",
       "provider": "hermes-agent",
-      "calls": 30,
-      "successes": 30,
+      "calls": 36,
+      "successes": 36,
       "errors": 0,
-      "tokens_in": 6698,
-      "tokens_out": 6097,
+      "tokens_in": 11336,
+      "tokens_out": 7792,
       "cost_usd": 0.0
     }
   ]
