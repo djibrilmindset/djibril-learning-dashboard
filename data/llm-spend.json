@@ -1,13 +1,13 @@
 {
   "_meta": {
-    "generated_at": "2026-10-01T06:00:21.163069Z",
+    "generated_at": "2026-10-01T08:00:17.974193Z",
     "window_hours": 24,
-    "total_calls": 251,
-    "total_cost_usd": 0.807764,
-    "models_count": 9,
+    "total_calls": 258,
+    "total_cost_usd": 0.825319,
+    "models_count": 7,
     "providers_count": 4,
     "errors_count": 0,
-    "healthy_count": 9,
+    "healthy_count": 7,
     "error_count": 0
   },
   "by_model": [
@@ -17,49 +17,29 @@
       "calls": 10,
       "successes": 10,
       "errors": 0,
-      "tokens_in": 1055818,
-      "tokens_out": 244916,
-      "cost_usd": 0.7458171612
+      "tokens_in": 1048507,
+      "tokens_out": 258750,
+      "cost_usd": 0.7633722449999999
     },
     {
       "model": "openrouter/xiaomi/mimo-v2.6-pro",
       "provider": "openrouter",
-      "calls": 84,
-      "successes": 84,
+      "calls": 86,
+      "successes": 86,
       "errors": 0,
-      "tokens_in": 70009,
-      "tokens_out": 33736,
-      "cost_usd": 0.05625381099999998
+      "tokens_in": 70122,
+      "tokens_out": 33845,
+      "cost_usd": 0.05634452074999997
     },
     {
       "model": "openrouter/xiaomi/mimo-v2.6-flash",
       "provider": "openrouter",
-      "calls": 45,
-      "successes": 45,
+      "calls": 46,
+      "successes": 46,
       "errors": 0,
-      "tokens_in": 31917,
-      "tokens_out": 6012,
-      "cost_usd": 0.005692945999999998
-    },
-    {
-      "model": "hermes-agent/xiaomi/mimo-v2.6-pro",
-      "provider": "hermes-agent",
-      "calls": 2,
-      "successes": 2,
-      "errors": 0,
-      "tokens_in": 20,
-      "tokens_out": 330,
-      "cost_usd": 0.0
-    },
-    {
-      "model": "hermes-agent/openai/gpt-5.6-luna",
-      "provider": "hermes-agent",
-      "calls": 4,
-      "successes": 4,
-      "errors": 0,
-      "tokens_in": 62,
-      "tokens_out": 502,
-      "cost_usd": 0.0
+      "tokens_in": 32885,
+      "tokens_out": 6490,
+      "cost_usd": 0.005601848
     },
     {
       "model": "hermes-agent/deepseek/deepseek-v4.1-flash",
@@ -94,11 +74,11 @@
     {
       "model": "hermes-agent/deepseek/deepseek-v4.1-flash:floor",
       "provider": "hermes-agent",
-      "calls": 46,
-      "successes": 46,
+      "calls": 56,
+      "successes": 56,
       "errors": 0,
-      "tokens_in": 11864,
-      "tokens_out": 9702,
+      "tokens_in": 14938,
+      "tokens_out": 12484,
       "cost_usd": 0.0
     }
   ]
