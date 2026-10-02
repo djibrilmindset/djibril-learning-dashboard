@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated_at": "2026-10-02T04:00:52.375289Z",
+    "generated_at": "2026-10-02T06:00:52.380683Z",
     "window_hours": 24,
-    "total_calls": 385,
-    "total_cost_usd": 0.874686,
+    "total_calls": 397,
+    "total_cost_usd": 0.851066,
     "models_count": 7,
     "providers_count": 4,
     "errors_count": 0,
@@ -14,61 +14,61 @@
     {
       "model": "hermes-task-mimo-v2.6-pro",
       "provider": "direct",
-      "calls": 9,
-      "successes": 9,
+      "calls": 10,
+      "successes": 10,
       "errors": 0,
-      "tokens_in": 742909,
-      "tokens_out": 184588,
-      "cost_usd": 0.5107312854
+      "tokens_in": 869877,
+      "tokens_out": 224511,
+      "cost_usd": 0.613554921
     },
     {
       "model": "hermes-task-xiaomi/mimo-v2.6-pro",
       "provider": "hermes-task-xiaomi",
-      "calls": 6,
-      "successes": 6,
+      "calls": 5,
+      "successes": 5,
       "errors": 0,
-      "tokens_in": 468570,
-      "tokens_out": 117320,
-      "cost_usd": 0.34397271479999997
+      "tokens_in": 322157,
+      "tokens_out": 75676,
+      "cost_usd": 0.2229403062
     },
     {
       "model": "openrouter/xiaomi/mimo-v2.6-pro",
       "provider": "openrouter",
-      "calls": 178,
-      "successes": 178,
+      "calls": 191,
+      "successes": 191,
       "errors": 0,
-      "tokens_in": 19555,
-      "tokens_out": 13961,
-      "cost_usd": 0.017252909650000006
+      "tokens_in": 10001,
+      "tokens_out": 10504,
+      "cost_usd": 0.012430310650000002
     },
     {
       "model": "openrouter/xiaomi/mimo-v2.6-flash",
       "provider": "openrouter",
-      "calls": 98,
-      "successes": 98,
+      "calls": 96,
+      "successes": 96,
       "errors": 0,
-      "tokens_in": 15962,
-      "tokens_out": 3347,
-      "cost_usd": 0.0027295590000000003
+      "tokens_in": 12635,
+      "tokens_out": 3096,
+      "cost_usd": 0.0021401379999999998
     },
     {
       "model": "hermes-agent/deepseek/deepseek-v4.1-flash:floor",
       "provider": "hermes-agent",
-      "calls": 18,
-      "successes": 18,
+      "calls": 15,
+      "successes": 15,
       "errors": 0,
-      "tokens_in": 5450,
-      "tokens_out": 4484,
+      "tokens_in": 5069,
+      "tokens_out": 3891,
       "cost_usd": 0.0
     },
     {
       "model": "hermes-agent/mimo-v2.6-pro",
       "provider": "hermes-agent",
-      "calls": 75,
-      "successes": 75,
+      "calls": 79,
+      "successes": 79,
       "errors": 0,
-      "tokens_in": 16996,
-      "tokens_out": 23674,
+      "tokens_in": 17114,
+      "tokens_out": 24587,
       "cost_usd": 0.0
     },
     {
