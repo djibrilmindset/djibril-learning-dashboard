@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated_at": "2026-10-03T22:00:23.567056Z",
+    "generated_at": "2026-10-04T00:00:03.934501Z",
     "window_hours": 24,
-    "total_calls": 338,
-    "total_cost_usd": 1.376049,
+    "total_calls": 335,
+    "total_cost_usd": 1.264588,
     "models_count": 4,
     "providers_count": 3,
     "errors_count": 0,
@@ -14,18 +14,18 @@
     {
       "model": "hermes-task-mimo-v2.6-pro",
       "provider": "direct",
-      "calls": 15,
-      "successes": 15,
+      "calls": 14,
+      "successes": 14,
       "errors": 0,
-      "tokens_in": 1744348,
-      "tokens_out": 598859,
-      "cost_usd": 1.3760492316000001
+      "tokens_in": 1610987,
+      "tokens_out": 551084,
+      "cost_usd": 1.2645879930000001
     },
     {
       "model": "openrouter/xiaomi/mimo-v2.6-pro",
       "provider": "openrouter",
-      "calls": 204,
-      "successes": 204,
+      "calls": 199,
+      "successes": 199,
       "errors": 0,
       "tokens_in": 0,
       "tokens_out": 0,
@@ -44,11 +44,11 @@
     {
       "model": "hermes-agent/mimo-v2.6-pro",
       "provider": "hermes-agent",
-      "calls": 95,
-      "successes": 95,
+      "calls": 98,
+      "successes": 98,
       "errors": 0,
-      "tokens_in": 13532,
-      "tokens_out": 25761,
+      "tokens_in": 14079,
+      "tokens_out": 26939,
       "cost_usd": 0.0
     }
   ]
