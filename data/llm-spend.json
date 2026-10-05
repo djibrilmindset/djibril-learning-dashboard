@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated_at": "2026-10-05T06:00:46.944467Z",
+    "generated_at": "2026-10-05T08:00:44.074571Z",
     "window_hours": 24,
-    "total_calls": 304,
-    "total_cost_usd": 1.069153,
+    "total_calls": 279,
+    "total_cost_usd": 1.100572,
     "models_count": 8,
     "providers_count": 4,
     "errors_count": 0,
@@ -12,24 +12,24 @@
   },
   "by_model": [
     {
-      "model": "hermes-task-mimo-v2.6-pro",
-      "provider": "direct",
-      "calls": 6,
-      "successes": 6,
-      "errors": 0,
-      "tokens_in": 715143,
-      "tokens_out": 224468,
-      "cost_usd": 0.5459114658
-    },
-    {
       "model": "hermes-task-deepseek-flash",
       "provider": "direct",
-      "calls": 15,
-      "successes": 15,
+      "calls": 17,
+      "successes": 17,
       "errors": 0,
-      "tokens_in": 1011135,
-      "tokens_out": 403305,
-      "cost_usd": 0.478087938
+      "tokens_in": 1329755,
+      "tokens_out": 478292,
+      "cost_usd": 0.62065221
+    },
+    {
+      "model": "hermes-task-mimo-v2.6-pro",
+      "provider": "direct",
+      "calls": 5,
+      "successes": 5,
+      "errors": 0,
+      "tokens_in": 586365,
+      "tokens_out": 172071,
+      "cost_usd": 0.43476539940000003
     },
     {
       "model": "deepseek-direct/deepseek-v4-pro",
@@ -54,8 +54,8 @@
     {
       "model": "openrouter/xiaomi/mimo-v2.6-pro",
       "provider": "openrouter",
-      "calls": 61,
-      "successes": 61,
+      "calls": 49,
+      "successes": 49,
       "errors": 0,
       "tokens_in": 0,
       "tokens_out": 0,
@@ -64,8 +64,8 @@
     {
       "model": "openrouter/xiaomi/mimo-v2.6-flash",
       "provider": "openrouter",
-      "calls": 9,
-      "successes": 9,
+      "calls": 7,
+      "successes": 7,
       "errors": 0,
       "tokens_in": 0,
       "tokens_out": 0,
@@ -74,11 +74,11 @@
     {
       "model": "hermes-agent/mimo-v2.6-pro",
       "provider": "hermes-agent",
-      "calls": 27,
-      "successes": 27,
+      "calls": 15,
+      "successes": 15,
       "errors": 0,
-      "tokens_in": 4204,
-      "tokens_out": 7370,
+      "tokens_in": 3184,
+      "tokens_out": 4278,
       "cost_usd": 0.0
     },
     {
