@@ -1,35 +1,25 @@
 {
   "_meta": {
-    "generated_at": "2026-10-05T14:03:23.555086Z",
+    "generated_at": "2026-10-05T16:00:47.298076Z",
     "window_hours": 24,
-    "total_calls": 220,
-    "total_cost_usd": 0.907443,
-    "models_count": 8,
+    "total_calls": 216,
+    "total_cost_usd": 0.787718,
+    "models_count": 4,
     "providers_count": 4,
     "errors_count": 0,
-    "healthy_count": 8,
+    "healthy_count": 4,
     "error_count": 0
   },
   "by_model": [
     {
       "model": "hermes-task-deepseek-flash",
       "provider": "direct",
-      "calls": 20,
-      "successes": 20,
+      "calls": 21,
+      "successes": 21,
       "errors": 0,
-      "tokens_in": 1514878,
-      "tokens_out": 536881,
-      "cost_usd": 0.698331564
-    },
-    {
-      "model": "hermes-task-mimo-v2.6-pro",
-      "provider": "direct",
-      "calls": 1,
-      "successes": 1,
-      "errors": 0,
-      "tokens_in": 209111,
-      "tokens_out": 64269,
-      "cost_usd": 0.16395732780000002
+      "tokens_in": 1591729,
+      "tokens_out": 575128,
+      "cost_usd": 0.742564086
     },
     {
       "model": "deepseek-direct/deepseek-v4-pro",
@@ -52,43 +42,13 @@
       "cost_usd": 0.00428364
     },
     {
-      "model": "openrouter/xiaomi/mimo-v2.6-flash",
-      "provider": "openrouter",
-      "calls": 1,
-      "successes": 1,
-      "errors": 0,
-      "tokens_in": 0,
-      "tokens_out": 0,
-      "cost_usd": 0.0
-    },
-    {
-      "model": "openrouter/xiaomi/mimo-v2.6-pro",
-      "provider": "openrouter",
-      "calls": 6,
-      "successes": 6,
-      "errors": 0,
-      "tokens_in": 0,
-      "tokens_out": 0,
-      "cost_usd": 0.0
-    },
-    {
-      "model": "hermes-agent/mimo-v2.6-pro",
-      "provider": "hermes-agent",
-      "calls": 2,
-      "successes": 2,
-      "errors": 0,
-      "tokens_in": 804,
-      "tokens_out": 760,
-      "cost_usd": 0.0
-    },
-    {
       "model": "hermes-agent/deepseek-flash",
       "provider": "hermes-agent",
-      "calls": 183,
-      "successes": 183,
+      "calls": 188,
+      "successes": 188,
       "errors": 0,
-      "tokens_in": 49199,
-      "tokens_out": 55844,
+      "tokens_in": 50024,
+      "tokens_out": 77026,
       "cost_usd": 0.0
     }
   ]
