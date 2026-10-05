@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated_at": "2026-10-05T10:00:57.582934Z",
+    "generated_at": "2026-10-05T12:06:32.952284Z",
     "window_hours": 24,
-    "total_calls": 256,
-    "total_cost_usd": 0.996545,
+    "total_calls": 242,
+    "total_cost_usd": 0.860933,
     "models_count": 8,
     "providers_count": 4,
     "errors_count": 0,
@@ -14,22 +14,22 @@
     {
       "model": "hermes-task-deepseek-flash",
       "provider": "direct",
-      "calls": 17,
-      "successes": 17,
+      "calls": 18,
+      "successes": 18,
       "errors": 0,
-      "tokens_in": 1329755,
-      "tokens_out": 478292,
-      "cost_usd": 0.62065221
+      "tokens_in": 1401835,
+      "tokens_out": 489465,
+      "cost_usd": 0.641743818
     },
     {
       "model": "hermes-task-mimo-v2.6-pro",
       "provider": "direct",
-      "calls": 3,
-      "successes": 3,
+      "calls": 2,
+      "successes": 2,
       "errors": 0,
-      "tokens_in": 420693,
-      "tokens_out": 143289,
-      "cost_usd": 0.33073928820000004
+      "tokens_in": 227035,
+      "tokens_out": 66609,
+      "cost_usd": 0.17403521340000003
     },
     {
       "model": "deepseek-direct/deepseek-v4-pro",
@@ -54,8 +54,8 @@
     {
       "model": "openrouter/xiaomi/mimo-v2.6-flash",
       "provider": "openrouter",
-      "calls": 5,
-      "successes": 5,
+      "calls": 3,
+      "successes": 3,
       "errors": 0,
       "tokens_in": 0,
       "tokens_out": 0,
@@ -64,8 +64,8 @@
     {
       "model": "openrouter/xiaomi/mimo-v2.6-pro",
       "provider": "openrouter",
-      "calls": 31,
-      "successes": 31,
+      "calls": 18,
+      "successes": 18,
       "errors": 0,
       "tokens_in": 0,
       "tokens_out": 0,
@@ -84,11 +84,11 @@
     {
       "model": "hermes-agent/deepseek-flash",
       "provider": "hermes-agent",
-      "calls": 182,
-      "successes": 182,
+      "calls": 183,
+      "successes": 183,
       "errors": 0,
-      "tokens_in": 49198,
-      "tokens_out": 55767,
+      "tokens_in": 49199,
+      "tokens_out": 55844,
       "cost_usd": 0.0
     }
   ]
