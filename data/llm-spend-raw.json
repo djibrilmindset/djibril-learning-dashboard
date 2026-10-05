@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated_at": "2026-10-05T12:06:32.952284Z",
+    "generated_at": "2026-10-05T14:03:23.555086Z",
     "window_hours": 24,
-    "total_calls": 242,
-    "total_cost_usd": 0.860933,
+    "total_calls": 220,
+    "total_cost_usd": 0.907443,
     "models_count": 8,
     "providers_count": 4,
     "errors_count": 0,
@@ -11,270 +11,6 @@
     "error_count": 0
   },
   "entries": [
-    {
-      "ts": "2026-10-04T12:09:16Z",
-      "agent": "HERMES_TASK",
-      "model": "hermes-task-mimo-v2.6-pro",
-      "tier": 1,
-      "tokens_in": 17924,
-      "tokens_out": 2340,
-      "cost_usd": 0.0100778856,
-      "task_type": "hermes_task",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-10-04T12:10:04Z",
-      "agent": "HERMES_CALL_MIMO",
-      "model": "openrouter/xiaomi/mimo-v2.6-flash",
-      "tier": 1,
-      "tokens_in": 0,
-      "tokens_out": 0,
-      "cost_usd": 0,
-      "task_type": "chinese",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-10-04T12:10:37Z",
-      "agent": "HERMES_CALL_MIMO",
-      "model": "openrouter/xiaomi/mimo-v2.6-pro",
-      "tier": 1,
-      "tokens_in": 0,
-      "tokens_out": 0,
-      "cost_usd": 0,
-      "task_type": "decide",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-10-04T12:18:02Z",
-      "agent": "HERMES_AGENT",
-      "model": "hermes-agent/mimo-v2.6-pro",
-      "tier": 0,
-      "tokens_in": 198,
-      "tokens_out": 201,
-      "cost_usd": 0.0,
-      "task_type": "forfait",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-10-04T12:18:26Z",
-      "agent": "HERMES_AGENT",
-      "model": "hermes-agent/mimo-v2.6-pro",
-      "tier": 0,
-      "tokens_in": 198,
-      "tokens_out": 210,
-      "cost_usd": 0.0,
-      "task_type": "forfait",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-10-04T12:21:34Z",
-      "agent": "HERMES_CALL_MIMO",
-      "model": "openrouter/xiaomi/mimo-v2.6-pro",
-      "tier": 1,
-      "tokens_in": 0,
-      "tokens_out": 0,
-      "cost_usd": 0,
-      "task_type": "decide",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-10-04T12:32:31Z",
-      "agent": "HERMES_CALL_MIMO",
-      "model": "openrouter/xiaomi/mimo-v2.6-pro",
-      "tier": 1,
-      "tokens_in": 0,
-      "tokens_out": 0,
-      "cost_usd": 0,
-      "task_type": "decide",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-10-04T12:40:51Z",
-      "agent": "HERMES_AGENT",
-      "model": "hermes-agent/mimo-v2.6-pro",
-      "tier": 0,
-      "tokens_in": 106,
-      "tokens_out": 213,
-      "cost_usd": 0.0,
-      "task_type": "forfait",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-10-04T12:43:43Z",
-      "agent": "HERMES_CALL_MIMO",
-      "model": "openrouter/xiaomi/mimo-v2.6-pro",
-      "tier": 1,
-      "tokens_in": 0,
-      "tokens_out": 0,
-      "cost_usd": 0,
-      "task_type": "decide",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-10-04T12:54:38Z",
-      "agent": "HERMES_CALL_MIMO",
-      "model": "openrouter/xiaomi/mimo-v2.6-pro",
-      "tier": 1,
-      "tokens_in": 0,
-      "tokens_out": 0,
-      "cost_usd": 0,
-      "task_type": "decide",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-10-04T13:00:54Z",
-      "agent": "HERMES_AGENT",
-      "model": "hermes-agent/mimo-v2.6-pro",
-      "tier": 0,
-      "tokens_in": 368,
-      "tokens_out": 257,
-      "cost_usd": 0.0,
-      "task_type": "forfait",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-10-04T13:01:32Z",
-      "agent": "HERMES_AGENT",
-      "model": "hermes-agent/mimo-v2.6-pro",
-      "tier": 0,
-      "tokens_in": 368,
-      "tokens_out": 274,
-      "cost_usd": 0.0,
-      "task_type": "forfait",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-10-04T13:05:53Z",
-      "agent": "HERMES_CALL_MIMO",
-      "model": "openrouter/xiaomi/mimo-v2.6-pro",
-      "tier": 1,
-      "tokens_in": 0,
-      "tokens_out": 0,
-      "cost_usd": 0,
-      "task_type": "decide",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-10-04T13:10:12Z",
-      "agent": "HERMES_CALL_MIMO",
-      "model": "openrouter/xiaomi/mimo-v2.6-flash",
-      "tier": 1,
-      "tokens_in": 0,
-      "tokens_out": 0,
-      "cost_usd": 0,
-      "task_type": "chinese",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-10-04T13:16:36Z",
-      "agent": "HERMES_CALL_MIMO",
-      "model": "openrouter/xiaomi/mimo-v2.6-pro",
-      "tier": 1,
-      "tokens_in": 0,
-      "tokens_out": 0,
-      "cost_usd": 0,
-      "task_type": "decide",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-10-04T13:26:05Z",
-      "agent": "HERMES_CALL_MIMO",
-      "model": "openrouter/xiaomi/mimo-v2.6-pro",
-      "tier": 1,
-      "tokens_in": 0,
-      "tokens_out": 0,
-      "cost_usd": 0,
-      "task_type": "decide",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-10-04T13:26:28Z",
-      "agent": "HERMES_AGENT",
-      "model": "hermes-agent/mimo-v2.6-pro",
-      "tier": 0,
-      "tokens_in": 10,
-      "tokens_out": 208,
-      "cost_usd": 0.0,
-      "task_type": "forfait",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-10-04T13:26:52Z",
-      "agent": "HERMES_AGENT",
-      "model": "hermes-agent/mimo-v2.6-pro",
-      "tier": 0,
-      "tokens_in": 10,
-      "tokens_out": 175,
-      "cost_usd": 0.0,
-      "task_type": "forfait",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-10-04T13:27:41Z",
-      "agent": "HERMES_CALL_MIMO",
-      "model": "openrouter/xiaomi/mimo-v2.6-pro",
-      "tier": 1,
-      "tokens_in": 0,
-      "tokens_out": 0,
-      "cost_usd": 0,
-      "task_type": "decide",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-10-04T13:38:37Z",
-      "agent": "HERMES_CALL_MIMO",
-      "model": "openrouter/xiaomi/mimo-v2.6-pro",
-      "tier": 1,
-      "tokens_in": 0,
-      "tokens_out": 0,
-      "cost_usd": 0,
-      "task_type": "decide",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-10-04T13:39:50Z",
-      "agent": "HERMES_AGENT",
-      "model": "hermes-agent/mimo-v2.6-pro",
-      "tier": 0,
-      "tokens_in": 357,
-      "tokens_out": 250,
-      "cost_usd": 0.0,
-      "task_type": "forfait",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-10-04T13:40:16Z",
-      "agent": "HERMES_AGENT",
-      "model": "hermes-agent/mimo-v2.6-pro",
-      "tier": 0,
-      "tokens_in": 357,
-      "tokens_out": 299,
-      "cost_usd": 0.0,
-      "task_type": "forfait",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-10-04T13:49:36Z",
-      "agent": "HERMES_CALL_MIMO",
-      "model": "openrouter/xiaomi/mimo-v2.6-pro",
-      "tier": 1,
-      "tokens_in": 0,
-      "tokens_out": 0,
-      "cost_usd": 0,
-      "task_type": "decide",
-      "result_summary": ""
-    },
-    {
-      "ts": "2026-10-04T14:00:39Z",
-      "agent": "HERMES_CALL_MIMO",
-      "model": "openrouter/xiaomi/mimo-v2.6-pro",
-      "tier": 1,
-      "tokens_in": 0,
-      "tokens_out": 0,
-      "cost_usd": 0,
-      "task_type": "decide",
-      "result_summary": ""
-    },
     {
       "ts": "2026-10-04T14:10:03Z",
       "agent": "HERMES_CALL_MIMO",
@@ -2670,6 +2406,28 @@
       "tokens_in": 72080,
       "tokens_out": 11173,
       "cost_usd": 0.021091607999999994,
+      "task_type": "hermes_task",
+      "result_summary": ""
+    },
+    {
+      "ts": "2026-10-05T12:32:38Z",
+      "agent": "HERMES_TASK",
+      "model": "hermes-task-deepseek-flash",
+      "tier": 1,
+      "tokens_in": 53607,
+      "tokens_out": 21390,
+      "cost_usd": 0.025222314,
+      "task_type": "hermes_task",
+      "result_summary": ""
+    },
+    {
+      "ts": "2026-10-05T13:00:31Z",
+      "agent": "HERMES_TASK",
+      "model": "hermes-task-deepseek-flash",
+      "tier": 1,
+      "tokens_in": 59436,
+      "tokens_out": 26026,
+      "cost_usd": 0.031365432,
       "task_type": "hermes_task",
       "result_summary": ""
     }

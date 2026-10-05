@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated_at": "2026-10-05T12:06:32.952284Z",
+    "generated_at": "2026-10-05T14:03:23.555086Z",
     "window_hours": 24,
-    "total_calls": 242,
-    "total_cost_usd": 0.860933,
+    "total_calls": 220,
+    "total_cost_usd": 0.907443,
     "models_count": 8,
     "providers_count": 4,
     "errors_count": 0,
@@ -14,22 +14,22 @@
     {
       "model": "hermes-task-deepseek-flash",
       "provider": "direct",
-      "calls": 18,
-      "successes": 18,
+      "calls": 20,
+      "successes": 20,
       "errors": 0,
-      "tokens_in": 1401835,
-      "tokens_out": 489465,
-      "cost_usd": 0.641743818
+      "tokens_in": 1514878,
+      "tokens_out": 536881,
+      "cost_usd": 0.698331564
     },
     {
       "model": "hermes-task-mimo-v2.6-pro",
       "provider": "direct",
-      "calls": 2,
-      "successes": 2,
+      "calls": 1,
+      "successes": 1,
       "errors": 0,
-      "tokens_in": 227035,
-      "tokens_out": 66609,
-      "cost_usd": 0.17403521340000003
+      "tokens_in": 209111,
+      "tokens_out": 64269,
+      "cost_usd": 0.16395732780000002
     },
     {
       "model": "deepseek-direct/deepseek-v4-pro",
@@ -54,8 +54,8 @@
     {
       "model": "openrouter/xiaomi/mimo-v2.6-flash",
       "provider": "openrouter",
-      "calls": 3,
-      "successes": 3,
+      "calls": 1,
+      "successes": 1,
       "errors": 0,
       "tokens_in": 0,
       "tokens_out": 0,
@@ -64,8 +64,8 @@
     {
       "model": "openrouter/xiaomi/mimo-v2.6-pro",
       "provider": "openrouter",
-      "calls": 18,
-      "successes": 18,
+      "calls": 6,
+      "successes": 6,
       "errors": 0,
       "tokens_in": 0,
       "tokens_out": 0,
@@ -74,11 +74,11 @@
     {
       "model": "hermes-agent/mimo-v2.6-pro",
       "provider": "hermes-agent",
-      "calls": 11,
-      "successes": 11,
+      "calls": 2,
+      "successes": 2,
       "errors": 0,
-      "tokens_in": 2776,
-      "tokens_out": 2847,
+      "tokens_in": 804,
+      "tokens_out": 760,
       "cost_usd": 0.0
     },
     {
