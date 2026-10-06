@@ -1,13 +1,13 @@
 {
   "_meta": {
-    "generated_at": "2026-10-06T05:13:21.537622Z",
+    "generated_at": "2026-10-06T06:00:07.361419Z",
     "window_hours": 24,
-    "total_calls": 28,
-    "total_cost_usd": 0.433844,
-    "models_count": 3,
-    "providers_count": 3,
+    "total_calls": 48,
+    "total_cost_usd": 0.443883,
+    "models_count": 4,
+    "providers_count": 4,
     "errors_count": 0,
-    "healthy_count": 3,
+    "healthy_count": 4,
     "error_count": 0
   },
   "by_model": [
@@ -27,18 +27,28 @@
       "calls": 1,
       "successes": 1,
       "errors": 0,
-      "tokens_in": 810,
-      "tokens_out": 200,
-      "cost_usd": 0.00104456
+      "tokens_in": 5227,
+      "tokens_out": 1229,
+      "cost_usd": 0.01094984
+    },
+    {
+      "model": "openrouter/openai/gpt-6-luna",
+      "provider": "openrouter",
+      "calls": 2,
+      "successes": 2,
+      "errors": 0,
+      "tokens_in": 1248,
+      "tokens_out": 18,
+      "cost_usd": 0.0001338
     },
     {
       "model": "hermes-agent/deepseek-flash",
       "provider": "hermes-agent",
-      "calls": 17,
-      "successes": 17,
+      "calls": 35,
+      "successes": 35,
       "errors": 0,
-      "tokens_in": 1909,
-      "tokens_out": 23030,
+      "tokens_in": 6911,
+      "tokens_out": 28033,
       "cost_usd": 0.0
     }
   ]
