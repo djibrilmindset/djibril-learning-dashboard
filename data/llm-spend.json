@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated_at": "2026-10-06T14:00:11.409806Z",
+    "generated_at": "2026-10-06T16:00:11.422599Z",
     "window_hours": 24,
-    "total_calls": 161,
-    "total_cost_usd": 0.408081,
+    "total_calls": 160,
+    "total_cost_usd": 0.586193,
     "models_count": 7,
     "providers_count": 5,
     "errors_count": 0,
@@ -14,12 +14,12 @@
     {
       "model": "hermes-task-deepseek-flash",
       "provider": "direct",
-      "calls": 11,
-      "successes": 11,
+      "calls": 15,
+      "successes": 15,
       "errors": 0,
-      "tokens_in": 881962,
-      "tokens_out": 306376,
-      "cost_usd": 0.396236892
+      "tokens_in": 1128703,
+      "tokens_out": 460190,
+      "cost_usd": 0.5743486019999999
     },
     {
       "model": "deepseek-direct/deepseek-v4-pro",
@@ -54,11 +54,11 @@
     {
       "model": "hermes-agent/deepseek-flash",
       "provider": "hermes-agent",
-      "calls": 141,
-      "successes": 141,
+      "calls": 136,
+      "successes": 136,
       "errors": 0,
-      "tokens_in": 84075,
-      "tokens_out": 83814,
+      "tokens_in": 83250,
+      "tokens_out": 62632,
       "cost_usd": 0.0
     },
     {
