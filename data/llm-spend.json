@@ -1,25 +1,25 @@
 {
   "_meta": {
-    "generated_at": "2026-10-06T06:00:07.361419Z",
+    "generated_at": "2026-10-06T08:00:44.003235Z",
     "window_hours": 24,
-    "total_calls": 48,
-    "total_cost_usd": 0.443883,
-    "models_count": 4,
-    "providers_count": 4,
+    "total_calls": 81,
+    "total_cost_usd": 0.324395,
+    "models_count": 7,
+    "providers_count": 5,
     "errors_count": 0,
-    "healthy_count": 4,
+    "healthy_count": 7,
     "error_count": 0
   },
   "by_model": [
     {
       "model": "hermes-task-deepseek-flash",
       "provider": "direct",
-      "calls": 10,
-      "successes": 10,
+      "calls": 9,
+      "successes": 9,
       "errors": 0,
-      "tokens_in": 905316,
-      "tokens_out": 317536,
-      "cost_usd": 0.43279951199999994
+      "tokens_in": 643646,
+      "tokens_out": 260187,
+      "cost_usd": 0.312550428
     },
     {
       "model": "deepseek-direct/deepseek-v4-pro",
@@ -32,23 +32,53 @@
       "cost_usd": 0.01094984
     },
     {
+      "model": "openai/gpt-6-luna",
+      "provider": "openai",
+      "calls": 3,
+      "successes": 3,
+      "errors": 0,
+      "tokens_in": 240,
+      "tokens_out": 1338,
+      "cost_usd": 0.000693
+    },
+    {
       "model": "openrouter/openai/gpt-6-luna",
       "provider": "openrouter",
-      "calls": 2,
-      "successes": 2,
+      "calls": 3,
+      "successes": 3,
       "errors": 0,
-      "tokens_in": 1248,
-      "tokens_out": 18,
-      "cost_usd": 0.0001338
+      "tokens_in": 1881,
+      "tokens_out": 27,
+      "cost_usd": 0.0002016
     },
     {
       "model": "hermes-agent/deepseek-flash",
       "provider": "hermes-agent",
-      "calls": 35,
-      "successes": 35,
+      "calls": 63,
+      "successes": 63,
       "errors": 0,
-      "tokens_in": 6911,
-      "tokens_out": 28033,
+      "tokens_in": 10477,
+      "tokens_out": 34174,
+      "cost_usd": 0.0
+    },
+    {
+      "model": "glm-4.6v",
+      "provider": "direct",
+      "calls": 1,
+      "successes": 1,
+      "errors": 0,
+      "tokens_in": 0,
+      "tokens_out": 0,
+      "cost_usd": 0.0
+    },
+    {
+      "model": "deepseek-flash",
+      "provider": "direct",
+      "calls": 1,
+      "successes": 1,
+      "errors": 0,
+      "tokens_in": 0,
+      "tokens_out": 0,
       "cost_usd": 0.0
     }
   ]
