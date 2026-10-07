@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated_at": "2026-10-07T04:00:14.504463Z",
+    "generated_at": "2026-10-07T06:00:14.406411Z",
     "window_hours": 24,
-    "total_calls": 420,
-    "total_cost_usd": 0.931531,
+    "total_calls": 430,
+    "total_cost_usd": 1.132869,
     "models_count": 9,
     "providers_count": 6,
     "errors_count": 0,
@@ -14,22 +14,12 @@
     {
       "model": "hermes-task-deepseek-flash",
       "provider": "direct",
-      "calls": 24,
-      "successes": 24,
+      "calls": 27,
+      "successes": 27,
       "errors": 0,
-      "tokens_in": 1873442,
-      "tokens_out": 707191,
-      "cost_usd": 0.9196862279999999
-    },
-    {
-      "model": "deepseek-direct/deepseek-v4-pro",
-      "provider": "deepseek-direct",
-      "calls": 1,
-      "successes": 1,
-      "errors": 0,
-      "tokens_in": 5227,
-      "tokens_out": 1229,
-      "cost_usd": 0.01094984
+      "tokens_in": 2137301,
+      "tokens_out": 871803,
+      "cost_usd": 1.131690006
     },
     {
       "model": "openai/gpt-6-luna",
@@ -42,23 +32,33 @@
       "cost_usd": 0.000693
     },
     {
+      "model": "deepseek-direct/deepseek-v4-pro",
+      "provider": "deepseek-direct",
+      "calls": 2,
+      "successes": 2,
+      "errors": 0,
+      "tokens_in": 1422,
+      "tokens_out": 135,
+      "cost_usd": 0.000287544
+    },
+    {
       "model": "openrouter/openai/gpt-6-luna",
       "provider": "openrouter",
       "calls": 3,
       "successes": 3,
       "errors": 0,
-      "tokens_in": 1881,
-      "tokens_out": 27,
-      "cost_usd": 0.0002016
+      "tokens_in": 1891,
+      "tokens_out": 19,
+      "cost_usd": 0.0001986
     },
     {
       "model": "hermes-agent/deepseek-flash",
       "provider": "hermes-agent",
-      "calls": 383,
-      "successes": 383,
+      "calls": 389,
+      "successes": 389,
       "errors": 0,
-      "tokens_in": 244758,
-      "tokens_out": 302311,
+      "tokens_in": 250794,
+      "tokens_out": 301263,
       "cost_usd": 0.0
     },
     {
