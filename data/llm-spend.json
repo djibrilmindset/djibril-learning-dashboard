@@ -1,35 +1,25 @@
 {
   "_meta": {
-    "generated_at": "2026-10-07T06:00:14.406411Z",
+    "generated_at": "2026-10-07T08:00:36.032418Z",
     "window_hours": 24,
-    "total_calls": 430,
-    "total_cost_usd": 1.132869,
-    "models_count": 9,
-    "providers_count": 6,
+    "total_calls": 425,
+    "total_cost_usd": 1.223654,
+    "models_count": 6,
+    "providers_count": 5,
     "errors_count": 0,
-    "healthy_count": 9,
+    "healthy_count": 6,
     "error_count": 0
   },
   "by_model": [
     {
       "model": "hermes-task-deepseek-flash",
       "provider": "direct",
-      "calls": 27,
-      "successes": 27,
+      "calls": 28,
+      "successes": 28,
       "errors": 0,
-      "tokens_in": 2137301,
-      "tokens_out": 871803,
-      "cost_usd": 1.131690006
-    },
-    {
-      "model": "openai/gpt-6-luna",
-      "provider": "openai",
-      "calls": 3,
-      "successes": 3,
-      "errors": 0,
-      "tokens_in": 240,
-      "tokens_out": 1338,
-      "cost_usd": 0.000693
+      "tokens_in": 2322495,
+      "tokens_out": 932958,
+      "cost_usd": 1.2232360260000001
     },
     {
       "model": "deepseek-direct/deepseek-v4-pro",
@@ -44,12 +34,12 @@
     {
       "model": "openrouter/openai/gpt-6-luna",
       "provider": "openrouter",
-      "calls": 3,
-      "successes": 3,
+      "calls": 2,
+      "successes": 2,
       "errors": 0,
-      "tokens_in": 1891,
-      "tokens_out": 19,
-      "cost_usd": 0.0001986
+      "tokens_in": 1258,
+      "tokens_out": 10,
+      "cost_usd": 0.0001308
     },
     {
       "model": "hermes-agent/deepseek-flash",
@@ -57,28 +47,8 @@
       "calls": 389,
       "successes": 389,
       "errors": 0,
-      "tokens_in": 250794,
-      "tokens_out": 301263,
-      "cost_usd": 0.0
-    },
-    {
-      "model": "glm-4.6v",
-      "provider": "direct",
-      "calls": 1,
-      "successes": 1,
-      "errors": 0,
-      "tokens_in": 0,
-      "tokens_out": 0,
-      "cost_usd": 0.0
-    },
-    {
-      "model": "deepseek-flash",
-      "provider": "direct",
-      "calls": 1,
-      "successes": 1,
-      "errors": 0,
-      "tokens_in": 0,
-      "tokens_out": 0,
+      "tokens_in": 277396,
+      "tokens_out": 303867,
       "cost_usd": 0.0
     },
     {
